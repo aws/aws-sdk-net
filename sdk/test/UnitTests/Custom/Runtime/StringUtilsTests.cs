@@ -49,6 +49,7 @@ namespace AWSSDK.UnitTests
         [TestCategory("Runtime")]
         public void TestStringUtilsFromDateTimeUtcUnspecified()
         {
+            //This is a valid use of .ToLocalTime to construct a local time for testing.
             string convertedDateTime = StringUtils.FromDateTimeToISO8601(new DateTime(new DateTime(2018, 7, 18, 0, 0, 0, DateTimeKind.Utc).ToLocalTime().Ticks));
 
             Assert.AreEqual(EXPECTED_FROM_DATE_STRING, convertedDateTime);
@@ -59,6 +60,7 @@ namespace AWSSDK.UnitTests
         [TestCategory("Runtime")]
         public void TestStringUtilsFromDateTimeUtcLocal()
         {
+            //This is a valid use of .ToLocalTime to construct a local time for testing.
             string convertedDateTime = StringUtils.FromDateTimeToISO8601(new DateTime(2018, 7, 18, 0, 0, 0, DateTimeKind.Utc).ToLocalTime());
 
             Assert.AreEqual(EXPECTED_FROM_DATE_STRING, convertedDateTime);
@@ -78,6 +80,7 @@ namespace AWSSDK.UnitTests
         [TestCategory("Runtime")]
         public void TestStringUtilsFromDateTimeEpochCompatibilityUnknown()
         {
+            //This is a valid use of .ToLocalTime to construct a local time for testing.
             DateTime time = new DateTime(new DateTime(2018, 7, 18, 0, 0, 0, DateTimeKind.Utc).ToLocalTime().Ticks);
             TestStringUtilsFromDateUtcTimeEpochCompatibility(time);
         }
@@ -87,6 +90,7 @@ namespace AWSSDK.UnitTests
         [TestCategory("Runtime")]
         public void TestStringUtilsFromDateTimeEpochCompatibilityLocal()
         {
+            //This is a valid use of .ToLocalTime to construct a local time for testing.
             DateTime time = new DateTime(2018, 7, 18, 0, 0, 0, DateTimeKind.Utc).ToLocalTime();
             TestStringUtilsFromDateUtcTimeEpochCompatibility(time);
         }
@@ -94,9 +98,9 @@ namespace AWSSDK.UnitTests
         private void TestStringUtilsFromDateUtcTimeEpochCompatibility(DateTime time)
         {
             string convertedDateTime = StringUtils.FromDateTimeToISO8601(time);
-            DateTime restoredDateTime = DateTime.Parse(convertedDateTime).ToUniversalTime();
+            DateTime restoredDateTime = DateTime.Parse(convertedDateTime, CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal);
 
-            //We want the marshalling performed by StringUtils.FromDateTimeUtc to be coherent with AWSSDKUtils.ConvertToUnixEpochSecondsDouble
+            //We want the marshalling performed by StringUtils.FromDateTimeToISO8601 to be coherent with AWSSDKUtils.ConvertToUnixEpochSecondsDouble
             double secondsFromEpoch = AWSSDKUtils.ConvertToUnixEpochSecondsDouble(time);
             DateTime epochDateTime = EPOCH.AddSeconds(secondsFromEpoch);
 

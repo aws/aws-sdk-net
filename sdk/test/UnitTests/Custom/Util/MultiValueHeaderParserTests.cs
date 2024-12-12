@@ -54,8 +54,8 @@ namespace AWSSDK.UnitTests
             string format = "ISO8601";
             var result = MultiValueHeaderParser.ToDateTimeList(header, format);
 
-            Assert.AreEqual(new DateTime(2019, 12, 16, 23, 48, 18, DateTimeKind.Utc).ToLocalTime(), result[0]);
-            Assert.AreEqual(new DateTime(2019, 12, 16, 23, 48, 18, DateTimeKind.Utc).ToLocalTime(), result[1]);
+            Assert.AreEqual(new DateTime(2019, 12, 16, 23, 48, 18, DateTimeKind.Utc), result[0]);
+            Assert.AreEqual(new DateTime(2019, 12, 16, 23, 48, 18, DateTimeKind.Utc), result[1]);
         }
 
         [TestMethod]
@@ -65,8 +65,8 @@ namespace AWSSDK.UnitTests
             string format = "RFC822";
             var result = MultiValueHeaderParser.ToDateTimeList(header, format);
 
-            Assert.AreEqual(new DateTime(2019, 12, 16, 23, 48, 18, DateTimeKind.Utc).ToLocalTime(), result[0]);
-            Assert.AreEqual(new DateTime(2019, 12, 16, 23, 48, 18, DateTimeKind.Utc).ToLocalTime(), result[1]);
+            Assert.AreEqual(new DateTime(2019, 12, 16, 23, 48, 18, DateTimeKind.Utc), result[0]);
+            Assert.AreEqual(new DateTime(2019, 12, 16, 23, 48, 18, DateTimeKind.Utc), result[1]);
         }
 
         [TestMethod]
@@ -76,8 +76,8 @@ namespace AWSSDK.UnitTests
             string format = "UnixTimestamp";
             var result = MultiValueHeaderParser.ToDateTimeList(header, format);
 
-            Assert.AreEqual(new DateTime(2019, 12, 16, 23, 48, 18, DateTimeKind.Utc).ToLocalTime(), result[0]);
-            Assert.AreEqual(new DateTime(2019, 12, 16, 23, 48, 18, DateTimeKind.Utc).ToLocalTime(), result[1]);
+            Assert.AreEqual(new DateTime(2019, 12, 16, 23, 48, 18, DateTimeKind.Utc), result[0]);
+            Assert.AreEqual(new DateTime(2019, 12, 16, 23, 48, 18, DateTimeKind.Utc), result[1]);
         }
 
         [TestMethod]

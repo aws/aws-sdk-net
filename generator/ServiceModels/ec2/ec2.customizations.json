@@ -111,17 +111,17 @@
         "SpotFleetRequestConfigData": {
             "ValidFrom": {
                 "Type": "DateTime?",
-                "Marshaller": "Amazon.EC2.Internal.CustomMarshallTransformations.ConvertDateTimeISOWithoutMillisecondsUtc"
+                "Marshaller": "Amazon.Runtime.Internal.Util.StringUtils.FromDateTimeToISO8601NoMs"
             },
             "ValidUntil": {
                 "Type": "DateTime?",
-                "Marshaller": "Amazon.EC2.Internal.CustomMarshallTransformations.ConvertDateTimeISOWithoutMillisecondsUtc"
+                "Marshaller": "Amazon.Runtime.Internal.Util.StringUtils.FromDateTimeToISO8601NoMs"
             }
         },
         "DescribeSpotFleetRequestHistoryRequest": {
             "StartTime": {
                 "Type": "DateTime?",
-                "Marshaller": "Amazon.EC2.Internal.CustomMarshallTransformations.ConvertDateTimeISOWithoutMillisecondsUtc"
+                "Marshaller": "Amazon.Runtime.Internal.Util.StringUtils.FromDateTimeToISO8601NoMs"
             }
         }
 	},
@@ -165,12 +165,6 @@
                 }
             ]
         },
-        "ClientData": {
-            "backwardsCompatibleDateTimeProperties": [
-                "UploadEnd",
-                "UploadStart"
-            ]
-        },
         "CopySnapshotRequest": {
             "modify": [
                 {
@@ -178,30 +172,8 @@
                 }
             ]
         },
-        "CreateFleetRequest": {
-            "backwardsCompatibleDateTimeProperties": [
-                "ValidFrom",
-                "ValidUntil"
-            ]
-        },
         "DeleteVpcPeeringConnectionResponse": {
             "exclude": [ "Return" ]
-        },
-        "DescribeFleetHistoryRequest": {
-            "backwardsCompatibleDateTimeProperties": [
-                "StartTime"
-            ]
-        },
-        "DescribeSpotFleetRequestHistoryRequest": {
-            "backwardsCompatibleDateTimeProperties": [
-                "StartTime"
-            ]
-        },
-        "DescribeSpotPriceHistoryRequest": {
-            "backwardsCompatibleDateTimeProperties": [
-                "EndTime",
-                "StartTime"
-            ]
         },
         "DetachVolumeResponse": {
             "modify": [
@@ -264,11 +236,6 @@
                 }
             ]
         },
-        "LaunchTemplateSpotMarketOptionsRequest": {
-            "backwardsCompatibleDateTimeProperties": [
-                "ValidUntil"
-            ]
-        },
         "ModifyVpcEndpointResult": {
             "exclude": [ "Return" ]
         },
@@ -277,12 +244,6 @@
                 {
                     "PrefixListId": { "emitPropertyName": "Id" }
                 }
-            ]
-        },
-        "RequestSpotInstancesRequest": {
-            "backwardsCompatibleDateTimeProperties": [
-                "ValidFrom",
-                "ValidUntil"
             ]
         },
         "RequestSpotLaunchSpecification": {
@@ -328,12 +289,6 @@
                 }
             ]
         },
-        "ReportInstanceStatusRequest": {
-            "backwardsCompatibleDateTimeProperties": [
-                "EndTime",
-                "StartTime"
-            ]
-        },
         "RevokeSecurityGroupEgressRequest": {
             "exclude": [
                 "SourceSecurityGroupName",
@@ -342,12 +297,6 @@
                 "FromPort",
                 "ToPort",
                 "CidrIp"
-            ]
-        },
-        "SpotFleetRequestConfigData": {
-            "backwardsCompatibleDateTimeProperties": [
-                "ValidFrom",
-                "ValidUntil"
             ]
         },
         "SpotPrice": {
@@ -367,28 +316,11 @@
                 "CidrIp"
             ]
         },
-        "SlotDateTimeRangeRequest": {
-            "backwardsCompatibleDateTimeProperties": [
-                "EarliestTime",
-                "LatestTime"
-            ]
-        },
-        "SlotStartTimeRangeRequest": {
-            "backwardsCompatibleDateTimeProperties": [
-                "EarliestTime",
-                "LatestTime"
-            ]
-        },
         "SpotFleetRequestConfig": {
             "modify": [
                 {
                     "SpotFleetRequestConfig": { "emitPropertyName": "ConfigData" }
                 }
-            ]
-        },
-        "SpotMarketOptions": {
-            "backwardsCompatibleDateTimeProperties": [
-                "ValidUntil"
             ]
         }
     },

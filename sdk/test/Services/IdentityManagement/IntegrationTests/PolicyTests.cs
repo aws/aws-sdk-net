@@ -61,7 +61,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         [TestCategory("IdentityManagement")]
         public void TestPrincipalPolicies()
         {
-            string groupname = "sdk-testgroup-" + DateTime.Now.Ticks;
+            string groupname = "sdk-testgroup-" + DateTime.UtcNow.Ticks;
             string policyName = "strong-password";
             string policy = @"{
   ""Version"": ""2012-10-17"",
@@ -309,7 +309,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         public void TestPutGetUserPolicy()
         {
             string username = IAMUtil.CreateTestUser(Client);
-            string policyName = "test-policy-" + DateTime.Now.Ticks;
+            string policyName = "test-policy-" + DateTime.UtcNow.Ticks;
 
             try
             {
@@ -339,7 +339,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         [TestCategory("IdentityManagement")]
         public void TestPutGetGroupPolicy()
         {
-            string groupname = "sdk-testgroup-" + DateTime.Now.Ticks;
+            string groupname = "sdk-testgroup-" + DateTime.UtcNow.Ticks;
             string policyName = "strong-password";
 
             try
@@ -374,7 +374,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         public void TestGetNonExistantPolicy()
         {
             string username = IAMUtil.CreateTestUser(Client);
-            string policyName = "test-policy-" + DateTime.Now.Ticks;
+            string policyName = "test-policy-" + DateTime.UtcNow.Ticks;
 
             try
             {
@@ -400,7 +400,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
             {
                 for (int i = 0; i < nPolicies; i++)
                 {
-                    policyNames[i] = "test-policy-" + DateTime.Now.Ticks + i;
+                    policyNames[i] = "test-policy-" + DateTime.UtcNow.Ticks + i;
                     Client.PutUserPolicy(new PutUserPolicyRequest()
                     {
                         UserName = username,
@@ -436,7 +436,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         [TestCategory("IdentityManagement")]
         public void TestListGroupPolicies()
         {
-            string grpname = "sdk-testgroup-" + DateTime.Now.Ticks;
+            string grpname = "sdk-testgroup-" + DateTime.UtcNow.Ticks;
             string[] policyNames = new string[3];
             int nPolicies = 3;
 
@@ -446,7 +446,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
 
                 for (int i = 0; i < nPolicies; i++)
                 {
-                    policyNames[i] = "test-policy-" + DateTime.Now.Ticks + i;
+                    policyNames[i] = "test-policy-" + DateTime.UtcNow.Ticks + i;
                     Client.PutGroupPolicy(new PutGroupPolicyRequest()
                     {
                         GroupName = grpname,
@@ -495,7 +495,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
             {
                 for (int i = 0; i < nPolicies; i++)
                 {
-                    policyNames[i] = "test-policy-" + DateTime.Now.Ticks + i;
+                    policyNames[i] = "test-policy-" + DateTime.UtcNow.Ticks + i;
                     Client.PutUserPolicy(new PutUserPolicyRequest()
                     {
                         UserName = username,
@@ -548,7 +548,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         [TestCategory("IdentityManagement")]
         public void TestListGroupPoliciesPaging()
         {
-            string grpname = "sdk-testgroup-" + DateTime.Now.Ticks;
+            string grpname = "sdk-testgroup-" + DateTime.UtcNow.Ticks;
             int nPolicies = 3;
             string[] policyNames = new string[nPolicies];
 
@@ -558,7 +558,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
 
                 for (int i = 0; i < nPolicies; i++)
                 {
-                    policyNames[i] = "test-policy-" + DateTime.Now.Ticks + i;
+                    policyNames[i] = "test-policy-" + DateTime.UtcNow.Ticks + i;
                     Client.PutGroupPolicy(new PutGroupPolicyRequest()
                     {
                         GroupName = grpname,
@@ -617,7 +617,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         public void TestDeleteUserPolicy()
         {
             string username = IAMUtil.CreateTestUser(Client);
-            string pName = "sdk-policy-" + DateTime.Now.Ticks;
+            string pName = "sdk-policy-" + DateTime.UtcNow.Ticks;
 
             try
             {
@@ -650,8 +650,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         [TestCategory("IdentityManagement")]
         public void TestDeleteGroupPolicy()
         {
-            string groupname = "sdk-testgroup-" + DateTime.Now.Ticks;
-            string pName = "test-policy-" + DateTime.Now.Ticks;
+            string groupname = "sdk-testgroup-" + DateTime.UtcNow.Ticks;
+            string pName = "test-policy-" + DateTime.UtcNow.Ticks;
 
             try
             {
@@ -687,12 +687,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         [ExpectedException(typeof(NoSuchEntityException))]
         public void TestDeleteNonExistentGroupPolicyException()
         {
-            string groupname = "sdk-testgroup-" + DateTime.Now.Ticks;
+            string groupname = "sdk-testgroup-" + DateTime.UtcNow.Ticks;
 
             try
             {
                 Client.CreateGroup(new CreateGroupRequest() { GroupName = groupname, Path = IAMUtil.TEST_PATH });
-                Client.DeleteGroupPolicy(new DeleteGroupPolicyRequest() { GroupName = groupname, PolicyName = "test-policy-" + DateTime.Now.Ticks });
+                Client.DeleteGroupPolicy(new DeleteGroupPolicyRequest() { GroupName = groupname, PolicyName = "test-policy-" + DateTime.UtcNow.Ticks });
             }
             finally
             {
@@ -706,12 +706,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         [ExpectedException(typeof(NoSuchEntityException))]
         public void TestGetNonExistentGroupPolicyException()
         {
-            string groupname = "sdk-testgroup-" + DateTime.Now.Ticks;
+            string groupname = "sdk-testgroup-" + DateTime.UtcNow.Ticks;
 
             try
             {
                 Client.CreateGroup(new CreateGroupRequest() { GroupName = groupname, Path = IAMUtil.TEST_PATH });
-                Client.GetGroupPolicy(new GetGroupPolicyRequest() { GroupName = groupname, PolicyName = "test-policy-" + DateTime.Now.Ticks });
+                Client.GetGroupPolicy(new GetGroupPolicyRequest() { GroupName = groupname, PolicyName = "test-policy-" + DateTime.UtcNow.Ticks });
             }
             finally
             {
@@ -729,7 +729,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
 
             try
             {
-                Client.DeleteUserPolicy(new DeleteUserPolicyRequest() { UserName = username, PolicyName = "test-policy-" + DateTime.Now.Ticks });
+                Client.DeleteUserPolicy(new DeleteUserPolicyRequest() { UserName = username, PolicyName = "test-policy-" + DateTime.UtcNow.Ticks });
             }
             finally
             {
@@ -747,7 +747,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
 
             try
             {
-                Client.GetUserPolicy(new GetUserPolicyRequest() { UserName = username, PolicyName = "test-policy-" + DateTime.Now.Ticks });
+                Client.GetUserPolicy(new GetUserPolicyRequest() { UserName = username, PolicyName = "test-policy-" + DateTime.UtcNow.Ticks });
             }
             finally
             {
@@ -762,7 +762,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         public void TestPutUserPolicyMalformedPolicyDocumentException()
         {
             string username = IAMUtil.CreateTestUser(Client);
-            string policyName = "test-policy-" + DateTime.Now.Ticks;
+            string policyName = "test-policy-" + DateTime.UtcNow.Ticks;
 
             try
             {
@@ -784,7 +784,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         [TestCategory("IdentityManagement")]
         public void TestCreateManagedPolicy()
         {
-            string policyName = "test-policy-" + DateTime.Now.Ticks;
+            string policyName = "test-policy-" + DateTime.UtcNow.Ticks;
             string arn = null;
 
             Client.CreatePolicy(new CreatePolicyRequest { PolicyName = policyName, PolicyDocument = TEST_VERSIONED_POLICY });
@@ -838,7 +838,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         public void TestAttachManagedPolicy()
         {
             string username = IAMUtil.CreateTestUser(Client);
-            string policyName = "sdk-policy-" + DateTime.Now.Ticks;
+            string policyName = "sdk-policy-" + DateTime.UtcNow.Ticks;
 
             var policyArn = Client.CreatePolicy(new CreatePolicyRequest { PolicyName = policyName, PolicyDocument = TEST_VERSIONED_POLICY }).Policy.Arn;
 

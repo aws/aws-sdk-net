@@ -3,30 +3,5 @@
         "DescribeAlarmHistory",
         "DescribeAlarms",
         "ListMetrics"
-    ],
-    "shapeModifiers": {
-        "DescribeAlarmHistoryInput": {
-            "backwardsCompatibleDateTimeProperties": [
-                "StartDate",
-                "EndDate"
-            ]
-        },
-        "GetMetricDataInput": {
-            "backwardsCompatibleDateTimeProperties": [
-                "StartTime",
-                "EndTime"
-            ]
-        },
-        "GetMetricStatisticsInput": {
-            "backwardsCompatibleDateTimeProperties": [
-                "StartTime",
-                "EndTime"
-            ]
-        },
-        "MetricDatum": {
-            "backwardsCompatibleDateTimeProperties": [
-                "Timestamp"
-            ]
-        }
-    }
+    ]
 }

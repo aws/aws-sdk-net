@@ -109,7 +109,7 @@ namespace AWSSDK.Benchmarks
         public async Task SetupForS3GetPresignedUrl()
         {
             _s3Client = new AmazonS3Client();
-            _getPresignedUrlRequest = new GetPreSignedUrlRequest { BucketName = "FakeBucketName", Key = "foo", Expires = DateTime.Now + TimeSpan.FromDays(2), Verb = HttpVerb.GET};
+            _getPresignedUrlRequest = new GetPreSignedUrlRequest { BucketName = "FakeBucketName", Key = "foo", Expires = DateTime.UtcNow + TimeSpan.FromDays(2), Verb = HttpVerb.GET};
         }
 
         /// <summary>

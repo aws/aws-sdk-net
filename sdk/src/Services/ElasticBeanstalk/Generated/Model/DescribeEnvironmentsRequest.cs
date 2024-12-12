@@ -38,7 +38,7 @@ namespace Amazon.ElasticBeanstalk.Model
         private string _applicationName;
         private List<string> _environmentIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _environmentNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
-        private DateTime? _includedDeletedBackToUtc;
+        private DateTime? _includedDeletedBackTo;
         private bool? _includeDeleted;
         private int? _maxRecords;
         private string _nextToken;
@@ -108,22 +108,22 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IncludedDeletedBackToUtc. 
+        /// Gets and sets the property IncludedDeletedBackTo. 
         /// <para>
         ///  If specified when <c>IncludeDeleted</c> is set to <c>true</c>, then environments
         /// deleted after this date are displayed. 
         /// </para>
         /// </summary>
-        public DateTime? IncludedDeletedBackToUtc
+        public DateTime? IncludedDeletedBackTo
         {
-            get { return this._includedDeletedBackToUtc; }
-            set { this._includedDeletedBackTo = this._includedDeletedBackToUtc = value; }
+            get { return this._includedDeletedBackTo; }
+            set { this._includedDeletedBackTo = value; }
         }
 
-        // Check to see if IncludedDeletedBackToUtc property is set
-        internal bool IsSetIncludedDeletedBackToUtc()
+        // Check to see if IncludedDeletedBackTo property is set
+        internal bool IsSetIncludedDeletedBackTo()
         {
-            return this._includedDeletedBackToUtc.HasValue; 
+            return this._includedDeletedBackTo.HasValue; 
         }
 
         /// <summary>
@@ -222,47 +222,5 @@ namespace Amazon.ElasticBeanstalk.Model
             return this._versionLabel != null;
         }
 
-#region Backwards compatible properties
-        private DateTime? _includedDeletedBackTo;
-
-        /// <summary>
-        /// Gets and sets the property IncludedDeletedBackToUtc. 
-        /// <para>
-        /// This property is deprecated. Setting this property results in non-UTC DateTimes not
-        /// being marshalled correctly. Use IncludedDeletedBackToUtc instead. Setting either IncludedDeletedBackTo
-        /// or IncludedDeletedBackToUtc results in both IncludedDeletedBackTo and IncludedDeletedBackToUtc
-        /// being assigned, the latest assignment to either one of the two property is reflected
-        /// in the value of both. IncludedDeletedBackTo is provided for backwards compatibility
-        /// only and assigning a non-Utc DateTime to it results in the wrong timestamp being passed
-        /// to the service.
-        /// </para>
-        ///  
-        /// <para>
-        ///  If specified when <c>IncludeDeleted</c> is set to <c>true</c>, then environments
-        /// deleted after this date are displayed. 
-        /// </para>
-        /// </summary>
-        [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +
-            "Use IncludedDeletedBackToUtc instead. Setting either IncludedDeletedBackTo or IncludedDeletedBackToUtc results in both IncludedDeletedBackTo and " +
-            "IncludedDeletedBackToUtc being assigned, the latest assignment to either one of the two property is " + 
-            "reflected in the value of both. IncludedDeletedBackTo is provided for backwards compatibility only and " +
-            "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
-        public DateTime? IncludedDeletedBackTo
-        {
-            get { return this._includedDeletedBackTo.GetValueOrDefault(); }
-            set
-            {
-                this._includedDeletedBackTo = value;
-                if (value != null)
-                {
-                    this._includedDeletedBackToUtc = new DateTime(value.Value.Ticks, DateTimeKind.Utc);
-                }
-                else
-                {
-                    this._includedDeletedBackToUtc = null;
-                }
-            }
-        }
-#endregion
     }
 }

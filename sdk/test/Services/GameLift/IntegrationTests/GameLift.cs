@@ -33,7 +33,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         {
             var originalBuilds = GetAllBuilds().ToList();
 
-            var timestamp = DateTime.Now.ToFileTime().ToString();
+            var timestamp = DateTime.UtcNow.ToFileTime().ToString();
             var newBuild = Client.CreateBuild(new CreateBuildRequest
             {
                 Name = "TestBuild-" + timestamp,

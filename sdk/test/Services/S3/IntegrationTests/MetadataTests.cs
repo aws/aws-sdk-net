@@ -26,7 +26,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         private static string bucketName;
         private static readonly Dictionary<string, string> metadata = new Dictionary<string, string>(StringComparer.Ordinal)
         {
-            { "date", DateTime.Now.ToFileTime().ToString() },
+            { "date", DateTime.UtcNow.ToFileTime().ToString() },
             { "test", "true" },
             { "null-value", null },
             { "aaa", "aaa" },

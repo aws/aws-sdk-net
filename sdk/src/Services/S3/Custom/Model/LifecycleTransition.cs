@@ -27,44 +27,22 @@ namespace Amazon.S3.Model
     {
 
         private DateTime? date;
-        private DateTime? dateUtc;
         private int? days;
         private S3StorageClass storageClass;
 
         /// <summary>
         /// Indicates at what date the object is to be moved or deleted. Should be in GMT ISO 8601 Format.
         /// </summary>
-        [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. Use DateUtc instead.", false)]
         public DateTime? Date
         {
             get { return this.date; }
-            set
-            {
-                this.date = value;
-                if (value != null)
-                {
-                    this.dateUtc = new DateTime(value.Value.Ticks, DateTimeKind.Utc);
-                }
-                else
-                {
-                    this.dateUtc = null;
-                }
-            }
+            set { this.date = value; }
         }
 
-        /// <summary>
-        /// Indicates at what date the object is to be moved or deleted. Should be in GMT ISO 8601 Format.
-        /// </summary>
-        public DateTime? DateUtc
+        // Check to see if Date property is set
+        internal bool IsSetDate()
         {
-            get { return this.dateUtc; }
-            set { this.dateUtc = this.date = value; }
-        }
-
-        // Check to see if DateUtc property is set
-        internal bool IsSetDateUtc()
-        {
-            return this.dateUtc.HasValue;
+            return this.date.HasValue;
         }
 
         /// <summary>

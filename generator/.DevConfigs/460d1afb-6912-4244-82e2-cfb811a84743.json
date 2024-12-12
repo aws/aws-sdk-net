@@ -1,0 +1,9 @@
+{
+    "core": {
+      "changeLogMessages": [
+        "Updated DateTime handling."
+      ],
+      "type": "patch",
+      "updateMinimum": true
+    }
+  }

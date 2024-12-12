@@ -22,7 +22,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         [TestCategory("CloudWatchLogs")]
         public void CRUDLogGroup()
         {
-            var logGroupName = "sdk-dotnet-" + DateTime.Now.Ticks;
+            var logGroupName = "sdk-dotnet-" + DateTime.UtcNow.Ticks;
             Client.CreateLogGroup(new CreateLogGroupRequest
             {
                 LogGroupName = logGroupName
@@ -79,7 +79,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                                 new InputLogEvent
                                 {
                                     Message = "First Data",
-                                    Timestamp = DateTime.Now
+                                    Timestamp = DateTime.UtcNow
                                 }
                             }
                         });
@@ -97,7 +97,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                                 new InputLogEvent
                                 {
                                     Message = "Second Data",
-                                    Timestamp = DateTime.Now
+                                    Timestamp = DateTime.UtcNow
                                 }
                             }
                     });
@@ -113,8 +113,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                             {
                                 LogGroupName = logGroupName,
                                 LogStreamName = "sample",
-                                StartTime = DateTime.Now.AddDays(-2),
-                                EndTime = DateTime.Now
+                                StartTime = DateTime.UtcNow.AddDays(-2),
+                                EndTime = DateTime.UtcNow
                             });
 
                         if (getResponse.Events.Count == 2)

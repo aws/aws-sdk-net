@@ -51,12 +51,12 @@ namespace Amazon.CloudWatch.Model
     {
         private string _alarmName;
         private List<string> _alarmTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
-        private DateTime? _endDateUtc;
+        private DateTime? _endDate;
         private HistoryItemType _historyItemType;
         private int? _maxRecords;
         private string _nextToken;
         private ScanBy _scanBy;
-        private DateTime? _startDateUtc;
+        private DateTime? _startDate;
 
         /// <summary>
         /// Gets and sets the property AlarmName. 
@@ -97,21 +97,21 @@ namespace Amazon.CloudWatch.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EndDateUtc. 
+        /// Gets and sets the property EndDate. 
         /// <para>
         /// The ending date to retrieve alarm history.
         /// </para>
         /// </summary>
-        public DateTime? EndDateUtc
+        public DateTime? EndDate
         {
-            get { return this._endDateUtc; }
-            set { this._endDate = this._endDateUtc = value; }
+            get { return this._endDate; }
+            set { this._endDate = value; }
         }
 
-        // Check to see if EndDateUtc property is set
-        internal bool IsSetEndDateUtc()
+        // Check to see if EndDate property is set
+        internal bool IsSetEndDate()
         {
-            return this._endDateUtc.HasValue; 
+            return this._endDate.HasValue; 
         }
 
         /// <summary>
@@ -190,99 +190,22 @@ namespace Amazon.CloudWatch.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StartDateUtc. 
+        /// Gets and sets the property StartDate. 
         /// <para>
         /// The starting date to retrieve alarm history.
         /// </para>
         /// </summary>
-        public DateTime? StartDateUtc
-        {
-            get { return this._startDateUtc; }
-            set { this._startDate = this._startDateUtc = value; }
-        }
-
-        // Check to see if StartDateUtc property is set
-        internal bool IsSetStartDateUtc()
-        {
-            return this._startDateUtc.HasValue; 
-        }
-
-#region Backwards compatible properties
-        private DateTime? _endDate;
-        private DateTime? _startDate;
-
-        /// <summary>
-        /// Gets and sets the property EndDateUtc. 
-        /// <para>
-        /// This property is deprecated. Setting this property results in non-UTC DateTimes not
-        /// being marshalled correctly. Use EndDateUtc instead. Setting either EndDate or EndDateUtc
-        /// results in both EndDate and EndDateUtc being assigned, the latest assignment to either
-        /// one of the two property is reflected in the value of both. EndDate is provided for
-        /// backwards compatibility only and assigning a non-Utc DateTime to it results in the
-        /// wrong timestamp being passed to the service.
-        /// </para>
-        ///  
-        /// <para>
-        /// The ending date to retrieve alarm history.
-        /// </para>
-        /// </summary>
-        [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +
-            "Use EndDateUtc instead. Setting either EndDate or EndDateUtc results in both EndDate and " +
-            "EndDateUtc being assigned, the latest assignment to either one of the two property is " + 
-            "reflected in the value of both. EndDate is provided for backwards compatibility only and " +
-            "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
-        public DateTime? EndDate
-        {
-            get { return this._endDate.GetValueOrDefault(); }
-            set
-            {
-                this._endDate = value;
-                if (value != null)
-                {
-                    this._endDateUtc = new DateTime(value.Value.Ticks, DateTimeKind.Utc);
-                }
-                else
-                {
-                    this._endDateUtc = null;
-                }
-            }
-        }
-        /// <summary>
-        /// Gets and sets the property StartDateUtc. 
-        /// <para>
-        /// This property is deprecated. Setting this property results in non-UTC DateTimes not
-        /// being marshalled correctly. Use StartDateUtc instead. Setting either StartDate or
-        /// StartDateUtc results in both StartDate and StartDateUtc being assigned, the latest
-        /// assignment to either one of the two property is reflected in the value of both. StartDate
-        /// is provided for backwards compatibility only and assigning a non-Utc DateTime to it
-        /// results in the wrong timestamp being passed to the service.
-        /// </para>
-        ///  
-        /// <para>
-        /// The starting date to retrieve alarm history.
-        /// </para>
-        /// </summary>
-        [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +
-            "Use StartDateUtc instead. Setting either StartDate or StartDateUtc results in both StartDate and " +
-            "StartDateUtc being assigned, the latest assignment to either one of the two property is " + 
-            "reflected in the value of both. StartDate is provided for backwards compatibility only and " +
-            "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
         public DateTime? StartDate
         {
-            get { return this._startDate.GetValueOrDefault(); }
-            set
-            {
-                this._startDate = value;
-                if (value != null)
-                {
-                    this._startDateUtc = new DateTime(value.Value.Ticks, DateTimeKind.Utc);
-                }
-                else
-                {
-                    this._startDateUtc = null;
-                }
-            }
+            get { return this._startDate; }
+            set { this._startDate = value; }
         }
-#endregion
+
+        // Check to see if StartDate property is set
+        internal bool IsSetStartDate()
+        {
+            return this._startDate.HasValue; 
+        }
+
     }
 }

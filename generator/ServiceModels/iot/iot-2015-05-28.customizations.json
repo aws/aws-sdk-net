@@ -1,11 +1,5 @@
 {
     "shapeModifiers": {
-        "ListAuditTasksRequest": {
-            "backwardsCompatibleDateTimeProperties": [
-                "EndTime",
-                "StartTime"
-            ]
-        },
         "ListPrincipalThingsRequest": {
             "modify": [
                 {
@@ -46,12 +40,6 @@
                 {
                     "nextToken": { "emitPropertyName": "nextMarker" }
                 }
-            ]
-        },
-        "ListViolationEventsRequest": {
-            "backwardsCompatibleDateTimeProperties": [
-                "EndTime",
-                "StartTime"
             ]
         },
         "RegisterCertificateRequest": {

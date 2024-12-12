@@ -707,7 +707,7 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
         {
             Document doc = new Document();
 
-            doc["Id"] = DateTime.Now.Ticks;
+            doc["Id"] = DateTime.UtcNow.Ticks;
             doc["name"] = "condition-form";
             await hashTable.PutItemAsync(doc);
 
@@ -750,7 +750,7 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
         {
             Document doc = new Document();
 
-            doc["Id"] = DateTime.Now.Ticks;
+            doc["Id"] = DateTime.UtcNow.Ticks;
             doc["name"] = "condition-form";
             await hashTable.PutItemAsync(doc);
 

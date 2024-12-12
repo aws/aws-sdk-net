@@ -77,9 +77,9 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                          }
                     }
                 }
-                if(publicRequest.IsSetEndDateUtc())
+                if(publicRequest.IsSetEndDate())
                 {
-                    request.Parameters.Add("EndDate", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndDateUtc));
+                    request.Parameters.Add("EndDate", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndDate));
                 }
                 if(publicRequest.IsSetHistoryItemType())
                 {
@@ -97,9 +97,9 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ScanBy", StringUtils.FromString(publicRequest.ScanBy));
                 }
-                if(publicRequest.IsSetStartDateUtc())
+                if(publicRequest.IsSetStartDate())
                 {
-                    request.Parameters.Add("StartDate", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartDateUtc));
+                    request.Parameters.Add("StartDate", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartDate));
                 }
             }
             return request;

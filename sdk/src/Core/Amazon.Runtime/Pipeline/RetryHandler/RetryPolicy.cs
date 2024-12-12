@@ -504,7 +504,7 @@ namespace Amazon.Runtime
                             dateValue,
                             AWSSDKUtils.GMTDateFormat,
                             CultureInfo.InvariantCulture,
-                            DateTimeStyles.AssumeUniversal,
+                            DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal,
                             out serverTime))
                     {
                         return true;
@@ -540,7 +540,7 @@ namespace Amazon.Runtime
                                 timestamp,
                                 AWSSDKUtils.ISO8601BasicDateTimeFormat,
                                 CultureInfo.InvariantCulture,
-                                DateTimeStyles.AssumeUniversal,
+                                DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal,
                                 out serverTime))
                         {
                             return true;

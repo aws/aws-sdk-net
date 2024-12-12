@@ -1712,7 +1712,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         {
             Document doc = new Document();
 
-            doc["Id"] = DateTime.Now.Ticks;
+            doc["Id"] = DateTime.UtcNow.Ticks;
             doc["name"] = "condition-form";
             hashTable.PutItem(doc);
 
@@ -1755,7 +1755,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         {
             Document doc = new Document();
 
-            doc["Id"] = DateTime.Now.Ticks;
+            doc["Id"] = DateTime.UtcNow.Ticks;
             doc["name"] = "condition-form";
             hashTable.PutItem(doc);
 

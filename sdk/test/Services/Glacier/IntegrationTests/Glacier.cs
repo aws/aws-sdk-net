@@ -26,7 +26,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         [TestCategory("Glacier")]
         public void ListCalls()
         {
-            var testingVaultName = "dotnet-sdk-test" + DateTime.Now.Ticks.ToString();
+            var testingVaultName = "dotnet-sdk-test" + DateTime.UtcNow.Ticks.ToString();
             Client.CreateVault(new CreateVaultRequest()
             {
                 VaultName = testingVaultName
@@ -43,7 +43,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         //[TestCategory("Glacier")]
         public void TestSimpleUpload()
         {
-            var testingVaultName = "dotnet-sdk-test" + DateTime.Now.Ticks.ToString();
+            var testingVaultName = "dotnet-sdk-test" + DateTime.UtcNow.Ticks.ToString();
             Client.CreateVault(new CreateVaultRequest()
             {
                 VaultName = testingVaultName
@@ -77,7 +77,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         //[TestCategory("Glacier")]
         public void TestMultiPartUpload()
         {
-            var testingVaultName = "dotnet-sdk-test" + DateTime.Now.Ticks.ToString();
+            var testingVaultName = "dotnet-sdk-test" + DateTime.UtcNow.Ticks.ToString();
             Client.CreateVault(new CreateVaultRequest()
             {
                 VaultName = testingVaultName

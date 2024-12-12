@@ -217,7 +217,7 @@ namespace Amazon.DNXCore.IntegrationTests.S3
             var request = new PutObjectRequest
             {
                 BucketName = bucketName,
-                Key = DateTime.Now.ToFileTime() + testKey,
+                Key = DateTime.UtcNow.ToFileTime() + testKey,
                 ContentBody = testContent
             };
             return request;

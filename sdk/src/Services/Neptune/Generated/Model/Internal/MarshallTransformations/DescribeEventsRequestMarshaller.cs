@@ -63,9 +63,9 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Duration", StringUtils.FromInt(publicRequest.Duration));
                 }
-                if(publicRequest.IsSetEndTimeUtc())
+                if(publicRequest.IsSetEndTime())
                 {
-                    request.Parameters.Add("EndTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndTimeUtc));
+                    request.Parameters.Add("EndTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndTime));
                 }
                 if(publicRequest.IsSetEventCategories())
                 {
@@ -128,9 +128,9 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("SourceType", StringUtils.FromString(publicRequest.SourceType));
                 }
-                if(publicRequest.IsSetStartTimeUtc())
+                if(publicRequest.IsSetStartTime())
                 {
-                    request.Parameters.Add("StartTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartTimeUtc));
+                    request.Parameters.Add("StartTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartTime));
                 }
             }
             return request;
