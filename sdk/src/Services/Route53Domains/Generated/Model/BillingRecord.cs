@@ -126,6 +126,7 @@ namespace Amazon.Route53Domains.Model
         /// Example value: 12.0
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public double Price
         {
             get { return this._price.GetValueOrDefault(); }
