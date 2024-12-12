@@ -936,9 +936,7 @@ namespace Amazon.Util
         /// <returns>The ISO8601 formatted future timestamp.</returns>
         public static string GetFormattedTimestampRFC822(int minutesFromNow)
         {
-#pragma warning disable CS0612,CS0618 // Type or member is obsolete
             DateTime dateTime = AWSSDKUtils.CorrectedUtcNow.AddMinutes(minutesFromNow);
-#pragma warning restore CS0612,CS0618 // Type or member is obsolete
             return dateTime.ToString(AWSSDKUtils.RFC822DateFormat, CultureInfo.InvariantCulture);
         }
 
