@@ -148,15 +148,6 @@ namespace AWSSDK.UnitTests
         public override void Sign(IRequest request, 
             IClientConfig clientConfig, 
             RequestMetrics metrics,
-            string awsAccessKeyId,
-            string awsSecretAccessKey)
-        {
-             this.SignCount++;
-        }
-
-        public override void Sign(IRequest request, 
-            IClientConfig clientConfig, 
-            RequestMetrics metrics,
             BaseIdentity credentials)
         {
             this.SignCount++;

@@ -153,7 +153,7 @@ namespace AWSSDK.UnitTests
                 RegionEndpoint = RegionEndpoint.USWest1
             };
 
-            signer.Sign(request, config, new RequestMetrics(), "ACCESS", "SECRET");
+            signer.Sign(request, config, new RequestMetrics(), new BasicAWSCredentials("ACCESS", "SECRET"));
             return request;
         }
 

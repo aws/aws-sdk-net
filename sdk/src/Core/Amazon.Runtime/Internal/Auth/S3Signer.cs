@@ -54,19 +54,19 @@ namespace Amazon.Runtime.Internal.Auth
             get { return ClientProtocol.RestProtocol; }
         }
 
-        public override void Sign(IRequest request, IClientConfig clientConfig, RequestMetrics metrics, string awsAccessKeyId, string awsSecretAccessKey)
-        {
-            Sign(request, clientConfig, metrics, new BasicAWSCredentials(awsAccessKeyId, awsSecretAccessKey));
-        }
-
-        public override void Sign(IRequest request, IClientConfig clientConfig, RequestMetrics metrics, BaseIdentity baseIdentity)
+        public override void Sign(IRequest request, IClientConfig clientConfig, RequestMetrics metrics, BaseIdentity identity)
         {
             var signer = SelectSigner(this, _useSigV4, request, clientConfig);
             var aws4Signer = signer as AWS4Signer;
             var aws4aSigner = signer as AWS4aSignerCRTWrapper;
             var useV4 = aws4Signer != null;
             var useV4a = aws4aSigner != null;
-            var credentials = baseIdentity as AWSCredentials;
+            var credentials = identity as AWSCredentials;
+            if (credentials is null)
+            {
+                throw new AmazonClientException($"The identity parameter must be of type AWSCredentials for the signer {nameof(S3Signer)}.");
+            }
+
             var immutableCredentials = credentials.GetCredentials();
 
             if (useV4a)

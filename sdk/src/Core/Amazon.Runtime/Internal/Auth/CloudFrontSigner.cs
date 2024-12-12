@@ -33,9 +33,16 @@ namespace Amazon.Runtime.Internal.Auth
             get { return ClientProtocol.RestProtocol; }
         }
 
-        public override void Sign(IRequest request, IClientConfig clientConfig, RequestMetrics metrics, string awsAccessKeyId, string awsSecretAccessKey)
+        public override void Sign(IRequest request, IClientConfig clientConfig, RequestMetrics metrics, BaseIdentity identity)
         {
-            if (String.IsNullOrEmpty(awsAccessKeyId))
+            var credentials = identity as AWSCredentials;
+            if (credentials is null)
+            {
+                throw new AmazonClientException($"The identity parameter must be of type AWSCredentials for the signer {nameof(CloudFrontSigner)}.");
+            }
+
+            var immutableCredentials = credentials.GetCredentials();
+            if (String.IsNullOrEmpty(immutableCredentials.AccessKey))
             {
                 throw new ArgumentOutOfRangeException("awsAccessKeyId", "The AWS Access Key ID cannot be NULL or a Zero length string");
             }
@@ -45,16 +52,9 @@ namespace Amazon.Runtime.Internal.Auth
             string dateTimeString = dateTime.ToString(AWSSDKUtils.RFC822DateFormat, CultureInfo.InvariantCulture);
             request.Headers.Add(HeaderKeys.XAmzDateHeader, dateTimeString);
 
-            string signature = ComputeHash(dateTimeString, awsSecretAccessKey, SigningAlgorithm.HmacSHA1);
+            string signature = ComputeHash(dateTimeString, immutableCredentials.SecretKey, SigningAlgorithm.HmacSHA1);
 
-            request.Headers.Add(HeaderKeys.AuthorizationHeader, "AWS " + awsAccessKeyId + ":" + signature);
-        }
-
-        public override void Sign(IRequest request, IClientConfig clientConfig, RequestMetrics metrics, BaseIdentity baseIdentity)
-        {
-            var credentials = baseIdentity as AWSCredentials;
-            var immutableCredentials = credentials.GetCredentials();
-            Sign(request, clientConfig, metrics, immutableCredentials.AccessKey, immutableCredentials.SecretKey);
+            request.Headers.Add(HeaderKeys.AuthorizationHeader, "AWS " + immutableCredentials.AccessKey + ":" + signature);
         }
     }
 }

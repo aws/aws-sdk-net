@@ -117,19 +117,14 @@ namespace Amazon.Runtime.Internal.Auth
         /// <param name="metrics">
         /// Metrics for the request
         /// </param>
-        /// <param name="baseIdentity">
+        /// <param name="identity">
         /// The AWS credentials for the account making the service call.
         /// </param>
-        public override void Sign(IRequest request, IClientConfig clientConfig, RequestMetrics metrics, BaseIdentity baseIdentity)
+        public override void Sign(IRequest request, IClientConfig clientConfig, RequestMetrics metrics, BaseIdentity identity)
         {
-            var credentials = baseIdentity as AWSCredentials;
+            var credentials = identity as AWSCredentials;
             var immutableCredentials = credentials.GetCredentials();
             _awsSigV4AProvider.Sign(request, clientConfig, metrics, immutableCredentials);
-        }
-
-        public override void Sign(IRequest request, IClientConfig clientConfig, RequestMetrics metrics, string awsAccessKeyId, string awsSecretAccessKey)
-        {
-            throw new AWSCommonRuntimeException("SigV4a signing with only an access key and secret is not supported. Call the Sign override with ImmutableCredentials instead.");
         }
 
         /// <summary>
