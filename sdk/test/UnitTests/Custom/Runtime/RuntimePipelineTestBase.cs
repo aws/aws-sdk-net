@@ -21,6 +21,7 @@ using Amazon.Runtime.Internal.Util;
 using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.S3.Model.Internal.MarshallTransformations;
+using Smithy.Identity.Abstractions;
 using System;
 using System.Net;
 using System.Reflection;
@@ -147,16 +148,7 @@ namespace AWSSDK.UnitTests
         public override void Sign(IRequest request, 
             IClientConfig clientConfig, 
             RequestMetrics metrics,
-            string awsAccessKeyId,
-            string awsSecretAccessKey)
-        {
-             this.SignCount++;
-        }
-
-        public override void Sign(IRequest request, 
-            IClientConfig clientConfig, 
-            RequestMetrics metrics,
-            ImmutableCredentials credentials)
+            BaseIdentity credentials)
         {
             this.SignCount++;
         }

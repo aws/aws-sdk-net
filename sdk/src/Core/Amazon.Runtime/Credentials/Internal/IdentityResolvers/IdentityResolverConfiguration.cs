@@ -23,17 +23,20 @@ namespace Amazon.Runtime.Credentials.Internal.IdentityResolvers
     public class DefaultIdentityResolverConfiguration : IIdentityResolverConfiguration
     {
         public static readonly IIdentityResolverConfiguration Instance = new DefaultIdentityResolverConfiguration();
-        private static readonly Dictionary<Type, IIdentityResolver> identityResolvers = new Dictionary<Type, IIdentityResolver>()
-            {
-                { typeof(AnonymousAWSCredentials), new AnonymousIdentityResolver() },
-                { typeof(AWSCredentials), new DefaultAWSCredentialsIdentityResolver() },
-            };
+        private static readonly Dictionary<Type, IIdentityResolver> identityResolvers = new()
+        {
+            { typeof(AnonymousAWSCredentials), new AnonymousIdentityResolver() },
+            { typeof(AWSCredentials), new DefaultAWSCredentialsIdentityResolver() },
+            { typeof(AWSToken), new DefaultAWSTokenIdentityResolver() },
+        };
 
         /// <inheritdoc/>
         public IIdentityResolver GetIdentityResolver<T>() where T : BaseIdentity
         {
-            if(identityResolvers.TryGetValue(typeof(T), out var identityResolver))
+            if (identityResolvers.TryGetValue(typeof(T), out var identityResolver))
+            {
                 return identityResolver;
+            }
 
             throw new NotImplementedException($"{typeof(T).Name} is not supported");
         }
