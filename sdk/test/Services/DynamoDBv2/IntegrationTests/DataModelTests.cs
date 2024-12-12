@@ -220,7 +220,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             Context.Save(employee);
 
-            //This is a value use of .ToLocalTime
+            //This is a valid use of .ToLocalTime
             var expectedCurrTime = retrieveDateTimeInUtc ? currTime.ToUniversalTime() : currTime.ToLocalTime();
 
             // Load 
@@ -365,7 +365,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             Context.Save(employee);
 
-            //This is a value use of .ToLocalTime
+            //This is a valid use of .ToLocalTime
             var expectedCurrTime = retrieveDateTimeInUtc ? currTime.ToUniversalTime() : currTime.ToLocalTime();
 
             // Load 

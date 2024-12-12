@@ -479,10 +479,12 @@ namespace Amazon.DynamoDBv2.DataModel
                 {
                     if (targetType == typeof(DateTime))
                     {
+                        //This is a valid use of .ToLocalTime because by default the dates are in UTC. If the user specifies to not retrieve in UTC we must convert to LocalTime.
                         return ((DateTime)output).ToLocalTime();
                     }
                     else if (targetType == typeof(DateTime?))
                     {
+                        //This is a valid use of .ToLocalTime because by default the dates are in UTC. If the user specifies to not retrieve in UTC we must convert to LocalTime.
                         return ((DateTime?)output)?.ToLocalTime();
                     }
                 }

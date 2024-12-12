@@ -42,7 +42,7 @@ namespace AWSSDK.UnitTests
 
             DateTime timeUtc = new DateTime(2018, 7, 18, 0, 0, 0, DateTimeKind.Utc);
 
-            //This is a value use of .ToLocalTime to construct a local time for testing.
+            //This is a valid use of .ToLocalTime to construct a local time for testing.
             DateTime timeLocal = new DateTime(2018, 7, 18, 0, 0, 0, DateTimeKind.Utc).ToLocalTime();
             DateTime timeUnspecified = new DateTime(timeLocal.Ticks);
 
@@ -69,7 +69,7 @@ namespace AWSSDK.UnitTests
 
             DateTime timeUtc = new DateTime(2018, 7, 18, 0, 0, 0, 123, DateTimeKind.Utc);
 
-            //This is a value use of .ToLocalTime to construct a local time for testing.
+            //This is a valid use of .ToLocalTime to construct a local time for testing.
             DateTime timeLocal = new DateTime(2018, 7, 18, 0, 0, 0, 123, DateTimeKind.Utc).ToLocalTime();
             DateTime timeUnspecified = new DateTime(timeLocal.Ticks);
 

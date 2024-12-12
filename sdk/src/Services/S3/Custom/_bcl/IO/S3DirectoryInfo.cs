@@ -299,7 +299,7 @@ namespace Amazon.S3.IO
                     }
                 }
 
-                //This is a value use of .ToLocalTime because there is both LastWriteTime and LastWriteTimeUtc for S3DirectoryInfo operations.
+                //This is a valid use of .ToLocalTime because there is both LastWriteTime and LastWriteTimeUtc for S3DirectoryInfo operations.
                 return ret.ToLocalTime();
             }
         }

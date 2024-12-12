@@ -49,7 +49,7 @@ namespace AWSSDK.UnitTests
         [TestCategory("Runtime")]
         public void TestStringUtilsFromDateTimeUtcUnspecified()
         {
-            //This is a value use of .ToLocalTime to construct a local time for testing.
+            //This is a valid use of .ToLocalTime to construct a local time for testing.
             string convertedDateTime = StringUtils.FromDateTimeToISO8601(new DateTime(new DateTime(2018, 7, 18, 0, 0, 0, DateTimeKind.Utc).ToLocalTime().Ticks));
 
             Assert.AreEqual(EXPECTED_FROM_DATE_STRING, convertedDateTime);
@@ -60,7 +60,7 @@ namespace AWSSDK.UnitTests
         [TestCategory("Runtime")]
         public void TestStringUtilsFromDateTimeUtcLocal()
         {
-            //This is a value use of .ToLocalTime to construct a local time for testing.
+            //This is a valid use of .ToLocalTime to construct a local time for testing.
             string convertedDateTime = StringUtils.FromDateTimeToISO8601(new DateTime(2018, 7, 18, 0, 0, 0, DateTimeKind.Utc).ToLocalTime());
 
             Assert.AreEqual(EXPECTED_FROM_DATE_STRING, convertedDateTime);
@@ -80,7 +80,7 @@ namespace AWSSDK.UnitTests
         [TestCategory("Runtime")]
         public void TestStringUtilsFromDateTimeEpochCompatibilityUnknown()
         {
-            //This is a value use of .ToLocalTime to construct a local time for testing.
+            //This is a valid use of .ToLocalTime to construct a local time for testing.
             DateTime time = new DateTime(new DateTime(2018, 7, 18, 0, 0, 0, DateTimeKind.Utc).ToLocalTime().Ticks);
             TestStringUtilsFromDateUtcTimeEpochCompatibility(time);
         }
@@ -90,7 +90,7 @@ namespace AWSSDK.UnitTests
         [TestCategory("Runtime")]
         public void TestStringUtilsFromDateTimeEpochCompatibilityLocal()
         {
-            //This is a value use of .ToLocalTime to construct a local time for testing.
+            //This is a valid use of .ToLocalTime to construct a local time for testing.
             DateTime time = new DateTime(2018, 7, 18, 0, 0, 0, DateTimeKind.Utc).ToLocalTime();
             TestStringUtilsFromDateUtcTimeEpochCompatibility(time);
         }

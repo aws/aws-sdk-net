@@ -326,7 +326,7 @@ namespace Amazon.Runtime.Internal.Util
             lock (CacheLock)
             {
                 Contents.Clear();
-                LastCacheClean = GetCorrectedTime();
+                LastCacheClean = AWSSDKUtils.CorrectedUtcNow;
             }
         }
         public List<TKey> Keys
@@ -454,7 +454,7 @@ namespace Amazon.Runtime.Internal.Util
         {
             if (item == null)
                 return false;
-            var cutoff = GetCorrectedTime() - this.MaximumItemLifespan;
+            var cutoff = AWSSDKUtils.CorrectedUtcNow - this.MaximumItemLifespan;
             if (item.LastUseTime < cutoff)
                 return false;
 
@@ -468,7 +468,7 @@ namespace Amazon.Runtime.Internal.Util
             // Remove all items that were not accessed since the cutoff.
             // Using a cutoff is more optimal than item.Age, as we only need
             // to do DateTime calculation once, not for each item.
-            var cutoff = GetCorrectedTime() - MaximumItemLifespan;
+            var cutoff = AWSSDKUtils.CorrectedUtcNow - MaximumItemLifespan;
 
             var keysToRemove = new List<TKey>();
             foreach (var kvp in Contents)
@@ -483,7 +483,7 @@ namespace Amazon.Runtime.Internal.Util
             foreach (var key in keysToRemove)
                 Contents.Remove(key);
 
-            LastCacheClean = GetCorrectedTime();
+            LastCacheClean = AWSSDKUtils.CorrectedUtcNow;
         }
 
         private class CacheItem<T>
@@ -494,7 +494,7 @@ namespace Amazon.Runtime.Internal.Util
             {
                 get
                 {
-                    LastUseTime = GetCorrectedTime();
+                    LastUseTime = AWSSDKUtils.CorrectedUtcNow;
                     return _value;
                 }
                 private set
@@ -507,16 +507,9 @@ namespace Amazon.Runtime.Internal.Util
             public CacheItem(T value)
             {
                 Value = value;
-                LastUseTime = GetCorrectedTime();
+                LastUseTime = AWSSDKUtils.CorrectedUtcNow;
             }
-        }
-
-        private static DateTime GetCorrectedTime()
-        {
-#pragma warning disable CS0612,CS0618 // Type or member is obsolete
-            return AWSSDKUtils.CorrectedUtcNow;
-#pragma warning restore CS0612,CS0618 // Type or member is obsolete
-        }
+        }                
 
         #endregion
     }

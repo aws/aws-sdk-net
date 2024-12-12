@@ -192,7 +192,7 @@ namespace Amazon.S3.IO
                     ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)request).AddBeforeRequestHandler(S3Helper.FileIORequestEventHandler);
                     var response = s3Client.GetObjectMetadata(request);
 
-                    //This is a value use of .ToLocalTime because there is both LastWriteTime and LastWriteTimeUtc for S3FileInfo operations.
+                    //This is a valid use of .ToLocalTime because there is both LastWriteTime and LastWriteTimeUtc for S3FileInfo operations.
                     ret = response.LastModified.GetValueOrDefault().ToLocalTime();
                 }
                 return ret;
