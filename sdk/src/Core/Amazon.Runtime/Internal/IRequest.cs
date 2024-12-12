@@ -385,6 +385,5 @@ namespace Amazon.Runtime.Internal
         /// The time which the request was signed at.
         /// </summary>
         DateTime? SignedAt { get; set; }
-
     }
 }
