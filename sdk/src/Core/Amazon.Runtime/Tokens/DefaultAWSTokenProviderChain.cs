@@ -28,7 +28,6 @@ namespace Amazon.Runtime
     /// <example>
     /// Example below demonstrates how to build a custom <see cref="DefaultAWSTokenProviderChain"/> in a
     /// <see cref="ClientConfig.AWSTokenProvider"/>.
-    /// NOTE: The below example requires .NET 4.5 or above.
     /// <code>
     /// <![CDATA[
     /// var exampleServiceClientConfig = new ExampleServiceClientConfig
