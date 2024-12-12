@@ -8,6 +8,7 @@
 	AddLicenseHeader();
 #>
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -26,36 +27,223 @@ namespace AWSSDK_DotNet.IntegrationTests.SmokeTestsV2
             var modeledOperation = FindOperation(testCase);
             if (modeledOperation == null)
                 throw new ApplicationException($"Failed to find operation {testCase["operationName"]} for {testCase["id"]} while generating smoke tests for service {this.Config.ServiceModel.ServiceId}");
+
+            var testTags = testCase["tags"] as JsonData;
 #>
 
         [TestMethod]
         [TestCategory("SmokeTests")]
         [TestCategory("<#=this.Config.ServiceModel.ServiceId#>")]
-        public async Task <#=testCase["id"].ToString()#>()
+<#
+            if (testTags != null && testTags.IsArray)
+            {
+                foreach (JsonData tag in testTags)
+                {
+                    var tagValue = tag?.ToString();
+                    if (!string.IsNullOrEmpty(tagValue))
+                    {
+#>
+        [TestCategory("<#=tagValue#>")]
+<#
+                    }
+                }
+            }
+#>
+        public async Task <#=testCase["id"]?.ToString() ?? "Test"#>()
         {
             var serviceConfig = new Amazon<#=this.Config.ClassName#>Config();
-            
-            // TODO: Apply any other config settings required for the service config.
 <#
-        if (this.GetRegion(testCase) != null)
-        {
+            var region = this.GetRegion(testCase);
+            if (!string.IsNullOrEmpty(region))
+            {
 #>
-            serviceConfig.RegionEndpoint = RegionEndpoint.GetBySystemName(<#=this.GetRegion(testCase)#>);
+            serviceConfig.RegionEndpoint = RegionEndpoint.GetBySystemName(<#=region#>);
 <#
-		}
+            }
+            if (this.GetUseFipsEndpoint(testCase) != null && (bool)this.GetUseFipsEndpoint(testCase))
+            {
 #>
+            serviceConfig.UseFIPSEndpoint = true;
+<#
+            }
+            if (this.GetUseDualstackEndpoint(testCase) != null && (bool)this.GetUseDualstackEndpoint(testCase))
+            {
+#>
+            serviceConfig.UseDualstackEndpoint = true;
+<#
+            }
+            var uri = this.GetUri(testCase);
+            if (!string.IsNullOrEmpty(uri))
+            {
+#>
+            serviceConfig.ServiceURL = <#=uri#>;
+<#
+            }
+            if (this.GetUseAccelerateEndpoint(testCase) != null)
+            {
+#>
+            serviceConfig.UseAccelerateEndpoint = <#=this.GetUseAccelerateEndpoint(testCase).ToString().ToLower()#>;
+<#
+            }
+            if (this.GetUseGlobalEndpoint(testCase) != null)
+            {
+#>
+            serviceConfig.UseGlobalEndpoint = <#=this.GetUseGlobalEndpoint(testCase).ToString().ToLower()#>;
+<#
+            }
+            if (this.GetUseArnRegion(testCase) != null)
+            {
+#>
+            serviceConfig.UseArnRegion = <#=this.GetUseArnRegion(testCase).ToString().ToLower()#>;
+<#
+            }
+            if (this.GetForcePathStyle(testCase) != null)
+            {
+#>
+            serviceConfig.ForcePathStyle = <#=this.GetForcePathStyle(testCase).ToString().ToLower()#>;
+<#
+            }
+            if (this.GetUseAccountIdRouting(testCase) != null)
+            {
+#>
+            serviceConfig.UseAccountIdRouting = <#=this.GetUseAccountIdRouting(testCase).ToString().ToLower()#>;
+<#
+            }
+            var sigV4aRegionSet = this.GetSigV4aRegionSet(testCase);
+            if (sigV4aRegionSet != null && sigV4aRegionSet.Length > 0)
+            {
+#>
+            serviceConfig.SignatureVersion = "4a";
+            serviceConfig.SigningRegion = "<#=string.Join(",", sigV4aRegionSet)#>";
+<#
+            }
+#>
+       
             var serviceClient = new Amazon<#=this.Config.ClassName#>Client(serviceConfig);
-
-            // TODO: Add any input from the test case to the request object.
             var request = new <#=modeledOperation.Name#>Request();
 
-            // TODO: Handle when test cases are testing a failure condition. That means catching the exception and verifing we got the right exception.
-            var response = await serviceClient.<#=modeledOperation.Name#>Async(request);
+<#
+            var input = testCase["input"] as JsonData;
+            if (input != null && input.IsObject)
+            {
+                foreach (string key in input.PropertyNames)
+                {
+                    var value = input[key];
+                    if (value != null)
+                    {
+                        if (value.IsString)
+                        {
+#>
+            request.<#=key#> = "<#=value.ToString()#>";
+<#
+                        }
+                        else if (value.IsInt)
+                        {
+#>
+            request.<#=key#> = (int)<#=value#>;
+<#
+                        }
+                        else if (value.IsBoolean)
+                        {
+#>
+            request.<#=key#> = <#=value.ToString().ToLower()#>;
+<#
+                        }
+                        else if (value.IsArray)
+                        {
+                            if (key == "Tags")
+                            {
+#>
+            request.Tags = new List<Tag>();
+<#
+                                foreach (JsonData tag in value)
+                                {
+                                    if (tag != null && tag.IsObject && tag["Key"] != null && tag["Value"] != null)
+                                    {
+#>
+            request.Tags.Add(new Tag { Key = "<#=tag["Key"]#>", Value = "<#=tag["Value"]#>" });
+<#
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                var arrayValues = new List<string>();
+                                foreach (JsonData item in value)
+                                {
+                                    if (item != null && item.IsString)
+                                    {
+                                        arrayValues.Add($"\"{item.ToString()}\"");
+                                    }
+                                }
+                                if (arrayValues.Count > 0)
+                                {
+#>
+            request.<#=key#> = new List<string> { <#=string.Join(", ", arrayValues)#> };
+<#
+                                }
+                            }
+                        }
+                        else if (value.IsObject)
+                        {
+                            if (key == "Includes")
+                            {
+#>
+            request.<#=key#> = new Filters
+            {
+<#
+                                var keyTypes = value["keyTypes"] as JsonData;
+                                if (keyTypes != null && keyTypes.IsArray)
+                                {
+                                    var keyTypeValues = new List<string>();
+                                    foreach (JsonData keyType in keyTypes)
+                                    {
+                                        if (keyType != null && keyType.IsString)
+                                        {
+                                            keyTypeValues.Add($"\"{keyType.ToString()}\"");
+                                        }
+                                    }
+                                    if (keyTypeValues.Count > 0)
+                                    {
+#>
+                KeyTypes = new List<string> { <#=string.Join(", ", keyTypeValues)#> }
+<#
+                                    }
+                                }
+#>
+            };
+<#
+                            }
+                        }
+                    }
+                }
+            }
 
-            await Task.CompletedTask;
+            if (IsSuccessExpected(testCase))
+            {
+#>
+            var response = await serviceClient.<#=modeledOperation.Name#>Async(request);
+<#
+            }
+            else
+            {
+                var errorId = GetExpectedErrorId(testCase);
+#>
+            try
+            {
+                var response = await serviceClient.<#=modeledOperation.Name#>Async(request);
+                Assert.Fail("Expected <#=errorId ?? "an error response"#> exception, but the call succeeded.");
+            }
+            catch (Amazon<#=this.Config.ClassName#>Exception ex)
+            {
+                Assert.AreEqual("<#=errorId#>", ex.ErrorCode);
+            }
+<#
+            }
+#>
         }
 <#
-		}
+        }
 #>
     }
 }
