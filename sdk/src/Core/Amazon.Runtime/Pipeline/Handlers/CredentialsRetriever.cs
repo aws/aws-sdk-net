@@ -82,7 +82,7 @@ namespace Amazon.Runtime.Internal
             {
                 using (TracingUtilities.CreateSpan(executionContext.RequestContext, TelemetryConstants.CredentialsRetrievalSpanName))
                 using (MetricsUtilities.MeasureDuration(executionContext.RequestContext, TelemetryConstants.ResolveIdentityDurationMetricName))
-                using(executionContext.RequestContext.Metrics.StartEvent(Metric.CredentialsRequestTime))
+                using (executionContext.RequestContext.Metrics.StartEvent(Metric.CredentialsRequestTime))
                 {
                     ic = await identity.GetCredentialsAsync().ConfigureAwait(false);
                 }
