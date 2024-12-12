@@ -32,7 +32,7 @@ namespace Amazon.KinesisVideoWebRTCStorage
     public partial class AmazonKinesisVideoWebRTCStorageConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Kinesis Video WebRTC Storage", "3.7.401.59");
+            InternalSDKUtils.BuildUserAgentString("Kinesis Video WebRTC Storage", "3.7.401.60");
 
         private string _userAgent = UserAgentString;
         ///<summary>

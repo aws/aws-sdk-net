@@ -1,3 +1,18 @@
+### 3.7.945.0 (2024-12-12 19:39 UTC)
+* Connect (3.7.414.0)
+	* Configure holidays and other overrides to hours of operation in advance. During contact handling, Amazon Connect automatically checks for overrides and provides customers with an appropriate flow path. After an override period passes call center automatically reverts to standard hours of operation.
+* DatabaseMigrationService (3.7.403.0)
+	* Add parameters to support for kerberos authentication. Add parameter for disabling the Unicode source filter with PostgreSQL settings. Add parameter to use large integer value with Kinesis/Kafka settings.
+* Glue (3.7.412.0)
+	* To support customer-managed encryption in Data Quality to allow customers encrypt data with their own KMS key, we will add a DataQualityEncryption field to the SecurityConfiguration API where customers can provide their KMS keys.
+* GuardDuty (3.7.405.5)
+	* Improved descriptions for certain APIs.
+* Route53Domains (3.7.401.0)
+	* This release includes the following API updates: added the enumeration type RESTORE_DOMAIN to the OperationType; constrained the Price attribute to non-negative values; updated the LangCode to allow 2 or 3 alphabetical characters.
+* Core 3.7.400.63
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.944.0 (2024-12-11 20:00 UTC)
 * Artifact (3.7.401.0)
 	* Add support for listing active customer agreements for the calling AWS Account.
