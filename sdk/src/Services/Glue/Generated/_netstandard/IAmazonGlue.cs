@@ -1781,6 +1781,13 @@ namespace Amazon.Glue
 
         /// <summary>
         /// Creates a new trigger.
+        /// 
+        ///  
+        /// <para>
+        /// Job arguments may be logged. Do not pass plaintext secrets as arguments. Retrieve
+        /// secrets from a Glue Connection, Amazon Web Services Secrets Manager or other secret
+        /// management mechanism if you intend to keep them within the Job.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTrigger service method.</param>
         /// <param name="cancellationToken">
@@ -4349,8 +4356,8 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Retrieves the metadata for a given job run. Job run history is accessible for 90 days
-        /// for your workflow and job run.
+        /// Retrieves the metadata for a given job run. Job run history is accessible for 365
+        /// days for your workflow and job run.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetJobRun service method.</param>
         /// <param name="cancellationToken">
@@ -4381,6 +4388,12 @@ namespace Amazon.Glue
 
         /// <summary>
         /// Retrieves metadata for all runs of a given job definition.
+        /// 
+        ///  
+        /// <para>
+        ///  <c>GetJobRuns</c> returns the job runs in chronological order, with the newest jobs
+        /// returned first.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetJobRuns service method.</param>
         /// <param name="cancellationToken">
@@ -8849,6 +8862,13 @@ namespace Amazon.Glue
 
         /// <summary>
         /// Updates a trigger definition.
+        /// 
+        ///  
+        /// <para>
+        /// Job arguments may be logged. Do not pass plaintext secrets as arguments. Retrieve
+        /// secrets from a Glue Connection, Amazon Web Services Secrets Manager or other secret
+        /// management mechanism if you intend to keep them within the Job.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateTrigger service method.</param>
         /// <param name="cancellationToken">

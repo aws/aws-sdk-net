@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for EncryptionConfiguration Object
+    /// Response Unmarshaller for DataQualityEncryption Object
     /// </summary>  
-    public class EncryptionConfigurationUnmarshaller : IUnmarshaller<EncryptionConfiguration, XmlUnmarshallerContext>, IUnmarshaller<EncryptionConfiguration, JsonUnmarshallerContext>
+    public class DataQualityEncryptionUnmarshaller : IUnmarshaller<DataQualityEncryption, XmlUnmarshallerContext>, IUnmarshaller<DataQualityEncryption, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        EncryptionConfiguration IUnmarshaller<EncryptionConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        DataQualityEncryption IUnmarshaller<DataQualityEncryption, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public EncryptionConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public DataQualityEncryption Unmarshall(JsonUnmarshallerContext context)
         {
-            EncryptionConfiguration unmarshalledObject = new EncryptionConfiguration();
+            DataQualityEncryption unmarshalledObject = new DataQualityEncryption();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,28 +66,16 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("CloudWatchEncryption", targetDepth))
+                if (context.TestExpression("DataQualityEncryptionMode", targetDepth))
                 {
-                    var unmarshaller = CloudWatchEncryptionUnmarshaller.Instance;
-                    unmarshalledObject.CloudWatchEncryption = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DataQualityEncryptionMode = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("DataQualityEncryption", targetDepth))
+                if (context.TestExpression("KmsKeyArn", targetDepth))
                 {
-                    var unmarshaller = DataQualityEncryptionUnmarshaller.Instance;
-                    unmarshalledObject.DataQualityEncryption = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("JobBookmarksEncryption", targetDepth))
-                {
-                    var unmarshaller = JobBookmarksEncryptionUnmarshaller.Instance;
-                    unmarshalledObject.JobBookmarksEncryption = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("S3Encryption", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<S3Encryption, S3EncryptionUnmarshaller>(S3EncryptionUnmarshaller.Instance);
-                    unmarshalledObject.S3Encryption = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.KmsKeyArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -95,12 +83,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         }
 
 
-        private static EncryptionConfigurationUnmarshaller _instance = new EncryptionConfigurationUnmarshaller();        
+        private static DataQualityEncryptionUnmarshaller _instance = new DataQualityEncryptionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static EncryptionConfigurationUnmarshaller Instance
+        public static DataQualityEncryptionUnmarshaller Instance
         {
             get
             {
