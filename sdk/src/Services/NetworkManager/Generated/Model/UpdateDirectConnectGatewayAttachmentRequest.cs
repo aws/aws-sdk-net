@@ -63,7 +63,7 @@ namespace Amazon.NetworkManager.Model
         /// <para>
         /// One or more edge locations to update for the Direct Connect gateway attachment. The
         /// updated array of edge locations overwrites the previous array of locations. <c>EdgeLocations</c>
-        /// is only used for Direct Connect gateway attachments. Do
+        /// is only used for Direct Connect gateway attachments.
         /// </para>
         /// </summary>
         public List<string> EdgeLocations
