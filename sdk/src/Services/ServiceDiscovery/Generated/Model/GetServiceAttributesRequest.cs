@@ -30,31 +30,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceDiscovery.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteService operation.
-    /// Deletes a specified service and all associated service attributes. If the service
-    /// still contains one or more registered instances, the request fails.
+    /// Container for the parameters to the GetServiceAttributes operation.
+    /// Returns the attributes associated with a specified service.
     /// </summary>
-    public partial class DeleteServiceRequest : AmazonServiceDiscoveryRequest
+    public partial class GetServiceAttributesRequest : AmazonServiceDiscoveryRequest
     {
-        private string _id;
+        private string _serviceId;
 
         /// <summary>
-        /// Gets and sets the property Id. 
+        /// Gets and sets the property ServiceId. 
         /// <para>
-        /// The ID of the service that you want to delete.
+        /// The ID of the service that you want to get attributes for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=64)]
-        public string Id
+        public string ServiceId
         {
-            get { return this._id; }
-            set { this._id = value; }
+            get { return this._serviceId; }
+            set { this._serviceId = value; }
         }
 
-        // Check to see if Id property is set
-        internal bool IsSetId()
+        // Check to see if ServiceId property is set
+        internal bool IsSetServiceId()
         {
-            return this._id != null;
+            return this._serviceId != null;
         }
 
     }
