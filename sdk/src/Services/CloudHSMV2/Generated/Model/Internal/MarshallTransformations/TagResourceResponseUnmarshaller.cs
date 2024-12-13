@@ -82,6 +82,10 @@ namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
                 {
                     return CloudHsmInvalidRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("CloudHsmResourceLimitExceededException"))
+                {
+                    return CloudHsmResourceLimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("CloudHsmResourceNotFoundException"))
                 {
                     return CloudHsmResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

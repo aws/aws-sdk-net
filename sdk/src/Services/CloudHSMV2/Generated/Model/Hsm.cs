@@ -38,6 +38,7 @@ namespace Amazon.CloudHSMV2.Model
         private string _clusterId;
         private string _eniId;
         private string _eniIp;
+        private string _eniIpV6;
         private string _hsmId;
         private HsmState _state;
         private string _stateMessage;
@@ -113,6 +114,25 @@ namespace Amazon.CloudHSMV2.Model
         internal bool IsSetEniIp()
         {
             return this._eniIp != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EniIpV6. 
+        /// <para>
+        /// The IPv6 address (if any) of the HSM's elastic network interface (ENI).
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=100)]
+        public string EniIpV6
+        {
+            get { return this._eniIpV6; }
+            set { this._eniIpV6 = value; }
+        }
+
+        // Check to see if EniIpV6 property is set
+        internal bool IsSetEniIpV6()
+        {
+            return this._eniIpV6 != null;
         }
 
         /// <summary>
