@@ -980,7 +980,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 Assert.AreEqual(product.KeySizes.Count, retrieved.KeySizes.Count);
                 Assert.IsNotNull(retrieved.CompanyInfo);
                 Assert.AreEqual(product.CompanyInfo.Name, retrieved.CompanyInfo.Name);
-                Assert.AreEqual(product.CompanyInfo.Founded, retrieved.CompanyInfo.Founded);
+                Assert.AreEqual(product.CompanyInfo.Founded.ToUniversalTime(), retrieved.CompanyInfo.Founded);
                 Assert.AreNotEqual(product.CompanyInfo.Revenue, retrieved.CompanyInfo.Revenue);
                 Assert.AreEqual(product.CompanyInfo.AllProducts.Count, retrieved.CompanyInfo.AllProducts.Count);
                 Assert.AreEqual(product.CompanyInfo.AllProducts[0].Id, retrieved.CompanyInfo.AllProducts[0].Id);
