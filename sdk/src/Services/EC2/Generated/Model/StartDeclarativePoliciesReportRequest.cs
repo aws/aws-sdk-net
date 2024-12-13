@@ -64,8 +64,9 @@ namespace Amazon.EC2.Model
     ///  </li> <li> 
     /// <para>
     /// An S3 bucket must be available before generating the report (you can create a new
-    /// one or use an existing one), and it must have an appropriate bucket policy. For a
-    /// sample S3 policy, see <i>Sample Amazon S3 policy</i> under .
+    /// one or use an existing one), it must be in the same Region where the report generation
+    /// request is made, and it must have an appropriate bucket policy. For a sample S3 policy,
+    /// see <i>Sample Amazon S3 policy</i> under .
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -101,7 +102,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property S3Bucket. 
         /// <para>
-        /// The name of the S3 bucket where the report will be saved.
+        /// The name of the S3 bucket where the report will be saved. The bucket must be in the
+        /// same Region where the report generation request is made.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
