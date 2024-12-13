@@ -1861,6 +1861,10 @@ namespace Amazon.EKS
         /// </summary>
         public static readonly UpdateParamType MinSize = new UpdateParamType("MinSize");
         /// <summary>
+        /// Constant NodeRepairEnabled for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType NodeRepairEnabled = new UpdateParamType("NodeRepairEnabled");
+        /// <summary>
         /// Constant PlatformVersion for UpdateParamType
         /// </summary>
         public static readonly UpdateParamType PlatformVersion = new UpdateParamType("PlatformVersion");

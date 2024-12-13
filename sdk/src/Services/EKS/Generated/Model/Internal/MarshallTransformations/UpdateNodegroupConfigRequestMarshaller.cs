@@ -95,6 +95,17 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetNodeRepairConfig())
+                {
+                    context.Writer.WritePropertyName("nodeRepairConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = NodeRepairConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.NodeRepairConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetScalingConfig())
                 {
                     context.Writer.WritePropertyName("scalingConfig");
