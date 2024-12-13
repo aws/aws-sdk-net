@@ -234,7 +234,7 @@ namespace Amazon.S3.IO
         }
 
         /// <summary>
-        /// Returns the last write time of the the latest file written to the directory.
+        /// Returns the last write time of the latest file written to the directory in local time.
         /// </summary>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
@@ -305,7 +305,7 @@ namespace Amazon.S3.IO
         }
 
         /// <summary>
-        /// UTC converted version of LastWriteTime.
+        /// Returns the last write time of the latest file written to the directory in UTC time.
         /// </summary>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>

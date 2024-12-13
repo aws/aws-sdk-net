@@ -173,7 +173,7 @@ namespace Amazon.S3.IO
         }
 
         /// <summary>
-        /// Returns the last time the file was modified.
+        /// Returns the last time the file was modified in local time.
         /// </summary>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
@@ -201,7 +201,7 @@ namespace Amazon.S3.IO
         }
 
         /// <summary>
-        /// Returns the last time the file was modified in UTC.
+        /// Returns the last time the file was modified in UTC time.
         /// </summary>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>

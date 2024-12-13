@@ -197,10 +197,10 @@ namespace Amazon.S3.Transfer.Internal
         private bool ShouldDownload(S3Object s3o)
         {
             // skip objects based on ModifiedSinceDate
-            if (this._request.IsSetModifiedSinceDate() && s3o.LastModified.GetValueOrDefault().ToUniversalTime() <= this._request.ModifiedSinceDate.ToUniversalTime())
+            if (this._request.IsSetModifiedSinceDate() && s3o.LastModified.GetValueOrDefault() <= this._request.ModifiedSinceDate.ToUniversalTime())
                 return false;
             // skip objects based on UnmodifiedSinceDate
-            if (this._request.IsSetUnmodifiedSinceDate() && s3o.LastModified.GetValueOrDefault().ToUniversalTime() > this._request.UnmodifiedSinceDate.ToUniversalTime())
+            if (this._request.IsSetUnmodifiedSinceDate() && s3o.LastModified.GetValueOrDefault() > this._request.UnmodifiedSinceDate.ToUniversalTime())
                 return false;
             // skip objects which are instruction files and we're using encryption client
             if (IsInstructionFile(s3o.Key))
