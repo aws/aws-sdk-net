@@ -72,7 +72,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListIntegrations.html">ListIntegrations</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public string IntegrationName
         {
             get { return this._integrationName; }

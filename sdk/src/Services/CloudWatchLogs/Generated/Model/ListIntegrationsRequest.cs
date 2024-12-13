@@ -48,7 +48,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// that name prefix here.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
+        [AWSProperty(Min=1, Max=50)]
         public string IntegrationNamePrefix
         {
             get { return this._integrationNamePrefix; }

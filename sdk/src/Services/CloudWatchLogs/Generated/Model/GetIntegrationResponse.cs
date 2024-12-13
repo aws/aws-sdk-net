@@ -65,7 +65,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// The name of the integration.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
+        [AWSProperty(Min=1, Max=50)]
         public string IntegrationName
         {
             get { return this._integrationName; }

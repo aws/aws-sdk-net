@@ -157,7 +157,7 @@
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.DeleteIntegrationRequest.IntegrationName</property>
     <min>1</min>
-    <max>256</max>
+    <max>50</max>
     <pattern>[\.\-_/#A-Za-z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -608,13 +608,13 @@
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.GetIntegrationRequest.IntegrationName</property>
     <min>1</min>
-    <max>256</max>
+    <max>50</max>
     <pattern>[\.\-_/#A-Za-z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.GetIntegrationResponse.IntegrationName</property>
     <min>1</min>
-    <max>256</max>
+    <max>50</max>
     <pattern>[\.\-_/#A-Za-z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -757,7 +757,7 @@
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.ListIntegrationsRequest.IntegrationNamePrefix</property>
     <min>1</min>
-    <max>256</max>
+    <max>50</max>
     <pattern>[\.\-_/#A-Za-z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -892,13 +892,13 @@
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.PutIntegrationRequest.IntegrationName</property>
     <min>1</min>
-    <max>256</max>
+    <max>50</max>
     <pattern>[\.\-_/#A-Za-z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.PutIntegrationResponse.IntegrationName</property>
     <min>1</min>
-    <max>256</max>
+    <max>50</max>
     <pattern>[\.\-_/#A-Za-z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1470,7 +1470,7 @@
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.IntegrationSummary.IntegrationName</property>
     <min>1</min>
-    <max>256</max>
+    <max>50</max>
     <pattern>[\.\-_/#A-Za-z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
