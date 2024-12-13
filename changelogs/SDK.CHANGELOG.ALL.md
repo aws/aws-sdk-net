@@ -1,3 +1,22 @@
+### 3.7.946.0 (2024-12-13 19:34 UTC)
+* CloudHSMV2 (3.7.401.0)
+	* Add support for Dual-Stack hsm2m.medium clusters. The customers will now be able to create hsm2m.medium clusters having both IPv4 and IPv6 connection capabilities by specifying a new param called NetworkType=DUALSTACK during cluster creation.
+* CloudWatchLogs (3.7.409.0)
+	* Limit PutIntegration IntegrationName and ListIntegrations IntegrationNamePrefix parameters to 50 characters
+* EC2 (3.7.424.0)
+	* This release adds GroupId to the response for DeleteSecurityGroup.
+* EKS (3.7.406.0)
+	* Add NodeRepairConfig in CreateNodegroupRequest and UpdateNodegroupConfigRequest
+* MediaConnect (3.7.402.0)
+	* AWS Elemental MediaConnect Gateway now supports Source Specific Multicast (SSM) for ingress bridges. This enables you to specify a source IP address in addition to a multicast IP when creating or updating an ingress bridge source.
+* NetworkManager (3.7.401.7)
+	* There was a sentence fragment in UpdateDirectConnectGatewayAttachment that was causing customer confusion as to whether it's an incomplete sentence or if it was a typo. Removed the fragment.
+* ServiceDiscovery (3.7.401.0)
+	* AWS Cloud Map now supports service-level attributes, allowing you to associate custom metadata directly with services. These attributes can be retrieved, updated, and deleted using the new GetServiceAttributes, UpdateServiceAttributes, and DeleteServiceAttributes API calls.
+* Core 3.7.400.64
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.945.0 (2024-12-12 19:39 UTC)
 * Connect (3.7.414.0)
 	* Configure holidays and other overrides to hours of operation in advance. During contact handling, Amazon Connect automatically checks for overrides and provides customers with an appropriate flow path. After an override period passes call center automatically reverts to standard hours of operation.
