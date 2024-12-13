@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for BridgeNetworkSource Object
+    /// Response Unmarshaller for MulticastSourceSettings Object
     /// </summary>  
-    public class BridgeNetworkSourceUnmarshaller : IUnmarshaller<BridgeNetworkSource, XmlUnmarshallerContext>, IUnmarshaller<BridgeNetworkSource, JsonUnmarshallerContext>
+    public class MulticastSourceSettingsUnmarshaller : IUnmarshaller<MulticastSourceSettings, XmlUnmarshallerContext>, IUnmarshaller<MulticastSourceSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        BridgeNetworkSource IUnmarshaller<BridgeNetworkSource, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        MulticastSourceSettings IUnmarshaller<MulticastSourceSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public BridgeNetworkSource Unmarshall(JsonUnmarshallerContext context)
+        public MulticastSourceSettings Unmarshall(JsonUnmarshallerContext context)
         {
-            BridgeNetworkSource unmarshalledObject = new BridgeNetworkSource();
+            MulticastSourceSettings unmarshalledObject = new MulticastSourceSettings();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,40 +66,10 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("multicastIp", targetDepth))
+                if (context.TestExpression("multicastSourceIp", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MulticastIp = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("multicastSourceSettings", targetDepth))
-                {
-                    var unmarshaller = MulticastSourceSettingsUnmarshaller.Instance;
-                    unmarshalledObject.MulticastSourceSettings = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("networkName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.NetworkName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("port", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.Port = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("protocol", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Protocol = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MulticastSourceIp = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -107,12 +77,12 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
         }
 
 
-        private static BridgeNetworkSourceUnmarshaller _instance = new BridgeNetworkSourceUnmarshaller();        
+        private static MulticastSourceSettingsUnmarshaller _instance = new MulticastSourceSettingsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static BridgeNetworkSourceUnmarshaller Instance
+        public static MulticastSourceSettingsUnmarshaller Instance
         {
             get
             {

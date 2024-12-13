@@ -35,6 +35,7 @@ namespace Amazon.MediaConnect.Model
     public partial class BridgeNetworkSource
     {
         private string _multicastIp;
+        private MulticastSourceSettings _multicastSourceSettings;
         private string _name;
         private string _networkName;
         private int? _port;
@@ -54,6 +55,21 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetMulticastIp()
         {
             return this._multicastIp != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MulticastSourceSettings.
+        /// </summary>
+        public MulticastSourceSettings MulticastSourceSettings
+        {
+            get { return this._multicastSourceSettings; }
+            set { this._multicastSourceSettings = value; }
+        }
+
+        // Check to see if MulticastSourceSettings property is set
+        internal bool IsSetMulticastSourceSettings()
+        {
+            return this._multicastSourceSettings != null;
         }
 
         /// <summary>
