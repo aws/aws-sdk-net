@@ -28,7 +28,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
     /// A DynamoDBEntry that represents a primitive list DynamoDB type
     /// </summary>
 #if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+    //[System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
     public class PrimitiveList : DynamoDBEntry, IEquatable<PrimitiveList>
     {

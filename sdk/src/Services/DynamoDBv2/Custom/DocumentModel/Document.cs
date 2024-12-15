@@ -30,7 +30,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
     /// an item in DynamoDB.
     /// </summary>
 #if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+    //[System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
     public class Document : DynamoDBEntry, IDictionary<string, DynamoDBEntry>
     {

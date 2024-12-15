@@ -20,6 +20,7 @@ using Amazon.Util;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -31,7 +32,7 @@ namespace Amazon.DynamoDBv2
     #region Basic converters
 
 #if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+    //[System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
     internal class ByteConverterV1 : Converter<byte>
     {
@@ -40,14 +41,19 @@ namespace Amazon.DynamoDBv2
             p = new Primitive(value.ToString("d", CultureInfo.InvariantCulture), DynamoDBEntryType.Numeric);
             return true;
         }
+
+#if NET8_0_OR_GREATER
+        protected override bool TryFrom(Primitive p, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type targetType, out byte result)
+#else
         protected override bool TryFrom(Primitive p, Type targetType, out byte result)
+#endif
         {
             return byte.TryParse(p.StringValue, NumberStyles.Integer, CultureInfo.InvariantCulture, out result);
         }
     }
 
 #if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+    //[System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
     internal class SByteConverterV1 : Converter<SByte>
     {
@@ -56,14 +62,19 @@ namespace Amazon.DynamoDBv2
             p = new Primitive(value.ToString("d", CultureInfo.InvariantCulture), DynamoDBEntryType.Numeric);
             return true;
         }
+
+#if NET8_0_OR_GREATER
+        protected override bool TryFrom(Primitive p, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type targetType, out sbyte result)
+#else
         protected override bool TryFrom(Primitive p, Type targetType, out sbyte result)
+#endif
         {
             return SByte.TryParse(p.StringValue, NumberStyles.Integer, CultureInfo.InvariantCulture, out result);
         }
     }
 
 #if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+    //[System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
     internal class UInt16ConverterV1 : Converter<UInt16>
     {
@@ -72,14 +83,19 @@ namespace Amazon.DynamoDBv2
             p = new Primitive(value.ToString("d", CultureInfo.InvariantCulture), DynamoDBEntryType.Numeric);
             return true;
         }
+
+#if NET8_0_OR_GREATER
+        protected override bool TryFrom(Primitive p, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type targetType, out ushort result)
+#else
         protected override bool TryFrom(Primitive p, Type targetType, out ushort result)
+#endif
         {
             return UInt16.TryParse(p.StringValue, NumberStyles.Integer, CultureInfo.InvariantCulture, out result);
         }
     }
 
 #if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+    //[System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
     internal class Int16ConverterV1 : Converter<Int16>
     {
@@ -88,14 +104,19 @@ namespace Amazon.DynamoDBv2
             p = new Primitive(value.ToString("d", CultureInfo.InvariantCulture), DynamoDBEntryType.Numeric);
             return true;
         }
+
+#if NET8_0_OR_GREATER
+        protected override bool TryFrom(Primitive p, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type targetType, out short result)
+#else
         protected override bool TryFrom(Primitive p, Type targetType, out short result)
+#endif
         {
             return Int16.TryParse(p.StringValue, NumberStyles.Integer, CultureInfo.InvariantCulture, out result);
         }
     }
 
 #if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+    //[System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
     internal class UInt32ConverterV1 : Converter<UInt32>
     {
@@ -104,14 +125,19 @@ namespace Amazon.DynamoDBv2
             p = new Primitive(value.ToString("d", CultureInfo.InvariantCulture), DynamoDBEntryType.Numeric);
             return true;
         }
+
+#if NET8_0_OR_GREATER
+        protected override bool TryFrom(Primitive p, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type targetType, out uint result)
+#else
         protected override bool TryFrom(Primitive p, Type targetType, out uint result)
+#endif
         {
             return UInt32.TryParse(p.StringValue, NumberStyles.Integer, CultureInfo.InvariantCulture, out result);
         }
     }
 
 #if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+    //[System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
     internal class Int32ConverterV1 : Converter<Int32>
     {
@@ -120,14 +146,19 @@ namespace Amazon.DynamoDBv2
             p = new Primitive(value.ToString("d", CultureInfo.InvariantCulture), DynamoDBEntryType.Numeric);
             return true;
         }
+
+#if NET8_0_OR_GREATER
+        protected override bool TryFrom(Primitive p, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type targetType, out int result)
+#else
         protected override bool TryFrom(Primitive p, Type targetType, out int result)
+#endif
         {
             return Int32.TryParse(p.StringValue, NumberStyles.Integer, CultureInfo.InvariantCulture, out result);
         }
     }
 
 #if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+    //[System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
     internal class UInt64ConverterV1 : Converter<UInt64>
     {
@@ -136,14 +167,19 @@ namespace Amazon.DynamoDBv2
             p = new Primitive(value.ToString("d", CultureInfo.InvariantCulture), DynamoDBEntryType.Numeric);
             return true;
         }
+
+#if NET8_0_OR_GREATER
+        protected override bool TryFrom(Primitive p, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type targetType, out ulong result)
+#else
         protected override bool TryFrom(Primitive p, Type targetType, out ulong result)
+#endif
         {
             return UInt64.TryParse(p.StringValue, NumberStyles.Integer, CultureInfo.InvariantCulture, out result);
         }
     }
 
 #if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+    //[System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
     internal class Int64ConverterV1 : Converter<Int64>
     {
@@ -152,14 +188,19 @@ namespace Amazon.DynamoDBv2
             p = new Primitive(value.ToString("d", CultureInfo.InvariantCulture), DynamoDBEntryType.Numeric);
             return true;
         }
+
+#if NET8_0_OR_GREATER
+        protected override bool TryFrom(Primitive p, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type targetType, out long result)
+#else
         protected override bool TryFrom(Primitive p, Type targetType, out long result)
+#endif
         {
             return Int64.TryParse(p.StringValue, NumberStyles.Integer, CultureInfo.InvariantCulture, out result);
         }
     }
 
 #if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+    //[System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
     internal class SingleConverterV1 : Converter<Single>
     {
@@ -168,14 +209,18 @@ namespace Amazon.DynamoDBv2
             p = new Primitive(value.ToString("r", CultureInfo.InvariantCulture), DynamoDBEntryType.Numeric);
             return true;
         }
+#if NET8_0_OR_GREATER
+        protected override bool TryFrom(Primitive p, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type targetType, out float result)
+#else
         protected override bool TryFrom(Primitive p, Type targetType, out float result)
+#endif
         {
             return Single.TryParse(p.StringValue, NumberStyles.Float, CultureInfo.InvariantCulture, out result);
         }
     }
 
 #if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+    //[System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
     internal class DoubleConverterV1 : Converter<Double>
     {
@@ -184,14 +229,19 @@ namespace Amazon.DynamoDBv2
             p = new Primitive(value.ToString("r", CultureInfo.InvariantCulture), DynamoDBEntryType.Numeric);
             return true;
         }
+
+#if NET8_0_OR_GREATER
+        protected override bool TryFrom(Primitive p, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type targetType, out double result)
+#else
         protected override bool TryFrom(Primitive p, Type targetType, out double result)
+#endif
         {
             return Double.TryParse(p.StringValue, NumberStyles.Float, CultureInfo.InvariantCulture, out result);
         }
     }
 
 #if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+    //[System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
     internal class DecimalConverterV1 : Converter<Decimal>
     {
@@ -200,14 +250,18 @@ namespace Amazon.DynamoDBv2
             p = new Primitive(value.ToString("g", CultureInfo.InvariantCulture), DynamoDBEntryType.Numeric);
             return true;
         }
+#if NET8_0_OR_GREATER
+        protected override bool TryFrom(Primitive p, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type targetType, out decimal result)
+#else
         protected override bool TryFrom(Primitive p, Type targetType, out decimal result)
+#endif
         {
             return Decimal.TryParse(p.StringValue, NumberStyles.Float, CultureInfo.InvariantCulture, out result);
         }
     }
 
 #if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+    //[System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
     internal class CharConverterV1 : Converter<Char>
     {
@@ -216,14 +270,19 @@ namespace Amazon.DynamoDBv2
             p = new Primitive(value.ToString(), DynamoDBEntryType.String);
             return true;
         }
+
+#if NET8_0_OR_GREATER
+        protected override bool TryFrom(Primitive p, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type targetType, out char result)
+#else
         protected override bool TryFrom(Primitive p, Type targetType, out char result)
+#endif
         {
             return Char.TryParse(p.StringValue, out result);
         }
     }
 
 #if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+    //[System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
     internal class StringConverterV1 : Converter<String>
     {
@@ -232,7 +291,12 @@ namespace Amazon.DynamoDBv2
             p = new Primitive(value, DynamoDBEntryType.String);
             return true;
         }
+
+#if NET8_0_OR_GREATER
+        protected override bool TryFrom(Primitive p, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type targetType, out string result)
+#else
         protected override bool TryFrom(Primitive p, Type targetType, out string result)
+#endif
         {
             result = p.StringValue;
             return (result != null);
@@ -240,7 +304,7 @@ namespace Amazon.DynamoDBv2
     }
 
 #if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+    //[System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
     internal class DateTimeConverterV1 : Converter<DateTime>
     {
@@ -250,7 +314,12 @@ namespace Amazon.DynamoDBv2
             p = new Primitive(utc.ToString(AWSSDKUtils.ISO8601DateFormat, CultureInfo.InvariantCulture), DynamoDBEntryType.String);
             return true;
         }
+
+#if NET8_0_OR_GREATER
+        protected override bool TryFrom(Primitive p, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type targetType, out DateTime result)
+#else
         protected override bool TryFrom(Primitive p, Type targetType, out DateTime result)
+#endif
         {
             if (DateTime.TryParseExact(p.StringValue, AWSSDKUtils.ISO8601DateFormat, CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal, out result))
             {
@@ -261,7 +330,7 @@ namespace Amazon.DynamoDBv2
     }
 
 #if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+    //[System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
     internal class GuidConverterV1 : Converter<Guid>
     {
@@ -270,7 +339,12 @@ namespace Amazon.DynamoDBv2
             p = new Primitive(value.ToString("D"), DynamoDBEntryType.String);
             return true;
         }
+
+#if NET8_0_OR_GREATER
+        protected override bool TryFrom(Primitive p, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type targetType, out Guid result)
+#else
         protected override bool TryFrom(Primitive p, Type targetType, out Guid result)
+#endif
         {
             result = new Guid(p.StringValue);
             return true;
@@ -278,7 +352,7 @@ namespace Amazon.DynamoDBv2
     }
 
 #if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+    //[System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
     internal class BytesConverterV1 : Converter<byte[]>
     {
@@ -287,7 +361,12 @@ namespace Amazon.DynamoDBv2
             p = new Primitive(value);
             return true;
         }
+
+#if NET8_0_OR_GREATER
+        protected override bool TryFrom(Primitive p, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type targetType, out byte[] result)
+#else
         protected override bool TryFrom(Primitive p, Type targetType, out byte[] result)
+#endif
         {
             result = p.Value as byte[];
             return (result != null);
@@ -295,7 +374,7 @@ namespace Amazon.DynamoDBv2
     }
 
 #if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+    //[System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
     internal class MemoryStreamConverterV1 : Converter<MemoryStream>
     {
@@ -304,7 +383,12 @@ namespace Amazon.DynamoDBv2
             p = new Primitive(value);
             return true;
         }
+
+#if NET8_0_OR_GREATER
+        protected override bool TryFrom(Primitive p, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type targetType, out MemoryStream result)
+#else
         protected override bool TryFrom(Primitive p, Type targetType, out MemoryStream result)
+#endif
         {
             var bytes = p.Value as byte[];
             if (bytes == null)
@@ -319,7 +403,7 @@ namespace Amazon.DynamoDBv2
     }
 
 #if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+    //[System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
     internal class EnumConverterV1 : Converter<Enum>
     {
@@ -344,7 +428,12 @@ namespace Amazon.DynamoDBv2
             var succeeded = (p != null);
             return succeeded;
         }
+
+#if NET8_0_OR_GREATER
+        protected override bool TryFrom(Primitive p, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type targetType, out Enum result)
+#else
         protected override bool TryFrom(Primitive p, Type targetType, out Enum result)
+#endif
         {
             result = null;
 
@@ -364,14 +453,15 @@ namespace Amazon.DynamoDBv2
             return succeeded;
         }
 
+#if NET8_0_OR_GREATER
+        private Enum ConvertEnum(Primitive p, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type targetType)
+#else
         private Enum ConvertEnum(Primitive p, Type targetType)
+#endif
         {
-            // get numeric type underlying enum (int, byte, etc.)
-            var enumUnderlyingType = Enum.GetUnderlyingType(targetType);
-
             object numerical;
             // convert Primitive to numeric type, using current conversion
-            if (Conversion.TryConvertFromEntry(enumUnderlyingType, p, out numerical))
+            if (Conversion.TryConvertFromEntry(typeof(int), p, out numerical))
             {
                 // convert numeric to target enum
                 return Enum.ToObject(targetType, numerical) as Enum;
@@ -393,7 +483,7 @@ namespace Amazon.DynamoDBv2
         }
     }
 
-    #endregion
+#endregion
 
     #region Converters supporting reading V2 DDB items, but writing V1 items
 
@@ -402,7 +492,7 @@ namespace Amazon.DynamoDBv2
     /// but writes out N type (1 if true, 0 if false).
     /// </summary>
 #if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+    //[System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
     internal class BoolConverterV1 : Converter<bool>
     {
@@ -416,7 +506,11 @@ namespace Amazon.DynamoDBv2
             result = b.Value;
             return true;
         }
+#if NET8_0_OR_GREATER
+        protected override bool TryFrom(Primitive p, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type targetType, out bool result)
+#else
         protected override bool TryFrom(Primitive p, Type targetType, out bool result)
+#endif
         {
             result = !p.StringValue.Equals("0", StringComparison.OrdinalIgnoreCase);
             return true;
@@ -424,7 +518,7 @@ namespace Amazon.DynamoDBv2
     }
 
 #if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+    //[System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
     internal abstract class CollectionConverter : Converter
     {
@@ -457,7 +551,11 @@ namespace Amazon.DynamoDBv2
             return targetTypes;
         }
 
+#if NET8_0_OR_GREATER
+        protected bool EntriesToCollection([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type targetType, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type elementType, IEnumerable<DynamoDBEntry> entries, out object result)
+#else
         protected bool EntriesToCollection(Type targetType, Type elementType, IEnumerable<DynamoDBEntry> entries, out object result)
+#endif
         {
             var items = Conversion.ConvertFromEntries(elementType, entries);
             return Utils.ItemsToCollection(targetType, items, out result);
@@ -469,7 +567,7 @@ namespace Amazon.DynamoDBv2
     /// and writes out sets (NS, SS, BS)
     /// </summary>
 #if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+    //[System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
     internal class PrimitiveCollectionConverterV1 : CollectionConverter
     {
@@ -490,13 +588,22 @@ namespace Amazon.DynamoDBv2
             return false;
         }
 
+#if NET8_0_OR_GREATER
+        public override bool TryFrom(PrimitiveList pl, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type targetType, out object result)
+#else
         public override bool TryFrom(PrimitiveList pl, Type targetType, out object result)
+#endif
         {
             var elementType = Utils.GetPrimitiveElementType(targetType);
             var primitives = pl.Entries;
             return EntriesToCollection(targetType, elementType, pl.Entries.Cast<DynamoDBEntry>(), out result);
         }
+
+#if NET8_0_OR_GREATER
+        public override bool TryFrom(DynamoDBList l, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type targetType, out object result)
+#else
         public override bool TryFrom(DynamoDBList l, Type targetType, out object result)
+#endif
         {
             var elementType = Utils.GetPrimitiveElementType(targetType);
             var entries = l.Entries;
@@ -510,7 +617,7 @@ namespace Amazon.DynamoDBv2
     /// Does NOT convert from DynamoDBEntry to Dictionary{string,object}.
     /// </summary>
 #if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+    //[System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
     internal class DictionaryConverterV1 : Converter
     {
@@ -547,5 +654,5 @@ namespace Amazon.DynamoDBv2
         }
     }
 
-    #endregion
+#endregion
 }

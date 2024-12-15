@@ -30,7 +30,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
     /// Abstract class representing an arbitrary DynamoDB attribute value
     /// </summary>
 #if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+    //[System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
     public abstract class DynamoDBEntry : ICloneable
     {
@@ -1061,7 +1061,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
     /// </summary>
 
 #if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+    //[System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
     internal class UnconvertedDynamoDBEntry : DynamoDBEntry
     {

@@ -29,12 +29,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
     /// </summary>
     
 #if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+    //[System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
     public class DynamoDBBool : DynamoDBEntry
     {
         /// <summary>
-        /// Construct an instance of DynamnDBBool
+        /// Construct an instance of DynamoDBBool
         /// </summary>
         /// <param name="value"></param>
         public DynamoDBBool(bool value)

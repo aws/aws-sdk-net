@@ -206,7 +206,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
     /// multiple items in a single DynamoDB table in a transaction.
     /// </summary>
 #if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+    //[System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
     public partial class DocumentTransactWrite : IDocumentTransactWrite
     {
@@ -984,7 +984,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
     }
 
 #if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+    //[System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
     internal class ToUpdateWithExpressionTransactWriteRequestItem : ToUpdateTransactWriteRequestItemBase
     {
