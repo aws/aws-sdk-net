@@ -19,6 +19,7 @@ using Amazon.Util.Internal;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -27,117 +28,60 @@ namespace Amazon.DynamoDBv2
 {
     #region Same converter behavior as V1
 
-#if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif
     internal class ByteConverterV2 : ByteConverterV1
     { }
 
-#if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif
     internal class SByteConverterV2 : SByteConverterV1
     { }
 
-#if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif
     internal class UInt16ConverterV2 : UInt16ConverterV1
     { }
 
-#if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif
     internal class Int16ConverterV2 : Int16ConverterV1
     { }
 
-#if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif
     internal class UInt32ConverterV2 : UInt32ConverterV1
     { }
 
-#if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif
     internal class Int32ConverterV2 : Int32ConverterV1
     { }
 
-#if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif
     internal class UInt64ConverterV2 : UInt64ConverterV1
     { }
 
-#if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif
     internal class Int64ConverterV2 : Int64ConverterV1
     { }
 
-#if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif
     internal class SingleConverterV2 : SingleConverterV1
     { }
 
-#if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif
     internal class DoubleConverterV2 : DoubleConverterV1
     { }
 
-#if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif
     internal class DecimalConverterV2 : DecimalConverterV1
     { }
 
-#if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif
     internal class CharConverterV2 : CharConverterV1
     { }
 
-#if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif
     internal class StringConverterV2 : StringConverterV1
     { }
 
-#if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif
     internal class DateTimeConverterV2 : DateTimeConverterV1
     { }
 
-#if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif
     internal class GuidConverterV2 : GuidConverterV1
     { }
 
-#if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif
     internal class BytesConverterV2 : BytesConverterV1
     { }
 
-#if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif
     internal class MemoryStreamConverterV2 : MemoryStreamConverterV1
     { }
 
-#if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif
     internal class DictionaryConverterV2 : DictionaryConverterV1
     { }
 
-#if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif
     internal class EnumConverterV2 : EnumConverterV1
     { }
 
@@ -147,10 +91,6 @@ namespace Amazon.DynamoDBv2
     /// A boolean converter which reads booleans as N or BOOL types,
     /// but writes out BOOL type.
     /// </summary>
-
-#if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif
     internal class BoolConverterV2 : BoolConverterV1
     {
         protected override bool TryTo(bool value, out DynamoDBBool b)
@@ -171,9 +111,6 @@ namespace Amazon.DynamoDBv2
     /// HashSet input - converts to a DynamoDB set (NS, SS, BS)
     /// Any other IEnumerable input - converts to a DynamoDB list (L)
     /// </summary>
-#if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif
     internal class CollectionConverterV2 : PrimitiveCollectionConverterV1
     {
         private static Type setTypeInfo = typeof(HashSet<>);
@@ -214,7 +151,7 @@ namespace Amazon.DynamoDBv2
         {
             var inputType = value.GetType();
 
-            if (DataModel.Utils.ImplementsInterface(inputType, enumerableType))
+            if ((value is IEnumerable && inputType.GenericTypeArguments.Length > 0) || inputType.IsArray)
             {
                 var elementType = Utils.GetElementType(inputType);
                 var entries = Conversion.ConvertToEntries(elementType, value as IEnumerable);
@@ -227,17 +164,18 @@ namespace Amazon.DynamoDBv2
         }
     }
 
-#if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif
     internal class DynamoDBListConverter : CollectionConverter
     {
         public DynamoDBListConverter()
             : this(Utils.PrimitiveTypes)
         { }
         public DynamoDBListConverter(IEnumerable<Type> memberTypes)
-            : base(memberTypes)
         { }
+
+        public override IEnumerable<Type> GetTargetTypes()
+        {
+            return Utils.PrimitiveTypesCollectionsAndArray;
+        }
 
         public override bool TryTo(object value, out DynamoDBList l)
         {
@@ -258,7 +196,11 @@ namespace Amazon.DynamoDBv2
             return false;
         }
 
+#if NET8_0_OR_GREATER
+        public override bool TryFrom(DynamoDBList l, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type targetType, out object result)
+#else
         public override bool TryFrom(DynamoDBList l, Type targetType, out object result)
+#endif
         {
             var elementType = Utils.GetElementType(targetType);
             var entries = l.Entries;

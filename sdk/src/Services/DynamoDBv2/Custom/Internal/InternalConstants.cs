@@ -17,6 +17,6 @@ namespace Amazon.DynamoDBv2.Custom.Internal
 {
     internal static class InternalConstants
     {
-        internal const string RequiresUnreferencedCodeMessage = "The Amazon DynamoDB high level libraries in the DocumentModel and DataModel namespace have not been updated to support Native AOT.";
+        internal const string RequiresUnreferencedCodeMessage = "The Amazon DynamoDB high level libraries in the DataModel namespace have not been updated to support Native AOT.";
     }
 }

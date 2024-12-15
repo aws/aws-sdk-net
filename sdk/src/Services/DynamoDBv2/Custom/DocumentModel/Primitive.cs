@@ -46,9 +46,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
     /// <summary>
     /// A DynamoDBEntry that represents a scalar DynamoDB type
     /// </summary>
-#if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif
     public class Primitive : DynamoDBEntry, IEquatable<Primitive>
     {
         #region Private members
@@ -662,8 +659,15 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>byte[] value of this object</returns>
         public override byte[] AsByteArray()
         {
-            return V1Conversion.ConvertFromEntry<byte[]>(this);
+            // For Native AOT support this directly uses the cast to byte[] instead of the 
+            // normal "V1Conversion.ConvertFromEntry<byte[]>(this);" because the Native AOT
+            // compiler generated a warning about System.Array.CreateInstance(Type,Int32) usage.
+            // There is no actual use of "System.Array.CreateInstance(Type,Int32)" at least in the SDK
+            // code and suspect the warning is erroneous but we need the warning to go away
+            // for Native AOT users.
+            return this.Value as byte[];
         }
+
         /// <summary>
         /// Implicitly convert byte[] to Primitive
         /// </summary>
