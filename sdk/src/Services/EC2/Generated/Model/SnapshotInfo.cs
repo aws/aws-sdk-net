@@ -34,6 +34,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class SnapshotInfo
     {
+        private string _availabilityZone;
         private string _description;
         private bool? _encrypted;
         private string _outpostArn;
@@ -46,6 +47,25 @@ namespace Amazon.EC2.Model
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _volumeId;
         private int? _volumeSize;
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZone. 
+        /// <para>
+        /// The Availability Zone or Local Zone of the snapshots. For example, <c>us-west-1a</c>
+        /// (Availability Zone) or <c>us-west-2-lax-1a</c> (Local Zone).
+        /// </para>
+        /// </summary>
+        public string AvailabilityZone
+        {
+            get { return this._availabilityZone; }
+            set { this._availabilityZone = value; }
+        }
+
+        // Check to see if AvailabilityZone property is set
+        internal bool IsSetAvailabilityZone()
+        {
+            return this._availabilityZone != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Description. 
