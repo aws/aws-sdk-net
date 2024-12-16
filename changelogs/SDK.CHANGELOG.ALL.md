@@ -1,3 +1,17 @@
+### 3.7.947.0 (2024-12-16 19:24 UTC)
+* Cloud9 (3.7.400.65)
+	* Added information about Ubuntu 18.04 will be removed from the available imageIds for Cloud9 because Ubuntu 18.04 has ended standard support on May 31, 2023.
+* DLM (3.7.401.0)
+	* This release adds support for Local Zones in Amazon Data Lifecycle Manager EBS snapshot lifecycle policies.
+* EC2 (3.7.425.0)
+	* This release adds support for EBS local snapshots in AWS Dedicated Local Zones, which allows you to store snapshots of EBS volumes locally in Dedicated Local Zones.
+* GreengrassV2 (3.7.401.0)
+	* Add support for runtime in GetCoreDevice and ListCoreDevices APIs.
+* MediaLive (3.7.407.0)
+	* AWS Elemental MediaLive adds three new features: MediaPackage v2 endpoint support for live stream delivery, KLV metadata passthrough in CMAF Ingest output groups, and Metadata Name Modifier in CMAF Ingest output groups for customizing metadata track names in output streams.
+* RDS (3.7.410.0)
+	* This release adds support for the "MYSQL_CACHING_SHA2_PASSWORD" enum value for RDS Proxy ClientPasswordAuthType.
+
 ### 3.7.946.0 (2024-12-13 19:34 UTC)
 * CloudHSMV2 (3.7.401.0)
 	* Add support for Dual-Stack hsm2m.medium clusters. The customers will now be able to create hsm2m.medium clusters having both IPv4 and IPv6 connection capabilities by specifying a new param called NetworkType=DUALSTACK during cluster creation.
