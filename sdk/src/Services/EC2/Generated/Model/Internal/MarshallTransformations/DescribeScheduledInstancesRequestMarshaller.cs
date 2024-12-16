@@ -114,13 +114,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetSlotStartTimeRange())
                 {
-                    if(publicRequest.SlotStartTimeRange.IsSetEarliestTimeUtc())
+                    if(publicRequest.SlotStartTimeRange.IsSetEarliestTime())
                     {
-                        request.Parameters.Add("SlotStartTimeRange" + "." + "EarliestTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.SlotStartTimeRange.EarliestTimeUtc));
+                        request.Parameters.Add("SlotStartTimeRange" + "." + "EarliestTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.SlotStartTimeRange.EarliestTime));
                     }
-                    if(publicRequest.SlotStartTimeRange.IsSetLatestTimeUtc())
+                    if(publicRequest.SlotStartTimeRange.IsSetLatestTime())
                     {
-                        request.Parameters.Add("SlotStartTimeRange" + "." + "LatestTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.SlotStartTimeRange.LatestTimeUtc));
+                        request.Parameters.Add("SlotStartTimeRange" + "." + "LatestTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.SlotStartTimeRange.LatestTime));
                     }
                 }
             }

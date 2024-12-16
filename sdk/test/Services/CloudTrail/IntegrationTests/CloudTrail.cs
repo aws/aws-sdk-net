@@ -18,7 +18,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
     [TestClass]
     public class CloudTrail : TestBase<AmazonCloudTrailClient>
     {
-        private static string _trailStorageBucketName = "sdk-dotnet-integ-test-trail-bucket-" + DateTime.Now.Ticks;
+        private static string _trailStorageBucketName = "sdk-dotnet-integ-test-trail-bucket-" + DateTime.UtcNow.Ticks;
         private const string S3_PREFIX = "folder";
 
         static AmazonS3Client s3Client;
@@ -88,7 +88,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             if (trailsCount != 0)
                 return;
 
-            var trailName = "dotnet-integ-test-trail-" + DateTime.Now.Ticks;
+            var trailName = "dotnet-integ-test-trail-" + DateTime.UtcNow.Ticks;
             var trail = Client.CreateTrail(new CreateTrailRequest
             {
                 Name = trailName,

@@ -28,8 +28,6 @@ namespace ServiceClientGenerator
         public const string XmlAttributeKey = "xmlAttribute";
         private const string UnhandledTypeDecimalErrorMessage = "Unhandled type 'decimal' : using .net's decimal type for modeled decimal type may result in loss of data.  decimal type members should explicitly opt-in via shape customization.";
 
-        private const string BackwardsCompatibleDateTimePropertySuffix = "Utc";
-
         private readonly string _name;
         private string _newType;
         readonly string _defaultMarshallName;
@@ -109,22 +107,7 @@ namespace ServiceClientGenerator
         {
             get
             {
-                if (IsBackwardsCompatibleDateTimeProperty)
-                    return BaseVariableName + BackwardsCompatibleDateTimePropertySuffix;
                 return BaseVariableName;
-            }
-        }
-
-        /// <summary>
-        /// The name of the property's backing to be used in backwards compatibility property names
-        /// </summary>
-        public string BackwardCompatibilityVariableName
-        {
-            get
-            {
-                if (IsBackwardsCompatibleDateTimeProperty)
-                    return BaseVariableName;
-                throw new Exception("Property " + BasePropertyName + " is not marked as requiring backward compatibility");
             }
         }
 
@@ -207,28 +190,12 @@ namespace ServiceClientGenerator
         /// <summary>
         /// The name of the member as the first character upper: NameHere
         /// Uses the custom name instead if it exists.
-        /// It includes the backward compatibility suffix if required.
         /// </summary>
         public string PropertyName
         {
             get
             {
-                if (IsBackwardsCompatibleDateTimeProperty)
-                    return BasePropertyName + BackwardsCompatibleDateTimePropertySuffix;
                 return BasePropertyName;
-            }
-        }
-
-        /// <summary>
-        /// The name of the member to be used in backwards compatibility property names
-        /// </summary>
-        public string BackwardCompatibilityPropertyName
-        {
-            get
-            {
-                if (IsBackwardsCompatibleDateTimeProperty)
-                    return BasePropertyName;
-                throw new Exception("Property " + BasePropertyName + " is not marked as requiring backward compatibility");
             }
         }
 
@@ -985,10 +952,6 @@ namespace ServiceClientGenerator
                 return false;
             }
         }
-        public bool IsBackwardsCompatibleDateTimeProperty
-        {
-            get { return this.model.Customizations.IsBackwardsCompatibleDateTimeProperty(this.BasePropertyName, this.OwningShape.Name); }
-        }
 
         /// <summary>
         /// Determines if the member is a type that needs to be instantiated, such as a list or map
@@ -1059,7 +1022,7 @@ namespace ServiceClientGenerator
         {
             get
             {
-                if (!this.IsDateTime)
+                if (!this.IsTimeStamp)
                 {
                     throw new InvalidOperationException(string.Format(
                         CultureInfo.InvariantCulture,
@@ -1081,7 +1044,7 @@ namespace ServiceClientGenerator
         /// <summary>
         /// Returns if the member's type is timestamp.
         /// </summary>
-        public bool IsDateTime
+        public bool IsTimeStamp
         {
             get
             {
@@ -1097,7 +1060,7 @@ namespace ServiceClientGenerator
         {
             get
             {
-                if (this.IsDateTime)
+                if (this.IsTimeStamp)
                 {
                     string formatAppend = string.Empty;
                     if (this.TimestampFormat == TimestampFormat.ISO8601)

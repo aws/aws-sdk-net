@@ -66,10 +66,7 @@ namespace Amazon.Runtime
 
         private bool IsTokenUnexpired()
         {
-#pragma warning disable CS0618 // Type or member is obsolete
             return (!_expiration.HasValue || _expiration.Value < AWSSDKUtils.CorrectedUtcNow);
-#pragma warning restore CS0618 // Type or member is obsolete
-
         }
     }
 }

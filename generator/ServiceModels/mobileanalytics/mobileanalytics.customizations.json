@@ -3,19 +3,19 @@
         "Session": {
             "startTimestamp": {
                 "Type": "DateTime?",
-                "Marshaller": "Amazon.Runtime.Internal.Util.StringUtils.FromDateTimeToISO8601",
+                "Marshaller": "Amazon.Runtime.Internal.Util.StringUtils.FromDateTimeToISO8601WithOptionalMs",
                 "Unmarshaller": "Amazon.Runtime.Internal.Transform.NullableDateTimeUnmarshaller"
             },
             "stopTimestamp": {
                 "Type": "DateTime?",
-                "Marshaller": "Amazon.Runtime.Internal.Util.StringUtils.FromDateTimeToISO8601",
+                "Marshaller": "Amazon.Runtime.Internal.Util.StringUtils.FromDateTimeToISO8601WithOptionalMs",
                 "Unmarshaller": "Amazon.Runtime.Internal.Transform.NullableDateTimeUnmarshaller"
             }
         },
         "Event": {
             "timestamp": {
                 "Type": "DateTime?",
-                "Marshaller": "Amazon.Runtime.Internal.Util.StringUtils.FromDateTimeToISO8601",
+                "Marshaller": "Amazon.Runtime.Internal.Util.StringUtils.FromDateTimeToISO8601WithOptionalMs",
                 "Unmarshaller": "Amazon.Runtime.Internal.Transform.NullableDateTimeUnmarshaller"
             }
         }
@@ -23,18 +23,5 @@
     "generateUnmarshaller": [
         "Event",
         "Session"
-    ],
-    "shapeModifiers": {
-        "Event": {
-            "backwardsCompatibleDateTimeProperties": [
-                "Timestamp"
-            ]
-        },
-        "Session": {
-            "backwardsCompatibleDateTimeProperties": [
-                "StartTimestamp",
-                "StopTimestamp"
-            ]
-        }
-    }
+    ]
 }

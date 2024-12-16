@@ -790,7 +790,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
         DirectoryInfo DownloadDirectoryWithDisableSlashCorrectionForS3Directory(int numberOfTestFiles, DirectoryProgressValidator<DownloadDirectoryProgressArgs> progressValidator)
         {
-            var keyPrefix = DateTime.Now.ToString("yyyy-MM-dd");
+            var keyPrefix = DateTime.UtcNow.ToString("yyyy-MM-dd");
             var directory = UploadDirectoryWithKeyPrefix(1 * KILO_SIZE, null, keyPrefix, numberOfTestFiles, false);
             var directoryPath = directory.FullName;
             Directory.Delete(directoryPath, true);

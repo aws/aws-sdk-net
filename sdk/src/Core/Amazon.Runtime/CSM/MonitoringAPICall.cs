@@ -37,7 +37,7 @@ namespace Amazon.Runtime.Internal
         }
         public MonitoringAPICall()
         {
-            Timestamp = AWSSDKUtils.ConvertDateTimetoMilliseconds(DateTime.UtcNow);
+            Timestamp = AWSSDKUtils.ConvertToUnixEpochMilliseconds(DateTime.UtcNow);
             ClientId = DeterminedCSMConfiguration.Instance.CSMConfiguration.ClientId;
         }
 

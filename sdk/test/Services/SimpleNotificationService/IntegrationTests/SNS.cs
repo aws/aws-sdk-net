@@ -50,7 +50,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             var currentTopicCount = allTopics.Count;
 
             // create new topic
-            var name = "dotnetsdk" + DateTime.Now.Ticks;
+            var name = "dotnetsdk" + DateTime.UtcNow.Ticks;
             var createTopicRequest = new CreateTopicRequest
             {
                 Name = name
@@ -110,7 +110,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             var subscriptionWaitDelay = TimeSpan.FromMinutes(2);
 
             // create new topic
-            var name = "dotnetsdk" + DateTime.Now.Ticks;
+            var name = "dotnetsdk" + DateTime.UtcNow.Ticks;
             var createTopicRequest = new CreateTopicRequest
             {
                 Name = name
@@ -132,8 +132,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 // wait until subscription has been confirmed, maximum wait time of two minutes
                 // by default
                 string subArn = null;
-                var latest = DateTime.Now + subscriptionWaitDelay;
-                while (DateTime.Now < latest)
+                var latest = DateTime.UtcNow + subscriptionWaitDelay;
+                while (DateTime.UtcNow < latest)
                 {
                     // get subscriptions for topic
                     var listSubscriptionsRequest = new ListSubscriptionsByTopicRequest
@@ -188,7 +188,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         public void TestPublishAsJson()
         {
             // create new topic
-            var name = "dotnetsdk" + DateTime.Now.Ticks;
+            var name = "dotnetsdk" + DateTime.UtcNow.Ticks;
             var createTopicRequest = new CreateTopicRequest
             {
                 Name = name
@@ -401,13 +401,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         {
             var topicArns = new List<string>();
 
-            var topicName1 = "dotnetsdkTopic" + DateTime.Now.Ticks;
+            var topicName1 = "dotnetsdkTopic" + DateTime.UtcNow.Ticks;
             topicArns.Add(Client.CreateTopic(topicName1).TopicArn);
 
-            var topicName2 = "dotnetsdkTopic" + DateTime.Now.Ticks;
+            var topicName2 = "dotnetsdkTopic" + DateTime.UtcNow.Ticks;
             topicArns.Add(Client.CreateTopic(topicName2).TopicArn);
 
-            var queueName = "dotnetsdkQueue-" + DateTime.Now.Ticks;
+            var queueName = "dotnetsdkQueue-" + DateTime.UtcNow.Ticks;
             var queueUrl = sqsClient.CreateQueue(queueName).QueueUrl;
 
             try
@@ -438,7 +438,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         public void FindTopic()
         {
             // create new topic
-            var name = "dotnetsdk" + DateTime.Now.Ticks;
+            var name = "dotnetsdk" + DateTime.UtcNow.Ticks;
             var createTopicRequest = new CreateTopicRequest
             {
                 Name = name

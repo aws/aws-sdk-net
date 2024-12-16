@@ -45,14 +45,14 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if(headObjectRequest.IsSetEtagToMatch())
                 request.Headers.Add(HeaderKeys.IfMatchHeader, S3Transforms.ToStringValue(headObjectRequest.EtagToMatch));
             
-            if(headObjectRequest.IsSetModifiedSinceDateUtc())
-                request.Headers.Add(HeaderKeys.IfModifiedSinceHeader, S3Transforms.ToStringValue(headObjectRequest.ModifiedSinceDateUtc.Value));
+            if(headObjectRequest.IsSetModifiedSinceDate())
+                request.Headers.Add(HeaderKeys.IfModifiedSinceHeader, S3Transforms.ToStringValue(headObjectRequest.ModifiedSinceDate.Value));
             
             if(headObjectRequest.IsSetEtagToNotMatch())
                 request.Headers.Add(HeaderKeys.IfNoneMatchHeader, S3Transforms.ToStringValue(headObjectRequest.EtagToNotMatch));
             
-            if(headObjectRequest.IsSetUnmodifiedSinceDateUtc())
-                request.Headers.Add(HeaderKeys.IfUnmodifiedSinceHeader, S3Transforms.ToStringValue(headObjectRequest.UnmodifiedSinceDateUtc.Value));
+            if(headObjectRequest.IsSetUnmodifiedSinceDate())
+                request.Headers.Add(HeaderKeys.IfUnmodifiedSinceHeader, S3Transforms.ToStringValue(headObjectRequest.UnmodifiedSinceDate.Value));
 
             if (headObjectRequest.IsSetServerSideEncryptionCustomerMethod())
                 request.Headers.Add(HeaderKeys.XAmzSSECustomerAlgorithmHeader, headObjectRequest.ServerSideEncryptionCustomerMethod);

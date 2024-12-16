@@ -104,7 +104,7 @@ namespace Amazon.Runtime.Internal.Util
             if (format == "ISO8601")
             {
                 //"2019-12-16T23:48:18Z, 2019-12-16T23:48:18Z"
-                return value.Split(Delimiter).Select(item => DateTime.Parse(item.Trim(), CultureInfo.InvariantCulture)).ToList();
+                return value.Split(Delimiter).Select(item => DateTime.Parse(item.Trim(), CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal)).ToList();
             }
             else if (format == "RFC822")
             {
@@ -129,7 +129,7 @@ namespace Amazon.Runtime.Internal.Util
                     startIndex = index + 1;
                 }
 
-                return dateStringList.Select(item => DateTime.Parse(item.Trim(), CultureInfo.InvariantCulture)).ToList();
+                return dateStringList.Select(item => DateTime.Parse(item.Trim(), CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal)).ToList();
 
             }
             else if (format == "UnixTimestamp")

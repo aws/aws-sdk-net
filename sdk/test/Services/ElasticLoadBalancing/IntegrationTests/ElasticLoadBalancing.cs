@@ -49,7 +49,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         [TestCategory("ElasticLoadBalancing")]
         public void TestLoadBalancerOperations()
         {
-            loadBalancerName = SDK_TEST_PREFIX+"-lb" + DateTime.Now.Ticks;
+            loadBalancerName = SDK_TEST_PREFIX+"-lb" + DateTime.UtcNow.Ticks;
             Listener expectedListener = new Listener()
             {
                 InstancePort = 8080,
@@ -149,7 +149,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 Assert.IsFalse(availabilityZones.Contains(AVAILABILITY_ZONE_2));
 
                 // Create LB stickiness policy
-                String policyName = SDK_TEST_PREFIX + "-policy-" + DateTime.Now.Ticks;
+                String policyName = SDK_TEST_PREFIX + "-policy-" + DateTime.UtcNow.Ticks;
                 Client.CreateLBCookieStickinessPolicy(new CreateLBCookieStickinessPolicyRequest()
                 {
                     LoadBalancerName = loadBalancerName,

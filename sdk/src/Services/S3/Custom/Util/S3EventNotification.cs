@@ -42,7 +42,7 @@ namespace Amazon.S3.Util
                         record.AwsRegion = GetValueAsString(jsonRecord, "awsRegion");
 
                         if (jsonRecord["eventTime"] != null)
-                            record.EventTime = DateTime.Parse((string)jsonRecord["eventTime"], CultureInfo.InvariantCulture);
+                            record.EventTime = DateTime.Parse((string)jsonRecord["eventTime"], CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal);
                         if (jsonRecord["eventName"] != null)
                         {
                             var eventName = (string)jsonRecord["eventName"];
@@ -360,7 +360,7 @@ namespace Amazon.S3.Util
             if (string.IsNullOrEmpty(str))
                 return null;
 
-            return DateTime.Parse(str, CultureInfo.InvariantCulture);
+            return DateTime.Parse(str, CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal);
         }
 
         private static long GetValueAsLong(JsonData data, string key)

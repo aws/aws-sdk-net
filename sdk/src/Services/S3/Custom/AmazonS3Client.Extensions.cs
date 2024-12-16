@@ -435,7 +435,7 @@ namespace Amazon.S3
             DateTime baselineTime;
             if (signatureVersion == SignatureVersion.SigV2)
             {
-                baselineTime = new DateTime(1970, 1, 1);
+                baselineTime = AWSSDKUtils.EPOCH_START;
             }
             else // SigV4 or SigV4a
             {

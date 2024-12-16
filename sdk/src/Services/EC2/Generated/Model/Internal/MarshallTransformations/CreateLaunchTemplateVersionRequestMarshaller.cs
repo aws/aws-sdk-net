@@ -272,9 +272,9 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             {
                                 request.Parameters.Add("LaunchTemplateData" + "." + "InstanceMarketOptions" + "." + "SpotOptions" + "." + "SpotInstanceType", StringUtils.FromString(publicRequest.LaunchTemplateData.InstanceMarketOptions.SpotOptions.SpotInstanceType));
                             }
-                            if(publicRequest.LaunchTemplateData.InstanceMarketOptions.SpotOptions.IsSetValidUntilUtc())
+                            if(publicRequest.LaunchTemplateData.InstanceMarketOptions.SpotOptions.IsSetValidUntil())
                             {
-                                request.Parameters.Add("LaunchTemplateData" + "." + "InstanceMarketOptions" + "." + "SpotOptions" + "." + "ValidUntil", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.LaunchTemplateData.InstanceMarketOptions.SpotOptions.ValidUntilUtc));
+                                request.Parameters.Add("LaunchTemplateData" + "." + "InstanceMarketOptions" + "." + "SpotOptions" + "." + "ValidUntil", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.LaunchTemplateData.InstanceMarketOptions.SpotOptions.ValidUntil));
                             }
                         }
                     }

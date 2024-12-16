@@ -37,9 +37,9 @@ namespace Amazon.IoTAnalytics.Model
     public partial class SampleChannelDataRequest : AmazonIoTAnalyticsRequest
     {
         private string _channelName;
-        private DateTime? _endTimeUtc;
+        private DateTime? _endTime;
         private int? _maxMessages;
-        private DateTime? _startTimeUtc;
+        private DateTime? _startTime;
 
         /// <summary>
         /// Gets and sets the property ChannelName. 
@@ -61,21 +61,21 @@ namespace Amazon.IoTAnalytics.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EndTimeUtc. 
+        /// Gets and sets the property EndTime. 
         /// <para>
         /// The end of the time window from which sample messages are retrieved.
         /// </para>
         /// </summary>
-        public DateTime? EndTimeUtc
+        public DateTime? EndTime
         {
-            get { return this._endTimeUtc; }
-            set { this._endTime = this._endTimeUtc = value; }
+            get { return this._endTime; }
+            set { this._endTime = value; }
         }
 
-        // Check to see if EndTimeUtc property is set
-        internal bool IsSetEndTimeUtc()
+        // Check to see if EndTime property is set
+        internal bool IsSetEndTime()
         {
-            return this._endTimeUtc.HasValue; 
+            return this._endTime.HasValue; 
         }
 
         /// <summary>
@@ -99,99 +99,22 @@ namespace Amazon.IoTAnalytics.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StartTimeUtc. 
+        /// Gets and sets the property StartTime. 
         /// <para>
         /// The start of the time window from which sample messages are retrieved.
         /// </para>
         /// </summary>
-        public DateTime? StartTimeUtc
-        {
-            get { return this._startTimeUtc; }
-            set { this._startTime = this._startTimeUtc = value; }
-        }
-
-        // Check to see if StartTimeUtc property is set
-        internal bool IsSetStartTimeUtc()
-        {
-            return this._startTimeUtc.HasValue; 
-        }
-
-#region Backwards compatible properties
-        private DateTime? _endTime;
-        private DateTime? _startTime;
-
-        /// <summary>
-        /// Gets and sets the property EndTimeUtc. 
-        /// <para>
-        /// This property is deprecated. Setting this property results in non-UTC DateTimes not
-        /// being marshalled correctly. Use EndTimeUtc instead. Setting either EndTime or EndTimeUtc
-        /// results in both EndTime and EndTimeUtc being assigned, the latest assignment to either
-        /// one of the two property is reflected in the value of both. EndTime is provided for
-        /// backwards compatibility only and assigning a non-Utc DateTime to it results in the
-        /// wrong timestamp being passed to the service.
-        /// </para>
-        ///  
-        /// <para>
-        /// The end of the time window from which sample messages are retrieved.
-        /// </para>
-        /// </summary>
-        [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +
-            "Use EndTimeUtc instead. Setting either EndTime or EndTimeUtc results in both EndTime and " +
-            "EndTimeUtc being assigned, the latest assignment to either one of the two property is " + 
-            "reflected in the value of both. EndTime is provided for backwards compatibility only and " +
-            "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
-        public DateTime? EndTime
-        {
-            get { return this._endTime.GetValueOrDefault(); }
-            set
-            {
-                this._endTime = value;
-                if (value != null)
-                {
-                    this._endTimeUtc = new DateTime(value.Value.Ticks, DateTimeKind.Utc);
-                }
-                else
-                {
-                    this._endTimeUtc = null;
-                }
-            }
-        }
-        /// <summary>
-        /// Gets and sets the property StartTimeUtc. 
-        /// <para>
-        /// This property is deprecated. Setting this property results in non-UTC DateTimes not
-        /// being marshalled correctly. Use StartTimeUtc instead. Setting either StartTime or
-        /// StartTimeUtc results in both StartTime and StartTimeUtc being assigned, the latest
-        /// assignment to either one of the two property is reflected in the value of both. StartTime
-        /// is provided for backwards compatibility only and assigning a non-Utc DateTime to it
-        /// results in the wrong timestamp being passed to the service.
-        /// </para>
-        ///  
-        /// <para>
-        /// The start of the time window from which sample messages are retrieved.
-        /// </para>
-        /// </summary>
-        [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +
-            "Use StartTimeUtc instead. Setting either StartTime or StartTimeUtc results in both StartTime and " +
-            "StartTimeUtc being assigned, the latest assignment to either one of the two property is " + 
-            "reflected in the value of both. StartTime is provided for backwards compatibility only and " +
-            "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
         public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
-            set
-            {
-                this._startTime = value;
-                if (value != null)
-                {
-                    this._startTimeUtc = new DateTime(value.Value.Ticks, DateTimeKind.Utc);
-                }
-                else
-                {
-                    this._startTimeUtc = null;
-                }
-            }
+            get { return this._startTime; }
+            set { this._startTime = value; }
         }
-#endregion
+
+        // Check to see if StartTime property is set
+        internal bool IsSetStartTime()
+        {
+            return this._startTime.HasValue; 
+        }
+
     }
 }

@@ -48,7 +48,7 @@ namespace AWSSDK.Benchmarks
                 var inputLogEvent = new InputLogEvent
                 {
                     Message = message,
-                    Timestamp = DateTime.Now
+                    Timestamp = DateTime.UtcNow
                 };
                 _logEvents.Add(inputLogEvent);
             }

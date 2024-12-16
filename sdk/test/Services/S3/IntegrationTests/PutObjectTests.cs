@@ -69,7 +69,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             putObjectRequest.Headers["Expires"] = invalidValue;           
             Client.PutObject(putObjectRequest);
 
-            var newExpires = DateTime.Now.AddDays(1);
+            var newExpires = DateTime.UtcNow.AddDays(1);
             var getObjectResponse = Client.GetObject(bucketName, key);
             using (getObjectResponse)
             {
@@ -78,7 +78,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 Assert.IsTrue(content.Equals(contentRead));
 
 #pragma warning disable CS0618 // Type or member is obsolete
-                Assert.AreEqual(getObjectResponse.Expires, default(DateTime));
+                Assert.AreEqual(getObjectResponse.Expires, DateTime.SpecifyKind(default, DateTimeKind.Utc));
 #pragma warning restore CS0618 // Type or member is obsolete
                 Assert.AreEqual(getObjectResponse.ExpiresString, invalidValue);
 
@@ -91,13 +91,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             var getObjectMetadataResponse = Client.GetObjectMetadata(bucketName, key);
 
             Assert.AreEqual(getObjectMetadataResponse.ExpiresString, invalidValue);
-
-#pragma warning disable CS0618 // Type or member is obsolete
-            Assert.AreEqual(getObjectMetadataResponse.Expires, default(DateTime));
-            // Test getObjectMetadataResponse.Expires being overwritten by user code
-            getObjectMetadataResponse.Expires = newExpires;
-            Assert.AreEqual(newExpires, getObjectMetadataResponse.Expires);
-#pragma warning restore CS0618 // Type or member is obsolete
         }
 
         [TestMethod]
@@ -393,7 +386,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         public void PutObject_WithExpires()
         {
             var key = "contentBodyPut" + random.Next();
-            var expires = DateTime.Now.AddYears(5);
+            var expires = DateTime.UtcNow.AddYears(5);
             PutObjectRequest request = new PutObjectRequest()
             {
                 BucketName = bucketName,
@@ -709,7 +702,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             var request = new PutObjectRequest
             {
                 BucketName = bucketName,
-                Key = DateTime.Now.ToFileTime() + testKey,
+                Key = DateTime.UtcNow.ToFileTime() + testKey,
                 ContentBody = testContent
             };
             return request;
@@ -1096,7 +1089,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [TestCategory("S3")]
         public void PutBucketWithCannedACL()
         {
-            string aclBucketName = "dotnet-integtests-cannedacl" + DateTime.Now.Ticks;
+            string aclBucketName = "dotnet-integtests-cannedacl" + DateTime.UtcNow.Ticks;
             PutBucketRequest request = new PutBucketRequest() { BucketName = aclBucketName, CannedACL = S3CannedACL.LogDeliveryWrite, ObjectOwnership = ObjectOwnership.ObjectWriter };
 
             Client.PutBucket(request);
@@ -1149,7 +1142,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 {
                     BucketName = bucketName,
                     Key = sourceKey,
-                    Expires = DateTime.Now + TimeSpan.FromHours(2)
+                    Expires = DateTime.UtcNow + TimeSpan.FromHours(2)
                 });
 
                 HttpWebRequest httpRequest = HttpWebRequest.Create(url) as HttpWebRequest;

@@ -41,10 +41,10 @@ namespace Amazon.DNXCore.IntegrationTests.Common
 
         public static T WaitForComplete<T>(Func<T> func, Func<T, bool> isComplete, TimeSpan maxWaitTime, TimeSpan sleepTime)
         {
-            var stopTime = DateTime.Now + maxWaitTime;
+            var stopTime = DateTime.UtcNow + maxWaitTime;
             Exception lastException = null;
             var success = false;
-            while (DateTime.Now < stopTime)
+            while (DateTime.UtcNow < stopTime)
             {
                 try
                 {

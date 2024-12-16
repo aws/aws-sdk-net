@@ -23,28 +23,5 @@
                 "constructorInput": "this.Credentials"
             }
         ]
-    },
-    "shapeModifiers": {
-        "BacktrackDBClusterMessage": {
-            "backwardsCompatibleDateTimeProperties": [
-                "BacktrackTo"
-            ]
-        },
-        "DescribeEventsMessage": {
-            "backwardsCompatibleDateTimeProperties": [
-                "StartTime",
-                "EndTime"
-            ]
-        },
-        "RestoreDBClusterToPointInTimeMessage": {
-            "backwardsCompatibleDateTimeProperties": [
-                "RestoreToTime"
-            ]
-        },
-        "RestoreDBInstanceToPointInTimeMessage": {
-            "backwardsCompatibleDateTimeProperties": [
-                "RestoreTime"
-            ]
-        }
     }
 }

@@ -31,7 +31,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
             var tokenStatus = Client.GetChangeTokenStatus(token1).ChangeTokenStatus;
 
-            var setName = "BMS-net-test-" + DateTime.Now.ToFileTime();
+            var setName = "BMS-net-test-" + DateTime.UtcNow.ToFileTime();
             var tupleTargetString = "aws";
             var tuple = new ByteMatchTuple
             {

@@ -167,7 +167,7 @@ namespace Amazon.Util
                 try
                 {
                     var createdAt = (string) json[createDateKey];
-                    creationDateTime = DateTime.ParseExact(createdAt, createDateFormatString, null);
+                    creationDateTime = DateTime.ParseExact(createdAt, createDateFormatString, null, DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal);
                 }
                 catch (FormatException)
                 {
@@ -176,9 +176,7 @@ namespace Amazon.Util
                 {
                 }
 
-#pragma warning disable CS0612,CS0618 // Type or member is obsolete
                 instance.CreateDate = creationDateTime.GetValueOrDefault(AWSSDKUtils.CorrectedUtcNow);
-#pragma warning restore CS0612,CS0618 // Type or member is obsolete
 
                 // ipv4 and v6 addresses occupy different keys in the data file and can't easily be merged
                 // so process each subset separately

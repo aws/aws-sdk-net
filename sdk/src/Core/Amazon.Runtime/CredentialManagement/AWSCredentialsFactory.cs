@@ -270,9 +270,7 @@ namespace Amazon.Runtime.CredentialManagement
                             return ThrowOrReturnNull(sourceMessage, e, throwIfInvalid);
                         }
 
-#pragma warning disable CS0612,CS0618 // Type or member is obsolete
                         var roleSessionName = options.RoleSessionName ?? RoleSessionNamePrefix + AWSSDKUtils.CorrectedUtcNow.Ticks;
-#pragma warning restore CS0612,CS0618 // Type or member is obsolete
                         var assumeRoleOptions = new AssumeRoleAWSCredentialsOptions()
                         {
                             ExternalId = options.ExternalID,
@@ -302,9 +300,7 @@ namespace Amazon.Runtime.CredentialManagement
                             return ThrowOrReturnNull(sourceMessage, e, throwIfInvalid);
                         }
 
-#pragma warning disable CS0612,CS0618 // Type or member is obsolete
                         roleSessionName = options.RoleSessionName ?? RoleSessionNamePrefix + AWSSDKUtils.CorrectedUtcNow.Ticks;
-#pragma warning restore CS0612,CS0618 // Type or member is obsolete
                         assumeRoleOptions = new AssumeRoleAWSCredentialsOptions();
                         return new AssumeRoleAWSCredentials(sourceCredentials, options.RoleArn, roleSessionName, assumeRoleOptions);
                     case CredentialProfileType.AssumeRoleWithWebIdentity:

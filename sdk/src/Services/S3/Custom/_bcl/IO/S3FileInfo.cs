@@ -173,7 +173,7 @@ namespace Amazon.S3.IO
         }
 
         /// <summary>
-        /// Returns the last time the file was modified.
+        /// Returns the last time the file was modified in local time.
         /// </summary>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
@@ -184,11 +184,6 @@ namespace Amazon.S3.IO
                 DateTime ret = DateTime.MinValue;
                 if (Exists)
                 {
-                    //ret = s3Client.GetObjectMetadata(new GetObjectMetadataRequest()
-                    //        .WithBucketName(bucket)
-                    //        .WithKey(S3Helper.EncodeKey(key))
-                    //        .WithBeforeRequestHandler(S3Helper.FileIORequestEventHandler) as GetObjectMetadataRequest)
-                    //    .LastModified.ToLocalTime();
                     var request = new GetObjectMetadataRequest
                     {
                         BucketName = bucket,
@@ -196,6 +191,8 @@ namespace Amazon.S3.IO
                     };
                     ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)request).AddBeforeRequestHandler(S3Helper.FileIORequestEventHandler);
                     var response = s3Client.GetObjectMetadata(request);
+
+                    //This is a valid use of .ToLocalTime because there is both LastWriteTime and LastWriteTimeUtc for S3FileInfo operations.
                     ret = response.LastModified.GetValueOrDefault().ToLocalTime();
                 }
                 return ret;
@@ -204,7 +201,7 @@ namespace Amazon.S3.IO
         }
 
         /// <summary>
-        /// Returns the last time the file was modified in UTC.
+        /// Returns the last time the file was modified in UTC time.
         /// </summary>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
@@ -215,11 +212,6 @@ namespace Amazon.S3.IO
                 DateTime ret = DateTime.MinValue;
                 if (Exists)
                 {
-                    //ret = s3Client.GetObjectMetadata(new GetObjectMetadataRequest()
-                    //        .WithBucketName(bucket)
-                    //        .WithKey(S3Helper.EncodeKey(key))
-                    //        .WithBeforeRequestHandler(S3Helper.FileIORequestEventHandler) as GetObjectMetadataRequest)
-                    //    .LastModified;
                     var request = new GetObjectMetadataRequest
                     {
                         BucketName = bucket,

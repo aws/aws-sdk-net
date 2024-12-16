@@ -12,12 +12,6 @@
       "DescribeSnapshots"
     ],
     "shapeModifiers": {
-        "DescribeEventsMessage": {
-            "backwardsCompatibleDateTimeProperties": [
-                "StartTime",
-                "EndTime"
-            ]
-        },
         "ModifyReplicationGroupMessage": {
             "modify": [
                 {

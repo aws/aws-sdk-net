@@ -44,7 +44,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("Date", targetDepth))
                     {
-                        transition.DateUtc = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
+                        transition.Date = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
                     }

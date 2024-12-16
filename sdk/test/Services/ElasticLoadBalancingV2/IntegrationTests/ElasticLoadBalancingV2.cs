@@ -13,7 +13,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
     [TestClass]
     public class ElasticLoadBalancingV2 : TestBase<AmazonElasticLoadBalancingV2Client>
     {
-        private static string loadBalancerName = "dotnet-test-" + DateTime.Now.ToFileTime();
+        private static string loadBalancerName = "dotnet-test-" + DateTime.UtcNow.ToFileTime();
         private static string loadBalancerArn = null;
 
         [ClassCleanup]

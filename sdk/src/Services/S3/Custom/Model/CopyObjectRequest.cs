@@ -219,9 +219,7 @@ namespace Amazon.S3.Model
         private string etagToNotMatch;
         private DateTime? modifiedSinceDate;
         private DateTime? unmodifiedSinceDate;
-        private DateTime? modifiedSinceDateUtc;
-        private DateTime? unmodifiedSinceDateUtc;
-
+        
         private List<Tag> tagset = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         private S3MetadataDirective metadataDirective;
@@ -309,14 +307,6 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// <para>
-        /// This property is deprecated. Setting this property results in non-UTC DateTimes not
-        /// being marshalled correctly. Use ModifiedSinceDateUtc instead. Setting either ModifiedSinceDate or
-        /// ModifiedSinceDateUtc results in both ModifiedSinceDate and ModifiedSinceDateUtc being assigned,
-        /// the latest assignment to either one of the two property is reflected in the value of both.
-        /// ModifiedSinceDate is provided for backwards compatibility only and assigning a non-Utc DateTime
-        /// to it results in the wrong timestamp being passed to the service.
-        /// </para>
         /// Copies the object if it has been modified since the specified time, otherwise returns a PreconditionFailed.
         /// </summary>
         /// <remarks>
@@ -325,74 +315,32 @@ namespace Amazon.S3.Model
         /// Constraints: This property can be used with ETagToNotMatch,
         /// but cannot be used with other conditional copy properties.
         /// </remarks>
-        [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +
-            "Use ModifiedSinceDateUtc instead. Setting either ModifiedSinceDate or ModifiedSinceDateUtc results in both ModifiedSinceDate and " +
-            "ModifiedSinceDateUtc being assigned, the latest assignment to either one of the two property is " +
-            "reflected in the value of both. ModifiedSinceDate is provided for backwards compatibility only and " +
-            "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
         public DateTime? ModifiedSinceDate
         {
-            get { return this.modifiedSinceDate; }
-            set
-            {
-                if(value == null)
-                {
-                    this.modifiedSinceDate = null;
-                    this.modifiedSinceDateUtc = null;
-                }
-                else
-                {
-                    this.modifiedSinceDate = value;
-                    this.modifiedSinceDateUtc = new DateTime(value.Value.Ticks, DateTimeKind.Utc);
-                }
-            }
-        }
-
-        /// <summary>
-        /// Copies the object if it has been modified since the specified time, otherwise returns a PreconditionFailed.
-        /// </summary>
-        /// <remarks>
-        /// Copies the object if it has been modified since the
-        /// specified time; otherwise returns a 412 (failed condition).
-        /// Constraints: This property can be used with ETagToNotMatch,
-        /// but cannot be used with other conditional copy properties.
-        /// </remarks>
-        public DateTime? ModifiedSinceDateUtc
-        {
-            get { return this.modifiedSinceDateUtc ?? default(DateTime); }
+            get { return this.modifiedSinceDate ?? DateTime.SpecifyKind(default, DateTimeKind.Utc); }
             set
             {
                 if (value == null)
                 {
-                    this.modifiedSinceDate = null;
-                    this.modifiedSinceDateUtc = null;
+                    this.modifiedSinceDate = null;                    
                 }
                 else
                 {
-                    this.modifiedSinceDateUtc = value;
                     this.modifiedSinceDate = value;
                 }
             }
         }
 
         /// <summary>
-        /// Checks if ModifiedSinceDateUtc property is set.
+        /// Checks if ModifiedSinceDate property is set.
         /// </summary>
-        /// <returns>true if ModifiedSinceDateUtc property is set.</returns>
-        internal bool IsSetModifiedSinceDateUtc()
+        /// <returns>true if ModifiedSinceDate property is set.</returns>
+        internal bool IsSetModifiedSinceDate()
         {
-            return this.modifiedSinceDateUtc.HasValue;
+            return this.modifiedSinceDate.HasValue;
         }
 
         /// <summary>
-        /// <para>
-        /// This property is deprecated. Setting this property results in non-UTC DateTimes not
-        /// being marshalled correctly. Use UnmodifiedSinceDateUtc instead. Setting either UnmodifiedSinceDate or
-        /// UnmodifiedSinceDateUtc results in both UnmodifiedSinceDate and UnmodifiedSinceDateUtc being assigned,
-        /// the latest assignment to either one of the two property is reflected in the value of both.
-        /// UnmodifiedSinceDate is provided for backwards compatibility only and assigning a non-Utc DateTime
-        /// to it results in the wrong timestamp being passed to the service.
-        /// </para>
         /// Copies the object if it has not been modified since the specified time, otherwise returns a PreconditionFailed.
         /// </summary>
         /// <remarks>
@@ -401,63 +349,29 @@ namespace Amazon.S3.Model
         /// Constraints: This property can be used with ETagToMatch,
         /// but cannot be used with other conditional copy properties.
         /// </remarks>
-        [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +
-            "Use UnmodifiedSinceDateUtc instead. Setting either UnmodifiedSinceDate or UnmodifiedSinceDateUtc results in both UnmodifiedSinceDate and " +
-            "UnmodifiedSinceDateUtc being assigned, the latest assignment to either one of the two property is " +
-            "reflected in the value of both. UnmodifiedSinceDate is provided for backwards compatibility only and " +
-            "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
         public DateTime? UnmodifiedSinceDate
         {
-            get { return this.unmodifiedSinceDate ?? default(DateTime); }
+            get { return this.unmodifiedSinceDate ?? DateTime.SpecifyKind(default, DateTimeKind.Utc); }
             set
             {
                 if (value == null)
                 {
                     this.unmodifiedSinceDate = null;
-                    this.unmodifiedSinceDateUtc = null;
                 }
                 else
                 {
-                    this.unmodifiedSinceDate = value;
-                    this.unmodifiedSinceDateUtc = new DateTime(value.Value.Ticks, DateTimeKind.Utc);
-                }
-            }
-        }
-
-        /// <summary>
-        /// Copies the object if it has not been modified since the specified time, otherwise returns a PreconditionFailed.
-        /// </summary>
-        /// <remarks>
-        /// Copies the object if it hasn't been modified since the
-        /// specified time; otherwise returns a 412 (precondition failed).
-        /// Constraints: This property can be used with ETagToMatch,
-        /// but cannot be used with other conditional copy properties.
-        /// </remarks>
-        public DateTime? UnmodifiedSinceDateUtc
-        {
-            get { return this.unmodifiedSinceDateUtc ?? default(DateTime); }
-            set
-            {
-                if (value == null)
-                {
-                    this.unmodifiedSinceDate = null;
-                    this.unmodifiedSinceDateUtc = null;
-                }
-                else
-                {
-                    this.unmodifiedSinceDateUtc = value;
                     this.unmodifiedSinceDate = value;
                 }
             }
         }
 
         /// <summary>
-        /// Checks if UnmodifiedSinceDateUtc property is set.
+        /// Checks if UnmodifiedSinceDate property is set.
         /// </summary>
-        /// <returns>true if UnmodifiedSinceDateUtc property is set.</returns>
-        internal bool IsSetUnmodifiedSinceDateUtc()
+        /// <returns>true if UnmodifiedSinceDate property is set.</returns>
+        internal bool IsSetUnmodifiedSinceDate()
         {
-            return this.unmodifiedSinceDateUtc.HasValue;
+            return this.unmodifiedSinceDate.HasValue;
         }
 
         /// <summary>

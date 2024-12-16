@@ -38,24 +38,24 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual(null, nullModel.Priority);
 
             var expected = new DateTime(2018, 8, 1, 0, 0, 0, DateTimeKind.Utc);
-            Assert.AreEqual(expected, model.ReservoirQuotaTTL.Value.ToUniversalTime());
+            Assert.AreEqual(expected, model.ReservoirQuotaTTL.Value);
             Assert.AreEqual(DateTimeKind.Utc, model.ReservoirQuotaTTL.Value.Kind);
             Assert.AreEqual(null, nullModel.ReservoirQuotaTTL);
 
-            Assert.AreEqual(expected, model.StartTimeISO8601.ToUniversalTime());
-            Assert.AreEqual(DateTimeKind.Local, model.StartTimeISO8601.Kind);
+            Assert.AreEqual(expected, model.StartTimeISO8601);
+            Assert.AreEqual(DateTimeKind.Utc, model.StartTimeISO8601.Kind);
             Assert.AreEqual(DateTime.MinValue, nullModel.StartTimeISO8601);
-            Assert.AreEqual(DateTimeKind.Unspecified, nullModel.StartTimeISO8601.Kind);
+            Assert.AreEqual(DateTimeKind.Utc, nullModel.StartTimeISO8601.Kind);
             
-            Assert.AreEqual(expected, model.StartTimeEpoch.ToUniversalTime());
+            Assert.AreEqual(expected, model.StartTimeEpoch);
             Assert.AreEqual(DateTimeKind.Utc, model.StartTimeEpoch.Kind);
             Assert.AreEqual(DateTime.MinValue, nullModel.StartTimeEpoch);
-            Assert.AreEqual(DateTimeKind.Unspecified, nullModel.StartTimeEpoch.Kind);
+            Assert.AreEqual(DateTimeKind.Utc, nullModel.StartTimeEpoch.Kind);
 
-            Assert.AreEqual(expected, model.StartTimeRFC822.ToUniversalTime());
-            Assert.AreEqual(DateTimeKind.Local, model.StartTimeRFC822.Kind);
+            Assert.AreEqual(expected, model.StartTimeRFC822);
+            Assert.AreEqual(DateTimeKind.Utc, model.StartTimeRFC822.Kind);
             Assert.AreEqual(DateTime.MinValue, nullModel.StartTimeRFC822);
-            Assert.AreEqual(DateTimeKind.Unspecified, nullModel.StartTimeRFC822.Kind);
+            Assert.AreEqual(DateTimeKind.Utc, nullModel.StartTimeRFC822.Kind);
         }
 
         private Model UnmarshallModel(string json)

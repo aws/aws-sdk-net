@@ -38,7 +38,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         {
             CheckDNSAvailabilityRequest request = new CheckDNSAvailabilityRequest()
             {
-                CNAMEPrefix = "mycnamecheck" + DateTime.Now.Ticks
+                CNAMEPrefix = "mycnamecheck" + DateTime.UtcNow.Ticks
             };
 
             CheckDNSAvailabilityResponse response = Client.CheckDNSAvailability(request);
@@ -50,7 +50,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         [TestCategory("ElasticBeanstalk")]
         public void CRUDApplication()
         {
-            string applicationName = "dotnet-integ-app" + DateTime.Now.Ticks;
+            string applicationName = "dotnet-integ-app" + DateTime.UtcNow.Ticks;
             CreateApplicationRequest createRequest = new CreateApplicationRequest()
             {
                 ApplicationName = applicationName,

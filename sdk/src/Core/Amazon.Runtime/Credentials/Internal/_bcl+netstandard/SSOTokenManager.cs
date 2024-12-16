@@ -118,9 +118,7 @@ namespace Amazon.Runtime.Credentials.Internal
                 if (!BlockRefreshUntil.HasValue)
                     return false;
 
-#pragma warning disable CS0618 // Type or member is obsolete
                 return BlockRefreshUntil.Value < AWSSDKUtils.CorrectedUtcNow;
-#pragma warning restore CS0618 // Type or member is obsolete
             }
         }
 
@@ -238,9 +236,7 @@ namespace Amazon.Runtime.Credentials.Internal
                                 RefreshState = new RefreshState
                                 {
                                     FailedLastRefreshAttempt = true,
-#pragma warning disable CS0612,CS0618 // Type or member is obsolete
                                     BlockRefreshUntil = AWSSDKUtils.CorrectedUtcNow.AddSeconds(30)
-#pragma warning restore CS0612,CS0618 // Type or member is obsolete
                                 }
                             };
 
@@ -501,9 +497,7 @@ namespace Amazon.Runtime.Credentials.Internal
                                 RefreshState = new RefreshState
                                 {
                                     FailedLastRefreshAttempt = true,
-#pragma warning disable CS0612,CS0618 // Type or member is obsolete
                                     BlockRefreshUntil = AWSSDKUtils.CorrectedUtcNow.AddSeconds(30)
-#pragma warning restore CS0612,CS0618 // Type or member is obsolete
                                 }
                             };
 
@@ -712,9 +706,7 @@ namespace Amazon.Runtime.Credentials.Internal
         /// <returns>A Client Name to use in the internal SSO flow</returns>
         private static string GetSsoClientName(string clientName)
         {
-#pragma warning disable CS0618 // Type or member is obsolete
             var dateStamp = AWSSDKUtils.ConvertToUnixEpochSecondsString(AWSSDKUtils.CorrectedUtcNow);
-#pragma warning restore CS0618 // Type or member is obsolete
             return $"{clientName}-{dateStamp}";
         }
     }

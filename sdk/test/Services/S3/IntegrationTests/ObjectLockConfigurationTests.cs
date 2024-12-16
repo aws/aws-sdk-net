@@ -196,7 +196,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         {
             AddObjectLockConfiguration();
 
-            DateTime date = DateTime.Now.AddMinutes(15);
+            DateTime date = DateTime.UtcNow.AddMinutes(15);
             var key = PutObject();
 
             try
@@ -248,7 +248,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         {
             AddObjectLockConfiguration();
 
-            DateTime date = DateTime.Now.AddMinutes(15);
+            DateTime date = DateTime.UtcNow.AddMinutes(15);
             var key = PutObject(date);
 
             try

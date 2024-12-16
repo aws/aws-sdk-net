@@ -142,8 +142,8 @@ namespace Amazon.DNXCore.IntegrationTests
             // wait until subscription has been confirmed, maximum wait time of two minutes
             // by default
             string subArn = null;
-            var latest = DateTime.Now + subscriptionWaitDelay;
-            while (DateTime.Now < latest)
+            var latest = DateTime.UtcNow + subscriptionWaitDelay;
+            while (DateTime.UtcNow < latest)
             {
                 // get subscriptions for topic
                 var listSubscriptionsRequest = new ListSubscriptionsByTopicRequest

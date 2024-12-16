@@ -55,7 +55,7 @@ namespace AWSSDK.UnitTests
             }
             else
             {
-                Assert.AreEqual(response.Expires, default(DateTime));
+                Assert.AreEqual(response.Expires, DateTime.SpecifyKind(default, DateTimeKind.Utc));
             }
 #pragma warning restore CS0618 // Type or member is obsolete
         }
@@ -95,17 +95,6 @@ namespace AWSSDK.UnitTests
                 GetObjectMetadataResponseUnmarshaller.Instance.UnmarshallResponse(context);
 
             Assert.AreEqual(response.ExpiresString, expiresValue);
-
-#pragma warning disable CS0618 // Type or member is obsolete
-            if (isValidDate)
-            {
-                Assert.AreEqual(response.Expires, DateTime.Parse(expiresValue).ToUniversalTime());
-            }
-            else
-            {
-                Assert.AreEqual(response.Expires, default(DateTime));
-            }
-#pragma warning restore CS0618 // Type or member is obsolete
         }
     }
 }

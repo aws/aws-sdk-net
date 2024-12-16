@@ -88,7 +88,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             const string BANDWIDTH = "1Gbps";
 
             var locations = Client.DescribeLocations().Locations;
-            var connectionName = "dotnet-test-connection" + DateTime.Now.Ticks;
+            var connectionName = "dotnet-test-connection" + DateTime.UtcNow.Ticks;
             string connectionId = null;
 
             try

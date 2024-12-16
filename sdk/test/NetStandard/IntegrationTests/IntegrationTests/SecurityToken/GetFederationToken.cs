@@ -29,7 +29,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             Assert.NotNull(gftResult.Credentials.SessionToken);
             Assert.NotEqual(DateTime.MinValue, gftResult.Credentials.Expiration);
 
-            var time = DateTime.Now;
+            var time = DateTime.UtcNow;
             var approximateExpires = time.AddHours(1);
             var expiresAfter = approximateExpires.AddMinutes(-5);
             var expiresBefore = approximateExpires.AddMinutes(5);
@@ -70,7 +70,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             Assert.NotNull(gftResult.Credentials.SessionToken);
             Assert.NotEqual(DateTime.MinValue, gftResult.Credentials.Expiration);
 
-            var time = DateTime.Now;
+            var time = DateTime.UtcNow;
             var approximateExpires = time.AddHours(1);
             var expiresAfter = approximateExpires.AddMinutes(-5);
             var expiresBefore = approximateExpires.AddMinutes(5);

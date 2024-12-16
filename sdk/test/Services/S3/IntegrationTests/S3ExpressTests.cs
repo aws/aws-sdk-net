@@ -219,7 +219,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             var newObjectContent = "New Test Content";
 
             // Create regular bucket
-            var newRegularBucket = $"{UtilityMethods.SDK_TEST_PREFIX + DateTime.Now.Ticks}";
+            var newRegularBucket = $"{UtilityMethods.SDK_TEST_PREFIX + DateTime.UtcNow.Ticks}";
 
             Client.PutBucket(newRegularBucket);
             S3TestUtils.WaitForBucket(Client, newRegularBucket);

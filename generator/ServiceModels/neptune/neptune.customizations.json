@@ -14,22 +14,11 @@
                 }
             ]
         },
-        "DescribeEventsMessage": {
-            "backwardsCompatibleDateTimeProperties": [
-                "StartTime",
-                "EndTime"
-            ]
-        },
         "ModifyDBInstanceMessage": {
             "modify": [
                 {
                     "PubliclyAccessible": { "deprecatedMessage": "This parameter is not supported" }
                 }
-            ]
-        },
-        "RestoreDBClusterToPointInTimeMessage": {
-            "backwardsCompatibleDateTimeProperties": [
-                "RestoreToTime"
             ]
         }
     },
