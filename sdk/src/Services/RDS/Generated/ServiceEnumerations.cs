@@ -393,6 +393,10 @@ namespace Amazon.RDS
     {
 
         /// <summary>
+        /// Constant MYSQL_CACHING_SHA2_PASSWORD for ClientPasswordAuthType
+        /// </summary>
+        public static readonly ClientPasswordAuthType MYSQL_CACHING_SHA2_PASSWORD = new ClientPasswordAuthType("MYSQL_CACHING_SHA2_PASSWORD");
+        /// <summary>
         /// Constant MYSQL_NATIVE_PASSWORD for ClientPasswordAuthType
         /// </summary>
         public static readonly ClientPasswordAuthType MYSQL_NATIVE_PASSWORD = new ClientPasswordAuthType("MYSQL_NATIVE_PASSWORD");
