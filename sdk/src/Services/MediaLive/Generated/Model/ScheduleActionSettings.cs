@@ -51,8 +51,8 @@ namespace Amazon.MediaLive.Model
         private StaticImageOutputDeactivateScheduleActionSettings _staticImageOutputDeactivateSettings;
 
         /// <summary>
-        /// Gets and sets the property HlsId3SegmentTaggingSettings. Action to insert HLS ID3
-        /// segment tagging
+        /// Gets and sets the property HlsId3SegmentTaggingSettings. Action to insert ID3 metadata
+        /// in every segment, in HLS output groups
         /// </summary>
         public HlsId3SegmentTaggingScheduleActionSettings HlsId3SegmentTaggingSettings
         {
@@ -67,7 +67,8 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HlsTimedMetadataSettings. Action to insert HLS metadata
+        /// Gets and sets the property HlsTimedMetadataSettings. Action to insert ID3 metadata
+        /// once, in HLS output groups
         /// </summary>
         public HlsTimedMetadataScheduleActionSettings HlsTimedMetadataSettings
         {

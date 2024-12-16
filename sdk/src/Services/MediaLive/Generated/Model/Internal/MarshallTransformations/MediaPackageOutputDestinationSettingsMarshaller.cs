@@ -48,10 +48,22 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetChannelGroup())
+            {
+                context.Writer.WritePropertyName("channelGroup");
+                context.Writer.Write(requestObject.ChannelGroup);
+            }
+
             if(requestObject.IsSetChannelId())
             {
                 context.Writer.WritePropertyName("channelId");
                 context.Writer.Write(requestObject.ChannelId);
+            }
+
+            if(requestObject.IsSetChannelName())
+            {
+                context.Writer.WritePropertyName("channelName");
+                context.Writer.Write(requestObject.ChannelName);
             }
 
         }
