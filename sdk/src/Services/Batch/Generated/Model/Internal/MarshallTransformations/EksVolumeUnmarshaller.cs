@@ -84,6 +84,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("persistentVolumeClaim", targetDepth))
+                {
+                    var unmarshaller = EksPersistentVolumeClaimUnmarshaller.Instance;
+                    unmarshalledObject.PersistentVolumeClaim = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("secret", targetDepth))
                 {
                     var unmarshaller = EksSecretUnmarshaller.Instance;

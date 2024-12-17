@@ -39,6 +39,7 @@ namespace Amazon.Batch.Model
         private string _mountPath;
         private string _name;
         private bool? _readOnly;
+        private string _subPath;
 
         /// <summary>
         /// Gets and sets the property MountPath. 
@@ -93,6 +94,24 @@ namespace Amazon.Batch.Model
         internal bool IsSetReadOnly()
         {
             return this._readOnly.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubPath. 
+        /// <para>
+        /// A sub-path inside the referenced volume instead of its root.
+        /// </para>
+        /// </summary>
+        public string SubPath
+        {
+            get { return this._subPath; }
+            set { this._subPath = value; }
+        }
+
+        // Check to see if SubPath property is set
+        internal bool IsSetSubPath()
+        {
+            return this._subPath != null;
         }
 
     }

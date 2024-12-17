@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for EksMetadata Object
+    /// Response Unmarshaller for EksPersistentVolumeClaim Object
     /// </summary>  
-    public class EksMetadataUnmarshaller : IUnmarshaller<EksMetadata, XmlUnmarshallerContext>, IUnmarshaller<EksMetadata, JsonUnmarshallerContext>
+    public class EksPersistentVolumeClaimUnmarshaller : IUnmarshaller<EksPersistentVolumeClaim, XmlUnmarshallerContext>, IUnmarshaller<EksPersistentVolumeClaim, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        EksMetadata IUnmarshaller<EksMetadata, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        EksPersistentVolumeClaim IUnmarshaller<EksPersistentVolumeClaim, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public EksMetadata Unmarshall(JsonUnmarshallerContext context)
+        public EksPersistentVolumeClaim Unmarshall(JsonUnmarshallerContext context)
         {
-            EksMetadata unmarshalledObject = new EksMetadata();
+            EksPersistentVolumeClaim unmarshalledObject = new EksPersistentVolumeClaim();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,22 +66,16 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("annotations", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.Annotations = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("labels", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.Labels = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("namespace", targetDepth))
+                if (context.TestExpression("claimName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Namespace = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ClaimName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("readOnly", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.ReadOnly = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -89,12 +83,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         }
 
 
-        private static EksMetadataUnmarshaller _instance = new EksMetadataUnmarshaller();        
+        private static EksPersistentVolumeClaimUnmarshaller _instance = new EksPersistentVolumeClaimUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static EksMetadataUnmarshaller Instance
+        public static EksPersistentVolumeClaimUnmarshaller Instance
         {
             get
             {

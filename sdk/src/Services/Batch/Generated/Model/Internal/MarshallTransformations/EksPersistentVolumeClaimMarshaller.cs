@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// EksContainerVolumeMount Marshaller
+    /// EksPersistentVolumeClaim Marshaller
     /// </summary>
-    public class EksContainerVolumeMountMarshaller : IRequestMarshaller<EksContainerVolumeMount, JsonMarshallerContext> 
+    public class EksPersistentVolumeClaimMarshaller : IRequestMarshaller<EksPersistentVolumeClaim, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,20 +44,14 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(EksContainerVolumeMount requestObject, JsonMarshallerContext context)
+        public void Marshall(EksPersistentVolumeClaim requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetMountPath())
+            if(requestObject.IsSetClaimName())
             {
-                context.Writer.WritePropertyName("mountPath");
-                context.Writer.Write(requestObject.MountPath);
-            }
-
-            if(requestObject.IsSetName())
-            {
-                context.Writer.WritePropertyName("name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WritePropertyName("claimName");
+                context.Writer.Write(requestObject.ClaimName);
             }
 
             if(requestObject.IsSetReadOnly())
@@ -66,18 +60,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ReadOnly);
             }
 
-            if(requestObject.IsSetSubPath())
-            {
-                context.Writer.WritePropertyName("subPath");
-                context.Writer.Write(requestObject.SubPath);
-            }
-
         }
 
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static EksContainerVolumeMountMarshaller Instance = new EksContainerVolumeMountMarshaller();
+        public readonly static EksPersistentVolumeClaimMarshaller Instance = new EksPersistentVolumeClaimMarshaller();
 
     }
 }
