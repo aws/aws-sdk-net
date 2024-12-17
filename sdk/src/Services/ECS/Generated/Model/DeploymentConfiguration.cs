@@ -126,8 +126,9 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  </note> 
         /// <para>
-        /// If the tasks in the service use the Fargate launch type, the maximum percent value
-        /// is not used, although it is returned when describing your service.
+        /// If the service uses either the blue/green (<c>CODE_DEPLOY</c>) or <c>EXTERNAL</c>
+        /// deployment types, and the tasks in the service use the Fargate launch type, the maximum
+        /// percent value is not used. The value is still returned when describing your service.
         /// </para>
         /// </summary>
         public int MaximumPercent

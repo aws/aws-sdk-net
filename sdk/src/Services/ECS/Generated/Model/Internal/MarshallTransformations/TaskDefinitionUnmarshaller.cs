@@ -90,6 +90,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.DeregisteredAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("enableFaultInjection", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.EnableFaultInjection = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ephemeralStorage", targetDepth))
                 {
                     var unmarshaller = EphemeralStorageUnmarshaller.Instance;

@@ -91,6 +91,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Cpu);
                 }
 
+                if(publicRequest.IsSetEnableFaultInjection())
+                {
+                    context.Writer.WritePropertyName("enableFaultInjection");
+                    context.Writer.Write(publicRequest.EnableFaultInjection);
+                }
+
                 if(publicRequest.IsSetEphemeralStorage())
                 {
                     context.Writer.WritePropertyName("ephemeralStorage");
