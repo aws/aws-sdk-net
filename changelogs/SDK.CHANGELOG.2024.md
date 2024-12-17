@@ -1,3 +1,28 @@
+### 3.7.948.0 (2024-12-17 19:24 UTC)
+* Account (3.7.401.0)
+	* Update endpoint configuration.
+* Backup (3.7.402.0)
+	* Add Support for Backup Indexing
+* BackupSearch (3.7.400.0)
+	* Add support for searching backups
+* Batch (3.7.404.0)
+	* This feature allows AWS Batch on Amazon EKS to support configuration of Pod Annotations, overriding Namespace on which the Batch job's Pod runs on, and allows Subpath and Persistent Volume claim to be set for AWS Batch on Amazon EKS jobs.
+* CleanRoomsML (3.7.402.0)
+	* Add support for SQL compute configuration for StartAudienceGenerationJob API.
+* CloudFront (3.7.404.0)
+	* Adds support for OriginReadTimeout and OriginKeepaliveTimeout to create CloudFront Distributions with VPC Origins.
+* CodePipeline (3.7.406.0)
+	* AWS CodePipeline V2 type pipelines now support Managed Compute Rule.
+* ECS (3.7.408.0)
+	* Added support for enableFaultInjection task definition parameter which can be used to enable Fault Injection feature on ECS tasks.
+* MainframeModernization (3.7.402.0)
+	* This release adds support for AWS Mainframe Modernization(M2) Service to allow specifying network type(ipv4, dual) for the environment instances. For dual network type, m2 environment applications will serve both IPv4 and IPv6 requests, whereas for ipv4 it will serve only IPv4 requests.
+* Synthetics (3.7.403.0)
+	* Add support to toggle outbound IPv6 traffic on canaries connected to dualstack subnets.  This behavior can be controlled via the new Ipv6AllowedForDualStack parameter of the VpcConfig input object in CreateCanary and UpdateCanary APIs.
+* Core 3.7.400.65
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.947.0 (2024-12-16 19:24 UTC)
 * Cloud9 (3.7.400.65)
 	* Added information about Ubuntu 18.04 will be removed from the available imageIds for Cloud9 because Ubuntu 18.04 has ended standard support on May 31, 2023.

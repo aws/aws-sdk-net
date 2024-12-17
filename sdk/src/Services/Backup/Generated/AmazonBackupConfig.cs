@@ -32,7 +32,7 @@ namespace Amazon.Backup
     public partial class AmazonBackupConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Backup", "3.7.401.51");
+            InternalSDKUtils.BuildUserAgentString("Backup", "3.7.402.0");
 
         private string _userAgent = UserAgentString;
         ///<summary>
