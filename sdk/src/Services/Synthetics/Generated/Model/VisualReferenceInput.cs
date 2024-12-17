@@ -55,7 +55,9 @@ namespace Amazon.Synthetics.Model
         /// from the next run after this update is made, <c>lastrun</c> to use the screenshots
         /// from the most recent run before this update was made, or the value of <c>Id</c> in
         /// the <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_CanaryRun.html">
-        /// CanaryRun</a> from any past run of this canary.
+        /// CanaryRun</a> from a run of this a canary in the past 31 days. If you specify the
+        /// <c>Id</c> of a canary run older than 31 days, the operation returns a 400 validation
+        /// exception error..
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]
