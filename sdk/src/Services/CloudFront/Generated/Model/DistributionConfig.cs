@@ -249,15 +249,19 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property DefaultRootObject. 
         /// <para>
-        /// The object that you want CloudFront to request from your origin (for example, <c>index.html</c>)
-        /// when a viewer requests the root URL for your distribution (<c>https://www.example.com</c>)
-        /// instead of an object in your distribution (<c>https://www.example.com/product-description.html</c>).
-        /// Specifying a default root object avoids exposing the contents of your distribution.
+        /// When a viewer requests the root URL for your distribution, the default root object
+        /// is the object that you want CloudFront to request from your origin. For example, if
+        /// your root URL is <c>https://www.example.com</c>, you can specify CloudFront to return
+        /// the <c>index.html</c> file as the default root object. You can specify a default root
+        /// object so that viewers see a specific file or object, instead of another object in
+        /// your distribution (for example, <c>https://www.example.com/product-description.html</c>).
+        /// A default root object avoids exposing the contents of your distribution.
         /// </para>
         ///  
         /// <para>
-        /// Specify only the object name, for example, <c>index.html</c>. Don't add a <c>/</c>
-        /// before the object name.
+        /// You can specify the object name or a path to the object name (for example, <c>index.html</c>
+        /// or <c>exampleFolderName/index.html</c>). Your string can't begin with a forward slash
+        /// (<c>/</c>). Only specify the object name or the path to the object.
         /// </para>
         ///  
         /// <para>
@@ -276,8 +280,8 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about the default root object, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DefaultRootObject.html">Creating
-        /// a Default Root Object</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// For more information about the default root object, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DefaultRootObject.html">Specify
+        /// a default root object</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </para>
         /// </summary>
         public string DefaultRootObject
