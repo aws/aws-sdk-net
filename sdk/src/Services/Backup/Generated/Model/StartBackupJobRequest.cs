@@ -40,6 +40,7 @@ namespace Amazon.Backup.Model
         private long? _completeWindowMinutes;
         private string _iamRoleArn;
         private string _idempotencyToken;
+        private Index _index;
         private Lifecycle _lifecycle;
         private Dictionary<string, string> _recoveryPointTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _resourceArn;
@@ -155,6 +156,50 @@ namespace Amazon.Backup.Model
         internal bool IsSetIdempotencyToken()
         {
             return this._idempotencyToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Index. 
+        /// <para>
+        /// Include this parameter to enable index creation if your backup job has a resource
+        /// type that supports backup indexes.
+        /// </para>
+        ///  
+        /// <para>
+        /// Resource types that support backup indexes include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>EBS</c> for Amazon Elastic Block Store
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>S3</c> for Amazon Simple Storage Service (Amazon S3)
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Index can have 1 of 2 possible values, either <c>ENABLED</c> or <c>DISABLED</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To create a backup index for an eligible <c>ACTIVE</c> recovery point that does not
+        /// yet have a backup index, set value to <c>ENABLED</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To delete a backup index, set value to <c>DISABLED</c>.
+        /// </para>
+        /// </summary>
+        public Index Index
+        {
+            get { return this._index; }
+            set { this._index = value; }
+        }
+
+        // Check to see if Index property is set
+        internal bool IsSetIndex()
+        {
+            return this._index != null;
         }
 
         /// <summary>

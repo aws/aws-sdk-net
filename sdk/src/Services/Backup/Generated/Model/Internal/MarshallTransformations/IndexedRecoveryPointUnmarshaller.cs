@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Backup.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RecoveryPointByResource Object
+    /// Response Unmarshaller for IndexedRecoveryPoint Object
     /// </summary>  
-    public class RecoveryPointByResourceUnmarshaller : IUnmarshaller<RecoveryPointByResource, XmlUnmarshallerContext>, IUnmarshaller<RecoveryPointByResource, JsonUnmarshallerContext>
+    public class IndexedRecoveryPointUnmarshaller : IUnmarshaller<IndexedRecoveryPoint, XmlUnmarshallerContext>, IUnmarshaller<IndexedRecoveryPoint, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        RecoveryPointByResource IUnmarshaller<RecoveryPointByResource, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        IndexedRecoveryPoint IUnmarshaller<IndexedRecoveryPoint, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public RecoveryPointByResource Unmarshall(JsonUnmarshallerContext context)
+        public IndexedRecoveryPoint Unmarshall(JsonUnmarshallerContext context)
         {
-            RecoveryPointByResource unmarshalledObject = new RecoveryPointByResource();
+            IndexedRecoveryPoint unmarshalledObject = new IndexedRecoveryPoint();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,28 +66,28 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("BackupSizeBytes", targetDepth))
-                {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.BackupSizeBytes = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("BackupVaultName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BackupVaultName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("CreationDate", targetDepth))
+                if (context.TestExpression("BackupCreationDate", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreationDate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BackupCreationDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("EncryptionKeyArn", targetDepth))
+                if (context.TestExpression("BackupVaultArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EncryptionKeyArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BackupVaultArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("IamRoleArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.IamRoleArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("IndexCreationDate", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.IndexCreationDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("IndexStatus", targetDepth))
@@ -102,46 +102,22 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                     unmarshalledObject.IndexStatusMessage = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("IsParent", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.IsParent = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ParentRecoveryPointArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ParentRecoveryPointArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("RecoveryPointArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RecoveryPointArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ResourceName", targetDepth))
+                if (context.TestExpression("ResourceType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("SourceResourceArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("StatusMessage", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StatusMessage = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("VaultType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VaultType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SourceResourceArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -149,12 +125,12 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
         }
 
 
-        private static RecoveryPointByResourceUnmarshaller _instance = new RecoveryPointByResourceUnmarshaller();        
+        private static IndexedRecoveryPointUnmarshaller _instance = new IndexedRecoveryPointUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RecoveryPointByResourceUnmarshaller Instance
+        public static IndexedRecoveryPointUnmarshaller Instance
         {
             get
             {

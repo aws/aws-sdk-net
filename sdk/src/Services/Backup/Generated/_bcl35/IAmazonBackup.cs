@@ -2494,6 +2494,60 @@ namespace Amazon.Backup
 
         #endregion
         
+        #region  GetRecoveryPointIndexDetails
+
+
+        /// <summary>
+        /// This operation returns the metadata and details specific to the backup index associated
+        /// with the specified recovery point.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRecoveryPointIndexDetails service method.</param>
+        /// 
+        /// <returns>The response from the GetRecoveryPointIndexDetails service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetRecoveryPointIndexDetails">REST API Reference for GetRecoveryPointIndexDetails Operation</seealso>
+        GetRecoveryPointIndexDetailsResponse GetRecoveryPointIndexDetails(GetRecoveryPointIndexDetailsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetRecoveryPointIndexDetails operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetRecoveryPointIndexDetails operation on AmazonBackupClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetRecoveryPointIndexDetails
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetRecoveryPointIndexDetails">REST API Reference for GetRecoveryPointIndexDetails Operation</seealso>
+        IAsyncResult BeginGetRecoveryPointIndexDetails(GetRecoveryPointIndexDetailsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetRecoveryPointIndexDetails operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetRecoveryPointIndexDetails.</param>
+        /// 
+        /// <returns>Returns a  GetRecoveryPointIndexDetailsResult from Backup.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetRecoveryPointIndexDetails">REST API Reference for GetRecoveryPointIndexDetails Operation</seealso>
+        GetRecoveryPointIndexDetailsResponse EndGetRecoveryPointIndexDetails(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetRecoveryPointRestoreMetadata
 
 
@@ -3311,6 +3365,63 @@ namespace Amazon.Backup
         /// <returns>Returns a  ListFrameworksResult from Backup.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListFrameworks">REST API Reference for ListFrameworks Operation</seealso>
         ListFrameworksResponse EndListFrameworks(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListIndexedRecoveryPoints
+
+
+        /// <summary>
+        /// This operation returns a list of recovery points that have an associated index, belonging
+        /// to the specified account.
+        /// 
+        ///  
+        /// <para>
+        /// Optional parameters you can include are: MaxResults; NextToken; SourceResourceArns;
+        /// CreatedBefore; CreatedAfter; and ResourceType.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListIndexedRecoveryPoints service method.</param>
+        /// 
+        /// <returns>The response from the ListIndexedRecoveryPoints service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListIndexedRecoveryPoints">REST API Reference for ListIndexedRecoveryPoints Operation</seealso>
+        ListIndexedRecoveryPointsResponse ListIndexedRecoveryPoints(ListIndexedRecoveryPointsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListIndexedRecoveryPoints operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListIndexedRecoveryPoints operation on AmazonBackupClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListIndexedRecoveryPoints
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListIndexedRecoveryPoints">REST API Reference for ListIndexedRecoveryPoints Operation</seealso>
+        IAsyncResult BeginListIndexedRecoveryPoints(ListIndexedRecoveryPointsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListIndexedRecoveryPoints operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListIndexedRecoveryPoints.</param>
+        /// 
+        /// <returns>Returns a  ListIndexedRecoveryPointsResult from Backup.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListIndexedRecoveryPoints">REST API Reference for ListIndexedRecoveryPoints Operation</seealso>
+        ListIndexedRecoveryPointsResponse EndListIndexedRecoveryPoints(IAsyncResult asyncResult);
 
         #endregion
         
@@ -4879,6 +4990,68 @@ namespace Amazon.Backup
         /// <returns>Returns a  UpdateGlobalSettingsResult from Backup.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateGlobalSettings">REST API Reference for UpdateGlobalSettings Operation</seealso>
         UpdateGlobalSettingsResponse EndUpdateGlobalSettings(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateRecoveryPointIndexSettings
+
+
+        /// <summary>
+        /// This operation updates the settings of a recovery point index.
+        /// 
+        ///  
+        /// <para>
+        /// Required: BackupVaultName, RecoveryPointArn, and IAMRoleArn
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRecoveryPointIndexSettings service method.</param>
+        /// 
+        /// <returns>The response from the UpdateRecoveryPointIndexSettings service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a parameter
+        /// is of the wrong type.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateRecoveryPointIndexSettings">REST API Reference for UpdateRecoveryPointIndexSettings Operation</seealso>
+        UpdateRecoveryPointIndexSettingsResponse UpdateRecoveryPointIndexSettings(UpdateRecoveryPointIndexSettingsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateRecoveryPointIndexSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRecoveryPointIndexSettings operation on AmazonBackupClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateRecoveryPointIndexSettings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateRecoveryPointIndexSettings">REST API Reference for UpdateRecoveryPointIndexSettings Operation</seealso>
+        IAsyncResult BeginUpdateRecoveryPointIndexSettings(UpdateRecoveryPointIndexSettingsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateRecoveryPointIndexSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateRecoveryPointIndexSettings.</param>
+        /// 
+        /// <returns>Returns a  UpdateRecoveryPointIndexSettingsResult from Backup.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateRecoveryPointIndexSettings">REST API Reference for UpdateRecoveryPointIndexSettings Operation</seealso>
+        UpdateRecoveryPointIndexSettingsResponse EndUpdateRecoveryPointIndexSettings(IAsyncResult asyncResult);
 
         #endregion
         
