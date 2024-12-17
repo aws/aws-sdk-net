@@ -25,7 +25,7 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.Runtime.Documents.Internal.Transform
 {
     /// <summary>
-    /// Dedicated <see cref="IXmlUnmarshaller{T,R}"/> for <see cref="Document"/>.
+    /// Dedicated <see cref="IJsonUnmarshaller{T,TJsonUnmarshallerContext}"/> for <see cref="Document"/>.
     /// </summary>
     /// <remarks>
     /// Per the Document Spec, Xml is not supported.
@@ -47,17 +47,17 @@ namespace Amazon.Runtime.Documents.Internal.Transform
                 case JsonTokenType.False:
                     return new Document(reader.Reader.GetBoolean());
                 case JsonTokenType.Number:
-                    if (reader.Reader.TryGetDouble(out double doubleValue))
-                    {
-                        return new Document(doubleValue);
-                    }
-                    else if (reader.Reader.TryGetInt32(out int intValue))
+                    if (reader.Reader.TryGetInt32(out int intValue))
                     {
                         return new Document(intValue);
                     }
                     else if (reader.Reader.TryGetInt64(out long longValue))
                     {
                         return new Document(longValue);
+                    }
+                    else if (reader.Reader.TryGetDouble(out double doubleValue))
+                    {
+                        return new Document(doubleValue);
                     }
                     else
                     {

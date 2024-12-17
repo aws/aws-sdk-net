@@ -47,7 +47,7 @@ namespace Amazon.Runtime.EventStreams.Utils
         /// Converts an <seealso cref="EventStreamMessage"/> to a <seealso cref="JsonUnmarshallerContext"/>
         /// </summary>
         /// <param name="message">The event stream message</param>
-        /// <returns>The JsonUnmarshallerContext and Utf8JsonReader</returns>
+        /// <returns>The JsonUnmarshallerContext</returns>
         public static JsonUnmarshallerContext ConvertMessageToJsonContext(IEventStreamMessage message)
         {
             var stream = new MemoryStream(message.Payload);

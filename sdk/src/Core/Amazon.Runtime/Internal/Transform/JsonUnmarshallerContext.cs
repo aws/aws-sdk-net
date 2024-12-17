@@ -139,6 +139,19 @@ namespace Amazon.Runtime.Internal.Transform
         }
 
         #endregion
+        #region Public Methods
+
+        /// <summary>
+        /// Reads the next token at depth greater than or equal to target depth.
+        /// </summary>
+        /// <param name="targetDepth">Tokens are read at depth greater than or equal to target depth.</param>
+        /// <param name="reader">The Utf8JsonReader used to read the document</param>
+        /// <returns>True if a token was read and current depth is greater than or equal to target depth.</returns>
+        public bool ReadAtDepth(int targetDepth, ref StreamingUtf8JsonReader reader)
+        {
+            return Read(ref reader) && this.CurrentDepth >= targetDepth;
+        }
+        #endregion
 
         #region Overrides
 
@@ -417,16 +430,35 @@ namespace Amazon.Runtime.Internal.Transform
         }
 
         #endregion
-
+        /// <summary>
+        /// This method should only be called when the entire stream fits within the buffer. If you have a stream
+        /// that is larger than the initial buffer size, you should use the overload that takes Utf8JsonReader instead
+        /// because the streamingReader will not have the context to get more data from the stream.
+        /// </summary>
+        /// <param name="streamingReader"></param>
+        /// <returns>A Json document</returns>
         public JsonDocument ToJsonDocument(ref StreamingUtf8JsonReader streamingReader)
         {
             JsonDocument document = null;
+            
             streamingReader.PassReaderByRef((ref Utf8JsonReader reader) =>
             {
                 document = JsonDocument.ParseValue(ref reader);
-
-
             });
+
+            if (stack.Count > 0)
+                stack.Pop();
+            return document;
+        }
+
+        /// <summary>
+        /// This method should be be u
+        /// </summary>
+        /// <param name="reader"></param>
+        /// <returns></returns>
+        public JsonDocument ToJsonDocument(ref Utf8JsonReader reader)
+        {
+            JsonDocument document = JsonDocument.ParseValue(ref reader);
 
             if (stack.Count > 0)
                 stack.Pop();

@@ -252,7 +252,7 @@ namespace Amazon
         public const string StreamingUtf8JsonReaderBufferSizeKey = "StreamingUtf8JsonReaderBufferSize";
 
         /// <summary>
-        /// Configures the default buffer size for the <see cref="Amazon.Runtime.Internal.Util.StreamingUtf8JsonReader"/>
+        /// Configures the default buffer size for the the StreamingUtf8JsonReader/>
         /// used for buffering data from the stream passed into its constructor. If this isn't set, the SDK will default to 4096 bytes.
         /// 
         /// Setting this property is not thread safe and should only be set at application startup.

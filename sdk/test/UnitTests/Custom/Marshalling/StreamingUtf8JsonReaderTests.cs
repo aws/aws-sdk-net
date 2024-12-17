@@ -10,6 +10,7 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using Amazon.Runtime.Internal.Util;
 using Amazon.EC2.Model;
+using Amazon;
 namespace AWSSDK.UnitTests
 {
     /// <summary>
@@ -20,6 +21,14 @@ namespace AWSSDK.UnitTests
     [TestClass]
     public class StreamingUtf8JsonReaderTests
     {
+        private static int originalBufferSize;
+        [ClassInitialize]
+        public static void Initialize(TestContext testContext)
+        {
+            originalBufferSize = AWSConfigs.StreamingUtf8JsonReaderBufferSize.GetValueOrDefault();
+            AWSConfigs.StreamingUtf8JsonReaderBufferSize = 4096;
+        }
+
         [TestMethod]
         public void HandlesUtf8BOM()
         {
@@ -49,7 +58,8 @@ namespace AWSSDK.UnitTests
             // here we're creating a json string that is greater than the default buffer size to test the GetMoreBytesFromStream logic
             var sb = new StringBuilder();
             sb.Append("{ \"key\": \"");
-            sb.Append(new string('x', 7500));
+            var size = AWSConfigs.StreamingUtf8JsonReaderBufferSize.GetValueOrDefault() + 500;
+            sb.Append(new string('x', size));
             sb.Append("\" }");
             string largeJson = sb.ToString();
 
@@ -71,7 +81,7 @@ namespace AWSSDK.UnitTests
                     }
                 }
                 Assert.AreEqual<string>("key", key);
-                Assert.AreEqual<string>(new string('x', 7500), value);
+                Assert.AreEqual<string>(new string('x', size), value);
             }
         }
 
@@ -106,6 +116,38 @@ namespace AWSSDK.UnitTests
                 Assert.AreEqual<string>("key", key);
                 Assert.AreEqual<string>(new string('x', 1), value);
             }
+        }
+
+        [TestMethod]
+        public void PassReaderByRefUnderBufferSize()
+        {
+            var sb = new StringBuilder();
+            sb.Append("{ \"key\": \"");
+            var size = AWSConfigs.StreamingUtf8JsonReaderBufferSize.GetValueOrDefault() - 500;
+            sb.Append(new string('x', size));
+            sb.Append("\" }");
+            string largeJson = sb.ToString();
+
+            byte[] payload = Encoding.UTF8.GetBytes(largeJson);
+            using (var stream = new MemoryStream(payload))
+            {
+                var streamingReader = new StreamingUtf8JsonReader(stream);
+                JsonDocument document = null;
+                streamingReader.PassReaderByRef((ref Utf8JsonReader reader) =>
+                {
+                    document = JsonDocument.ParseValue(ref reader);
+                });
+                Assert.IsNotNull(document);
+                Assert.AreEqual<string>(largeJson, document.RootElement.GetRawText());
+                JsonElement element = document.RootElement.GetProperty("key");
+                string value = element.GetString();
+                Assert.AreEqual<string>(new string('x', size), value);
+            }
+        }
+        [ClassCleanup]
+        public static void ClassCleanup()
+        {
+            AWSConfigs.StreamingUtf8JsonReaderBufferSize = originalBufferSize;
         }
     }
 }

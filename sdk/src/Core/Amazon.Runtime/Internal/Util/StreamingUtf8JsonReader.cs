@@ -29,6 +29,7 @@ namespace Amazon.Runtime.Internal.Util
     public ref struct StreamingUtf8JsonReader
     {
         private Utf8JsonReader _reader;
+        private JsonReaderOptions _options;
         /// <summary>
         /// The UTF8JsonReader attached to the instance. 
         /// </summary>
@@ -50,13 +51,17 @@ namespace Amazon.Runtime.Internal.Util
 
             _stream = stream;
             _buffer = ArrayPool<byte>.Shared.Rent(AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096);
+            _options = new JsonReaderOptions
+            {
+                AllowTrailingCommas = true
+            };
             // need to initialize the reader even if the buffer is empty because auto-default of unassigned fields is only 
             // supported in C# 11+
-            _reader = new Utf8JsonReader(_buffer);
-            HandleUtf8Bom(ref _buffer);
+            _reader = new Utf8JsonReader(_buffer, _options);
+            SkipUtf8Bom(ref _buffer);
         }
 
-        private void HandleUtf8Bom(ref byte[] buffer)
+        private void SkipUtf8Bom(ref byte[] buffer)
         {
             int utf8BomLength = JsonConstants.Utf8Bom.Length;
             Debug.Assert(buffer.Length >= utf8BomLength);
@@ -68,7 +73,7 @@ namespace Amazon.Runtime.Internal.Util
                 start += utf8BomLength;
                 bytesRead -= utf8BomLength;
             }
-            _reader = new Utf8JsonReader(buffer.AsSpan(start, bytesRead), isFinalBlock: bytesRead == 0, default);
+            _reader = new Utf8JsonReader(buffer.AsSpan(start, bytesRead), isFinalBlock: bytesRead == 0, new JsonReaderState(_options));
         }
 
         // Custom delegate to handle ref parameters
@@ -126,14 +131,15 @@ namespace Amazon.Runtime.Internal.Util
                     // rent double the capacity, hopefully we never have to rent the maxValue but in case buffer.Length * 2 ends up greater 
                     // we must protect against that
                     var resizedBuffer = ArrayPool<byte>.Shared.Rent(Math.Min(int.MaxValue, (buffer.Length * 2)));
-                    Logger.GetLogger(typeof(StreamingUtf8JsonReader)).InfoFormat("Resizing buffer from {0} to {1}", buffer.Length, resizedBuffer.Length);
+                    Logger.GetLogger(typeof(StreamingUtf8JsonReader)).DebugFormat("Resizing buffer from {0} to {1}", buffer.Length, resizedBuffer.Length);
                     
                     buffer.AsSpan().CopyTo(resizedBuffer);
                     ArrayPool<byte>.Shared.Return(buffer);
                     buffer = resizedBuffer;
                 }
-                
-                leftover.CopyTo(buffer);
+
+                if (!resized)
+                    leftover.CopyTo(buffer);
                 int offset = leftover.Length;
 
                 bytesRead = FillBuffer(stream, ref buffer, leftover.Length, buffer.Length - leftover.Length);
