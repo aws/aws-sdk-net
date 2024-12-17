@@ -182,5 +182,23 @@ namespace ServiceClientGenerator.Generators.TestFiles
             var operationShapeName = testCase["operationName"].ToString();
             return this.Config.ServiceModel.Operations.FirstOrDefault(x => string.Equals(x.ShapeName, operationShapeName));
         }
+
+        /// <summary>
+        /// Finds the proper .NET property name for a given JSON key in the operation's input shape.
+        /// </summary>
+        private string FindPropertyName(Operation operation, string jsonKey)
+        {
+            // Get the input shape for the operation
+            var inputShape = operation.RequestStructure;
+            if (inputShape == null)
+                return jsonKey;
+
+            // Look for a member in the input shape that matches the json key
+            var member = inputShape.Members.FirstOrDefault(m => 
+                string.Equals(m.MarshallLocationName, jsonKey, StringComparison.OrdinalIgnoreCase));
+    
+            // If found, return the .NET customized name, otherwise return original key
+            return member?.PropertyName ?? jsonKey;
+        }
     }
 }
