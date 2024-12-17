@@ -1,0 +1,11 @@
+{
+  "services": [
+    {
+      "serviceName": "S3",
+      "type": "patch",
+      "changeLogMessages": [
+        "fix: Added logic to marshall NoncurrentVersionExpiration.NewerNoncurrentVersions in PutLifecycleConfigurationRequestMarshaller."
+      ]
+    }
+  ]
+}

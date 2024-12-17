@@ -109,6 +109,11 @@ namespace S3UnitTest
                         {
                             Days = 2,
                         },
+                        NoncurrentVersionExpiration = new LifecycleRuleNoncurrentVersionExpiration()
+                        {
+                            NoncurrentDays = 15, // 'NoncurrentDays' in the NoncurrentVersionExpiration action must be greater than 'NoncurrentDays' in the NoncurrentVersionTransition action.
+                            NewerNoncurrentVersions = 10,
+                        },
 #pragma warning disable 618
                         Transition = new LifecycleTransition
                         {
@@ -153,6 +158,11 @@ namespace S3UnitTest
                                 StorageClass = S3StorageClass.Glacier
                             }
                         },
+                        NoncurrentVersionExpiration = new LifecycleRuleNoncurrentVersionExpiration()
+                        {
+                            NoncurrentDays = 91, // 'NoncurrentDays' in the NoncurrentVersionExpiration action must be greater than 'NoncurrentDays' in the NoncurrentVersionTransition action.
+                            NewerNoncurrentVersions = 10,
+                        },
                         NoncurrentVersionTransitions = new List<LifecycleRuleNoncurrentVersionTransition>
                         {
                             new LifecycleRuleNoncurrentVersionTransition
@@ -194,6 +204,11 @@ namespace S3UnitTest
                                 Days = 90,
                                 StorageClass = S3StorageClass.Glacier
                             }
+                        },
+                        NoncurrentVersionExpiration = new LifecycleRuleNoncurrentVersionExpiration()
+                        {
+                            NoncurrentDays = 92, // 'NoncurrentDays' in the NoncurrentVersionExpiration action must be greater than 'NoncurrentDays' in the NoncurrentVersionTransition action.
+                            NewerNoncurrentVersions = 60
                         },
                         NoncurrentVersionTransitions = new List<LifecycleRuleNoncurrentVersionTransition>
                         {
@@ -480,6 +495,19 @@ namespace S3UnitTest
             {
                 Assert.AreEqual(expected.Expiration.Days, actual.Expiration.Days);
                 Assert.AreEqual(expected.Expiration.ExpiredObjectDeleteMarker, actual.Expiration.ExpiredObjectDeleteMarker);
+            }
+
+            if (expected.NoncurrentVersionExpiration == null)
+            {
+                Assert.IsNull(actual.NoncurrentVersionExpiration);
+            }
+            else
+            {
+                Assert.AreEqual(expected.NoncurrentVersionExpiration.NoncurrentDays,
+                    actual.NoncurrentVersionExpiration.NoncurrentDays);
+
+                Assert.AreEqual(expected.NoncurrentVersionExpiration.NewerNoncurrentVersions,
+                    actual.NoncurrentVersionExpiration.NewerNoncurrentVersions);
             }
 
 #pragma warning disable 618
