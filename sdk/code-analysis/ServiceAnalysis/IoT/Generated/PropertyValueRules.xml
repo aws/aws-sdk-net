@@ -1936,6 +1936,18 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.GetThingConnectivityDataRequest.ThingName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9:_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.GetThingConnectivityDataResponse.ThingName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9:_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.GetTopicRuleRequest.RuleName</property>
     <min>1</min>
     <max>128</max>

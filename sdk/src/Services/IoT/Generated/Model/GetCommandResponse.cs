@@ -253,7 +253,8 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The IAM role that allows access to retrieve information about the command.
+        /// The IAM role that you provided when creating the command with <c>AWS-IoT-FleetWise</c>
+        /// as the namespace.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

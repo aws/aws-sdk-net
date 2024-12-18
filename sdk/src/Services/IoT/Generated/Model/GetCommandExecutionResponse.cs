@@ -289,7 +289,8 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property TimeToLive. 
         /// <para>
-        /// The time to live (TTL) parameter for the <c>GetCommandExecution</c> API.
+        /// The time to live (TTL) parameter that indicates the duration for which executions
+        /// will be retained in your account. The default value is six months.
         /// </para>
         /// </summary>
         public DateTime TimeToLive

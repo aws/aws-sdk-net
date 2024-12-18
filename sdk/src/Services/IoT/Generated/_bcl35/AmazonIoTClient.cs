@@ -12746,6 +12746,81 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  GetThingConnectivityData
+
+        /// <summary>
+        /// Retrieves the live connectivity status per device.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetThingConnectivityData service method.</param>
+        /// 
+        /// <returns>The response from the GetThingConnectivityData service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.IndexNotReadyException">
+        /// The index is not ready.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetThingConnectivityData">REST API Reference for GetThingConnectivityData Operation</seealso>
+        public virtual GetThingConnectivityDataResponse GetThingConnectivityData(GetThingConnectivityDataRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetThingConnectivityDataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetThingConnectivityDataResponseUnmarshaller.Instance;
+
+            return Invoke<GetThingConnectivityDataResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetThingConnectivityData operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetThingConnectivityData operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetThingConnectivityData
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetThingConnectivityData">REST API Reference for GetThingConnectivityData Operation</seealso>
+        public virtual IAsyncResult BeginGetThingConnectivityData(GetThingConnectivityDataRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetThingConnectivityDataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetThingConnectivityDataResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetThingConnectivityData operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetThingConnectivityData.</param>
+        /// 
+        /// <returns>Returns a  GetThingConnectivityDataResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetThingConnectivityData">REST API Reference for GetThingConnectivityData Operation</seealso>
+        public virtual GetThingConnectivityDataResponse EndGetThingConnectivityData(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetThingConnectivityDataResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetTopicRule
 
         /// <summary>
@@ -13992,12 +14067,23 @@ namespace Amazon.IoT
         /// <summary>
         /// List all command executions.
         /// 
-        ///  <important> 
+        ///  <important> <ul> <li> 
         /// <para>
         /// You must provide only the <c>startedTimeFilter</c> or the <c>completedTimeFilter</c>
         /// information. If you provide both time filters, the API will generate an error. You
-        /// can use this information to find command executions that started within a specific
+        /// can use this information to retrieve a list of command executions within a specific
         /// timeframe.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You must provide only the <c>commandArn</c> or the <c>thingArn</c> information depending
+        /// on whether you want to list executions for a specific command or an IoT thing. If
+        /// you provide both fields, the API will generate an error.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information about considerations for using this API, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-remote-command-execution-start-monitor.html#iot-remote-command-execution-list-cli">List
+        /// command executions in your account (CLI)</a>.
         /// </para>
         ///  </important>
         /// </summary>
