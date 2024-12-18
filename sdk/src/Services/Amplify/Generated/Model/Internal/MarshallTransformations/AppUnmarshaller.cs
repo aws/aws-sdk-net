@@ -216,6 +216,18 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                     unmarshalledObject.UpdateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("wafConfiguration", targetDepth))
+                {
+                    var unmarshaller = WafConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.WafConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("webhookCreateTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.WebhookCreateTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

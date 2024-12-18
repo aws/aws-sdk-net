@@ -87,7 +87,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property CommitTime. 
         /// <para>
-        ///  The commit date and time for the job. 
+        /// The commit date and time for the job. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
