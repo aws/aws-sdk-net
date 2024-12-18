@@ -1139,6 +1139,15 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.Alarm.AlarmArn</property>
+    <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.Alarm.Source</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ResilienceHub.Model.AlarmRecommendation.AppComponentName</property>
     <pattern>^\S{1,255}$</pattern>
   </property-value-rule>
@@ -1319,6 +1328,10 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.BatchUpdateRecommendationStatusSuccessfulEntry.AppComponentId</property>
+    <pattern>^[A-Za-z0-9][A-Za-z0-9_\-]{0,254}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ResilienceHub.Model.BatchUpdateRecommendationStatusSuccessfulEntry.EntryId</property>
     <min>1</min>
     <max>255</max>
@@ -1471,6 +1484,16 @@
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.EventSubscription.SnsTopicArn</property>
     <pattern>^arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.Experiment.ExperimentArn</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.Experiment.ExperimentTemplateId</property>
+    <min>1</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.FailedGroupingRecommendationEntry.ErrorMessage</property>
@@ -1764,6 +1787,10 @@
     <pattern>^((https://([^/]+)\.s3((-|\.)[^/]+)?\.amazonaws\.com(.cn)?)|(s3://([^/]+)))/\S{1,2000}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.TestRecommendation.AppComponentId</property>
+    <pattern>^[A-Za-z0-9][A-Za-z0-9_\-]{0,254}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ResilienceHub.Model.TestRecommendation.AppComponentName</property>
     <pattern>^\S{1,255}$</pattern>
   </property-value-rule>
@@ -1818,6 +1845,10 @@
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.UpdateRecommendationStatusItem.TargetRegion</property>
     <pattern>^[a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResilienceHub.Model.UpdateRecommendationStatusRequestEntry.AppComponentId</property>
+    <pattern>^[A-Za-z0-9][A-Za-z0-9_\-]{0,254}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.UpdateRecommendationStatusRequestEntry.EntryId</property>

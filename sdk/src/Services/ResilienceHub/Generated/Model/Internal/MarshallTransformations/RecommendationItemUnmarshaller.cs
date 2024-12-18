@@ -72,6 +72,12 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.AlreadyImplemented = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("discoveredAlarm", targetDepth))
+                {
+                    var unmarshaller = AlarmUnmarshaller.Instance;
+                    unmarshalledObject.DiscoveredAlarm = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("excluded", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
@@ -82,6 +88,12 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ExcludeReason = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("latestDiscoveredExperiment", targetDepth))
+                {
+                    var unmarshaller = ExperimentUnmarshaller.Instance;
+                    unmarshalledObject.LatestDiscoveredExperiment = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("resourceId", targetDepth))

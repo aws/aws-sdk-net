@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for BatchUpdateRecommendationStatusSuccessfulEntry Object
+    /// Response Unmarshaller for Alarm Object
     /// </summary>  
-    public class BatchUpdateRecommendationStatusSuccessfulEntryUnmarshaller : IUnmarshaller<BatchUpdateRecommendationStatusSuccessfulEntry, XmlUnmarshallerContext>, IUnmarshaller<BatchUpdateRecommendationStatusSuccessfulEntry, JsonUnmarshallerContext>
+    public class AlarmUnmarshaller : IUnmarshaller<Alarm, XmlUnmarshallerContext>, IUnmarshaller<Alarm, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        BatchUpdateRecommendationStatusSuccessfulEntry IUnmarshaller<BatchUpdateRecommendationStatusSuccessfulEntry, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        Alarm IUnmarshaller<Alarm, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public BatchUpdateRecommendationStatusSuccessfulEntry Unmarshall(JsonUnmarshallerContext context)
+        public Alarm Unmarshall(JsonUnmarshallerContext context)
         {
-            BatchUpdateRecommendationStatusSuccessfulEntry unmarshalledObject = new BatchUpdateRecommendationStatusSuccessfulEntry();
+            Alarm unmarshalledObject = new Alarm();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,40 +66,16 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("appComponentId", targetDepth))
+                if (context.TestExpression("alarmArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AppComponentId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AlarmArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("entryId", targetDepth))
+                if (context.TestExpression("source", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EntryId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("excluded", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.Excluded = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("excludeReason", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ExcludeReason = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("item", targetDepth))
-                {
-                    var unmarshaller = UpdateRecommendationStatusItemUnmarshaller.Instance;
-                    unmarshalledObject.Item = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("referenceId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ReferenceId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Source = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -107,12 +83,12 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
         }
 
 
-        private static BatchUpdateRecommendationStatusSuccessfulEntryUnmarshaller _instance = new BatchUpdateRecommendationStatusSuccessfulEntryUnmarshaller();        
+        private static AlarmUnmarshaller _instance = new AlarmUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static BatchUpdateRecommendationStatusSuccessfulEntryUnmarshaller Instance
+        public static AlarmUnmarshaller Instance
         {
             get
             {
