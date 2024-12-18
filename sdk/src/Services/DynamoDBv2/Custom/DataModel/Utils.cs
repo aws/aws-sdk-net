@@ -31,9 +31,6 @@ using Amazon.DynamoDBv2.DocumentModel;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
-#if NET8_0_OR_GREATER
-    //[System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif
     internal static class Utils
     {
         private static readonly Type[] EmptyTypes = new Type[0];
@@ -63,28 +60,28 @@ namespace Amazon.DynamoDBv2.DataModel
             typeof(Primitive)
         };
 
-        public static readonly IEnumerable<Type> PrimitiveTypes = new HashSet<Type>(primitiveTypesArray);
+        internal static readonly IEnumerable<Type> PrimitiveTypes = new HashSet<Type>(primitiveTypesArray);
 
-        public static bool IsPrimitive(Type type)
+        internal static bool IsPrimitive(Type type)
         {
             return PrimitiveTypes.Any(ti => type.IsAssignableFrom(ti));
         }
-        public static bool IsPrimitive<T>()
+        internal static bool IsPrimitive<T>()
         {
             return IsPrimitive(typeof(T));
         }
-        public static void ValidatePrimitiveType(Type type)
+        internal static void ValidatePrimitiveType(Type type)
         {
             if (!Utils.IsPrimitive(type))
                 throw new InvalidCastException(string.Format(CultureInfo.InvariantCulture,
                     "{0} is not a supported Primitive type", type.FullName));
         }
-        public static void ValidatePrimitiveType<T>()
+        internal static void ValidatePrimitiveType<T>()
         {
             ValidatePrimitiveType(typeof(T));
         }
 
-        public static void ValidateVersionType(Type memberType)
+        internal static void ValidateVersionType(Type memberType)
         {
             if (memberType.IsGenericType && memberType.GetGenericTypeDefinition() == typeof(Nullable<>) &&
                 (memberType.IsAssignableFrom(typeof(Byte)) ||
@@ -103,9 +100,9 @@ namespace Amazon.DynamoDBv2.DataModel
 
 #if NET8_0_OR_GREATER
         [return: DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)]
-        public static Type GetPrimitiveElementType(Type collectionType)
+        internal static Type GetPrimitiveElementType(Type collectionType)
 #else
-        public static Type GetPrimitiveElementType(Type collectionType)
+        internal static Type GetPrimitiveElementType(Type collectionType)
 #endif
         {
             var elementType = Utils.GetElementType(collectionType);
@@ -125,9 +122,9 @@ namespace Amazon.DynamoDBv2.DataModel
         [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("ReflectionAnalysis", "IL2063",
             Justification = "By the time the DynamoDB high level libraries got to this code path the collection type with the generic type would have already been found by the compiler preventing the element type from being trimmed.")]
         [return: DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)]
-        public static Type GetElementType(Type collectionType)
+        internal static Type GetElementType(Type collectionType)
 #else
-        public static Type GetElementType(Type collectionType)
+        internal static Type GetElementType(Type collectionType)
 #endif
         {
             var elementType = collectionType.GetElementType();
@@ -144,9 +141,9 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
 #if NET8_0_OR_GREATER
-        public static bool ItemsToCollection([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type targetType, IEnumerable<object> items, out object result)
+        internal static bool ItemsToCollection([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type targetType, IEnumerable<object> items, out object result)
 #else
-        public static bool ItemsToCollection(Type targetType, IEnumerable<object> items, out object result)
+        internal static bool ItemsToCollection(Type targetType, IEnumerable<object> items, out object result)
 #endif
         {
             return targetType.IsArray ?
@@ -200,11 +197,11 @@ namespace Amazon.DynamoDBv2.DataModel
             return true;
         }
 
-#endregion
+        #endregion
 
         #region Attribute methods
 
-        public static DynamoDBTableAttribute GetTableAttribute(Type targetType)
+        internal static DynamoDBTableAttribute GetTableAttribute(Type targetType)
         {
             DynamoDBTableAttribute tableAttribute = GetAttribute(targetType) as DynamoDBTableAttribute;
             if (tableAttribute == null)
@@ -212,18 +209,18 @@ namespace Amazon.DynamoDBv2.DataModel
             return tableAttribute;
         }
 
-        public static DynamoDBAttribute GetAttribute(Type targetType)
+        internal static DynamoDBAttribute GetAttribute(Type targetType)
         {
             if (targetType == null) throw new ArgumentNullException("targetType");
             object[] attributes = targetType.GetCustomAttributes(typeof(DynamoDBAttribute), true);
             return GetSingleDDBAttribute(attributes);
         }
-        public static DynamoDBAttribute GetAttribute(MemberInfo targetMemberInfo)
+        internal static DynamoDBAttribute GetAttribute(MemberInfo targetMemberInfo)
         {
             object[] attributes = GetAttributeObjects(targetMemberInfo);
             return GetSingleDDBAttribute(attributes);
         }
-        public static List<DynamoDBAttribute> GetAttributes(MemberInfo targetMemberInfo)
+        internal static List<DynamoDBAttribute> GetAttributes(MemberInfo targetMemberInfo)
         {
             object[] attObjects = GetAttributeObjects(targetMemberInfo) ?? new object[0];
             var attributes = new List<DynamoDBAttribute>();
@@ -260,7 +257,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
         #region Non-DynamoDB utilities
 
-        public static string ToLowerCamelCase(string value)
+        internal static string ToLowerCamelCase(string value)
         {
             if (string.IsNullOrEmpty(value) || char.IsLower(value[0])) return value;
             StringBuilder sb = new StringBuilder(value);
@@ -284,27 +281,27 @@ namespace Amazon.DynamoDBv2.DataModel
         };
 
 #if NET8_0_OR_GREATER
-        public static object InstantiateConverter([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] Type objectType, IDynamoDBContext context)
+        internal static object InstantiateConverter([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] Type objectType, IDynamoDBContext context)
 #else
-        public static object InstantiateConverter(Type objectType, IDynamoDBContext context)
+        internal static object InstantiateConverter(Type objectType, IDynamoDBContext context)
 #endif
         {
             return InstantiateHelper(objectType, validConverterConstructorInputs, new object[] { context });
         }
 
 #if NET8_0_OR_GREATER
-        public static object InstantiateArray([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] Type objectType, int length)
+        internal static object InstantiateArray([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] Type objectType, int length)
 #else
-        public static object InstantiateArray(Type objectType,int length)
+        internal static object InstantiateArray(Type objectType,int length)
 #endif
         {
             return InstantiateHelper(objectType, validArrayConstructorInputs, new object[] { length });
         }
 
 #if NET8_0_OR_GREATER
-        public static object Instantiate([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] Type objectType)
+        internal static object Instantiate([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] Type objectType)
 #else
-        public static object Instantiate(Type objectType)
+        internal static object Instantiate(Type objectType)
 #endif
         {
             return InstantiateHelper(objectType, validConstructorInputs, null);
@@ -405,7 +402,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
             return true;
         }
-        public static Type GetType(MemberInfo member)
+        internal static Type GetType(MemberInfo member)
         {
             var pi = member as PropertyInfo;
             var fi = member as FieldInfo;
@@ -414,7 +411,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
             return (pi != null ? pi.PropertyType : fi.FieldType);
         }
-        public static bool IsReadWrite(MemberInfo member)
+        internal static bool IsReadWrite(MemberInfo member)
         {
             PropertyInfo property = member as PropertyInfo;
             FieldInfo field = member as FieldInfo;
@@ -434,9 +431,9 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
 #if NET8_0_OR_GREATER
-        public static bool ImplementsInterface([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.Interfaces)] Type targetType, Type interfaceType)
+        internal static bool ImplementsInterface([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.Interfaces)] Type targetType, Type interfaceType)
 #else
-        public static bool ImplementsInterface(Type targetType, Type interfaceType)
+        internal static bool ImplementsInterface(Type targetType, Type interfaceType)
 #endif
         {
             if (!interfaceType.IsInterface)
@@ -483,9 +480,9 @@ namespace Amazon.DynamoDBv2.DataModel
         /// in base types to avoid returning duplicate members.
         /// </summary>
 #if NET8_0_OR_GREATER
-        public static List<MemberInfo> GetMembersFromType([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] Type type)
+        internal static List<MemberInfo> GetMembersFromType([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] Type type)
 #else
-        public static List<MemberInfo> GetMembersFromType(Type type)
+        internal static List<MemberInfo> GetMembersFromType(Type type)
 #endif
 
         {

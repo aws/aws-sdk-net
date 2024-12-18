@@ -73,9 +73,6 @@ namespace Amazon.DynamoDBv2
     /// A collection of converters capable of converting between
     /// .NET and DynamoDB objects.
     /// </summary>
-#if NET8_0_OR_GREATER
-    //[System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif
     public class DynamoDBEntryConversion
     {
         #region Static members
