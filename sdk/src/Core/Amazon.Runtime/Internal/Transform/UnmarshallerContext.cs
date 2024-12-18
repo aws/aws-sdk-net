@@ -227,14 +227,6 @@ namespace Amazon.Runtime.Internal.Transform
         public abstract int CurrentDepth { get; }
 
         /// <summary>
-        ///     Returns the text contents of the current element being parsed.
-        /// </summary>
-        /// <returns>
-        ///     The text contents of the current element being parsed.
-        /// </returns>
-        public abstract string ReadText();
-
-        /// <summary>
         /// True if <c>NodeType</c> is <c>Element</c>.
         /// </summary>
         public abstract bool IsStartElement { get; }

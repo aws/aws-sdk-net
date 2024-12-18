@@ -171,24 +171,6 @@ namespace Amazon.Runtime.Internal.Transform
         }
 
         /// <summary>
-        ///     Returns the text contents of the current element being parsed.
-        /// </summary>
-        /// <returns>
-        ///     The text contents of the current element being parsed.
-        /// </returns>
-        public override string ReadText()
-        {
-            if (this.nodeType == XmlNodeType.Attribute)
-            {
-                return (attributeValues[attributeEnumerator.Current]);
-            }
-            else
-            {
-                return nodeContent;
-            }
-        }
-
-        /// <summary>
         /// True if <c>NodeType</c> is <c>Element</c>.
         /// </summary>
         public override bool IsStartElement
@@ -215,6 +197,24 @@ namespace Amazon.Runtime.Internal.Transform
         #endregion
 
         #region Public methods
+
+        /// <summary>
+        ///     Returns the text contents of the current element being parsed.
+        /// </summary>
+        /// <returns>
+        ///     The text contents of the current element being parsed.
+        /// </returns>
+        public string ReadText()
+        {
+            if (this.nodeType == XmlNodeType.Attribute)
+            {
+                return (attributeValues[attributeEnumerator.Current]);
+            }
+            else
+            {
+                return nodeContent;
+            }
+        }
 
         /// <summary>
         /// Reads the next token at depth greater than or equal to target depth.

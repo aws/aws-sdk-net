@@ -289,17 +289,6 @@ namespace Amazon.Runtime.Internal.Transform
             return text;
         }
 
-        /// <summary>
-        ///     Returns the text contents of the current token being parsed.
-        /// </summary>
-        /// <returns>
-        ///     The text contents of the current token being parsed.
-        /// </returns>
-        public override string ReadText()
-        {
-            throw new NotImplementedException("This method is no longer implemented in favor of ReadText(ref Utf8JsonReader reader)");
-        }
-
         #endregion
 
         #region Public properties

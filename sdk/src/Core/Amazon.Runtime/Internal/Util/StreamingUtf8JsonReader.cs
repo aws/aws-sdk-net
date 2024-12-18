@@ -46,6 +46,12 @@ namespace Amazon.Runtime.Internal.Util
 
         private Stream _stream;
         private byte[] _buffer;
+        /// <summary>
+        /// Initializes a new instance of the StreamingUtf8JsonReader. Upon initialization the reader will read from the stream and fill the buffer.
+        /// If a UTF8 BOM is present in the stream, it will be skipped.
+        /// </summary>
+        /// <param name="stream">the stream containing the data</param>
+        /// <exception cref="ArgumentException"></exception>
         public StreamingUtf8JsonReader(Stream stream)
         {
             if (stream is null)
@@ -53,9 +59,6 @@ namespace Amazon.Runtime.Internal.Util
 
             _stream = stream;
             _buffer = ArrayPool<byte>.Shared.Rent(AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096);
-            // need to initialize the reader even if the buffer is empty because auto-default of unassigned fields is only 
-            // supported in C# 11+
-
             int utf8BomLength = JsonConstants.Utf8Bom.Length;
             Debug.Assert(_buffer.Length >= utf8BomLength);
 
@@ -95,7 +98,6 @@ namespace Amazon.Runtime.Internal.Util
         private static void GetMoreBytesFromStream(Stream stream, ref byte[] buffer, ref Utf8JsonReader reader)
         {
             int bytesRead = 0;
-            int previousBufferLength = buffer.Length;
             if (reader.BytesConsumed < buffer.Length)
             {
                 ReadOnlySpan<byte> leftover = buffer.AsSpan().Slice((int)reader.BytesConsumed);
@@ -105,18 +107,23 @@ namespace Amazon.Runtime.Internal.Util
                 {
                     var resizedBuffer = ArrayPool<byte>.Shared.Rent(Math.Min(int.MaxValue, (buffer.Length * 2)));
                     Logger.GetLogger(typeof(StreamingUtf8JsonReader)).DebugFormat("Resizing buffer from {0} to {1}", buffer.Length, resizedBuffer.Length);
-
+                    // copy over the data from the previous read's buffer to the newly resized buffer.
                     buffer.AsSpan().CopyTo(resizedBuffer);
+                    // return the previous buffer to the pool and set the new buffer to equal the resized buffer.
                     ArrayPool<byte>.Shared.Return(buffer);
                     buffer = resizedBuffer;
+                    // fill the new resized buffer with data from the stream. the offset MUST be leftover.Length 
+                    // so we don't overwrite the data that was copied from the previous buffer, and the number of bytes
+                    // we read must be buffer.Length - leftover.Length which is just the second half of the buffer.
                     bytesRead = FillBuffer(stream, ref buffer, leftover.Length, buffer.Length - leftover.Length);
-                    var resizedSpan = buffer.AsSpan(0, bytesRead + previousBufferLength);
+                    var resizedSpan = buffer.AsSpan(0, bytesRead + leftover.Length);
                     reader = new Utf8JsonReader(resizedSpan, isFinalBlock: bytesRead == 0, reader.CurrentState);
+                    // early return since we have a reader
                     return;
                 }
                 else
                 {
-                    // Move the unprocessed data from the buffer to the start and the fill
+                    // Move the unprocessed data from the buffer to the start and fill
                     // remaining space in the buffer with new content from the stream.
                     leftover.CopyTo(buffer);
                     bytesRead = FillBuffer(stream, ref buffer, leftover.Length, buffer.Length - leftover.Length);
