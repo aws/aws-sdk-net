@@ -30,24 +30,37 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConnectParticipant.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeView operation.
-    /// Retrieves the view for the specified view token.
+    /// Container for the parameters to the GetAuthenticationUrl operation.
+    /// Retrieves the AuthenticationUrl for the current authentication session for the AuthenticateCustomer
+    /// flow block. 
     /// 
     ///  
     /// <para>
     /// For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
     /// Connect Chat security best practices</a>.
     /// </para>
+    ///  <note> <ul> <li> 
+    /// <para>
+    /// This API can only be called within one minute of receiving the authenticationInitiated
+    /// event.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The current supported channel is chat. This API is not supported for Apple Messages
+    /// for Business, WhatsApp, or SMS chats.
+    /// </para>
+    ///  </li> </ul> </note>
     /// </summary>
-    public partial class DescribeViewRequest : AmazonConnectParticipantRequest
+    public partial class GetAuthenticationUrlRequest : AmazonConnectParticipantRequest
     {
         private string _connectionToken;
-        private string _viewToken;
+        private string _redirectUri;
+        private string _sessionId;
 
         /// <summary>
         /// Gets and sets the property ConnectionToken. 
         /// <para>
-        /// The connection token.
+        /// The authentication token associated with the participant's connection.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1000)]
@@ -64,23 +77,42 @@ namespace Amazon.ConnectParticipant.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ViewToken. 
+        /// Gets and sets the property RedirectUri. 
         /// <para>
-        /// An encrypted token originating from the interactive message of a ShowView block operation.
-        /// Represents the desired view.
+        /// The URL where the customer will be redirected after Amazon Cognito authorizes the
+        /// user.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1000)]
-        public string ViewToken
+        [AWSProperty(Required=true, Min=1, Max=1024)]
+        public string RedirectUri
         {
-            get { return this._viewToken; }
-            set { this._viewToken = value; }
+            get { return this._redirectUri; }
+            set { this._redirectUri = value; }
         }
 
-        // Check to see if ViewToken property is set
-        internal bool IsSetViewToken()
+        // Check to see if RedirectUri property is set
+        internal bool IsSetRedirectUri()
         {
-            return this._viewToken != null;
+            return this._redirectUri != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SessionId. 
+        /// <para>
+        /// The sessionId provided in the authenticationInitiated event.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=36, Max=36)]
+        public string SessionId
+        {
+            get { return this._sessionId; }
+            set { this._sessionId = value; }
+        }
+
+        // Check to see if SessionId property is set
+        internal bool IsSetSessionId()
+        {
+            return this._sessionId != null;
         }
 
     }

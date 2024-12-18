@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ConnectParticipant.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// GetAttachment Request Marshaller
+    /// CancelParticipantAuthentication Request Marshaller
     /// </summary>       
-    public class GetAttachmentRequestMarshaller : IMarshaller<IRequest, GetAttachmentRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class CancelParticipantAuthenticationRequestMarshaller : IMarshaller<IRequest, CancelParticipantAuthenticationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.ConnectParticipant.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((GetAttachmentRequest)input);
+            return this.Marshall((CancelParticipantAuthenticationRequest)input);
         }
 
         /// <summary>
@@ -53,30 +53,24 @@ namespace Amazon.ConnectParticipant.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(GetAttachmentRequest publicRequest)
+        public IRequest Marshall(CancelParticipantAuthenticationRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ConnectParticipant");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-09-07";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/participant/attachment";
+            request.ResourcePath = "/participant/cancel-authentication";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAttachmentId())
+                if(publicRequest.IsSetSessionId())
                 {
-                    context.Writer.WritePropertyName("AttachmentId");
-                    context.Writer.Write(publicRequest.AttachmentId);
-                }
-
-                if(publicRequest.IsSetUrlExpiryInSeconds())
-                {
-                    context.Writer.WritePropertyName("UrlExpiryInSeconds");
-                    context.Writer.Write(publicRequest.UrlExpiryInSeconds);
+                    context.Writer.WritePropertyName("SessionId");
+                    context.Writer.Write(publicRequest.SessionId);
                 }
 
                 writer.WriteObjectEnd();
@@ -92,9 +86,9 @@ namespace Amazon.ConnectParticipant.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static GetAttachmentRequestMarshaller _instance = new GetAttachmentRequestMarshaller();        
+        private static CancelParticipantAuthenticationRequestMarshaller _instance = new CancelParticipantAuthenticationRequestMarshaller();        
 
-        internal static GetAttachmentRequestMarshaller GetInstance()
+        internal static CancelParticipantAuthenticationRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -102,7 +96,7 @@ namespace Amazon.ConnectParticipant.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetAttachmentRequestMarshaller Instance
+        public static CancelParticipantAuthenticationRequestMarshaller Instance
         {
             get
             {

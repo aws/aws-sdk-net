@@ -30,24 +30,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConnectParticipant.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeView operation.
-    /// Retrieves the view for the specified view token.
+    /// Container for the parameters to the CancelParticipantAuthentication operation.
+    /// Cancels the authentication session. The opted out branch of the Authenticate Customer
+    /// flow block will be taken.
     /// 
-    ///  
+    ///  <note> 
     /// <para>
-    /// For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
-    /// Connect Chat security best practices</a>.
+    /// The current supported channel is chat. This API is not supported for Apple Messages
+    /// for Business, WhatsApp, or SMS chats.
     /// </para>
+    ///  </note>
     /// </summary>
-    public partial class DescribeViewRequest : AmazonConnectParticipantRequest
+    public partial class CancelParticipantAuthenticationRequest : AmazonConnectParticipantRequest
     {
         private string _connectionToken;
-        private string _viewToken;
+        private string _sessionId;
 
         /// <summary>
         /// Gets and sets the property ConnectionToken. 
         /// <para>
-        /// The connection token.
+        /// The authentication token associated with the participant's connection.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1000)]
@@ -64,23 +66,22 @@ namespace Amazon.ConnectParticipant.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ViewToken. 
+        /// Gets and sets the property SessionId. 
         /// <para>
-        /// An encrypted token originating from the interactive message of a ShowView block operation.
-        /// Represents the desired view.
+        /// The <c>sessionId</c> provided in the <c>authenticationInitiated</c> event.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1000)]
-        public string ViewToken
+        [AWSProperty(Required=true, Min=36, Max=36)]
+        public string SessionId
         {
-            get { return this._viewToken; }
-            set { this._viewToken = value; }
+            get { return this._sessionId; }
+            set { this._sessionId = value; }
         }
 
-        // Check to see if ViewToken property is set
-        internal bool IsSetViewToken()
+        // Check to see if SessionId property is set
+        internal bool IsSetSessionId()
         {
-            return this._viewToken != null;
+            return this._sessionId != null;
         }
 
     }

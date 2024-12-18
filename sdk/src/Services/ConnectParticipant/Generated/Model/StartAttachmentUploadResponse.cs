@@ -59,7 +59,7 @@ namespace Amazon.ConnectParticipant.Model
         /// <summary>
         /// Gets and sets the property UploadMetadata. 
         /// <para>
-        /// Fields to be used while uploading the attachment.
+        /// The headers to be provided while uploading the file to the URL.
         /// </para>
         /// </summary>
         public UploadMetadata UploadMetadata

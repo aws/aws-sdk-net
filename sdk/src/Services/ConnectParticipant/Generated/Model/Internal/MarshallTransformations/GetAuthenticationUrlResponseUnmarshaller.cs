@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ConnectParticipant.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetAttachment operation
+    /// Response Unmarshaller for GetAuthenticationUrl operation
     /// </summary>  
-    public class GetAttachmentResponseUnmarshaller : JsonResponseUnmarshaller
+    public class GetAuthenticationUrlResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,28 +46,16 @@ namespace Amazon.ConnectParticipant.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetAttachmentResponse response = new GetAttachmentResponse();
+            GetAuthenticationUrlResponse response = new GetAuthenticationUrlResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AttachmentSizeInBytes", targetDepth))
-                {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    response.AttachmentSizeInBytes = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Url", targetDepth))
+                if (context.TestExpression("AuthenticationUrl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Url = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("UrlExpiry", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.UrlExpiry = unmarshaller.Unmarshall(context);
+                    response.AuthenticationUrl = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -113,9 +101,9 @@ namespace Amazon.ConnectParticipant.Model.Internal.MarshallTransformations
             return new AmazonConnectParticipantException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetAttachmentResponseUnmarshaller _instance = new GetAttachmentResponseUnmarshaller();        
+        private static GetAuthenticationUrlResponseUnmarshaller _instance = new GetAuthenticationUrlResponseUnmarshaller();        
 
-        internal static GetAttachmentResponseUnmarshaller GetInstance()
+        internal static GetAuthenticationUrlResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -123,7 +111,7 @@ namespace Amazon.ConnectParticipant.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetAttachmentResponseUnmarshaller Instance
+        public static GetAuthenticationUrlResponseUnmarshaller Instance
         {
             get
             {
