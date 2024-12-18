@@ -95,7 +95,7 @@ namespace Amazon.MWAA.Model
         ///  
         /// <para>
         /// Valid values: <c>1.10.12</c>, <c>2.0.2</c>, <c>2.2.2</c>, <c>2.4.3</c>, <c>2.5.1</c>,
-        /// <c>2.6.3</c>, <c>2.7.2</c>, <c>2.8.1</c>, <c>2.9.2</c>, and <c>2.10.1</c>.
+        /// <c>2.6.3</c>, <c>2.7.2</c>, <c>2.8.1</c>, <c>2.9.2</c>, <c>2.10.1</c>, and <c>2.10.3</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=32)]
