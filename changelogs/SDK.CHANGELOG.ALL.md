@@ -1,3 +1,28 @@
+### 3.7.949.0 (2024-12-18 19:23 UTC)
+* Amplify (3.7.403.0)
+	* Added WAF Configuration to Amplify Apps
+* Budgets (3.7.402.0)
+	* Releasing minor partition endpoint updates
+* Connect (3.7.415.0)
+	* This release adds support for the UpdateParticipantAuthentication API used for customer authentication within Amazon Connect chats.
+* ConnectParticipant (3.7.401.0)
+	* This release adds support for the GetAuthenticationUrl and CancelParticipantAuthentication APIs used for customer authentication within Amazon Connect chats. There are also minor updates to the GetAttachment API.
+* DataSync (3.7.402.0)
+	* AWS DataSync introduces the ability to update attributes for in-cloud locations.
+* IoT (3.7.405.0)
+	* Release connectivity status query API which is a dedicated high throughput(TPS) API to query a specific device's most recent connectivity state and metadata.
+* MWAA (3.7.402.12)
+	* Added support for Apache Airflow version 2.10.3 to MWAA.
+* QuickSight (3.7.412.0)
+	* Add support for PerformanceConfiguration attribute to Dataset entity. Allow PerformanceConfiguration specification in CreateDataset and UpdateDataset APIs.
+* ResilienceHub (3.7.404.0)
+	* AWS Resilience Hub now automatically detects already configured CloudWatch alarms and FIS experiments as part of the assessment process and returns the discovered resources in the corresponding list API responses. It also allows you to include or exclude test recommendations for an AppComponent.
+* Transfer (3.7.403.0)
+	* Added AS2 agreement configurations to control filename preservation and message signing enforcement. Added AS2 connector configuration to preserve content type from S3 objects.
+* Core 3.7.400.66
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.948.0 (2024-12-17 19:24 UTC)
 * Account (3.7.401.0)
 	* Update endpoint configuration.
