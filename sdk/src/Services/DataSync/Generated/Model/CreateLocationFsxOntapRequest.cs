@@ -124,7 +124,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Subdirectory. 
         /// <para>
-        /// Specifies a path to the file share in the SVM where you'll copy your data.
+        /// Specifies a path to the file share in the SVM where you want to transfer data to or
+        /// from.
         /// </para>
         ///  
         /// <para>

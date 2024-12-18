@@ -30,31 +30,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataSync.Model
 {
     /// <summary>
-    /// This is the response object from the CreateLocationFsxLustre operation.
+    /// This is the response object from the UpdateLocationFsxOpenZfs operation.
     /// </summary>
-    public partial class CreateLocationFsxLustreResponse : AmazonWebServiceResponse
+    public partial class UpdateLocationFsxOpenZfsResponse : AmazonWebServiceResponse
     {
-        private string _locationArn;
-
-        /// <summary>
-        /// Gets and sets the property LocationArn. 
-        /// <para>
-        /// The Amazon Resource Name (ARN) of the FSx for Lustre file system location that you
-        /// created. 
-        /// </para>
-        /// </summary>
-        [AWSProperty(Max=128)]
-        public string LocationArn
-        {
-            get { return this._locationArn; }
-            set { this._locationArn = value; }
-        }
-
-        // Check to see if LocationArn property is set
-        internal bool IsSetLocationArn()
-        {
-            return this._locationArn != null;
-        }
 
     }
 }

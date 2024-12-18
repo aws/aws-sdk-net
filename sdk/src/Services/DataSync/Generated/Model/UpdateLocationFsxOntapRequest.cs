@@ -30,28 +30,27 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataSync.Model
 {
     /// <summary>
-    /// Container for the parameters to the UpdateLocationNfs operation.
-    /// Modifies the following configuration parameters of the Network File System (NFS) transfer
-    /// location that you're using with DataSync.
+    /// Container for the parameters to the UpdateLocationFsxOntap operation.
+    /// Modifies the following configuration parameters of the Amazon FSx for NetApp ONTAP
+    /// transfer location that you're using with DataSync.
     /// 
     ///  
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html">Configuring
-    /// transfers with an NFS file server</a>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-ontap-location.html">Configuring
+    /// DataSync transfers with FSx for ONTAP</a>.
     /// </para>
     /// </summary>
-    public partial class UpdateLocationNfsRequest : AmazonDataSyncRequest
+    public partial class UpdateLocationFsxOntapRequest : AmazonDataSyncRequest
     {
         private string _locationArn;
-        private NfsMountOptions _mountOptions;
-        private OnPremConfig _onPremConfig;
+        private FsxUpdateProtocol _protocol;
         private string _subdirectory;
 
         /// <summary>
         /// Gets and sets the property LocationArn. 
         /// <para>
-        /// Specifies the Amazon Resource Name (ARN) of the NFS transfer location that you want
-        /// to update.
+        /// Specifies the Amazon Resource Name (ARN) of the FSx for ONTAP transfer location that
+        /// you're updating.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=128)]
@@ -68,48 +67,46 @@ namespace Amazon.DataSync.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MountOptions.
+        /// Gets and sets the property Protocol. 
+        /// <para>
+        /// Specifies the data transfer protocol that DataSync uses to access your Amazon FSx
+        /// file system.
+        /// </para>
         /// </summary>
-        public NfsMountOptions MountOptions
+        public FsxUpdateProtocol Protocol
         {
-            get { return this._mountOptions; }
-            set { this._mountOptions = value; }
+            get { return this._protocol; }
+            set { this._protocol = value; }
         }
 
-        // Check to see if MountOptions property is set
-        internal bool IsSetMountOptions()
+        // Check to see if Protocol property is set
+        internal bool IsSetProtocol()
         {
-            return this._mountOptions != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property OnPremConfig.
-        /// </summary>
-        public OnPremConfig OnPremConfig
-        {
-            get { return this._onPremConfig; }
-            set { this._onPremConfig = value; }
-        }
-
-        // Check to see if OnPremConfig property is set
-        internal bool IsSetOnPremConfig()
-        {
-            return this._onPremConfig != null;
+            return this._protocol != null;
         }
 
         /// <summary>
         /// Gets and sets the property Subdirectory. 
         /// <para>
-        /// Specifies the export path in your NFS file server that you want DataSync to mount.
+        /// Specifies a path to the file share in the storage virtual machine (SVM) where you
+        /// want to transfer data to or from.
         /// </para>
         ///  
         /// <para>
-        /// This path (or a subdirectory of the path) is where DataSync transfers data to or from.
-        /// For information on configuring an export for DataSync, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#accessing-nfs">Accessing
-        /// NFS file servers</a>.
+        /// You can specify a junction path (also known as a mount point), qtree path (for NFS
+        /// file shares), or share name (for SMB file shares). For example, your mount path might
+        /// be <c>/vol1</c>, <c>/vol1/tree1</c>, or <c>/share1</c>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Don't specify a junction path in the SVM's root volume. For more information, see
+        /// <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-svms.html">Managing
+        /// FSx for ONTAP storage virtual machines</a> in the <i>Amazon FSx for NetApp ONTAP User
+        /// Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
-        [AWSProperty(Max=4096)]
+        [AWSProperty(Max=255)]
         public string Subdirectory
         {
             get { return this._subdirectory; }

@@ -30,28 +30,33 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataSync.Model
 {
     /// <summary>
-    /// Container for the parameters to the UpdateLocationNfs operation.
-    /// Modifies the following configuration parameters of the Network File System (NFS) transfer
+    /// Container for the parameters to the UpdateLocationFsxOpenZfs operation.
+    /// Modifies the following configuration parameters of the Amazon FSx for OpenZFS transfer
     /// location that you're using with DataSync.
     /// 
     ///  
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html">Configuring
-    /// transfers with an NFS file server</a>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-openzfs-location.html">Configuring
+    /// DataSync transfers with FSx for OpenZFS</a>.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// Request parameters related to <c>SMB</c> aren't supported with the <c>UpdateLocationFsxOpenZfs</c>
+    /// operation.
+    /// </para>
+    ///  </note>
     /// </summary>
-    public partial class UpdateLocationNfsRequest : AmazonDataSyncRequest
+    public partial class UpdateLocationFsxOpenZfsRequest : AmazonDataSyncRequest
     {
         private string _locationArn;
-        private NfsMountOptions _mountOptions;
-        private OnPremConfig _onPremConfig;
+        private FsxProtocol _protocol;
         private string _subdirectory;
 
         /// <summary>
         /// Gets and sets the property LocationArn. 
         /// <para>
-        /// Specifies the Amazon Resource Name (ARN) of the NFS transfer location that you want
-        /// to update.
+        /// Specifies the Amazon Resource Name (ARN) of the FSx for OpenZFS transfer location
+        /// that you're updating.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=128)]
@@ -68,45 +73,26 @@ namespace Amazon.DataSync.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MountOptions.
+        /// Gets and sets the property Protocol.
         /// </summary>
-        public NfsMountOptions MountOptions
+        public FsxProtocol Protocol
         {
-            get { return this._mountOptions; }
-            set { this._mountOptions = value; }
+            get { return this._protocol; }
+            set { this._protocol = value; }
         }
 
-        // Check to see if MountOptions property is set
-        internal bool IsSetMountOptions()
+        // Check to see if Protocol property is set
+        internal bool IsSetProtocol()
         {
-            return this._mountOptions != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property OnPremConfig.
-        /// </summary>
-        public OnPremConfig OnPremConfig
-        {
-            get { return this._onPremConfig; }
-            set { this._onPremConfig = value; }
-        }
-
-        // Check to see if OnPremConfig property is set
-        internal bool IsSetOnPremConfig()
-        {
-            return this._onPremConfig != null;
+            return this._protocol != null;
         }
 
         /// <summary>
         /// Gets and sets the property Subdirectory. 
         /// <para>
-        /// Specifies the export path in your NFS file server that you want DataSync to mount.
-        /// </para>
-        ///  
-        /// <para>
-        /// This path (or a subdirectory of the path) is where DataSync transfers data to or from.
-        /// For information on configuring an export for DataSync, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#accessing-nfs">Accessing
-        /// NFS file servers</a>.
+        /// Specifies a subdirectory in the location's path that must begin with <c>/fsx</c>.
+        /// DataSync uses this subdirectory to read or write data (depending on whether the file
+        /// system is a source or destination location).
         /// </para>
         /// </summary>
         [AWSProperty(Max=4096)]

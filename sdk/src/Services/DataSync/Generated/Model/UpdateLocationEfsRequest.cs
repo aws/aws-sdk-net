@@ -30,25 +30,23 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataSync.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateLocationEfs operation.
-    /// Creates a transfer <i>location</i> for an Amazon EFS file system. DataSync can use
-    /// this location as a source or destination for transferring data.
+    /// Container for the parameters to the UpdateLocationEfs operation.
+    /// Modifies the following configuration parameters of the Amazon EFS transfer location
+    /// that you're using with DataSync.
     /// 
     ///  
     /// <para>
-    /// Before you begin, make sure that you understand how DataSync <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-efs-location.html#create-efs-location-access">accesses
-    /// Amazon EFS file systems</a>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-efs-location.html">Configuring
+    /// DataSync transfers with Amazon EFS</a>.
     /// </para>
     /// </summary>
-    public partial class CreateLocationEfsRequest : AmazonDataSyncRequest
+    public partial class UpdateLocationEfsRequest : AmazonDataSyncRequest
     {
         private string _accessPointArn;
-        private Ec2Config _ec2Config;
-        private string _efsFilesystemArn;
         private string _fileSystemAccessRoleArn;
         private EfsInTransitEncryption _inTransitEncryption;
+        private string _locationArn;
         private string _subdirectory;
-        private List<TagListEntry> _tags = AWSConfigs.InitializeCollections ? new List<TagListEntry>() : null;
 
         /// <summary>
         /// Gets and sets the property AccessPointArn. 
@@ -59,7 +57,7 @@ namespace Amazon.DataSync.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-efs-location.html#create-efs-location-iam">Accessing
-        /// restricted file systems</a>.
+        /// restricted Amazon EFS file systems</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]
@@ -76,46 +74,6 @@ namespace Amazon.DataSync.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Ec2Config. 
-        /// <para>
-        /// Specifies the subnet and security groups DataSync uses to connect to one of your Amazon
-        /// EFS file system's <a href="https://docs.aws.amazon.com/efs/latest/ug/accessing-fs.html">mount
-        /// targets</a>.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public Ec2Config Ec2Config
-        {
-            get { return this._ec2Config; }
-            set { this._ec2Config = value; }
-        }
-
-        // Check to see if Ec2Config property is set
-        internal bool IsSetEc2Config()
-        {
-            return this._ec2Config != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property EfsFilesystemArn. 
-        /// <para>
-        /// Specifies the ARN for your Amazon EFS file system.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Max=128)]
-        public string EfsFilesystemArn
-        {
-            get { return this._efsFilesystemArn; }
-            set { this._efsFilesystemArn = value; }
-        }
-
-        // Check to see if EfsFilesystemArn property is set
-        internal bool IsSetEfsFilesystemArn()
-        {
-            return this._efsFilesystemArn != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property FileSystemAccessRoleArn. 
         /// <para>
         /// Specifies an Identity and Access Management (IAM) role that allows DataSync to access
@@ -124,7 +82,7 @@ namespace Amazon.DataSync.Model
         ///  
         /// <para>
         /// For information on creating this role, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-efs-location.html#create-efs-location-iam-role">Creating
-        /// a DataSync IAM role for file system access</a>.
+        /// a DataSync IAM role for Amazon EFS file system access</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2048)]
@@ -165,6 +123,26 @@ namespace Amazon.DataSync.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LocationArn. 
+        /// <para>
+        /// Specifies the Amazon Resource Name (ARN) of the Amazon EFS transfer location that
+        /// you're updating.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Max=128)]
+        public string LocationArn
+        {
+            get { return this._locationArn; }
+            set { this._locationArn = value; }
+        }
+
+        // Check to see if LocationArn property is set
+        internal bool IsSetLocationArn()
+        {
+            return this._locationArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Subdirectory. 
         /// <para>
         /// Specifies a mount path for your Amazon EFS file system. This is where DataSync reads
@@ -189,27 +167,6 @@ namespace Amazon.DataSync.Model
         internal bool IsSetSubdirectory()
         {
             return this._subdirectory != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Tags. 
-        /// <para>
-        /// Specifies the key-value pair that represents a tag that you want to add to the resource.
-        /// The value can be an empty string. This value helps you manage, filter, and search
-        /// for your resources. We recommend that you create a name tag for your location.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=0, Max=50)]
-        public List<TagListEntry> Tags
-        {
-            get { return this._tags; }
-            set { this._tags = value; }
-        }
-
-        // Check to see if Tags property is set
-        internal bool IsSetTags()
-        {
-            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

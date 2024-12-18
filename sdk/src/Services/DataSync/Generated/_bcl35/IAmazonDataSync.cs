@@ -605,13 +605,6 @@ namespace Amazon.DataSync
         /// Before you begin, make sure that you understand how DataSync <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#accessing-nfs">accesses
         /// NFS file servers</a>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// If you're copying data to or from an Snowcone device, you can also use <c>CreateLocationNfs</c>
-        /// to create your transfer location. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/nfs-on-snowcone.html">Configuring
-        /// transfers with Snowcone</a>.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLocationNfs service method.</param>
         /// 
@@ -2705,8 +2698,14 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Modifies some configurations of the Microsoft Azure Blob Storage transfer location
-        /// that you're using with DataSync.
+        /// Modifies the following configurations of the Microsoft Azure Blob Storage transfer
+        /// location that you're using with DataSync.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html">Configuring
+        /// DataSync transfers with Azure Blob Storage</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateLocationAzureBlob service method.</param>
         /// 
@@ -2748,12 +2747,289 @@ namespace Amazon.DataSync
 
         #endregion
         
+        #region  UpdateLocationEfs
+
+
+        /// <summary>
+        /// Modifies the following configuration parameters of the Amazon EFS transfer location
+        /// that you're using with DataSync.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-efs-location.html">Configuring
+        /// DataSync transfers with Amazon EFS</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLocationEfs service method.</param>
+        /// 
+        /// <returns>The response from the UpdateLocationEfs service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationEfs">REST API Reference for UpdateLocationEfs Operation</seealso>
+        UpdateLocationEfsResponse UpdateLocationEfs(UpdateLocationEfsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateLocationEfs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLocationEfs operation on AmazonDataSyncClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateLocationEfs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationEfs">REST API Reference for UpdateLocationEfs Operation</seealso>
+        IAsyncResult BeginUpdateLocationEfs(UpdateLocationEfsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateLocationEfs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateLocationEfs.</param>
+        /// 
+        /// <returns>Returns a  UpdateLocationEfsResult from DataSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationEfs">REST API Reference for UpdateLocationEfs Operation</seealso>
+        UpdateLocationEfsResponse EndUpdateLocationEfs(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateLocationFsxLustre
+
+
+        /// <summary>
+        /// Modifies the following configuration parameters of the Amazon FSx for Lustre transfer
+        /// location that you're using with DataSync.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-lustre-location.html">Configuring
+        /// DataSync transfers with FSx for Lustre</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLocationFsxLustre service method.</param>
+        /// 
+        /// <returns>The response from the UpdateLocationFsxLustre service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationFsxLustre">REST API Reference for UpdateLocationFsxLustre Operation</seealso>
+        UpdateLocationFsxLustreResponse UpdateLocationFsxLustre(UpdateLocationFsxLustreRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateLocationFsxLustre operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLocationFsxLustre operation on AmazonDataSyncClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateLocationFsxLustre
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationFsxLustre">REST API Reference for UpdateLocationFsxLustre Operation</seealso>
+        IAsyncResult BeginUpdateLocationFsxLustre(UpdateLocationFsxLustreRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateLocationFsxLustre operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateLocationFsxLustre.</param>
+        /// 
+        /// <returns>Returns a  UpdateLocationFsxLustreResult from DataSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationFsxLustre">REST API Reference for UpdateLocationFsxLustre Operation</seealso>
+        UpdateLocationFsxLustreResponse EndUpdateLocationFsxLustre(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateLocationFsxOntap
+
+
+        /// <summary>
+        /// Modifies the following configuration parameters of the Amazon FSx for NetApp ONTAP
+        /// transfer location that you're using with DataSync.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-ontap-location.html">Configuring
+        /// DataSync transfers with FSx for ONTAP</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLocationFsxOntap service method.</param>
+        /// 
+        /// <returns>The response from the UpdateLocationFsxOntap service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationFsxOntap">REST API Reference for UpdateLocationFsxOntap Operation</seealso>
+        UpdateLocationFsxOntapResponse UpdateLocationFsxOntap(UpdateLocationFsxOntapRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateLocationFsxOntap operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLocationFsxOntap operation on AmazonDataSyncClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateLocationFsxOntap
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationFsxOntap">REST API Reference for UpdateLocationFsxOntap Operation</seealso>
+        IAsyncResult BeginUpdateLocationFsxOntap(UpdateLocationFsxOntapRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateLocationFsxOntap operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateLocationFsxOntap.</param>
+        /// 
+        /// <returns>Returns a  UpdateLocationFsxOntapResult from DataSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationFsxOntap">REST API Reference for UpdateLocationFsxOntap Operation</seealso>
+        UpdateLocationFsxOntapResponse EndUpdateLocationFsxOntap(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateLocationFsxOpenZfs
+
+
+        /// <summary>
+        /// Modifies the following configuration parameters of the Amazon FSx for OpenZFS transfer
+        /// location that you're using with DataSync.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-openzfs-location.html">Configuring
+        /// DataSync transfers with FSx for OpenZFS</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Request parameters related to <c>SMB</c> aren't supported with the <c>UpdateLocationFsxOpenZfs</c>
+        /// operation.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLocationFsxOpenZfs service method.</param>
+        /// 
+        /// <returns>The response from the UpdateLocationFsxOpenZfs service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationFsxOpenZfs">REST API Reference for UpdateLocationFsxOpenZfs Operation</seealso>
+        UpdateLocationFsxOpenZfsResponse UpdateLocationFsxOpenZfs(UpdateLocationFsxOpenZfsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateLocationFsxOpenZfs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLocationFsxOpenZfs operation on AmazonDataSyncClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateLocationFsxOpenZfs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationFsxOpenZfs">REST API Reference for UpdateLocationFsxOpenZfs Operation</seealso>
+        IAsyncResult BeginUpdateLocationFsxOpenZfs(UpdateLocationFsxOpenZfsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateLocationFsxOpenZfs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateLocationFsxOpenZfs.</param>
+        /// 
+        /// <returns>Returns a  UpdateLocationFsxOpenZfsResult from DataSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationFsxOpenZfs">REST API Reference for UpdateLocationFsxOpenZfs Operation</seealso>
+        UpdateLocationFsxOpenZfsResponse EndUpdateLocationFsxOpenZfs(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateLocationFsxWindows
+
+
+        /// <summary>
+        /// Modifies the following configuration parameters of the Amazon FSx for Windows File
+        /// Server transfer location that you're using with DataSync.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-fsx-location.html">Configuring
+        /// DataSync transfers with FSx for Windows File Server</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLocationFsxWindows service method.</param>
+        /// 
+        /// <returns>The response from the UpdateLocationFsxWindows service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationFsxWindows">REST API Reference for UpdateLocationFsxWindows Operation</seealso>
+        UpdateLocationFsxWindowsResponse UpdateLocationFsxWindows(UpdateLocationFsxWindowsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateLocationFsxWindows operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLocationFsxWindows operation on AmazonDataSyncClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateLocationFsxWindows
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationFsxWindows">REST API Reference for UpdateLocationFsxWindows Operation</seealso>
+        IAsyncResult BeginUpdateLocationFsxWindows(UpdateLocationFsxWindowsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateLocationFsxWindows operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateLocationFsxWindows.</param>
+        /// 
+        /// <returns>Returns a  UpdateLocationFsxWindowsResult from DataSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationFsxWindows">REST API Reference for UpdateLocationFsxWindows Operation</seealso>
+        UpdateLocationFsxWindowsResponse EndUpdateLocationFsxWindows(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  UpdateLocationHdfs
 
 
         /// <summary>
-        /// Updates some parameters of a previously created location for a Hadoop Distributed
-        /// File System cluster.
+        /// Modifies the following configuration parameters of the Hadoop Distributed File System
+        /// (HDFS) transfer location that you're using with DataSync.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-hdfs-location.html">Configuring
+        /// DataSync transfers with an HDFS cluster</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateLocationHdfs service method.</param>
         /// 
@@ -2799,13 +3075,13 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Modifies some configurations of the Network File System (NFS) transfer location that
-        /// you're using with DataSync.
+        /// Modifies the following configuration parameters of the Network File System (NFS) transfer
+        /// location that you're using with DataSync.
         /// 
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html">Configuring
-        /// transfers to or from an NFS file server</a>.
+        /// transfers with an NFS file server</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateLocationNfs service method.</param>
@@ -2852,7 +3128,14 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Updates some parameters of an existing DataSync location for an object storage system.
+        /// Modifies the following configuration parameters of the object storage transfer location
+        /// that you're using with DataSync.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-object-location.html">Configuring
+        /// DataSync transfers with an object storage system</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateLocationObjectStorage service method.</param>
         /// 
@@ -2894,12 +3177,81 @@ namespace Amazon.DataSync
 
         #endregion
         
+        #region  UpdateLocationS3
+
+
+        /// <summary>
+        /// Modifies the following configuration parameters of the Amazon S3 transfer location
+        /// that you're using with DataSync.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Before you begin, make sure that you read the following topics:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Storage
+        /// class considerations with Amazon S3 locations</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#create-s3-location-s3-requests">Evaluating
+        /// S3 request costs when using DataSync</a> 
+        /// </para>
+        ///  </li> </ul> </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLocationS3 service method.</param>
+        /// 
+        /// <returns>The response from the UpdateLocationS3 service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationS3">REST API Reference for UpdateLocationS3 Operation</seealso>
+        UpdateLocationS3Response UpdateLocationS3(UpdateLocationS3Request request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateLocationS3 operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLocationS3 operation on AmazonDataSyncClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateLocationS3
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationS3">REST API Reference for UpdateLocationS3 Operation</seealso>
+        IAsyncResult BeginUpdateLocationS3(UpdateLocationS3Request request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateLocationS3 operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateLocationS3.</param>
+        /// 
+        /// <returns>Returns a  UpdateLocationS3Result from DataSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationS3">REST API Reference for UpdateLocationS3 Operation</seealso>
+        UpdateLocationS3Response EndUpdateLocationS3(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  UpdateLocationSmb
 
 
         /// <summary>
-        /// Updates some of the parameters of a Server Message Block (SMB) file server location
-        /// that you can use for DataSync transfers.
+        /// Modifies the following configuration parameters of the Server Message Block (SMB)
+        /// transfer location that you're using with DataSync.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html">Configuring
+        /// DataSync transfers with an SMB file server</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateLocationSmb service method.</param>
         /// 

@@ -30,28 +30,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataSync.Model
 {
     /// <summary>
-    /// Container for the parameters to the UpdateLocationNfs operation.
-    /// Modifies the following configuration parameters of the Network File System (NFS) transfer
+    /// Container for the parameters to the UpdateLocationFsxLustre operation.
+    /// Modifies the following configuration parameters of the Amazon FSx for Lustre transfer
     /// location that you're using with DataSync.
     /// 
     ///  
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html">Configuring
-    /// transfers with an NFS file server</a>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-lustre-location.html">Configuring
+    /// DataSync transfers with FSx for Lustre</a>.
     /// </para>
     /// </summary>
-    public partial class UpdateLocationNfsRequest : AmazonDataSyncRequest
+    public partial class UpdateLocationFsxLustreRequest : AmazonDataSyncRequest
     {
         private string _locationArn;
-        private NfsMountOptions _mountOptions;
-        private OnPremConfig _onPremConfig;
         private string _subdirectory;
 
         /// <summary>
         /// Gets and sets the property LocationArn. 
         /// <para>
-        /// Specifies the Amazon Resource Name (ARN) of the NFS transfer location that you want
-        /// to update.
+        /// Specifies the Amazon Resource Name (ARN) of the FSx for Lustre transfer location that
+        /// you're updating.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=128)]
@@ -68,45 +66,15 @@ namespace Amazon.DataSync.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MountOptions.
-        /// </summary>
-        public NfsMountOptions MountOptions
-        {
-            get { return this._mountOptions; }
-            set { this._mountOptions = value; }
-        }
-
-        // Check to see if MountOptions property is set
-        internal bool IsSetMountOptions()
-        {
-            return this._mountOptions != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property OnPremConfig.
-        /// </summary>
-        public OnPremConfig OnPremConfig
-        {
-            get { return this._onPremConfig; }
-            set { this._onPremConfig = value; }
-        }
-
-        // Check to see if OnPremConfig property is set
-        internal bool IsSetOnPremConfig()
-        {
-            return this._onPremConfig != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property Subdirectory. 
         /// <para>
-        /// Specifies the export path in your NFS file server that you want DataSync to mount.
+        /// Specifies a mount path for your FSx for Lustre file system. The path can include subdirectories.
         /// </para>
         ///  
         /// <para>
-        /// This path (or a subdirectory of the path) is where DataSync transfers data to or from.
-        /// For information on configuring an export for DataSync, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#accessing-nfs">Accessing
-        /// NFS file servers</a>.
+        /// When the location is used as a source, DataSync reads data from the mount path. When
+        /// the location is used as a destination, DataSync writes data to the mount path. If
+        /// you don't include this parameter, DataSync uses the file system's root directory (<c>/</c>).
         /// </para>
         /// </summary>
         [AWSProperty(Max=4096)]

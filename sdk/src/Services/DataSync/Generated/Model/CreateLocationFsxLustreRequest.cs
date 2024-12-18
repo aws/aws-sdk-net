@@ -50,7 +50,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property FsxFilesystemArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for the FSx for Lustre file system.
+        /// Specifies the Amazon Resource Name (ARN) of the FSx for Lustre file system.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=128)]
@@ -69,8 +69,15 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property SecurityGroupArns. 
         /// <para>
-        /// The Amazon Resource Names (ARNs) of the security groups that are used to configure
-        /// the FSx for Lustre file system.
+        /// Specifies the Amazon Resource Names (ARNs) of up to five security groups that provide
+        /// access to your FSx for Lustre file system.
+        /// </para>
+        ///  
+        /// <para>
+        /// The security groups must be able to access the file system's ports. The file system
+        /// must also allow access from the security groups. For information about file system
+        /// access, see the <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/limit-access-security-groups.html">
+        /// <i>Amazon FSx for Lustre User Guide</i> </a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=5)]
@@ -89,9 +96,13 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Subdirectory. 
         /// <para>
-        /// A subdirectory in the location's path. This subdirectory in the FSx for Lustre file
-        /// system is used to read data from the FSx for Lustre source location or write data
-        /// to the FSx for Lustre destination.
+        /// Specifies a mount path for your FSx for Lustre file system. The path can include subdirectories.
+        /// </para>
+        ///  
+        /// <para>
+        /// When the location is used as a source, DataSync reads data from the mount path. When
+        /// the location is used as a destination, DataSync writes data to the mount path. If
+        /// you don't include this parameter, DataSync uses the file system's root directory (<c>/</c>).
         /// </para>
         /// </summary>
         [AWSProperty(Max=4096)]
@@ -110,9 +121,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The key-value pair that represents a tag that you want to add to the resource. The
-        /// value can be an empty string. This value helps you manage, filter, and search for
-        /// your resources. We recommend that you create a name tag for your location.
+        /// Specifies labels that help you categorize, filter, and search for your Amazon Web
+        /// Services resources. We recommend creating at least a name tag for your location.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

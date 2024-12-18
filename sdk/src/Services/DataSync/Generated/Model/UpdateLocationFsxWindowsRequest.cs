@@ -30,33 +30,34 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataSync.Model
 {
     /// <summary>
-    /// Specifies the Server Message Block (SMB) protocol configuration that DataSync uses
-    /// to access your Amazon FSx for NetApp ONTAP file system's storage virtual machine (SVM).
-    /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-ontap-location.html#create-ontap-location-access">Providing
-    /// DataSync access to FSx for ONTAP file systems</a>.
+    /// Container for the parameters to the UpdateLocationFsxWindows operation.
+    /// Modifies the following configuration parameters of the Amazon FSx for Windows File
+    /// Server transfer location that you're using with DataSync.
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-fsx-location.html">Configuring
+    /// DataSync transfers with FSx for Windows File Server</a>.
+    /// </para>
     /// </summary>
-    public partial class FsxProtocolSmb
+    public partial class UpdateLocationFsxWindowsRequest : AmazonDataSyncRequest
     {
         private string _domain;
-        private SmbMountOptions _mountOptions;
+        private string _locationArn;
         private string _password;
+        private string _subdirectory;
         private string _user;
 
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        /// Specifies the name of the Windows domain that your storage virtual machine (SVM) belongs
-        /// to.
-        /// </para>
-        ///  
-        /// <para>
-        /// If you have multiple domains in your environment, configuring this setting makes sure
-        /// that DataSync connects to the right SVM.
+        /// Specifies the name of the Windows domain that your FSx for Windows File Server file
+        /// system belongs to.
         /// </para>
         ///  
         /// <para>
         /// If you have multiple Active Directory domains in your environment, configuring this
-        /// parameter makes sure that DataSync connects to the right SVM.
+        /// parameter makes sure that DataSync connects to the right file system.
         /// </para>
         /// </summary>
         [AWSProperty(Max=253)]
@@ -73,27 +74,33 @@ namespace Amazon.DataSync.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MountOptions.
+        /// Gets and sets the property LocationArn. 
+        /// <para>
+        /// Specifies the ARN of the FSx for Windows File Server transfer location that you're
+        /// updating.
+        /// </para>
         /// </summary>
-        public SmbMountOptions MountOptions
+        [AWSProperty(Required=true, Max=128)]
+        public string LocationArn
         {
-            get { return this._mountOptions; }
-            set { this._mountOptions = value; }
+            get { return this._locationArn; }
+            set { this._locationArn = value; }
         }
 
-        // Check to see if MountOptions property is set
-        internal bool IsSetMountOptions()
+        // Check to see if LocationArn property is set
+        internal bool IsSetLocationArn()
         {
-            return this._mountOptions != null;
+            return this._locationArn != null;
         }
 
         /// <summary>
         /// Gets and sets the property Password. 
         /// <para>
-        /// Specifies the password of a user who has permission to access your SVM.
+        /// Specifies the password of the user with the permissions to mount and access the files,
+        /// folders, and file metadata in your FSx for Windows File Server file system.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Max=104)]
+        [AWSProperty(Sensitive=true, Max=104)]
         public string Password
         {
             get { return this._password; }
@@ -107,19 +114,40 @@ namespace Amazon.DataSync.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Subdirectory. 
+        /// <para>
+        /// Specifies a mount path for your file system using forward slashes. DataSync uses this
+        /// subdirectory to read or write data (depending on whether the file system is a source
+        /// or destination location).
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=4096)]
+        public string Subdirectory
+        {
+            get { return this._subdirectory; }
+            set { this._subdirectory = value; }
+        }
+
+        // Check to see if Subdirectory property is set
+        internal bool IsSetSubdirectory()
+        {
+            return this._subdirectory != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property User. 
         /// <para>
-        /// Specifies a user that can mount and access the files, folders, and metadata in your
-        /// SVM.
+        /// Specifies the user with the permissions to mount and access the files, folders, and
+        /// file metadata in your FSx for Windows File Server file system.
         /// </para>
         ///  
         /// <para>
         /// For information about choosing a user with the right level of access for your transfer,
-        /// see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-ontap-location.html#create-ontap-location-smb">Using
-        /// the SMB protocol</a>.
+        /// see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-fsx-location.html#create-fsx-windows-location-permissions">required
+        /// permissions</a> for FSx for Windows File Server locations.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=104)]
+        [AWSProperty(Max=104)]
         public string User
         {
             get { return this._user; }

@@ -35,8 +35,8 @@ namespace Amazon.DataSync.Model
     /// 
     ///  
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#create-s3-location-access">Accessing
-    /// S3 buckets</a>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#create-s3-location-access">Providing
+    /// DataSync access to S3 buckets</a>.
     /// </para>
     /// </summary>
     public partial class S3Config

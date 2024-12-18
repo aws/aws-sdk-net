@@ -35,7 +35,7 @@ namespace Amazon.DataSync.Model
     /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-ontap-location.html#create-ontap-location-access">Providing
     /// DataSync access to FSx for ONTAP file systems</a>.
     /// </summary>
-    public partial class FsxProtocolSmb
+    public partial class FsxUpdateProtocolSmb
     {
         private string _domain;
         private SmbMountOptions _mountOptions;
@@ -47,11 +47,6 @@ namespace Amazon.DataSync.Model
         /// <para>
         /// Specifies the name of the Windows domain that your storage virtual machine (SVM) belongs
         /// to.
-        /// </para>
-        ///  
-        /// <para>
-        /// If you have multiple domains in your environment, configuring this setting makes sure
-        /// that DataSync connects to the right SVM.
         /// </para>
         ///  
         /// <para>
@@ -93,7 +88,7 @@ namespace Amazon.DataSync.Model
         /// Specifies the password of a user who has permission to access your SVM.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Max=104)]
+        [AWSProperty(Sensitive=true, Max=104)]
         public string Password
         {
             get { return this._password; }
@@ -119,7 +114,7 @@ namespace Amazon.DataSync.Model
         /// the SMB protocol</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=104)]
+        [AWSProperty(Max=104)]
         public string User
         {
             get { return this._user; }
