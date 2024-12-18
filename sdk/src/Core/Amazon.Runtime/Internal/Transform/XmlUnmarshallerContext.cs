@@ -171,12 +171,68 @@ namespace Amazon.Runtime.Internal.Transform
         }
 
         /// <summary>
+        ///     Returns the text contents of the current element being parsed.
+        /// </summary>
+        /// <returns>
+        ///     The text contents of the current element being parsed.
+        /// </returns>
+        public override string ReadText()
+        {
+            if (this.nodeType == XmlNodeType.Attribute)
+            {
+                return (attributeValues[attributeEnumerator.Current]);
+            }
+            else
+            {
+                return nodeContent;
+            }
+        }
+
+        /// <summary>
+        /// True if <c>NodeType</c> is <c>Element</c>.
+        /// </summary>
+        public override bool IsStartElement
+        {
+            get { return this.nodeType == XmlNodeType.Element; }
+        }
+
+        /// <summary>
+        /// True if <c>NodeType</c> is <c>EndElement</c>.
+        /// </summary>
+        public override bool IsEndElement
+        {
+            get { return this.nodeType == XmlNodeType.EndElement; }
+        }
+
+        /// <summary>
+        /// True if the context is at the start of the document.
+        /// </summary>
+        public override bool IsStartOfDocument
+        {
+            get { return XmlReader.ReadState == ReadState.Initial; }
+        }
+
+        #endregion
+
+        #region Public methods
+
+        /// <summary>
+        /// Reads the next token at depth greater than or equal to target depth.
+        /// </summary>
+        /// <param name="targetDepth">Tokens are read at depth greater than or equal to target depth.</param>
+        /// <returns>True if a token was read and current depth is greater than or equal to target depth.</returns>
+        public bool ReadAtDepth(int targetDepth)
+        {
+            return Read() && this.CurrentDepth >= targetDepth;
+        }
+
+        /// <summary>
         /// Reads to the next node in the XML document, and updates the context accordingly.
         /// </summary>
         /// <returns>
         /// True if a node was read, false if there are no more elements to read./
         /// </returns>
-        public override bool Read()
+        public virtual bool Read()
         {
             if (attributeEnumerator != null && attributeEnumerator.MoveNext())
             {
@@ -234,53 +290,6 @@ namespace Amazon.Runtime.Internal.Transform
                 XmlReader.ReadState != ReadState.Closed;
             return moreDataAvailable;
         }
-
-        /// <summary>
-        ///     Returns the text contents of the current element being parsed.
-        /// </summary>
-        /// <returns>
-        ///     The text contents of the current element being parsed.
-        /// </returns>
-        public override string ReadText()
-        {
-            if (this.nodeType == XmlNodeType.Attribute)
-            {
-                return (attributeValues[attributeEnumerator.Current]);
-            }
-            else
-            {
-                return nodeContent;
-            }
-        }
-
-        /// <summary>
-        /// True if <c>NodeType</c> is <c>Element</c>.
-        /// </summary>
-        public override bool IsStartElement
-        {
-            get { return this.nodeType == XmlNodeType.Element; }
-        }
-
-        /// <summary>
-        /// True if <c>NodeType</c> is <c>EndElement</c>.
-        /// </summary>
-        public override bool IsEndElement
-        {
-            get { return this.nodeType == XmlNodeType.EndElement; }
-        }
-
-        /// <summary>
-        /// True if the context is at the start of the document.
-        /// </summary>
-        public override bool IsStartOfDocument
-        {
-            get { return XmlReader.ReadState == ReadState.Initial; }
-        }
-
-        #endregion
-
-        #region Public methods
-
         /// <summary>
         /// True if <c>NodeType</c> is <c>Attribute</c>.
         /// </summary>
@@ -353,11 +362,6 @@ namespace Amazon.Runtime.Internal.Transform
                 disposed = true;
             }
             base.Dispose(disposing);
-        }
-
-        public override bool Read(ref StreamingUtf8JsonReader reader)
-        {
-            throw new NotImplementedException();
         }
     }
 

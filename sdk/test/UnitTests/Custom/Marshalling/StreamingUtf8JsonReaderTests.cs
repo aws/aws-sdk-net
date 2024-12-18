@@ -30,7 +30,7 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        public void HandlesUtf8BOM()
+        public void SkipsUtf8BOM()
         {
             // we can't use reflection to access the private fields of StreamingUtf8JsonReader since it is a ref struct so we have to test it this way.
             var a = Convert.ToByte('{');
@@ -85,7 +85,6 @@ namespace AWSSDK.UnitTests
             }
         }
 
-        // Normal payload
         [TestMethod]
         public void StreamingUtf8JsonReaderHandlesNormalPayload()
         {
@@ -119,31 +118,108 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        public void PassReaderByRefUnderBufferSize()
+        public void StreamingUtf8JsonReaderHandlesExactBufferSize()
         {
             var sb = new StringBuilder();
+            // everything other than the 'x' is 13 bytes
+            var size = AWSConfigs.StreamingUtf8JsonReaderBufferSize.GetValueOrDefault() - 13;
             sb.Append("{ \"key\": \"");
-            var size = AWSConfigs.StreamingUtf8JsonReaderBufferSize.GetValueOrDefault() - 500;
             sb.Append(new string('x', size));
             sb.Append("\" }");
             string largeJson = sb.ToString();
+            Assert.AreEqual<int>(4096, Encoding.UTF8.GetByteCount(largeJson));
+
 
             byte[] payload = Encoding.UTF8.GetBytes(largeJson);
             using (var stream = new MemoryStream(payload))
             {
-                var streamingReader = new StreamingUtf8JsonReader(stream);
-                JsonDocument document = null;
-                streamingReader.PassReaderByRef((ref Utf8JsonReader reader) =>
+                var reader = new StreamingUtf8JsonReader(stream);
+                string key = null, value = null;
+
+                while (reader.Read())
                 {
-                    document = JsonDocument.ParseValue(ref reader);
-                });
-                Assert.IsNotNull(document);
-                Assert.AreEqual<string>(largeJson, document.RootElement.GetRawText());
-                JsonElement element = document.RootElement.GetProperty("key");
-                string value = element.GetString();
+                    if (reader.Reader.TokenType == JsonTokenType.PropertyName)
+                    {
+                        key = reader.Reader.GetString();
+                    }
+                    else if (reader.Reader.TokenType == JsonTokenType.String)
+                    {
+                        value = reader.Reader.GetString();
+                    }
+                }
+                Assert.AreEqual<string>("key", key);
                 Assert.AreEqual<string>(new string('x', size), value);
             }
         }
+
+        [TestMethod]
+        public void StreamingUtf8JsonReaderHandlesBufferSizePlusOne()
+        {
+            var sb = new StringBuilder();
+            // everything other than the 'x' is 13 bytes
+            var size = AWSConfigs.StreamingUtf8JsonReaderBufferSize.GetValueOrDefault() - 13 + 1;
+            sb.Append("{ \"key\": \"");
+            sb.Append(new string('x', size));
+            sb.Append("\" }");
+            string largeJson = sb.ToString();
+
+
+            byte[] payload = Encoding.UTF8.GetBytes(largeJson);
+            using (var stream = new MemoryStream(payload))
+            {
+                var reader = new StreamingUtf8JsonReader(stream);
+                string key = null, value = null;
+
+                while (reader.Read())
+                {
+                    if (reader.Reader.TokenType == JsonTokenType.PropertyName)
+                    {
+                        key = reader.Reader.GetString();
+                    }
+                    else if (reader.Reader.TokenType == JsonTokenType.String)
+                    {
+                        value = reader.Reader.GetString();
+                    }
+                }
+                Assert.AreEqual<string>("key", key);
+                Assert.AreEqual<string>(new string('x', size), value);
+            }
+        }
+
+        [TestMethod]
+        public void StreamingUtf8JsonReaderHandlesBufferSizeMinusOne()
+        {
+            var sb = new StringBuilder();
+            // everything other than the 'x' is 13 bytes
+            var size = AWSConfigs.StreamingUtf8JsonReaderBufferSize.GetValueOrDefault() - 13 - 1;
+            sb.Append("{ \"key\": \"");
+            sb.Append(new string('x', size));
+            sb.Append("\" }");
+            string largeJson = sb.ToString();
+
+
+            byte[] payload = Encoding.UTF8.GetBytes(largeJson);
+            using (var stream = new MemoryStream(payload))
+            {
+                var reader = new StreamingUtf8JsonReader(stream);
+                string key = null, value = null;
+
+                while (reader.Read())
+                {
+                    if (reader.Reader.TokenType == JsonTokenType.PropertyName)
+                    {
+                        key = reader.Reader.GetString();
+                    }
+                    else if (reader.Reader.TokenType == JsonTokenType.String)
+                    {
+                        value = reader.Reader.GetString();
+                    }
+                }
+                Assert.AreEqual<string>("key", key);
+                Assert.AreEqual<string>(new string('x', size), value);
+            }
+        }
+
         [ClassCleanup]
         public static void ClassCleanup()
         {

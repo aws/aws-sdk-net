@@ -23,6 +23,7 @@ namespace Amazon.Runtime.Internal.Util
     /// </summary>
     public static class JsonConstants
     {
-        public static ReadOnlySpan<byte> Utf8Bom => new byte[] { 0xEF, 0xBB, 0xBF };
+        private static byte[] _utf8BomBytes = new byte[] { 0xEF, 0xBB, 0xBF };
+        public static ReadOnlySpan<byte>  Utf8Bom => _utf8BomBytes;
     }
 }

@@ -129,7 +129,7 @@ namespace Amazon.Runtime.Internal.Transform
                     base.SetupFlexibleChecksumStream(responseData, CrcStream ?? responseStream, contentLength, requestContext);
                 }
             }
-
+            
             if (this.FlexibleChecksumStream != null) // either just flexible checksum, or flexible checksum wrapping the older CRC stream
                 streamReader = new StreamReader(this.FlexibleChecksumStream);
             else if (this.CrcStream != null)
@@ -212,7 +212,7 @@ namespace Amazon.Runtime.Internal.Transform
         /// <returns>
         ///     True if a token was read, false if there are no more tokens to read.
         /// </returns>
-        public override bool Read(ref StreamingUtf8JsonReader reader)
+        public bool Read(ref StreamingUtf8JsonReader reader)
         {
             if (wasPeeked)
             {
@@ -233,17 +233,6 @@ namespace Amazon.Runtime.Internal.Transform
             wasPeeked = false;
             return result;
         }
-
-        /// <summary>
-        /// This method is no longer implemented in favor of Read which accepts a Utf8JsonReader
-        /// </summary>
-        /// <returns></returns>
-        /// <exception cref="NotImplementedException"></exception>
-        public override bool Read()
-        {
-            throw new NotImplementedException();
-        }
-
 
         /// <summary>
         /// Peeks at the next token. This peek implementation
@@ -430,41 +419,6 @@ namespace Amazon.Runtime.Internal.Transform
         }
 
         #endregion
-        /// <summary>
-        /// This method should only be called when the entire stream fits within the buffer. If you have a stream
-        /// that is larger than the initial buffer size, you should use the overload that takes Utf8JsonReader instead
-        /// because the streamingReader will not have the context to get more data from the stream.
-        /// </summary>
-        /// <param name="streamingReader"></param>
-        /// <returns>A Json document</returns>
-        public JsonDocument ToJsonDocument(ref StreamingUtf8JsonReader streamingReader)
-        {
-            JsonDocument document = null;
-            
-            streamingReader.PassReaderByRef((ref Utf8JsonReader reader) =>
-            {
-                document = JsonDocument.ParseValue(ref reader);
-            });
-
-            if (stack.Count > 0)
-                stack.Pop();
-            return document;
-        }
-
-        /// <summary>
-        /// This method should be be u
-        /// </summary>
-        /// <param name="reader"></param>
-        /// <returns></returns>
-        public JsonDocument ToJsonDocument(ref Utf8JsonReader reader)
-        {
-            JsonDocument document = JsonDocument.ParseValue(ref reader);
-
-            if (stack.Count > 0)
-                stack.Pop();
-            return document;
-        }
-
         protected override void Dispose(bool disposing)
         {
             if (!disposed)

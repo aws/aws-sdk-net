@@ -185,16 +185,6 @@ namespace Amazon.Runtime.Internal.Transform
             return TestExpression(expression, startingStackDepth, CurrentPath, CurrentDepth);
         }
 
-        /// <summary>
-        /// Reads the next token at depth greater than or equal to target depth.
-        /// </summary>
-        /// <param name="targetDepth">Tokens are read at depth greater than or equal to target depth.</param>
-        /// <returns>True if a token was read and current depth is greater than or equal to target depth.</returns>
-        public bool ReadAtDepth(int targetDepth)
-        {
-            return Read() && this.CurrentDepth >= targetDepth;
-        }
-
         private static bool TestExpression(string expression, string currentPath)
         {
             if (expression.Equals("."))
@@ -235,22 +225,6 @@ namespace Amazon.Runtime.Internal.Transform
         /// document being parsed.
         /// </summary>
         public abstract int CurrentDepth { get; }
-
-        /// <summary>
-        /// Reads to the next node in the document, and updates the context accordingly.
-        /// </summary>
-        /// <returns>
-        /// True if a node was read, false if there are no more elements to read.
-        /// </returns>
-        public abstract bool Read();
-
-        /// <summary>
-        /// Reads the next node in the document and updates the context accordingly.
-        /// This is specifically used for JSON protocols which require a reader to be passed in.
-        /// </summary>
-        /// <param name="reader">The Utf8JsonReader</param>
-        /// <returns></returns>
-        public abstract bool Read(ref StreamingUtf8JsonReader reader);
 
         /// <summary>
         ///     Returns the text contents of the current element being parsed.
