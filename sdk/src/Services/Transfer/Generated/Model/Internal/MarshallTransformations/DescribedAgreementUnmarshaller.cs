@@ -96,6 +96,12 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EnforceMessageSigning", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EnforceMessageSigning = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LocalProfileId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -106,6 +112,12 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PartnerProfileId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PreserveFilename", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PreserveFilename = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ServerId", targetDepth))

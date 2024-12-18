@@ -93,6 +93,12 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetEnforceMessageSigning())
+                {
+                    context.Writer.WritePropertyName("EnforceMessageSigning");
+                    context.Writer.Write(publicRequest.EnforceMessageSigning);
+                }
+
                 if(publicRequest.IsSetLocalProfileId())
                 {
                     context.Writer.WritePropertyName("LocalProfileId");
@@ -103,6 +109,12 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("PartnerProfileId");
                     context.Writer.Write(publicRequest.PartnerProfileId);
+                }
+
+                if(publicRequest.IsSetPreserveFilename())
+                {
+                    context.Writer.WritePropertyName("PreserveFilename");
+                    context.Writer.Write(publicRequest.PreserveFilename);
                 }
 
                 if(publicRequest.IsSetServerId())
