@@ -84,6 +84,7 @@ namespace Amazon.Connect.Model
         private int? _chatDurationInMinutes;
         private string _clientToken;
         private string _contactFlowId;
+        private string _customerId;
         private ChatMessage _initialMessage;
         private string _instanceId;
         private ParticipantDetails _participantDetails;
@@ -186,6 +187,26 @@ namespace Amazon.Connect.Model
         internal bool IsSetContactFlowId()
         {
             return this._contactFlowId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomerId. 
+        /// <para>
+        /// The customer's identification number. For example, the <c>CustomerId</c> may be a
+        /// customer number from your CRM.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=1, Max=128)]
+        public string CustomerId
+        {
+            get { return this._customerId; }
+            set { this._customerId = value; }
+        }
+
+        // Check to see if CustomerId property is set
+        internal bool IsSetCustomerId()
+        {
+            return this._customerId != null;
         }
 
         /// <summary>

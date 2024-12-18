@@ -2733,6 +2733,11 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.StartChatContactRequest.CustomerId</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.StartChatContactRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
@@ -3485,6 +3490,33 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateParticipantAuthenticationRequest.Code</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateParticipantAuthenticationRequest.Error</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^[\x20-\x21\x23-\x5B\x5D-\x7E]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateParticipantAuthenticationRequest.ErrorDescription</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^[\x20-\x21\x23-\x5B\x5D-\x7E]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateParticipantAuthenticationRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateParticipantAuthenticationRequest.State</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.UpdateParticipantRoleConfigRequest.ContactId</property>
     <min>1</min>
     <max>256</max>
@@ -4049,6 +4081,11 @@
     <property>Amazon.Connect.Model.Contact.ContactAssociationId</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.Contact.CustomerId</property>
+    <min>0</min>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.Contact.Description</property>

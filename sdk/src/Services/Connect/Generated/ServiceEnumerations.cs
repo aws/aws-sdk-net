@@ -2743,6 +2743,10 @@ namespace Amazon.Connect
         /// </summary>
         public static readonly InstanceAttributeType INBOUND_CALLS = new InstanceAttributeType("INBOUND_CALLS");
         /// <summary>
+        /// Constant MULTI_PARTY_CHAT_CONFERENCE for InstanceAttributeType
+        /// </summary>
+        public static readonly InstanceAttributeType MULTI_PARTY_CHAT_CONFERENCE = new InstanceAttributeType("MULTI_PARTY_CHAT_CONFERENCE");
+        /// <summary>
         /// Constant MULTI_PARTY_CONFERENCE for InstanceAttributeType
         /// </summary>
         public static readonly InstanceAttributeType MULTI_PARTY_CONFERENCE = new InstanceAttributeType("MULTI_PARTY_CONFERENCE");
@@ -3026,6 +3030,10 @@ namespace Amazon.Connect
         /// Constant CASES_DOMAIN for IntegrationType
         /// </summary>
         public static readonly IntegrationType CASES_DOMAIN = new IntegrationType("CASES_DOMAIN");
+        /// <summary>
+        /// Constant COGNITO_USER_POOL for IntegrationType
+        /// </summary>
+        public static readonly IntegrationType COGNITO_USER_POOL = new IntegrationType("COGNITO_USER_POOL");
         /// <summary>
         /// Constant EVENT for IntegrationType
         /// </summary>

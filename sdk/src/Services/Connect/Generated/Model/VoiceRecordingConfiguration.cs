@@ -42,6 +42,10 @@ namespace Amazon.Connect.Model
         /// <para>
         /// Identifies which IVR track is being recorded.
         /// </para>
+        ///  
+        /// <para>
+        /// One and only one of the track configurations should be presented in the request.
+        /// </para>
         /// </summary>
         public IvrRecordingTrack IvrRecordingTrack
         {

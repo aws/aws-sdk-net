@@ -126,6 +126,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.CustomerEndpoint = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CustomerId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CustomerId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CustomerVoiceActivity", targetDepth))
                 {
                     var unmarshaller = CustomerVoiceActivityUnmarshaller.Instance;

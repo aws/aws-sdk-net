@@ -2434,7 +2434,7 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Creates registration for a device token and a chat contact to receive real-time push
-        /// notifications. For more information about push notifications, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/set-up-push-notifications-for-mobile-chat.html">Set
+        /// notifications. For more information about push notifications, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-push-notifications-for-mobile-chat.html">Set
         /// up push notifications in Amazon Connect for mobile chat</a> in the <i>Amazon Connect
         /// Administrator Guide</i>.
         /// </summary>
@@ -8559,7 +8559,7 @@ namespace Amazon.Connect
         ///  
         /// <para>
         /// For the specified version of Amazon Lex, returns a paginated list of all the Amazon
-        /// Lex bots currently associated with the instance. Use this API to returns both Amazon
+        /// Lex bots currently associated with the instance. Use this API to return both Amazon
         /// Lex V1 and V2 bots.
         /// </para>
         /// </summary>
@@ -15469,6 +15469,83 @@ namespace Amazon.Connect
         /// <returns>Returns a  UpdateInstanceStorageConfigResult from Connect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateInstanceStorageConfig">REST API Reference for UpdateInstanceStorageConfig Operation</seealso>
         UpdateInstanceStorageConfigResponse EndUpdateInstanceStorageConfig(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateParticipantAuthentication
+
+
+        /// <summary>
+        /// Instructs Amazon Connect to resume the authentication process. The subsequent actions
+        /// depend on the request body contents:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>If a code is provided</b>: Connect retrieves the identity information from Amazon
+        /// Cognito and imports it into Connect Customer Profiles.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>If an error is provided</b>: The error branch of the Authenticate Customer block
+        /// is executed.
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// The API returns a success response to acknowledge the request. However, the interaction
+        /// and exchange of identity information occur asynchronously after the response is returned.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateParticipantAuthentication service method.</param>
+        /// 
+        /// <returns>The response from the UpdateParticipantAuthentication service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ConflictException">
+        /// Operation cannot be performed at this time as there is a conflict with another operation
+        /// or contact state.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateParticipantAuthentication">REST API Reference for UpdateParticipantAuthentication Operation</seealso>
+        UpdateParticipantAuthenticationResponse UpdateParticipantAuthentication(UpdateParticipantAuthenticationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateParticipantAuthentication operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateParticipantAuthentication operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateParticipantAuthentication
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateParticipantAuthentication">REST API Reference for UpdateParticipantAuthentication Operation</seealso>
+        IAsyncResult BeginUpdateParticipantAuthentication(UpdateParticipantAuthenticationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateParticipantAuthentication operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateParticipantAuthentication.</param>
+        /// 
+        /// <returns>Returns a  UpdateParticipantAuthenticationResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateParticipantAuthentication">REST API Reference for UpdateParticipantAuthentication Operation</seealso>
+        UpdateParticipantAuthenticationResponse EndUpdateParticipantAuthentication(IAsyncResult asyncResult);
 
         #endregion
         

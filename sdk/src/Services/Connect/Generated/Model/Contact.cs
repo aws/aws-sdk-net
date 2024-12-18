@@ -44,6 +44,7 @@ namespace Amazon.Connect.Model
         private string _contactAssociationId;
         private Customer _customer;
         private EndpointInfo _customerEndpoint;
+        private string _customerId;
         private CustomerVoiceActivity _customerVoiceActivity;
         private string _description;
         private DisconnectDetails _disconnectDetails;
@@ -249,6 +250,29 @@ namespace Amazon.Connect.Model
         internal bool IsSetCustomerEndpoint()
         {
             return this._customerEndpoint != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomerId. 
+        /// <para>
+        /// The customer's identification number. For example, the <c>CustomerId</c> may be a
+        /// customer number from your CRM. You can create a Lambda function to pull the unique
+        /// customer ID of the caller from your CRM system. If you enable Amazon Connect Voice
+        /// ID capability, this attribute is populated with the <c>CustomerSpeakerId</c> of the
+        /// caller.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=128)]
+        public string CustomerId
+        {
+            get { return this._customerId; }
+            set { this._customerId = value; }
+        }
+
+        // Check to see if CustomerId property is set
+        internal bool IsSetCustomerId()
+        {
+            return this._customerId != null;
         }
 
         /// <summary>
