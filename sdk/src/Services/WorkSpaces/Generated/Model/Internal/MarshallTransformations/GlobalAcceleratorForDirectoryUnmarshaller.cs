@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for StreamingProperties Object
+    /// Response Unmarshaller for GlobalAcceleratorForDirectory Object
     /// </summary>  
-    public class StreamingPropertiesUnmarshaller : IUnmarshaller<StreamingProperties, XmlUnmarshallerContext>, IUnmarshaller<StreamingProperties, JsonUnmarshallerContext>
+    public class GlobalAcceleratorForDirectoryUnmarshaller : IUnmarshaller<GlobalAcceleratorForDirectory, XmlUnmarshallerContext>, IUnmarshaller<GlobalAcceleratorForDirectory, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        StreamingProperties IUnmarshaller<StreamingProperties, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        GlobalAcceleratorForDirectory IUnmarshaller<GlobalAcceleratorForDirectory, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public StreamingProperties Unmarshall(JsonUnmarshallerContext context)
+        public GlobalAcceleratorForDirectory Unmarshall(JsonUnmarshallerContext context)
         {
-            StreamingProperties unmarshalledObject = new StreamingProperties();
+            GlobalAcceleratorForDirectory unmarshalledObject = new GlobalAcceleratorForDirectory();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,28 +66,16 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("GlobalAccelerator", targetDepth))
-                {
-                    var unmarshaller = GlobalAcceleratorForDirectoryUnmarshaller.Instance;
-                    unmarshalledObject.GlobalAccelerator = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("StorageConnectors", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<StorageConnector, StorageConnectorUnmarshaller>(StorageConnectorUnmarshaller.Instance);
-                    unmarshalledObject.StorageConnectors = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("StreamingExperiencePreferredProtocol", targetDepth))
+                if (context.TestExpression("Mode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StreamingExperiencePreferredProtocol = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Mode = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("UserSettings", targetDepth))
+                if (context.TestExpression("PreferredProtocol", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<UserSetting, UserSettingUnmarshaller>(UserSettingUnmarshaller.Instance);
-                    unmarshalledObject.UserSettings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PreferredProtocol = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -95,12 +83,12 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         }
 
 
-        private static StreamingPropertiesUnmarshaller _instance = new StreamingPropertiesUnmarshaller();        
+        private static GlobalAcceleratorForDirectoryUnmarshaller _instance = new GlobalAcceleratorForDirectoryUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StreamingPropertiesUnmarshaller Instance
+        public static GlobalAcceleratorForDirectoryUnmarshaller Instance
         {
             get
             {

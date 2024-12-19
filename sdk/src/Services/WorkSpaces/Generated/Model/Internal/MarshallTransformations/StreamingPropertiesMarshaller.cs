@@ -48,6 +48,17 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetGlobalAccelerator())
+            {
+                context.Writer.WritePropertyName("GlobalAccelerator");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = GlobalAcceleratorForDirectoryMarshaller.Instance;
+                marshaller.Marshall(requestObject.GlobalAccelerator, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetStorageConnectors())
             {
                 context.Writer.WritePropertyName("StorageConnectors");

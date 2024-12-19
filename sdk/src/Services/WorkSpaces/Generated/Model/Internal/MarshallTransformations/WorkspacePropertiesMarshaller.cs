@@ -54,6 +54,17 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ComputeTypeName);
             }
 
+            if(requestObject.IsSetGlobalAccelerator())
+            {
+                context.Writer.WritePropertyName("GlobalAccelerator");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = GlobalAcceleratorForWorkSpaceMarshaller.Instance;
+                marshaller.Marshall(requestObject.GlobalAccelerator, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetOperatingSystemName())
             {
                 context.Writer.WritePropertyName("OperatingSystemName");

@@ -137,6 +137,214 @@ namespace Amazon.WorkSpaces
 
 
     /// <summary>
+    /// Constants used for properties of type AGAModeForDirectoryEnum.
+    /// </summary>
+    public class AGAModeForDirectoryEnum : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for AGAModeForDirectoryEnum
+        /// </summary>
+        public static readonly AGAModeForDirectoryEnum DISABLED = new AGAModeForDirectoryEnum("DISABLED");
+        /// <summary>
+        /// Constant ENABLED_AUTO for AGAModeForDirectoryEnum
+        /// </summary>
+        public static readonly AGAModeForDirectoryEnum ENABLED_AUTO = new AGAModeForDirectoryEnum("ENABLED_AUTO");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AGAModeForDirectoryEnum(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AGAModeForDirectoryEnum FindValue(string value)
+        {
+            return FindValue<AGAModeForDirectoryEnum>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AGAModeForDirectoryEnum(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AGAModeForWorkSpaceEnum.
+    /// </summary>
+    public class AGAModeForWorkSpaceEnum : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for AGAModeForWorkSpaceEnum
+        /// </summary>
+        public static readonly AGAModeForWorkSpaceEnum DISABLED = new AGAModeForWorkSpaceEnum("DISABLED");
+        /// <summary>
+        /// Constant ENABLED_AUTO for AGAModeForWorkSpaceEnum
+        /// </summary>
+        public static readonly AGAModeForWorkSpaceEnum ENABLED_AUTO = new AGAModeForWorkSpaceEnum("ENABLED_AUTO");
+        /// <summary>
+        /// Constant INHERITED for AGAModeForWorkSpaceEnum
+        /// </summary>
+        public static readonly AGAModeForWorkSpaceEnum INHERITED = new AGAModeForWorkSpaceEnum("INHERITED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AGAModeForWorkSpaceEnum(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AGAModeForWorkSpaceEnum FindValue(string value)
+        {
+            return FindValue<AGAModeForWorkSpaceEnum>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AGAModeForWorkSpaceEnum(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AGAPreferredProtocolForDirectory.
+    /// </summary>
+    public class AGAPreferredProtocolForDirectory : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NONE for AGAPreferredProtocolForDirectory
+        /// </summary>
+        public static readonly AGAPreferredProtocolForDirectory NONE = new AGAPreferredProtocolForDirectory("NONE");
+        /// <summary>
+        /// Constant TCP for AGAPreferredProtocolForDirectory
+        /// </summary>
+        public static readonly AGAPreferredProtocolForDirectory TCP = new AGAPreferredProtocolForDirectory("TCP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AGAPreferredProtocolForDirectory(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AGAPreferredProtocolForDirectory FindValue(string value)
+        {
+            return FindValue<AGAPreferredProtocolForDirectory>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AGAPreferredProtocolForDirectory(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AGAPreferredProtocolForWorkSpace.
+    /// </summary>
+    public class AGAPreferredProtocolForWorkSpace : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INHERITED for AGAPreferredProtocolForWorkSpace
+        /// </summary>
+        public static readonly AGAPreferredProtocolForWorkSpace INHERITED = new AGAPreferredProtocolForWorkSpace("INHERITED");
+        /// <summary>
+        /// Constant NONE for AGAPreferredProtocolForWorkSpace
+        /// </summary>
+        public static readonly AGAPreferredProtocolForWorkSpace NONE = new AGAPreferredProtocolForWorkSpace("NONE");
+        /// <summary>
+        /// Constant TCP for AGAPreferredProtocolForWorkSpace
+        /// </summary>
+        public static readonly AGAPreferredProtocolForWorkSpace TCP = new AGAPreferredProtocolForWorkSpace("TCP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AGAPreferredProtocolForWorkSpace(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AGAPreferredProtocolForWorkSpace FindValue(string value)
+        {
+            return FindValue<AGAPreferredProtocolForWorkSpace>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AGAPreferredProtocolForWorkSpace(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Application.
     /// </summary>
     public class Application : ConstantClass
