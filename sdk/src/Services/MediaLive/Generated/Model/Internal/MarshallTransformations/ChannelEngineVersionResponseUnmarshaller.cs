@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PipelineDetail Object
+    /// Response Unmarshaller for ChannelEngineVersionResponse Object
     /// </summary>  
-    public class PipelineDetailUnmarshaller : IUnmarshaller<PipelineDetail, XmlUnmarshallerContext>, IUnmarshaller<PipelineDetail, JsonUnmarshallerContext>
+    public class ChannelEngineVersionResponseUnmarshaller : IUnmarshaller<ChannelEngineVersionResponse, XmlUnmarshallerContext>, IUnmarshaller<ChannelEngineVersionResponse, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        PipelineDetail IUnmarshaller<PipelineDetail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ChannelEngineVersionResponse IUnmarshaller<ChannelEngineVersionResponse, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public PipelineDetail Unmarshall(JsonUnmarshallerContext context)
+        public ChannelEngineVersionResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            PipelineDetail unmarshalledObject = new PipelineDetail();
+            ChannelEngineVersionResponse unmarshalledObject = new ChannelEngineVersionResponse();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,40 +66,16 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("activeInputAttachmentName", targetDepth))
+                if (context.TestExpression("expirationDate", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ActiveInputAttachmentName = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.ExpirationDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("activeInputSwitchActionName", targetDepth))
+                if (context.TestExpression("version", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ActiveInputSwitchActionName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("activeMotionGraphicsActionName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ActiveMotionGraphicsActionName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("activeMotionGraphicsUri", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ActiveMotionGraphicsUri = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("channelEngineVersion", targetDepth))
-                {
-                    var unmarshaller = ChannelEngineVersionResponseUnmarshaller.Instance;
-                    unmarshalledObject.ChannelEngineVersion = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("pipelineId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PipelineId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Version = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -107,12 +83,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         }
 
 
-        private static PipelineDetailUnmarshaller _instance = new PipelineDetailUnmarshaller();        
+        private static ChannelEngineVersionResponseUnmarshaller _instance = new ChannelEngineVersionResponseUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PipelineDetailUnmarshaller Instance
+        public static ChannelEngineVersionResponseUnmarshaller Instance
         {
             get
             {

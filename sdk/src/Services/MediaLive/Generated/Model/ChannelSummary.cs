@@ -38,6 +38,7 @@ namespace Amazon.MediaLive.Model
         private string _arn;
         private CdiInputSpecification _cdiInputSpecification;
         private ChannelClass _channelClass;
+        private ChannelEngineVersionResponse _channelEngineVersion;
         private List<OutputDestination> _destinations = AWSConfigs.InitializeCollections ? new List<OutputDestination>() : null;
         private List<ChannelEgressEndpoint> _egressEndpoints = AWSConfigs.InitializeCollections ? new List<ChannelEgressEndpoint>() : null;
         private string _id;
@@ -50,6 +51,7 @@ namespace Amazon.MediaLive.Model
         private string _roleArn;
         private ChannelState _state;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<ChannelEngineVersionResponse> _usedChannelEngineVersions = AWSConfigs.InitializeCollections ? new List<ChannelEngineVersionResponse>() : null;
         private VpcOutputSettingsDescription _vpc;
 
         /// <summary>
@@ -112,6 +114,22 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetChannelClass()
         {
             return this._channelClass != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChannelEngineVersion. The engine version that you requested
+        /// for this channel.
+        /// </summary>
+        public ChannelEngineVersionResponse ChannelEngineVersion
+        {
+            get { return this._channelEngineVersion; }
+            set { this._channelEngineVersion = value; }
+        }
+
+        // Check to see if ChannelEngineVersion property is set
+        internal bool IsSetChannelEngineVersion()
+        {
+            return this._channelEngineVersion != null;
         }
 
         /// <summary>
@@ -298,6 +316,22 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UsedChannelEngineVersions. The engine version that the
+        /// running pipelines are using.
+        /// </summary>
+        public List<ChannelEngineVersionResponse> UsedChannelEngineVersions
+        {
+            get { return this._usedChannelEngineVersions; }
+            set { this._usedChannelEngineVersions = value; }
+        }
+
+        // Check to see if UsedChannelEngineVersions property is set
+        internal bool IsSetUsedChannelEngineVersions()
+        {
+            return this._usedChannelEngineVersions != null && (this._usedChannelEngineVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

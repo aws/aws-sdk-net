@@ -36,8 +36,10 @@ namespace Amazon.MediaLive.Model
     public partial class UpdateChannelRequest : AmazonMediaLiveRequest
     {
         private CdiInputSpecification _cdiInputSpecification;
+        private ChannelEngineVersionRequest _channelEngineVersion;
         private string _channelId;
         private List<OutputDestination> _destinations = AWSConfigs.InitializeCollections ? new List<OutputDestination>() : null;
+        private bool? _dryRun;
         private EncoderSettings _encoderSettings;
         private List<InputAttachment> _inputAttachments = AWSConfigs.InitializeCollections ? new List<InputAttachment>() : null;
         private InputSpecification _inputSpecification;
@@ -60,6 +62,21 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetCdiInputSpecification()
         {
             return this._cdiInputSpecification != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChannelEngineVersion. Channel engine version for this channel
+        /// </summary>
+        public ChannelEngineVersionRequest ChannelEngineVersion
+        {
+            get { return this._channelEngineVersion; }
+            set { this._channelEngineVersion = value; }
+        }
+
+        // Check to see if ChannelEngineVersion property is set
+        internal bool IsSetChannelEngineVersion()
+        {
+            return this._channelEngineVersion != null;
         }
 
         /// <summary>
@@ -91,6 +108,21 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetDestinations()
         {
             return this._destinations != null && (this._destinations.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DryRun.
+        /// </summary>
+        public bool DryRun
+        {
+            get { return this._dryRun.GetValueOrDefault(); }
+            set { this._dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this._dryRun.HasValue; 
         }
 
         /// <summary>

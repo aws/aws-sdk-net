@@ -81,6 +81,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetChannelEngineVersion())
+                {
+                    context.Writer.WritePropertyName("channelEngineVersion");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ChannelEngineVersionRequestMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ChannelEngineVersion, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDestinations())
                 {
                     context.Writer.WritePropertyName("destinations");
@@ -95,6 +106,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
                     context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetDryRun())
+                {
+                    context.Writer.WritePropertyName("dryRun");
+                    context.Writer.Write(publicRequest.DryRun);
                 }
 
                 if(publicRequest.IsSetEncoderSettings())
