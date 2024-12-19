@@ -659,7 +659,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>byte[] value of this object</returns>
         public override byte[] AsByteArray()
         {
-            return V1Conversion.ConvertFromEntry<byte[]>(this);
+            return this.Value as byte[];
         }
         /// <summary>
         /// Implicitly convert byte[] to Primitive

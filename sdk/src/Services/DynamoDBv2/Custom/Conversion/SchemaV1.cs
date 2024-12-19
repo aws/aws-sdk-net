@@ -33,6 +33,11 @@ namespace Amazon.DynamoDBv2
 
     internal class ByteConverterV1 : Converter<byte>
     {
+        public override IEnumerable<Type> GetTargetTypes()
+        {
+            return new[] { typeof(byte), typeof(Nullable<byte>) }; 
+        }
+
         protected override bool TryTo(byte value, out Primitive p)
         {
             p = new Primitive(value.ToString("d", CultureInfo.InvariantCulture), DynamoDBEntryType.Numeric);
@@ -51,6 +56,11 @@ namespace Amazon.DynamoDBv2
 
     internal class SByteConverterV1 : Converter<SByte>
     {
+        public override IEnumerable<Type> GetTargetTypes()
+        {
+            return new[] { typeof(SByte), typeof(Nullable<SByte>) };
+        }
+
         protected override bool TryTo(sbyte value, out Primitive p)
         {
             p = new Primitive(value.ToString("d", CultureInfo.InvariantCulture), DynamoDBEntryType.Numeric);
@@ -69,6 +79,11 @@ namespace Amazon.DynamoDBv2
 
     internal class UInt16ConverterV1 : Converter<UInt16>
     {
+        public override IEnumerable<Type> GetTargetTypes()
+        {
+            return new[] { typeof(UInt16), typeof(Nullable<UInt16>) };
+        }
+
         protected override bool TryTo(ushort value, out Primitive p)
         {
             p = new Primitive(value.ToString("d", CultureInfo.InvariantCulture), DynamoDBEntryType.Numeric);
@@ -87,6 +102,11 @@ namespace Amazon.DynamoDBv2
 
     internal class Int16ConverterV1 : Converter<Int16>
     {
+        public override IEnumerable<Type> GetTargetTypes()
+        {
+            return new[] { typeof(Int16), typeof(Nullable<Int16>) };
+        }
+
         protected override bool TryTo(short value, out Primitive p)
         {
             p = new Primitive(value.ToString("d", CultureInfo.InvariantCulture), DynamoDBEntryType.Numeric);
@@ -105,6 +125,11 @@ namespace Amazon.DynamoDBv2
 
     internal class UInt32ConverterV1 : Converter<UInt32>
     {
+        public override IEnumerable<Type> GetTargetTypes()
+        {
+            return new[] { typeof(UInt32), typeof(Nullable<UInt32>) };
+        }
+
         protected override bool TryTo(uint value, out Primitive p)
         {
             p = new Primitive(value.ToString("d", CultureInfo.InvariantCulture), DynamoDBEntryType.Numeric);
@@ -123,6 +148,11 @@ namespace Amazon.DynamoDBv2
 
     internal class Int32ConverterV1 : Converter<Int32>
     {
+        public override IEnumerable<Type> GetTargetTypes()
+        {
+            return new[] { typeof(Int32), typeof(Nullable<Int32>) };
+        }
+
         protected override bool TryTo(int value, out Primitive p)
         {
             p = new Primitive(value.ToString("d", CultureInfo.InvariantCulture), DynamoDBEntryType.Numeric);
@@ -141,6 +171,11 @@ namespace Amazon.DynamoDBv2
 
     internal class UInt64ConverterV1 : Converter<UInt64>
     {
+        public override IEnumerable<Type> GetTargetTypes()
+        {
+            return new[] { typeof(UInt64), typeof(Nullable<UInt64>) };
+        }
+
         protected override bool TryTo(ulong value, out Primitive p)
         {
             p = new Primitive(value.ToString("d", CultureInfo.InvariantCulture), DynamoDBEntryType.Numeric);
@@ -159,6 +194,11 @@ namespace Amazon.DynamoDBv2
 
     internal class Int64ConverterV1 : Converter<Int64>
     {
+        public override IEnumerable<Type> GetTargetTypes()
+        {
+            return new[] { typeof(Int64), typeof(Nullable<Int64>) };
+        }
+
         protected override bool TryTo(long value, out Primitive p)
         {
             p = new Primitive(value.ToString("d", CultureInfo.InvariantCulture), DynamoDBEntryType.Numeric);
@@ -177,6 +217,11 @@ namespace Amazon.DynamoDBv2
 
     internal class SingleConverterV1 : Converter<Single>
     {
+        public override IEnumerable<Type> GetTargetTypes()
+        {
+            return new[] { typeof(Single), typeof(Nullable<Single>) };
+        }
+
         protected override bool TryTo(float value, out Primitive p)
         {
             p = new Primitive(value.ToString("r", CultureInfo.InvariantCulture), DynamoDBEntryType.Numeric);
@@ -194,6 +239,11 @@ namespace Amazon.DynamoDBv2
 
     internal class DoubleConverterV1 : Converter<Double>
     {
+        public override IEnumerable<Type> GetTargetTypes()
+        {
+            return new[] { typeof(Double), typeof(Nullable<Double>) };
+        }
+
         protected override bool TryTo(double value, out Primitive p)
         {
             p = new Primitive(value.ToString("r", CultureInfo.InvariantCulture), DynamoDBEntryType.Numeric);
@@ -212,6 +262,11 @@ namespace Amazon.DynamoDBv2
 
     internal class DecimalConverterV1 : Converter<Decimal>
     {
+        public override IEnumerable<Type> GetTargetTypes()
+        {
+            return new[] { typeof(Decimal), typeof(Nullable<Decimal>) };
+        }
+
         protected override bool TryTo(decimal value, out Primitive p)
         {
             p = new Primitive(value.ToString("g", CultureInfo.InvariantCulture), DynamoDBEntryType.Numeric);
@@ -229,6 +284,11 @@ namespace Amazon.DynamoDBv2
 
     internal class CharConverterV1 : Converter<Char>
     {
+        public override IEnumerable<Type> GetTargetTypes()
+        {
+            return new[] { typeof(Char), typeof(Nullable<Char>) };
+        }
+
         protected override bool TryTo(char value, out Primitive p)
         {
             p = new Primitive(value.ToString(), DynamoDBEntryType.String);
@@ -247,6 +307,11 @@ namespace Amazon.DynamoDBv2
 
     internal class StringConverterV1 : Converter<String>
     {
+        public override IEnumerable<Type> GetTargetTypes()
+        {
+            return new[] { typeof(String) };
+        }
+
         protected override bool TryTo(string value, out Primitive p)
         {
             p = new Primitive(value, DynamoDBEntryType.String);
@@ -266,6 +331,11 @@ namespace Amazon.DynamoDBv2
 
     internal class DateTimeConverterV1 : Converter<DateTime>
     {
+        public override IEnumerable<Type> GetTargetTypes()
+        {
+            return new[] { typeof(DateTime), typeof(Nullable<DateTime>) };
+        }
+
         protected override bool TryTo(DateTime value, out Primitive p)
         {
             DateTime utc = value.ToUniversalTime();
@@ -289,6 +359,11 @@ namespace Amazon.DynamoDBv2
 
     internal class GuidConverterV1 : Converter<Guid>
     {
+        public override IEnumerable<Type> GetTargetTypes()
+        {
+            return new[] { typeof(Guid), typeof(Nullable<Guid>) };
+        }
+
         protected override bool TryTo(Guid value, out Primitive p)
         {
             p = new Primitive(value.ToString("D"), DynamoDBEntryType.String);
@@ -308,6 +383,11 @@ namespace Amazon.DynamoDBv2
 
     internal class BytesConverterV1 : Converter<byte[]>
     {
+        public override IEnumerable<Type> GetTargetTypes()
+        {
+            return new[] { typeof(byte[]) };
+        }
+
         protected override bool TryTo(byte[] value, out Primitive p)
         {
             p = new Primitive(value);
@@ -327,6 +407,11 @@ namespace Amazon.DynamoDBv2
 
     internal class MemoryStreamConverterV1 : Converter<MemoryStream>
     {
+        public override IEnumerable<Type> GetTargetTypes()
+        {
+            return new[] { typeof(MemoryStream) };
+        }
+
         protected override bool TryTo(MemoryStream value, out Primitive p)
         {
             p = new Primitive(value);
@@ -353,6 +438,11 @@ namespace Amazon.DynamoDBv2
 
     internal class EnumConverterV1 : Converter<Enum>
     {
+        public override IEnumerable<Type> GetTargetTypes()
+        {
+            return new[] { typeof(MemoryStream) };
+        }
+
         protected override bool TryTo(Enum value, out Primitive p)
         {
             p = null;
@@ -439,6 +529,11 @@ namespace Amazon.DynamoDBv2
     /// </summary>
     internal class BoolConverterV1 : Converter<bool>
     {
+        public override IEnumerable<Type> GetTargetTypes()
+        {
+            return new[] { typeof(bool), typeof(Nullable<bool>) };
+        }
+
         protected override bool TryTo(bool value, out Primitive p)
         {
             p = new Primitive(value ? "1" : "0", DynamoDBEntryType.Numeric);
@@ -462,34 +557,6 @@ namespace Amazon.DynamoDBv2
 
     internal abstract class CollectionConverter : Converter
     {
-        private IEnumerable<Type> targetTypes;
-        private static IEnumerable<Type> GetTargetTypes(IEnumerable<Type> memberTypes)
-        {
-            var listType = typeof(List<>);
-            var setType = typeof(HashSet<>);
-
-            foreach (var pt in memberTypes)
-            {
-                // typeof(T[]),
-                if (pt != typeof(byte))
-                {
-                    yield return pt.MakeArrayType();
-                }
-                // typeof(List<T>),
-                yield return listType.MakeGenericType(pt);
-                // typeof(HashSet<T>),
-                yield return setType.MakeGenericType(pt);
-            }
-        }
-        public CollectionConverter(IEnumerable<Type> memberTypes)
-        {
-            targetTypes = GetTargetTypes(memberTypes);
-        }
-
-        public override IEnumerable<Type> GetTargetTypes()
-        {
-            return targetTypes;
-        }
 
 #if NET8_0_OR_GREATER
         protected bool EntriesToCollection([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type targetType, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type elementType, IEnumerable<DynamoDBEntry> entries, out object result)
@@ -509,9 +576,14 @@ namespace Amazon.DynamoDBv2
     internal class PrimitiveCollectionConverterV1 : CollectionConverter
     {
         public PrimitiveCollectionConverterV1()
-            : base(Utils.PrimitiveTypes)
+            : base()
         { }
-        
+
+        public override IEnumerable<Type> GetTargetTypes()
+        {
+            return Utils.PrimitiveTypesCollectionsAndArray;
+        }
+
         public override bool TryTo(object value, out PrimitiveList pl)
         {
             var items = value as IEnumerable;

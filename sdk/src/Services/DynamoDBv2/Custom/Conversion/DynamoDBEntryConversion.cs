@@ -696,19 +696,6 @@ namespace Amazon.DynamoDBv2
 
     internal abstract class Converter<T> : Converter
     {
-        public override IEnumerable<Type> GetTargetTypes()
-        {
-            var type = typeof(T);
-            yield return type;
-
-            if (type.IsValueType)
-            {
-                //yield return typeof(Nullable<T>);
-                var nullableType = typeof(Nullable<>).MakeGenericType(type);
-                yield return nullableType;
-            }
-        }
-
         public override bool TryTo(object value, out DynamoDBBool b)
         {
             return TryTo((T)value, out b);

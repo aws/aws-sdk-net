@@ -60,6 +60,65 @@ namespace Amazon.DynamoDBv2.DataModel
             typeof(Primitive)
         };
 
+        internal static readonly Type[] PrimitiveTypesCollectionsAndArray = new Type[]
+        {
+            typeof(Boolean[]),
+            typeof(Char[]),
+            typeof(DateTime[]),
+            typeof(Decimal[]),
+            typeof(Double[]),
+            typeof(int[]),
+            typeof(long[]),
+            typeof(SByte[]),
+            typeof(short[]),
+            typeof(Single[]),
+            typeof(String[]),
+            typeof(uint[]),
+            typeof(ulong[]),
+            typeof(ushort[]),
+            typeof(Guid[]),
+            typeof(MemoryStream[]),
+            typeof(Primitive[]),
+
+            typeof(List<Boolean>),
+            typeof(List<Byte>),
+            typeof(List<Char>),
+            typeof(List<DateTime>),
+            typeof(List<Decimal>),
+            typeof(List<Double>),
+            typeof(List<int>),
+            typeof(List<long>),
+            typeof(List<SByte>),
+            typeof(List<short>),
+            typeof(List<Single>),
+            typeof(List<String>),
+            typeof(List<uint>),
+            typeof(List<ulong>),
+            typeof(List<ushort>),
+            typeof(List<Guid>),
+            typeof(List<MemoryStream>),
+            typeof(List<Primitive>),
+
+            typeof(HashSet<Boolean>),
+            typeof(HashSet<Byte>),
+            typeof(HashSet<Char>),
+            typeof(HashSet<DateTime>),
+            typeof(HashSet<Decimal>),
+            typeof(HashSet<Double>),
+            typeof(HashSet<int>),
+            typeof(HashSet<long>),
+            typeof(HashSet<SByte>),
+            typeof(HashSet<short>),
+            typeof(HashSet<Single>),
+            typeof(HashSet<String>),
+            typeof(HashSet<uint>),
+            typeof(HashSet<ulong>),
+            typeof(HashSet<ushort>),
+            typeof(HashSet<Guid>),
+            typeof(HashSet<MemoryStream>),
+            typeof(HashSet<Primitive>)
+        };
+
         internal static readonly IEnumerable<Type> PrimitiveTypes = new HashSet<Type>(primitiveTypesArray);
 
         internal static bool IsPrimitive(Type type)
@@ -121,7 +180,7 @@ namespace Amazon.DynamoDBv2.DataModel
             Justification = "By the time the DynamoDB high level libraries got to this code path the collection type with the generic type would have already been found by the compiler preventing the element type from being trimmed.")]
         [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("ReflectionAnalysis", "IL2063",
             Justification = "By the time the DynamoDB high level libraries got to this code path the collection type with the generic type would have already been found by the compiler preventing the element type from being trimmed.")]
-        [return: DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)]
+        [return: DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors | DynamicallyAccessedMemberTypes.Interfaces)]
         internal static Type GetElementType(Type collectionType)
 #else
         internal static Type GetElementType(Type collectionType)

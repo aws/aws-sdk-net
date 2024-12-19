@@ -151,7 +151,7 @@ namespace Amazon.DynamoDBv2
         {
             var inputType = value.GetType();
 
-            if (DataModel.Utils.ImplementsInterface(inputType, enumerableType))
+            if (value is IEnumerable && inputType.ContainsGenericParameters)
             {
                 var elementType = Utils.GetElementType(inputType);
                 var entries = Conversion.ConvertToEntries(elementType, value as IEnumerable);
@@ -170,8 +170,12 @@ namespace Amazon.DynamoDBv2
             : this(Utils.PrimitiveTypes)
         { }
         public DynamoDBListConverter(IEnumerable<Type> memberTypes)
-            : base(memberTypes)
         { }
+
+        public override IEnumerable<Type> GetTargetTypes()
+        {
+            return Utils.PrimitiveTypesCollectionsAndArray;
+        }
 
         public override bool TryTo(object value, out DynamoDBList l)
         {
