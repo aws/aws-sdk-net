@@ -61,14 +61,11 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/JsonIntEnums";
-#if !NETCOREAPP3_1_OR_GREATER
-            
-            using var memoryStream = new MemoryStream();
-#endif
-#if NETCOREAPP3_1_OR_GREATER
-            ArrayBufferWriter<byte> arrayBufferWriter = new ArrayBufferWriter<byte>();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayBufferWriter);
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
 #else
+            using var memoryStream = new MemoryStream();
             using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
 #endif
             writer.WriteStartObject();
@@ -129,10 +126,11 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
 
             writer.WriteEndObject();
             writer.Flush();
-#if !NETCOREAPP3_1_OR_GREATER
-            request.Content = memoryStream.ToArray();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
 #else
-            request.Content = arrayBufferWriter.WrittenMemory.ToArray();
+            request.Content = memoryStream.ToArray();
 #endif
             
 

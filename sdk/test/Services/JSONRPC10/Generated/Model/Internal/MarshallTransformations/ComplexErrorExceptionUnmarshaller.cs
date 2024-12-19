@@ -29,24 +29,25 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using Amazon.Util;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.JSONRPC10.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ComplexErrorException Object
     /// </summary>  
-    public class ComplexErrorExceptionUnmarshaller : IErrorResponseUnmarshaller<ComplexErrorException, JsonUnmarshallerContext>
+    public class ComplexErrorExceptionUnmarshaller : IJsonErrorResponseUnmarshaller<ComplexErrorException, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns></returns>
-        public ComplexErrorException Unmarshall(JsonUnmarshallerContext context)
+        public ComplexErrorException Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
+            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse(), ref reader);
         }
 
         /// <summary>
@@ -54,27 +55,28 @@ namespace Amazon.JSONRPC10.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
+        /// <param name="reader"></param>
         /// <returns></returns>
-        public ComplexErrorException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
+        public ComplexErrorException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse, ref StreamingUtf8JsonReader reader)
         {
-            context.Read();
+            context.Read(ref reader);
 
             ComplexErrorException unmarshalledObject = new ComplexErrorException(errorResponse.Message, errorResponse.InnerException,
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Nested", targetDepth))
                 {
                     var unmarshaller = ComplexNestedErrorDataUnmarshaller.Instance;
-                    unmarshalledObject.Nested = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Nested = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TopLevel", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TopLevel = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TopLevel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

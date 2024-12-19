@@ -35,7 +35,7 @@ namespace Amazon.EC2Protocol.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ComplexErrorException operation
     /// </summary>  
-    public class ComplexErrorExceptionUnmarshaller : IErrorResponseUnmarshaller<ComplexErrorException, XmlUnmarshallerContext>
+    public class ComplexErrorExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<ComplexErrorException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

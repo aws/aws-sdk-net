@@ -84,7 +84,7 @@ namespace Amazon.QueryProtocol.Model.Internal.MarshallTransformations
 
                     if (context.TestExpression("myMap/entry", targetDepth))
                     {
-                        var unmarshaller = new KeyValueUnmarshaller<string, GreetingStruct, StringUnmarshaller, GreetingStructUnmarshaller>(StringUnmarshaller.Instance, GreetingStructUnmarshaller.Instance);
+                        var unmarshaller = new XmlKeyValueUnmarshaller<string, GreetingStruct, StringUnmarshaller, GreetingStructUnmarshaller>(StringUnmarshaller.Instance, GreetingStructUnmarshaller.Instance);
                         if (response.MyMap == null)
                         {
                             response.MyMap = new Dictionary<string, GreetingStruct>();
@@ -109,7 +109,7 @@ namespace Amazon.QueryProtocol.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            ErrorResponse errorResponse = XmlErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 

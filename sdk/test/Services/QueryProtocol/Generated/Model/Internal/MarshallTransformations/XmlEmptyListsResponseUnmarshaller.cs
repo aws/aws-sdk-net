@@ -172,7 +172,7 @@ namespace Amazon.QueryProtocol.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("nestedStringList/member", targetDepth))
                     {
-                        var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                        var unmarshaller = new XmlListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                         if (response.NestedStringList == null)
                         {
                             response.NestedStringList = new List<List<string>>();
@@ -252,7 +252,7 @@ namespace Amazon.QueryProtocol.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            ErrorResponse errorResponse = XmlErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.JsonProtocol.Model.Internal.MarshallTransformations
 {
@@ -51,73 +49,73 @@ namespace Amazon.JsonProtocol.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBlobValue())
             {
                 context.Writer.WritePropertyName("blobValue");
-                context.Writer.Write(StringUtils.FromMemoryStream(requestObject.BlobValue));
+                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.BlobValue));
             }
 
             if(requestObject.IsSetBooleanValue())
             {
                 context.Writer.WritePropertyName("booleanValue");
-                context.Writer.Write(requestObject.BooleanValue.Value);
+                context.Writer.WriteBooleanValue(requestObject.BooleanValue.Value);
             }
 
             if(requestObject.IsSetEnumValue())
             {
                 context.Writer.WritePropertyName("enumValue");
-                context.Writer.Write(requestObject.EnumValue);
+                context.Writer.WriteStringValue(requestObject.EnumValue);
             }
 
             if(requestObject.IsSetListValue())
             {
                 context.Writer.WritePropertyName("listValue");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectListValueListValue in requestObject.ListValue)
                 {
-                        context.Writer.Write(requestObjectListValueListValue);
+                        context.Writer.WriteStringValue(requestObjectListValueListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetMapValue())
             {
                 context.Writer.WritePropertyName("mapValue");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectMapValueKvp in requestObject.MapValue)
                 {
                     context.Writer.WritePropertyName(requestObjectMapValueKvp.Key);
                     var requestObjectMapValueValue = requestObjectMapValueKvp.Value;
 
-                        context.Writer.Write(requestObjectMapValueValue);
+                        context.Writer.WriteStringValue(requestObjectMapValueValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetNumberValue())
             {
                 context.Writer.WritePropertyName("numberValue");
-                context.Writer.Write(requestObject.NumberValue.Value);
+                context.Writer.WriteNumberValue(requestObject.NumberValue.Value);
             }
 
             if(requestObject.IsSetStringValue())
             {
                 context.Writer.WritePropertyName("stringValue");
-                context.Writer.Write(requestObject.StringValue);
+                context.Writer.WriteStringValue(requestObject.StringValue);
             }
 
             if(requestObject.IsSetStructureValue())
             {
                 context.Writer.WritePropertyName("structureValue");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = GreetingStructMarshaller.Instance;
                 marshaller.Marshall(requestObject.StructureValue, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTimestampValue())
             {
                 context.Writer.WritePropertyName("timestampValue");
-                context.Writer.Write(requestObject.TimestampValue.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.TimestampValue.Value)));
             }
 
         }

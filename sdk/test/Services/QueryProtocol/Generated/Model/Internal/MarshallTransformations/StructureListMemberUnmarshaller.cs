@@ -35,7 +35,7 @@ namespace Amazon.QueryProtocol.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for StructureListMember Object
     /// </summary>  
-    public class StructureListMemberUnmarshaller : IUnmarshaller<StructureListMember, XmlUnmarshallerContext>, IUnmarshaller<StructureListMember, JsonUnmarshallerContext>
+    public class StructureListMemberUnmarshaller : IXmlUnmarshaller<StructureListMember, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.QueryProtocol.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public StructureListMember Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static StructureListMemberUnmarshaller _instance = new StructureListMemberUnmarshaller();        
 

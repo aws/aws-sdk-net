@@ -35,7 +35,7 @@ namespace Amazon.QueryProtocol.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CustomCodeErrorException operation
     /// </summary>  
-    public class CustomCodeErrorExceptionUnmarshaller : IErrorResponseUnmarshaller<CustomCodeErrorException, XmlUnmarshallerContext>
+    public class CustomCodeErrorExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<CustomCodeErrorException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

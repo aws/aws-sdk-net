@@ -161,7 +161,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                         {
                             response.NestedStringList = new List<List<string>>();
                         }
-                        var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                        var unmarshaller = new XmlListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                         response.NestedStringList.Add(unmarshaller.Unmarshall(context));
                         continue;
                     }
@@ -235,7 +235,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            ErrorResponse errorResponse = XmlErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 

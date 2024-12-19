@@ -35,7 +35,7 @@ namespace Amazon.QueryProtocol.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for XmlNamespaceNested Object
     /// </summary>  
-    public class XmlNamespaceNestedUnmarshaller : IUnmarshaller<XmlNamespaceNested, XmlUnmarshallerContext>, IUnmarshaller<XmlNamespaceNested, JsonUnmarshallerContext>
+    public class XmlNamespaceNestedUnmarshaller : IXmlUnmarshaller<XmlNamespaceNested, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -81,17 +81,6 @@ namespace Amazon.QueryProtocol.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public XmlNamespaceNested Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static XmlNamespaceNestedUnmarshaller _instance = new XmlNamespaceNestedUnmarshaller();        
 

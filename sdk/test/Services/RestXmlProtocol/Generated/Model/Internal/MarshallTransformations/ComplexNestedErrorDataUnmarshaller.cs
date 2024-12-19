@@ -36,7 +36,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ComplexNestedErrorData Object
     /// </summary>  
-    public class ComplexNestedErrorDataUnmarshaller : IUnmarshaller<ComplexNestedErrorData, XmlUnmarshallerContext>, IUnmarshaller<ComplexNestedErrorData, JsonUnmarshallerContext>
+    public class ComplexNestedErrorDataUnmarshaller : IXmlUnmarshaller<ComplexNestedErrorData, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -70,17 +70,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
-        
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ComplexNestedErrorData Unmarshall(JsonUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
         private static ComplexNestedErrorDataUnmarshaller _instance = new ComplexNestedErrorDataUnmarshaller();        
 
         /// <summary>
