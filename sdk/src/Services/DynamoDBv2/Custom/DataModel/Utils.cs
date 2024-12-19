@@ -82,6 +82,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
             typeof(List<Boolean>),
             typeof(List<Byte>),
+            typeof(List<Byte[]>),
             typeof(List<Char>),
             typeof(List<DateTime>),
             typeof(List<Decimal>),
@@ -101,6 +102,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
             typeof(HashSet<Boolean>),
             typeof(HashSet<Byte>),
+            typeof(HashSet<Byte[]>),
             typeof(HashSet<Char>),
             typeof(HashSet<DateTime>),
             typeof(HashSet<Decimal>),

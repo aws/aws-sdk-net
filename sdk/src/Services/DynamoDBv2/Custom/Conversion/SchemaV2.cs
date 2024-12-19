@@ -151,7 +151,7 @@ namespace Amazon.DynamoDBv2
         {
             var inputType = value.GetType();
 
-            if (value is IEnumerable && inputType.GenericTypeArguments.Length > 0)
+            if ((value is IEnumerable && inputType.GenericTypeArguments.Length > 0) || inputType.IsArray)
             {
                 var elementType = Utils.GetElementType(inputType);
                 var entries = Conversion.ConvertToEntries(elementType, value as IEnumerable);
