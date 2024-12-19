@@ -14,7 +14,7 @@ using Amazon.Util;
 using System.Globalization;
 using System.Threading;
 using System.Collections.Generic;
-using Amazon.Runtime.Credentials.Internal.IdentityResolvers;
+using Amazon.Runtime.Credentials.Internal;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {

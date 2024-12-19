@@ -13,7 +13,6 @@
  * permissions and limitations under the License.
  */
 
-using Smithy.Identity.Abstractions;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;

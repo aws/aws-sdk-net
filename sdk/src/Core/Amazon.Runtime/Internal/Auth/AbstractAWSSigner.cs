@@ -20,7 +20,6 @@ using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
 #endif
-using Smithy.Identity.Abstractions;
 using Amazon.Internal;
 using Amazon.Util;
 using Amazon.Runtime.Internal.Util;

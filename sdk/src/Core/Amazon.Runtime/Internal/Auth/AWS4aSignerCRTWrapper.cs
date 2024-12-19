@@ -16,7 +16,6 @@ using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.SharedInterfaces;
 using Amazon.RuntimeDependencies;
 using Amazon.Util.Internal;
-using Smithy.Identity.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.Globalization;

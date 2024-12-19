@@ -19,7 +19,6 @@ using System.Threading;
 using System.Threading.Tasks;
 #endif
 using Amazon.Runtime.Internal.Util;
-using Smithy.Identity.Abstractions;
 
 namespace Amazon.Runtime.Internal.Auth
 {

@@ -15,7 +15,6 @@
 
 using Amazon.Runtime.CredentialManagement;
 using Amazon.Runtime.Internal.Util;
-using Smithy.Identity.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -24,7 +23,7 @@ using System.Security;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Amazon.Runtime.Credentials.Internal.IdentityResolvers
+namespace Amazon.Runtime
 {
     /// <summary>
     /// A resolver that provides an AWSCredentials identity. 

@@ -13,7 +13,7 @@
  * permissions and limitations under the License.
  */
 
-namespace Smithy.Identity.Abstractions
+namespace Amazon.Runtime
 {
     /// <summary>
     /// The identity resolvers configured in the SDK.

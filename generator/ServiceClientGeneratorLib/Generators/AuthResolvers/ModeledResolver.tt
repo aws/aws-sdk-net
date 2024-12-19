@@ -12,7 +12,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Credentials.Internal;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
-using Smithy.Identity.Abstractions;
 using System.Collections.Generic;
 
 namespace <#=this.Config.Namespace#>.Internal

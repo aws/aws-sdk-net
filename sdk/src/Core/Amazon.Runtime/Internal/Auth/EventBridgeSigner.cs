@@ -16,7 +16,6 @@
 using Amazon.Util;
 using Amazon.Runtime.Internal.Util;
 using System;
-using Smithy.Identity.Abstractions;
 
 namespace Amazon.Runtime.Internal.Auth
 {
