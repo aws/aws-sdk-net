@@ -21,7 +21,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// ExistingObjectReplication unmarshaller
     /// </summary>
-    public class ExistingObjectReplicationUnmarshaller : IUnmarshaller<ExistingObjectReplication, XmlUnmarshallerContext>, IUnmarshaller<ExistingObjectReplication, JsonUnmarshallerContext>
+    public class ExistingObjectReplicationUnmarshaller : IXmlUnmarshaller<ExistingObjectReplication, XmlUnmarshallerContext>, IXmlUnmarshaller<ExistingObjectReplication, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

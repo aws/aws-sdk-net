@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
      /// <summary>
      ///   Redirect Unmarshaller
      /// </summary>
-    public class RoutingRuleRedirectUnmarshaller : IUnmarshaller<RoutingRuleRedirect, XmlUnmarshallerContext>, IUnmarshaller<RoutingRuleRedirect, JsonUnmarshallerContext> 
+    public class RoutingRuleRedirectUnmarshaller : IXmlUnmarshaller<RoutingRuleRedirect, XmlUnmarshallerContext>, IXmlUnmarshaller<RoutingRuleRedirect, JsonUnmarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

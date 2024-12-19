@@ -8,8 +8,8 @@
 
     AddCommonUsingStatements();
 #>
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using Amazon.Util;
 #pragma warning disable CS0612,CS0618
 namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 {
@@ -26,7 +26,6 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
             <#=this.UnmarshallerBaseName #>Response response = new <#=this.Operation.Name #>Response();
-
 <#
     var payload = this.Operation.ResponsePayloadMember;
     var unmarshallPayload = payload != null && payload.IsStructure;
@@ -91,22 +90,24 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
         else if (unmarshallPayload)
         {
 #>
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
             var unmarshaller = <#= payload.DetermineTypeUnmarshallerInstantiate() #>;
-            response.<#=payload.PropertyName#> = unmarshaller.Unmarshall(context);
+            response.<#=payload.PropertyName#> = unmarshaller.Unmarshall(context, ref reader);
 <#
         }
 		else if (this.IsWrapped)
 		{
 #>
-			response.<#=this.WrappedResultMember#> = <#=this.Structure.Name#>Unmarshaller.Instance.Unmarshall(context);
+			response.<#=this.WrappedResultMember#> = <#=this.Structure.Name#>Unmarshaller.Instance.Unmarshall(context, ref reader);
 <#
 		}
         else
         {
 #>
-            context.Read();
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
 <#
         
@@ -116,7 +117,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
                 if (context.TestExpression("<#=member.MarshallName#>", targetDepth))
                 {
                     var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
-                    response.<#=member.PropertyName#> = unmarshaller.Unmarshall(context);
+                    response.<#=member.PropertyName#> = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 <#
@@ -142,7 +143,8 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context, ref reader);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
@@ -153,26 +155,29 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
             if  (this.Config.ServiceModel.IsAwsQueryCompatible)
             {
 #>
-<# // Create a copy of context with headers in the response #>
+<# // Create a copy of context with headers in the response 
 
+#>
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, true, context.ResponseData))
 <#
-            }
+            }   
             else
             {
 #>
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
 <#
+            // Create a new reader because the stream has been read already in the original context
             }
 #>
             {
+                StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy);
 <#
     foreach (var exception in this.Operation.Exceptions)
     {
 #>
                 if (errorResponse.Code != null && errorResponse.Code.Equals("<#=exception.Code #>"))
                 {
-                    return <#=exception.Name#>Unmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return <#=exception.Name#>Unmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
 <#
     }

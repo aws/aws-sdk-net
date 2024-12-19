@@ -9,7 +9,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// ReplicationTime unmarshaller
     /// </summary>
-    public class ReplicationTimeUnmarshaller : IUnmarshaller<ReplicationTime, XmlUnmarshallerContext>, IUnmarshaller<ReplicationTime, JsonUnmarshallerContext>
+    public class ReplicationTimeUnmarshaller : IXmlUnmarshaller<ReplicationTime, XmlUnmarshallerContext>, IXmlUnmarshaller<ReplicationTime, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

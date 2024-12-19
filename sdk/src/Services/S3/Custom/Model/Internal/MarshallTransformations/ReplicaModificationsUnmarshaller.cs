@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Unmarshaller for ReplicaModifications
     /// </summary>
-    public class ReplicaModificationsUnmarshaller : IUnmarshaller<ReplicaModifications, XmlUnmarshallerContext>, IUnmarshaller<ReplicaModifications, JsonUnmarshallerContext>
+    public class ReplicaModificationsUnmarshaller : IXmlUnmarshaller<ReplicaModifications, XmlUnmarshallerContext>, IXmlUnmarshaller<ReplicaModifications, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

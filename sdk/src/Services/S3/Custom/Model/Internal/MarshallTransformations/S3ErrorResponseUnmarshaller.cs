@@ -28,7 +28,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Response Unmarshaller for all Errors
     /// </summary>
-    public class S3ErrorResponseUnmarshaller : IUnmarshaller<S3ErrorResponse, XmlUnmarshallerContext>
+    public class S3ErrorResponseUnmarshaller : IXmlUnmarshaller<S3ErrorResponse, XmlUnmarshallerContext>
     {
         const string XML_CONTENT_TYPE = "text/xml";
 

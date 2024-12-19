@@ -32,7 +32,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for EventBridgeConfiguration Object
     /// </summary>  
-    public class EventBridgeConfigurationUnmarshaller : IUnmarshaller<EventBridgeConfiguration, XmlUnmarshallerContext>
+    public class EventBridgeConfigurationUnmarshaller : IXmlUnmarshaller<EventBridgeConfiguration, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

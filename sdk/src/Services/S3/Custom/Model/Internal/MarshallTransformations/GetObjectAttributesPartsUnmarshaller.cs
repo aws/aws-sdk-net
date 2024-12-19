@@ -32,7 +32,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for GetObjectAttributesParts Object
     /// </summary>  
-    public class GetObjectAttributesPartsUnmarshaller : IUnmarshaller<GetObjectAttributesParts, XmlUnmarshallerContext>
+    public class GetObjectAttributesPartsUnmarshaller : IXmlUnmarshaller<GetObjectAttributesParts, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

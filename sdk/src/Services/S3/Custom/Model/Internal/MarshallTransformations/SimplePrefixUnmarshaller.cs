@@ -19,7 +19,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for SimplePrefix Object
     /// </summary>  
-    public class SimplePrefixUnmarshaller : IUnmarshaller<SimplePrefix, XmlUnmarshallerContext>, IUnmarshaller<SimplePrefix, JsonUnmarshallerContext>
+    public class SimplePrefixUnmarshaller : IXmlUnmarshaller<SimplePrefix, XmlUnmarshallerContext>, IXmlUnmarshaller<SimplePrefix, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

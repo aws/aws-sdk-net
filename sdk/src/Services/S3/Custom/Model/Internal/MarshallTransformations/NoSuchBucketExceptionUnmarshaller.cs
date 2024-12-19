@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for NoSuchBucketException operation
     /// </summary>  
-    public class NoSuchBucketExceptionUnmarshaller : IErrorResponseUnmarshaller<NoSuchBucketException, XmlUnmarshallerContext>
+    public class NoSuchBucketExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<NoSuchBucketException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

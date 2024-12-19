@@ -23,7 +23,7 @@ namespace Amazon.Runtime.Internal.Transform
     /// <summary>
     ///    Response Unmarshaller for all Errors
     /// </summary>
-    public class ErrorResponseUnmarshaller : IUnmarshaller<ErrorResponse, XmlUnmarshallerContext>
+    public class XmlErrorResponseUnmarshaller : IXmlUnmarshaller<ErrorResponse, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Build an ErrorResponse from XML 
@@ -108,18 +108,20 @@ namespace Amazon.Runtime.Internal.Transform
             }
         }
 
-        private static ErrorResponseUnmarshaller instance;
+        private static XmlErrorResponseUnmarshaller instance;
 
+#pragma warning disable CA1024 // Use properties where appropriate
         /// <summary>
         /// Return an instance of and ErrorResponseUnmarshaller.
         /// </summary>
         /// <returns></returns>
-        public static ErrorResponseUnmarshaller GetInstance()
+        public static XmlErrorResponseUnmarshaller GetInstance()
         {
             if (instance == null)
-                instance = new ErrorResponseUnmarshaller();
+                instance = new XmlErrorResponseUnmarshaller();
 
             return instance;
         }
     }
+#pragma warning restore CA1024 // Use properties where appropriate
 }

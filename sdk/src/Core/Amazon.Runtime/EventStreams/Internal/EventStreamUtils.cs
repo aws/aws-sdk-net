@@ -15,6 +15,7 @@
 
 using Amazon.Runtime.EventStreams.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 using System;
 using System.Collections.Generic;
 using System.IO;

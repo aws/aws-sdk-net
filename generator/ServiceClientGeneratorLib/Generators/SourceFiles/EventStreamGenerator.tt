@@ -47,11 +47,30 @@
 <#
         foreach(var member in this.Structure.Members)
         {
-        if(member.ModelShape.IsEvent)
+            if(member.ModelShape.IsEvent)
             {
+                if (protocol == "Json")
+                {
 #>
-            {"<#=member.PropertyName#>", payload => new <#=member.DetermineType()#>Unmarshaller().Unmarshall(EventStreamUtils.ConvertMessageTo<#=protocol#>Context(payload))},
+            {"<#=member.PropertyName#>", payload => 
+                {
+                    var context = EventStreamUtils.ConvertMessageTo<#=protocol#>Context(payload);
+                    var reader = new StreamingUtf8JsonReader(context.Stream);
+                    return new <#=member.DetermineType()#>Unmarshaller().Unmarshall(context, ref reader);
+                }
+            },
 <#
+                }
+                else if (protocol == "Xml")
+                {
+#>
+            {"<#=member.PropertyName#>", payload => new <#=member.DetermineType()#>Unmarshaller().Unmarshall(context);},
+<#
+                }
+                else
+                {
+                    throw new NotImplementedException("The given protocol is not supported");
+                }
             }
         }
 #>
@@ -67,9 +86,26 @@
         {
             if(member.ModelShape.IsException)
             {
+                if (protocol == "Json")
+                {
+#>
+                    {"<#=member.PropertyName#>", payload => 
+                        {
+                            var context = EventStreamUtils.ConvertMessageTo<#=protocol#>Context(payload);
+                            var reader = new StreamingUtf8JsonReader(context.Stream);
+                            return new <#=this.Config.ClassName#>EventStreamException(Encoding.UTF8.GetString(payload.Payload), new <#=member.ModelShape#>Unmarshaller().Unmarshall(context, ref reader));
+                        }
+                    },
+<#
+                }
+                else if (protocol == "Xml")
+                {
 #>
             { "<#=member.PropertyName#>", payload => new <#=this.Config.ClassName#>EventStreamException(Encoding.UTF8.GetString(payload.Payload), new <#=member.ModelShape#>Unmarshaller().Unmarshall(EventStreamUtils.ConvertMessageTo<#=protocol#>Context(payload))) },
 <#
+                }
+                else
+                    throw new NotImplementedException("The given protocol is not supported");
             }
         }
 #>

@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     ///   LifecycleRuleNoncurrentVersionExpiration Unmarshaller
     /// </summary>
-    public class LifecycleRuleNoncurrentVersionExpirationUnmarshaller : IUnmarshaller<LifecycleRuleNoncurrentVersionExpiration, XmlUnmarshallerContext>, IUnmarshaller<LifecycleRuleNoncurrentVersionExpiration, JsonUnmarshallerContext>
+    public class LifecycleRuleNoncurrentVersionExpirationUnmarshaller : IXmlUnmarshaller<LifecycleRuleNoncurrentVersionExpiration, XmlUnmarshallerContext>, IXmlUnmarshaller<LifecycleRuleNoncurrentVersionExpiration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

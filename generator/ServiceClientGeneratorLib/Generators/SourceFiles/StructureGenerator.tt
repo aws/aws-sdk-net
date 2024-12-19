@@ -35,6 +35,7 @@ using Amazon.Runtime.EventStreams;
 using Amazon.Runtime.EventStreams.Internal;
 using <#=this.Config.Namespace#>.Model.Internal.MarshallTransformations;
 using Amazon.Runtime.EventStreams.Utils;
+using Amazon.Runtime.Internal.Util;
 <#
 }
 #>
