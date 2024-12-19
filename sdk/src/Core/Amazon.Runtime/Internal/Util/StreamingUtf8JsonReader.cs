@@ -84,10 +84,13 @@ namespace Amazon.Runtime.Internal.Util
 
             while (!hasMoreData)
             {
-                GetMoreBytesFromStream(_stream, ref _buffer, ref _reader);
-
                 if (_reader.IsFinalBlock)
+                {
+                    ArrayPool<byte>.Shared.Return(_buffer);
                     break;
+                }
+
+                GetMoreBytesFromStream(_stream, ref _buffer, ref _reader);
 
                 hasMoreData = _reader.Read();
             }
@@ -98,9 +101,9 @@ namespace Amazon.Runtime.Internal.Util
         private static void GetMoreBytesFromStream(Stream stream, ref byte[] buffer, ref Utf8JsonReader reader)
         {
             int bytesRead = 0;
+            ReadOnlySpan<byte> leftover = buffer.AsSpan().Slice((int)reader.BytesConsumed);
             if (reader.BytesConsumed < buffer.Length)
             {
-                ReadOnlySpan<byte> leftover = buffer.AsSpan().Slice((int)reader.BytesConsumed);
                 // If BytesConsumed is 0 that means that the previous Read failed because the JSON token was too large to fit in the buffer.
                 // In that case we need to resize the buffer and try again to read the JSON token.
                 if (reader.BytesConsumed == 0)
@@ -133,16 +136,10 @@ namespace Amazon.Runtime.Internal.Util
             {
                 bytesRead = FillBuffer(stream, ref buffer, 0, buffer.Length);
             }
-
-            if (bytesRead == 0)
-            {
-                ArrayPool<byte>.Shared.Return(buffer);
-                //make sure buffer isn't used in another process
-                buffer = null;
-                reader = new Utf8JsonReader(buffer, isFinalBlock: true, reader.CurrentState);
-                return;
-            }
-            reader = new Utf8JsonReader(buffer.AsSpan(0, bytesRead), isFinalBlock: bytesRead == 0, reader.CurrentState);
+            // we pass in (0, bytesRead) and not (0, bytesRead + leftover.Length) because in the last buffer block, the leftover bytes are junk. Either null bytes or bytes
+            // that have been populated from a previous Rent from the array pool. By passing in (0, bytesRead) that ensure that we only pass in bytes that we have read.
+            // This could mean an extra resize of the buffer, but it ensure data integrity.
+            reader = new Utf8JsonReader(buffer.AsSpan(0, bytesRead), isFinalBlock: ((bytesRead + leftover.Length) != buffer.Length || bytesRead == 0), reader.CurrentState);
         }
 
         private static int FillBuffer(Stream stream, ref byte[] buffer, int offset, int bytesToRead)
