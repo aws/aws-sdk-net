@@ -27,9 +27,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
     /// Expected state of an attribute in DynamoDB.
     /// Exists cannot be set at the same time as Comparison and Values.
     /// </summary>
-#if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif
     public class ExpectedValue
     {
         /// <summary>
@@ -133,9 +130,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
     /// <summary>
     /// Expected state of an item in DynamoDB.
     /// </summary>
-#if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif
     public class ExpectedState
     {
         /// <summary>

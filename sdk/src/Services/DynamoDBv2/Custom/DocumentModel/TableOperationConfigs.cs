@@ -146,9 +146,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
     /// <summary>
     /// Configuration for the Table.Scan operation
     /// </summary>
-#if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif
     public class ScanOperationConfig
     {
         /// <summary>
@@ -269,9 +266,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
     /// <summary>
     /// Configuration for the Table.Query operation
     /// </summary>
-#if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif
     public class QueryOperationConfig
     {
         /// <summary>
