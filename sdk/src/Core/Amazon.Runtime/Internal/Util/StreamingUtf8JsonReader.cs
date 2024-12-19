@@ -136,10 +136,17 @@ namespace Amazon.Runtime.Internal.Util
             {
                 bytesRead = FillBuffer(stream, ref buffer, 0, buffer.Length);
             }
-            // we pass in (0, bytesRead) and not (0, bytesRead + leftover.Length) because in the last buffer block, the leftover bytes are junk. Either null bytes or bytes
-            // that have been populated from a previous Rent from the array pool. By passing in (0, bytesRead) that ensure that we only pass in bytes that we have read.
-            // This could mean an extra resize of the buffer, but it ensure data integrity.
-            reader = new Utf8JsonReader(buffer.AsSpan(0, bytesRead), isFinalBlock: ((bytesRead + leftover.Length) != buffer.Length || bytesRead == 0), reader.CurrentState);
+
+            if (bytesRead == 0)
+            {
+                // empty buffer will be returned 
+                reader = new Utf8JsonReader(buffer.AsSpan(0, bytesRead), isFinalBlock: true, reader.CurrentState);
+                return;
+            }
+
+            // passing in 0, bytesRead +leftover.Length is safe here because even if we are on the last buffer block, and leftover is junk, that means bytesRead would've been zero 
+            // and control would flow through the if block above.
+            reader = new Utf8JsonReader(buffer.AsSpan(0, bytesRead + leftover.Length), isFinalBlock: ((bytesRead + leftover.Length) != buffer.Length || bytesRead == 0), reader.CurrentState);
         }
 
         private static int FillBuffer(Stream stream, ref byte[] buffer, int offset, int bytesToRead)
