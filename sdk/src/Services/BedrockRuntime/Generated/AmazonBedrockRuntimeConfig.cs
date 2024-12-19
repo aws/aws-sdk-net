@@ -32,7 +32,7 @@ namespace Amazon.BedrockRuntime
     public partial class AmazonBedrockRuntimeConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Bedrock Runtime", "3.7.411.7");
+            InternalSDKUtils.BuildUserAgentString("Bedrock Runtime", "3.7.411.8");
 
         private string _userAgent = UserAgentString;
         ///<summary>

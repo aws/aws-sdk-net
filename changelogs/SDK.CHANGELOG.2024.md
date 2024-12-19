@@ -1,3 +1,22 @@
+### 3.7.950.0 (2024-12-19 19:17 UTC)
+* AppStream (3.7.404.0)
+	* Added support for Rocky Linux 8 on Amazon AppStream 2.0
+* MediaConvert (3.7.405.0)
+	* This release adds support for inserting timecode tracks into MP4 container outputs.
+* MediaLive (3.7.408.0)
+	* MediaLive is releasing ListVersions api
+* QConnect (3.7.404.0)
+	* Amazon Q in Connect enables agents to ask Q for assistance in multiple languages and Q will provide answers and recommended step-by-step guides in those languages. Qs default language is English (United States) and you can switch this by setting the locale configuration on the AI Agent.
+* S3 (3.7.410.9)
+	* fix: Added logic to marshall NoncurrentVersionExpiration.NewerNoncurrentVersions in PutLifecycleConfigurationRequestMarshaller.
+* SsmSap (3.7.402.0)
+	* AWS Systems Manager for SAP added support for registration and discovery of distributed ABAP applications
+* WorkSpaces (3.7.407.0)
+	* Added AWS Global Accelerator (AGA) support for WorkSpaces Personal.
+* Core 3.7.400.67
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.949.0 (2024-12-18 19:23 UTC)
 * Amplify (3.7.403.0)
 	* Added WAF Configuration to Amplify Apps
