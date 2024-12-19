@@ -76,6 +76,12 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetLocale())
+            {
+                context.Writer.WritePropertyName("locale");
+                context.Writer.Write(requestObject.Locale);
+            }
+
         }
 
         /// <summary>

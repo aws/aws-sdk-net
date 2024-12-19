@@ -84,6 +84,12 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                     unmarshalledObject.AssociationConfigurations = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("locale", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Locale = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

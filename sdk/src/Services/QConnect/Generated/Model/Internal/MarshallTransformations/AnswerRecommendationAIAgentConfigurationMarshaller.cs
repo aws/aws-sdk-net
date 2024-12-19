@@ -82,6 +82,12 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.IntentLabelingGenerationAIPromptId);
             }
 
+            if(requestObject.IsSetLocale())
+            {
+                context.Writer.WritePropertyName("locale");
+                context.Writer.Write(requestObject.Locale);
+            }
+
             if(requestObject.IsSetQueryReformulationAIPromptId())
             {
                 context.Writer.WritePropertyName("queryReformulationAIPromptId");

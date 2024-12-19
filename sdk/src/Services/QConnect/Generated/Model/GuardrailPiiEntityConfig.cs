@@ -171,7 +171,7 @@ namespace Amazon.QConnect.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>REDIT_DEBIT_CARD_CVV</b> 
+        ///  <b>CREDIT_DEBIT_CARD_CVV</b> 
         /// </para>
         ///  
         /// <para>

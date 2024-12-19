@@ -90,6 +90,12 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                     unmarshalledObject.IntentLabelingGenerationAIPromptId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("locale", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Locale = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("queryReformulationAIPromptId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

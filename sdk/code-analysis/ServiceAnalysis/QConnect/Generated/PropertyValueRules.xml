@@ -1635,6 +1635,11 @@
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(:[A-Z0-9_$]+){0,1}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QConnect.Model.AnswerRecommendationAIAgentConfiguration.Locale</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QConnect.Model.AnswerRecommendationAIAgentConfiguration.QueryReformulationAIPromptId</property>
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(:[A-Z0-9_$]+){0,1}$</pattern>
   </property-value-rule>
@@ -2419,6 +2424,11 @@
   <property-value-rule>
     <property>Amazon.QConnect.Model.ManualSearchAIAgentConfiguration.AnswerGenerationAIPromptId</property>
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(:[A-Z0-9_$]+){0,1}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.ManualSearchAIAgentConfiguration.Locale</property>
+    <min>1</min>
+    <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QConnect.Model.MessageOutput.MessageId</property>
