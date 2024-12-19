@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TooManyHeadersInCachePolicyException operation
     /// </summary>  
-    public class TooManyHeadersInCachePolicyExceptionUnmarshaller : IErrorResponseUnmarshaller<TooManyHeadersInCachePolicyException, XmlUnmarshallerContext>
+    public class TooManyHeadersInCachePolicyExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<TooManyHeadersInCachePolicyException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

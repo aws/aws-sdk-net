@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for NumberOfNodesQuotaExceededException operation
     /// </summary>  
-    public class NumberOfNodesQuotaExceededExceptionUnmarshaller : IErrorResponseUnmarshaller<NumberOfNodesQuotaExceededException, XmlUnmarshallerContext>
+    public class NumberOfNodesQuotaExceededExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<NumberOfNodesQuotaExceededException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

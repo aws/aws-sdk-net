@@ -28,8 +28,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 {
@@ -64,30 +64,34 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
                 throw new AmazonElasticTranscoderException("Request object does not have required field Id set");
             request.AddPathResource("{Id}", StringUtils.FromString(publicRequest.Id));
             request.ResourcePath = "/2012-09-25/pipelines/{Id}/notifications";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if NETCOREAPP3_1_OR_GREATER
+            ArrayBufferWriter<byte> arrayBufferWriter = new ArrayBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetNotifications())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetNotifications())
-                    {
-                        context.Writer.WritePropertyName("Notifications");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("Notifications");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = NotificationsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Notifications, context);
+                var marshaller = NotificationsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Notifications, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            writer.WriteEndObject();
+            writer.Flush();
+#if NETCOREAPP3_1_OR_GREATER
+            request.Content = arrayBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

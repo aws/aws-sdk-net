@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for IpamDiscoveredResourceCidr Object
     /// </summary>  
-    public class IpamDiscoveredResourceCidrUnmarshaller : IUnmarshaller<IpamDiscoveredResourceCidr, XmlUnmarshallerContext>, IUnmarshaller<IpamDiscoveredResourceCidr, JsonUnmarshallerContext>
+    public class IpamDiscoveredResourceCidrUnmarshaller : IXmlUnmarshaller<IpamDiscoveredResourceCidr, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -147,17 +147,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public IpamDiscoveredResourceCidr Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static IpamDiscoveredResourceCidrUnmarshaller _instance = new IpamDiscoveredResourceCidrUnmarshaller();        
 

@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for MemoryGiBPerVCpuRequest Object
     /// </summary>  
-    public class MemoryGiBPerVCpuRequestUnmarshaller : IUnmarshaller<MemoryGiBPerVCpuRequest, XmlUnmarshallerContext>, IUnmarshaller<MemoryGiBPerVCpuRequest, JsonUnmarshallerContext>
+    public class MemoryGiBPerVCpuRequestUnmarshaller : IXmlUnmarshaller<MemoryGiBPerVCpuRequest, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public MemoryGiBPerVCpuRequest Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static MemoryGiBPerVCpuRequestUnmarshaller _instance = new MemoryGiBPerVCpuRequestUnmarshaller();        
 

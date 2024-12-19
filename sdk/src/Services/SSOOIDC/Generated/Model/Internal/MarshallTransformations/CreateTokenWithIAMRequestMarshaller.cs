@@ -28,8 +28,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SSOOIDC.Model.Internal.MarshallTransformations
 {
@@ -62,90 +62,94 @@ namespace Amazon.SSOOIDC.Model.Internal.MarshallTransformations
 
             request.AddSubResource("aws_iam", "t");
             request.ResourcePath = "/token";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if NETCOREAPP3_1_OR_GREATER
+            ArrayBufferWriter<byte> arrayBufferWriter = new ArrayBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAssertion())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAssertion())
-                    {
-                        context.Writer.WritePropertyName("assertion");
-                        context.Writer.Write(publicRequest.Assertion);
-                    }
-
-                    if(publicRequest.IsSetClientId())
-                    {
-                        context.Writer.WritePropertyName("clientId");
-                        context.Writer.Write(publicRequest.ClientId);
-                    }
-
-                    if(publicRequest.IsSetCode())
-                    {
-                        context.Writer.WritePropertyName("code");
-                        context.Writer.Write(publicRequest.Code);
-                    }
-
-                    if(publicRequest.IsSetCodeVerifier())
-                    {
-                        context.Writer.WritePropertyName("codeVerifier");
-                        context.Writer.Write(publicRequest.CodeVerifier);
-                    }
-
-                    if(publicRequest.IsSetGrantType())
-                    {
-                        context.Writer.WritePropertyName("grantType");
-                        context.Writer.Write(publicRequest.GrantType);
-                    }
-
-                    if(publicRequest.IsSetRedirectUri())
-                    {
-                        context.Writer.WritePropertyName("redirectUri");
-                        context.Writer.Write(publicRequest.RedirectUri);
-                    }
-
-                    if(publicRequest.IsSetRefreshToken())
-                    {
-                        context.Writer.WritePropertyName("refreshToken");
-                        context.Writer.Write(publicRequest.RefreshToken);
-                    }
-
-                    if(publicRequest.IsSetRequestedTokenType())
-                    {
-                        context.Writer.WritePropertyName("requestedTokenType");
-                        context.Writer.Write(publicRequest.RequestedTokenType);
-                    }
-
-                    if(publicRequest.IsSetScope())
-                    {
-                        context.Writer.WritePropertyName("scope");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestScopeListValue in publicRequest.Scope)
-                        {
-                                context.Writer.Write(publicRequestScopeListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetSubjectToken())
-                    {
-                        context.Writer.WritePropertyName("subjectToken");
-                        context.Writer.Write(publicRequest.SubjectToken);
-                    }
-
-                    if(publicRequest.IsSetSubjectTokenType())
-                    {
-                        context.Writer.WritePropertyName("subjectTokenType");
-                        context.Writer.Write(publicRequest.SubjectTokenType);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("assertion");
+                context.Writer.WriteStringValue(publicRequest.Assertion);
             }
+
+            if(publicRequest.IsSetClientId())
+            {
+                context.Writer.WritePropertyName("clientId");
+                context.Writer.WriteStringValue(publicRequest.ClientId);
+            }
+
+            if(publicRequest.IsSetCode())
+            {
+                context.Writer.WritePropertyName("code");
+                context.Writer.WriteStringValue(publicRequest.Code);
+            }
+
+            if(publicRequest.IsSetCodeVerifier())
+            {
+                context.Writer.WritePropertyName("codeVerifier");
+                context.Writer.WriteStringValue(publicRequest.CodeVerifier);
+            }
+
+            if(publicRequest.IsSetGrantType())
+            {
+                context.Writer.WritePropertyName("grantType");
+                context.Writer.WriteStringValue(publicRequest.GrantType);
+            }
+
+            if(publicRequest.IsSetRedirectUri())
+            {
+                context.Writer.WritePropertyName("redirectUri");
+                context.Writer.WriteStringValue(publicRequest.RedirectUri);
+            }
+
+            if(publicRequest.IsSetRefreshToken())
+            {
+                context.Writer.WritePropertyName("refreshToken");
+                context.Writer.WriteStringValue(publicRequest.RefreshToken);
+            }
+
+            if(publicRequest.IsSetRequestedTokenType())
+            {
+                context.Writer.WritePropertyName("requestedTokenType");
+                context.Writer.WriteStringValue(publicRequest.RequestedTokenType);
+            }
+
+            if(publicRequest.IsSetScope())
+            {
+                context.Writer.WritePropertyName("scope");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestScopeListValue in publicRequest.Scope)
+                {
+                        context.Writer.WriteStringValue(publicRequestScopeListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetSubjectToken())
+            {
+                context.Writer.WritePropertyName("subjectToken");
+                context.Writer.WriteStringValue(publicRequest.SubjectToken);
+            }
+
+            if(publicRequest.IsSetSubjectTokenType())
+            {
+                context.Writer.WritePropertyName("subjectTokenType");
+                context.Writer.WriteStringValue(publicRequest.SubjectTokenType);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+#if NETCOREAPP3_1_OR_GREATER
+            request.Content = arrayBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

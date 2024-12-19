@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ScheduledInstanceAvailability Object
     /// </summary>  
-    public class ScheduledInstanceAvailabilityUnmarshaller : IUnmarshaller<ScheduledInstanceAvailability, XmlUnmarshallerContext>, IUnmarshaller<ScheduledInstanceAvailability, JsonUnmarshallerContext>
+    public class ScheduledInstanceAvailabilityUnmarshaller : IXmlUnmarshaller<ScheduledInstanceAvailability, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -142,17 +142,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ScheduledInstanceAvailability Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ScheduledInstanceAvailabilityUnmarshaller _instance = new ScheduledInstanceAvailabilityUnmarshaller();        
 

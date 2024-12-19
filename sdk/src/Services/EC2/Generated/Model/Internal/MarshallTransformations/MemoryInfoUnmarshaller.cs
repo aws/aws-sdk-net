@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for MemoryInfo Object
     /// </summary>  
-    public class MemoryInfoUnmarshaller : IUnmarshaller<MemoryInfo, XmlUnmarshallerContext>, IUnmarshaller<MemoryInfo, JsonUnmarshallerContext>
+    public class MemoryInfoUnmarshaller : IXmlUnmarshaller<MemoryInfo, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -70,17 +70,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public MemoryInfo Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static MemoryInfoUnmarshaller _instance = new MemoryInfoUnmarshaller();        
 

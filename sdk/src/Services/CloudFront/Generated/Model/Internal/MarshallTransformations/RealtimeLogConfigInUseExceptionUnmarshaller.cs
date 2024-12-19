@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for RealtimeLogConfigInUseException operation
     /// </summary>  
-    public class RealtimeLogConfigInUseExceptionUnmarshaller : IErrorResponseUnmarshaller<RealtimeLogConfigInUseException, XmlUnmarshallerContext>
+    public class RealtimeLogConfigInUseExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<RealtimeLogConfigInUseException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

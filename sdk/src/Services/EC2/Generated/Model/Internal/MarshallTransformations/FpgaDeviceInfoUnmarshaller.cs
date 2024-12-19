@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for FpgaDeviceInfo Object
     /// </summary>  
-    public class FpgaDeviceInfoUnmarshaller : IUnmarshaller<FpgaDeviceInfo, XmlUnmarshallerContext>, IUnmarshaller<FpgaDeviceInfo, JsonUnmarshallerContext>
+    public class FpgaDeviceInfoUnmarshaller : IXmlUnmarshaller<FpgaDeviceInfo, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -88,17 +88,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public FpgaDeviceInfo Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static FpgaDeviceInfoUnmarshaller _instance = new FpgaDeviceInfoUnmarshaller();        
 

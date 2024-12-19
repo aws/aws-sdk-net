@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ConflictPolicyUpdateException operation
     /// </summary>  
-    public class ConflictPolicyUpdateExceptionUnmarshaller : IErrorResponseUnmarshaller<ConflictPolicyUpdateException, XmlUnmarshallerContext>
+    public class ConflictPolicyUpdateExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<ConflictPolicyUpdateException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

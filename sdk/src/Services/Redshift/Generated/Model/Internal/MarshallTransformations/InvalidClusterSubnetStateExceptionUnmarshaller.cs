@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidClusterSubnetStateException operation
     /// </summary>  
-    public class InvalidClusterSubnetStateExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidClusterSubnetStateException, XmlUnmarshallerContext>
+    public class InvalidClusterSubnetStateExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidClusterSubnetStateException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

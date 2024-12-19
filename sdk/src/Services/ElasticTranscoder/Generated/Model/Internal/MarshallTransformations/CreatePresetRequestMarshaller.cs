@@ -28,8 +28,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 {
@@ -61,70 +61,74 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/2012-09-25/presets";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if NETCOREAPP3_1_OR_GREATER
+            ArrayBufferWriter<byte> arrayBufferWriter = new ArrayBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAudio())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAudio())
-                    {
-                        context.Writer.WritePropertyName("Audio");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("Audio");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = AudioParametersMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Audio, context);
+                var marshaller = AudioParametersMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Audio, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetContainer())
-                    {
-                        context.Writer.WritePropertyName("Container");
-                        context.Writer.Write(publicRequest.Container);
-                    }
-
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("Description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("Name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetThumbnails())
-                    {
-                        context.Writer.WritePropertyName("Thumbnails");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ThumbnailsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Thumbnails, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetVideo())
-                    {
-                        context.Writer.WritePropertyName("Video");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = VideoParametersMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Video, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetContainer())
+            {
+                context.Writer.WritePropertyName("Container");
+                context.Writer.WriteStringValue(publicRequest.Container);
+            }
+
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("Description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("Name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetThumbnails())
+            {
+                context.Writer.WritePropertyName("Thumbnails");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ThumbnailsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Thumbnails, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetVideo())
+            {
+                context.Writer.WritePropertyName("Video");
+                context.Writer.WriteStartObject();
+
+                var marshaller = VideoParametersMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Video, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+#if NETCOREAPP3_1_OR_GREATER
+            request.Content = arrayBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
@@ -51,63 +49,63 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInstanceFleetType())
             {
                 context.Writer.WritePropertyName("InstanceFleetType");
-                context.Writer.Write(requestObject.InstanceFleetType);
+                context.Writer.WriteStringValue(requestObject.InstanceFleetType);
             }
 
             if(requestObject.IsSetInstanceTypeConfigs())
             {
                 context.Writer.WritePropertyName("InstanceTypeConfigs");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectInstanceTypeConfigsListValue in requestObject.InstanceTypeConfigs)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = InstanceTypeConfigMarshaller.Instance;
                     marshaller.Marshall(requestObjectInstanceTypeConfigsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetLaunchSpecifications())
             {
                 context.Writer.WritePropertyName("LaunchSpecifications");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = InstanceFleetProvisioningSpecificationsMarshaller.Instance;
                 marshaller.Marshall(requestObject.LaunchSpecifications, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetResizeSpecifications())
             {
                 context.Writer.WritePropertyName("ResizeSpecifications");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = InstanceFleetResizingSpecificationsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ResizeSpecifications, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTargetOnDemandCapacity())
             {
                 context.Writer.WritePropertyName("TargetOnDemandCapacity");
-                context.Writer.Write(requestObject.TargetOnDemandCapacity.Value);
+                context.Writer.WriteNumberValue(requestObject.TargetOnDemandCapacity.Value);
             }
 
             if(requestObject.IsSetTargetSpotCapacity())
             {
                 context.Writer.WritePropertyName("TargetSpotCapacity");
-                context.Writer.Write(requestObject.TargetSpotCapacity.Value);
+                context.Writer.WriteNumberValue(requestObject.TargetSpotCapacity.Value);
             }
 
         }

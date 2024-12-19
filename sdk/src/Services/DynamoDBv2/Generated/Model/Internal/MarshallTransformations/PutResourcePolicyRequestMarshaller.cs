@@ -28,8 +28,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
@@ -63,43 +63,47 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if NETCOREAPP3_1_OR_GREATER
+            ArrayBufferWriter<byte> arrayBufferWriter = new ArrayBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetConfirmRemoveSelfResourceAccess())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetConfirmRemoveSelfResourceAccess())
-                    {
-                        context.Writer.WritePropertyName("ConfirmRemoveSelfResourceAccess");
-                        context.Writer.Write(publicRequest.ConfirmRemoveSelfResourceAccess.Value);
-                    }
-
-                    if(publicRequest.IsSetExpectedRevisionId())
-                    {
-                        context.Writer.WritePropertyName("ExpectedRevisionId");
-                        context.Writer.Write(publicRequest.ExpectedRevisionId);
-                    }
-
-                    if(publicRequest.IsSetPolicy())
-                    {
-                        context.Writer.WritePropertyName("Policy");
-                        context.Writer.Write(publicRequest.Policy);
-                    }
-
-                    if(publicRequest.IsSetResourceArn())
-                    {
-                        context.Writer.WritePropertyName("ResourceArn");
-                        context.Writer.Write(publicRequest.ResourceArn);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("ConfirmRemoveSelfResourceAccess");
+                context.Writer.WriteBooleanValue(publicRequest.ConfirmRemoveSelfResourceAccess.Value);
             }
+
+            if(publicRequest.IsSetExpectedRevisionId())
+            {
+                context.Writer.WritePropertyName("ExpectedRevisionId");
+                context.Writer.WriteStringValue(publicRequest.ExpectedRevisionId);
+            }
+
+            if(publicRequest.IsSetPolicy())
+            {
+                context.Writer.WritePropertyName("Policy");
+                context.Writer.WriteStringValue(publicRequest.Policy);
+            }
+
+            if(publicRequest.IsSetResourceArn())
+            {
+                context.Writer.WritePropertyName("ResourceArn");
+                context.Writer.WriteStringValue(publicRequest.ResourceArn);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+#if NETCOREAPP3_1_OR_GREATER
+            request.Content = arrayBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

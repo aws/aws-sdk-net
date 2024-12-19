@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for RefreshPreferences Object
     /// </summary>  
-    public class RefreshPreferencesUnmarshaller : IUnmarshaller<RefreshPreferences, XmlUnmarshallerContext>, IUnmarshaller<RefreshPreferences, JsonUnmarshallerContext>
+    public class RefreshPreferencesUnmarshaller : IXmlUnmarshaller<RefreshPreferences, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -129,17 +129,6 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public RefreshPreferences Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static RefreshPreferencesUnmarshaller _instance = new RefreshPreferencesUnmarshaller();        
 

@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for SuspendedProcess Object
     /// </summary>  
-    public class SuspendedProcessUnmarshaller : IUnmarshaller<SuspendedProcess, XmlUnmarshallerContext>, IUnmarshaller<SuspendedProcess, JsonUnmarshallerContext>
+    public class SuspendedProcessUnmarshaller : IXmlUnmarshaller<SuspendedProcess, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public SuspendedProcess Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static SuspendedProcessUnmarshaller _instance = new SuspendedProcessUnmarshaller();        
 

@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ResizeInfo Object
     /// </summary>  
-    public class ResizeInfoUnmarshaller : IUnmarshaller<ResizeInfo, XmlUnmarshallerContext>, IUnmarshaller<ResizeInfo, JsonUnmarshallerContext>
+    public class ResizeInfoUnmarshaller : IXmlUnmarshaller<ResizeInfo, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ResizeInfo Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ResizeInfoUnmarshaller _instance = new ResizeInfoUnmarshaller();        
 

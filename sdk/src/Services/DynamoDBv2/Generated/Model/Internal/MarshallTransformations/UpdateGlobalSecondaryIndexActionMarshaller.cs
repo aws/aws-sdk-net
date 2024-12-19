@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIndexName())
             {
                 context.Writer.WritePropertyName("IndexName");
-                context.Writer.Write(requestObject.IndexName);
+                context.Writer.WriteStringValue(requestObject.IndexName);
             }
 
             if(requestObject.IsSetOnDemandThroughput())
             {
                 context.Writer.WritePropertyName("OnDemandThroughput");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OnDemandThroughputMarshaller.Instance;
                 marshaller.Marshall(requestObject.OnDemandThroughput, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetProvisionedThroughput())
             {
                 context.Writer.WritePropertyName("ProvisionedThroughput");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ProvisionedThroughputMarshaller.Instance;
                 marshaller.Marshall(requestObject.ProvisionedThroughput, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

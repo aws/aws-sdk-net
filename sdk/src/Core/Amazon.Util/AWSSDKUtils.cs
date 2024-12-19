@@ -847,6 +847,13 @@ namespace Amazon.Util
         {
             source.CopyTo(destination, bufferSize);
         }
+
+        public static void CopyStreamAndSetPositionToZero(Stream source, Stream destination)
+        {
+            source.CopyTo(destination);
+            source.Position = 0;
+            destination.Position = 0;
+        }
 #endregion
 
 #region Public Methods and Properties

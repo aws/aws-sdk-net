@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for NeuronDeviceMemoryInfo Object
     /// </summary>  
-    public class NeuronDeviceMemoryInfoUnmarshaller : IUnmarshaller<NeuronDeviceMemoryInfo, XmlUnmarshallerContext>, IUnmarshaller<NeuronDeviceMemoryInfo, JsonUnmarshallerContext>
+    public class NeuronDeviceMemoryInfoUnmarshaller : IXmlUnmarshaller<NeuronDeviceMemoryInfo, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -70,17 +70,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public NeuronDeviceMemoryInfo Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static NeuronDeviceMemoryInfoUnmarshaller _instance = new NeuronDeviceMemoryInfoUnmarshaller();        
 

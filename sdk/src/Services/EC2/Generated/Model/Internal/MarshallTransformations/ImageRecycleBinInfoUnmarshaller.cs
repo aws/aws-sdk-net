@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ImageRecycleBinInfo Object
     /// </summary>  
-    public class ImageRecycleBinInfoUnmarshaller : IUnmarshaller<ImageRecycleBinInfo, XmlUnmarshallerContext>, IUnmarshaller<ImageRecycleBinInfo, JsonUnmarshallerContext>
+    public class ImageRecycleBinInfoUnmarshaller : IXmlUnmarshaller<ImageRecycleBinInfo, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -94,17 +94,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ImageRecycleBinInfo Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ImageRecycleBinInfoUnmarshaller _instance = new ImageRecycleBinInfoUnmarshaller();        
 

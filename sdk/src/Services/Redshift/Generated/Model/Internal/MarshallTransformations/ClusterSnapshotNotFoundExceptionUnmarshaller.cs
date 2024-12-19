@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ClusterSnapshotNotFoundException operation
     /// </summary>  
-    public class ClusterSnapshotNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<ClusterSnapshotNotFoundException, XmlUnmarshallerContext>
+    public class ClusterSnapshotNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<ClusterSnapshotNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

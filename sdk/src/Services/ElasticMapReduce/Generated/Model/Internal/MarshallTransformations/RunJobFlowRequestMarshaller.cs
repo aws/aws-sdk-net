@@ -28,8 +28,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
@@ -63,300 +63,304 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if NETCOREAPP3_1_OR_GREATER
+            ArrayBufferWriter<byte> arrayBufferWriter = new ArrayBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAdditionalInfo())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAdditionalInfo())
-                    {
-                        context.Writer.WritePropertyName("AdditionalInfo");
-                        context.Writer.Write(publicRequest.AdditionalInfo);
-                    }
-
-                    if(publicRequest.IsSetAmiVersion())
-                    {
-                        context.Writer.WritePropertyName("AmiVersion");
-                        context.Writer.Write(publicRequest.AmiVersion);
-                    }
-
-                    if(publicRequest.IsSetApplications())
-                    {
-                        context.Writer.WritePropertyName("Applications");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestApplicationsListValue in publicRequest.Applications)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = ApplicationMarshaller.Instance;
-                            marshaller.Marshall(publicRequestApplicationsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetAutoScalingRole())
-                    {
-                        context.Writer.WritePropertyName("AutoScalingRole");
-                        context.Writer.Write(publicRequest.AutoScalingRole);
-                    }
-
-                    if(publicRequest.IsSetAutoTerminationPolicy())
-                    {
-                        context.Writer.WritePropertyName("AutoTerminationPolicy");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = AutoTerminationPolicyMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.AutoTerminationPolicy, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetBootstrapActions())
-                    {
-                        context.Writer.WritePropertyName("BootstrapActions");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestBootstrapActionsListValue in publicRequest.BootstrapActions)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = BootstrapActionConfigMarshaller.Instance;
-                            marshaller.Marshall(publicRequestBootstrapActionsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetConfigurations())
-                    {
-                        context.Writer.WritePropertyName("Configurations");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestConfigurationsListValue in publicRequest.Configurations)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = ConfigurationMarshaller.Instance;
-                            marshaller.Marshall(publicRequestConfigurationsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetCustomAmiId())
-                    {
-                        context.Writer.WritePropertyName("CustomAmiId");
-                        context.Writer.Write(publicRequest.CustomAmiId);
-                    }
-
-                    if(publicRequest.IsSetEbsRootVolumeIops())
-                    {
-                        context.Writer.WritePropertyName("EbsRootVolumeIops");
-                        context.Writer.Write(publicRequest.EbsRootVolumeIops.Value);
-                    }
-
-                    if(publicRequest.IsSetEbsRootVolumeSize())
-                    {
-                        context.Writer.WritePropertyName("EbsRootVolumeSize");
-                        context.Writer.Write(publicRequest.EbsRootVolumeSize.Value);
-                    }
-
-                    if(publicRequest.IsSetEbsRootVolumeThroughput())
-                    {
-                        context.Writer.WritePropertyName("EbsRootVolumeThroughput");
-                        context.Writer.Write(publicRequest.EbsRootVolumeThroughput.Value);
-                    }
-
-                    if(publicRequest.IsSetInstances())
-                    {
-                        context.Writer.WritePropertyName("Instances");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = JobFlowInstancesConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Instances, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetJobFlowRole())
-                    {
-                        context.Writer.WritePropertyName("JobFlowRole");
-                        context.Writer.Write(publicRequest.JobFlowRole);
-                    }
-
-                    if(publicRequest.IsSetKerberosAttributes())
-                    {
-                        context.Writer.WritePropertyName("KerberosAttributes");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = KerberosAttributesMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.KerberosAttributes, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetLogEncryptionKmsKeyId())
-                    {
-                        context.Writer.WritePropertyName("LogEncryptionKmsKeyId");
-                        context.Writer.Write(publicRequest.LogEncryptionKmsKeyId);
-                    }
-
-                    if(publicRequest.IsSetLogUri())
-                    {
-                        context.Writer.WritePropertyName("LogUri");
-                        context.Writer.Write(publicRequest.LogUri);
-                    }
-
-                    if(publicRequest.IsSetManagedScalingPolicy())
-                    {
-                        context.Writer.WritePropertyName("ManagedScalingPolicy");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ManagedScalingPolicyMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ManagedScalingPolicy, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("Name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetNewSupportedProducts())
-                    {
-                        context.Writer.WritePropertyName("NewSupportedProducts");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestNewSupportedProductsListValue in publicRequest.NewSupportedProducts)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = SupportedProductConfigMarshaller.Instance;
-                            marshaller.Marshall(publicRequestNewSupportedProductsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetOSReleaseLabel())
-                    {
-                        context.Writer.WritePropertyName("OSReleaseLabel");
-                        context.Writer.Write(publicRequest.OSReleaseLabel);
-                    }
-
-                    if(publicRequest.IsSetPlacementGroupConfigs())
-                    {
-                        context.Writer.WritePropertyName("PlacementGroupConfigs");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestPlacementGroupConfigsListValue in publicRequest.PlacementGroupConfigs)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = PlacementGroupConfigMarshaller.Instance;
-                            marshaller.Marshall(publicRequestPlacementGroupConfigsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetReleaseLabel())
-                    {
-                        context.Writer.WritePropertyName("ReleaseLabel");
-                        context.Writer.Write(publicRequest.ReleaseLabel);
-                    }
-
-                    if(publicRequest.IsSetRepoUpgradeOnBoot())
-                    {
-                        context.Writer.WritePropertyName("RepoUpgradeOnBoot");
-                        context.Writer.Write(publicRequest.RepoUpgradeOnBoot);
-                    }
-
-                    if(publicRequest.IsSetScaleDownBehavior())
-                    {
-                        context.Writer.WritePropertyName("ScaleDownBehavior");
-                        context.Writer.Write(publicRequest.ScaleDownBehavior);
-                    }
-
-                    if(publicRequest.IsSetSecurityConfiguration())
-                    {
-                        context.Writer.WritePropertyName("SecurityConfiguration");
-                        context.Writer.Write(publicRequest.SecurityConfiguration);
-                    }
-
-                    if(publicRequest.IsSetServiceRole())
-                    {
-                        context.Writer.WritePropertyName("ServiceRole");
-                        context.Writer.Write(publicRequest.ServiceRole);
-                    }
-
-                    if(publicRequest.IsSetStepConcurrencyLevel())
-                    {
-                        context.Writer.WritePropertyName("StepConcurrencyLevel");
-                        context.Writer.Write(publicRequest.StepConcurrencyLevel.Value);
-                    }
-
-                    if(publicRequest.IsSetSteps())
-                    {
-                        context.Writer.WritePropertyName("Steps");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestStepsListValue in publicRequest.Steps)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = StepConfigMarshaller.Instance;
-                            marshaller.Marshall(publicRequestStepsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetSupportedProducts())
-                    {
-                        context.Writer.WritePropertyName("SupportedProducts");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestSupportedProductsListValue in publicRequest.SupportedProducts)
-                        {
-                                context.Writer.Write(publicRequestSupportedProductsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("Tags");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TagMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTagsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetVisibleToAllUsers())
-                    {
-                        context.Writer.WritePropertyName("VisibleToAllUsers");
-                        context.Writer.Write(publicRequest.VisibleToAllUsers.Value);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("AdditionalInfo");
+                context.Writer.WriteStringValue(publicRequest.AdditionalInfo);
             }
+
+            if(publicRequest.IsSetAmiVersion())
+            {
+                context.Writer.WritePropertyName("AmiVersion");
+                context.Writer.WriteStringValue(publicRequest.AmiVersion);
+            }
+
+            if(publicRequest.IsSetApplications())
+            {
+                context.Writer.WritePropertyName("Applications");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestApplicationsListValue in publicRequest.Applications)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ApplicationMarshaller.Instance;
+                    marshaller.Marshall(publicRequestApplicationsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetAutoScalingRole())
+            {
+                context.Writer.WritePropertyName("AutoScalingRole");
+                context.Writer.WriteStringValue(publicRequest.AutoScalingRole);
+            }
+
+            if(publicRequest.IsSetAutoTerminationPolicy())
+            {
+                context.Writer.WritePropertyName("AutoTerminationPolicy");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AutoTerminationPolicyMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AutoTerminationPolicy, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetBootstrapActions())
+            {
+                context.Writer.WritePropertyName("BootstrapActions");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestBootstrapActionsListValue in publicRequest.BootstrapActions)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = BootstrapActionConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequestBootstrapActionsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetConfigurations())
+            {
+                context.Writer.WritePropertyName("Configurations");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestConfigurationsListValue in publicRequest.Configurations)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequestConfigurationsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetCustomAmiId())
+            {
+                context.Writer.WritePropertyName("CustomAmiId");
+                context.Writer.WriteStringValue(publicRequest.CustomAmiId);
+            }
+
+            if(publicRequest.IsSetEbsRootVolumeIops())
+            {
+                context.Writer.WritePropertyName("EbsRootVolumeIops");
+                context.Writer.WriteNumberValue(publicRequest.EbsRootVolumeIops.Value);
+            }
+
+            if(publicRequest.IsSetEbsRootVolumeSize())
+            {
+                context.Writer.WritePropertyName("EbsRootVolumeSize");
+                context.Writer.WriteNumberValue(publicRequest.EbsRootVolumeSize.Value);
+            }
+
+            if(publicRequest.IsSetEbsRootVolumeThroughput())
+            {
+                context.Writer.WritePropertyName("EbsRootVolumeThroughput");
+                context.Writer.WriteNumberValue(publicRequest.EbsRootVolumeThroughput.Value);
+            }
+
+            if(publicRequest.IsSetInstances())
+            {
+                context.Writer.WritePropertyName("Instances");
+                context.Writer.WriteStartObject();
+
+                var marshaller = JobFlowInstancesConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Instances, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetJobFlowRole())
+            {
+                context.Writer.WritePropertyName("JobFlowRole");
+                context.Writer.WriteStringValue(publicRequest.JobFlowRole);
+            }
+
+            if(publicRequest.IsSetKerberosAttributes())
+            {
+                context.Writer.WritePropertyName("KerberosAttributes");
+                context.Writer.WriteStartObject();
+
+                var marshaller = KerberosAttributesMarshaller.Instance;
+                marshaller.Marshall(publicRequest.KerberosAttributes, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetLogEncryptionKmsKeyId())
+            {
+                context.Writer.WritePropertyName("LogEncryptionKmsKeyId");
+                context.Writer.WriteStringValue(publicRequest.LogEncryptionKmsKeyId);
+            }
+
+            if(publicRequest.IsSetLogUri())
+            {
+                context.Writer.WritePropertyName("LogUri");
+                context.Writer.WriteStringValue(publicRequest.LogUri);
+            }
+
+            if(publicRequest.IsSetManagedScalingPolicy())
+            {
+                context.Writer.WritePropertyName("ManagedScalingPolicy");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ManagedScalingPolicyMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ManagedScalingPolicy, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("Name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetNewSupportedProducts())
+            {
+                context.Writer.WritePropertyName("NewSupportedProducts");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestNewSupportedProductsListValue in publicRequest.NewSupportedProducts)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = SupportedProductConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequestNewSupportedProductsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetOSReleaseLabel())
+            {
+                context.Writer.WritePropertyName("OSReleaseLabel");
+                context.Writer.WriteStringValue(publicRequest.OSReleaseLabel);
+            }
+
+            if(publicRequest.IsSetPlacementGroupConfigs())
+            {
+                context.Writer.WritePropertyName("PlacementGroupConfigs");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestPlacementGroupConfigsListValue in publicRequest.PlacementGroupConfigs)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = PlacementGroupConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequestPlacementGroupConfigsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetReleaseLabel())
+            {
+                context.Writer.WritePropertyName("ReleaseLabel");
+                context.Writer.WriteStringValue(publicRequest.ReleaseLabel);
+            }
+
+            if(publicRequest.IsSetRepoUpgradeOnBoot())
+            {
+                context.Writer.WritePropertyName("RepoUpgradeOnBoot");
+                context.Writer.WriteStringValue(publicRequest.RepoUpgradeOnBoot);
+            }
+
+            if(publicRequest.IsSetScaleDownBehavior())
+            {
+                context.Writer.WritePropertyName("ScaleDownBehavior");
+                context.Writer.WriteStringValue(publicRequest.ScaleDownBehavior);
+            }
+
+            if(publicRequest.IsSetSecurityConfiguration())
+            {
+                context.Writer.WritePropertyName("SecurityConfiguration");
+                context.Writer.WriteStringValue(publicRequest.SecurityConfiguration);
+            }
+
+            if(publicRequest.IsSetServiceRole())
+            {
+                context.Writer.WritePropertyName("ServiceRole");
+                context.Writer.WriteStringValue(publicRequest.ServiceRole);
+            }
+
+            if(publicRequest.IsSetStepConcurrencyLevel())
+            {
+                context.Writer.WritePropertyName("StepConcurrencyLevel");
+                context.Writer.WriteNumberValue(publicRequest.StepConcurrencyLevel.Value);
+            }
+
+            if(publicRequest.IsSetSteps())
+            {
+                context.Writer.WritePropertyName("Steps");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestStepsListValue in publicRequest.Steps)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = StepConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequestStepsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetSupportedProducts())
+            {
+                context.Writer.WritePropertyName("SupportedProducts");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSupportedProductsListValue in publicRequest.SupportedProducts)
+                {
+                        context.Writer.WriteStringValue(publicRequestSupportedProductsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetVisibleToAllUsers())
+            {
+                context.Writer.WritePropertyName("VisibleToAllUsers");
+                context.Writer.WriteBooleanValue(publicRequest.VisibleToAllUsers.Value);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+#if NETCOREAPP3_1_OR_GREATER
+            request.Content = arrayBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

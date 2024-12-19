@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for SnapshotScheduleAlreadyExistsException operation
     /// </summary>  
-    public class SnapshotScheduleAlreadyExistsExceptionUnmarshaller : IErrorResponseUnmarshaller<SnapshotScheduleAlreadyExistsException, XmlUnmarshallerContext>
+    public class SnapshotScheduleAlreadyExistsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<SnapshotScheduleAlreadyExistsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ReservedNodeAlreadyMigratedException operation
     /// </summary>  
-    public class ReservedNodeAlreadyMigratedExceptionUnmarshaller : IErrorResponseUnmarshaller<ReservedNodeAlreadyMigratedException, XmlUnmarshallerContext>
+    public class ReservedNodeAlreadyMigratedExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<ReservedNodeAlreadyMigratedException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

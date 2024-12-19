@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for OriginRequestPolicySummary Object
     /// </summary>  
-    public class OriginRequestPolicySummaryUnmarshaller : IUnmarshaller<OriginRequestPolicySummary, XmlUnmarshallerContext>, IUnmarshaller<OriginRequestPolicySummary, JsonUnmarshallerContext>
+    public class OriginRequestPolicySummaryUnmarshaller : IXmlUnmarshaller<OriginRequestPolicySummary, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
-        
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public OriginRequestPolicySummary Unmarshall(JsonUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
         private static OriginRequestPolicySummaryUnmarshaller _instance = new OriginRequestPolicySummaryUnmarshaller();        
 
         /// <summary>

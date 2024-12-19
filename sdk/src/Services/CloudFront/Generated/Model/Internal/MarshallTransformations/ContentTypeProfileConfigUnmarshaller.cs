@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ContentTypeProfileConfig Object
     /// </summary>  
-    public class ContentTypeProfileConfigUnmarshaller : IUnmarshaller<ContentTypeProfileConfig, XmlUnmarshallerContext>, IUnmarshaller<ContentTypeProfileConfig, JsonUnmarshallerContext>
+    public class ContentTypeProfileConfigUnmarshaller : IXmlUnmarshaller<ContentTypeProfileConfig, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
-        
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ContentTypeProfileConfig Unmarshall(JsonUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
         private static ContentTypeProfileConfigUnmarshaller _instance = new ContentTypeProfileConfigUnmarshaller();        
 
         /// <summary>

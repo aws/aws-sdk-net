@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CertificateAssociation Object
     /// </summary>  
-    public class CertificateAssociationUnmarshaller : IUnmarshaller<CertificateAssociation, XmlUnmarshallerContext>, IUnmarshaller<CertificateAssociation, JsonUnmarshallerContext>
+    public class CertificateAssociationUnmarshaller : IXmlUnmarshaller<CertificateAssociation, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public CertificateAssociation Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static CertificateAssociationUnmarshaller _instance = new CertificateAssociationUnmarshaller();        
 

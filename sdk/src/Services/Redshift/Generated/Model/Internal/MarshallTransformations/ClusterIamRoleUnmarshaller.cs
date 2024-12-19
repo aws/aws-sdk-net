@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ClusterIamRole Object
     /// </summary>  
-    public class ClusterIamRoleUnmarshaller : IUnmarshaller<ClusterIamRole, XmlUnmarshallerContext>, IUnmarshaller<ClusterIamRole, JsonUnmarshallerContext>
+    public class ClusterIamRoleUnmarshaller : IXmlUnmarshaller<ClusterIamRole, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ClusterIamRole Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ClusterIamRoleUnmarshaller _instance = new ClusterIamRoleUnmarshaller();        
 

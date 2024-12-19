@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for KerberosAttributes Object
     /// </summary>  
-    public class KerberosAttributesUnmarshaller : IUnmarshaller<KerberosAttributes, XmlUnmarshallerContext>, IUnmarshaller<KerberosAttributes, JsonUnmarshallerContext>
+    public class KerberosAttributesUnmarshaller : IJsonUnmarshaller<KerberosAttributes, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        KerberosAttributes IUnmarshaller<KerberosAttributes, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public KerberosAttributes Unmarshall(JsonUnmarshallerContext context)
+        public KerberosAttributes Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             KerberosAttributes unmarshalledObject = new KerberosAttributes();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ADDomainJoinPassword", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ADDomainJoinPassword = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ADDomainJoinPassword = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ADDomainJoinUser", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ADDomainJoinUser = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ADDomainJoinUser = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CrossRealmTrustPrincipalPassword", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CrossRealmTrustPrincipalPassword = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CrossRealmTrustPrincipalPassword = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("KdcAdminPassword", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.KdcAdminPassword = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.KdcAdminPassword = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Realm", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Realm = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Realm = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

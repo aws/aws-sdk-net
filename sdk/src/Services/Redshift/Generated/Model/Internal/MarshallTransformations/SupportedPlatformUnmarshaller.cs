@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for SupportedPlatform Object
     /// </summary>  
-    public class SupportedPlatformUnmarshaller : IUnmarshaller<SupportedPlatform, XmlUnmarshallerContext>, IUnmarshaller<SupportedPlatform, JsonUnmarshallerContext>
+    public class SupportedPlatformUnmarshaller : IXmlUnmarshaller<SupportedPlatform, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -70,17 +70,6 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public SupportedPlatform Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static SupportedPlatformUnmarshaller _instance = new SupportedPlatformUnmarshaller();        
 

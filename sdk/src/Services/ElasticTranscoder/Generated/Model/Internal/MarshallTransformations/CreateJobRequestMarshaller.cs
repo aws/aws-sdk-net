@@ -28,8 +28,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 {
@@ -61,115 +61,119 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/2012-09-25/jobs";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if NETCOREAPP3_1_OR_GREATER
+            ArrayBufferWriter<byte> arrayBufferWriter = new ArrayBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetInput())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetInput())
-                    {
-                        context.Writer.WritePropertyName("Input");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("Input");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = JobInputMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Input, context);
+                var marshaller = JobInputMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Input, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetInputs())
-                    {
-                        context.Writer.WritePropertyName("Inputs");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestInputsListValue in publicRequest.Inputs)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = JobInputMarshaller.Instance;
-                            marshaller.Marshall(publicRequestInputsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetOutput())
-                    {
-                        context.Writer.WritePropertyName("Output");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = CreateJobOutputMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Output, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetOutputKeyPrefix())
-                    {
-                        context.Writer.WritePropertyName("OutputKeyPrefix");
-                        context.Writer.Write(publicRequest.OutputKeyPrefix);
-                    }
-
-                    if(publicRequest.IsSetOutputs())
-                    {
-                        context.Writer.WritePropertyName("Outputs");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestOutputsListValue in publicRequest.Outputs)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = CreateJobOutputMarshaller.Instance;
-                            marshaller.Marshall(publicRequestOutputsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetPipelineId())
-                    {
-                        context.Writer.WritePropertyName("PipelineId");
-                        context.Writer.Write(publicRequest.PipelineId);
-                    }
-
-                    if(publicRequest.IsSetPlaylists())
-                    {
-                        context.Writer.WritePropertyName("Playlists");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestPlaylistsListValue in publicRequest.Playlists)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = CreateJobPlaylistMarshaller.Instance;
-                            marshaller.Marshall(publicRequestPlaylistsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetUserMetadata())
-                    {
-                        context.Writer.WritePropertyName("UserMetadata");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestUserMetadataKvp in publicRequest.UserMetadata)
-                        {
-                            context.Writer.WritePropertyName(publicRequestUserMetadataKvp.Key);
-                            var publicRequestUserMetadataValue = publicRequestUserMetadataKvp.Value;
-
-                                context.Writer.Write(publicRequestUserMetadataValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetInputs())
+            {
+                context.Writer.WritePropertyName("Inputs");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestInputsListValue in publicRequest.Inputs)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = JobInputMarshaller.Instance;
+                    marshaller.Marshall(publicRequestInputsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetOutput())
+            {
+                context.Writer.WritePropertyName("Output");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CreateJobOutputMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Output, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetOutputKeyPrefix())
+            {
+                context.Writer.WritePropertyName("OutputKeyPrefix");
+                context.Writer.WriteStringValue(publicRequest.OutputKeyPrefix);
+            }
+
+            if(publicRequest.IsSetOutputs())
+            {
+                context.Writer.WritePropertyName("Outputs");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestOutputsListValue in publicRequest.Outputs)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = CreateJobOutputMarshaller.Instance;
+                    marshaller.Marshall(publicRequestOutputsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetPipelineId())
+            {
+                context.Writer.WritePropertyName("PipelineId");
+                context.Writer.WriteStringValue(publicRequest.PipelineId);
+            }
+
+            if(publicRequest.IsSetPlaylists())
+            {
+                context.Writer.WritePropertyName("Playlists");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestPlaylistsListValue in publicRequest.Playlists)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = CreateJobPlaylistMarshaller.Instance;
+                    marshaller.Marshall(publicRequestPlaylistsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetUserMetadata())
+            {
+                context.Writer.WritePropertyName("UserMetadata");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestUserMetadataKvp in publicRequest.UserMetadata)
+                {
+                    context.Writer.WritePropertyName(publicRequestUserMetadataKvp.Key);
+                    var publicRequestUserMetadataValue = publicRequestUserMetadataKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestUserMetadataValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+#if NETCOREAPP3_1_OR_GREATER
+            request.Content = arrayBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

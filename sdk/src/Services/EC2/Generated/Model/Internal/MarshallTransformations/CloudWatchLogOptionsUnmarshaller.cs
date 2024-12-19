@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CloudWatchLogOptions Object
     /// </summary>  
-    public class CloudWatchLogOptionsUnmarshaller : IUnmarshaller<CloudWatchLogOptions, XmlUnmarshallerContext>, IUnmarshaller<CloudWatchLogOptions, JsonUnmarshallerContext>
+    public class CloudWatchLogOptionsUnmarshaller : IXmlUnmarshaller<CloudWatchLogOptions, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -82,17 +82,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public CloudWatchLogOptions Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static CloudWatchLogOptionsUnmarshaller _instance = new CloudWatchLogOptionsUnmarshaller();        
 

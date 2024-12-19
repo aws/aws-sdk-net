@@ -17,6 +17,7 @@ using Amazon.DynamoDBv2.Model.Internal.MarshallTransformations;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
 using AWSSDK_DotNet.UnitTests;
 using AWSSDK_DotNet.UnitTests.TestTools;
@@ -163,8 +164,10 @@ namespace AWSSDK.UnitTests.Custom.Marshalling
 
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(body).Length.ToString());
 
-            var context = new JsonUnmarshallerContext(AWSSDK_DotNet.UnitTests.Utils.CreateStreamFromString(body), true, webResponse);
-            return new JsonErrorResponseUnmarshaller().Unmarshall(context);
+            var stream = AWSSDK_DotNet.UnitTests.Utils.CreateStreamFromString(body);
+            var context = new JsonUnmarshallerContext(stream, true, webResponse);
+            var reader = new StreamingUtf8JsonReader(stream);
+            return new JsonErrorResponseUnmarshaller().Unmarshall(context, ref reader);
         }
 
         private void RunXmlErrorUnmarshallingTest(string body, string expectedMessage, string expectedCode, ErrorType expectedType)
@@ -186,7 +189,7 @@ namespace AWSSDK.UnitTests.Custom.Marshalling
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(body).Length.ToString());
 
             var context = new XmlUnmarshallerContext(AWSSDK_DotNet.UnitTests.Utils.CreateStreamFromString(body), true, webResponse);
-            return new ErrorResponseUnmarshaller().Unmarshall(context);
+            return new XmlErrorResponseUnmarshaller().Unmarshall(context);
         }
     }
 }

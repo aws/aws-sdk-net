@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DefaultCacheBehavior Object
     /// </summary>  
-    public class DefaultCacheBehaviorUnmarshaller : IUnmarshaller<DefaultCacheBehavior, XmlUnmarshallerContext>, IUnmarshaller<DefaultCacheBehavior, JsonUnmarshallerContext>
+    public class DefaultCacheBehaviorUnmarshaller : IXmlUnmarshaller<DefaultCacheBehavior, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -172,17 +172,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
-        
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public DefaultCacheBehavior Unmarshall(JsonUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
         private static DefaultCacheBehaviorUnmarshaller _instance = new DefaultCacheBehaviorUnmarshaller();        
 
         /// <summary>

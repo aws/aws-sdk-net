@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for QueryArgProfileEmptyException operation
     /// </summary>  
-    public class QueryArgProfileEmptyExceptionUnmarshaller : IErrorResponseUnmarshaller<QueryArgProfileEmptyException, XmlUnmarshallerContext>
+    public class QueryArgProfileEmptyExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<QueryArgProfileEmptyException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

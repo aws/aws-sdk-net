@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ReplicaGlobalSecondaryIndexDescription Object
     /// </summary>  
-    public class ReplicaGlobalSecondaryIndexDescriptionUnmarshaller : IUnmarshaller<ReplicaGlobalSecondaryIndexDescription, XmlUnmarshallerContext>, IUnmarshaller<ReplicaGlobalSecondaryIndexDescription, JsonUnmarshallerContext>
+    public class ReplicaGlobalSecondaryIndexDescriptionUnmarshaller : IJsonUnmarshaller<ReplicaGlobalSecondaryIndexDescription, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ReplicaGlobalSecondaryIndexDescription IUnmarshaller<ReplicaGlobalSecondaryIndexDescription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ReplicaGlobalSecondaryIndexDescription Unmarshall(JsonUnmarshallerContext context)
+        public ReplicaGlobalSecondaryIndexDescription Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ReplicaGlobalSecondaryIndexDescription unmarshalledObject = new ReplicaGlobalSecondaryIndexDescription();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("IndexName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IndexName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IndexName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("OnDemandThroughputOverride", targetDepth))
                 {
                     var unmarshaller = OnDemandThroughputOverrideUnmarshaller.Instance;
-                    unmarshalledObject.OnDemandThroughputOverride = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OnDemandThroughputOverride = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ProvisionedThroughputOverride", targetDepth))
                 {
                     var unmarshaller = ProvisionedThroughputOverrideUnmarshaller.Instance;
-                    unmarshalledObject.ProvisionedThroughputOverride = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ProvisionedThroughputOverride = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

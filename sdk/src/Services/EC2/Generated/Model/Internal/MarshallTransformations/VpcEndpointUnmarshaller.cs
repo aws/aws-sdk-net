@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for VpcEndpoint Object
     /// </summary>  
-    public class VpcEndpointUnmarshaller : IUnmarshaller<VpcEndpoint, XmlUnmarshallerContext>, IUnmarshaller<VpcEndpoint, JsonUnmarshallerContext>
+    public class VpcEndpointUnmarshaller : IXmlUnmarshaller<VpcEndpoint, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -208,17 +208,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public VpcEndpoint Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static VpcEndpointUnmarshaller _instance = new VpcEndpointUnmarshaller();        
 

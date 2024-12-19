@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for GpuInfo Object
     /// </summary>  
-    public class GpuInfoUnmarshaller : IUnmarshaller<GpuInfo, XmlUnmarshallerContext>, IUnmarshaller<GpuInfo, JsonUnmarshallerContext>
+    public class GpuInfoUnmarshaller : IXmlUnmarshaller<GpuInfo, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -81,17 +81,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public GpuInfo Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static GpuInfoUnmarshaller _instance = new GpuInfoUnmarshaller();        
 

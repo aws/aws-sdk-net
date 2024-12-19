@@ -28,8 +28,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
 {
@@ -63,84 +63,88 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if NETCOREAPP3_1_OR_GREATER
+            ArrayBufferWriter<byte> arrayBufferWriter = new ArrayBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetCloudHsmClusterId())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetCloudHsmClusterId())
-                    {
-                        context.Writer.WritePropertyName("CloudHsmClusterId");
-                        context.Writer.Write(publicRequest.CloudHsmClusterId);
-                    }
-
-                    if(publicRequest.IsSetCustomKeyStoreName())
-                    {
-                        context.Writer.WritePropertyName("CustomKeyStoreName");
-                        context.Writer.Write(publicRequest.CustomKeyStoreName);
-                    }
-
-                    if(publicRequest.IsSetCustomKeyStoreType())
-                    {
-                        context.Writer.WritePropertyName("CustomKeyStoreType");
-                        context.Writer.Write(publicRequest.CustomKeyStoreType);
-                    }
-
-                    if(publicRequest.IsSetKeyStorePassword())
-                    {
-                        context.Writer.WritePropertyName("KeyStorePassword");
-                        context.Writer.Write(publicRequest.KeyStorePassword);
-                    }
-
-                    if(publicRequest.IsSetTrustAnchorCertificate())
-                    {
-                        context.Writer.WritePropertyName("TrustAnchorCertificate");
-                        context.Writer.Write(publicRequest.TrustAnchorCertificate);
-                    }
-
-                    if(publicRequest.IsSetXksProxyAuthenticationCredential())
-                    {
-                        context.Writer.WritePropertyName("XksProxyAuthenticationCredential");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = XksProxyAuthenticationCredentialTypeMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.XksProxyAuthenticationCredential, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetXksProxyConnectivity())
-                    {
-                        context.Writer.WritePropertyName("XksProxyConnectivity");
-                        context.Writer.Write(publicRequest.XksProxyConnectivity);
-                    }
-
-                    if(publicRequest.IsSetXksProxyUriEndpoint())
-                    {
-                        context.Writer.WritePropertyName("XksProxyUriEndpoint");
-                        context.Writer.Write(publicRequest.XksProxyUriEndpoint);
-                    }
-
-                    if(publicRequest.IsSetXksProxyUriPath())
-                    {
-                        context.Writer.WritePropertyName("XksProxyUriPath");
-                        context.Writer.Write(publicRequest.XksProxyUriPath);
-                    }
-
-                    if(publicRequest.IsSetXksProxyVpcEndpointServiceName())
-                    {
-                        context.Writer.WritePropertyName("XksProxyVpcEndpointServiceName");
-                        context.Writer.Write(publicRequest.XksProxyVpcEndpointServiceName);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("CloudHsmClusterId");
+                context.Writer.WriteStringValue(publicRequest.CloudHsmClusterId);
             }
+
+            if(publicRequest.IsSetCustomKeyStoreName())
+            {
+                context.Writer.WritePropertyName("CustomKeyStoreName");
+                context.Writer.WriteStringValue(publicRequest.CustomKeyStoreName);
+            }
+
+            if(publicRequest.IsSetCustomKeyStoreType())
+            {
+                context.Writer.WritePropertyName("CustomKeyStoreType");
+                context.Writer.WriteStringValue(publicRequest.CustomKeyStoreType);
+            }
+
+            if(publicRequest.IsSetKeyStorePassword())
+            {
+                context.Writer.WritePropertyName("KeyStorePassword");
+                context.Writer.WriteStringValue(publicRequest.KeyStorePassword);
+            }
+
+            if(publicRequest.IsSetTrustAnchorCertificate())
+            {
+                context.Writer.WritePropertyName("TrustAnchorCertificate");
+                context.Writer.WriteStringValue(publicRequest.TrustAnchorCertificate);
+            }
+
+            if(publicRequest.IsSetXksProxyAuthenticationCredential())
+            {
+                context.Writer.WritePropertyName("XksProxyAuthenticationCredential");
+                context.Writer.WriteStartObject();
+
+                var marshaller = XksProxyAuthenticationCredentialTypeMarshaller.Instance;
+                marshaller.Marshall(publicRequest.XksProxyAuthenticationCredential, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetXksProxyConnectivity())
+            {
+                context.Writer.WritePropertyName("XksProxyConnectivity");
+                context.Writer.WriteStringValue(publicRequest.XksProxyConnectivity);
+            }
+
+            if(publicRequest.IsSetXksProxyUriEndpoint())
+            {
+                context.Writer.WritePropertyName("XksProxyUriEndpoint");
+                context.Writer.WriteStringValue(publicRequest.XksProxyUriEndpoint);
+            }
+
+            if(publicRequest.IsSetXksProxyUriPath())
+            {
+                context.Writer.WritePropertyName("XksProxyUriPath");
+                context.Writer.WriteStringValue(publicRequest.XksProxyUriPath);
+            }
+
+            if(publicRequest.IsSetXksProxyVpcEndpointServiceName())
+            {
+                context.Writer.WritePropertyName("XksProxyVpcEndpointServiceName");
+                context.Writer.WriteStringValue(publicRequest.XksProxyVpcEndpointServiceName);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+#if NETCOREAPP3_1_OR_GREATER
+            request.Content = arrayBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

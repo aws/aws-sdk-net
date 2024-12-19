@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ClientConnectResponseOptions Object
     /// </summary>  
-    public class ClientConnectResponseOptionsUnmarshaller : IUnmarshaller<ClientConnectResponseOptions, XmlUnmarshallerContext>, IUnmarshaller<ClientConnectResponseOptions, JsonUnmarshallerContext>
+    public class ClientConnectResponseOptionsUnmarshaller : IXmlUnmarshaller<ClientConnectResponseOptions, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -82,17 +82,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ClientConnectResponseOptions Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ClientConnectResponseOptionsUnmarshaller _instance = new ClientConnectResponseOptionsUnmarshaller();        
 

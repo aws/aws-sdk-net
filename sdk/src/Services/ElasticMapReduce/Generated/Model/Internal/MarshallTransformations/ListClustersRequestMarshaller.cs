@@ -28,8 +28,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
@@ -63,48 +63,52 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if NETCOREAPP3_1_OR_GREATER
+            ArrayBufferWriter<byte> arrayBufferWriter = new ArrayBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetClusterStates())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("ClusterStates");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestClusterStatesListValue in publicRequest.ClusterStates)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetClusterStates())
-                    {
-                        context.Writer.WritePropertyName("ClusterStates");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestClusterStatesListValue in publicRequest.ClusterStates)
-                        {
-                                context.Writer.Write(publicRequestClusterStatesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetCreatedAfter())
-                    {
-                        context.Writer.WritePropertyName("CreatedAfter");
-                        context.Writer.Write(publicRequest.CreatedAfter.Value);
-                    }
-
-                    if(publicRequest.IsSetCreatedBefore())
-                    {
-                        context.Writer.WritePropertyName("CreatedBefore");
-                        context.Writer.Write(publicRequest.CreatedBefore.Value);
-                    }
-
-                    if(publicRequest.IsSetMarker())
-                    {
-                        context.Writer.WritePropertyName("Marker");
-                        context.Writer.Write(publicRequest.Marker);
-                    }
-
-                    writer.WriteObjectEnd();
+                        context.Writer.WriteStringValue(publicRequestClusterStatesListValue);
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetCreatedAfter())
+            {
+                context.Writer.WritePropertyName("CreatedAfter");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.CreatedAfter.Value)));
+            }
+
+            if(publicRequest.IsSetCreatedBefore())
+            {
+                context.Writer.WritePropertyName("CreatedBefore");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.CreatedBefore.Value)));
+            }
+
+            if(publicRequest.IsSetMarker())
+            {
+                context.Writer.WritePropertyName("Marker");
+                context.Writer.WriteStringValue(publicRequest.Marker);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+#if NETCOREAPP3_1_OR_GREATER
+            request.Content = arrayBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

@@ -28,8 +28,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
@@ -63,75 +63,79 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if NETCOREAPP3_1_OR_GREATER
+            ArrayBufferWriter<byte> arrayBufferWriter = new ArrayBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetClientToken())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetClientToken())
-                    {
-                        context.Writer.WritePropertyName("ClientToken");
-                        context.Writer.Write(publicRequest.ClientToken);
-                    }
-
-                    else if(!(publicRequest.IsSetClientToken()))
-                    {
-                        context.Writer.WritePropertyName("ClientToken");
-                        context.Writer.Write(Guid.NewGuid().ToString());
-                    }
-                    if(publicRequest.IsSetInputCompressionType())
-                    {
-                        context.Writer.WritePropertyName("InputCompressionType");
-                        context.Writer.Write(publicRequest.InputCompressionType);
-                    }
-
-                    if(publicRequest.IsSetInputFormat())
-                    {
-                        context.Writer.WritePropertyName("InputFormat");
-                        context.Writer.Write(publicRequest.InputFormat);
-                    }
-
-                    if(publicRequest.IsSetInputFormatOptions())
-                    {
-                        context.Writer.WritePropertyName("InputFormatOptions");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = InputFormatOptionsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.InputFormatOptions, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetS3BucketSource())
-                    {
-                        context.Writer.WritePropertyName("S3BucketSource");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = S3BucketSourceMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.S3BucketSource, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetTableCreationParameters())
-                    {
-                        context.Writer.WritePropertyName("TableCreationParameters");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TableCreationParametersMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.TableCreationParameters, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("ClientToken");
+                context.Writer.WriteStringValue(publicRequest.ClientToken);
             }
+
+            else if(!(publicRequest.IsSetClientToken()))
+            {
+                context.Writer.WritePropertyName("ClientToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
+            if(publicRequest.IsSetInputCompressionType())
+            {
+                context.Writer.WritePropertyName("InputCompressionType");
+                context.Writer.WriteStringValue(publicRequest.InputCompressionType);
+            }
+
+            if(publicRequest.IsSetInputFormat())
+            {
+                context.Writer.WritePropertyName("InputFormat");
+                context.Writer.WriteStringValue(publicRequest.InputFormat);
+            }
+
+            if(publicRequest.IsSetInputFormatOptions())
+            {
+                context.Writer.WritePropertyName("InputFormatOptions");
+                context.Writer.WriteStartObject();
+
+                var marshaller = InputFormatOptionsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.InputFormatOptions, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetS3BucketSource())
+            {
+                context.Writer.WritePropertyName("S3BucketSource");
+                context.Writer.WriteStartObject();
+
+                var marshaller = S3BucketSourceMarshaller.Instance;
+                marshaller.Marshall(publicRequest.S3BucketSource, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTableCreationParameters())
+            {
+                context.Writer.WritePropertyName("TableCreationParameters");
+                context.Writer.WriteStartObject();
+
+                var marshaller = TableCreationParametersMarshaller.Instance;
+                marshaller.Marshall(publicRequest.TableCreationParameters, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+#if NETCOREAPP3_1_OR_GREATER
+            request.Content = arrayBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidElasticIpException operation
     /// </summary>  
-    public class InvalidElasticIpExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidElasticIpException, XmlUnmarshallerContext>
+    public class InvalidElasticIpExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidElasticIpException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

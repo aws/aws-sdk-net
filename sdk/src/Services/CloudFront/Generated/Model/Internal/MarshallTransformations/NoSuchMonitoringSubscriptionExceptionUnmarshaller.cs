@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for NoSuchMonitoringSubscriptionException operation
     /// </summary>  
-    public class NoSuchMonitoringSubscriptionExceptionUnmarshaller : IErrorResponseUnmarshaller<NoSuchMonitoringSubscriptionException, XmlUnmarshallerContext>
+    public class NoSuchMonitoringSubscriptionExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<NoSuchMonitoringSubscriptionException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

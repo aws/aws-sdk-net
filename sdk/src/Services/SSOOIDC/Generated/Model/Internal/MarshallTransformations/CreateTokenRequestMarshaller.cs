@@ -28,8 +28,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SSOOIDC.Model.Internal.MarshallTransformations
 {
@@ -61,78 +61,82 @@ namespace Amazon.SSOOIDC.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/token";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if NETCOREAPP3_1_OR_GREATER
+            ArrayBufferWriter<byte> arrayBufferWriter = new ArrayBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetClientId())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetClientId())
-                    {
-                        context.Writer.WritePropertyName("clientId");
-                        context.Writer.Write(publicRequest.ClientId);
-                    }
-
-                    if(publicRequest.IsSetClientSecret())
-                    {
-                        context.Writer.WritePropertyName("clientSecret");
-                        context.Writer.Write(publicRequest.ClientSecret);
-                    }
-
-                    if(publicRequest.IsSetCode())
-                    {
-                        context.Writer.WritePropertyName("code");
-                        context.Writer.Write(publicRequest.Code);
-                    }
-
-                    if(publicRequest.IsSetCodeVerifier())
-                    {
-                        context.Writer.WritePropertyName("codeVerifier");
-                        context.Writer.Write(publicRequest.CodeVerifier);
-                    }
-
-                    if(publicRequest.IsSetDeviceCode())
-                    {
-                        context.Writer.WritePropertyName("deviceCode");
-                        context.Writer.Write(publicRequest.DeviceCode);
-                    }
-
-                    if(publicRequest.IsSetGrantType())
-                    {
-                        context.Writer.WritePropertyName("grantType");
-                        context.Writer.Write(publicRequest.GrantType);
-                    }
-
-                    if(publicRequest.IsSetRedirectUri())
-                    {
-                        context.Writer.WritePropertyName("redirectUri");
-                        context.Writer.Write(publicRequest.RedirectUri);
-                    }
-
-                    if(publicRequest.IsSetRefreshToken())
-                    {
-                        context.Writer.WritePropertyName("refreshToken");
-                        context.Writer.Write(publicRequest.RefreshToken);
-                    }
-
-                    if(publicRequest.IsSetScope())
-                    {
-                        context.Writer.WritePropertyName("scope");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestScopeListValue in publicRequest.Scope)
-                        {
-                                context.Writer.Write(publicRequestScopeListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("clientId");
+                context.Writer.WriteStringValue(publicRequest.ClientId);
             }
+
+            if(publicRequest.IsSetClientSecret())
+            {
+                context.Writer.WritePropertyName("clientSecret");
+                context.Writer.WriteStringValue(publicRequest.ClientSecret);
+            }
+
+            if(publicRequest.IsSetCode())
+            {
+                context.Writer.WritePropertyName("code");
+                context.Writer.WriteStringValue(publicRequest.Code);
+            }
+
+            if(publicRequest.IsSetCodeVerifier())
+            {
+                context.Writer.WritePropertyName("codeVerifier");
+                context.Writer.WriteStringValue(publicRequest.CodeVerifier);
+            }
+
+            if(publicRequest.IsSetDeviceCode())
+            {
+                context.Writer.WritePropertyName("deviceCode");
+                context.Writer.WriteStringValue(publicRequest.DeviceCode);
+            }
+
+            if(publicRequest.IsSetGrantType())
+            {
+                context.Writer.WritePropertyName("grantType");
+                context.Writer.WriteStringValue(publicRequest.GrantType);
+            }
+
+            if(publicRequest.IsSetRedirectUri())
+            {
+                context.Writer.WritePropertyName("redirectUri");
+                context.Writer.WriteStringValue(publicRequest.RedirectUri);
+            }
+
+            if(publicRequest.IsSetRefreshToken())
+            {
+                context.Writer.WritePropertyName("refreshToken");
+                context.Writer.WriteStringValue(publicRequest.RefreshToken);
+            }
+
+            if(publicRequest.IsSetScope())
+            {
+                context.Writer.WritePropertyName("scope");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestScopeListValue in publicRequest.Scope)
+                {
+                        context.Writer.WriteStringValue(publicRequestScopeListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+#if NETCOREAPP3_1_OR_GREATER
+            request.Content = arrayBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

@@ -35,7 +35,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InternalServiceException operation
     /// </summary>  
-    public class InternalServiceExceptionUnmarshaller : IErrorResponseUnmarshaller<InternalServiceException, XmlUnmarshallerContext>
+    public class InternalServiceExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InternalServiceException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

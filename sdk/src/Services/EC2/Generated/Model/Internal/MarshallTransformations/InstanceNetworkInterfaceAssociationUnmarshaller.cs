@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InstanceNetworkInterfaceAssociation Object
     /// </summary>  
-    public class InstanceNetworkInterfaceAssociationUnmarshaller : IUnmarshaller<InstanceNetworkInterfaceAssociation, XmlUnmarshallerContext>, IUnmarshaller<InstanceNetworkInterfaceAssociation, JsonUnmarshallerContext>
+    public class InstanceNetworkInterfaceAssociationUnmarshaller : IXmlUnmarshaller<InstanceNetworkInterfaceAssociation, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -94,17 +94,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public InstanceNetworkInterfaceAssociation Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static InstanceNetworkInterfaceAssociationUnmarshaller _instance = new InstanceNetworkInterfaceAssociationUnmarshaller();        
 

@@ -10,6 +10,8 @@ using System.Globalization;
 using Amazon.Runtime.Documents;
 using Amazon.Runtime.Documents.Internal.Transform;
 using Amazon.Util;
+using System.Text.Json;
+using System.IO;
 
 namespace AWSSDK_DotNet.UnitTests.TestTools
 {
@@ -29,16 +31,16 @@ namespace AWSSDK_DotNet.UnitTests.TestTools
         public string Execute()
         {
             this._tcr = new TypeCircularReference<string>();
-            JsonWriter writer = new JsonWriter();
-            writer.PrettyPrint = true;
+            var stream = new MemoryStream();
+            Utf8JsonWriter writer = new Utf8JsonWriter(stream);
 
             WriteStructure(writer, null, this._rootStructure);
-
-            var json = writer.ToString();
+            writer.Flush();
+            var json = Encoding.UTF8.GetString(stream.ToArray());
             return json;
         }
 
-        private void Write(JsonWriter writer, Member member, Shape shape)
+        private void Write(Utf8JsonWriter writer, Member member, Shape shape)
         {
             if (shape.IsDocument)
             {
@@ -57,32 +59,32 @@ namespace AWSSDK_DotNet.UnitTests.TestTools
             else if (shape.IsEnum)
             {
                 var enumerationWrapper = this._model.Enumerations(true).First(x => x.Name == shape.Name);
-                writer.Write(enumerationWrapper.EnumerationValues.ElementAt(0).MarshallName);
+                writer.WriteStringValue(enumerationWrapper.EnumerationValues.ElementAt(0).MarshallName);
             }
             else if (shape.IsString)
-                writer.Write(shape.Name + "_Value");
+                writer.WriteStringValue(shape.Name + "_Value");
             else if (shape.IsInt)
-                writer.Write(int.MaxValue);
+                writer.WriteNumberValue(int.MaxValue);
             else if (shape.IsLong)
-                writer.Write(long.MaxValue);
+                writer.WriteNumberValue(long.MaxValue);
             else if (shape.IsDouble)
-                writer.Write(double.MaxValue);
+                writer.WriteNumberValue(double.MaxValue);
             else if (shape.IsFloat)
-                writer.Write(float.MaxValue);
+                writer.WriteNumberValue(float.MaxValue);
             else if (shape.IsDateTime)
             {
-                writer.Write(ValidatorUtils.GetTestDate(member, shape));
+                writer.WriteStringValue(ValidatorUtils.GetTestDate(member, shape));
             }
             else if (shape.IsBoolean)
-                writer.Write(true);
+                writer.WriteBooleanValue(true);
             else if (shape.IsMemoryStream)
-                writer.Write(Constants.DEFAULT_BLOB_ENCODED);
+                writer.WriteStringValue(Constants.DEFAULT_BLOB_ENCODED);
             else
                 throw new Exception("Unknown Type for shape " + shape.Name);
         }
 
 
-        private void WriteStructure(JsonWriter writer, Member memberWithComplexShape, Shape structure)
+        private void WriteStructure(Utf8JsonWriter writer, Member memberWithComplexShape, Shape structure)
         {
             if (structure.IsDocument)
             {
@@ -94,8 +96,8 @@ namespace AWSSDK_DotNet.UnitTests.TestTools
             if (!pushed)
             {
                 // Circular reference found. Closing the structure
-                writer.WriteObjectStart();
-                writer.WriteObjectEnd();
+                writer.WriteStartObject();
+                writer.WriteEndObject();
                 return;
             }
 
@@ -105,7 +107,7 @@ namespace AWSSDK_DotNet.UnitTests.TestTools
                 return;
             }
 
-            writer.WriteObjectStart();
+            writer.WriteStartObject();
 
             foreach (var member in structure.Members)
             {
@@ -116,21 +118,21 @@ namespace AWSSDK_DotNet.UnitTests.TestTools
                     string.Equals(member.OverrideDataType.Unmarshaller, "NullableDateTimeEpochLongMillisecondsUnmarshaller"))
                 )
                 {
-                    writer.Write(ValidatorUtils.GetTestEpochTime().TotalMilliseconds);
+                    writer.WriteNumberValue(ValidatorUtils.GetTestEpochTime().TotalMilliseconds);
                 }
                 else if (member.OverrideDataType != null && (
                     string.Equals(member.OverrideDataType.Unmarshaller, "Amazon.Runtime.Internal.Transform.DateTimeUnmarshaller") || 
                     string.Equals(member.OverrideDataType.Unmarshaller, "Amazon.Runtime.Internal.Transform.NullableDateTimeUnmarshaller"))
                 )
                 {
-                    writer.Write(Constants.DEFAULT_DATE.ToString(AWSSDKUtils.ISO8601DateFormat, CultureInfo.InvariantCulture));
+                    writer.WriteStringValue(Constants.DEFAULT_DATE.ToString(AWSSDKUtils.ISO8601DateFormat, CultureInfo.InvariantCulture));
                 }
                 else if (member.OverrideDataType != null && (
                     string.Equals(member.OverrideDataType.Unmarshaller, "Amazon.Runtime.Internal.Transform.DecimalUnmarshaller") ||
                     string.Equals(member.OverrideDataType.Unmarshaller, "Amazon.Runtime.Internal.Transform.NullableDecimalUnmarshaller"))
                 )
                 {
-                    writer.Write(Constants.DEFAULT_DECIMAL.ToString(CultureInfo.InvariantCulture));
+                    writer.WriteStringValue(Constants.DEFAULT_DECIMAL.ToString(CultureInfo.InvariantCulture));
                 }
                 else
                 {
@@ -138,17 +140,17 @@ namespace AWSSDK_DotNet.UnitTests.TestTools
                 }
             }
 
-            writer.WriteObjectEnd();
+            writer.WriteEndObject();
 
             if (pushed)
                 this._tcr.Pop();
         }
 
 
-        private void WriteArray(JsonWriter writer, Member member, Shape array)
+        private void WriteArray(Utf8JsonWriter writer, Member member, Shape array)
         {
 
-            writer.WriteArrayStart();
+            writer.WriteStartArray();
 
             var listShape = array.ListShape;
             if (!listShape.IsStructure || !this._tcr.Contains(listShape.Name))
@@ -159,13 +161,13 @@ namespace AWSSDK_DotNet.UnitTests.TestTools
                 }
             }
 
-            writer.WriteArrayEnd();
+            writer.WriteEndArray();
         }
 
-        private void WriteMap(JsonWriter writer, Member member, Shape map)
+        private void WriteMap(Utf8JsonWriter writer, Member member, Shape map)
         {
 
-            writer.WriteObjectStart();
+            writer.WriteStartObject();
 
             var mapShape = map.ValueShape;
             if (!mapShape.IsStructure || !this._tcr.Contains(mapShape.Name))
@@ -177,7 +179,7 @@ namespace AWSSDK_DotNet.UnitTests.TestTools
                 }
             }
 
-            writer.WriteObjectEnd();
+            writer.WriteEndObject();
         }
 
         /// <summary>

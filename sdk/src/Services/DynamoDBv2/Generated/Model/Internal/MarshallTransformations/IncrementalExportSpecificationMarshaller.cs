@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetExportFromTime())
             {
                 context.Writer.WritePropertyName("ExportFromTime");
-                context.Writer.Write(requestObject.ExportFromTime.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.ExportFromTime.Value)));
             }
 
             if(requestObject.IsSetExportToTime())
             {
                 context.Writer.WritePropertyName("ExportToTime");
-                context.Writer.Write(requestObject.ExportToTime.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.ExportToTime.Value)));
             }
 
             if(requestObject.IsSetExportViewType())
             {
                 context.Writer.WritePropertyName("ExportViewType");
-                context.Writer.Write(requestObject.ExportViewType);
+                context.Writer.WriteStringValue(requestObject.ExportViewType);
             }
 
         }

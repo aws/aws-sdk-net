@@ -28,8 +28,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
@@ -63,36 +63,40 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if NETCOREAPP3_1_OR_GREATER
+            ArrayBufferWriter<byte> arrayBufferWriter = new ArrayBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetJobFlowIds())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("JobFlowIds");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestJobFlowIdsListValue in publicRequest.JobFlowIds)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetJobFlowIds())
-                    {
-                        context.Writer.WritePropertyName("JobFlowIds");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestJobFlowIdsListValue in publicRequest.JobFlowIds)
-                        {
-                                context.Writer.Write(publicRequestJobFlowIdsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetKeepJobFlowAliveWhenNoSteps())
-                    {
-                        context.Writer.WritePropertyName("KeepJobFlowAliveWhenNoSteps");
-                        context.Writer.Write(publicRequest.KeepJobFlowAliveWhenNoSteps.Value);
-                    }
-
-                    writer.WriteObjectEnd();
+                        context.Writer.WriteStringValue(publicRequestJobFlowIdsListValue);
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetKeepJobFlowAliveWhenNoSteps())
+            {
+                context.Writer.WritePropertyName("KeepJobFlowAliveWhenNoSteps");
+                context.Writer.WriteBooleanValue(publicRequest.KeepJobFlowAliveWhenNoSteps.Value);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+#if NETCOREAPP3_1_OR_GREATER
+            request.Content = arrayBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

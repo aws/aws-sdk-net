@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for LakeFormationScopeUnion Object
     /// </summary>  
-    public class LakeFormationScopeUnionUnmarshaller : IUnmarshaller<LakeFormationScopeUnion, XmlUnmarshallerContext>, IUnmarshaller<LakeFormationScopeUnion, JsonUnmarshallerContext>
+    public class LakeFormationScopeUnionUnmarshaller : IXmlUnmarshaller<LakeFormationScopeUnion, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -70,17 +70,6 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public LakeFormationScopeUnion Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static LakeFormationScopeUnionUnmarshaller _instance = new LakeFormationScopeUnionUnmarshaller();        
 

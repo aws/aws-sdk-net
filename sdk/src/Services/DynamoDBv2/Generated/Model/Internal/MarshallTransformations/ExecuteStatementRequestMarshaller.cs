@@ -28,8 +28,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
@@ -63,71 +63,75 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if NETCOREAPP3_1_OR_GREATER
+            ArrayBufferWriter<byte> arrayBufferWriter = new ArrayBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetConsistentRead())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetConsistentRead())
-                    {
-                        context.Writer.WritePropertyName("ConsistentRead");
-                        context.Writer.Write(publicRequest.ConsistentRead.Value);
-                    }
-
-                    if(publicRequest.IsSetLimit())
-                    {
-                        context.Writer.WritePropertyName("Limit");
-                        context.Writer.Write(publicRequest.Limit.Value);
-                    }
-
-                    if(publicRequest.IsSetNextToken())
-                    {
-                        context.Writer.WritePropertyName("NextToken");
-                        context.Writer.Write(publicRequest.NextToken);
-                    }
-
-                    if(publicRequest.IsSetParameters())
-                    {
-                        context.Writer.WritePropertyName("Parameters");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestParametersListValue in publicRequest.Parameters)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = AttributeValueMarshaller.Instance;
-                            marshaller.Marshall(publicRequestParametersListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetReturnConsumedCapacity())
-                    {
-                        context.Writer.WritePropertyName("ReturnConsumedCapacity");
-                        context.Writer.Write(publicRequest.ReturnConsumedCapacity);
-                    }
-
-                    if(publicRequest.IsSetReturnValuesOnConditionCheckFailure())
-                    {
-                        context.Writer.WritePropertyName("ReturnValuesOnConditionCheckFailure");
-                        context.Writer.Write(publicRequest.ReturnValuesOnConditionCheckFailure);
-                    }
-
-                    if(publicRequest.IsSetStatement())
-                    {
-                        context.Writer.WritePropertyName("Statement");
-                        context.Writer.Write(publicRequest.Statement);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("ConsistentRead");
+                context.Writer.WriteBooleanValue(publicRequest.ConsistentRead.Value);
             }
+
+            if(publicRequest.IsSetLimit())
+            {
+                context.Writer.WritePropertyName("Limit");
+                context.Writer.WriteNumberValue(publicRequest.Limit.Value);
+            }
+
+            if(publicRequest.IsSetNextToken())
+            {
+                context.Writer.WritePropertyName("NextToken");
+                context.Writer.WriteStringValue(publicRequest.NextToken);
+            }
+
+            if(publicRequest.IsSetParameters())
+            {
+                context.Writer.WritePropertyName("Parameters");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestParametersListValue in publicRequest.Parameters)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = AttributeValueMarshaller.Instance;
+                    marshaller.Marshall(publicRequestParametersListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetReturnConsumedCapacity())
+            {
+                context.Writer.WritePropertyName("ReturnConsumedCapacity");
+                context.Writer.WriteStringValue(publicRequest.ReturnConsumedCapacity);
+            }
+
+            if(publicRequest.IsSetReturnValuesOnConditionCheckFailure())
+            {
+                context.Writer.WritePropertyName("ReturnValuesOnConditionCheckFailure");
+                context.Writer.WriteStringValue(publicRequest.ReturnValuesOnConditionCheckFailure);
+            }
+
+            if(publicRequest.IsSetStatement())
+            {
+                context.Writer.WritePropertyName("Statement");
+                context.Writer.WriteStringValue(publicRequest.Statement);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+#if NETCOREAPP3_1_OR_GREATER
+            request.Content = arrayBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

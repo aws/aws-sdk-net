@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TooManyQueryStringsInOriginRequestPolicyException operation
     /// </summary>  
-    public class TooManyQueryStringsInOriginRequestPolicyExceptionUnmarshaller : IErrorResponseUnmarshaller<TooManyQueryStringsInOriginRequestPolicyException, XmlUnmarshallerContext>
+    public class TooManyQueryStringsInOriginRequestPolicyExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<TooManyQueryStringsInOriginRequestPolicyException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ExportTaskS3Location Object
     /// </summary>  
-    public class ExportTaskS3LocationUnmarshaller : IUnmarshaller<ExportTaskS3Location, XmlUnmarshallerContext>, IUnmarshaller<ExportTaskS3Location, JsonUnmarshallerContext>
+    public class ExportTaskS3LocationUnmarshaller : IXmlUnmarshaller<ExportTaskS3Location, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ExportTaskS3Location Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ExportTaskS3LocationUnmarshaller _instance = new ExportTaskS3LocationUnmarshaller();        
 

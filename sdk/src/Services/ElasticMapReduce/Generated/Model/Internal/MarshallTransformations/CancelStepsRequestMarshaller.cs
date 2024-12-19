@@ -28,8 +28,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
@@ -63,42 +63,46 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if NETCOREAPP3_1_OR_GREATER
+            ArrayBufferWriter<byte> arrayBufferWriter = new ArrayBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetClusterId())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetClusterId())
-                    {
-                        context.Writer.WritePropertyName("ClusterId");
-                        context.Writer.Write(publicRequest.ClusterId);
-                    }
-
-                    if(publicRequest.IsSetStepCancellationOption())
-                    {
-                        context.Writer.WritePropertyName("StepCancellationOption");
-                        context.Writer.Write(publicRequest.StepCancellationOption);
-                    }
-
-                    if(publicRequest.IsSetStepIds())
-                    {
-                        context.Writer.WritePropertyName("StepIds");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestStepIdsListValue in publicRequest.StepIds)
-                        {
-                                context.Writer.Write(publicRequestStepIdsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("ClusterId");
+                context.Writer.WriteStringValue(publicRequest.ClusterId);
             }
+
+            if(publicRequest.IsSetStepCancellationOption())
+            {
+                context.Writer.WritePropertyName("StepCancellationOption");
+                context.Writer.WriteStringValue(publicRequest.StepCancellationOption);
+            }
+
+            if(publicRequest.IsSetStepIds())
+            {
+                context.Writer.WritePropertyName("StepIds");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestStepIdsListValue in publicRequest.StepIds)
+                {
+                        context.Writer.WriteStringValue(publicRequestStepIdsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+#if NETCOREAPP3_1_OR_GREATER
+            request.Content = arrayBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

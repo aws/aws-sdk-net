@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AutoScalingPolicyDescription Object
     /// </summary>  
-    public class AutoScalingPolicyDescriptionUnmarshaller : IUnmarshaller<AutoScalingPolicyDescription, XmlUnmarshallerContext>, IUnmarshaller<AutoScalingPolicyDescription, JsonUnmarshallerContext>
+    public class AutoScalingPolicyDescriptionUnmarshaller : IJsonUnmarshaller<AutoScalingPolicyDescription, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AutoScalingPolicyDescription IUnmarshaller<AutoScalingPolicyDescription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AutoScalingPolicyDescription Unmarshall(JsonUnmarshallerContext context)
+        public AutoScalingPolicyDescription Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AutoScalingPolicyDescription unmarshalledObject = new AutoScalingPolicyDescription();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Constraints", targetDepth))
                 {
                     var unmarshaller = ScalingConstraintsUnmarshaller.Instance;
-                    unmarshalledObject.Constraints = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Constraints = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Rules", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ScalingRule, ScalingRuleUnmarshaller>(ScalingRuleUnmarshaller.Instance);
-                    unmarshalledObject.Rules = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<ScalingRule, ScalingRuleUnmarshaller>(ScalingRuleUnmarshaller.Instance);
+                    unmarshalledObject.Rules = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = AutoScalingPolicyStatusUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

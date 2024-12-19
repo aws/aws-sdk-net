@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CopyToRegionDisabledException operation
     /// </summary>  
-    public class CopyToRegionDisabledExceptionUnmarshaller : IErrorResponseUnmarshaller<CopyToRegionDisabledException, XmlUnmarshallerContext>
+    public class CopyToRegionDisabledExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<CopyToRegionDisabledException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

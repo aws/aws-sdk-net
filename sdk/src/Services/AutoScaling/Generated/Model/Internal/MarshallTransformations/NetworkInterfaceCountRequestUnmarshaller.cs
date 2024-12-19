@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for NetworkInterfaceCountRequest Object
     /// </summary>  
-    public class NetworkInterfaceCountRequestUnmarshaller : IUnmarshaller<NetworkInterfaceCountRequest, XmlUnmarshallerContext>, IUnmarshaller<NetworkInterfaceCountRequest, JsonUnmarshallerContext>
+    public class NetworkInterfaceCountRequestUnmarshaller : IXmlUnmarshaller<NetworkInterfaceCountRequest, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public NetworkInterfaceCountRequest Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static NetworkInterfaceCountRequestUnmarshaller _instance = new NetworkInterfaceCountRequestUnmarshaller();        
 

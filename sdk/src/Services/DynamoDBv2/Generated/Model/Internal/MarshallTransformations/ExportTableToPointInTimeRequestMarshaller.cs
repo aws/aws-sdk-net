@@ -28,8 +28,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
@@ -63,95 +63,99 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if NETCOREAPP3_1_OR_GREATER
+            ArrayBufferWriter<byte> arrayBufferWriter = new ArrayBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetClientToken())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetClientToken())
-                    {
-                        context.Writer.WritePropertyName("ClientToken");
-                        context.Writer.Write(publicRequest.ClientToken);
-                    }
-
-                    else if(!(publicRequest.IsSetClientToken()))
-                    {
-                        context.Writer.WritePropertyName("ClientToken");
-                        context.Writer.Write(Guid.NewGuid().ToString());
-                    }
-                    if(publicRequest.IsSetExportFormat())
-                    {
-                        context.Writer.WritePropertyName("ExportFormat");
-                        context.Writer.Write(publicRequest.ExportFormat);
-                    }
-
-                    if(publicRequest.IsSetExportTime())
-                    {
-                        context.Writer.WritePropertyName("ExportTime");
-                        context.Writer.Write(publicRequest.ExportTime.Value);
-                    }
-
-                    if(publicRequest.IsSetExportType())
-                    {
-                        context.Writer.WritePropertyName("ExportType");
-                        context.Writer.Write(publicRequest.ExportType);
-                    }
-
-                    if(publicRequest.IsSetIncrementalExportSpecification())
-                    {
-                        context.Writer.WritePropertyName("IncrementalExportSpecification");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = IncrementalExportSpecificationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.IncrementalExportSpecification, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetS3Bucket())
-                    {
-                        context.Writer.WritePropertyName("S3Bucket");
-                        context.Writer.Write(publicRequest.S3Bucket);
-                    }
-
-                    if(publicRequest.IsSetS3BucketOwner())
-                    {
-                        context.Writer.WritePropertyName("S3BucketOwner");
-                        context.Writer.Write(publicRequest.S3BucketOwner);
-                    }
-
-                    if(publicRequest.IsSetS3Prefix())
-                    {
-                        context.Writer.WritePropertyName("S3Prefix");
-                        context.Writer.Write(publicRequest.S3Prefix);
-                    }
-
-                    if(publicRequest.IsSetS3SseAlgorithm())
-                    {
-                        context.Writer.WritePropertyName("S3SseAlgorithm");
-                        context.Writer.Write(publicRequest.S3SseAlgorithm);
-                    }
-
-                    if(publicRequest.IsSetS3SseKmsKeyId())
-                    {
-                        context.Writer.WritePropertyName("S3SseKmsKeyId");
-                        context.Writer.Write(publicRequest.S3SseKmsKeyId);
-                    }
-
-                    if(publicRequest.IsSetTableArn())
-                    {
-                        context.Writer.WritePropertyName("TableArn");
-                        context.Writer.Write(publicRequest.TableArn);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("ClientToken");
+                context.Writer.WriteStringValue(publicRequest.ClientToken);
             }
+
+            else if(!(publicRequest.IsSetClientToken()))
+            {
+                context.Writer.WritePropertyName("ClientToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
+            if(publicRequest.IsSetExportFormat())
+            {
+                context.Writer.WritePropertyName("ExportFormat");
+                context.Writer.WriteStringValue(publicRequest.ExportFormat);
+            }
+
+            if(publicRequest.IsSetExportTime())
+            {
+                context.Writer.WritePropertyName("ExportTime");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.ExportTime.Value)));
+            }
+
+            if(publicRequest.IsSetExportType())
+            {
+                context.Writer.WritePropertyName("ExportType");
+                context.Writer.WriteStringValue(publicRequest.ExportType);
+            }
+
+            if(publicRequest.IsSetIncrementalExportSpecification())
+            {
+                context.Writer.WritePropertyName("IncrementalExportSpecification");
+                context.Writer.WriteStartObject();
+
+                var marshaller = IncrementalExportSpecificationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.IncrementalExportSpecification, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetS3Bucket())
+            {
+                context.Writer.WritePropertyName("S3Bucket");
+                context.Writer.WriteStringValue(publicRequest.S3Bucket);
+            }
+
+            if(publicRequest.IsSetS3BucketOwner())
+            {
+                context.Writer.WritePropertyName("S3BucketOwner");
+                context.Writer.WriteStringValue(publicRequest.S3BucketOwner);
+            }
+
+            if(publicRequest.IsSetS3Prefix())
+            {
+                context.Writer.WritePropertyName("S3Prefix");
+                context.Writer.WriteStringValue(publicRequest.S3Prefix);
+            }
+
+            if(publicRequest.IsSetS3SseAlgorithm())
+            {
+                context.Writer.WritePropertyName("S3SseAlgorithm");
+                context.Writer.WriteStringValue(publicRequest.S3SseAlgorithm);
+            }
+
+            if(publicRequest.IsSetS3SseKmsKeyId())
+            {
+                context.Writer.WritePropertyName("S3SseKmsKeyId");
+                context.Writer.WriteStringValue(publicRequest.S3SseKmsKeyId);
+            }
+
+            if(publicRequest.IsSetTableArn())
+            {
+                context.Writer.WritePropertyName("TableArn");
+                context.Writer.WriteStringValue(publicRequest.TableArn);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+#if NETCOREAPP3_1_OR_GREATER
+            request.Content = arrayBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

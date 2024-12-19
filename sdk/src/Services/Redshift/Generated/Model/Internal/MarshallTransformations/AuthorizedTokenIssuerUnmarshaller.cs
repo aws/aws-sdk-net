@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for AuthorizedTokenIssuer Object
     /// </summary>  
-    public class AuthorizedTokenIssuerUnmarshaller : IUnmarshaller<AuthorizedTokenIssuer, XmlUnmarshallerContext>, IUnmarshaller<AuthorizedTokenIssuer, JsonUnmarshallerContext>
+    public class AuthorizedTokenIssuerUnmarshaller : IXmlUnmarshaller<AuthorizedTokenIssuer, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -81,17 +81,6 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public AuthorizedTokenIssuer Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static AuthorizedTokenIssuerUnmarshaller _instance = new AuthorizedTokenIssuerUnmarshaller();        
 

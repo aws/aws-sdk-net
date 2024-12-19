@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBlockPublicSecurityGroupRules())
             {
                 context.Writer.WritePropertyName("BlockPublicSecurityGroupRules");
-                context.Writer.Write(requestObject.BlockPublicSecurityGroupRules.Value);
+                context.Writer.WriteBooleanValue(requestObject.BlockPublicSecurityGroupRules.Value);
             }
 
             if(requestObject.IsSetPermittedPublicSecurityGroupRuleRanges())
             {
                 context.Writer.WritePropertyName("PermittedPublicSecurityGroupRuleRanges");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectPermittedPublicSecurityGroupRuleRangesListValue in requestObject.PermittedPublicSecurityGroupRuleRanges)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = PortRangeMarshaller.Instance;
                     marshaller.Marshall(requestObjectPermittedPublicSecurityGroupRuleRangesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

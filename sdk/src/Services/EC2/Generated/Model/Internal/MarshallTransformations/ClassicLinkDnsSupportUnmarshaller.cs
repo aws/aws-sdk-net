@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ClassicLinkDnsSupport Object
     /// </summary>  
-    public class ClassicLinkDnsSupportUnmarshaller : IUnmarshaller<ClassicLinkDnsSupport, XmlUnmarshallerContext>, IUnmarshaller<ClassicLinkDnsSupport, JsonUnmarshallerContext>
+    public class ClassicLinkDnsSupportUnmarshaller : IXmlUnmarshaller<ClassicLinkDnsSupport, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ClassicLinkDnsSupport Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ClassicLinkDnsSupportUnmarshaller _instance = new ClassicLinkDnsSupportUnmarshaller();        
 

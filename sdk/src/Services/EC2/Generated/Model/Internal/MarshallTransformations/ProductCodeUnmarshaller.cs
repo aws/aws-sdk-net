@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ProductCode Object
     /// </summary>  
-    public class ProductCodeUnmarshaller : IUnmarshaller<ProductCode, XmlUnmarshallerContext>, IUnmarshaller<ProductCode, JsonUnmarshallerContext>
+    public class ProductCodeUnmarshaller : IXmlUnmarshaller<ProductCode, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ProductCode Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ProductCodeUnmarshaller _instance = new ProductCodeUnmarshaller();        
 

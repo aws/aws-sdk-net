@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for PathStatement Object
     /// </summary>  
-    public class PathStatementUnmarshaller : IUnmarshaller<PathStatement, XmlUnmarshallerContext>, IUnmarshaller<PathStatement, JsonUnmarshallerContext>
+    public class PathStatementUnmarshaller : IXmlUnmarshaller<PathStatement, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public PathStatement Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static PathStatementUnmarshaller _instance = new PathStatementUnmarshaller();        
 

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 {
@@ -51,42 +49,42 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAudioPackingMode())
             {
                 context.Writer.WritePropertyName("AudioPackingMode");
-                context.Writer.Write(requestObject.AudioPackingMode);
+                context.Writer.WriteStringValue(requestObject.AudioPackingMode);
             }
 
             if(requestObject.IsSetBitRate())
             {
                 context.Writer.WritePropertyName("BitRate");
-                context.Writer.Write(requestObject.BitRate);
+                context.Writer.WriteStringValue(requestObject.BitRate);
             }
 
             if(requestObject.IsSetChannels())
             {
                 context.Writer.WritePropertyName("Channels");
-                context.Writer.Write(requestObject.Channels);
+                context.Writer.WriteStringValue(requestObject.Channels);
             }
 
             if(requestObject.IsSetCodec())
             {
                 context.Writer.WritePropertyName("Codec");
-                context.Writer.Write(requestObject.Codec);
+                context.Writer.WriteStringValue(requestObject.Codec);
             }
 
             if(requestObject.IsSetCodecOptions())
             {
                 context.Writer.WritePropertyName("CodecOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AudioCodecOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.CodecOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSampleRate())
             {
                 context.Writer.WritePropertyName("SampleRate");
-                context.Writer.Write(requestObject.SampleRate);
+                context.Writer.WriteStringValue(requestObject.SampleRate);
             }
 
         }

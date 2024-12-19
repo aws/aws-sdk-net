@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             if(requestObject.IsSetVolumeSpecification())
             {
                 context.Writer.WritePropertyName("VolumeSpecification");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = VolumeSpecificationMarshaller.Instance;
                 marshaller.Marshall(requestObject.VolumeSpecification, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVolumesPerInstance())
             {
                 context.Writer.WritePropertyName("VolumesPerInstance");
-                context.Writer.Write(requestObject.VolumesPerInstance.Value);
+                context.Writer.WriteNumberValue(requestObject.VolumesPerInstance.Value);
             }
 
         }

@@ -29,8 +29,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using Amazon.Util;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
 {
@@ -47,15 +47,15 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
             CreateCustomKeyStoreResponse response = new CreateCustomKeyStoreResponse();
-
-            context.Read();
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CustomKeyStoreId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.CustomKeyStoreId = unmarshaller.Unmarshall(context);
+                    response.CustomKeyStoreId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -72,7 +72,8 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context, ref reader);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
@@ -81,73 +82,74 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
+                StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy);
                 if (errorResponse.Code != null && errorResponse.Code.Equals("CloudHsmClusterInUseException"))
                 {
-                    return CloudHsmClusterInUseExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return CloudHsmClusterInUseExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("CloudHsmClusterInvalidConfigurationException"))
                 {
-                    return CloudHsmClusterInvalidConfigurationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return CloudHsmClusterInvalidConfigurationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("CloudHsmClusterNotActiveException"))
                 {
-                    return CloudHsmClusterNotActiveExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return CloudHsmClusterNotActiveExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("CloudHsmClusterNotFoundException"))
                 {
-                    return CloudHsmClusterNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return CloudHsmClusterNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("CustomKeyStoreNameInUseException"))
                 {
-                    return CustomKeyStoreNameInUseExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return CustomKeyStoreNameInUseExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("IncorrectTrustAnchorException"))
                 {
-                    return IncorrectTrustAnchorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return IncorrectTrustAnchorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("KMSInternalException"))
                 {
-                    return KMSInternalExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return KMSInternalExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
                 {
-                    return LimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return LimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("XksProxyIncorrectAuthenticationCredentialException"))
                 {
-                    return XksProxyIncorrectAuthenticationCredentialExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return XksProxyIncorrectAuthenticationCredentialExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("XksProxyInvalidConfigurationException"))
                 {
-                    return XksProxyInvalidConfigurationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return XksProxyInvalidConfigurationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("XksProxyInvalidResponseException"))
                 {
-                    return XksProxyInvalidResponseExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return XksProxyInvalidResponseExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("XksProxyUriEndpointInUseException"))
                 {
-                    return XksProxyUriEndpointInUseExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return XksProxyUriEndpointInUseExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("XksProxyUriInUseException"))
                 {
-                    return XksProxyUriInUseExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return XksProxyUriInUseExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("XksProxyUriUnreachableException"))
                 {
-                    return XksProxyUriUnreachableExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return XksProxyUriUnreachableExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("XksProxyVpcEndpointServiceInUseException"))
                 {
-                    return XksProxyVpcEndpointServiceInUseExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return XksProxyVpcEndpointServiceInUseExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("XksProxyVpcEndpointServiceInvalidConfigurationException"))
                 {
-                    return XksProxyVpcEndpointServiceInvalidConfigurationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return XksProxyVpcEndpointServiceInvalidConfigurationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("XksProxyVpcEndpointServiceNotFoundException"))
                 {
-                    return XksProxyVpcEndpointServiceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return XksProxyVpcEndpointServiceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
             }
             return new AmazonKeyManagementServiceException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

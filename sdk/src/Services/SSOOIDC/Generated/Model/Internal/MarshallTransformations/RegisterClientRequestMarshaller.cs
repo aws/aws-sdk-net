@@ -28,8 +28,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SSOOIDC.Model.Internal.MarshallTransformations
 {
@@ -61,76 +61,80 @@ namespace Amazon.SSOOIDC.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/client/register";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if NETCOREAPP3_1_OR_GREATER
+            ArrayBufferWriter<byte> arrayBufferWriter = new ArrayBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetClientName())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetClientName())
-                    {
-                        context.Writer.WritePropertyName("clientName");
-                        context.Writer.Write(publicRequest.ClientName);
-                    }
-
-                    if(publicRequest.IsSetClientType())
-                    {
-                        context.Writer.WritePropertyName("clientType");
-                        context.Writer.Write(publicRequest.ClientType);
-                    }
-
-                    if(publicRequest.IsSetEntitledApplicationArn())
-                    {
-                        context.Writer.WritePropertyName("entitledApplicationArn");
-                        context.Writer.Write(publicRequest.EntitledApplicationArn);
-                    }
-
-                    if(publicRequest.IsSetGrantTypes())
-                    {
-                        context.Writer.WritePropertyName("grantTypes");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestGrantTypesListValue in publicRequest.GrantTypes)
-                        {
-                                context.Writer.Write(publicRequestGrantTypesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetIssuerUrl())
-                    {
-                        context.Writer.WritePropertyName("issuerUrl");
-                        context.Writer.Write(publicRequest.IssuerUrl);
-                    }
-
-                    if(publicRequest.IsSetRedirectUris())
-                    {
-                        context.Writer.WritePropertyName("redirectUris");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestRedirectUrisListValue in publicRequest.RedirectUris)
-                        {
-                                context.Writer.Write(publicRequestRedirectUrisListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetScopes())
-                    {
-                        context.Writer.WritePropertyName("scopes");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestScopesListValue in publicRequest.Scopes)
-                        {
-                                context.Writer.Write(publicRequestScopesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("clientName");
+                context.Writer.WriteStringValue(publicRequest.ClientName);
             }
+
+            if(publicRequest.IsSetClientType())
+            {
+                context.Writer.WritePropertyName("clientType");
+                context.Writer.WriteStringValue(publicRequest.ClientType);
+            }
+
+            if(publicRequest.IsSetEntitledApplicationArn())
+            {
+                context.Writer.WritePropertyName("entitledApplicationArn");
+                context.Writer.WriteStringValue(publicRequest.EntitledApplicationArn);
+            }
+
+            if(publicRequest.IsSetGrantTypes())
+            {
+                context.Writer.WritePropertyName("grantTypes");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestGrantTypesListValue in publicRequest.GrantTypes)
+                {
+                        context.Writer.WriteStringValue(publicRequestGrantTypesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetIssuerUrl())
+            {
+                context.Writer.WritePropertyName("issuerUrl");
+                context.Writer.WriteStringValue(publicRequest.IssuerUrl);
+            }
+
+            if(publicRequest.IsSetRedirectUris())
+            {
+                context.Writer.WritePropertyName("redirectUris");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestRedirectUrisListValue in publicRequest.RedirectUris)
+                {
+                        context.Writer.WriteStringValue(publicRequestRedirectUrisListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetScopes())
+            {
+                context.Writer.WritePropertyName("scopes");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestScopesListValue in publicRequest.Scopes)
+                {
+                        context.Writer.WriteStringValue(publicRequestScopesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+#if NETCOREAPP3_1_OR_GREATER
+            request.Content = arrayBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

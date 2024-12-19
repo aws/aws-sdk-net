@@ -28,8 +28,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
@@ -63,37 +63,41 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if NETCOREAPP3_1_OR_GREATER
+            ArrayBufferWriter<byte> arrayBufferWriter = new ArrayBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetExclusiveStartGlobalTableName())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetExclusiveStartGlobalTableName())
-                    {
-                        context.Writer.WritePropertyName("ExclusiveStartGlobalTableName");
-                        context.Writer.Write(publicRequest.ExclusiveStartGlobalTableName);
-                    }
-
-                    if(publicRequest.IsSetLimit())
-                    {
-                        context.Writer.WritePropertyName("Limit");
-                        context.Writer.Write(publicRequest.Limit.Value);
-                    }
-
-                    if(publicRequest.IsSetRegionName())
-                    {
-                        context.Writer.WritePropertyName("RegionName");
-                        context.Writer.Write(publicRequest.RegionName);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("ExclusiveStartGlobalTableName");
+                context.Writer.WriteStringValue(publicRequest.ExclusiveStartGlobalTableName);
             }
+
+            if(publicRequest.IsSetLimit())
+            {
+                context.Writer.WritePropertyName("Limit");
+                context.Writer.WriteNumberValue(publicRequest.Limit.Value);
+            }
+
+            if(publicRequest.IsSetRegionName())
+            {
+                context.Writer.WritePropertyName("RegionName");
+                context.Writer.WriteStringValue(publicRequest.RegionName);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+#if NETCOREAPP3_1_OR_GREATER
+            request.Content = arrayBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

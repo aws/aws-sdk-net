@@ -35,7 +35,7 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ExpiredTokenException operation
     /// </summary>  
-    public class ExpiredTokenExceptionUnmarshaller : IErrorResponseUnmarshaller<ExpiredTokenException, XmlUnmarshallerContext>
+    public class ExpiredTokenExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<ExpiredTokenException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

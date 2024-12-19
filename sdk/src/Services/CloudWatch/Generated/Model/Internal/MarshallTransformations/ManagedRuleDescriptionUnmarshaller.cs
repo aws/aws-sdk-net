@@ -35,7 +35,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ManagedRuleDescription Object
     /// </summary>  
-    public class ManagedRuleDescriptionUnmarshaller : IUnmarshaller<ManagedRuleDescription, XmlUnmarshallerContext>, IUnmarshaller<ManagedRuleDescription, JsonUnmarshallerContext>
+    public class ManagedRuleDescriptionUnmarshaller : IXmlUnmarshaller<ManagedRuleDescription, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -82,17 +82,6 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ManagedRuleDescription Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ManagedRuleDescriptionUnmarshaller _instance = new ManagedRuleDescriptionUnmarshaller();        
 

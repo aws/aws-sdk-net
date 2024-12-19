@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CustomDomainAssociationNotFoundException operation
     /// </summary>  
-    public class CustomDomainAssociationNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<CustomDomainAssociationNotFoundException, XmlUnmarshallerContext>
+    public class CustomDomainAssociationNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<CustomDomainAssociationNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

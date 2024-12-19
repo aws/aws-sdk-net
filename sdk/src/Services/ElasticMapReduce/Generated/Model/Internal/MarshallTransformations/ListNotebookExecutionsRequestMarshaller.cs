@@ -28,8 +28,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
@@ -63,55 +63,59 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if NETCOREAPP3_1_OR_GREATER
+            ArrayBufferWriter<byte> arrayBufferWriter = new ArrayBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetEditorId())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetEditorId())
-                    {
-                        context.Writer.WritePropertyName("EditorId");
-                        context.Writer.Write(publicRequest.EditorId);
-                    }
-
-                    if(publicRequest.IsSetExecutionEngineId())
-                    {
-                        context.Writer.WritePropertyName("ExecutionEngineId");
-                        context.Writer.Write(publicRequest.ExecutionEngineId);
-                    }
-
-                    if(publicRequest.IsSetFrom())
-                    {
-                        context.Writer.WritePropertyName("From");
-                        context.Writer.Write(publicRequest.From.Value);
-                    }
-
-                    if(publicRequest.IsSetMarker())
-                    {
-                        context.Writer.WritePropertyName("Marker");
-                        context.Writer.Write(publicRequest.Marker);
-                    }
-
-                    if(publicRequest.IsSetStatus())
-                    {
-                        context.Writer.WritePropertyName("Status");
-                        context.Writer.Write(publicRequest.Status);
-                    }
-
-                    if(publicRequest.IsSetTo())
-                    {
-                        context.Writer.WritePropertyName("To");
-                        context.Writer.Write(publicRequest.To.Value);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("EditorId");
+                context.Writer.WriteStringValue(publicRequest.EditorId);
             }
+
+            if(publicRequest.IsSetExecutionEngineId())
+            {
+                context.Writer.WritePropertyName("ExecutionEngineId");
+                context.Writer.WriteStringValue(publicRequest.ExecutionEngineId);
+            }
+
+            if(publicRequest.IsSetFrom())
+            {
+                context.Writer.WritePropertyName("From");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.From.Value)));
+            }
+
+            if(publicRequest.IsSetMarker())
+            {
+                context.Writer.WritePropertyName("Marker");
+                context.Writer.WriteStringValue(publicRequest.Marker);
+            }
+
+            if(publicRequest.IsSetStatus())
+            {
+                context.Writer.WritePropertyName("Status");
+                context.Writer.WriteStringValue(publicRequest.Status);
+            }
+
+            if(publicRequest.IsSetTo())
+            {
+                context.Writer.WritePropertyName("To");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.To.Value)));
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+#if NETCOREAPP3_1_OR_GREATER
+            request.Content = arrayBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

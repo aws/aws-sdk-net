@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for Phase2DHGroupNumbersListValue Object
     /// </summary>  
-    public class Phase2DHGroupNumbersListValueUnmarshaller : IUnmarshaller<Phase2DHGroupNumbersListValue, XmlUnmarshallerContext>, IUnmarshaller<Phase2DHGroupNumbersListValue, JsonUnmarshallerContext>
+    public class Phase2DHGroupNumbersListValueUnmarshaller : IXmlUnmarshaller<Phase2DHGroupNumbersListValue, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -70,17 +70,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public Phase2DHGroupNumbersListValue Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static Phase2DHGroupNumbersListValueUnmarshaller _instance = new Phase2DHGroupNumbersListValueUnmarshaller();        
 

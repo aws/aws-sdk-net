@@ -29,185 +29,175 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for TableDescription Object
     /// </summary>  
-    public class TableDescriptionUnmarshaller : IUnmarshaller<TableDescription, XmlUnmarshallerContext>, IUnmarshaller<TableDescription, JsonUnmarshallerContext>
+    public class TableDescriptionUnmarshaller : IJsonUnmarshaller<TableDescription, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        TableDescription IUnmarshaller<TableDescription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TableDescription Unmarshall(JsonUnmarshallerContext context)
+        public TableDescription Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             TableDescription unmarshalledObject = new TableDescription();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ArchivalSummary", targetDepth))
                 {
                     var unmarshaller = ArchivalSummaryUnmarshaller.Instance;
-                    unmarshalledObject.ArchivalSummary = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ArchivalSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AttributeDefinitions", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AttributeDefinition, AttributeDefinitionUnmarshaller>(AttributeDefinitionUnmarshaller.Instance);
-                    unmarshalledObject.AttributeDefinitions = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<AttributeDefinition, AttributeDefinitionUnmarshaller>(AttributeDefinitionUnmarshaller.Instance);
+                    unmarshalledObject.AttributeDefinitions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("BillingModeSummary", targetDepth))
                 {
                     var unmarshaller = BillingModeSummaryUnmarshaller.Instance;
-                    unmarshalledObject.BillingModeSummary = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BillingModeSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CreationDateTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreationDateTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CreationDateTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DeletionProtectionEnabled", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.DeletionProtectionEnabled = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeletionProtectionEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("GlobalSecondaryIndexes", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<GlobalSecondaryIndexDescription, GlobalSecondaryIndexDescriptionUnmarshaller>(GlobalSecondaryIndexDescriptionUnmarshaller.Instance);
-                    unmarshalledObject.GlobalSecondaryIndexes = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<GlobalSecondaryIndexDescription, GlobalSecondaryIndexDescriptionUnmarshaller>(GlobalSecondaryIndexDescriptionUnmarshaller.Instance);
+                    unmarshalledObject.GlobalSecondaryIndexes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("GlobalTableVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GlobalTableVersion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.GlobalTableVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ItemCount", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.ItemCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ItemCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("KeySchema", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<KeySchemaElement, KeySchemaElementUnmarshaller>(KeySchemaElementUnmarshaller.Instance);
-                    unmarshalledObject.KeySchema = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<KeySchemaElement, KeySchemaElementUnmarshaller>(KeySchemaElementUnmarshaller.Instance);
+                    unmarshalledObject.KeySchema = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LatestStreamArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LatestStreamArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LatestStreamArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LatestStreamLabel", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LatestStreamLabel = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LatestStreamLabel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LocalSecondaryIndexes", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<LocalSecondaryIndexDescription, LocalSecondaryIndexDescriptionUnmarshaller>(LocalSecondaryIndexDescriptionUnmarshaller.Instance);
-                    unmarshalledObject.LocalSecondaryIndexes = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<LocalSecondaryIndexDescription, LocalSecondaryIndexDescriptionUnmarshaller>(LocalSecondaryIndexDescriptionUnmarshaller.Instance);
+                    unmarshalledObject.LocalSecondaryIndexes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("OnDemandThroughput", targetDepth))
                 {
                     var unmarshaller = OnDemandThroughputUnmarshaller.Instance;
-                    unmarshalledObject.OnDemandThroughput = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OnDemandThroughput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ProvisionedThroughput", targetDepth))
                 {
                     var unmarshaller = ProvisionedThroughputDescriptionUnmarshaller.Instance;
-                    unmarshalledObject.ProvisionedThroughput = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ProvisionedThroughput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Replicas", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ReplicaDescription, ReplicaDescriptionUnmarshaller>(ReplicaDescriptionUnmarshaller.Instance);
-                    unmarshalledObject.Replicas = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<ReplicaDescription, ReplicaDescriptionUnmarshaller>(ReplicaDescriptionUnmarshaller.Instance);
+                    unmarshalledObject.Replicas = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RestoreSummary", targetDepth))
                 {
                     var unmarshaller = RestoreSummaryUnmarshaller.Instance;
-                    unmarshalledObject.RestoreSummary = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RestoreSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SSEDescription", targetDepth))
                 {
                     var unmarshaller = SSEDescriptionUnmarshaller.Instance;
-                    unmarshalledObject.SSEDescription = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SSEDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StreamSpecification", targetDepth))
                 {
                     var unmarshaller = StreamSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.StreamSpecification = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StreamSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TableArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TableArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TableArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TableClassSummary", targetDepth))
                 {
                     var unmarshaller = TableClassSummaryUnmarshaller.Instance;
-                    unmarshalledObject.TableClassSummary = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TableClassSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TableId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TableId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TableId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TableName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TableName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TableName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TableSizeBytes", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.TableSizeBytes = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TableSizeBytes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TableStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TableStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TableStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

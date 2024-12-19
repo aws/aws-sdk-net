@@ -12,11 +12,14 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System.Text.Json;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 using AWSSDK_DotNet.UnitTests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.IO;
+using Amazon.KeyManagementService.Model;
 
 namespace AWSSDK.UnitTests
 {
@@ -60,48 +63,50 @@ namespace AWSSDK.UnitTests
 
         private Model UnmarshallModel(string json)
         {
-            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(json), false, null);
-            context.Read();
+            var stream = Utils.CreateStreamFromString(json);
+            JsonUnmarshallerContext context = new JsonUnmarshallerContext(stream, false, null);
+            var reader = new StreamingUtf8JsonReader(stream);
+            context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
             var model = new Model();
             bool isSetPriority = false, isSetReservoirQuotaTTL = false, isSetStartTimeISO8601 = false, 
                 isSetStartTimeEpoch = false, isSetStartTimeRFC822 = false, isSetStream = false;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Priority", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    model.Priority = unmarshaller.Unmarshall(context);
+                    model.Priority = unmarshaller.Unmarshall(context, ref reader);
                     isSetPriority = true;
                 }
                 if (context.TestExpression("ReservoirQuotaTTL", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    model.ReservoirQuotaTTL = unmarshaller.Unmarshall(context);
+                    model.ReservoirQuotaTTL = unmarshaller.Unmarshall(context, ref reader);
                     isSetReservoirQuotaTTL = true;
                 }
                 if (context.TestExpression("StartTimeISO8601", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
-                    model.StartTimeISO8601 = unmarshaller.Unmarshall(context);
+                    model.StartTimeISO8601 = unmarshaller.Unmarshall(context, ref reader);
                     isSetStartTimeISO8601 = true;
                 }
                 if (context.TestExpression("StartTimeEpoch", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
-                    model.StartTimeEpoch = unmarshaller.Unmarshall(context);
+                    model.StartTimeEpoch = unmarshaller.Unmarshall(context, ref reader);
                     isSetStartTimeEpoch = true;
                 }
                 if (context.TestExpression("StartTimeRFC822", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
-                    model.StartTimeRFC822 = unmarshaller.Unmarshall(context);
+                    model.StartTimeRFC822 = unmarshaller.Unmarshall(context, ref reader);
                     isSetStartTimeRFC822 = true;
                 }
                 if (context.TestExpression("Stream", targetDepth))
                 {
                     var unmarshaller = MemoryStreamUnmarshaller.Instance;
-                    model.Stream = unmarshaller.Unmarshall(context);
+                    model.Stream = unmarshaller.Unmarshall(context, ref reader);
 
                     if (model.Stream != null)
                     {

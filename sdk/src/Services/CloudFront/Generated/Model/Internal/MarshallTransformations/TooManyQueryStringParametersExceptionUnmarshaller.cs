@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TooManyQueryStringParametersException operation
     /// </summary>  
-    public class TooManyQueryStringParametersExceptionUnmarshaller : IErrorResponseUnmarshaller<TooManyQueryStringParametersException, XmlUnmarshallerContext>
+    public class TooManyQueryStringParametersExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<TooManyQueryStringParametersException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

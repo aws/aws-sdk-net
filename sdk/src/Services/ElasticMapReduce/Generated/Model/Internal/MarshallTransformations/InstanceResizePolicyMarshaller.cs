@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInstancesToProtect())
             {
                 context.Writer.WritePropertyName("InstancesToProtect");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectInstancesToProtectListValue in requestObject.InstancesToProtect)
                 {
-                        context.Writer.Write(requestObjectInstancesToProtectListValue);
+                        context.Writer.WriteStringValue(requestObjectInstancesToProtectListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetInstancesToTerminate())
             {
                 context.Writer.WritePropertyName("InstancesToTerminate");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectInstancesToTerminateListValue in requestObject.InstancesToTerminate)
                 {
-                        context.Writer.Write(requestObjectInstancesToTerminateListValue);
+                        context.Writer.WriteStringValue(requestObjectInstancesToTerminateListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetInstanceTerminationTimeout())
             {
                 context.Writer.WritePropertyName("InstanceTerminationTimeout");
-                context.Writer.Write(requestObject.InstanceTerminationTimeout.Value);
+                context.Writer.WriteNumberValue(requestObject.InstanceTerminationTimeout.Value);
             }
 
         }

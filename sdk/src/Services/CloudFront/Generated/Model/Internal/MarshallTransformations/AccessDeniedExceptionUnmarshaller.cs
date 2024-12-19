@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for AccessDeniedException operation
     /// </summary>  
-    public class AccessDeniedExceptionUnmarshaller : IErrorResponseUnmarshaller<AccessDeniedException, XmlUnmarshallerContext>
+    public class AccessDeniedExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<AccessDeniedException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -28,8 +28,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
 {
@@ -63,42 +63,46 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if NETCOREAPP3_1_OR_GREATER
+            ArrayBufferWriter<byte> arrayBufferWriter = new ArrayBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetCustomKeyStoreId())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetCustomKeyStoreId())
-                    {
-                        context.Writer.WritePropertyName("CustomKeyStoreId");
-                        context.Writer.Write(publicRequest.CustomKeyStoreId);
-                    }
-
-                    if(publicRequest.IsSetNumberOfBytes())
-                    {
-                        context.Writer.WritePropertyName("NumberOfBytes");
-                        context.Writer.Write(publicRequest.NumberOfBytes.Value);
-                    }
-
-                    if(publicRequest.IsSetRecipient())
-                    {
-                        context.Writer.WritePropertyName("Recipient");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = RecipientInfoMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Recipient, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("CustomKeyStoreId");
+                context.Writer.WriteStringValue(publicRequest.CustomKeyStoreId);
             }
+
+            if(publicRequest.IsSetNumberOfBytes())
+            {
+                context.Writer.WritePropertyName("NumberOfBytes");
+                context.Writer.WriteNumberValue(publicRequest.NumberOfBytes.Value);
+            }
+
+            if(publicRequest.IsSetRecipient())
+            {
+                context.Writer.WritePropertyName("Recipient");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RecipientInfoMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Recipient, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+#if NETCOREAPP3_1_OR_GREATER
+            request.Content = arrayBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;
