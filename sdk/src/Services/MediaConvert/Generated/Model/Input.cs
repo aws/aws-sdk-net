@@ -256,6 +256,7 @@ namespace Amazon.MediaConvert.Model
         /// "s3://bucket/vf/cpl.xml". If the CPL is in an incomplete IMP, make sure to use *Supplemental
         /// IMPs* to specify any supplemental IMPs that contain assets referenced by the CPL.
         /// </summary>
+        [AWSProperty(Max=2048)]
         public string FileInput
         {
             get { return this._fileInput; }

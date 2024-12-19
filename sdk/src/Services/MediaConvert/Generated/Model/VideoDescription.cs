@@ -48,6 +48,7 @@ namespace Amazon.MediaConvert.Model
         private ScalingBehavior _scalingBehavior;
         private int? _sharpness;
         private VideoTimecodeInsertion _timecodeInsertion;
+        private TimecodeTrack _timecodeTrack;
         private VideoPreprocessor _videoPreprocessors;
         private int? _width;
 
@@ -147,7 +148,7 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property DropFrameTimecode. Applies only to 29.97 fps outputs. When
         /// this feature is enabled, the service will use drop-frame timecode on outputs. If it
         /// is not possible to use drop-frame timecode, the system will fall back to non-drop-frame.
-        /// This setting is enabled by default when Timecode insertion is enabled.
+        /// This setting is enabled by default when Timecode insertion or Timecode track is enabled.
         /// </summary>
         public DropFrameTimecode DropFrameTimecode
         {
@@ -296,6 +297,25 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetTimecodeInsertion()
         {
             return this._timecodeInsertion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TimecodeTrack. To include a timecode track in your MP4
+        /// output: Choose Enabled. MediaConvert writes the timecode track in the Null Media Header
+        /// box (NMHD), without any timecode text formatting information. You can also specify
+        /// dropframe or non-dropframe timecode under the Drop Frame Timecode setting. To not
+        /// include a timecode track: Keep the default value, Disabled.
+        /// </summary>
+        public TimecodeTrack TimecodeTrack
+        {
+            get { return this._timecodeTrack; }
+            set { this._timecodeTrack = value; }
+        }
+
+        // Check to see if TimecodeTrack property is set
+        internal bool IsSetTimecodeTrack()
+        {
+            return this._timecodeTrack != null;
         }
 
         /// <summary>
