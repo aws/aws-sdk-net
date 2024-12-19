@@ -24,7 +24,6 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.S3.Util;
-using Smithy.Identity.Abstractions;
 
 #pragma warning disable 1591
 

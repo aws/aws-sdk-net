@@ -21,7 +21,6 @@ using Amazon.Runtime.Internal.Util;
 using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.S3.Model.Internal.MarshallTransformations;
-using Smithy.Identity.Abstractions;
 using System;
 using System.Net;
 using System.Reflection;
