@@ -31691,8 +31691,26 @@
         },
         "dlm": {
           "endpoints": {
-            "cn-north-1": {},
-            "cn-northwest-1": {}
+            "cn-north-1": {
+              "variants": [
+                {
+                  "hostname": "dlm.cn-north-1.api.amazonwebservices.com.cn",
+                  "tags": [
+                    "dualstack"
+                  ]
+                }
+              ]
+            },
+            "cn-northwest-1": {
+              "variants": [
+                {
+                  "hostname": "dlm.cn-northwest-1.api.amazonwebservices.com.cn",
+                  "tags": [
+                    "dualstack"
+                  ]
+                }
+              ]
+            }
           }
         },
         "dms": {
@@ -40641,6 +40659,18 @@
           "endpoints": {
             "us-iso-east-1": {}
           }
+        },
+        "organizations": {
+          "endpoints": {
+            "aws-iso-global": {
+              "credentialScope": {
+                "region": "us-iso-east-1"
+              },
+              "hostname": "organizations.us-iso-east-1.c2s.ic.gov"
+            }
+          },
+          "isRegionalized": false,
+          "partitionEndpoint": "aws-iso-global"
         },
         "outposts": {
           "endpoints": {
