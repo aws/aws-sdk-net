@@ -440,7 +440,7 @@ namespace Amazon.DynamoDBv2
     {
         public override IEnumerable<Type> GetTargetTypes()
         {
-            return new[] { typeof(MemoryStream) };
+            return new[] { typeof(Enum) };
         }
 
         protected override bool TryTo(Enum value, out Primitive p)
