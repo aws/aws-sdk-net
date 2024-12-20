@@ -7738,6 +7738,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ClusterInstanceGroupDetails.TargetCount</property>
     <min>0</min>
+    <max>6758</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ClusterInstanceGroupDetails.ThreadsPerCore</property>
@@ -7764,6 +7765,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ClusterInstanceGroupSpecification.InstanceCount</property>
     <min>0</min>
+    <max>6758</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ClusterInstanceGroupSpecification.InstanceGroupName</property>

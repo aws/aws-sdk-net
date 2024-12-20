@@ -100,7 +100,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ModelName. 
         /// <para>
-        /// The name of the SageMaker model object that is deployed with the inference component.
+        /// The name of the SageMaker AI model object that is deployed with the inference component.
         /// </para>
         /// </summary>
         [AWSProperty(Max=63)]

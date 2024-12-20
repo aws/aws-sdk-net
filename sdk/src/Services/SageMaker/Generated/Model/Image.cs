@@ -30,9 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// A SageMaker image. A SageMaker image represents a set of container images that are
-    /// derived from a common base container image. Each of these container images is represented
-    /// by a SageMaker <c>ImageVersion</c>.
+    /// A SageMaker AI image. A SageMaker AI image represents a set of container images that
+    /// are derived from a common base container image. Each of these container images is
+    /// represented by a SageMaker AI <c>ImageVersion</c>.
     /// </summary>
     public partial class Image
     {

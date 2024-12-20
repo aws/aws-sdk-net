@@ -31,7 +31,7 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteModelExplainabilityJobDefinition operation.
-    /// Deletes an Amazon SageMaker model explainability job definition.
+    /// Deletes an Amazon SageMaker AI model explainability job definition.
     /// </summary>
     public partial class DeleteModelExplainabilityJobDefinitionRequest : AmazonSageMakerRequest
     {

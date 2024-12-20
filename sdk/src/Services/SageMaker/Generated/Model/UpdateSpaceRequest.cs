@@ -32,6 +32,12 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// Container for the parameters to the UpdateSpace operation.
     /// Updates the settings of a space.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// You can't edit the app type of a space in the <c>SpaceSettings</c>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class UpdateSpaceRequest : AmazonSageMakerRequest
     {

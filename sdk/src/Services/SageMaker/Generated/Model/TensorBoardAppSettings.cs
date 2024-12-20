@@ -39,7 +39,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property DefaultResourceSpec. 
         /// <para>
-        /// The default instance type and the Amazon Resource Name (ARN) of the SageMaker image
+        /// The default instance type and the Amazon Resource Name (ARN) of the SageMaker AI image
         /// created on the instance.
         /// </para>
         /// </summary>

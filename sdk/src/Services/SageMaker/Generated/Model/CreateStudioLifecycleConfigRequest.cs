@@ -31,7 +31,7 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateStudioLifecycleConfig operation.
-    /// Creates a new Amazon SageMaker Studio Lifecycle Configuration.
+    /// Creates a new Amazon SageMaker AI Studio Lifecycle Configuration.
     /// </summary>
     public partial class CreateStudioLifecycleConfigRequest : AmazonSageMakerRequest
     {
@@ -62,8 +62,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property StudioLifecycleConfigContent. 
         /// <para>
-        /// The content of your Amazon SageMaker Studio Lifecycle Configuration script. This content
-        /// must be base64 encoded.
+        /// The content of your Amazon SageMaker AI Studio Lifecycle Configuration script. This
+        /// content must be base64 encoded.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=16384)]
@@ -82,7 +82,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property StudioLifecycleConfigName. 
         /// <para>
-        /// The name of the Amazon SageMaker Studio Lifecycle Configuration to create.
+        /// The name of the Amazon SageMaker AI Studio Lifecycle Configuration to create.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=63)]

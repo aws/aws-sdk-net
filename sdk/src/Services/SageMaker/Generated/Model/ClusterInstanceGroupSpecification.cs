@@ -71,7 +71,7 @@ namespace Amazon.SageMaker.Model
         /// cluster.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0)]
+        [AWSProperty(Required=true, Min=0, Max=6758)]
         public int InstanceCount
         {
             get { return this._instanceCount.GetValueOrDefault(); }

@@ -173,7 +173,7 @@ namespace Amazon.SageMaker.Model
         ///  </li> <li> 
         /// <para>
         /// We recommend that if you would like a daily schedule, you do not provide this parameter.
-        /// Amazon SageMaker will pick a time for running every day.
+        /// Amazon SageMaker AI will pick a time for running every day.
         /// </para>
         ///  </li> </ul> </note> 
         /// <para>

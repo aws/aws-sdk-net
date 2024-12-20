@@ -248,7 +248,7 @@ namespace Amazon.SageMaker.Model
         /// HyperPod cluster.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0)]
+        [AWSProperty(Min=0, Max=6758)]
         public int TargetCount
         {
             get { return this._targetCount.GetValueOrDefault(); }

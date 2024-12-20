@@ -31,8 +31,8 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// The settings for assigning a custom file system to a user profile or space for an
-    /// Amazon SageMaker Domain. Permitted users can access this file system in Amazon SageMaker
-    /// Studio.
+    /// Amazon SageMaker AI Domain. Permitted users can access this file system in Amazon
+    /// SageMaker AI Studio.
     /// </summary>
     public partial class CustomFileSystemConfig
     {

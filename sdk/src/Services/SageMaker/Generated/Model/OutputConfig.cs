@@ -176,10 +176,10 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property KmsKeyId. 
         /// <para>
         /// The Amazon Web Services Key Management Service key (Amazon Web Services KMS) that
-        /// Amazon SageMaker uses to encrypt your output models with Amazon S3 server-side encryption
-        /// after compilation job. If you don't provide a KMS key ID, Amazon SageMaker uses the
-        /// default KMS key for Amazon S3 for your role's account. For more information, see <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed
+        /// Amazon SageMaker AI uses to encrypt your output models with Amazon S3 server-side
+        /// encryption after compilation job. If you don't provide a KMS key ID, Amazon SageMaker
+        /// AI uses the default KMS key for Amazon S3 for your role's account. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed
         /// Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i> 
         /// </para>
         ///  
@@ -221,7 +221,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property S3OutputLocation. 
         /// <para>
-        /// Identifies the S3 bucket where you want Amazon SageMaker to store the model artifacts.
+        /// Identifies the S3 bucket where you want Amazon SageMaker AI to store the model artifacts.
         /// For example, <c>s3://bucket-name/key-name-prefix</c>.
         /// </para>
         /// </summary>

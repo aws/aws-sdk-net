@@ -189,7 +189,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property BestCandidate. 
         /// <para>
-        /// The best model candidate selected by SageMaker Autopilot using both the best objective
+        /// The best model candidate selected by SageMaker AI Autopilot using both the best objective
         /// metric and lowest <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html">InferenceLatency</a>
         /// for an experiment.
         /// </para>

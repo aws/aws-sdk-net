@@ -40,7 +40,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property CompilationJobArn. 
         /// <para>
         /// If the action is successful, the service sends back an HTTP 200 response. Amazon SageMaker
-        /// returns the following data in JSON format:
+        /// AI returns the following data in JSON format:
         /// </para>
         ///  <ul> <li> 
         /// <para>

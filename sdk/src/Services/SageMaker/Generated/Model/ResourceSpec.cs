@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance
-    /// type that the version runs on.
+    /// Specifies the ARN's of a SageMaker AI image and SageMaker AI image version, and the
+    /// instance type that the version runs on.
     /// </summary>
     public partial class ResourceSpec
     {
@@ -91,7 +91,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SageMakerImageArn. 
         /// <para>
-        /// The ARN of the SageMaker image that the image version belongs to.
+        /// The ARN of the SageMaker AI image that the image version belongs to.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]

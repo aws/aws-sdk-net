@@ -53,7 +53,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property CustomFileSystemConfigs. 
         /// <para>
         /// The settings for assigning a custom file system to a domain. Permitted users can access
-        /// this file system in Amazon SageMaker Studio.
+        /// this file system in Amazon SageMaker AI Studio.
         /// </para>
         /// </summary>
         [AWSProperty(Max=10)]
