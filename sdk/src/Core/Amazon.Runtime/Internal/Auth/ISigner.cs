@@ -13,7 +13,7 @@
  * permissions and limitations under the License.
  */
 
-namespace Amazon.Runtime
+namespace Amazon.Runtime.Internal.Auth
 {
     /// <summary>
     /// <para>

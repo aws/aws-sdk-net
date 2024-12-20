@@ -15,6 +15,7 @@
 
 using System;
 using System.Collections.Generic;
+using Amazon.Runtime.Identity;
 
 namespace Amazon.Runtime.Credentials.Internal
 {

@@ -14,6 +14,7 @@
 */
 
 using System.Collections.Generic;
+using Amazon.Runtime.Internal.Auth;
 
 namespace Amazon.Runtime.Credentials.Internal
 {

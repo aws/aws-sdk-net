@@ -15,7 +15,7 @@
 
 using System.Collections.Generic;
 
-namespace Amazon.Runtime
+namespace Amazon.Runtime.Internal.Auth
 {
     /// <summary>
     /// <para>

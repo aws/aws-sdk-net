@@ -16,7 +16,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Amazon.Runtime
+namespace Amazon.Runtime.Identity
 {
     /// <summary>
     /// An identity resolver is a component that is able to resolve a customer's <see cref="BaseIdentity"/>.

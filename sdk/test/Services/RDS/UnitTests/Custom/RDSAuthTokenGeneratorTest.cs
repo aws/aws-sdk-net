@@ -18,6 +18,7 @@ using Amazon.RDS;
 using Amazon.RDS.Util;
 using Amazon.Runtime;
 using Amazon.Runtime.Credentials.Internal;
+using Amazon.Runtime.Identity;
 using Amazon.Util;
 using AWSSDK_DotNet.IntegrationTests.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;

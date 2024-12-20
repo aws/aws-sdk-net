@@ -13,7 +13,7 @@
  * permissions and limitations under the License.
  */
 
-namespace Amazon.Runtime
+namespace Amazon.Runtime.Identity
 {
     /// <summary>
     /// The identity resolvers configured in the SDK.

@@ -13,7 +13,9 @@
  * permissions and limitations under the License.
  */
 
-namespace Amazon.Runtime
+using Amazon.Runtime.Identity;
+
+namespace Amazon.Runtime.Internal.Auth
 {
     /// <summary>
     /// <para>

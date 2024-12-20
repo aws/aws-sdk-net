@@ -23,6 +23,7 @@ using System.Threading.Tasks;
 using Amazon.Internal;
 using Amazon.Util;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Runtime.Identity;
 
 namespace Amazon.Runtime.Internal.Auth
 {

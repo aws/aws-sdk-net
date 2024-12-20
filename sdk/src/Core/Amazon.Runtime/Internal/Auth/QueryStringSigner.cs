@@ -16,7 +16,7 @@ using System;
 using System.Collections.Generic;
 using System.Security;
 using System.Text;
-
+using Amazon.Runtime.Identity;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util;

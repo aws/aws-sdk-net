@@ -13,26 +13,17 @@
  * permissions and limitations under the License.
  */
 
-namespace Amazon.Runtime
+namespace Amazon.Runtime.Internal.Auth
 {
     /// <summary>
-    /// <para>
-    /// The input to the authentication scheme resolver (an interface for passing in the data required 
-    /// for determining the authentication scheme).
-    /// </para>
+    /// The output from the authentication scheme resolver. The resolver returns a list of auth scheme options, 
+    /// in the order that they should be used.
     /// </summary>
-    /// <remarks>
-    /// Service specific implementations may include additional properties, for example "region" if the
-    /// service is configured to use SigV4.
-    /// </remarks>
-    public interface IAuthSchemeParameters
+    public interface IAuthSchemeOption
     {
         /// <summary>
-        /// The service operation being invoked by the SDK.
+        /// The ID of the scheme to use. This value matches the one returned by <see cref="IAuthScheme{T}.SchemeId"/>.
         /// </summary>
-        /// <remarks>
-        /// This is included by default for all generated authentication scheme parameters.
-        /// </remarks>
-        string Operation { get; set; }
+        string SchemeId { get; set; }
     }
 }

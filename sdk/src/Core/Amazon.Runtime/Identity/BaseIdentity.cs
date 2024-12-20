@@ -15,7 +15,7 @@
 
 using System;
 
-namespace Amazon.Runtime
+namespace Amazon.Runtime.Identity
 {
     /// <summary>
     /// An identity is an entity within the SDK representing who the customer is.

@@ -14,6 +14,8 @@
  */
 
 
+using Amazon.Runtime.Identity;
+
 namespace Amazon.Runtime
 {
     /// <summary>

@@ -15,8 +15,9 @@
 
 using System.Threading;
 using System.Threading.Tasks;
+using Amazon.Runtime.Identity;
 
-namespace Amazon.Runtime
+namespace Amazon.Runtime.Credentials
 {
     /// <summary>
     /// A resolver that provides a bearer token identity.

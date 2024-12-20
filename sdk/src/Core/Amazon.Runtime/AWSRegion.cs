@@ -19,6 +19,7 @@ using Amazon.Runtime.Internal.Util;
 using System.Collections.Generic;
 using Amazon.Util;
 using Amazon.Runtime.CredentialManagement;
+using Amazon.Runtime.Credentials;
 
 namespace Amazon.Runtime
 {
