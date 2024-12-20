@@ -1069,6 +1069,10 @@ namespace Amazon.Outposts
         /// </summary>
         public static readonly PowerConnector AH532P6W = new PowerConnector("AH532P6W");
         /// <summary>
+        /// Constant CS8365C for PowerConnector
+        /// </summary>
+        public static readonly PowerConnector CS8365C = new PowerConnector("CS8365C");
+        /// <summary>
         /// Constant IEC309 for PowerConnector
         /// </summary>
         public static readonly PowerConnector IEC309 = new PowerConnector("IEC309");

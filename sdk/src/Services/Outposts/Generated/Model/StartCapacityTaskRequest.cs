@@ -31,8 +31,8 @@ namespace Amazon.Outposts.Model
 {
     /// <summary>
     /// Container for the parameters to the StartCapacityTask operation.
-    /// Starts the specified capacity task. You can have one active capacity task per order
-    /// or Outpost.
+    /// Starts the specified capacity task. You can have one active capacity task for each
+    /// order and each Outpost.
     /// </summary>
     public partial class StartCapacityTaskRequest : AmazonOutpostsRequest
     {

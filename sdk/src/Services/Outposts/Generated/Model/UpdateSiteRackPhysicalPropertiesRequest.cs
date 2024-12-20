@@ -196,6 +196,10 @@ namespace Amazon.Outposts.Model
         /// <para>
         ///  <b>AH532P6W (red)</b> – 3P+N+E, 6hr; 32A; three phase
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>CS8365C</b> – (common in US); 3P+E, 50A; three phase
+        /// </para>
         ///  </li> </ul> </li> </ul>
         /// </summary>
         public PowerConnector PowerConnector

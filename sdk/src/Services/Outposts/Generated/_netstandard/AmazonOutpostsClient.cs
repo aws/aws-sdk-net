@@ -1512,8 +1512,8 @@ namespace Amazon.Outposts
 
 
         /// <summary>
-        /// Starts the specified capacity task. You can have one active capacity task per order
-        /// or Outpost.
+        /// Starts the specified capacity task. You can have one active capacity task for each
+        /// order and each Outpost.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartCapacityTask service method.</param>
         /// <param name="cancellationToken">
