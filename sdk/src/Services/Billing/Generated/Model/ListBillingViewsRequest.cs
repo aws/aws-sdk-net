@@ -44,8 +44,11 @@ namespace Amazon.Billing.Model
     public partial class ListBillingViewsRequest : AmazonBillingRequest
     {
         private ActiveTimeRange _activeTimeRange;
+        private List<string> _arns = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _billingViewTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxResults;
         private string _nextToken;
+        private string _ownerAccountId;
 
         /// <summary>
         /// Gets and sets the property ActiveTimeRange. 
@@ -56,7 +59,6 @@ namespace Amazon.Billing.Model
         /// one calendar month. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public ActiveTimeRange ActiveTimeRange
         {
             get { return this._activeTimeRange; }
@@ -67,6 +69,44 @@ namespace Amazon.Billing.Model
         internal bool IsSetActiveTimeRange()
         {
             return this._activeTimeRange != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Arns. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) that can be used to uniquely identify the billing view.
+        /// 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=10)]
+        public List<string> Arns
+        {
+            get { return this._arns; }
+            set { this._arns = value; }
+        }
+
+        // Check to see if Arns property is set
+        internal bool IsSetArns()
+        {
+            return this._arns != null && (this._arns.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property BillingViewTypes. 
+        /// <para>
+        /// The type of billing view.
+        /// </para>
+        /// </summary>
+        public List<string> BillingViewTypes
+        {
+            get { return this._billingViewTypes; }
+            set { this._billingViewTypes = value; }
+        }
+
+        // Check to see if BillingViewTypes property is set
+        internal bool IsSetBillingViewTypes()
+        {
+            return this._billingViewTypes != null && (this._billingViewTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -105,6 +145,24 @@ namespace Amazon.Billing.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OwnerAccountId. 
+        /// <para>
+        ///  The list of owners of the billing view. 
+        /// </para>
+        /// </summary>
+        public string OwnerAccountId
+        {
+            get { return this._ownerAccountId; }
+            set { this._ownerAccountId = value; }
+        }
+
+        // Check to see if OwnerAccountId property is set
+        internal bool IsSetOwnerAccountId()
+        {
+            return this._ownerAccountId != null;
         }
 
     }
