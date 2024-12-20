@@ -32,7 +32,7 @@ namespace Amazon.BedrockDataAutomationRuntime
     /// <summary>
     /// <para>Interface for accessing BedrockDataAutomationRuntime</para>
     ///
-    /// Amazon Bedrock Keystone Runtime
+    /// Amazon Bedrock Data Automation Runtime
     /// </summary>
     public partial interface IAmazonBedrockDataAutomationRuntime : IAmazonService, IDisposable
     {

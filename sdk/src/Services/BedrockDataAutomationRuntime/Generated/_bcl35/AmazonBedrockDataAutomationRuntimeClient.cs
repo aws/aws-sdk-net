@@ -36,7 +36,7 @@ namespace Amazon.BedrockDataAutomationRuntime
     /// <summary>
     /// <para>Implementation for accessing BedrockDataAutomationRuntime</para>
     ///
-    /// Amazon Bedrock Keystone Runtime
+    /// Amazon Bedrock Data Automation Runtime
     /// </summary>
     public partial class AmazonBedrockDataAutomationRuntimeClient : AmazonServiceClient, IAmazonBedrockDataAutomationRuntime
     {
