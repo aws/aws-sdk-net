@@ -25,9 +25,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
     /// <summary>
     /// Filter for use with scan and query operations
     /// </summary>
-#if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif
     public class Filter
     {
         #region Private members
@@ -35,9 +32,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <summary>
         /// Filter conditions
         /// </summary>
-#if NET8_0_OR_GREATER
-        [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif
         protected class FilterCondition
         {
             /// <summary>
@@ -338,9 +332,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
     /// <summary>
     /// Scan filter.
     /// </summary>
-#if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif
     public class ScanFilter : Filter
     {
         /// <summary>
@@ -383,9 +374,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
     /// <summary>
     /// Query filter.
     /// </summary>
-#if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif
     public class QueryFilter : Filter
     {
         /// <summary>

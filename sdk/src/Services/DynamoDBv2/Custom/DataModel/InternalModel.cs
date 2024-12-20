@@ -18,6 +18,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Linq;
 using System.Reflection;
@@ -48,6 +49,10 @@ namespace Amazon.DynamoDBv2.DataModel
         // MemberInfo of the property
         public MemberInfo Member { get; protected set; }
         // Type of the property
+
+#if NET8_0_OR_GREATER
+        [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicParameterlessConstructor)]
+#endif
         public Type MemberType { get; protected set; }
         // Converter type, if one is present
         public Type ConverterType { get; set; }
