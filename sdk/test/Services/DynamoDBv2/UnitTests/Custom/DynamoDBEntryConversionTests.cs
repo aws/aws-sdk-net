@@ -87,13 +87,10 @@ namespace AWSSDK_DotNet.UnitTests
         [DynamicData((nameof(DynamoDBEntryConversions)))]
         public void ConvertFromEntry_DateTime(DynamoDBEntryConversion conversion)
         {
-            // DynamoDBEntryConversion returns local DateTime by default:
-            // https://github.com/aws/aws-sdk-net/issues/1450
             var entry = new Primitive("2024-07-03T01:31:47.000Z", false);
             var actualDateTime = conversion.ConvertFromEntry<DateTime>(entry);
-            var utcDateTime = actualDateTime.ToUniversalTime();
             var expectedDateTime = new DateTime(2024, 07, 03, 01, 31, 47, DateTimeKind.Utc);
-            Assert.AreEqual(expectedDateTime, utcDateTime);
+            Assert.AreEqual(expectedDateTime, actualDateTime);
         }
 
         [DataTestMethod]
