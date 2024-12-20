@@ -31,7 +31,7 @@ namespace Amazon.BedrockDataAutomation.Model
 {
     /// <summary>
     /// Container for the parameters to the ListDataAutomationProjects operation.
-    /// Lists all existing Amazon Bedrock Keystone DataAutomationProjects
+    /// Lists all existing Amazon Bedrock Data Automation Projects
     /// </summary>
     public partial class ListDataAutomationProjectsRequest : AmazonBedrockDataAutomationRequest
     {

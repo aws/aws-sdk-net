@@ -31,7 +31,7 @@ namespace Amazon.BedrockDataAutomation.Model
 {
     /// <summary>
     /// Container for the parameters to the GetBlueprint operation.
-    /// Gets an existing Amazon Bedrock Keystone Blueprint
+    /// Gets an existing Amazon Bedrock Data Automation Blueprint
     /// </summary>
     public partial class GetBlueprintRequest : AmazonBedrockDataAutomationRequest
     {

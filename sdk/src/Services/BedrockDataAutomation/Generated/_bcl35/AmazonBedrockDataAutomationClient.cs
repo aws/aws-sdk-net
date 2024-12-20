@@ -36,7 +36,7 @@ namespace Amazon.BedrockDataAutomation
     /// <summary>
     /// <para>Implementation for accessing BedrockDataAutomation</para>
     ///
-    /// Amazon Bedrock Keystone Build
+    /// Amazon Bedrock Data Automation BuildTime
     /// </summary>
     public partial class AmazonBedrockDataAutomationClient : AmazonServiceClient, IAmazonBedrockDataAutomation
     {
@@ -267,7 +267,7 @@ namespace Amazon.BedrockDataAutomation
         #region  CreateBlueprint
 
         /// <summary>
-        /// Creates an Amazon Bedrock Keystone Blueprint
+        /// Creates an Amazon Bedrock Data Automation Blueprint
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateBlueprint service method.</param>
         /// 
@@ -339,7 +339,7 @@ namespace Amazon.BedrockDataAutomation
         #region  CreateBlueprintVersion
 
         /// <summary>
-        /// Creates a new version of an existing Amazon Bedrock Keystone Blueprint
+        /// Creates a new version of an existing Amazon Bedrock Data Automation Blueprint
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateBlueprintVersion service method.</param>
         /// 
@@ -411,7 +411,7 @@ namespace Amazon.BedrockDataAutomation
         #region  CreateDataAutomationProject
 
         /// <summary>
-        /// Creates an Amazon Bedrock Keystone DataAutomationProject
+        /// Creates an Amazon Bedrock Data Automation Project
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDataAutomationProject service method.</param>
         /// 
@@ -483,7 +483,7 @@ namespace Amazon.BedrockDataAutomation
         #region  DeleteBlueprint
 
         /// <summary>
-        /// Deletes an existing Amazon Bedrock Keystone Blueprint
+        /// Deletes an existing Amazon Bedrock Data Automation Blueprint
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBlueprint service method.</param>
         /// 
@@ -552,7 +552,7 @@ namespace Amazon.BedrockDataAutomation
         #region  DeleteDataAutomationProject
 
         /// <summary>
-        /// Deletes an existing Amazon Bedrock Keystone DataAutomationProject
+        /// Deletes an existing Amazon Bedrock Data Automation Project
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDataAutomationProject service method.</param>
         /// 
@@ -621,7 +621,7 @@ namespace Amazon.BedrockDataAutomation
         #region  GetBlueprint
 
         /// <summary>
-        /// Gets an existing Amazon Bedrock Keystone Blueprint
+        /// Gets an existing Amazon Bedrock Data Automation Blueprint
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBlueprint service method.</param>
         /// 
@@ -690,7 +690,7 @@ namespace Amazon.BedrockDataAutomation
         #region  GetDataAutomationProject
 
         /// <summary>
-        /// Gets an existing Amazon Bedrock Keystone DataAutomationProject
+        /// Gets an existing Amazon Bedrock Data Automation Project
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDataAutomationProject service method.</param>
         /// 
@@ -759,7 +759,7 @@ namespace Amazon.BedrockDataAutomation
         #region  ListBlueprints
 
         /// <summary>
-        /// Lists all existing Amazon Bedrock Keystone Blueprints
+        /// Lists all existing Amazon Bedrock Data Automation Blueprints
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListBlueprints service method.</param>
         /// 
@@ -828,7 +828,7 @@ namespace Amazon.BedrockDataAutomation
         #region  ListDataAutomationProjects
 
         /// <summary>
-        /// Lists all existing Amazon Bedrock Keystone DataAutomationProjects
+        /// Lists all existing Amazon Bedrock Data Automation Projects
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDataAutomationProjects service method.</param>
         /// 
@@ -897,7 +897,7 @@ namespace Amazon.BedrockDataAutomation
         #region  UpdateBlueprint
 
         /// <summary>
-        /// Updates an existing Amazon Bedrock Blueprint
+        /// Updates an existing Amazon Bedrock Data Automation Blueprint
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateBlueprint service method.</param>
         /// 
@@ -969,7 +969,7 @@ namespace Amazon.BedrockDataAutomation
         #region  UpdateDataAutomationProject
 
         /// <summary>
-        /// Updates an existing Amazon Bedrock DataAutomationProject
+        /// Updates an existing Amazon Bedrock Data Automation Project
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDataAutomationProject service method.</param>
         /// 

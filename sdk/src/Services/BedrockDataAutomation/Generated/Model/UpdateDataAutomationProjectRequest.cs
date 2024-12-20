@@ -31,7 +31,7 @@ namespace Amazon.BedrockDataAutomation.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateDataAutomationProject operation.
-    /// Updates an existing Amazon Bedrock DataAutomationProject
+    /// Updates an existing Amazon Bedrock Data Automation Project
     /// </summary>
     public partial class UpdateDataAutomationProjectRequest : AmazonBedrockDataAutomationRequest
     {

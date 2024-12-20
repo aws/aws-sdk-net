@@ -31,7 +31,7 @@ namespace Amazon.BedrockDataAutomation.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteDataAutomationProject operation.
-    /// Deletes an existing Amazon Bedrock Keystone DataAutomationProject
+    /// Deletes an existing Amazon Bedrock Data Automation Project
     /// </summary>
     public partial class DeleteDataAutomationProjectRequest : AmazonBedrockDataAutomationRequest
     {

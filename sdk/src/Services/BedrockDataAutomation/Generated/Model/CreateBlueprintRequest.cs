@@ -31,7 +31,7 @@ namespace Amazon.BedrockDataAutomation.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateBlueprint operation.
-    /// Creates an Amazon Bedrock Keystone Blueprint
+    /// Creates an Amazon Bedrock Data Automation Blueprint
     /// </summary>
     public partial class CreateBlueprintRequest : AmazonBedrockDataAutomationRequest
     {

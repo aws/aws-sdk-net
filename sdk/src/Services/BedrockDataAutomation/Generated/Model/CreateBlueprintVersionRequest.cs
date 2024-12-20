@@ -31,7 +31,7 @@ namespace Amazon.BedrockDataAutomation.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateBlueprintVersion operation.
-    /// Creates a new version of an existing Amazon Bedrock Keystone Blueprint
+    /// Creates a new version of an existing Amazon Bedrock Data Automation Blueprint
     /// </summary>
     public partial class CreateBlueprintVersionRequest : AmazonBedrockDataAutomationRequest
     {
