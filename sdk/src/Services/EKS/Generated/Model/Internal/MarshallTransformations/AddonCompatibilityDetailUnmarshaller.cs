@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.EKS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for InsightCategorySpecificSummary Object
+    /// Response Unmarshaller for AddonCompatibilityDetail Object
     /// </summary>  
-    public class InsightCategorySpecificSummaryUnmarshaller : IUnmarshaller<InsightCategorySpecificSummary, XmlUnmarshallerContext>, IUnmarshaller<InsightCategorySpecificSummary, JsonUnmarshallerContext>
+    public class AddonCompatibilityDetailUnmarshaller : IUnmarshaller<AddonCompatibilityDetail, XmlUnmarshallerContext>, IUnmarshaller<AddonCompatibilityDetail, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        InsightCategorySpecificSummary IUnmarshaller<InsightCategorySpecificSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AddonCompatibilityDetail IUnmarshaller<AddonCompatibilityDetail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public InsightCategorySpecificSummary Unmarshall(JsonUnmarshallerContext context)
+        public AddonCompatibilityDetail Unmarshall(JsonUnmarshallerContext context)
         {
-            InsightCategorySpecificSummary unmarshalledObject = new InsightCategorySpecificSummary();
+            AddonCompatibilityDetail unmarshalledObject = new AddonCompatibilityDetail();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,16 +66,16 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("addonCompatibilityDetails", targetDepth))
+                if (context.TestExpression("compatibleVersions", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AddonCompatibilityDetail, AddonCompatibilityDetailUnmarshaller>(AddonCompatibilityDetailUnmarshaller.Instance);
-                    unmarshalledObject.AddonCompatibilityDetails = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.CompatibleVersions = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("deprecationDetails", targetDepth))
+                if (context.TestExpression("name", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<DeprecationDetail, DeprecationDetailUnmarshaller>(DeprecationDetailUnmarshaller.Instance);
-                    unmarshalledObject.DeprecationDetails = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -83,12 +83,12 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         }
 
 
-        private static InsightCategorySpecificSummaryUnmarshaller _instance = new InsightCategorySpecificSummaryUnmarshaller();        
+        private static AddonCompatibilityDetailUnmarshaller _instance = new AddonCompatibilityDetailUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static InsightCategorySpecificSummaryUnmarshaller Instance
+        public static AddonCompatibilityDetailUnmarshaller Instance
         {
             get
             {
