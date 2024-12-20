@@ -136,7 +136,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property UploadUrlMetadata. 
         /// <para>
-        /// Information to be used while uploading the attached file. 
+        /// The headers to be provided while uploading the file to the URL.
         /// </para>
         /// </summary>
         public UploadUrlMetadata UploadUrlMetadata

@@ -36,6 +36,7 @@ namespace Amazon.Connect.Model
     {
         private List<Expression> _andExpression = AWSConfigs.InitializeCollections ? new List<Expression>() : null;
         private AttributeCondition _attributeCondition;
+        private AttributeCondition _notAttributeCondition;
         private List<Expression> _orExpression = AWSConfigs.InitializeCollections ? new List<Expression>() : null;
 
         /// <summary>
@@ -72,6 +73,21 @@ namespace Amazon.Connect.Model
         internal bool IsSetAttributeCondition()
         {
             return this._attributeCondition != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NotAttributeCondition.
+        /// </summary>
+        public AttributeCondition NotAttributeCondition
+        {
+            get { return this._notAttributeCondition; }
+            set { this._notAttributeCondition = value; }
+        }
+
+        // Check to see if NotAttributeCondition property is set
+        internal bool IsSetNotAttributeCondition()
+        {
+            return this._notAttributeCondition != null;
         }
 
         /// <summary>

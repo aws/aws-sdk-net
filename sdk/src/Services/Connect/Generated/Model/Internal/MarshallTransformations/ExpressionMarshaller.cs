@@ -75,6 +75,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetNotAttributeCondition())
+            {
+                context.Writer.WritePropertyName("NotAttributeCondition");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AttributeConditionMarshaller.Instance;
+                marshaller.Marshall(requestObject.NotAttributeCondition, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetOrExpression())
             {
                 context.Writer.WritePropertyName("OrExpression");

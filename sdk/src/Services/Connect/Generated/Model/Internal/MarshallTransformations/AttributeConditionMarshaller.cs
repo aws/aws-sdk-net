@@ -84,6 +84,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 }
             }
 
+            if(requestObject.IsSetRange())
+            {
+                context.Writer.WritePropertyName("Range");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = RangeMarshaller.Instance;
+                marshaller.Marshall(requestObject.Range, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetValue())
             {
                 context.Writer.WritePropertyName("Value");

@@ -5001,6 +5001,16 @@
     <max>127</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.Range.MaxProficiencyLevel</property>
+    <min>1</min>
+    <max>5</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.Range.MinProficiencyLevel</property>
+    <min>1</min>
+    <max>5</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.RealTimeContactAnalysisAttachment.AttachmentId</property>
     <min>1</min>
     <max>256</max>

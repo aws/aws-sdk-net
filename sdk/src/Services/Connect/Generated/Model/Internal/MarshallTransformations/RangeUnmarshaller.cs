@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Expression Object
+    /// Response Unmarshaller for Range Object
     /// </summary>  
-    public class ExpressionUnmarshaller : IUnmarshaller<Expression, XmlUnmarshallerContext>, IUnmarshaller<Expression, JsonUnmarshallerContext>
+    public class RangeUnmarshaller : IUnmarshaller<Range, XmlUnmarshallerContext>, IUnmarshaller<Range, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Expression IUnmarshaller<Expression, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        Range IUnmarshaller<Range, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public Expression Unmarshall(JsonUnmarshallerContext context)
+        public Range Unmarshall(JsonUnmarshallerContext context)
         {
-            Expression unmarshalledObject = new Expression();
+            Range unmarshalledObject = new Range();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,28 +66,16 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AndExpression", targetDepth))
+                if (context.TestExpression("MaxProficiencyLevel", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Expression, ExpressionUnmarshaller>(ExpressionUnmarshaller.Instance);
-                    unmarshalledObject.AndExpression = unmarshaller.Unmarshall(context);
+                    var unmarshaller = FloatUnmarshaller.Instance;
+                    unmarshalledObject.MaxProficiencyLevel = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("AttributeCondition", targetDepth))
+                if (context.TestExpression("MinProficiencyLevel", targetDepth))
                 {
-                    var unmarshaller = AttributeConditionUnmarshaller.Instance;
-                    unmarshalledObject.AttributeCondition = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("NotAttributeCondition", targetDepth))
-                {
-                    var unmarshaller = AttributeConditionUnmarshaller.Instance;
-                    unmarshalledObject.NotAttributeCondition = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("OrExpression", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<Expression, ExpressionUnmarshaller>(ExpressionUnmarshaller.Instance);
-                    unmarshalledObject.OrExpression = unmarshaller.Unmarshall(context);
+                    var unmarshaller = FloatUnmarshaller.Instance;
+                    unmarshalledObject.MinProficiencyLevel = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -95,12 +83,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         }
 
 
-        private static ExpressionUnmarshaller _instance = new ExpressionUnmarshaller();        
+        private static RangeUnmarshaller _instance = new RangeUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ExpressionUnmarshaller Instance
+        public static RangeUnmarshaller Instance
         {
             get
             {
