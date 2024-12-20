@@ -16,11 +16,10 @@ using System;
 using System.Collections.Generic;
 using System.Security;
 using System.Text;
-
+using Amazon.Runtime.Identity;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
-using Smithy.Identity.Abstractions;
 
 namespace Amazon.Runtime.Internal.Auth
 {

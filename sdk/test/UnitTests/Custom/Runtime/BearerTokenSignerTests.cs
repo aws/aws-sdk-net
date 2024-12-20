@@ -22,7 +22,6 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-using Smithy.Identity.Abstractions;
 
 namespace AWSSDK.UnitTests.Runtime
 {

@@ -14,13 +14,14 @@
  */
 using System;
 using System.Net;
-using Smithy.Identity.Abstractions;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Endpoints;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Util;
 using Amazon.Runtime.Telemetry;
-using Amazon.Runtime.Credentials.Internal.IdentityResolvers;
+using Amazon.Runtime.Credentials.Internal;
+using Amazon.Runtime.Identity;
+
 #if NETSTANDARD
 using System.Net.Http;
 #endif

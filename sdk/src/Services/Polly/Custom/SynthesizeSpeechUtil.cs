@@ -21,7 +21,7 @@ using Amazon.Runtime.Internal.Util;
 using System;
 using System.Globalization;
 using Amazon.Internal;
-using Amazon.Runtime.Credentials.Internal.IdentityResolvers;
+using Amazon.Runtime.Credentials.Internal;
 
 namespace Amazon.Polly
 {

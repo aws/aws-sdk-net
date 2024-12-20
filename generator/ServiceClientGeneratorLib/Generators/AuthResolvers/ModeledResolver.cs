@@ -38,8 +38,8 @@ namespace ServiceClientGenerator.Generators.AuthResolvers
             #line default
             #line hidden
             this.Write("\r\nusing Amazon.Runtime;\r\nusing Amazon.Runtime.Credentials.Internal;\r\nusing Amazon" +
-                    ".Runtime.Internal;\r\nusing Amazon.Runtime.Internal.Auth;\r\nusing Smithy.Identity.A" +
-                    "bstractions;\r\nusing System.Collections.Generic;\r\n\r\nnamespace ");
+                    ".Runtime.Internal;\r\nusing Amazon.Runtime.Internal.Auth;\r\nusing Amazon.Runtime.Id" +
+                    "entity;\r\nusing System.Collections.Generic;\r\n\r\nnamespace ");
             
             #line 18 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\AuthResolvers\ModeledResolver.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));

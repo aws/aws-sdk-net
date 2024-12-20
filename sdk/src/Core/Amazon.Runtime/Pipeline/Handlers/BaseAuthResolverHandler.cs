@@ -15,8 +15,8 @@
 
 using Amazon.Runtime.Credentials.Internal;
 using Amazon.Runtime.Endpoints;
+using Amazon.Runtime.Identity;
 using Amazon.Runtime.Internal.Auth;
-using Smithy.Identity.Abstractions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;

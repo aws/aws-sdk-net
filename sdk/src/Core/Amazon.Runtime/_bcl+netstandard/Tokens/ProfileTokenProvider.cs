@@ -14,8 +14,8 @@
  */
 
 using Amazon.Runtime.CredentialManagement;
+using Amazon.Runtime.Credentials;
 using Amazon.Runtime.Credentials.Internal;
-using Amazon.Runtime.Credentials.Internal.IdentityResolvers;
 using Amazon.Util;
 using Amazon.Util.Internal;
 #if AWS_ASYNC_API 

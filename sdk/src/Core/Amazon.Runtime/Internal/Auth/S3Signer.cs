@@ -19,7 +19,7 @@ using System.Text;
 using System.Linq;
 using Amazon.Util;
 using Amazon.Runtime.Internal.Util;
-using Smithy.Identity.Abstractions;
+using Amazon.Runtime.Identity;
 
 #pragma warning disable 1591
 
