@@ -680,6 +680,9 @@ namespace Amazon.CostExplorer
         /// Your request parameters changed between pages. Try again with the old parameters or
         /// without a pagination token.
         /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostAndUsage">REST API Reference for GetCostAndUsage Operation</seealso>
         GetCostAndUsageResponse GetCostAndUsage(GetCostAndUsageRequest request);
 
@@ -755,6 +758,9 @@ namespace Amazon.CostExplorer
         /// Your request parameters changed between pages. Try again with the old parameters or
         /// without a pagination token.
         /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostAndUsageWithResources">REST API Reference for GetCostAndUsageWithResources Operation</seealso>
         GetCostAndUsageWithResourcesResponse GetCostAndUsageWithResources(GetCostAndUsageWithResourcesRequest request);
 
@@ -818,6 +824,9 @@ namespace Amazon.CostExplorer
         /// Your request parameters changed between pages. Try again with the old parameters or
         /// without a pagination token.
         /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostCategories">REST API Reference for GetCostCategories Operation</seealso>
         GetCostCategoriesResponse GetCostCategories(GetCostCategoriesRequest request);
 
@@ -864,6 +873,9 @@ namespace Amazon.CostExplorer
         /// </exception>
         /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
         /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostForecast">REST API Reference for GetCostForecast Operation</seealso>
         GetCostForecastResponse GetCostForecast(GetCostForecastRequest request);
@@ -921,6 +933,9 @@ namespace Amazon.CostExplorer
         /// <exception cref="Amazon.CostExplorer.Model.RequestChangedException">
         /// Your request parameters changed between pages. Try again with the old parameters or
         /// without a pagination token.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetDimensionValues">REST API Reference for GetDimensionValues Operation</seealso>
         GetDimensionValuesResponse GetDimensionValues(GetDimensionValuesRequest request);
@@ -1551,6 +1566,9 @@ namespace Amazon.CostExplorer
         /// Your request parameters changed between pages. Try again with the old parameters or
         /// without a pagination token.
         /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetTags">REST API Reference for GetTags Operation</seealso>
         GetTagsResponse GetTags(GetTagsRequest request);
 
@@ -1597,6 +1615,9 @@ namespace Amazon.CostExplorer
         /// </exception>
         /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
         /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.CostExplorer.Model.UnresolvableUsageUnitException">
         /// Cost Explorer was unable to identify the usage unit. Provide <c>UsageType/UsageTypeGroup</c>

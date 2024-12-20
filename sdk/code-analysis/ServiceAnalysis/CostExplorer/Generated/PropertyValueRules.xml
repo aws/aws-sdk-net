@@ -167,6 +167,12 @@
     <pattern>^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CostExplorer.Model.GetCostAndUsageRequest.BillingViewArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[-a-zA-Z0-9/:_+=.-@]{1,43}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CostExplorer.Model.GetCostAndUsageRequest.NextPageToken</property>
     <min>0</min>
     <max>8192</max>
@@ -179,6 +185,12 @@
     <pattern>[\S\s]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CostExplorer.Model.GetCostAndUsageWithResourcesRequest.BillingViewArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[-a-zA-Z0-9/:_+=.-@]{1,43}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CostExplorer.Model.GetCostAndUsageWithResourcesRequest.NextPageToken</property>
     <min>0</min>
     <max>8192</max>
@@ -189,6 +201,12 @@
     <min>0</min>
     <max>8192</max>
     <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.GetCostCategoriesRequest.BillingViewArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[-a-zA-Z0-9/:_+=.-@]{1,43}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CostExplorer.Model.GetCostCategoriesRequest.CostCategoryName</property>
@@ -219,9 +237,21 @@
     <pattern>[\S\s]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CostExplorer.Model.GetCostForecastRequest.BillingViewArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[-a-zA-Z0-9/:_+=.-@]{1,43}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CostExplorer.Model.GetCostForecastRequest.PredictionIntervalLevel</property>
     <min>51</min>
     <max>99</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.GetDimensionValuesRequest.BillingViewArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[-a-zA-Z0-9/:_+=.-@]{1,43}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CostExplorer.Model.GetDimensionValuesRequest.MaxResults</property>
@@ -388,6 +418,12 @@
     <pattern>[\S\s]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CostExplorer.Model.GetTagsRequest.BillingViewArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[-a-zA-Z0-9/:_+=.-@]{1,43}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CostExplorer.Model.GetTagsRequest.MaxResults</property>
     <min>1</min>
   </property-value-rule>
@@ -414,6 +450,12 @@
     <min>0</min>
     <max>8192</max>
     <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.GetUsageForecastRequest.BillingViewArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[-a-zA-Z0-9/:_+=.-@]{1,43}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CostExplorer.Model.GetUsageForecastRequest.PredictionIntervalLevel</property>
