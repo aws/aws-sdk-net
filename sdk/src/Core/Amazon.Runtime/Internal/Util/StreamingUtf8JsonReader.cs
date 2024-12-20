@@ -140,8 +140,7 @@ namespace Amazon.Runtime.Internal.Util
             if (bytesRead == 0)
             {
                 // empty buffer will be returned 
-
-                reader = new Utf8JsonReader(buffer.AsSpan(0, buffer.Length - leftover.Length), isFinalBlock: true, reader.CurrentState);
+                reader = new Utf8JsonReader(buffer.AsSpan(0, bytesRead), isFinalBlock: true, reader.CurrentState);
                 return;
             }
 
