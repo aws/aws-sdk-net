@@ -1,3 +1,32 @@
+### 3.7.951.0 (2024-12-20 19:26 UTC)
+* BedrockAgent (3.7.415.0)
+	* Support for custom user agent and max web pages crawled for web connector. Support app only credentials for SharePoint connector. Increase agents memory duration limit to 365 days. Support to specify max number of session summaries to include in agent invocation context.
+* BedrockAgentRuntime (3.7.414.0)
+	* bedrock agents now supports long term memory and performance configs. Invokeflow supports performance configs. RetrieveAndGenerate performance configs
+* BedrockDataAutomation (3.7.400.9)
+	* Documentation update for Amazon Bedrock Data Automation
+* BedrockDataAutomationRuntime (3.7.400.9)
+	* Documentation update for Amazon Bedrock Data Automation Runtime
+* Billing (3.7.401.0)
+	* Added new API's for defining and fetching Billing Views.
+* Connect (3.7.416.0)
+	* This release supports adding NotAttributeCondition and Range to the RoutingCriteria object.
+* CostExplorer (3.7.404.0)
+	* Support for retrieving cost, usage, and forecast for billing view.
+* DocDB (3.7.402.0)
+	* Support AWS Secret Manager managed password for AWS DocumentDB instance-based cluster.
+* EKS (3.7.407.0)
+	* This release expands the catalog of upgrade insight checks
+* Macie2 (3.7.401.0)
+	* This release adds support for identifying S3 general purpose buckets that exceed the Amazon Macie quota for preventative control monitoring.
+* Outposts (3.7.405.0)
+	* Add CS8365C as a supported power connector for Outpost sites.
+* SageMaker (3.7.418.0)
+	* This release adds support for c6i, m6i and r6i instance on SageMaker Hyperpod and trn1 instances in batch
+* Core 3.7.400.68
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.950.0 (2024-12-19 19:17 UTC)
 * AppStream (3.7.404.0)
 	* Added support for Rocky Linux 8 on Amazon AppStream 2.0
