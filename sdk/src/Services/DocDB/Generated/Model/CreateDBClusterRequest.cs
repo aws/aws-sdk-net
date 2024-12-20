@@ -46,8 +46,10 @@ namespace Amazon.DocDB.Model
         private string _engineVersion;
         private string _globalClusterIdentifier;
         private string _kmsKeyId;
+        private bool? _manageMasterUserPassword;
         private string _masterUsername;
         private string _masterUserPassword;
+        private string _masterUserSecretKmsKeyId;
         private int? _port;
         private string _preferredBackupWindow;
         private string _preferredMaintenanceWindow;
@@ -336,6 +338,30 @@ namespace Amazon.DocDB.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ManageMasterUserPassword. 
+        /// <para>
+        /// Specifies whether to manage the master user password with Amazon Web Services Secrets
+        /// Manager.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraint: You can't manage the master user password with Amazon Web Services Secrets
+        /// Manager if <c>MasterUserPassword</c> is specified.
+        /// </para>
+        /// </summary>
+        public bool ManageMasterUserPassword
+        {
+            get { return this._manageMasterUserPassword.GetValueOrDefault(); }
+            set { this._manageMasterUserPassword = value; }
+        }
+
+        // Check to see if ManageMasterUserPassword property is set
+        internal bool IsSetManageMasterUserPassword()
+        {
+            return this._manageMasterUserPassword.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property MasterUsername. 
         /// <para>
         /// The name of the master user for the cluster.
@@ -391,6 +417,45 @@ namespace Amazon.DocDB.Model
         internal bool IsSetMasterUserPassword()
         {
             return this._masterUserPassword != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MasterUserSecretKmsKeyId. 
+        /// <para>
+        /// The Amazon Web Services KMS key identifier to encrypt a secret that is automatically
+        /// generated and managed in Amazon Web Services Secrets Manager. This setting is valid
+        /// only if the master user password is managed by Amazon DocumentDB in Amazon Web Services
+        /// Secrets Manager for the DB cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias
+        /// name for the KMS key. To use a KMS key in a different Amazon Web Services account,
+        /// specify the key ARN or alias ARN.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't specify <c>MasterUserSecretKmsKeyId</c>, then the <c>aws/secretsmanager</c>
+        /// KMS key is used to encrypt the secret. If the secret is in a different Amazon Web
+        /// Services account, then you can't use the <c>aws/secretsmanager</c> KMS key to encrypt
+        /// the secret, and you must use a customer managed KMS key.
+        /// </para>
+        ///  
+        /// <para>
+        /// There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services
+        /// account has a different default KMS key for each Amazon Web Services Region.
+        /// </para>
+        /// </summary>
+        public string MasterUserSecretKmsKeyId
+        {
+            get { return this._masterUserSecretKmsKeyId; }
+            set { this._masterUserSecretKmsKeyId = value; }
+        }
+
+        // Check to see if MasterUserSecretKmsKeyId property is set
+        internal bool IsSetMasterUserSecretKmsKeyId()
+        {
+            return this._masterUserSecretKmsKeyId != null;
         }
 
         /// <summary>
