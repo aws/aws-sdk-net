@@ -101,7 +101,8 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property Unknown. 
         /// <para>
         /// The total number of buckets that Amazon Macie wasn't able to evaluate permissions
-        /// settings for. Macie can't determine whether these buckets are publicly accessible.
+        /// settings for. For example, the buckets' policies or a quota prevented Macie from retrieving
+        /// the requisite data. Macie can't determine whether the buckets are publicly accessible.
         /// </para>
         /// </summary>
         public long Unknown

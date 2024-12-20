@@ -35,8 +35,7 @@ namespace Amazon.Macie2.Model
     /// (IAM) role to assume, Amazon Macie verifies that the role exists and the attached
     /// policies are configured correctly. If there's an issue, Macie returns an error. For
     /// information about addressing the issue, see <a href="https://docs.aws.amazon.com/macie/latest/user/findings-retrieve-sd-options.html">Configuration
-    /// options and requirements for retrieving sensitive data samples</a> in the <i>Amazon
-    /// Macie User Guide</i>.
+    /// options for retrieving sensitive data samples</a> in the <i>Amazon Macie User Guide</i>.
     /// </summary>
     public partial class UpdateRetrievalConfiguration
     {

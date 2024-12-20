@@ -32,8 +32,8 @@ namespace Amazon.Macie2.Model
     /// <summary>
     /// Provides aggregated statistical data for sensitive data discovery metrics that apply
     /// to S3 buckets, grouped by bucket sensitivity score (sensitivityScore). If automated
-    /// sensitive data discovery is currently disabled for your account, the value for each
-    /// metric is 0.
+    /// sensitive data discovery is currently disabled for your account, the value for most
+    /// of these metrics is 0.
     /// </summary>
     public partial class BucketStatisticsBySensitivity
     {

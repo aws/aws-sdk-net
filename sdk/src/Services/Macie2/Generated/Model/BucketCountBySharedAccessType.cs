@@ -106,8 +106,10 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property Unknown. 
         /// <para>
         /// The total number of buckets that Amazon Macie wasn't able to evaluate shared access
-        /// settings for. Macie can't determine whether these buckets are shared with other Amazon
-        /// Web Services accounts, Amazon CloudFront OAIs, or CloudFront OACs.
+        /// settings for. For example, the buckets' permissions settings or a quota prevented
+        /// Macie from retrieving the requisite data. Macie can't determine whether the buckets
+        /// are shared with other Amazon Web Services accounts, Amazon CloudFront OAIs, or CloudFront
+        /// OACs.
         /// </para>
         /// </summary>
         public long Unknown
