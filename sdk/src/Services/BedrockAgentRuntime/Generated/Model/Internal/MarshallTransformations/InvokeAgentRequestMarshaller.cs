@@ -76,6 +76,17 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetBedrockModelConfigurations())
+                {
+                    context.Writer.WritePropertyName("bedrockModelConfigurations");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = BedrockModelConfigurationsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.BedrockModelConfigurations, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetEnableTrace())
                 {
                     context.Writer.WritePropertyName("enableTrace");

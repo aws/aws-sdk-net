@@ -49,6 +49,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         private string _flowAliasIdentifier;
         private string _flowIdentifier;
         private List<FlowInput> _inputs = AWSConfigs.InitializeCollections ? new List<FlowInput>() : null;
+        private ModelPerformanceConfiguration _modelPerformanceConfiguration;
 
         /// <summary>
         /// Gets and sets the property EnableTrace. 
@@ -125,6 +126,24 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetInputs()
         {
             return this._inputs != null && (this._inputs.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModelPerformanceConfiguration. 
+        /// <para>
+        /// Model performance settings for the request.
+        /// </para>
+        /// </summary>
+        public ModelPerformanceConfiguration ModelPerformanceConfiguration
+        {
+            get { return this._modelPerformanceConfiguration; }
+            set { this._modelPerformanceConfiguration = value; }
+        }
+
+        // Check to see if ModelPerformanceConfiguration property is set
+        internal bool IsSetModelPerformanceConfiguration()
+        {
+            return this._modelPerformanceConfiguration != null;
         }
 
     }

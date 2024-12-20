@@ -49,6 +49,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         private Dictionary<string, Amazon.Runtime.Documents.Document> _additionalModelRequestFields = AWSConfigs.InitializeCollections ? new Dictionary<string, Amazon.Runtime.Documents.Document>() : null;
         private GuardrailConfiguration _guardrailConfiguration;
         private InferenceConfig _inferenceConfig;
+        private PerformanceConfiguration _performanceConfig;
         private PromptTemplate _promptTemplate;
 
         /// <summary>
@@ -106,6 +107,24 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetInferenceConfig()
         {
             return this._inferenceConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PerformanceConfig. 
+        /// <para>
+        /// The latency configuration for the model.
+        /// </para>
+        /// </summary>
+        public PerformanceConfiguration PerformanceConfig
+        {
+            get { return this._performanceConfig; }
+            set { this._performanceConfig = value; }
+        }
+
+        // Check to see if PerformanceConfig property is set
+        internal bool IsSetPerformanceConfig()
+        {
+            return this._performanceConfig != null;
         }
 
         /// <summary>

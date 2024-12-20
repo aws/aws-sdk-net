@@ -95,6 +95,17 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetModelPerformanceConfiguration())
+                {
+                    context.Writer.WritePropertyName("modelPerformanceConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ModelPerformanceConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ModelPerformanceConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

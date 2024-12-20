@@ -605,6 +605,23 @@ namespace Amazon.BedrockAgentRuntime
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// To stream agent responses, make sure that only orchestration prompt is enabled. Agent
+        /// streaming is not supported for the following steps: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>Pre-processing</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Post-processing</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Agent with 1 Knowledge base and <c>User Input</c> not enabled
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
         /// End a conversation by setting <c>endSession</c> to <c>true</c>.
         /// </para>
         ///  </li> <li> 
@@ -658,6 +675,12 @@ namespace Amazon.BedrockAgentRuntime
         /// <exception cref="Amazon.BedrockAgentRuntime.Model.InternalServerException">
         /// An internal server error occurred. Retry your request.
         /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ModelNotReadyException">
+        /// The model specified in the request is not ready to serve inference requests. The
+        /// AWS SDK will automatically retry the operation up to 5 times. For information about
+        /// configuring automatic retries, see <a href="https://docs.aws.amazon.com/sdkref/latest/guide/feature-retry-behavior.html">Retry
+        /// behavior</a> in the <i>AWS SDKs and Tools</i> reference guide.
+        /// </exception>
         /// <exception cref="Amazon.BedrockAgentRuntime.Model.ResourceNotFoundException">
         /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
         /// Resource Name (ARN) and try your request again.
@@ -706,6 +729,23 @@ namespace Amazon.BedrockAgentRuntime
         /// enablement</a>.
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        /// To stream agent responses, make sure that only orchestration prompt is enabled. Agent
+        /// streaming is not supported for the following steps: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>Pre-processing</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Post-processing</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Agent with 1 Knowledge base and <c>User Input</c> not enabled
+        /// </para>
+        ///  </li> </ul> </li> <li> 
         /// <para>
         /// End a conversation by setting <c>endSession</c> to <c>true</c>.
         /// </para>
@@ -762,6 +802,12 @@ namespace Amazon.BedrockAgentRuntime
         /// </exception>
         /// <exception cref="Amazon.BedrockAgentRuntime.Model.InternalServerException">
         /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ModelNotReadyException">
+        /// The model specified in the request is not ready to serve inference requests. The
+        /// AWS SDK will automatically retry the operation up to 5 times. For information about
+        /// configuring automatic retries, see <a href="https://docs.aws.amazon.com/sdkref/latest/guide/feature-retry-behavior.html">Retry
+        /// behavior</a> in the <i>AWS SDKs and Tools</i> reference guide.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgentRuntime.Model.ResourceNotFoundException">
         /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon

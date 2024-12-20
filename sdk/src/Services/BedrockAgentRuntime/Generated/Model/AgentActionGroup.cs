@@ -157,7 +157,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <para>
         /// During orchestration, if your agent determines that it needs to invoke an API in an
         /// action group, but doesn't have enough information to complete the API request, it
-        /// will invoke this action group instead and return an <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Observation.html">Observation</a>
+        /// will invoke this action group instead and return an <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Observation.html">Observation</a>
         /// reprompting the user for more information.
         /// </para>
         /// </summary>

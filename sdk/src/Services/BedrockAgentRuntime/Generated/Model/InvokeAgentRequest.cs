@@ -55,6 +55,23 @@ namespace Amazon.BedrockAgentRuntime.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    /// To stream agent responses, make sure that only orchestration prompt is enabled. Agent
+    /// streaming is not supported for the following steps: 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <c>Pre-processing</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>Post-processing</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Agent with 1 Knowledge base and <c>User Input</c> not enabled
+    /// </para>
+    ///  </li> </ul> </li> <li> 
+    /// <para>
     /// End a conversation by setting <c>endSession</c> to <c>true</c>.
     /// </para>
     ///  </li> <li> 
@@ -91,6 +108,7 @@ namespace Amazon.BedrockAgentRuntime.Model
     {
         private string _agentAliasId;
         private string _agentId;
+        private BedrockModelConfigurations _bedrockModelConfigurations;
         private bool? _enableTrace;
         private bool? _endSession;
         private string _inputText;
@@ -136,6 +154,24 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetAgentId()
         {
             return this._agentId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BedrockModelConfigurations. 
+        /// <para>
+        /// Model performance settings for the request.
+        /// </para>
+        /// </summary>
+        public BedrockModelConfigurations BedrockModelConfigurations
+        {
+            get { return this._bedrockModelConfigurations; }
+            set { this._bedrockModelConfigurations = value; }
+        }
+
+        // Check to see if BedrockModelConfigurations property is set
+        internal bool IsSetBedrockModelConfigurations()
+        {
+            return this._bedrockModelConfigurations != null;
         }
 
         /// <summary>
@@ -290,6 +326,12 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <para>
         ///  Specifies the configurations for streaming. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// To use agent streaming, you need permissions to perform the <c>bedrock:InvokeModelWithResponseStream</c>
+        /// action.
+        /// </para>
+        ///  </note>
         /// </summary>
         public StreamingConfigurations StreamingConfigurations
         {

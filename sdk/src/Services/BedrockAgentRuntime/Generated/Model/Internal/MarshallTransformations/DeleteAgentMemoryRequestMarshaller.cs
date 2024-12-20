@@ -68,6 +68,9 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetMemoryId())
                 request.Parameters.Add("memoryId", StringUtils.FromString(publicRequest.MemoryId));
+            
+            if (publicRequest.IsSetSessionId())
+                request.Parameters.Add("sessionId", StringUtils.FromString(publicRequest.SessionId));
             request.ResourcePath = "/agents/{agentId}/agentAliases/{agentAliasId}/memories";
             request.UseQueryString = true;
 

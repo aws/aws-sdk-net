@@ -86,6 +86,17 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetBedrockModelConfigurations())
+                {
+                    context.Writer.WritePropertyName("bedrockModelConfigurations");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = InlineBedrockModelConfigurationsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.BedrockModelConfigurations, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetCustomerEncryptionKeyArn())
                 {
                     context.Writer.WritePropertyName("customerEncryptionKeyArn");

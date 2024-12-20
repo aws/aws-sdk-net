@@ -70,6 +70,7 @@ namespace Amazon.BedrockAgentRuntime.Model
     public partial class InvokeInlineAgentRequest : AmazonBedrockAgentRuntimeRequest
     {
         private List<AgentActionGroup> _actionGroups = AWSConfigs.InitializeCollections ? new List<AgentActionGroup>() : null;
+        private InlineBedrockModelConfigurations _bedrockModelConfigurations;
         private string _customerEncryptionKeyArn;
         private bool? _enableTrace;
         private bool? _endSession;
@@ -100,6 +101,24 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetActionGroups()
         {
             return this._actionGroups != null && (this._actionGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property BedrockModelConfigurations. 
+        /// <para>
+        /// Model settings for the request.
+        /// </para>
+        /// </summary>
+        public InlineBedrockModelConfigurations BedrockModelConfigurations
+        {
+            get { return this._bedrockModelConfigurations; }
+            set { this._bedrockModelConfigurations = value; }
+        }
+
+        // Check to see if BedrockModelConfigurations property is set
+        internal bool IsSetBedrockModelConfigurations()
+        {
+            return this._bedrockModelConfigurations != null;
         }
 
         /// <summary>

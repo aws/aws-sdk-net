@@ -19,6 +19,12 @@
     <pattern>^[0-9a-zA-Z._:-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.DeleteAgentMemoryRequest.SessionId</property>
+    <min>2</min>
+    <max>100</max>
+    <pattern>^[0-9a-zA-Z._:-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgentRuntime.Model.GetAgentMemoryRequest.AgentAliasId</property>
     <min>0</min>
     <max>10</max>
