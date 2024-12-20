@@ -2477,6 +2477,10 @@ namespace Amazon.BedrockAgent
         /// </summary>
         public static readonly PromptType KNOWLEDGE_BASE_RESPONSE_GENERATION = new PromptType("KNOWLEDGE_BASE_RESPONSE_GENERATION");
         /// <summary>
+        /// Constant MEMORY_SUMMARIZATION for PromptType
+        /// </summary>
+        public static readonly PromptType MEMORY_SUMMARIZATION = new PromptType("MEMORY_SUMMARIZATION");
+        /// <summary>
         /// Constant ORCHESTRATION for PromptType
         /// </summary>
         public static readonly PromptType ORCHESTRATION = new PromptType("ORCHESTRATION");
@@ -2930,6 +2934,10 @@ namespace Amazon.BedrockAgent
         /// Constant OAUTH2_CLIENT_CREDENTIALS for SharePointAuthType
         /// </summary>
         public static readonly SharePointAuthType OAUTH2_CLIENT_CREDENTIALS = new SharePointAuthType("OAUTH2_CLIENT_CREDENTIALS");
+        /// <summary>
+        /// Constant OAUTH2_SHAREPOINT_APP_ONLY_CLIENT_CREDENTIALS for SharePointAuthType
+        /// </summary>
+        public static readonly SharePointAuthType OAUTH2_SHAREPOINT_APP_ONLY_CLIENT_CREDENTIALS = new SharePointAuthType("OAUTH2_SHAREPOINT_APP_ONLY_CLIENT_CREDENTIALS");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

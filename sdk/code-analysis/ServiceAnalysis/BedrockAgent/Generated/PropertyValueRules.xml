@@ -2328,7 +2328,7 @@
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.MemoryConfiguration.StorageDays</property>
     <min>0</min>
-    <max>30</max>
+    <max>365</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.MetadataAttribute.Key</property>
@@ -2812,6 +2812,10 @@
     <pattern>^arn:aws(|-cn|-us-gov):kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.SessionSummaryConfiguration.MaxRecentSessions</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgent.Model.SharePointSourceConfiguration.CredentialsSecretArn</property>
     <pattern>^arn:aws(|-cn|-us-gov):secretsmanager:[a-z0-9-]{1,20}:([0-9]{12}|):secret:[a-zA-Z0-9!/_+=.@-]{1,512}$</pattern>
   </property-value-rule>
@@ -2917,6 +2921,15 @@
     <min>20</min>
     <max>2048</max>
     <pattern>^(arn:aws(-[^:]{1,12})?:(bedrock|sagemaker):[a-z0-9-]{1,20}:([0-9]{12})?:([a-z-]+/)?)?([a-zA-Z0-9.-]{1,63}){0,2}(([:][a-z0-9-]{1,63}){0,2})?(/[a-z0-9]{1,12})?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.WebCrawlerConfiguration.UserAgent</property>
+    <min>15</min>
+    <max>40</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.WebCrawlerLimits.MaxPages</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.WebCrawlerLimits.RateLimit</property>

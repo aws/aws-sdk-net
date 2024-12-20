@@ -87,6 +87,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Scope);
             }
 
+            if(requestObject.IsSetUserAgent())
+            {
+                context.Writer.WritePropertyName("userAgent");
+                context.Writer.Write(requestObject.UserAgent);
+            }
+
         }
 
         /// <summary>

@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for WebCrawlerConfiguration Object
+    /// Response Unmarshaller for SessionSummaryConfiguration Object
     /// </summary>  
-    public class WebCrawlerConfigurationUnmarshaller : IUnmarshaller<WebCrawlerConfiguration, XmlUnmarshallerContext>, IUnmarshaller<WebCrawlerConfiguration, JsonUnmarshallerContext>
+    public class SessionSummaryConfigurationUnmarshaller : IUnmarshaller<SessionSummaryConfiguration, XmlUnmarshallerContext>, IUnmarshaller<SessionSummaryConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        WebCrawlerConfiguration IUnmarshaller<WebCrawlerConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        SessionSummaryConfiguration IUnmarshaller<SessionSummaryConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public WebCrawlerConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public SessionSummaryConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            WebCrawlerConfiguration unmarshalledObject = new WebCrawlerConfiguration();
+            SessionSummaryConfiguration unmarshalledObject = new SessionSummaryConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,34 +66,10 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("crawlerLimits", targetDepth))
+                if (context.TestExpression("maxRecentSessions", targetDepth))
                 {
-                    var unmarshaller = WebCrawlerLimitsUnmarshaller.Instance;
-                    unmarshalledObject.CrawlerLimits = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("exclusionFilters", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.ExclusionFilters = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("inclusionFilters", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.InclusionFilters = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("scope", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Scope = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("userAgent", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UserAgent = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MaxRecentSessions = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -101,12 +77,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         }
 
 
-        private static WebCrawlerConfigurationUnmarshaller _instance = new WebCrawlerConfigurationUnmarshaller();        
+        private static SessionSummaryConfigurationUnmarshaller _instance = new SessionSummaryConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static WebCrawlerConfigurationUnmarshaller Instance
+        public static SessionSummaryConfigurationUnmarshaller Instance
         {
             get
             {

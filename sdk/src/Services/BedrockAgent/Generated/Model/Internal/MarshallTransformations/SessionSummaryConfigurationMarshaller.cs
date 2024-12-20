@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// MemoryConfiguration Marshaller
+    /// SessionSummaryConfiguration Marshaller
     /// </summary>
-    public class MemoryConfigurationMarshaller : IRequestMarshaller<MemoryConfiguration, JsonMarshallerContext> 
+    public class SessionSummaryConfigurationMarshaller : IRequestMarshaller<SessionSummaryConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,36 +44,14 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(MemoryConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(SessionSummaryConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetEnabledMemoryTypes())
+            if(requestObject.IsSetMaxRecentSessions())
             {
-                context.Writer.WritePropertyName("enabledMemoryTypes");
-                context.Writer.WriteArrayStart();
-                foreach(var requestObjectEnabledMemoryTypesListValue in requestObject.EnabledMemoryTypes)
-                {
-                        context.Writer.Write(requestObjectEnabledMemoryTypesListValue);
-                }
-                context.Writer.WriteArrayEnd();
-            }
-
-            if(requestObject.IsSetSessionSummaryConfiguration())
-            {
-                context.Writer.WritePropertyName("sessionSummaryConfiguration");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = SessionSummaryConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.SessionSummaryConfiguration, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetStorageDays())
-            {
-                context.Writer.WritePropertyName("storageDays");
-                context.Writer.Write(requestObject.StorageDays);
+                context.Writer.WritePropertyName("maxRecentSessions");
+                context.Writer.Write(requestObject.MaxRecentSessions);
             }
 
         }
@@ -81,7 +59,7 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static MemoryConfigurationMarshaller Instance = new MemoryConfigurationMarshaller();
+        public readonly static SessionSummaryConfigurationMarshaller Instance = new SessionSummaryConfigurationMarshaller();
 
     }
 }
