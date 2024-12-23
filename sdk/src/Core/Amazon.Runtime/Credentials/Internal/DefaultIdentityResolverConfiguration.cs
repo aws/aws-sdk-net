@@ -13,11 +13,11 @@
  * permissions and limitations under the License.
  */
 
-using Smithy.Identity.Abstractions;
 using System;
 using System.Collections.Generic;
+using Amazon.Runtime.Identity;
 
-namespace Amazon.Runtime.Credentials.Internal.IdentityResolvers
+namespace Amazon.Runtime.Credentials.Internal
 {
     /// <inheritdoc/>
     public class DefaultIdentityResolverConfiguration : IIdentityResolverConfiguration
