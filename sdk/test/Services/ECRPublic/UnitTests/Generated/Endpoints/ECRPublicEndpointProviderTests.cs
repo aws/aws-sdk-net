@@ -32,58 +32,13 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("ECRPublic")]
-        [Description("For region us-east-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_useast1_with_FIPS_enabled_and_DualStack_enabled_Test()
+        [Description("Valid with dualstack and FIPS disabled. i.e, IPv4 Only stack with no FIPS, with special prefix")]
+        public void Valid_with_dualstack_and_FIPS_disabled_ie_IPv4_Only_stack_with_no_FIPS_with_special_prefix_Test()
         {
             var parameters = new ECRPublicEndpointParameters();
-            parameters["Region"] = "us-east-1";
-            parameters["UseFIPS"] = true;
-            parameters["UseDualStack"] = true;
-            var endpoint = new AmazonECRPublicEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://api.ecr-public-fips.us-east-1.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("ECRPublic")]
-        [Description("For region us-east-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_useast1_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new ECRPublicEndpointParameters();
-            parameters["Region"] = "us-east-1";
-            parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = false;
-            var endpoint = new AmazonECRPublicEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://api.ecr-public-fips.us-east-1.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("ECRPublic")]
-        [Description("For region us-east-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_useast1_with_FIPS_disabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new ECRPublicEndpointParameters();
-            parameters["Region"] = "us-east-1";
             parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = true;
-            var endpoint = new AmazonECRPublicEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://api.ecr-public.us-east-1.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("ECRPublic")]
-        [Description("For region us-east-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_useast1_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new ECRPublicEndpointParameters();
             parameters["Region"] = "us-east-1";
-            parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = false;
             var endpoint = new AmazonECRPublicEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://api.ecr-public.us-east-1.amazonaws.com", endpoint.URL);
         }
@@ -92,302 +47,29 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("ECRPublic")]
-        [Description("For region cn-north-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_cnnorth1_with_FIPS_enabled_and_DualStack_enabled_Test()
+        [Description("Valid with dualstack enabled")]
+        public void Valid_with_dualstack_enabled_Test()
         {
             var parameters = new ECRPublicEndpointParameters();
-            parameters["Region"] = "cn-north-1";
-            parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = true;
-            var endpoint = new AmazonECRPublicEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://api.ecr-public-fips.cn-north-1.api.amazonwebservices.com.cn", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("ECRPublic")]
-        [Description("For region cn-north-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_cnnorth1_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new ECRPublicEndpointParameters();
-            parameters["Region"] = "cn-north-1";
-            parameters["UseFIPS"] = true;
-            parameters["UseDualStack"] = false;
-            var endpoint = new AmazonECRPublicEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://api.ecr-public-fips.cn-north-1.amazonaws.com.cn", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("ECRPublic")]
-        [Description("For region cn-north-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_cnnorth1_with_FIPS_disabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new ECRPublicEndpointParameters();
-            parameters["Region"] = "cn-north-1";
             parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = true;
-            var endpoint = new AmazonECRPublicEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://api.ecr-public.cn-north-1.api.amazonwebservices.com.cn", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("ECRPublic")]
-        [Description("For region cn-north-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_cnnorth1_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new ECRPublicEndpointParameters();
-            parameters["Region"] = "cn-north-1";
-            parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = false;
-            var endpoint = new AmazonECRPublicEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://api.ecr-public.cn-north-1.amazonaws.com.cn", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("ECRPublic")]
-        [Description("For region us-gov-east-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_usgoveast1_with_FIPS_enabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new ECRPublicEndpointParameters();
-            parameters["Region"] = "us-gov-east-1";
-            parameters["UseFIPS"] = true;
-            parameters["UseDualStack"] = true;
-            var endpoint = new AmazonECRPublicEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://api.ecr-public-fips.us-gov-east-1.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("ECRPublic")]
-        [Description("For region us-gov-east-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_usgoveast1_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new ECRPublicEndpointParameters();
-            parameters["Region"] = "us-gov-east-1";
-            parameters["UseFIPS"] = true;
-            parameters["UseDualStack"] = false;
-            var endpoint = new AmazonECRPublicEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://api.ecr-public-fips.us-gov-east-1.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("ECRPublic")]
-        [Description("For region us-gov-east-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_usgoveast1_with_FIPS_disabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new ECRPublicEndpointParameters();
-            parameters["Region"] = "us-gov-east-1";
-            parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = true;
-            var endpoint = new AmazonECRPublicEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://api.ecr-public.us-gov-east-1.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("ECRPublic")]
-        [Description("For region us-gov-east-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_usgoveast1_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new ECRPublicEndpointParameters();
-            parameters["Region"] = "us-gov-east-1";
-            parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = false;
-            var endpoint = new AmazonECRPublicEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://api.ecr-public.us-gov-east-1.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("ECRPublic")]
-        [Description("For region us-iso-east-1 with FIPS enabled and DualStack enabled")]
-        [ExpectedException(typeof(AmazonClientException), @"FIPS and DualStack are enabled, but this partition does not support one or both")]
-        public void For_region_usisoeast1_with_FIPS_enabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new ECRPublicEndpointParameters();
-            parameters["Region"] = "us-iso-east-1";
-            parameters["UseFIPS"] = true;
-            parameters["UseDualStack"] = true;
-            var endpoint = new AmazonECRPublicEndpointProvider().ResolveEndpoint(parameters);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("ECRPublic")]
-        [Description("For region us-iso-east-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_usisoeast1_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new ECRPublicEndpointParameters();
-            parameters["Region"] = "us-iso-east-1";
-            parameters["UseFIPS"] = true;
-            parameters["UseDualStack"] = false;
-            var endpoint = new AmazonECRPublicEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://api.ecr-public-fips.us-iso-east-1.c2s.ic.gov", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("ECRPublic")]
-        [Description("For region us-iso-east-1 with FIPS disabled and DualStack enabled")]
-        [ExpectedException(typeof(AmazonClientException), @"DualStack is enabled but this partition does not support DualStack")]
-        public void For_region_usisoeast1_with_FIPS_disabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new ECRPublicEndpointParameters();
-            parameters["Region"] = "us-iso-east-1";
-            parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = true;
-            var endpoint = new AmazonECRPublicEndpointProvider().ResolveEndpoint(parameters);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("ECRPublic")]
-        [Description("For region us-iso-east-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_usisoeast1_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new ECRPublicEndpointParameters();
-            parameters["Region"] = "us-iso-east-1";
-            parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = false;
-            var endpoint = new AmazonECRPublicEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://api.ecr-public.us-iso-east-1.c2s.ic.gov", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("ECRPublic")]
-        [Description("For region us-isob-east-1 with FIPS enabled and DualStack enabled")]
-        [ExpectedException(typeof(AmazonClientException), @"FIPS and DualStack are enabled, but this partition does not support one or both")]
-        public void For_region_usisobeast1_with_FIPS_enabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new ECRPublicEndpointParameters();
-            parameters["Region"] = "us-isob-east-1";
-            parameters["UseFIPS"] = true;
-            parameters["UseDualStack"] = true;
-            var endpoint = new AmazonECRPublicEndpointProvider().ResolveEndpoint(parameters);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("ECRPublic")]
-        [Description("For region us-isob-east-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_usisobeast1_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new ECRPublicEndpointParameters();
-            parameters["Region"] = "us-isob-east-1";
-            parameters["UseFIPS"] = true;
-            parameters["UseDualStack"] = false;
-            var endpoint = new AmazonECRPublicEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://api.ecr-public-fips.us-isob-east-1.sc2s.sgov.gov", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("ECRPublic")]
-        [Description("For region us-isob-east-1 with FIPS disabled and DualStack enabled")]
-        [ExpectedException(typeof(AmazonClientException), @"DualStack is enabled but this partition does not support DualStack")]
-        public void For_region_usisobeast1_with_FIPS_disabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new ECRPublicEndpointParameters();
-            parameters["Region"] = "us-isob-east-1";
-            parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = true;
-            var endpoint = new AmazonECRPublicEndpointProvider().ResolveEndpoint(parameters);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("ECRPublic")]
-        [Description("For region us-isob-east-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_usisobeast1_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new ECRPublicEndpointParameters();
-            parameters["Region"] = "us-isob-east-1";
-            parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = false;
-            var endpoint = new AmazonECRPublicEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://api.ecr-public.us-isob-east-1.sc2s.sgov.gov", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("ECRPublic")]
-        [Description("For custom endpoint with region set and fips disabled and dualstack disabled")]
-        public void For_custom_endpoint_with_region_set_and_fips_disabled_and_dualstack_disabled_Test()
-        {
-            var parameters = new ECRPublicEndpointParameters();
             parameters["Region"] = "us-east-1";
-            parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = false;
-            parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonECRPublicEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://example.com", endpoint.URL);
+            Assert.AreEqual("https://ecr-public.us-east-1.api.aws", endpoint.URL);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("ECRPublic")]
-        [Description("For custom endpoint with region not set and fips disabled and dualstack disabled")]
-        public void For_custom_endpoint_with_region_not_set_and_fips_disabled_and_dualstack_disabled_Test()
+        [Description("Invalid with FIPS set, dualstack disabled")]
+        [ExpectedException(typeof(AmazonClientException), @"ECR Public does not support FIPS")]
+        public void Invalid_with_FIPS_set_dualstack_disabled_Test()
         {
             var parameters = new ECRPublicEndpointParameters();
-            parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
-            parameters["Endpoint"] = "https://example.com";
-            var endpoint = new AmazonECRPublicEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://example.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("ECRPublic")]
-        [Description("For custom endpoint with fips enabled and dualstack disabled")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_Test()
-        {
-            var parameters = new ECRPublicEndpointParameters();
-            parameters["Region"] = "us-east-1";
             parameters["UseFIPS"] = true;
-            parameters["UseDualStack"] = false;
-            parameters["Endpoint"] = "https://example.com";
-            var endpoint = new AmazonECRPublicEndpointProvider().ResolveEndpoint(parameters);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("ECRPublic")]
-        [Description("For custom endpoint with fips disabled and dualstack enabled")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: Dualstack and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_Test()
-        {
-            var parameters = new ECRPublicEndpointParameters();
             parameters["Region"] = "us-east-1";
-            parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = true;
-            parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonECRPublicEndpointProvider().ResolveEndpoint(parameters);
         }
 
@@ -395,11 +77,28 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("ECRPublic")]
-        [Description("Missing region")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: Missing Region")]
-        public void Missing_region_Test()
+        [Description("Invalid with both dualstack and FIPS enabled")]
+        [ExpectedException(typeof(AmazonClientException), @"ECR Public does not support FIPS")]
+        public void Invalid_with_both_dualstack_and_FIPS_enabled_Test()
         {
             var parameters = new ECRPublicEndpointParameters();
+            parameters["UseDualStack"] = true;
+            parameters["UseFIPS"] = true;
+            parameters["Region"] = "us-east-1";
+            var endpoint = new AmazonECRPublicEndpointProvider().ResolveEndpoint(parameters);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("ECRPublic")]
+        [Description("Invalid with DualStack enabled and partition does not support Dualstack")]
+        [ExpectedException(typeof(AmazonClientException), @"Dualstack is enabled but this partition does not support dualstack")]
+        public void Invalid_with_DualStack_enabled_and_partition_does_not_support_Dualstack_Test()
+        {
+            var parameters = new ECRPublicEndpointParameters();
+            parameters["UseDualStack"] = true;
+            parameters["Region"] = "us-isob-east-1";
             var endpoint = new AmazonECRPublicEndpointProvider().ResolveEndpoint(parameters);
         }
 
