@@ -94,7 +94,7 @@ namespace Amazon.SupplyChain
         ///
         /// </summary>
         public AmazonSupplyChainClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSupplyChainConfig()) { }
+            : base(new AmazonSupplyChainConfig()) { }
 
         /// <summary>
         /// Constructs AmazonSupplyChainClient with the credentials loaded from the application's
@@ -113,7 +113,7 @@ namespace Amazon.SupplyChain
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonSupplyChainClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSupplyChainConfig{RegionEndpoint = region}) { }
+            : base(new AmazonSupplyChainConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonSupplyChainClient with the credentials loaded from the application's
@@ -132,7 +132,7 @@ namespace Amazon.SupplyChain
         /// </summary>
         /// <param name="config">The AmazonSupplyChainClient Configuration Object</param>
         public AmazonSupplyChainClient(AmazonSupplyChainConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonSupplyChainClient with AWS Credentials
@@ -235,15 +235,7 @@ namespace Amazon.SupplyChain
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -253,7 +245,9 @@ namespace Amazon.SupplyChain
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonSupplyChainEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonSupplyChainAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

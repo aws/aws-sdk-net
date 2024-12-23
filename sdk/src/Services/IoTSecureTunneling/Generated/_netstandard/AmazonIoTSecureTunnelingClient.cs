@@ -72,7 +72,7 @@ namespace Amazon.IoTSecureTunneling
         ///
         /// </summary>
         public AmazonIoTSecureTunnelingClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonIoTSecureTunnelingConfig()) { }
+            : base(new AmazonIoTSecureTunnelingConfig()) { }
 
         /// <summary>
         /// Constructs AmazonIoTSecureTunnelingClient with the credentials loaded from the application's
@@ -91,7 +91,7 @@ namespace Amazon.IoTSecureTunneling
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonIoTSecureTunnelingClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonIoTSecureTunnelingConfig{RegionEndpoint = region}) { }
+            : base(new AmazonIoTSecureTunnelingConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonIoTSecureTunnelingClient with the credentials loaded from the application's
@@ -110,7 +110,7 @@ namespace Amazon.IoTSecureTunneling
         /// </summary>
         /// <param name="config">The AmazonIoTSecureTunnelingClient Configuration Object</param>
         public AmazonIoTSecureTunnelingClient(AmazonIoTSecureTunnelingConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -235,14 +235,6 @@ namespace Amazon.IoTSecureTunneling
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -250,7 +242,9 @@ namespace Amazon.IoTSecureTunneling
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonIoTSecureTunnelingEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonIoTSecureTunnelingAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

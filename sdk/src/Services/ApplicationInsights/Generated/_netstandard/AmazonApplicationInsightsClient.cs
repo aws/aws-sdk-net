@@ -80,7 +80,7 @@ namespace Amazon.ApplicationInsights
         ///
         /// </summary>
         public AmazonApplicationInsightsClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonApplicationInsightsConfig()) { }
+            : base(new AmazonApplicationInsightsConfig()) { }
 
         /// <summary>
         /// Constructs AmazonApplicationInsightsClient with the credentials loaded from the application's
@@ -99,7 +99,7 @@ namespace Amazon.ApplicationInsights
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonApplicationInsightsClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonApplicationInsightsConfig{RegionEndpoint = region}) { }
+            : base(new AmazonApplicationInsightsConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonApplicationInsightsClient with the credentials loaded from the application's
@@ -118,7 +118,7 @@ namespace Amazon.ApplicationInsights
         /// </summary>
         /// <param name="config">The AmazonApplicationInsightsClient Configuration Object</param>
         public AmazonApplicationInsightsClient(AmazonApplicationInsightsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -243,14 +243,6 @@ namespace Amazon.ApplicationInsights
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -258,7 +250,9 @@ namespace Amazon.ApplicationInsights
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonApplicationInsightsEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonApplicationInsightsAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

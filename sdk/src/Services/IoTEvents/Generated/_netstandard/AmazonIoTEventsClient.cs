@@ -67,7 +67,7 @@ namespace Amazon.IoTEvents
         ///
         /// </summary>
         public AmazonIoTEventsClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonIoTEventsConfig()) { }
+            : base(new AmazonIoTEventsConfig()) { }
 
         /// <summary>
         /// Constructs AmazonIoTEventsClient with the credentials loaded from the application's
@@ -86,7 +86,7 @@ namespace Amazon.IoTEvents
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonIoTEventsClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonIoTEventsConfig{RegionEndpoint = region}) { }
+            : base(new AmazonIoTEventsConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonIoTEventsClient with the credentials loaded from the application's
@@ -105,7 +105,7 @@ namespace Amazon.IoTEvents
         /// </summary>
         /// <param name="config">The AmazonIoTEventsClient Configuration Object</param>
         public AmazonIoTEventsClient(AmazonIoTEventsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -212,14 +212,6 @@ namespace Amazon.IoTEvents
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -227,7 +219,9 @@ namespace Amazon.IoTEvents
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonIoTEventsEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonIoTEventsAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

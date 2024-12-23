@@ -87,7 +87,7 @@ namespace Amazon.ConfigService
         ///
         /// </summary>
         public AmazonConfigServiceClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonConfigServiceConfig()) { }
+            : base(new AmazonConfigServiceConfig()) { }
 
         /// <summary>
         /// Constructs AmazonConfigServiceClient with the credentials loaded from the application's
@@ -106,7 +106,7 @@ namespace Amazon.ConfigService
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonConfigServiceClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonConfigServiceConfig{RegionEndpoint = region}) { }
+            : base(new AmazonConfigServiceConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonConfigServiceClient with the credentials loaded from the application's
@@ -125,7 +125,7 @@ namespace Amazon.ConfigService
         /// </summary>
         /// <param name="config">The AmazonConfigServiceClient Configuration Object</param>
         public AmazonConfigServiceClient(AmazonConfigServiceConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -250,14 +250,6 @@ namespace Amazon.ConfigService
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -265,7 +257,9 @@ namespace Amazon.ConfigService
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonConfigServiceEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonConfigServiceAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

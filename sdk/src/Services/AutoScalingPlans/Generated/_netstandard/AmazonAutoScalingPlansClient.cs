@@ -108,7 +108,7 @@ namespace Amazon.AutoScalingPlans
         ///
         /// </summary>
         public AmazonAutoScalingPlansClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAutoScalingPlansConfig()) { }
+            : base(new AmazonAutoScalingPlansConfig()) { }
 
         /// <summary>
         /// Constructs AmazonAutoScalingPlansClient with the credentials loaded from the application's
@@ -127,7 +127,7 @@ namespace Amazon.AutoScalingPlans
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonAutoScalingPlansClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAutoScalingPlansConfig{RegionEndpoint = region}) { }
+            : base(new AmazonAutoScalingPlansConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonAutoScalingPlansClient with the credentials loaded from the application's
@@ -146,7 +146,7 @@ namespace Amazon.AutoScalingPlans
         /// </summary>
         /// <param name="config">The AmazonAutoScalingPlansClient Configuration Object</param>
         public AmazonAutoScalingPlansClient(AmazonAutoScalingPlansConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -253,14 +253,6 @@ namespace Amazon.AutoScalingPlans
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -268,7 +260,9 @@ namespace Amazon.AutoScalingPlans
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonAutoScalingPlansEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonAutoScalingPlansAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

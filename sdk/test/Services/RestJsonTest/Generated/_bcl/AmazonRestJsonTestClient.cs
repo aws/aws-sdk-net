@@ -63,7 +63,7 @@ namespace Amazon.RestJsonTest
         ///
         /// </summary>
         public AmazonRestJsonTestClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonRestJsonTestConfig()) { }
+            : base(new AmazonRestJsonTestConfig()) { }
 
         /// <summary>
         /// Constructs AmazonRestJsonTestClient with the credentials loaded from the application's
@@ -82,7 +82,7 @@ namespace Amazon.RestJsonTest
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonRestJsonTestClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonRestJsonTestConfig{RegionEndpoint = region}) { }
+            : base(new AmazonRestJsonTestConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonRestJsonTestClient with the credentials loaded from the application's
@@ -101,7 +101,7 @@ namespace Amazon.RestJsonTest
         /// </summary>
         /// <param name="config">The AmazonRestJsonTestClient Configuration Object</param>
         public AmazonRestJsonTestClient(AmazonRestJsonTestConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonRestJsonTestClient with AWS Credentials
@@ -204,15 +204,16 @@ namespace Amazon.RestJsonTest
 
         #endregion
 
-        #region Overrides
+        #region Overrides  
 
         /// <summary>
-        /// Creates the signer for the service.
+        /// Customize the pipeline
         /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
+        /// <param name="pipeline"></param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
         {
-            return new AWS4Signer();
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonRestJsonTestAuthSchemeHandler());
+        }
 
         /// <summary>
         /// Capture metadata for the service.

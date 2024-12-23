@@ -79,7 +79,7 @@ namespace Amazon.BedrockAgentRuntime
         ///
         /// </summary>
         public AmazonBedrockAgentRuntimeClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonBedrockAgentRuntimeConfig()) { }
+            : base(new AmazonBedrockAgentRuntimeConfig()) { }
 
         /// <summary>
         /// Constructs AmazonBedrockAgentRuntimeClient with the credentials loaded from the application's
@@ -98,7 +98,7 @@ namespace Amazon.BedrockAgentRuntime
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonBedrockAgentRuntimeClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonBedrockAgentRuntimeConfig{RegionEndpoint = region}) { }
+            : base(new AmazonBedrockAgentRuntimeConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonBedrockAgentRuntimeClient with the credentials loaded from the application's
@@ -117,7 +117,7 @@ namespace Amazon.BedrockAgentRuntime
         /// </summary>
         /// <param name="config">The AmazonBedrockAgentRuntimeClient Configuration Object</param>
         public AmazonBedrockAgentRuntimeClient(AmazonBedrockAgentRuntimeConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonBedrockAgentRuntimeClient with AWS Credentials
@@ -220,15 +220,7 @@ namespace Amazon.BedrockAgentRuntime
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -238,7 +230,9 @@ namespace Amazon.BedrockAgentRuntime
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonBedrockAgentRuntimeEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonBedrockAgentRuntimeAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

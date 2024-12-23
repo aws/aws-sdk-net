@@ -127,7 +127,7 @@ namespace Amazon.Route53RecoveryCluster
         ///
         /// </summary>
         public AmazonRoute53RecoveryClusterClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonRoute53RecoveryClusterConfig()) { }
+            : base(new AmazonRoute53RecoveryClusterConfig()) { }
 
         /// <summary>
         /// Constructs AmazonRoute53RecoveryClusterClient with the credentials loaded from the application's
@@ -146,7 +146,7 @@ namespace Amazon.Route53RecoveryCluster
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonRoute53RecoveryClusterClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonRoute53RecoveryClusterConfig{RegionEndpoint = region}) { }
+            : base(new AmazonRoute53RecoveryClusterConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonRoute53RecoveryClusterClient with the credentials loaded from the application's
@@ -165,7 +165,7 @@ namespace Amazon.Route53RecoveryCluster
         /// </summary>
         /// <param name="config">The AmazonRoute53RecoveryClusterClient Configuration Object</param>
         public AmazonRoute53RecoveryClusterClient(AmazonRoute53RecoveryClusterConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -290,14 +290,6 @@ namespace Amazon.Route53RecoveryCluster
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -305,7 +297,9 @@ namespace Amazon.Route53RecoveryCluster
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonRoute53RecoveryClusterEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonRoute53RecoveryClusterAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

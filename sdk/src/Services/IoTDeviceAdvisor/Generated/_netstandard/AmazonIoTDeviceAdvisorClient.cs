@@ -73,7 +73,7 @@ namespace Amazon.IoTDeviceAdvisor
         ///
         /// </summary>
         public AmazonIoTDeviceAdvisorClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonIoTDeviceAdvisorConfig()) { }
+            : base(new AmazonIoTDeviceAdvisorConfig()) { }
 
         /// <summary>
         /// Constructs AmazonIoTDeviceAdvisorClient with the credentials loaded from the application's
@@ -92,7 +92,7 @@ namespace Amazon.IoTDeviceAdvisor
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonIoTDeviceAdvisorClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonIoTDeviceAdvisorConfig{RegionEndpoint = region}) { }
+            : base(new AmazonIoTDeviceAdvisorConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonIoTDeviceAdvisorClient with the credentials loaded from the application's
@@ -111,7 +111,7 @@ namespace Amazon.IoTDeviceAdvisor
         /// </summary>
         /// <param name="config">The AmazonIoTDeviceAdvisorClient Configuration Object</param>
         public AmazonIoTDeviceAdvisorClient(AmazonIoTDeviceAdvisorConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -236,14 +236,6 @@ namespace Amazon.IoTDeviceAdvisor
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -251,7 +243,9 @@ namespace Amazon.IoTDeviceAdvisor
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonIoTDeviceAdvisorEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonIoTDeviceAdvisorAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

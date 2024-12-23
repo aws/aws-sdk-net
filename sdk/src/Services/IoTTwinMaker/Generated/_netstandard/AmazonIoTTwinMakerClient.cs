@@ -68,7 +68,7 @@ namespace Amazon.IoTTwinMaker
         ///
         /// </summary>
         public AmazonIoTTwinMakerClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonIoTTwinMakerConfig()) { }
+            : base(new AmazonIoTTwinMakerConfig()) { }
 
         /// <summary>
         /// Constructs AmazonIoTTwinMakerClient with the credentials loaded from the application's
@@ -87,7 +87,7 @@ namespace Amazon.IoTTwinMaker
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonIoTTwinMakerClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonIoTTwinMakerConfig{RegionEndpoint = region}) { }
+            : base(new AmazonIoTTwinMakerConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonIoTTwinMakerClient with the credentials loaded from the application's
@@ -106,7 +106,7 @@ namespace Amazon.IoTTwinMaker
         /// </summary>
         /// <param name="config">The AmazonIoTTwinMakerClient Configuration Object</param>
         public AmazonIoTTwinMakerClient(AmazonIoTTwinMakerConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -231,14 +231,6 @@ namespace Amazon.IoTTwinMaker
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -246,7 +238,9 @@ namespace Amazon.IoTTwinMaker
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonIoTTwinMakerEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonIoTTwinMakerAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

@@ -64,7 +64,7 @@ namespace Amazon.JSONRPC10
         ///
         /// </summary>
         public AmazonJSONRPC10Client()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonJSONRPC10Config()) { }
+            : base(new AmazonJSONRPC10Config()) { }
 
         /// <summary>
         /// Constructs AmazonJSONRPC10Client with the credentials loaded from the application's
@@ -83,7 +83,7 @@ namespace Amazon.JSONRPC10
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonJSONRPC10Client(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonJSONRPC10Config{RegionEndpoint = region}) { }
+            : base(new AmazonJSONRPC10Config{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonJSONRPC10Client with the credentials loaded from the application's
@@ -102,7 +102,7 @@ namespace Amazon.JSONRPC10
         /// </summary>
         /// <param name="config">The AmazonJSONRPC10Client Configuration Object</param>
         public AmazonJSONRPC10Client(AmazonJSONRPC10Config config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -209,12 +209,13 @@ namespace Amazon.JSONRPC10
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
+        /// Customizes the runtime pipeline.
         /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
+        /// <param name="pipeline">Runtime pipeline for the current client.</param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
         {
-            return new AWS4Signer();
-        } 
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonJSONRPC10AuthSchemeHandler());
+        }
 
         /// <summary>
         /// Capture metadata for the service.

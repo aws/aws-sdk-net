@@ -94,7 +94,7 @@ namespace Amazon.PaymentCryptography
         ///
         /// </summary>
         public AmazonPaymentCryptographyClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonPaymentCryptographyConfig()) { }
+            : base(new AmazonPaymentCryptographyConfig()) { }
 
         /// <summary>
         /// Constructs AmazonPaymentCryptographyClient with the credentials loaded from the application's
@@ -113,7 +113,7 @@ namespace Amazon.PaymentCryptography
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonPaymentCryptographyClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonPaymentCryptographyConfig{RegionEndpoint = region}) { }
+            : base(new AmazonPaymentCryptographyConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonPaymentCryptographyClient with the credentials loaded from the application's
@@ -132,7 +132,7 @@ namespace Amazon.PaymentCryptography
         /// </summary>
         /// <param name="config">The AmazonPaymentCryptographyClient Configuration Object</param>
         public AmazonPaymentCryptographyClient(AmazonPaymentCryptographyConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -257,14 +257,6 @@ namespace Amazon.PaymentCryptography
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -272,7 +264,9 @@ namespace Amazon.PaymentCryptography
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonPaymentCryptographyEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonPaymentCryptographyAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

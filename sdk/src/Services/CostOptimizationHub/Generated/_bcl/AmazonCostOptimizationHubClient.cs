@@ -91,7 +91,7 @@ namespace Amazon.CostOptimizationHub
         ///
         /// </summary>
         public AmazonCostOptimizationHubClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCostOptimizationHubConfig()) { }
+            : base(new AmazonCostOptimizationHubConfig()) { }
 
         /// <summary>
         /// Constructs AmazonCostOptimizationHubClient with the credentials loaded from the application's
@@ -110,7 +110,7 @@ namespace Amazon.CostOptimizationHub
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonCostOptimizationHubClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCostOptimizationHubConfig{RegionEndpoint = region}) { }
+            : base(new AmazonCostOptimizationHubConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonCostOptimizationHubClient with the credentials loaded from the application's
@@ -129,7 +129,7 @@ namespace Amazon.CostOptimizationHub
         /// </summary>
         /// <param name="config">The AmazonCostOptimizationHubClient Configuration Object</param>
         public AmazonCostOptimizationHubClient(AmazonCostOptimizationHubConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonCostOptimizationHubClient with AWS Credentials
@@ -232,15 +232,7 @@ namespace Amazon.CostOptimizationHub
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -250,7 +242,9 @@ namespace Amazon.CostOptimizationHub
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCostOptimizationHubEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCostOptimizationHubAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

@@ -87,7 +87,7 @@ namespace Amazon.CognitoSync
         ///
         /// </summary>
         public AmazonCognitoSyncClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCognitoSyncConfig()) { }
+            : base(new AmazonCognitoSyncConfig()) { }
 
         /// <summary>
         /// Constructs AmazonCognitoSyncClient with the credentials loaded from the application's
@@ -106,7 +106,7 @@ namespace Amazon.CognitoSync
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonCognitoSyncClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCognitoSyncConfig{RegionEndpoint = region}) { }
+            : base(new AmazonCognitoSyncConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonCognitoSyncClient with the credentials loaded from the application's
@@ -125,7 +125,7 @@ namespace Amazon.CognitoSync
         /// </summary>
         /// <param name="config">The AmazonCognitoSyncClient Configuration Object</param>
         public AmazonCognitoSyncClient(AmazonCognitoSyncConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonCognitoSyncClient with AWS Credentials
@@ -228,15 +228,7 @@ namespace Amazon.CognitoSync
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -244,11 +236,12 @@ namespace Amazon.CognitoSync
         /// <param name="pipeline"></param>
         protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
         {
-            pipeline.RemoveHandler<Amazon.Runtime.Internal.CredentialsRetriever>();
-            pipeline.AddHandlerBefore<Amazon.Runtime.Internal.Marshaller>(new Amazon.CognitoSync.Internal.CognitoCredentialsRetriever(this.Credentials));
+            pipeline.ReplaceHandler<Amazon.Runtime.Internal.CredentialsRetriever>(new Amazon.CognitoSync.Internal.CognitoCredentialsRetriever());
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCognitoSyncEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCognitoSyncAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

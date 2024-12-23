@@ -83,7 +83,7 @@ namespace Amazon.MigrationHubOrchestrator
         ///
         /// </summary>
         public AmazonMigrationHubOrchestratorClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonMigrationHubOrchestratorConfig()) { }
+            : base(new AmazonMigrationHubOrchestratorConfig()) { }
 
         /// <summary>
         /// Constructs AmazonMigrationHubOrchestratorClient with the credentials loaded from the application's
@@ -102,7 +102,7 @@ namespace Amazon.MigrationHubOrchestrator
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonMigrationHubOrchestratorClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonMigrationHubOrchestratorConfig{RegionEndpoint = region}) { }
+            : base(new AmazonMigrationHubOrchestratorConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonMigrationHubOrchestratorClient with the credentials loaded from the application's
@@ -121,7 +121,7 @@ namespace Amazon.MigrationHubOrchestrator
         /// </summary>
         /// <param name="config">The AmazonMigrationHubOrchestratorClient Configuration Object</param>
         public AmazonMigrationHubOrchestratorClient(AmazonMigrationHubOrchestratorConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonMigrationHubOrchestratorClient with AWS Credentials
@@ -224,15 +224,7 @@ namespace Amazon.MigrationHubOrchestrator
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -242,7 +234,9 @@ namespace Amazon.MigrationHubOrchestrator
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonMigrationHubOrchestratorEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonMigrationHubOrchestratorAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

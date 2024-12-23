@@ -90,7 +90,7 @@ namespace Amazon.PrometheusService
         ///
         /// </summary>
         public AmazonPrometheusServiceClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonPrometheusServiceConfig()) { }
+            : base(new AmazonPrometheusServiceConfig()) { }
 
         /// <summary>
         /// Constructs AmazonPrometheusServiceClient with the credentials loaded from the application's
@@ -109,7 +109,7 @@ namespace Amazon.PrometheusService
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonPrometheusServiceClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonPrometheusServiceConfig{RegionEndpoint = region}) { }
+            : base(new AmazonPrometheusServiceConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonPrometheusServiceClient with the credentials loaded from the application's
@@ -128,7 +128,7 @@ namespace Amazon.PrometheusService
         /// </summary>
         /// <param name="config">The AmazonPrometheusServiceClient Configuration Object</param>
         public AmazonPrometheusServiceClient(AmazonPrometheusServiceConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -253,14 +253,6 @@ namespace Amazon.PrometheusService
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -268,7 +260,9 @@ namespace Amazon.PrometheusService
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonPrometheusServiceEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonPrometheusServiceAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

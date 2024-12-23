@@ -116,7 +116,7 @@ namespace Amazon.CloudWatchLogs
         ///
         /// </summary>
         public AmazonCloudWatchLogsClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudWatchLogsConfig()) { }
+            : base(new AmazonCloudWatchLogsConfig()) { }
 
         /// <summary>
         /// Constructs AmazonCloudWatchLogsClient with the credentials loaded from the application's
@@ -135,7 +135,7 @@ namespace Amazon.CloudWatchLogs
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonCloudWatchLogsClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudWatchLogsConfig{RegionEndpoint = region}) { }
+            : base(new AmazonCloudWatchLogsConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonCloudWatchLogsClient with the credentials loaded from the application's
@@ -154,7 +154,7 @@ namespace Amazon.CloudWatchLogs
         /// </summary>
         /// <param name="config">The AmazonCloudWatchLogsClient Configuration Object</param>
         public AmazonCloudWatchLogsClient(AmazonCloudWatchLogsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonCloudWatchLogsClient with AWS Credentials
@@ -257,15 +257,7 @@ namespace Amazon.CloudWatchLogs
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -275,7 +267,9 @@ namespace Amazon.CloudWatchLogs
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCloudWatchLogsEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCloudWatchLogsAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

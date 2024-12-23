@@ -64,7 +64,7 @@ namespace Amazon.InspectorScan
         ///
         /// </summary>
         public AmazonInspectorScanClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonInspectorScanConfig()) { }
+            : base(new AmazonInspectorScanConfig()) { }
 
         /// <summary>
         /// Constructs AmazonInspectorScanClient with the credentials loaded from the application's
@@ -83,7 +83,7 @@ namespace Amazon.InspectorScan
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonInspectorScanClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonInspectorScanConfig{RegionEndpoint = region}) { }
+            : base(new AmazonInspectorScanConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonInspectorScanClient with the credentials loaded from the application's
@@ -102,7 +102,7 @@ namespace Amazon.InspectorScan
         /// </summary>
         /// <param name="config">The AmazonInspectorScanClient Configuration Object</param>
         public AmazonInspectorScanClient(AmazonInspectorScanConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonInspectorScanClient with AWS Credentials
@@ -205,15 +205,7 @@ namespace Amazon.InspectorScan
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -223,7 +215,9 @@ namespace Amazon.InspectorScan
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonInspectorScanEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonInspectorScanAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

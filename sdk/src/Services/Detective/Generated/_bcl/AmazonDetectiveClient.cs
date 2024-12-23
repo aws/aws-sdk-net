@@ -192,7 +192,7 @@ namespace Amazon.Detective
         ///
         /// </summary>
         public AmazonDetectiveClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonDetectiveConfig()) { }
+            : base(new AmazonDetectiveConfig()) { }
 
         /// <summary>
         /// Constructs AmazonDetectiveClient with the credentials loaded from the application's
@@ -211,7 +211,7 @@ namespace Amazon.Detective
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonDetectiveClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonDetectiveConfig{RegionEndpoint = region}) { }
+            : base(new AmazonDetectiveConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonDetectiveClient with the credentials loaded from the application's
@@ -230,7 +230,7 @@ namespace Amazon.Detective
         /// </summary>
         /// <param name="config">The AmazonDetectiveClient Configuration Object</param>
         public AmazonDetectiveClient(AmazonDetectiveConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonDetectiveClient with AWS Credentials
@@ -333,15 +333,7 @@ namespace Amazon.Detective
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -351,7 +343,9 @@ namespace Amazon.Detective
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonDetectiveEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonDetectiveAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

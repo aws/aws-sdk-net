@@ -77,7 +77,7 @@ namespace Amazon.CloudHSM
         ///
         /// </summary>
         public AmazonCloudHSMClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudHSMConfig()) { }
+            : base(new AmazonCloudHSMConfig()) { }
 
         /// <summary>
         /// Constructs AmazonCloudHSMClient with the credentials loaded from the application's
@@ -96,7 +96,7 @@ namespace Amazon.CloudHSM
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonCloudHSMClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudHSMConfig{RegionEndpoint = region}) { }
+            : base(new AmazonCloudHSMConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonCloudHSMClient with the credentials loaded from the application's
@@ -115,7 +115,7 @@ namespace Amazon.CloudHSM
         /// </summary>
         /// <param name="config">The AmazonCloudHSMClient Configuration Object</param>
         public AmazonCloudHSMClient(AmazonCloudHSMConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonCloudHSMClient with AWS Credentials
@@ -218,15 +218,7 @@ namespace Amazon.CloudHSM
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -236,7 +228,9 @@ namespace Amazon.CloudHSM
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCloudHSMEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCloudHSMAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

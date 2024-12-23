@@ -137,7 +137,7 @@ namespace Amazon.Chime
         ///
         /// </summary>
         public AmazonChimeClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonChimeConfig()) { }
+            : base(new AmazonChimeConfig()) { }
 
         /// <summary>
         /// Constructs AmazonChimeClient with the credentials loaded from the application's
@@ -156,7 +156,7 @@ namespace Amazon.Chime
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonChimeClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonChimeConfig{RegionEndpoint = region}) { }
+            : base(new AmazonChimeConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonChimeClient with the credentials loaded from the application's
@@ -175,7 +175,7 @@ namespace Amazon.Chime
         /// </summary>
         /// <param name="config">The AmazonChimeClient Configuration Object</param>
         public AmazonChimeClient(AmazonChimeConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonChimeClient with AWS Credentials
@@ -278,15 +278,7 @@ namespace Amazon.Chime
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -296,7 +288,9 @@ namespace Amazon.Chime
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonChimeEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonChimeAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

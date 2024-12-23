@@ -97,7 +97,7 @@ namespace Amazon.TaxSettings
         ///
         /// </summary>
         public AmazonTaxSettingsClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonTaxSettingsConfig()) { }
+            : base(new AmazonTaxSettingsConfig()) { }
 
         /// <summary>
         /// Constructs AmazonTaxSettingsClient with the credentials loaded from the application's
@@ -116,7 +116,7 @@ namespace Amazon.TaxSettings
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonTaxSettingsClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonTaxSettingsConfig{RegionEndpoint = region}) { }
+            : base(new AmazonTaxSettingsConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonTaxSettingsClient with the credentials loaded from the application's
@@ -135,7 +135,7 @@ namespace Amazon.TaxSettings
         /// </summary>
         /// <param name="config">The AmazonTaxSettingsClient Configuration Object</param>
         public AmazonTaxSettingsClient(AmazonTaxSettingsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonTaxSettingsClient with AWS Credentials
@@ -238,15 +238,7 @@ namespace Amazon.TaxSettings
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -256,7 +248,9 @@ namespace Amazon.TaxSettings
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonTaxSettingsEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonTaxSettingsAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

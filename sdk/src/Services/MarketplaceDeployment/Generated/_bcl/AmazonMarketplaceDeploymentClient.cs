@@ -68,7 +68,7 @@ namespace Amazon.MarketplaceDeployment
         ///
         /// </summary>
         public AmazonMarketplaceDeploymentClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonMarketplaceDeploymentConfig()) { }
+            : base(new AmazonMarketplaceDeploymentConfig()) { }
 
         /// <summary>
         /// Constructs AmazonMarketplaceDeploymentClient with the credentials loaded from the application's
@@ -87,7 +87,7 @@ namespace Amazon.MarketplaceDeployment
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonMarketplaceDeploymentClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonMarketplaceDeploymentConfig{RegionEndpoint = region}) { }
+            : base(new AmazonMarketplaceDeploymentConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonMarketplaceDeploymentClient with the credentials loaded from the application's
@@ -106,7 +106,7 @@ namespace Amazon.MarketplaceDeployment
         /// </summary>
         /// <param name="config">The AmazonMarketplaceDeploymentClient Configuration Object</param>
         public AmazonMarketplaceDeploymentClient(AmazonMarketplaceDeploymentConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonMarketplaceDeploymentClient with AWS Credentials
@@ -209,15 +209,7 @@ namespace Amazon.MarketplaceDeployment
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -227,7 +219,9 @@ namespace Amazon.MarketplaceDeployment
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonMarketplaceDeploymentEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonMarketplaceDeploymentAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

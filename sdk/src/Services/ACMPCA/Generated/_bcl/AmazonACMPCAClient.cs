@@ -107,7 +107,7 @@ namespace Amazon.ACMPCA
         ///
         /// </summary>
         public AmazonACMPCAClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonACMPCAConfig()) { }
+            : base(new AmazonACMPCAConfig()) { }
 
         /// <summary>
         /// Constructs AmazonACMPCAClient with the credentials loaded from the application's
@@ -126,7 +126,7 @@ namespace Amazon.ACMPCA
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonACMPCAClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonACMPCAConfig{RegionEndpoint = region}) { }
+            : base(new AmazonACMPCAConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonACMPCAClient with the credentials loaded from the application's
@@ -145,7 +145,7 @@ namespace Amazon.ACMPCA
         /// </summary>
         /// <param name="config">The AmazonACMPCAClient Configuration Object</param>
         public AmazonACMPCAClient(AmazonACMPCAConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonACMPCAClient with AWS Credentials
@@ -248,15 +248,7 @@ namespace Amazon.ACMPCA
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -266,7 +258,9 @@ namespace Amazon.ACMPCA
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonACMPCAEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonACMPCAAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

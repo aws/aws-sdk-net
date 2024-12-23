@@ -107,7 +107,7 @@ namespace Amazon.GeoPlaces
         ///
         /// </summary>
         public AmazonGeoPlacesClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonGeoPlacesConfig()) { }
+            : base(new AmazonGeoPlacesConfig()) { }
 
         /// <summary>
         /// Constructs AmazonGeoPlacesClient with the credentials loaded from the application's
@@ -126,7 +126,7 @@ namespace Amazon.GeoPlaces
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonGeoPlacesClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonGeoPlacesConfig{RegionEndpoint = region}) { }
+            : base(new AmazonGeoPlacesConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonGeoPlacesClient with the credentials loaded from the application's
@@ -145,7 +145,7 @@ namespace Amazon.GeoPlaces
         /// </summary>
         /// <param name="config">The AmazonGeoPlacesClient Configuration Object</param>
         public AmazonGeoPlacesClient(AmazonGeoPlacesConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonGeoPlacesClient with AWS Credentials
@@ -248,15 +248,7 @@ namespace Amazon.GeoPlaces
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -266,7 +258,9 @@ namespace Amazon.GeoPlaces
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonGeoPlacesEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonGeoPlacesAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

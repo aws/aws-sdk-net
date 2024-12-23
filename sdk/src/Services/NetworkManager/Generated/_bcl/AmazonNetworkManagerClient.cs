@@ -81,7 +81,7 @@ namespace Amazon.NetworkManager
         ///
         /// </summary>
         public AmazonNetworkManagerClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonNetworkManagerConfig()) { }
+            : base(new AmazonNetworkManagerConfig()) { }
 
         /// <summary>
         /// Constructs AmazonNetworkManagerClient with the credentials loaded from the application's
@@ -100,7 +100,7 @@ namespace Amazon.NetworkManager
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonNetworkManagerClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonNetworkManagerConfig{RegionEndpoint = region}) { }
+            : base(new AmazonNetworkManagerConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonNetworkManagerClient with the credentials loaded from the application's
@@ -119,7 +119,7 @@ namespace Amazon.NetworkManager
         /// </summary>
         /// <param name="config">The AmazonNetworkManagerClient Configuration Object</param>
         public AmazonNetworkManagerClient(AmazonNetworkManagerConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonNetworkManagerClient with AWS Credentials
@@ -222,15 +222,7 @@ namespace Amazon.NetworkManager
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -240,7 +232,9 @@ namespace Amazon.NetworkManager
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonNetworkManagerEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonNetworkManagerAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

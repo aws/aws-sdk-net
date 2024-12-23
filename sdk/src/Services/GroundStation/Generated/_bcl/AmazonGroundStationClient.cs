@@ -82,7 +82,7 @@ namespace Amazon.GroundStation
         ///
         /// </summary>
         public AmazonGroundStationClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonGroundStationConfig()) { }
+            : base(new AmazonGroundStationConfig()) { }
 
         /// <summary>
         /// Constructs AmazonGroundStationClient with the credentials loaded from the application's
@@ -101,7 +101,7 @@ namespace Amazon.GroundStation
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonGroundStationClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonGroundStationConfig{RegionEndpoint = region}) { }
+            : base(new AmazonGroundStationConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonGroundStationClient with the credentials loaded from the application's
@@ -120,7 +120,7 @@ namespace Amazon.GroundStation
         /// </summary>
         /// <param name="config">The AmazonGroundStationClient Configuration Object</param>
         public AmazonGroundStationClient(AmazonGroundStationConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonGroundStationClient with AWS Credentials
@@ -223,15 +223,7 @@ namespace Amazon.GroundStation
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -241,7 +233,9 @@ namespace Amazon.GroundStation
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonGroundStationEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonGroundStationAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

@@ -63,7 +63,7 @@ namespace Amazon.RestXmlProtocol
         ///
         /// </summary>
         public AmazonRestXmlProtocolClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonRestXmlProtocolConfig()) { }
+            : base(new AmazonRestXmlProtocolConfig()) { }
 
         /// <summary>
         /// Constructs AmazonRestXmlProtocolClient with the credentials loaded from the application's
@@ -82,7 +82,7 @@ namespace Amazon.RestXmlProtocol
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonRestXmlProtocolClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonRestXmlProtocolConfig{RegionEndpoint = region}) { }
+            : base(new AmazonRestXmlProtocolConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonRestXmlProtocolClient with the credentials loaded from the application's
@@ -101,7 +101,7 @@ namespace Amazon.RestXmlProtocol
         /// </summary>
         /// <param name="config">The AmazonRestXmlProtocolClient Configuration Object</param>
         public AmazonRestXmlProtocolClient(AmazonRestXmlProtocolConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonRestXmlProtocolClient with AWS Credentials
@@ -204,15 +204,16 @@ namespace Amazon.RestXmlProtocol
 
         #endregion
 
-        #region Overrides
+        #region Overrides  
 
         /// <summary>
-        /// Creates the signer for the service.
+        /// Customize the pipeline
         /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
+        /// <param name="pipeline"></param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
         {
-            return new AWS4Signer();
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonRestXmlProtocolAuthSchemeHandler());
+        }
 
         /// <summary>
         /// Capture metadata for the service.

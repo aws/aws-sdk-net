@@ -64,7 +64,7 @@ namespace Amazon.Finspace
         ///
         /// </summary>
         public AmazonFinspaceClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonFinspaceConfig()) { }
+            : base(new AmazonFinspaceConfig()) { }
 
         /// <summary>
         /// Constructs AmazonFinspaceClient with the credentials loaded from the application's
@@ -83,7 +83,7 @@ namespace Amazon.Finspace
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonFinspaceClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonFinspaceConfig{RegionEndpoint = region}) { }
+            : base(new AmazonFinspaceConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonFinspaceClient with the credentials loaded from the application's
@@ -102,7 +102,7 @@ namespace Amazon.Finspace
         /// </summary>
         /// <param name="config">The AmazonFinspaceClient Configuration Object</param>
         public AmazonFinspaceClient(AmazonFinspaceConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -227,14 +227,6 @@ namespace Amazon.Finspace
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -242,7 +234,9 @@ namespace Amazon.Finspace
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonFinspaceEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonFinspaceAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

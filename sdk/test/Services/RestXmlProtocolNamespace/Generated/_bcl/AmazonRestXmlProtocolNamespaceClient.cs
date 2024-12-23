@@ -74,7 +74,7 @@ namespace Amazon.RestXmlProtocolNamespace
         ///
         /// </summary>
         public AmazonRestXmlProtocolNamespaceClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonRestXmlProtocolNamespaceConfig()) { }
+            : base(new AmazonRestXmlProtocolNamespaceConfig()) { }
 
         /// <summary>
         /// Constructs AmazonRestXmlProtocolNamespaceClient with the credentials loaded from the application's
@@ -93,7 +93,7 @@ namespace Amazon.RestXmlProtocolNamespace
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonRestXmlProtocolNamespaceClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonRestXmlProtocolNamespaceConfig{RegionEndpoint = region}) { }
+            : base(new AmazonRestXmlProtocolNamespaceConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonRestXmlProtocolNamespaceClient with the credentials loaded from the application's
@@ -112,7 +112,7 @@ namespace Amazon.RestXmlProtocolNamespace
         /// </summary>
         /// <param name="config">The AmazonRestXmlProtocolNamespaceClient Configuration Object</param>
         public AmazonRestXmlProtocolNamespaceClient(AmazonRestXmlProtocolNamespaceConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonRestXmlProtocolNamespaceClient with AWS Credentials
@@ -215,15 +215,16 @@ namespace Amazon.RestXmlProtocolNamespace
 
         #endregion
 
-        #region Overrides
+        #region Overrides  
 
         /// <summary>
-        /// Creates the signer for the service.
+        /// Customize the pipeline
         /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
+        /// <param name="pipeline"></param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
         {
-            return new AWS4Signer();
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonRestXmlProtocolNamespaceAuthSchemeHandler());
+        }
 
         /// <summary>
         /// Capture metadata for the service.

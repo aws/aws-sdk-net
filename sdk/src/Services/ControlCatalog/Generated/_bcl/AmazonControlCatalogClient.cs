@@ -111,7 +111,7 @@ namespace Amazon.ControlCatalog
         ///
         /// </summary>
         public AmazonControlCatalogClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonControlCatalogConfig()) { }
+            : base(new AmazonControlCatalogConfig()) { }
 
         /// <summary>
         /// Constructs AmazonControlCatalogClient with the credentials loaded from the application's
@@ -130,7 +130,7 @@ namespace Amazon.ControlCatalog
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonControlCatalogClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonControlCatalogConfig{RegionEndpoint = region}) { }
+            : base(new AmazonControlCatalogConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonControlCatalogClient with the credentials loaded from the application's
@@ -149,7 +149,7 @@ namespace Amazon.ControlCatalog
         /// </summary>
         /// <param name="config">The AmazonControlCatalogClient Configuration Object</param>
         public AmazonControlCatalogClient(AmazonControlCatalogConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonControlCatalogClient with AWS Credentials
@@ -252,15 +252,7 @@ namespace Amazon.ControlCatalog
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -270,7 +262,9 @@ namespace Amazon.ControlCatalog
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonControlCatalogEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonControlCatalogAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

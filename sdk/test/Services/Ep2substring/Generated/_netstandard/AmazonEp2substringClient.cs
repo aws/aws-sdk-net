@@ -64,7 +64,7 @@ namespace Amazon.Ep2substring
         ///
         /// </summary>
         public AmazonEp2substringClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonEp2substringConfig()) { }
+            : base(new AmazonEp2substringConfig()) { }
 
         /// <summary>
         /// Constructs AmazonEp2substringClient with the credentials loaded from the application's
@@ -83,7 +83,7 @@ namespace Amazon.Ep2substring
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonEp2substringClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonEp2substringConfig{RegionEndpoint = region}) { }
+            : base(new AmazonEp2substringConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonEp2substringClient with the credentials loaded from the application's
@@ -102,7 +102,7 @@ namespace Amazon.Ep2substring
         /// </summary>
         /// <param name="config">The AmazonEp2substringClient Configuration Object</param>
         public AmazonEp2substringClient(AmazonEp2substringConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -209,14 +209,6 @@ namespace Amazon.Ep2substring
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -224,7 +216,9 @@ namespace Amazon.Ep2substring
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonEp2substringEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonEp2substringAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

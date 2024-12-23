@@ -79,7 +79,7 @@ namespace Amazon.ConnectCampaignService
         ///
         /// </summary>
         public AmazonConnectCampaignServiceClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonConnectCampaignServiceConfig()) { }
+            : base(new AmazonConnectCampaignServiceConfig()) { }
 
         /// <summary>
         /// Constructs AmazonConnectCampaignServiceClient with the credentials loaded from the application's
@@ -98,7 +98,7 @@ namespace Amazon.ConnectCampaignService
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonConnectCampaignServiceClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonConnectCampaignServiceConfig{RegionEndpoint = region}) { }
+            : base(new AmazonConnectCampaignServiceConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonConnectCampaignServiceClient with the credentials loaded from the application's
@@ -117,7 +117,7 @@ namespace Amazon.ConnectCampaignService
         /// </summary>
         /// <param name="config">The AmazonConnectCampaignServiceClient Configuration Object</param>
         public AmazonConnectCampaignServiceClient(AmazonConnectCampaignServiceConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonConnectCampaignServiceClient with AWS Credentials
@@ -220,15 +220,7 @@ namespace Amazon.ConnectCampaignService
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -238,7 +230,9 @@ namespace Amazon.ConnectCampaignService
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonConnectCampaignServiceEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonConnectCampaignServiceAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

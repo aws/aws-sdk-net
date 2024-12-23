@@ -102,7 +102,7 @@ namespace Amazon.SimpleNotificationService
         ///
         /// </summary>
         public AmazonSimpleNotificationServiceClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSimpleNotificationServiceConfig()) { }
+            : base(new AmazonSimpleNotificationServiceConfig()) { }
 
         /// <summary>
         /// Constructs AmazonSimpleNotificationServiceClient with the credentials loaded from the application's
@@ -121,7 +121,7 @@ namespace Amazon.SimpleNotificationService
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonSimpleNotificationServiceClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSimpleNotificationServiceConfig{RegionEndpoint = region}) { }
+            : base(new AmazonSimpleNotificationServiceConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonSimpleNotificationServiceClient with the credentials loaded from the application's
@@ -140,7 +140,7 @@ namespace Amazon.SimpleNotificationService
         /// </summary>
         /// <param name="config">The AmazonSimpleNotificationServiceClient Configuration Object</param>
         public AmazonSimpleNotificationServiceClient(AmazonSimpleNotificationServiceConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonSimpleNotificationServiceClient with AWS Credentials
@@ -243,15 +243,7 @@ namespace Amazon.SimpleNotificationService
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -261,7 +253,9 @@ namespace Amazon.SimpleNotificationService
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonSimpleNotificationServiceEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonSimpleNotificationServiceAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

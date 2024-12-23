@@ -64,7 +64,7 @@ namespace Amazon.Kafka
         ///
         /// </summary>
         public AmazonKafkaClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonKafkaConfig()) { }
+            : base(new AmazonKafkaConfig()) { }
 
         /// <summary>
         /// Constructs AmazonKafkaClient with the credentials loaded from the application's
@@ -83,7 +83,7 @@ namespace Amazon.Kafka
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonKafkaClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonKafkaConfig{RegionEndpoint = region}) { }
+            : base(new AmazonKafkaConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonKafkaClient with the credentials loaded from the application's
@@ -102,7 +102,7 @@ namespace Amazon.Kafka
         /// </summary>
         /// <param name="config">The AmazonKafkaClient Configuration Object</param>
         public AmazonKafkaClient(AmazonKafkaConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -227,14 +227,6 @@ namespace Amazon.Kafka
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -242,7 +234,9 @@ namespace Amazon.Kafka
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonKafkaEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonKafkaAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

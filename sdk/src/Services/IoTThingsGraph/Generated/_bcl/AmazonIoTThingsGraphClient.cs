@@ -95,7 +95,7 @@ namespace Amazon.IoTThingsGraph
         ///
         /// </summary>
         public AmazonIoTThingsGraphClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonIoTThingsGraphConfig()) { }
+            : base(new AmazonIoTThingsGraphConfig()) { }
 
         /// <summary>
         /// Constructs AmazonIoTThingsGraphClient with the credentials loaded from the application's
@@ -114,7 +114,7 @@ namespace Amazon.IoTThingsGraph
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonIoTThingsGraphClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonIoTThingsGraphConfig{RegionEndpoint = region}) { }
+            : base(new AmazonIoTThingsGraphConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonIoTThingsGraphClient with the credentials loaded from the application's
@@ -133,7 +133,7 @@ namespace Amazon.IoTThingsGraph
         /// </summary>
         /// <param name="config">The AmazonIoTThingsGraphClient Configuration Object</param>
         public AmazonIoTThingsGraphClient(AmazonIoTThingsGraphConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonIoTThingsGraphClient with AWS Credentials
@@ -236,15 +236,7 @@ namespace Amazon.IoTThingsGraph
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -254,7 +246,9 @@ namespace Amazon.IoTThingsGraph
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonIoTThingsGraphEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonIoTThingsGraphAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

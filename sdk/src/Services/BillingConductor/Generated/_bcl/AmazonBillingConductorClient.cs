@@ -98,7 +98,7 @@ namespace Amazon.BillingConductor
         ///
         /// </summary>
         public AmazonBillingConductorClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonBillingConductorConfig()) { }
+            : base(new AmazonBillingConductorConfig()) { }
 
         /// <summary>
         /// Constructs AmazonBillingConductorClient with the credentials loaded from the application's
@@ -117,7 +117,7 @@ namespace Amazon.BillingConductor
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonBillingConductorClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonBillingConductorConfig{RegionEndpoint = region}) { }
+            : base(new AmazonBillingConductorConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonBillingConductorClient with the credentials loaded from the application's
@@ -136,7 +136,7 @@ namespace Amazon.BillingConductor
         /// </summary>
         /// <param name="config">The AmazonBillingConductorClient Configuration Object</param>
         public AmazonBillingConductorClient(AmazonBillingConductorConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonBillingConductorClient with AWS Credentials
@@ -239,15 +239,7 @@ namespace Amazon.BillingConductor
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -257,7 +249,9 @@ namespace Amazon.BillingConductor
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonBillingConductorEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonBillingConductorAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

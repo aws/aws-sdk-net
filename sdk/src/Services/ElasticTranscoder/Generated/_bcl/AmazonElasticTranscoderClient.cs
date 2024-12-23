@@ -82,7 +82,7 @@ namespace Amazon.ElasticTranscoder
         ///
         /// </summary>
         public AmazonElasticTranscoderClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElasticTranscoderConfig()) { }
+            : base(new AmazonElasticTranscoderConfig()) { }
 
         /// <summary>
         /// Constructs AmazonElasticTranscoderClient with the credentials loaded from the application's
@@ -101,7 +101,7 @@ namespace Amazon.ElasticTranscoder
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonElasticTranscoderClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElasticTranscoderConfig{RegionEndpoint = region}) { }
+            : base(new AmazonElasticTranscoderConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonElasticTranscoderClient with the credentials loaded from the application's
@@ -120,7 +120,7 @@ namespace Amazon.ElasticTranscoder
         /// </summary>
         /// <param name="config">The AmazonElasticTranscoderClient Configuration Object</param>
         public AmazonElasticTranscoderClient(AmazonElasticTranscoderConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonElasticTranscoderClient with AWS Credentials
@@ -223,15 +223,7 @@ namespace Amazon.ElasticTranscoder
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -242,7 +234,9 @@ namespace Amazon.ElasticTranscoder
             pipeline.AddHandlerBefore<Amazon.Runtime.Internal.Marshaller>(new Amazon.ElasticTranscoder.Internal.AmazonElasticTranscoderPreMarshallHandler());
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonElasticTranscoderEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonElasticTranscoderAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>
