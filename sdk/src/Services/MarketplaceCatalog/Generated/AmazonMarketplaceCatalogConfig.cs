@@ -32,7 +32,7 @@ namespace Amazon.MarketplaceCatalog
     public partial class AmazonMarketplaceCatalogConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Marketplace Catalog", "3.7.400.68");
+            InternalSDKUtils.BuildUserAgentString("Marketplace Catalog", "3.7.400.69");
 
         private string _userAgent = UserAgentString;
         ///<summary>

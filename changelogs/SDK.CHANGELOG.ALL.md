@@ -1,3 +1,16 @@
+### 3.7.952.0 (2024-12-23 19:27 UTC)
+* ECR (3.7.404.48)
+	* Documentation update for ECR GetAccountSetting and PutAccountSetting APIs.
+* ECRPublic (3.7.401.0)
+	* Add support for Dualstack endpoints
+* EKS (3.7.408.0)
+	* This release adds support for DescribeClusterVersions API that provides important information about Kubernetes versions along with end of support dates
+* Glue (3.7.413.0)
+	* Add IncludeRoot parameters to GetCatalogs API to return root catalog.
+* Core 3.7.400.69
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.951.0 (2024-12-20 19:26 UTC)
 * BedrockAgent (3.7.415.0)
 	* Support for custom user agent and max web pages crawled for web connector. Support app only credentials for SharePoint connector. Increase agents memory duration limit to 365 days. Support to specify max number of session summaries to include in agent invocation context.
