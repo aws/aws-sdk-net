@@ -69,6 +69,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetIncludeRoot())
+                {
+                    context.Writer.WritePropertyName("IncludeRoot");
+                    context.Writer.Write(publicRequest.IncludeRoot);
+                }
+
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");

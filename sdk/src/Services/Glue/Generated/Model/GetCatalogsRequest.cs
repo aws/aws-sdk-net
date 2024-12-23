@@ -37,10 +37,36 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class GetCatalogsRequest : AmazonGlueRequest
     {
+        private bool? _includeRoot;
         private int? _maxResults;
         private string _nextToken;
         private string _parentCatalogId;
         private bool? _recursive;
+
+        /// <summary>
+        /// Gets and sets the property IncludeRoot. 
+        /// <para>
+        /// Whether to list the default catalog in the account and region in the response. Defaults
+        /// to <c>false</c>. When <c>true</c> and <c>ParentCatalogId = NULL | Amazon Web Services
+        /// Account ID</c>, all catalogs and the default catalog are enumerated in the response.
+        /// </para>
+        ///  
+        /// <para>
+        /// When the <c>ParentCatalogId</c> is not equal to null, and this attribute is passed
+        /// as <c>false</c> or <c>true</c>, an <c>InvalidInputException</c> is thrown.
+        /// </para>
+        /// </summary>
+        public bool IncludeRoot
+        {
+            get { return this._includeRoot.GetValueOrDefault(); }
+            set { this._includeRoot = value; }
+        }
+
+        // Check to see if IncludeRoot property is set
+        internal bool IsSetIncludeRoot()
+        {
+            return this._includeRoot.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -102,8 +128,9 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Recursive. 
         /// <para>
-        /// When specified as true, iterates through the account and returns all catalog resources
-        /// (including top-level resources and child resources)
+        /// Whether to list all catalogs across the catalog hierarchy, starting from the <c>ParentCatalogId</c>.
+        /// Defaults to <c>false</c> . When <c>true</c>, all catalog objects in the <c>ParentCatalogID</c>
+        /// hierarchy are enumerated in the response.
         /// </para>
         /// </summary>
         public bool Recursive
