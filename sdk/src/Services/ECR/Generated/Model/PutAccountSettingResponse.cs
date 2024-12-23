@@ -40,7 +40,7 @@ namespace Amazon.ECR.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Retrieves the the basic scan type version name.
+        /// Retrieves the name of the account setting.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -59,7 +59,7 @@ namespace Amazon.ECR.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// Retrieves the basic scan type value, either <c>AWS_NATIVE</c> or <c>-</c>.
+        /// Retrieves the value of the specified account setting.
         /// </para>
         /// </summary>
         public string Value

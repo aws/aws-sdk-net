@@ -1815,7 +1815,7 @@ namespace Amazon.ECR
         #region  GetAccountSetting
 
         /// <summary>
-        /// Retrieves the basic scan type version name.
+        /// Retrieves the account setting value for the specified setting name.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccountSetting service method.</param>
         /// 
@@ -2593,8 +2593,7 @@ namespace Amazon.ECR
         #region  PutAccountSetting
 
         /// <summary>
-        /// Allows you to change the basic scan type version by setting the <c>name</c> parameter
-        /// to either <c>CLAIR</c> to <c>AWS_NATIVE</c>.
+        /// Allows you to change the basic scan type version or registry policy scope.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutAccountSetting service method.</param>
         /// 

@@ -40,7 +40,7 @@ namespace Amazon.ECR.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Retrieves the basic scan type version name.
+        /// Retrieves the name of the account setting.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -59,8 +59,9 @@ namespace Amazon.ECR.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// Retrieves the value that specifies what basic scan type is being used: <c>AWS_NATIVE</c>
-        /// or <c>CLAIR</c>.
+        /// The setting value for the setting name. The following are valid values for the basic
+        /// scan type being used: <c>AWS_NATIVE</c> or <c>CLAIR</c>. The following are valid values
+        /// for the registry policy scope being used: <c>V1</c> or <c>V2</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
