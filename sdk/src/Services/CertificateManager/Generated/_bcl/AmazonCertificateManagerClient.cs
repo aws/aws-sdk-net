@@ -85,7 +85,7 @@ namespace Amazon.CertificateManager
         ///
         /// </summary>
         public AmazonCertificateManagerClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCertificateManagerConfig()) { }
+            : base(new AmazonCertificateManagerConfig()) { }
 
         /// <summary>
         /// Constructs AmazonCertificateManagerClient with the credentials loaded from the application's
@@ -104,7 +104,7 @@ namespace Amazon.CertificateManager
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonCertificateManagerClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCertificateManagerConfig{RegionEndpoint = region}) { }
+            : base(new AmazonCertificateManagerConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonCertificateManagerClient with the credentials loaded from the application's
@@ -123,7 +123,7 @@ namespace Amazon.CertificateManager
         /// </summary>
         /// <param name="config">The AmazonCertificateManagerClient Configuration Object</param>
         public AmazonCertificateManagerClient(AmazonCertificateManagerConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonCertificateManagerClient with AWS Credentials
@@ -226,15 +226,7 @@ namespace Amazon.CertificateManager
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -244,7 +236,9 @@ namespace Amazon.CertificateManager
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCertificateManagerEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCertificateManagerAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

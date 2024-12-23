@@ -105,7 +105,7 @@ namespace Amazon.QConnect
         ///
         /// </summary>
         public AmazonQConnectClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonQConnectConfig()) { }
+            : base(new AmazonQConnectConfig()) { }
 
         /// <summary>
         /// Constructs AmazonQConnectClient with the credentials loaded from the application's
@@ -124,7 +124,7 @@ namespace Amazon.QConnect
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonQConnectClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonQConnectConfig{RegionEndpoint = region}) { }
+            : base(new AmazonQConnectConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonQConnectClient with the credentials loaded from the application's
@@ -143,7 +143,7 @@ namespace Amazon.QConnect
         /// </summary>
         /// <param name="config">The AmazonQConnectClient Configuration Object</param>
         public AmazonQConnectClient(AmazonQConnectConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -268,14 +268,6 @@ namespace Amazon.QConnect
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -283,7 +275,9 @@ namespace Amazon.QConnect
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonQConnectEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonQConnectAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

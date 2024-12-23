@@ -68,7 +68,7 @@ namespace Amazon.DataZone
         ///
         /// </summary>
         public AmazonDataZoneClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonDataZoneConfig()) { }
+            : base(new AmazonDataZoneConfig()) { }
 
         /// <summary>
         /// Constructs AmazonDataZoneClient with the credentials loaded from the application's
@@ -87,7 +87,7 @@ namespace Amazon.DataZone
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonDataZoneClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonDataZoneConfig{RegionEndpoint = region}) { }
+            : base(new AmazonDataZoneConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonDataZoneClient with the credentials loaded from the application's
@@ -106,7 +106,7 @@ namespace Amazon.DataZone
         /// </summary>
         /// <param name="config">The AmazonDataZoneClient Configuration Object</param>
         public AmazonDataZoneClient(AmazonDataZoneConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -231,14 +231,6 @@ namespace Amazon.DataZone
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -246,7 +238,9 @@ namespace Amazon.DataZone
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonDataZoneEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonDataZoneAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

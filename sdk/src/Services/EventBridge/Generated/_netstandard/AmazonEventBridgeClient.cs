@@ -88,7 +88,7 @@ namespace Amazon.EventBridge
         ///
         /// </summary>
         public AmazonEventBridgeClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonEventBridgeConfig()) { }
+            : base(new AmazonEventBridgeConfig()) { }
 
         /// <summary>
         /// Constructs AmazonEventBridgeClient with the credentials loaded from the application's
@@ -107,7 +107,7 @@ namespace Amazon.EventBridge
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonEventBridgeClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonEventBridgeConfig{RegionEndpoint = region}) { }
+            : base(new AmazonEventBridgeConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonEventBridgeClient with the credentials loaded from the application's
@@ -126,7 +126,7 @@ namespace Amazon.EventBridge
         /// </summary>
         /// <param name="config">The AmazonEventBridgeClient Configuration Object</param>
         public AmazonEventBridgeClient(AmazonEventBridgeConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -233,14 +233,6 @@ namespace Amazon.EventBridge
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWSEndpointAuthSchemeSigner();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -248,7 +240,9 @@ namespace Amazon.EventBridge
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonEventBridgeEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonEventBridgeAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

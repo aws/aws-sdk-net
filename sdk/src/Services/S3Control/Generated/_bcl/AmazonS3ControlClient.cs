@@ -79,7 +79,7 @@ namespace Amazon.S3Control
         ///
         /// </summary>
         public AmazonS3ControlClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonS3ControlConfig()) { }
+            : base(new AmazonS3ControlConfig()) { }
 
         /// <summary>
         /// Constructs AmazonS3ControlClient with the credentials loaded from the application's
@@ -98,7 +98,7 @@ namespace Amazon.S3Control
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonS3ControlClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonS3ControlConfig{RegionEndpoint = region}) { }
+            : base(new AmazonS3ControlConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonS3ControlClient with the credentials loaded from the application's
@@ -117,7 +117,7 @@ namespace Amazon.S3Control
         /// </summary>
         /// <param name="config">The AmazonS3ControlClient Configuration Object</param>
         public AmazonS3ControlClient(AmazonS3ControlConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonS3ControlClient with AWS Credentials
@@ -220,15 +220,7 @@ namespace Amazon.S3Control
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new S3Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -240,7 +232,9 @@ namespace Amazon.S3Control
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.ErrorCallbackHandler>(new Amazon.S3Control.Internal.AmazonS3ControlExceptionHandler());
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonS3ControlEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonS3ControlAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

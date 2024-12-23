@@ -93,7 +93,7 @@ namespace Amazon.IoT
         ///
         /// </summary>
         public AmazonIoTClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonIoTConfig()) { }
+            : base(new AmazonIoTConfig()) { }
 
         /// <summary>
         /// Constructs AmazonIoTClient with the credentials loaded from the application's
@@ -112,7 +112,7 @@ namespace Amazon.IoT
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonIoTClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonIoTConfig{RegionEndpoint = region}) { }
+            : base(new AmazonIoTConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonIoTClient with the credentials loaded from the application's
@@ -131,7 +131,7 @@ namespace Amazon.IoT
         /// </summary>
         /// <param name="config">The AmazonIoTClient Configuration Object</param>
         public AmazonIoTClient(AmazonIoTConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -256,14 +256,6 @@ namespace Amazon.IoT
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -271,7 +263,9 @@ namespace Amazon.IoT
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonIoTEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonIoTAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

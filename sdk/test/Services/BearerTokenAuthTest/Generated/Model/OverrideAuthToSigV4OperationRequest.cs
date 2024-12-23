@@ -25,7 +25,6 @@ using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
-using Amazon.Runtime.Internal.Auth;
 
 #pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BearerTokenAuthTest.Model
@@ -57,13 +56,5 @@ namespace Amazon.BearerTokenAuthTest.Model
             return !string.IsNullOrEmpty(this._testId);
         }
 
-        /// <summary>
-        /// Get the signer to use for this request.
-        /// </summary>
-        /// <returns>A signer for this request.</returns>
-        override protected AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }
     }
 }

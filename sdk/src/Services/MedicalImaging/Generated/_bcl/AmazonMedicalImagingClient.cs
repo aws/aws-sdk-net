@@ -227,7 +227,7 @@ namespace Amazon.MedicalImaging
         ///
         /// </summary>
         public AmazonMedicalImagingClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonMedicalImagingConfig()) { }
+            : base(new AmazonMedicalImagingConfig()) { }
 
         /// <summary>
         /// Constructs AmazonMedicalImagingClient with the credentials loaded from the application's
@@ -246,7 +246,7 @@ namespace Amazon.MedicalImaging
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonMedicalImagingClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonMedicalImagingConfig{RegionEndpoint = region}) { }
+            : base(new AmazonMedicalImagingConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonMedicalImagingClient with the credentials loaded from the application's
@@ -265,7 +265,7 @@ namespace Amazon.MedicalImaging
         /// </summary>
         /// <param name="config">The AmazonMedicalImagingClient Configuration Object</param>
         public AmazonMedicalImagingClient(AmazonMedicalImagingConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonMedicalImagingClient with AWS Credentials
@@ -368,15 +368,7 @@ namespace Amazon.MedicalImaging
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -386,7 +378,9 @@ namespace Amazon.MedicalImaging
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonMedicalImagingEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonMedicalImagingAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

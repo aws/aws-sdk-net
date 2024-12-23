@@ -87,7 +87,7 @@ namespace Amazon.RDSDataService
         ///
         /// </summary>
         public AmazonRDSDataServiceClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonRDSDataServiceConfig()) { }
+            : base(new AmazonRDSDataServiceConfig()) { }
 
         /// <summary>
         /// Constructs AmazonRDSDataServiceClient with the credentials loaded from the application's
@@ -106,7 +106,7 @@ namespace Amazon.RDSDataService
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonRDSDataServiceClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonRDSDataServiceConfig{RegionEndpoint = region}) { }
+            : base(new AmazonRDSDataServiceConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonRDSDataServiceClient with the credentials loaded from the application's
@@ -125,7 +125,7 @@ namespace Amazon.RDSDataService
         /// </summary>
         /// <param name="config">The AmazonRDSDataServiceClient Configuration Object</param>
         public AmazonRDSDataServiceClient(AmazonRDSDataServiceConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -232,14 +232,6 @@ namespace Amazon.RDSDataService
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -247,7 +239,9 @@ namespace Amazon.RDSDataService
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonRDSDataServiceEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonRDSDataServiceAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

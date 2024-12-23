@@ -70,7 +70,7 @@ namespace Amazon.WorkSpacesWeb
         ///
         /// </summary>
         public AmazonWorkSpacesWebClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonWorkSpacesWebConfig()) { }
+            : base(new AmazonWorkSpacesWebConfig()) { }
 
         /// <summary>
         /// Constructs AmazonWorkSpacesWebClient with the credentials loaded from the application's
@@ -89,7 +89,7 @@ namespace Amazon.WorkSpacesWeb
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonWorkSpacesWebClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonWorkSpacesWebConfig{RegionEndpoint = region}) { }
+            : base(new AmazonWorkSpacesWebConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonWorkSpacesWebClient with the credentials loaded from the application's
@@ -108,7 +108,7 @@ namespace Amazon.WorkSpacesWeb
         /// </summary>
         /// <param name="config">The AmazonWorkSpacesWebClient Configuration Object</param>
         public AmazonWorkSpacesWebClient(AmazonWorkSpacesWebConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -233,14 +233,6 @@ namespace Amazon.WorkSpacesWeb
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -248,7 +240,9 @@ namespace Amazon.WorkSpacesWeb
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonWorkSpacesWebEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonWorkSpacesWebAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

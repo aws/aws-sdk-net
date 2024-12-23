@@ -67,7 +67,7 @@ namespace Amazon.Glue
         ///
         /// </summary>
         public AmazonGlueClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonGlueConfig()) { }
+            : base(new AmazonGlueConfig()) { }
 
         /// <summary>
         /// Constructs AmazonGlueClient with the credentials loaded from the application's
@@ -86,7 +86,7 @@ namespace Amazon.Glue
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonGlueClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonGlueConfig{RegionEndpoint = region}) { }
+            : base(new AmazonGlueConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonGlueClient with the credentials loaded from the application's
@@ -105,7 +105,7 @@ namespace Amazon.Glue
         /// </summary>
         /// <param name="config">The AmazonGlueClient Configuration Object</param>
         public AmazonGlueClient(AmazonGlueConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -230,14 +230,6 @@ namespace Amazon.Glue
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -245,7 +237,9 @@ namespace Amazon.Glue
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonGlueEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonGlueAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

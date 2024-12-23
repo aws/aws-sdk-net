@@ -64,7 +64,7 @@ namespace Amazon.Macie2
         ///
         /// </summary>
         public AmazonMacie2Client()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonMacie2Config()) { }
+            : base(new AmazonMacie2Config()) { }
 
         /// <summary>
         /// Constructs AmazonMacie2Client with the credentials loaded from the application's
@@ -83,7 +83,7 @@ namespace Amazon.Macie2
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonMacie2Client(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonMacie2Config{RegionEndpoint = region}) { }
+            : base(new AmazonMacie2Config{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonMacie2Client with the credentials loaded from the application's
@@ -102,7 +102,7 @@ namespace Amazon.Macie2
         /// </summary>
         /// <param name="config">The AmazonMacie2Client Configuration Object</param>
         public AmazonMacie2Client(AmazonMacie2Config config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -227,14 +227,6 @@ namespace Amazon.Macie2
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -242,7 +234,9 @@ namespace Amazon.Macie2
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonMacie2EndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonMacie2AuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

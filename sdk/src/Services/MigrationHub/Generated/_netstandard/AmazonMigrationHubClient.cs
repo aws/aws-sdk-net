@@ -73,7 +73,7 @@ namespace Amazon.MigrationHub
         ///
         /// </summary>
         public AmazonMigrationHubClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonMigrationHubConfig()) { }
+            : base(new AmazonMigrationHubConfig()) { }
 
         /// <summary>
         /// Constructs AmazonMigrationHubClient with the credentials loaded from the application's
@@ -92,7 +92,7 @@ namespace Amazon.MigrationHub
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonMigrationHubClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonMigrationHubConfig{RegionEndpoint = region}) { }
+            : base(new AmazonMigrationHubConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonMigrationHubClient with the credentials loaded from the application's
@@ -111,7 +111,7 @@ namespace Amazon.MigrationHub
         /// </summary>
         /// <param name="config">The AmazonMigrationHubClient Configuration Object</param>
         public AmazonMigrationHubClient(AmazonMigrationHubConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -236,14 +236,6 @@ namespace Amazon.MigrationHub
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -251,7 +243,9 @@ namespace Amazon.MigrationHub
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonMigrationHubEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonMigrationHubAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

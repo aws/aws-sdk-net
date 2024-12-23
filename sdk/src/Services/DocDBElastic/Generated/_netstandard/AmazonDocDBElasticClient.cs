@@ -90,7 +90,7 @@ namespace Amazon.DocDBElastic
         ///
         /// </summary>
         public AmazonDocDBElasticClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonDocDBElasticConfig()) { }
+            : base(new AmazonDocDBElasticConfig()) { }
 
         /// <summary>
         /// Constructs AmazonDocDBElasticClient with the credentials loaded from the application's
@@ -109,7 +109,7 @@ namespace Amazon.DocDBElastic
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonDocDBElasticClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonDocDBElasticConfig{RegionEndpoint = region}) { }
+            : base(new AmazonDocDBElasticConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonDocDBElasticClient with the credentials loaded from the application's
@@ -128,7 +128,7 @@ namespace Amazon.DocDBElastic
         /// </summary>
         /// <param name="config">The AmazonDocDBElasticClient Configuration Object</param>
         public AmazonDocDBElasticClient(AmazonDocDBElasticConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -253,14 +253,6 @@ namespace Amazon.DocDBElastic
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -268,7 +260,9 @@ namespace Amazon.DocDBElastic
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonDocDBElasticEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonDocDBElasticAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

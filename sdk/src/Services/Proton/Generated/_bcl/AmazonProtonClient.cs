@@ -319,7 +319,7 @@ namespace Amazon.Proton
         ///
         /// </summary>
         public AmazonProtonClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonProtonConfig()) { }
+            : base(new AmazonProtonConfig()) { }
 
         /// <summary>
         /// Constructs AmazonProtonClient with the credentials loaded from the application's
@@ -338,7 +338,7 @@ namespace Amazon.Proton
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonProtonClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonProtonConfig{RegionEndpoint = region}) { }
+            : base(new AmazonProtonConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonProtonClient with the credentials loaded from the application's
@@ -357,7 +357,7 @@ namespace Amazon.Proton
         /// </summary>
         /// <param name="config">The AmazonProtonClient Configuration Object</param>
         public AmazonProtonClient(AmazonProtonConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonProtonClient with AWS Credentials
@@ -460,15 +460,7 @@ namespace Amazon.Proton
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -478,7 +470,9 @@ namespace Amazon.Proton
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonProtonEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonProtonAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

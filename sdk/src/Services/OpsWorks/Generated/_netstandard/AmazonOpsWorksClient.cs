@@ -208,7 +208,7 @@ namespace Amazon.OpsWorks
         ///
         /// </summary>
         public AmazonOpsWorksClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonOpsWorksConfig()) { }
+            : base(new AmazonOpsWorksConfig()) { }
 
         /// <summary>
         /// Constructs AmazonOpsWorksClient with the credentials loaded from the application's
@@ -227,7 +227,7 @@ namespace Amazon.OpsWorks
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonOpsWorksClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonOpsWorksConfig{RegionEndpoint = region}) { }
+            : base(new AmazonOpsWorksConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonOpsWorksClient with the credentials loaded from the application's
@@ -246,7 +246,7 @@ namespace Amazon.OpsWorks
         /// </summary>
         /// <param name="config">The AmazonOpsWorksClient Configuration Object</param>
         public AmazonOpsWorksClient(AmazonOpsWorksConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -371,14 +371,6 @@ namespace Amazon.OpsWorks
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -386,7 +378,9 @@ namespace Amazon.OpsWorks
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonOpsWorksEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonOpsWorksAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

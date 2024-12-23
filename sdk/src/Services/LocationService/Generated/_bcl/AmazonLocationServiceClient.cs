@@ -79,7 +79,7 @@ namespace Amazon.LocationService
         ///
         /// </summary>
         public AmazonLocationServiceClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonLocationServiceConfig()) { }
+            : base(new AmazonLocationServiceConfig()) { }
 
         /// <summary>
         /// Constructs AmazonLocationServiceClient with the credentials loaded from the application's
@@ -98,7 +98,7 @@ namespace Amazon.LocationService
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonLocationServiceClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonLocationServiceConfig{RegionEndpoint = region}) { }
+            : base(new AmazonLocationServiceConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonLocationServiceClient with the credentials loaded from the application's
@@ -117,7 +117,7 @@ namespace Amazon.LocationService
         /// </summary>
         /// <param name="config">The AmazonLocationServiceClient Configuration Object</param>
         public AmazonLocationServiceClient(AmazonLocationServiceConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonLocationServiceClient with AWS Credentials
@@ -220,15 +220,7 @@ namespace Amazon.LocationService
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -238,7 +230,9 @@ namespace Amazon.LocationService
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonLocationServiceEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonLocationServiceAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

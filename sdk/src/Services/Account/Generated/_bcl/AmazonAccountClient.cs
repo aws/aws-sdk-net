@@ -79,7 +79,7 @@ namespace Amazon.Account
         ///
         /// </summary>
         public AmazonAccountClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAccountConfig()) { }
+            : base(new AmazonAccountConfig()) { }
 
         /// <summary>
         /// Constructs AmazonAccountClient with the credentials loaded from the application's
@@ -98,7 +98,7 @@ namespace Amazon.Account
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonAccountClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAccountConfig{RegionEndpoint = region}) { }
+            : base(new AmazonAccountConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonAccountClient with the credentials loaded from the application's
@@ -117,7 +117,7 @@ namespace Amazon.Account
         /// </summary>
         /// <param name="config">The AmazonAccountClient Configuration Object</param>
         public AmazonAccountClient(AmazonAccountConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonAccountClient with AWS Credentials
@@ -220,15 +220,7 @@ namespace Amazon.Account
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -238,7 +230,9 @@ namespace Amazon.Account
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonAccountEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonAccountAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

@@ -84,7 +84,7 @@ namespace Amazon.ResilienceHub
         ///
         /// </summary>
         public AmazonResilienceHubClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonResilienceHubConfig()) { }
+            : base(new AmazonResilienceHubConfig()) { }
 
         /// <summary>
         /// Constructs AmazonResilienceHubClient with the credentials loaded from the application's
@@ -103,7 +103,7 @@ namespace Amazon.ResilienceHub
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonResilienceHubClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonResilienceHubConfig{RegionEndpoint = region}) { }
+            : base(new AmazonResilienceHubConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonResilienceHubClient with the credentials loaded from the application's
@@ -122,7 +122,7 @@ namespace Amazon.ResilienceHub
         /// </summary>
         /// <param name="config">The AmazonResilienceHubClient Configuration Object</param>
         public AmazonResilienceHubClient(AmazonResilienceHubConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonResilienceHubClient with AWS Credentials
@@ -225,15 +225,7 @@ namespace Amazon.ResilienceHub
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -243,7 +235,9 @@ namespace Amazon.ResilienceHub
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonResilienceHubEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonResilienceHubAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

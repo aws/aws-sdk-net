@@ -69,7 +69,7 @@ namespace Amazon.IoTSiteWise
         ///
         /// </summary>
         public AmazonIoTSiteWiseClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonIoTSiteWiseConfig()) { }
+            : base(new AmazonIoTSiteWiseConfig()) { }
 
         /// <summary>
         /// Constructs AmazonIoTSiteWiseClient with the credentials loaded from the application's
@@ -88,7 +88,7 @@ namespace Amazon.IoTSiteWise
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonIoTSiteWiseClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonIoTSiteWiseConfig{RegionEndpoint = region}) { }
+            : base(new AmazonIoTSiteWiseConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonIoTSiteWiseClient with the credentials loaded from the application's
@@ -107,7 +107,7 @@ namespace Amazon.IoTSiteWise
         /// </summary>
         /// <param name="config">The AmazonIoTSiteWiseClient Configuration Object</param>
         public AmazonIoTSiteWiseClient(AmazonIoTSiteWiseConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -232,14 +232,6 @@ namespace Amazon.IoTSiteWise
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -247,7 +239,9 @@ namespace Amazon.IoTSiteWise
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonIoTSiteWiseEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonIoTSiteWiseAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

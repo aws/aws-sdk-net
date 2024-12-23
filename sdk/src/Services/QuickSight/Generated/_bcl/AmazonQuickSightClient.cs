@@ -85,7 +85,7 @@ namespace Amazon.QuickSight
         ///
         /// </summary>
         public AmazonQuickSightClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonQuickSightConfig()) { }
+            : base(new AmazonQuickSightConfig()) { }
 
         /// <summary>
         /// Constructs AmazonQuickSightClient with the credentials loaded from the application's
@@ -104,7 +104,7 @@ namespace Amazon.QuickSight
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonQuickSightClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonQuickSightConfig{RegionEndpoint = region}) { }
+            : base(new AmazonQuickSightConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonQuickSightClient with the credentials loaded from the application's
@@ -123,7 +123,7 @@ namespace Amazon.QuickSight
         /// </summary>
         /// <param name="config">The AmazonQuickSightClient Configuration Object</param>
         public AmazonQuickSightClient(AmazonQuickSightConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonQuickSightClient with AWS Credentials
@@ -226,15 +226,7 @@ namespace Amazon.QuickSight
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -244,7 +236,9 @@ namespace Amazon.QuickSight
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonQuickSightEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonQuickSightAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

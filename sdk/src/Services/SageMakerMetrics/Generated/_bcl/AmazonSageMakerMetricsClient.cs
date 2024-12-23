@@ -71,7 +71,7 @@ namespace Amazon.SageMakerMetrics
         ///
         /// </summary>
         public AmazonSageMakerMetricsClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSageMakerMetricsConfig()) { }
+            : base(new AmazonSageMakerMetricsConfig()) { }
 
         /// <summary>
         /// Constructs AmazonSageMakerMetricsClient with the credentials loaded from the application's
@@ -90,7 +90,7 @@ namespace Amazon.SageMakerMetrics
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonSageMakerMetricsClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSageMakerMetricsConfig{RegionEndpoint = region}) { }
+            : base(new AmazonSageMakerMetricsConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonSageMakerMetricsClient with the credentials loaded from the application's
@@ -109,7 +109,7 @@ namespace Amazon.SageMakerMetrics
         /// </summary>
         /// <param name="config">The AmazonSageMakerMetricsClient Configuration Object</param>
         public AmazonSageMakerMetricsClient(AmazonSageMakerMetricsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonSageMakerMetricsClient with AWS Credentials
@@ -212,15 +212,7 @@ namespace Amazon.SageMakerMetrics
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -230,7 +222,9 @@ namespace Amazon.SageMakerMetrics
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonSageMakerMetricsEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonSageMakerMetricsAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

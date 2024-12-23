@@ -121,7 +121,7 @@ namespace Amazon.SecurityLake
         ///
         /// </summary>
         public AmazonSecurityLakeClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSecurityLakeConfig()) { }
+            : base(new AmazonSecurityLakeConfig()) { }
 
         /// <summary>
         /// Constructs AmazonSecurityLakeClient with the credentials loaded from the application's
@@ -140,7 +140,7 @@ namespace Amazon.SecurityLake
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonSecurityLakeClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSecurityLakeConfig{RegionEndpoint = region}) { }
+            : base(new AmazonSecurityLakeConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonSecurityLakeClient with the credentials loaded from the application's
@@ -159,7 +159,7 @@ namespace Amazon.SecurityLake
         /// </summary>
         /// <param name="config">The AmazonSecurityLakeClient Configuration Object</param>
         public AmazonSecurityLakeClient(AmazonSecurityLakeConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonSecurityLakeClient with AWS Credentials
@@ -262,15 +262,7 @@ namespace Amazon.SecurityLake
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -280,7 +272,9 @@ namespace Amazon.SecurityLake
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonSecurityLakeEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonSecurityLakeAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

@@ -118,7 +118,7 @@ namespace Amazon.SimpleSystemsManagement
         ///
         /// </summary>
         public AmazonSimpleSystemsManagementClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSimpleSystemsManagementConfig()) { }
+            : base(new AmazonSimpleSystemsManagementConfig()) { }
 
         /// <summary>
         /// Constructs AmazonSimpleSystemsManagementClient with the credentials loaded from the application's
@@ -137,7 +137,7 @@ namespace Amazon.SimpleSystemsManagement
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonSimpleSystemsManagementClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSimpleSystemsManagementConfig{RegionEndpoint = region}) { }
+            : base(new AmazonSimpleSystemsManagementConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonSimpleSystemsManagementClient with the credentials loaded from the application's
@@ -156,7 +156,7 @@ namespace Amazon.SimpleSystemsManagement
         /// </summary>
         /// <param name="config">The AmazonSimpleSystemsManagementClient Configuration Object</param>
         public AmazonSimpleSystemsManagementClient(AmazonSimpleSystemsManagementConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonSimpleSystemsManagementClient with AWS Credentials
@@ -259,15 +259,7 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -277,7 +269,9 @@ namespace Amazon.SimpleSystemsManagement
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonSimpleSystemsManagementEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonSimpleSystemsManagementAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

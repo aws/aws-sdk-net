@@ -80,7 +80,7 @@ namespace Amazon.MediaStore
         ///
         /// </summary>
         public AmazonMediaStoreClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonMediaStoreConfig()) { }
+            : base(new AmazonMediaStoreConfig()) { }
 
         /// <summary>
         /// Constructs AmazonMediaStoreClient with the credentials loaded from the application's
@@ -99,7 +99,7 @@ namespace Amazon.MediaStore
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonMediaStoreClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonMediaStoreConfig{RegionEndpoint = region}) { }
+            : base(new AmazonMediaStoreConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonMediaStoreClient with the credentials loaded from the application's
@@ -118,7 +118,7 @@ namespace Amazon.MediaStore
         /// </summary>
         /// <param name="config">The AmazonMediaStoreClient Configuration Object</param>
         public AmazonMediaStoreClient(AmazonMediaStoreConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonMediaStoreClient with AWS Credentials
@@ -221,15 +221,7 @@ namespace Amazon.MediaStore
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -239,7 +231,9 @@ namespace Amazon.MediaStore
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonMediaStoreEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonMediaStoreAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

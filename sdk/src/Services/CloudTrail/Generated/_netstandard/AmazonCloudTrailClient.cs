@@ -92,7 +92,7 @@ namespace Amazon.CloudTrail
         ///
         /// </summary>
         public AmazonCloudTrailClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudTrailConfig()) { }
+            : base(new AmazonCloudTrailConfig()) { }
 
         /// <summary>
         /// Constructs AmazonCloudTrailClient with the credentials loaded from the application's
@@ -111,7 +111,7 @@ namespace Amazon.CloudTrail
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonCloudTrailClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudTrailConfig{RegionEndpoint = region}) { }
+            : base(new AmazonCloudTrailConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonCloudTrailClient with the credentials loaded from the application's
@@ -130,7 +130,7 @@ namespace Amazon.CloudTrail
         /// </summary>
         /// <param name="config">The AmazonCloudTrailClient Configuration Object</param>
         public AmazonCloudTrailClient(AmazonCloudTrailConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -255,14 +255,6 @@ namespace Amazon.CloudTrail
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -270,7 +262,9 @@ namespace Amazon.CloudTrail
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCloudTrailEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCloudTrailAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

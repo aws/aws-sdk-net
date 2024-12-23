@@ -67,7 +67,7 @@ namespace Amazon.Comprehend
         ///
         /// </summary>
         public AmazonComprehendClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonComprehendConfig()) { }
+            : base(new AmazonComprehendConfig()) { }
 
         /// <summary>
         /// Constructs AmazonComprehendClient with the credentials loaded from the application's
@@ -86,7 +86,7 @@ namespace Amazon.Comprehend
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonComprehendClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonComprehendConfig{RegionEndpoint = region}) { }
+            : base(new AmazonComprehendConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonComprehendClient with the credentials loaded from the application's
@@ -105,7 +105,7 @@ namespace Amazon.Comprehend
         /// </summary>
         /// <param name="config">The AmazonComprehendClient Configuration Object</param>
         public AmazonComprehendClient(AmazonComprehendConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -230,14 +230,6 @@ namespace Amazon.Comprehend
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -245,7 +237,9 @@ namespace Amazon.Comprehend
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonComprehendEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonComprehendAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

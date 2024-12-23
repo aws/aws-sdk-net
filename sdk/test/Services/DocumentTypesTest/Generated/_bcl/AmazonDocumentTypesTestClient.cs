@@ -63,7 +63,7 @@ namespace Amazon.DocumentTypesTest
         ///
         /// </summary>
         public AmazonDocumentTypesTestClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonDocumentTypesTestConfig()) { }
+            : base(new AmazonDocumentTypesTestConfig()) { }
 
         /// <summary>
         /// Constructs AmazonDocumentTypesTestClient with the credentials loaded from the application's
@@ -82,7 +82,7 @@ namespace Amazon.DocumentTypesTest
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonDocumentTypesTestClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonDocumentTypesTestConfig{RegionEndpoint = region}) { }
+            : base(new AmazonDocumentTypesTestConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonDocumentTypesTestClient with the credentials loaded from the application's
@@ -101,7 +101,7 @@ namespace Amazon.DocumentTypesTest
         /// </summary>
         /// <param name="config">The AmazonDocumentTypesTestClient Configuration Object</param>
         public AmazonDocumentTypesTestClient(AmazonDocumentTypesTestConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonDocumentTypesTestClient with AWS Credentials
@@ -204,15 +204,16 @@ namespace Amazon.DocumentTypesTest
 
         #endregion
 
-        #region Overrides
+        #region Overrides  
 
         /// <summary>
-        /// Creates the signer for the service.
+        /// Customize the pipeline
         /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
+        /// <param name="pipeline"></param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
         {
-            return new AWS4Signer();
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonDocumentTypesTestAuthSchemeHandler());
+        }
 
         /// <summary>
         /// Capture metadata for the service.

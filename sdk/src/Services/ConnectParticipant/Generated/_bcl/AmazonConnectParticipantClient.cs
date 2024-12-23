@@ -91,7 +91,7 @@ namespace Amazon.ConnectParticipant
         ///
         /// </summary>
         public AmazonConnectParticipantClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonConnectParticipantConfig()) { }
+            : base(new AmazonConnectParticipantConfig()) { }
 
         /// <summary>
         /// Constructs AmazonConnectParticipantClient with the credentials loaded from the application's
@@ -110,7 +110,7 @@ namespace Amazon.ConnectParticipant
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonConnectParticipantClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonConnectParticipantConfig{RegionEndpoint = region}) { }
+            : base(new AmazonConnectParticipantConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonConnectParticipantClient with the credentials loaded from the application's
@@ -129,7 +129,7 @@ namespace Amazon.ConnectParticipant
         /// </summary>
         /// <param name="config">The AmazonConnectParticipantClient Configuration Object</param>
         public AmazonConnectParticipantClient(AmazonConnectParticipantConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonConnectParticipantClient with AWS Credentials
@@ -232,15 +232,7 @@ namespace Amazon.ConnectParticipant
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -250,7 +242,9 @@ namespace Amazon.ConnectParticipant
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonConnectParticipantEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonConnectParticipantAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

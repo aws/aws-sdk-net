@@ -84,7 +84,7 @@ namespace Amazon.MainframeModernization
         ///
         /// </summary>
         public AmazonMainframeModernizationClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonMainframeModernizationConfig()) { }
+            : base(new AmazonMainframeModernizationConfig()) { }
 
         /// <summary>
         /// Constructs AmazonMainframeModernizationClient with the credentials loaded from the application's
@@ -103,7 +103,7 @@ namespace Amazon.MainframeModernization
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonMainframeModernizationClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonMainframeModernizationConfig{RegionEndpoint = region}) { }
+            : base(new AmazonMainframeModernizationConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonMainframeModernizationClient with the credentials loaded from the application's
@@ -122,7 +122,7 @@ namespace Amazon.MainframeModernization
         /// </summary>
         /// <param name="config">The AmazonMainframeModernizationClient Configuration Object</param>
         public AmazonMainframeModernizationClient(AmazonMainframeModernizationConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonMainframeModernizationClient with AWS Credentials
@@ -225,15 +225,7 @@ namespace Amazon.MainframeModernization
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -243,7 +235,9 @@ namespace Amazon.MainframeModernization
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonMainframeModernizationEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonMainframeModernizationAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

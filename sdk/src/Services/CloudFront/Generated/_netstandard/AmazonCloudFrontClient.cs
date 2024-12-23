@@ -72,7 +72,7 @@ namespace Amazon.CloudFront
         ///
         /// </summary>
         public AmazonCloudFrontClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudFrontConfig()) { }
+            : base(new AmazonCloudFrontConfig()) { }
 
         /// <summary>
         /// Constructs AmazonCloudFrontClient with the credentials loaded from the application's
@@ -91,7 +91,7 @@ namespace Amazon.CloudFront
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonCloudFrontClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudFrontConfig{RegionEndpoint = region}) { }
+            : base(new AmazonCloudFrontConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonCloudFrontClient with the credentials loaded from the application's
@@ -110,7 +110,7 @@ namespace Amazon.CloudFront
         /// </summary>
         /// <param name="config">The AmazonCloudFrontClient Configuration Object</param>
         public AmazonCloudFrontClient(AmazonCloudFrontConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -235,14 +235,6 @@ namespace Amazon.CloudFront
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -250,7 +242,9 @@ namespace Amazon.CloudFront
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCloudFrontEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCloudFrontAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

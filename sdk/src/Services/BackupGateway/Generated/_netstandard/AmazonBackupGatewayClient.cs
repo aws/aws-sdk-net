@@ -87,7 +87,7 @@ namespace Amazon.BackupGateway
         ///
         /// </summary>
         public AmazonBackupGatewayClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonBackupGatewayConfig()) { }
+            : base(new AmazonBackupGatewayConfig()) { }
 
         /// <summary>
         /// Constructs AmazonBackupGatewayClient with the credentials loaded from the application's
@@ -106,7 +106,7 @@ namespace Amazon.BackupGateway
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonBackupGatewayClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonBackupGatewayConfig{RegionEndpoint = region}) { }
+            : base(new AmazonBackupGatewayConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonBackupGatewayClient with the credentials loaded from the application's
@@ -125,7 +125,7 @@ namespace Amazon.BackupGateway
         /// </summary>
         /// <param name="config">The AmazonBackupGatewayClient Configuration Object</param>
         public AmazonBackupGatewayClient(AmazonBackupGatewayConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -250,14 +250,6 @@ namespace Amazon.BackupGateway
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -265,7 +257,9 @@ namespace Amazon.BackupGateway
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonBackupGatewayEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonBackupGatewayAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

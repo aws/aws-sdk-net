@@ -64,7 +64,7 @@ namespace Amazon.Artifact
         ///
         /// </summary>
         public AmazonArtifactClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonArtifactConfig()) { }
+            : base(new AmazonArtifactConfig()) { }
 
         /// <summary>
         /// Constructs AmazonArtifactClient with the credentials loaded from the application's
@@ -83,7 +83,7 @@ namespace Amazon.Artifact
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonArtifactClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonArtifactConfig{RegionEndpoint = region}) { }
+            : base(new AmazonArtifactConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonArtifactClient with the credentials loaded from the application's
@@ -102,7 +102,7 @@ namespace Amazon.Artifact
         /// </summary>
         /// <param name="config">The AmazonArtifactClient Configuration Object</param>
         public AmazonArtifactClient(AmazonArtifactConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -227,14 +227,6 @@ namespace Amazon.Artifact
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -242,7 +234,9 @@ namespace Amazon.Artifact
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonArtifactEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonArtifactAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

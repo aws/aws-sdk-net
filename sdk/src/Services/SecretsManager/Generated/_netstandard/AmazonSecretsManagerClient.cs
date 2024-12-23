@@ -118,7 +118,7 @@ namespace Amazon.SecretsManager
         ///
         /// </summary>
         public AmazonSecretsManagerClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSecretsManagerConfig()) { }
+            : base(new AmazonSecretsManagerConfig()) { }
 
         /// <summary>
         /// Constructs AmazonSecretsManagerClient with the credentials loaded from the application's
@@ -137,7 +137,7 @@ namespace Amazon.SecretsManager
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonSecretsManagerClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSecretsManagerConfig{RegionEndpoint = region}) { }
+            : base(new AmazonSecretsManagerConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonSecretsManagerClient with the credentials loaded from the application's
@@ -156,7 +156,7 @@ namespace Amazon.SecretsManager
         /// </summary>
         /// <param name="config">The AmazonSecretsManagerClient Configuration Object</param>
         public AmazonSecretsManagerClient(AmazonSecretsManagerConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -281,14 +281,6 @@ namespace Amazon.SecretsManager
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -296,7 +288,9 @@ namespace Amazon.SecretsManager
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonSecretsManagerEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonSecretsManagerAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

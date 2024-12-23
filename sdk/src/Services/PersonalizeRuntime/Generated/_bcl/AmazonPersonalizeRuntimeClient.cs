@@ -63,7 +63,7 @@ namespace Amazon.PersonalizeRuntime
         ///
         /// </summary>
         public AmazonPersonalizeRuntimeClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonPersonalizeRuntimeConfig()) { }
+            : base(new AmazonPersonalizeRuntimeConfig()) { }
 
         /// <summary>
         /// Constructs AmazonPersonalizeRuntimeClient with the credentials loaded from the application's
@@ -82,7 +82,7 @@ namespace Amazon.PersonalizeRuntime
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonPersonalizeRuntimeClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonPersonalizeRuntimeConfig{RegionEndpoint = region}) { }
+            : base(new AmazonPersonalizeRuntimeConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonPersonalizeRuntimeClient with the credentials loaded from the application's
@@ -101,7 +101,7 @@ namespace Amazon.PersonalizeRuntime
         /// </summary>
         /// <param name="config">The AmazonPersonalizeRuntimeClient Configuration Object</param>
         public AmazonPersonalizeRuntimeClient(AmazonPersonalizeRuntimeConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonPersonalizeRuntimeClient with AWS Credentials
@@ -204,15 +204,7 @@ namespace Amazon.PersonalizeRuntime
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -222,7 +214,9 @@ namespace Amazon.PersonalizeRuntime
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonPersonalizeRuntimeEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonPersonalizeRuntimeAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

@@ -89,7 +89,7 @@ namespace Amazon.Transfer
         ///
         /// </summary>
         public AmazonTransferClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonTransferConfig()) { }
+            : base(new AmazonTransferConfig()) { }
 
         /// <summary>
         /// Constructs AmazonTransferClient with the credentials loaded from the application's
@@ -108,7 +108,7 @@ namespace Amazon.Transfer
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonTransferClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonTransferConfig{RegionEndpoint = region}) { }
+            : base(new AmazonTransferConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonTransferClient with the credentials loaded from the application's
@@ -127,7 +127,7 @@ namespace Amazon.Transfer
         /// </summary>
         /// <param name="config">The AmazonTransferClient Configuration Object</param>
         public AmazonTransferClient(AmazonTransferConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonTransferClient with AWS Credentials
@@ -230,15 +230,7 @@ namespace Amazon.Transfer
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -248,7 +240,9 @@ namespace Amazon.Transfer
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonTransferEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonTransferAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

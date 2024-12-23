@@ -64,7 +64,7 @@ namespace Amazon.TimestreamQuery
         ///
         /// </summary>
         public AmazonTimestreamQueryClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonTimestreamQueryConfig()) { }
+            : base(new AmazonTimestreamQueryConfig()) { }
 
         /// <summary>
         /// Constructs AmazonTimestreamQueryClient with the credentials loaded from the application's
@@ -83,7 +83,7 @@ namespace Amazon.TimestreamQuery
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonTimestreamQueryClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonTimestreamQueryConfig{RegionEndpoint = region}) { }
+            : base(new AmazonTimestreamQueryConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonTimestreamQueryClient with the credentials loaded from the application's
@@ -102,7 +102,7 @@ namespace Amazon.TimestreamQuery
         /// </summary>
         /// <param name="config">The AmazonTimestreamQueryClient Configuration Object</param>
         public AmazonTimestreamQueryClient(AmazonTimestreamQueryConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -227,14 +227,6 @@ namespace Amazon.TimestreamQuery
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -242,7 +234,9 @@ namespace Amazon.TimestreamQuery
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonTimestreamQueryEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonTimestreamQueryAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

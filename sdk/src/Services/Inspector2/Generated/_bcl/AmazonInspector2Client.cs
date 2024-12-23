@@ -81,7 +81,7 @@ namespace Amazon.Inspector2
         ///
         /// </summary>
         public AmazonInspector2Client()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonInspector2Config()) { }
+            : base(new AmazonInspector2Config()) { }
 
         /// <summary>
         /// Constructs AmazonInspector2Client with the credentials loaded from the application's
@@ -100,7 +100,7 @@ namespace Amazon.Inspector2
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonInspector2Client(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonInspector2Config{RegionEndpoint = region}) { }
+            : base(new AmazonInspector2Config{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonInspector2Client with the credentials loaded from the application's
@@ -119,7 +119,7 @@ namespace Amazon.Inspector2
         /// </summary>
         /// <param name="config">The AmazonInspector2Client Configuration Object</param>
         public AmazonInspector2Client(AmazonInspector2Config config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonInspector2Client with AWS Credentials
@@ -222,15 +222,7 @@ namespace Amazon.Inspector2
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -240,7 +232,9 @@ namespace Amazon.Inspector2
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonInspector2EndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonInspector2AuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

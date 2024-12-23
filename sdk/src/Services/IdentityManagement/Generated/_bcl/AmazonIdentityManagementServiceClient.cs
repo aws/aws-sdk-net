@@ -88,7 +88,7 @@ namespace Amazon.IdentityManagement
         ///
         /// </summary>
         public AmazonIdentityManagementServiceClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonIdentityManagementServiceConfig()) { }
+            : base(new AmazonIdentityManagementServiceConfig()) { }
 
         /// <summary>
         /// Constructs AmazonIdentityManagementServiceClient with the credentials loaded from the application's
@@ -107,7 +107,7 @@ namespace Amazon.IdentityManagement
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonIdentityManagementServiceClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonIdentityManagementServiceConfig{RegionEndpoint = region}) { }
+            : base(new AmazonIdentityManagementServiceConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonIdentityManagementServiceClient with the credentials loaded from the application's
@@ -126,7 +126,7 @@ namespace Amazon.IdentityManagement
         /// </summary>
         /// <param name="config">The AmazonIdentityManagementServiceClient Configuration Object</param>
         public AmazonIdentityManagementServiceClient(AmazonIdentityManagementServiceConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonIdentityManagementServiceClient with AWS Credentials
@@ -229,15 +229,7 @@ namespace Amazon.IdentityManagement
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -247,7 +239,9 @@ namespace Amazon.IdentityManagement
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonIdentityManagementServiceEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonIdentityManagementServiceAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

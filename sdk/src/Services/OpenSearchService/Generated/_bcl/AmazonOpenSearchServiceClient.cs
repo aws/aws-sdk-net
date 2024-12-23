@@ -83,7 +83,7 @@ namespace Amazon.OpenSearchService
         ///
         /// </summary>
         public AmazonOpenSearchServiceClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonOpenSearchServiceConfig()) { }
+            : base(new AmazonOpenSearchServiceConfig()) { }
 
         /// <summary>
         /// Constructs AmazonOpenSearchServiceClient with the credentials loaded from the application's
@@ -102,7 +102,7 @@ namespace Amazon.OpenSearchService
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonOpenSearchServiceClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonOpenSearchServiceConfig{RegionEndpoint = region}) { }
+            : base(new AmazonOpenSearchServiceConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonOpenSearchServiceClient with the credentials loaded from the application's
@@ -121,7 +121,7 @@ namespace Amazon.OpenSearchService
         /// </summary>
         /// <param name="config">The AmazonOpenSearchServiceClient Configuration Object</param>
         public AmazonOpenSearchServiceClient(AmazonOpenSearchServiceConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonOpenSearchServiceClient with AWS Credentials
@@ -224,15 +224,7 @@ namespace Amazon.OpenSearchService
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -242,7 +234,9 @@ namespace Amazon.OpenSearchService
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonOpenSearchServiceEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonOpenSearchServiceAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

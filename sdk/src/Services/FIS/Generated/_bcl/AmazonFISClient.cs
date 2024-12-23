@@ -82,7 +82,7 @@ namespace Amazon.FIS
         ///
         /// </summary>
         public AmazonFISClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonFISConfig()) { }
+            : base(new AmazonFISConfig()) { }
 
         /// <summary>
         /// Constructs AmazonFISClient with the credentials loaded from the application's
@@ -101,7 +101,7 @@ namespace Amazon.FIS
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonFISClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonFISConfig{RegionEndpoint = region}) { }
+            : base(new AmazonFISConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonFISClient with the credentials loaded from the application's
@@ -120,7 +120,7 @@ namespace Amazon.FIS
         /// </summary>
         /// <param name="config">The AmazonFISClient Configuration Object</param>
         public AmazonFISClient(AmazonFISConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonFISClient with AWS Credentials
@@ -223,15 +223,7 @@ namespace Amazon.FIS
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -241,7 +233,9 @@ namespace Amazon.FIS
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonFISEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonFISAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

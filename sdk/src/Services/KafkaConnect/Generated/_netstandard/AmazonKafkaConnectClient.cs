@@ -64,7 +64,7 @@ namespace Amazon.KafkaConnect
         ///
         /// </summary>
         public AmazonKafkaConnectClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonKafkaConnectConfig()) { }
+            : base(new AmazonKafkaConnectConfig()) { }
 
         /// <summary>
         /// Constructs AmazonKafkaConnectClient with the credentials loaded from the application's
@@ -83,7 +83,7 @@ namespace Amazon.KafkaConnect
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonKafkaConnectClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonKafkaConnectConfig{RegionEndpoint = region}) { }
+            : base(new AmazonKafkaConnectConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonKafkaConnectClient with the credentials loaded from the application's
@@ -102,7 +102,7 @@ namespace Amazon.KafkaConnect
         /// </summary>
         /// <param name="config">The AmazonKafkaConnectClient Configuration Object</param>
         public AmazonKafkaConnectClient(AmazonKafkaConnectConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -227,14 +227,6 @@ namespace Amazon.KafkaConnect
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -242,7 +234,9 @@ namespace Amazon.KafkaConnect
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonKafkaConnectEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonKafkaConnectAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

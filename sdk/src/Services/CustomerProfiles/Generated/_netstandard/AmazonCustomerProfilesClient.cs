@@ -86,7 +86,7 @@ namespace Amazon.CustomerProfiles
         ///
         /// </summary>
         public AmazonCustomerProfilesClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCustomerProfilesConfig()) { }
+            : base(new AmazonCustomerProfilesConfig()) { }
 
         /// <summary>
         /// Constructs AmazonCustomerProfilesClient with the credentials loaded from the application's
@@ -105,7 +105,7 @@ namespace Amazon.CustomerProfiles
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonCustomerProfilesClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCustomerProfilesConfig{RegionEndpoint = region}) { }
+            : base(new AmazonCustomerProfilesConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonCustomerProfilesClient with the credentials loaded from the application's
@@ -124,7 +124,7 @@ namespace Amazon.CustomerProfiles
         /// </summary>
         /// <param name="config">The AmazonCustomerProfilesClient Configuration Object</param>
         public AmazonCustomerProfilesClient(AmazonCustomerProfilesConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -249,14 +249,6 @@ namespace Amazon.CustomerProfiles
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -264,7 +256,9 @@ namespace Amazon.CustomerProfiles
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCustomerProfilesEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCustomerProfilesAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

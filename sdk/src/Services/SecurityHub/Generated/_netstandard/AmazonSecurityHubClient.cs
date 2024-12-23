@@ -169,7 +169,7 @@ namespace Amazon.SecurityHub
         ///
         /// </summary>
         public AmazonSecurityHubClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSecurityHubConfig()) { }
+            : base(new AmazonSecurityHubConfig()) { }
 
         /// <summary>
         /// Constructs AmazonSecurityHubClient with the credentials loaded from the application's
@@ -188,7 +188,7 @@ namespace Amazon.SecurityHub
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonSecurityHubClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSecurityHubConfig{RegionEndpoint = region}) { }
+            : base(new AmazonSecurityHubConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonSecurityHubClient with the credentials loaded from the application's
@@ -207,7 +207,7 @@ namespace Amazon.SecurityHub
         /// </summary>
         /// <param name="config">The AmazonSecurityHubClient Configuration Object</param>
         public AmazonSecurityHubClient(AmazonSecurityHubConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -332,14 +332,6 @@ namespace Amazon.SecurityHub
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -347,7 +339,9 @@ namespace Amazon.SecurityHub
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonSecurityHubEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonSecurityHubAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

@@ -90,7 +90,7 @@ namespace Amazon.CloudFormation
         ///
         /// </summary>
         public AmazonCloudFormationClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudFormationConfig()) { }
+            : base(new AmazonCloudFormationConfig()) { }
 
         /// <summary>
         /// Constructs AmazonCloudFormationClient with the credentials loaded from the application's
@@ -109,7 +109,7 @@ namespace Amazon.CloudFormation
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonCloudFormationClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudFormationConfig{RegionEndpoint = region}) { }
+            : base(new AmazonCloudFormationConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonCloudFormationClient with the credentials loaded from the application's
@@ -128,7 +128,7 @@ namespace Amazon.CloudFormation
         /// </summary>
         /// <param name="config">The AmazonCloudFormationClient Configuration Object</param>
         public AmazonCloudFormationClient(AmazonCloudFormationConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -253,14 +253,6 @@ namespace Amazon.CloudFormation
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -269,7 +261,9 @@ namespace Amazon.CloudFormation
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new Amazon.CloudFormation.Internal.ProcessRequestHandler());
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCloudFormationEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCloudFormationAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

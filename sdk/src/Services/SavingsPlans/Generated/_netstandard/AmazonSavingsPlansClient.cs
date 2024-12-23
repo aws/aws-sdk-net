@@ -68,7 +68,7 @@ namespace Amazon.SavingsPlans
         ///
         /// </summary>
         public AmazonSavingsPlansClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSavingsPlansConfig()) { }
+            : base(new AmazonSavingsPlansConfig()) { }
 
         /// <summary>
         /// Constructs AmazonSavingsPlansClient with the credentials loaded from the application's
@@ -87,7 +87,7 @@ namespace Amazon.SavingsPlans
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonSavingsPlansClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSavingsPlansConfig{RegionEndpoint = region}) { }
+            : base(new AmazonSavingsPlansConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonSavingsPlansClient with the credentials loaded from the application's
@@ -106,7 +106,7 @@ namespace Amazon.SavingsPlans
         /// </summary>
         /// <param name="config">The AmazonSavingsPlansClient Configuration Object</param>
         public AmazonSavingsPlansClient(AmazonSavingsPlansConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -213,14 +213,6 @@ namespace Amazon.SavingsPlans
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -228,7 +220,9 @@ namespace Amazon.SavingsPlans
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonSavingsPlansEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonSavingsPlansAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

@@ -98,7 +98,7 @@ namespace Amazon.DirectoryService
         ///
         /// </summary>
         public AmazonDirectoryServiceClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonDirectoryServiceConfig()) { }
+            : base(new AmazonDirectoryServiceConfig()) { }
 
         /// <summary>
         /// Constructs AmazonDirectoryServiceClient with the credentials loaded from the application's
@@ -117,7 +117,7 @@ namespace Amazon.DirectoryService
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonDirectoryServiceClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonDirectoryServiceConfig{RegionEndpoint = region}) { }
+            : base(new AmazonDirectoryServiceConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonDirectoryServiceClient with the credentials loaded from the application's
@@ -136,7 +136,7 @@ namespace Amazon.DirectoryService
         /// </summary>
         /// <param name="config">The AmazonDirectoryServiceClient Configuration Object</param>
         public AmazonDirectoryServiceClient(AmazonDirectoryServiceConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonDirectoryServiceClient with AWS Credentials
@@ -239,15 +239,7 @@ namespace Amazon.DirectoryService
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -257,7 +249,9 @@ namespace Amazon.DirectoryService
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonDirectoryServiceEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonDirectoryServiceAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

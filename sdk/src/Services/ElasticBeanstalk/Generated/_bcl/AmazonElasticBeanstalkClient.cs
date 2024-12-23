@@ -102,7 +102,7 @@ namespace Amazon.ElasticBeanstalk
         ///
         /// </summary>
         public AmazonElasticBeanstalkClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElasticBeanstalkConfig()) { }
+            : base(new AmazonElasticBeanstalkConfig()) { }
 
         /// <summary>
         /// Constructs AmazonElasticBeanstalkClient with the credentials loaded from the application's
@@ -121,7 +121,7 @@ namespace Amazon.ElasticBeanstalk
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonElasticBeanstalkClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElasticBeanstalkConfig{RegionEndpoint = region}) { }
+            : base(new AmazonElasticBeanstalkConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonElasticBeanstalkClient with the credentials loaded from the application's
@@ -140,7 +140,7 @@ namespace Amazon.ElasticBeanstalk
         /// </summary>
         /// <param name="config">The AmazonElasticBeanstalkClient Configuration Object</param>
         public AmazonElasticBeanstalkClient(AmazonElasticBeanstalkConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonElasticBeanstalkClient with AWS Credentials
@@ -243,15 +243,7 @@ namespace Amazon.ElasticBeanstalk
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -261,7 +253,9 @@ namespace Amazon.ElasticBeanstalk
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonElasticBeanstalkEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonElasticBeanstalkAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

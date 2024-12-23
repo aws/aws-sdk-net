@@ -110,7 +110,7 @@ namespace Amazon.StepFunctions
         ///
         /// </summary>
         public AmazonStepFunctionsClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonStepFunctionsConfig()) { }
+            : base(new AmazonStepFunctionsConfig()) { }
 
         /// <summary>
         /// Constructs AmazonStepFunctionsClient with the credentials loaded from the application's
@@ -129,7 +129,7 @@ namespace Amazon.StepFunctions
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonStepFunctionsClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonStepFunctionsConfig{RegionEndpoint = region}) { }
+            : base(new AmazonStepFunctionsConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonStepFunctionsClient with the credentials loaded from the application's
@@ -148,7 +148,7 @@ namespace Amazon.StepFunctions
         /// </summary>
         /// <param name="config">The AmazonStepFunctionsClient Configuration Object</param>
         public AmazonStepFunctionsClient(AmazonStepFunctionsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonStepFunctionsClient with AWS Credentials
@@ -251,15 +251,7 @@ namespace Amazon.StepFunctions
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -269,7 +261,9 @@ namespace Amazon.StepFunctions
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonStepFunctionsEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonStepFunctionsAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

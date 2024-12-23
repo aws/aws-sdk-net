@@ -72,7 +72,7 @@ namespace Amazon.ServiceDiscovery
         ///
         /// </summary>
         public AmazonServiceDiscoveryClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonServiceDiscoveryConfig()) { }
+            : base(new AmazonServiceDiscoveryConfig()) { }
 
         /// <summary>
         /// Constructs AmazonServiceDiscoveryClient with the credentials loaded from the application's
@@ -91,7 +91,7 @@ namespace Amazon.ServiceDiscovery
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonServiceDiscoveryClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonServiceDiscoveryConfig{RegionEndpoint = region}) { }
+            : base(new AmazonServiceDiscoveryConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonServiceDiscoveryClient with the credentials loaded from the application's
@@ -110,7 +110,7 @@ namespace Amazon.ServiceDiscovery
         /// </summary>
         /// <param name="config">The AmazonServiceDiscoveryClient Configuration Object</param>
         public AmazonServiceDiscoveryClient(AmazonServiceDiscoveryConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -235,14 +235,6 @@ namespace Amazon.ServiceDiscovery
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -250,7 +242,9 @@ namespace Amazon.ServiceDiscovery
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonServiceDiscoveryEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonServiceDiscoveryAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

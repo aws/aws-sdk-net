@@ -84,7 +84,7 @@ namespace Amazon.MemoryDB
         ///
         /// </summary>
         public AmazonMemoryDBClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonMemoryDBConfig()) { }
+            : base(new AmazonMemoryDBConfig()) { }
 
         /// <summary>
         /// Constructs AmazonMemoryDBClient with the credentials loaded from the application's
@@ -103,7 +103,7 @@ namespace Amazon.MemoryDB
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonMemoryDBClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonMemoryDBConfig{RegionEndpoint = region}) { }
+            : base(new AmazonMemoryDBConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonMemoryDBClient with the credentials loaded from the application's
@@ -122,7 +122,7 @@ namespace Amazon.MemoryDB
         /// </summary>
         /// <param name="config">The AmazonMemoryDBClient Configuration Object</param>
         public AmazonMemoryDBClient(AmazonMemoryDBConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonMemoryDBClient with AWS Credentials
@@ -225,15 +225,7 @@ namespace Amazon.MemoryDB
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -243,7 +235,9 @@ namespace Amazon.MemoryDB
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonMemoryDBEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonMemoryDBAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

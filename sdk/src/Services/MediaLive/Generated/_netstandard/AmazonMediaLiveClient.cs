@@ -64,7 +64,7 @@ namespace Amazon.MediaLive
         ///
         /// </summary>
         public AmazonMediaLiveClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonMediaLiveConfig()) { }
+            : base(new AmazonMediaLiveConfig()) { }
 
         /// <summary>
         /// Constructs AmazonMediaLiveClient with the credentials loaded from the application's
@@ -83,7 +83,7 @@ namespace Amazon.MediaLive
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonMediaLiveClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonMediaLiveConfig{RegionEndpoint = region}) { }
+            : base(new AmazonMediaLiveConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonMediaLiveClient with the credentials loaded from the application's
@@ -102,7 +102,7 @@ namespace Amazon.MediaLive
         /// </summary>
         /// <param name="config">The AmazonMediaLiveClient Configuration Object</param>
         public AmazonMediaLiveClient(AmazonMediaLiveConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -227,14 +227,6 @@ namespace Amazon.MediaLive
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -242,7 +234,9 @@ namespace Amazon.MediaLive
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonMediaLiveEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonMediaLiveAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

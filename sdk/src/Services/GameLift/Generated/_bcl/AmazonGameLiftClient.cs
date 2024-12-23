@@ -145,7 +145,7 @@ namespace Amazon.GameLift
         ///
         /// </summary>
         public AmazonGameLiftClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonGameLiftConfig()) { }
+            : base(new AmazonGameLiftConfig()) { }
 
         /// <summary>
         /// Constructs AmazonGameLiftClient with the credentials loaded from the application's
@@ -164,7 +164,7 @@ namespace Amazon.GameLift
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonGameLiftClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonGameLiftConfig{RegionEndpoint = region}) { }
+            : base(new AmazonGameLiftConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonGameLiftClient with the credentials loaded from the application's
@@ -183,7 +183,7 @@ namespace Amazon.GameLift
         /// </summary>
         /// <param name="config">The AmazonGameLiftClient Configuration Object</param>
         public AmazonGameLiftClient(AmazonGameLiftConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonGameLiftClient with AWS Credentials
@@ -286,15 +286,7 @@ namespace Amazon.GameLift
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -304,7 +296,9 @@ namespace Amazon.GameLift
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonGameLiftEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonGameLiftAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>
