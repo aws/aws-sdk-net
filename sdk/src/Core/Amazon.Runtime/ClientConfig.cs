@@ -19,7 +19,6 @@ using System.Threading;
 using System.Globalization;
 
 
-using Smithy.Identity.Abstractions;
 using Amazon.Util;
 using Amazon.Internal;
 using Amazon.Runtime.Endpoints;
@@ -28,7 +27,11 @@ using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.CredentialManagement;
 using Amazon.Runtime.Internal.Settings;
 using Amazon.Runtime.Telemetry;
-using Amazon.Runtime.Credentials.Internal.IdentityResolvers;
+using Amazon.Runtime.Credentials.Internal;
+using Amazon.Runtime.Identity;
+using Amazon.Runtime.Credentials;
+
+
 
 #if NETSTANDARD
 using System.Runtime.InteropServices;

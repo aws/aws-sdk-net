@@ -20,7 +20,7 @@ using System.Reflection;
 using System.Xml.Linq;
 using Amazon.Runtime;
 using Amazon.Runtime.CredentialManagement;
-using Amazon.Runtime.Credentials.Internal.IdentityResolvers;
+using Amazon.Runtime.Credentials.Internal;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;

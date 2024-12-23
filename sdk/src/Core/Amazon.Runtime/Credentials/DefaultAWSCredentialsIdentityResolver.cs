@@ -13,9 +13,6 @@
  * permissions and limitations under the License.
  */
 
-using Amazon.Runtime.CredentialManagement;
-using Amazon.Runtime.Internal.Util;
-using Smithy.Identity.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -23,8 +20,11 @@ using System.IO;
 using System.Security;
 using System.Threading;
 using System.Threading.Tasks;
+using Amazon.Runtime.CredentialManagement;
+using Amazon.Runtime.Identity;
+using Amazon.Runtime.Internal.Util;
 
-namespace Amazon.Runtime.Credentials.Internal.IdentityResolvers
+namespace Amazon.Runtime.Credentials
 {
     /// <summary>
     /// A resolver that provides an AWSCredentials identity. 

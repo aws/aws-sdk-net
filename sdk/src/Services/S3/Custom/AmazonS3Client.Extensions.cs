@@ -41,7 +41,7 @@ using Amazon.Runtime.Endpoints;
 using System.Diagnostics.CodeAnalysis;
 using System.ComponentModel.Design;
 using System.Threading;
-using Amazon.Runtime.Credentials.Internal.IdentityResolvers;
+using Amazon.Runtime.Credentials.Internal;
 
 namespace Amazon.S3
 {

@@ -17,7 +17,8 @@ using System;
 using Amazon.Runtime.Internal.Util;
 using System.Collections.Generic;
 using System.Linq;
-using Amazon.Runtime.Credentials.Internal.IdentityResolvers;
+using Amazon.Runtime.Credentials;
+
 #if BCL || NETSTANDARD
 using Amazon.Runtime.CredentialManagement;
 #endif
