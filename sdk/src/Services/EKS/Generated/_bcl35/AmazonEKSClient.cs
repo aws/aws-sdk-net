@@ -2230,6 +2230,70 @@ namespace Amazon.EKS
 
         #endregion
         
+        #region  DescribeClusterVersions
+
+        /// <summary>
+        /// Lists available Kubernetes versions for Amazon EKS clusters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClusterVersions service method.</param>
+        /// 
+        /// <returns>The response from the DescribeClusterVersions service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidRequestException">
+        /// The request is invalid given the state of the cluster. Check the state of the cluster
+        /// and the associated operations.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeClusterVersions">REST API Reference for DescribeClusterVersions Operation</seealso>
+        public virtual DescribeClusterVersionsResponse DescribeClusterVersions(DescribeClusterVersionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeClusterVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeClusterVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeClusterVersionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeClusterVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClusterVersions operation on AmazonEKSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeClusterVersions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeClusterVersions">REST API Reference for DescribeClusterVersions Operation</seealso>
+        public virtual IAsyncResult BeginDescribeClusterVersions(DescribeClusterVersionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeClusterVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeClusterVersionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeClusterVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeClusterVersions.</param>
+        /// 
+        /// <returns>Returns a  DescribeClusterVersionsResult from EKS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeClusterVersions">REST API Reference for DescribeClusterVersions Operation</seealso>
+        public virtual DescribeClusterVersionsResponse EndDescribeClusterVersions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeClusterVersionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeEksAnywhereSubscription
 
         /// <summary>

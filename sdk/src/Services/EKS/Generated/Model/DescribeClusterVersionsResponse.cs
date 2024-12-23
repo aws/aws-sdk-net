@@ -30,47 +30,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EKS.Model
 {
     /// <summary>
-    /// Contains compatibility information for an Amazon EKS add-on.
+    /// This is the response object from the DescribeClusterVersions operation.
     /// </summary>
-    public partial class AddonCompatibilityDetail
+    public partial class DescribeClusterVersionsResponse : AmazonWebServiceResponse
     {
-        private List<string> _compatibleVersions = AWSConfigs.InitializeCollections ? new List<string>() : null;
-        private string _name;
+        private List<ClusterVersionInformation> _clusterVersions = AWSConfigs.InitializeCollections ? new List<ClusterVersionInformation>() : null;
+        private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property CompatibleVersions. 
+        /// Gets and sets the property ClusterVersions. 
         /// <para>
-        /// A list of compatible add-on versions.
+        /// List of cluster version information objects.
         /// </para>
         /// </summary>
-        public List<string> CompatibleVersions
+        public List<ClusterVersionInformation> ClusterVersions
         {
-            get { return this._compatibleVersions; }
-            set { this._compatibleVersions = value; }
+            get { return this._clusterVersions; }
+            set { this._clusterVersions = value; }
         }
 
-        // Check to see if CompatibleVersions property is set
-        internal bool IsSetCompatibleVersions()
+        // Check to see if ClusterVersions property is set
+        internal bool IsSetClusterVersions()
         {
-            return this._compatibleVersions != null && (this._compatibleVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._clusterVersions != null && (this._clusterVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
-        /// Gets and sets the property Name. 
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// The name of the Amazon EKS add-on.
+        /// Pagination token for the next set of results.
         /// </para>
         /// </summary>
-        public string Name
+        public string NextToken
         {
-            get { return this._name; }
-            set { this._name = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
-        // Check to see if Name property is set
-        internal bool IsSetName()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this._name != null;
+            return this._nextToken != null;
         }
 
     }

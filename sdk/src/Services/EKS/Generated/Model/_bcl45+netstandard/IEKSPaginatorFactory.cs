@@ -32,6 +32,11 @@ namespace Amazon.EKS.Model
         IDescribeAddonVersionsPaginator DescribeAddonVersions(DescribeAddonVersionsRequest request);
 
         /// <summary>
+        /// Paginator for DescribeClusterVersions operation
+        ///</summary>
+        IDescribeClusterVersionsPaginator DescribeClusterVersions(DescribeClusterVersionsRequest request);
+
+        /// <summary>
         /// Paginator for ListAccessEntries operation
         ///</summary>
         IListAccessEntriesPaginator ListAccessEntries(ListAccessEntriesRequest request);
