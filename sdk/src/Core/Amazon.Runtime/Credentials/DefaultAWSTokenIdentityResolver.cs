@@ -13,11 +13,11 @@
  * permissions and limitations under the License.
  */
 
-using Smithy.Identity.Abstractions;
 using System.Threading;
 using System.Threading.Tasks;
+using Amazon.Runtime.Identity;
 
-namespace Amazon.Runtime.Credentials.Internal.IdentityResolvers
+namespace Amazon.Runtime.Credentials
 {
     /// <summary>
     /// A resolver that provides a bearer token identity.
