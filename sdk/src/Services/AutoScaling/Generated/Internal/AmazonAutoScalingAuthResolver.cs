@@ -21,7 +21,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Credentials.Internal;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
-using Smithy.Identity.Abstractions;
+using Amazon.Runtime.Identity;
 using System.Collections.Generic;
 
 namespace Amazon.AutoScaling.Internal

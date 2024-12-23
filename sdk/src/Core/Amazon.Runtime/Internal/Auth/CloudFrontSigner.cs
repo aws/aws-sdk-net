@@ -22,7 +22,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal.Util;
 
 using System.Globalization;
-using Smithy.Identity.Abstractions;
+using Amazon.Runtime.Identity;
 
 namespace Amazon.Runtime.Internal.Auth
 {

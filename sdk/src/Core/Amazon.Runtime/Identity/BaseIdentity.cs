@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -13,19 +13,20 @@
  * permissions and limitations under the License.
  */
 
-namespace Smithy.Identity.Abstractions
+using System;
+
+namespace Amazon.Runtime.Identity
 {
     /// <summary>
-    /// The identity resolvers configured in the SDK.
+    /// An identity is an entity within the SDK representing who the customer is.
+    /// For example, the customer's identity could be anonymous, a token, a public / private key pair, etc...
     /// </summary>
-    public interface IIdentityResolverConfiguration
+    public abstract class BaseIdentity
     {
         /// <summary>
-        /// Retrieves an identity resolver for the specified identity type.
+        /// The time after which this identity will no longer be valid. If this is null, an expiration time
+        /// is not known (for example, when using long-term credentials).
         /// </summary>
-        /// <typeparam name="T">
-        /// The type of the identity, which must inherit from <see cref="BaseIdentity"/>.
-        /// </typeparam>
-        IIdentityResolver GetIdentityResolver<T>() where T : BaseIdentity;
+        public virtual DateTime? Expiration { get; set; }
     }
 }

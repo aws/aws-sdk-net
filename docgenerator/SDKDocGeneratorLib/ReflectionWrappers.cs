@@ -595,7 +595,7 @@ namespace SDKDocGenerator
             string html;
             var nameOrFullName = fullTypeName ? (this.FullName ?? this.Name) : this.Name;
 
-            if (this.IsGenericParameter || this.IsSmithyNamespace)
+            if (this.IsGenericParameter)
             {
                 html = this.JustName;
             }
@@ -692,15 +692,6 @@ namespace SDKDocGenerator
             {
                 return this.Namespace.Equals("Amazon", StringComparison.Ordinal)
                     || this.Namespace.StartsWith("Amazon.", StringComparison.Ordinal);
-            }
-        }
-
-        public bool IsSmithyNamespace
-        {
-            get
-            {
-                return this.Namespace.Equals("Smithy", StringComparison.Ordinal)
-                    || this.Namespace.StartsWith("Smithy.", StringComparison.Ordinal);
             }
         }
 
