@@ -93,7 +93,6 @@ namespace AWSSDK.UnitTests
                 Expiration = currentTime.AddHours(6)
             };
 
-            using (new AWSConfigsDateFaker(() => currentTime.ToUniversalTime()))
             using (var imdsServlet = new EC2InstanceMetadataServlet())
             {
                 var instanceProfileAwsCredentials =
