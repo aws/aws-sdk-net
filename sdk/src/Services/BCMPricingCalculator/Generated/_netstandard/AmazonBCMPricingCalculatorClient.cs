@@ -1018,6 +1018,10 @@ namespace Amazon.BCMPricingCalculator
         /// <exception cref="Amazon.BCMPricingCalculator.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
         /// </exception>
+        /// <exception cref="Amazon.BCMPricingCalculator.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
         /// <exception cref="Amazon.BCMPricingCalculator.Model.DataUnavailableException">
         /// The requested data is currently unavailable.
         /// </exception>
