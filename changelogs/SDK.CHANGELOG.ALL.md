@@ -1,3 +1,16 @@
+### 3.7.953.0 (2024-12-26 19:25 UTC)
+* BCMPricingCalculator (3.7.402.0)
+	* Added ConflictException to DeleteBillEstimate.
+* ECR (3.7.405.0)
+	* Add support for Dualstack Endpoints
+* NetworkFirewall (3.7.402.27)
+	* Dual-stack endpoints are now supported.
+* SecurityHub (3.7.402.12)
+	* Documentation updates for AWS Security Hub
+* Core 3.7.400.70
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.952.0 (2024-12-23 19:27 UTC)
 * ECR (3.7.404.48)
 	* Documentation update for ECR GetAccountSetting and PutAccountSetting APIs.
