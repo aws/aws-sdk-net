@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model
     /// GuardDuty Extended Threat Detection attack sequence. GuardDuty generates an attack
     /// sequence finding when multiple events align to a potentially suspicious activity.
     /// To receive GuardDuty attack sequence findings in Security Hub, you must have GuardDuty
-    /// and GuardDuty S3 Protection enabled. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty-extended-threat-detection.html">GuardDuty
+    /// enabled. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty-extended-threat-detection.html">GuardDuty
     /// Extended Threat Detection </a> in the <i>Amazon GuardDuty User Guide</i>.
     /// </summary>
     public partial class NetworkGeoLocation

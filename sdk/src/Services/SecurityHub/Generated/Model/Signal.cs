@@ -248,8 +248,8 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Severity. 
         /// <para>
         /// The severity associated with the signal. For more information about severity, see
-        /// <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings-severity.html">Findings
-        /// severity levels</a> in the <i>Amazon GuardDuty User Guide</i>.
+        /// <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings-severity.html">Severity
+        /// levels for GuardDuty findings</a> in the <i>Amazon GuardDuty User Guide</i>.
         /// </para>
         /// </summary>
         public double Severity
