@@ -1,3 +1,7 @@
+### 3.7.953.1 (2024-12-27 19:16 UTC)
+* RDS (3.7.410.7)
+	* Updates Amazon RDS documentation to correct various descriptions.
+
 ### 3.7.953.0 (2024-12-26 19:25 UTC)
 * BCMPricingCalculator (3.7.402.0)
 	* Added ConflictException to DeleteBillEstimate.
