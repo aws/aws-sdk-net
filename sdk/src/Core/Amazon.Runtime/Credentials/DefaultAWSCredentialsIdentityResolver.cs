@@ -111,6 +111,13 @@ namespace Amazon.Runtime.Credentials
                     {
                         throw;
                     }
+                    // Also breaking the chain in case a custom profile name was specified and the profile does not exist.
+                    // This differs from the FallbackCredentialsFactory, which would default to the IMDS provider (and throw
+                    // an error that may not be applicable when running outside of an EC2 environment).
+                    catch (ProfileNotFoundException)
+                    {
+                        throw;
+                    }
                     catch (Exception e)
                     {
                         _cachedCredentials = null;
@@ -163,7 +170,12 @@ namespace Amazon.Runtime.Credentials
                 return profile.GetAWSCredentials(source, true);
             }
 
-            throw new AmazonClientException($"Unable to find the \"{profileName}\" profile in CredentialProfileStoreChain.");
+            if (!profileName.Equals(DEFAULT_PROFILE_NAME, StringComparison.OrdinalIgnoreCase))
+            {
+                throw new ProfileNotFoundException($"Unable to find the \"{profileName}\" profile.");
+            }
+
+            throw new AmazonClientException($"Unable to find the \"{DEFAULT_PROFILE_NAME}\" profile.");
         }
 
         internal static string GetProfileName()

@@ -14,6 +14,7 @@
  */
 
 using Amazon.Runtime;
+using Amazon.Runtime.CredentialManagement;
 using Amazon.Runtime.Credentials;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
@@ -83,11 +84,9 @@ namespace AWSSDK.UnitTests
             var initialIdentity = identityResolver.ResolveIdentity();
             Assert.IsFalse(initialIdentity is DefaultInstanceProfileAWSCredentials);
 
-            // Since the specified profile does not exist, the identity resolver will default to IMDS (the last
-            // option in the credentials provider chain).
+            // Since the specified profile does not exist, the identity resolver will throw an exception.
             Environment.SetEnvironmentVariable(AWS_PROFILE_ENVIRONMENT_VARIABLE, "non-existent-profile");
-            var updatedIdentity = identityResolver.ResolveIdentity();
-            Assert.IsTrue(updatedIdentity is DefaultInstanceProfileAWSCredentials);
+            Assert.ThrowsException<ProfileNotFoundException>(() => identityResolver.ResolveIdentity());
         }
     }
 }
