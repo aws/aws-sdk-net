@@ -592,8 +592,17 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DatabaseInsightsMode. 
         /// <para>
-        /// Specifies the mode of Database Insights to enable for the instance.
+        /// The mode of Database Insights to enable for the DB instance.
         /// </para>
+        ///  
+        /// <para>
+        /// This setting only applies to Amazon Aurora DB instances.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Currently, this value is inherited from the DB cluster and can't be changed.
+        /// </para>
+        ///  </note>
         /// </summary>
         public DatabaseInsightsMode DatabaseInsightsMode
         {

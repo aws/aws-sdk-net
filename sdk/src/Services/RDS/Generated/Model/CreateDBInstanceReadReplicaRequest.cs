@@ -127,6 +127,10 @@ namespace Amazon.RDS.Model
         /// The amount of storage (in gibibytes) to allocate initially for the read replica. Follow
         /// the allocation rules specified in <c>CreateDBInstance</c>.
         /// </para>
+        ///  
+        /// <para>
+        /// This setting isn't valid for RDS for SQL Server.
+        /// </para>
         ///  <note> 
         /// <para>
         /// Be sure to allocate enough storage for your read replica so that the create operation
@@ -293,8 +297,13 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DatabaseInsightsMode. 
         /// <para>
-        /// Specifies the mode of Database Insights.
+        /// The mode of Database Insights to enable for the read replica.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Currently, this setting is not supported.
+        /// </para>
+        ///  </note>
         /// </summary>
         public DatabaseInsightsMode DatabaseInsightsMode
         {

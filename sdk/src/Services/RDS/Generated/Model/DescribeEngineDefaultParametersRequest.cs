@@ -278,7 +278,12 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// This parameter isn't currently supported.
+        /// A filter that specifies one or more parameters to describe.
+        /// </para>
+        ///  
+        /// <para>
+        /// The only supported filter is <c>parameter-name</c>. The results list only includes
+        /// information about the parameters with these names.
         /// </para>
         /// </summary>
         public List<Filter> Filters

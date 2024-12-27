@@ -226,7 +226,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid for Cluster Type: Multi-AZ DB clusters only
+        /// Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters
         /// </para>
         /// </summary>
         public bool AutoMinorVersionUpgrade
@@ -438,7 +438,22 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DatabaseInsightsMode. 
         /// <para>
-        /// Specifies the mode of Database Insights to enable for the cluster.
+        /// Specifies the mode of Database Insights to enable for the DB cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you change the value from <c>standard</c> to <c>advanced</c>, you must set the
+        /// <c>PerformanceInsightsEnabled</c> parameter to <c>true</c> and the <c>PerformanceInsightsRetentionPeriod</c>
+        /// parameter to 465.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you change the value from <c>advanced</c> to <c>standard</c>, you must set the
+        /// <c>PerformanceInsightsEnabled</c> parameter to <c>false</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid for Cluster Type: Aurora DB clusters only
         /// </para>
         /// </summary>
         public DatabaseInsightsMode DatabaseInsightsMode
@@ -1310,7 +1325,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid for Cluster Type: Multi-AZ DB clusters only
+        /// Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters
         /// </para>
         /// </summary>
         public string PerformanceInsightsKMSKeyId
@@ -1332,7 +1347,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid for Cluster Type: Multi-AZ DB clusters only
+        /// Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters
         /// </para>
         ///  
         /// <para>

@@ -290,7 +290,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// This setting is only for non-Aurora Multi-AZ DB clusters.
+        /// This setting is for Aurora DB clusters and Multi-AZ DB clusters.
         /// </para>
         /// </summary>
         public bool AutoMinorVersionUpgrade
@@ -568,7 +568,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DatabaseInsightsMode. 
         /// <para>
-        /// The mode of Database Insights that is enabled for the cluster.
+        /// The mode of Database Insights that is enabled for the DB cluster.
         /// </para>
         /// </summary>
         public DatabaseInsightsMode DatabaseInsightsMode
@@ -1250,7 +1250,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// This setting is only for non-Aurora Multi-AZ DB clusters.
+        /// This setting is only for -Aurora DB clusters and Multi-AZ DB clusters.
         /// </para>
         /// </summary>
         public int MonitoringInterval
@@ -1273,7 +1273,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// This setting is only for non-Aurora Multi-AZ DB clusters.
+        /// This setting is only for Aurora DB clusters and Multi-AZ DB clusters.
         /// </para>
         /// </summary>
         public string MonitoringRoleArn
@@ -1387,7 +1387,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// This setting is only for non-Aurora Multi-AZ DB clusters.
+        /// This setting is only for Aurora DB clusters and Multi-AZ DB clusters.
         /// </para>
         /// </summary>
         public bool PerformanceInsightsEnabled
@@ -1415,7 +1415,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// This setting is only for non-Aurora Multi-AZ DB clusters.
+        /// This setting is only for Aurora DB clusters and Multi-AZ DB clusters.
         /// </para>
         /// </summary>
         public string PerformanceInsightsKMSKeyId
@@ -1437,7 +1437,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// This setting is only for non-Aurora Multi-AZ DB clusters.
+        /// This setting is only for Aurora DB clusters and Multi-AZ DB clusters.
         /// </para>
         ///  
         /// <para>

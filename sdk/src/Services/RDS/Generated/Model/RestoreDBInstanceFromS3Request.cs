@@ -104,6 +104,10 @@ namespace Amazon.RDS.Model
         /// The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow
         /// the allocation rules specified in <c>CreateDBInstance</c>.
         /// </para>
+        ///  
+        /// <para>
+        /// This setting isn't valid for RDS for SQL Server.
+        /// </para>
         ///  <note> 
         /// <para>
         /// Be sure to allocate enough storage for your new DB instance so that the restore operation
@@ -248,8 +252,17 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DatabaseInsightsMode. 
         /// <para>
-        /// Specifies the mode of Database Insights to enable for the instance.
+        /// Specifies the mode of Database Insights to enable for the DB instance.
         /// </para>
+        ///  
+        /// <para>
+        /// This setting only applies to Amazon Aurora DB instances.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Currently, this value is inherited from the DB cluster and can't be changed.
+        /// </para>
+        ///  </note>
         /// </summary>
         public DatabaseInsightsMode DatabaseInsightsMode
         {
