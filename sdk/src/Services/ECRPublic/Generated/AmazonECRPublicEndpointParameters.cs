@@ -36,8 +36,8 @@ namespace Amazon.ECRPublic.Endpoints
         /// </summary>
         public ECRPublicEndpointParameters()
         {
-            UseFIPS = false;
             UseDualStack = false;
+            UseFIPS = false;
         }
 
         /// <summary>
@@ -50,6 +50,15 @@ namespace Amazon.ECRPublic.Endpoints
         }
 
         /// <summary>
+        /// UseDualStack parameter
+        /// </summary>
+        public bool? UseDualStack 
+        { 
+            get { return (bool?)this["UseDualStack"]; }
+            set { this["UseDualStack"] = value; } 
+        }
+
+        /// <summary>
         /// UseFIPS parameter
         /// </summary>
         public bool? UseFIPS 
@@ -59,12 +68,12 @@ namespace Amazon.ECRPublic.Endpoints
         }
 
         /// <summary>
-        /// UseDualStack parameter
+        /// Endpoint parameter
         /// </summary>
-        public bool? UseDualStack 
+        public string Endpoint 
         { 
-            get { return (bool?)this["UseDualStack"]; }
-            set { this["UseDualStack"] = value; } 
+            get { return (string)this["Endpoint"]; }
+            set { this["Endpoint"] = value; } 
         }
     }
 }
