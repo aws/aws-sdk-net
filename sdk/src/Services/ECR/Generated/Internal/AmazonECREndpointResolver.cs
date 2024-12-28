@@ -51,8 +51,9 @@ namespace Amazon.ECR.Internal
             var config = (AmazonECRConfig)requestContext.ClientConfig;
             var result = new ECREndpointParameters();
             result.Region = config.RegionEndpoint?.SystemName;
-            result.UseFIPS = config.UseFIPSEndpoint;
             result.UseDualStack = config.UseDualstackEndpoint;
+            result.UseFIPS = config.UseFIPSEndpoint;
+            result.Endpoint = config.ServiceURL;
 
 
             // The region needs to be determined from the ServiceURL if not set.
