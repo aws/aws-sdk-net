@@ -1,3 +1,9 @@
+### 3.7.954.0 (2024-12-28 04:26 UTC)
+* ECR (3.7.406.0)
+	* Restoring custom endpoint functionality for ECR
+* ECRPublic (3.7.402.0)
+	* Restoring custom endpoint functionality for ECR Public
+
 ### 3.7.953.1 (2024-12-27 19:16 UTC)
 * RDS (3.7.410.7)
 	* Updates Amazon RDS documentation to correct various descriptions.
