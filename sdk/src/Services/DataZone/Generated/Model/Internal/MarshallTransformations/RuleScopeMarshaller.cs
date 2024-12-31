@@ -62,7 +62,7 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDataProduct())
             {
                 context.Writer.WritePropertyName("dataProduct");
-                context.Writer.Write(requestObject.DataProduct);
+                context.Writer.Write(requestObject.DataProduct.Value);
             }
 
             if(requestObject.IsSetProject())

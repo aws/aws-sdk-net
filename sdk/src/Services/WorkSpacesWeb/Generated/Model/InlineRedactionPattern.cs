@@ -74,9 +74,9 @@ namespace Amazon.WorkSpacesWeb.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=3)]
-        public int ConfidenceLevel
+        public int? ConfidenceLevel
         {
-            get { return this._confidenceLevel.GetValueOrDefault(); }
+            get { return this._confidenceLevel; }
             set { this._confidenceLevel = value; }
         }
 

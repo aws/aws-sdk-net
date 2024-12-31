@@ -349,9 +349,9 @@ namespace Amazon.DocDB.Model
         /// Manager if <c>MasterUserPassword</c> is specified.
         /// </para>
         /// </summary>
-        public bool ManageMasterUserPassword
+        public bool? ManageMasterUserPassword
         {
-            get { return this._manageMasterUserPassword.GetValueOrDefault(); }
+            get { return this._manageMasterUserPassword; }
             set { this._manageMasterUserPassword = value; }
         }
 

@@ -111,32 +111,7 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
 
-<<<<<<< HEAD
                     if(publicRequest.IsSetMessages())
-||||||| Commit version number update changes
-                if(publicRequest.IsSetPromptVariables())
-                {
-                    context.Writer.WritePropertyName("promptVariables");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestPromptVariablesKvp in publicRequest.PromptVariables)
-=======
-                if(publicRequest.IsSetPerformanceConfig())
-                {
-                    context.Writer.WritePropertyName("performanceConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = PerformanceConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.PerformanceConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetPromptVariables())
-                {
-                    context.Writer.WritePropertyName("promptVariables");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestPromptVariablesKvp in publicRequest.PromptVariables)
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
                     {
                         context.Writer.WritePropertyName("messages");
                         context.Writer.WriteArrayStart();
@@ -150,6 +125,17 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
                             context.Writer.WriteObjectEnd();
                         }
                         context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetPerformanceConfig())
+                    {
+                        context.Writer.WritePropertyName("performanceConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = PerformanceConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.PerformanceConfig, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
 
                     if(publicRequest.IsSetPromptVariables())
@@ -171,35 +157,21 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
 
-<<<<<<< HEAD
-                    if(publicRequest.IsSetSystem())
-||||||| Commit version number update changes
-                if(publicRequest.IsSetSystem())
-                {
-                    context.Writer.WritePropertyName("system");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSystemListValue in publicRequest.System)
-=======
-                if(publicRequest.IsSetRequestMetadata())
-                {
-                    context.Writer.WritePropertyName("requestMetadata");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestRequestMetadataKvp in publicRequest.RequestMetadata)
+                    if(publicRequest.IsSetRequestMetadata())
                     {
-                        context.Writer.WritePropertyName(publicRequestRequestMetadataKvp.Key);
-                        var publicRequestRequestMetadataValue = publicRequestRequestMetadataKvp.Value;
+                        context.Writer.WritePropertyName("requestMetadata");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestRequestMetadataKvp in publicRequest.RequestMetadata)
+                        {
+                            context.Writer.WritePropertyName(publicRequestRequestMetadataKvp.Key);
+                            var publicRequestRequestMetadataValue = publicRequestRequestMetadataKvp.Value;
 
-                            context.Writer.Write(publicRequestRequestMetadataValue);
+                                context.Writer.Write(publicRequestRequestMetadataValue);
+                        }
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetSystem())
-                {
-                    context.Writer.WritePropertyName("system");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSystemListValue in publicRequest.System)
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
+                    if(publicRequest.IsSetSystem())
                     {
                         context.Writer.WritePropertyName("system");
                         context.Writer.WriteArrayStart();

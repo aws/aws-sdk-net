@@ -43,9 +43,9 @@ namespace Amazon.XRay.Model
         ///  Applied sampling percentage of traceIds. 
         /// </para>
         /// </summary>
-        public double ActualSamplingPercentage
+        public double? ActualSamplingPercentage
         {
-            get { return this._actualSamplingPercentage.GetValueOrDefault(); }
+            get { return this._actualSamplingPercentage; }
             set { this._actualSamplingPercentage = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.XRay.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public double DesiredSamplingPercentage
+        public double? DesiredSamplingPercentage
         {
-            get { return this._desiredSamplingPercentage.GetValueOrDefault(); }
+            get { return this._desiredSamplingPercentage; }
             set { this._desiredSamplingPercentage = value; }
         }
 

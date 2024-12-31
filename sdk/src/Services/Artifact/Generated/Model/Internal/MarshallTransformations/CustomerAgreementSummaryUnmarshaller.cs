@@ -98,13 +98,13 @@ namespace Amazon.Artifact.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("effectiveEnd", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.EffectiveEnd = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("effectiveStart", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.EffectiveStart = unmarshaller.Unmarshall(context);
                     continue;
                 }

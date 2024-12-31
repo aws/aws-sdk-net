@@ -51,7 +51,7 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxRecentSessions())
             {
                 context.Writer.WritePropertyName("maxRecentSessions");
-                context.Writer.Write(requestObject.MaxRecentSessions);
+                context.Writer.Write(requestObject.MaxRecentSessions.Value);
             }
 
         }

@@ -104,9 +104,9 @@ namespace Amazon.QuickSight.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4)]
-        public int MaxTopicsToConsider
+        public int? MaxTopicsToConsider
         {
-            get { return this._maxTopicsToConsider.GetValueOrDefault(); }
+            get { return this._maxTopicsToConsider; }
             set { this._maxTopicsToConsider = value; }
         }
 

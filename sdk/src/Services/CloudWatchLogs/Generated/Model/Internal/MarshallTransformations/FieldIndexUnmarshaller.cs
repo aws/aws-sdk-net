@@ -74,19 +74,19 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("firstEventTime", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.FirstEventTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("lastEventTime", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.LastEventTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("lastScanTime", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.LastScanTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

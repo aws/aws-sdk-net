@@ -74,9 +74,9 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property TotalConcurrentJobs. The maximum number of jobs that MediaConvert
         /// can process at one time, across all of your on-demand queues in the current AWS Region.
         /// </summary>
-        public int TotalConcurrentJobs
+        public int? TotalConcurrentJobs
         {
-            get { return this._totalConcurrentJobs.GetValueOrDefault(); }
+            get { return this._totalConcurrentJobs; }
             set { this._totalConcurrentJobs = value; }
         }
 
@@ -91,9 +91,9 @@ namespace Amazon.MediaConvert.Model
         /// jobs that are not associated with a queue and are available to allocate to a queue.
         /// You can allocate these jobs when you create or update a queue.
         /// </summary>
-        public int UnallocatedConcurrentJobs
+        public int? UnallocatedConcurrentJobs
         {
-            get { return this._unallocatedConcurrentJobs.GetValueOrDefault(); }
+            get { return this._unallocatedConcurrentJobs; }
             set { this._unallocatedConcurrentJobs = value; }
         }
 

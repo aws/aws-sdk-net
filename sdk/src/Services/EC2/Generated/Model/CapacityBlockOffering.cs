@@ -92,9 +92,9 @@ namespace Amazon.EC2.Model
         /// and ends at <b>11:30</b>, the minutes field would be <b>35</b>.
         /// </para>
         /// </summary>
-        public int CapacityBlockDurationMinutes
+        public int? CapacityBlockDurationMinutes
         {
-            get { return this._capacityBlockDurationMinutes.GetValueOrDefault(); }
+            get { return this._capacityBlockDurationMinutes; }
             set { this._capacityBlockDurationMinutes = value; }
         }
 

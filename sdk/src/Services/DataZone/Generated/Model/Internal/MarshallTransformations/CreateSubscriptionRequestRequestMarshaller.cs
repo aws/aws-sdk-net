@@ -68,71 +68,11 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             {
                 using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-<<<<<<< HEAD
                     JsonWriter writer = new JsonWriter(streamWriter);
                     writer.Validate = false;
                     writer.WriteObjectStart();
                     var context = new JsonMarshallerContext(request, writer);
                     if(publicRequest.IsSetClientToken())
-||||||| Commit version number update changes
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetRequestReason())
-                {
-                    context.Writer.WritePropertyName("requestReason");
-                    context.Writer.Write(publicRequest.RequestReason);
-                }
-
-                if(publicRequest.IsSetSubscribedListings())
-                {
-                    context.Writer.WritePropertyName("subscribedListings");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSubscribedListingsListValue in publicRequest.SubscribedListings)
-=======
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetMetadataForms())
-                {
-                    context.Writer.WritePropertyName("metadataForms");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestMetadataFormsListValue in publicRequest.MetadataForms)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = FormInputMarshaller.Instance;
-                        marshaller.Marshall(publicRequestMetadataFormsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetRequestReason())
-                {
-                    context.Writer.WritePropertyName("requestReason");
-                    context.Writer.Write(publicRequest.RequestReason);
-                }
-
-                if(publicRequest.IsSetSubscribedListings())
-                {
-                    context.Writer.WritePropertyName("subscribedListings");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSubscribedListingsListValue in publicRequest.SubscribedListings)
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
                     {
                         context.Writer.WritePropertyName("clientToken");
                         context.Writer.Write(publicRequest.ClientToken);
@@ -143,6 +83,22 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                         context.Writer.WritePropertyName("clientToken");
                         context.Writer.Write(Guid.NewGuid().ToString());
                     }
+                    if(publicRequest.IsSetMetadataForms())
+                    {
+                        context.Writer.WritePropertyName("metadataForms");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestMetadataFormsListValue in publicRequest.MetadataForms)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = FormInputMarshaller.Instance;
+                            marshaller.Marshall(publicRequestMetadataFormsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
                     if(publicRequest.IsSetRequestReason())
                     {
                         context.Writer.WritePropertyName("requestReason");

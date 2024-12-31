@@ -86,47 +86,17 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                         }
                         context.Writer.WriteArrayEnd();
                     }
-<<<<<<< HEAD
-||||||| Commit version number update changes
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetConfigurationAggregatorName())
-                {
-                    context.Writer.WritePropertyName("ConfigurationAggregatorName");
-                    context.Writer.Write(publicRequest.ConfigurationAggregatorName);
-                }
+                    if(publicRequest.IsSetAggregatorFilters())
+                    {
+                        context.Writer.WritePropertyName("AggregatorFilters");
+                        context.Writer.WriteObjectStart();
 
-                if(publicRequest.IsSetOrganizationAggregationSource())
-                {
-                    context.Writer.WritePropertyName("OrganizationAggregationSource");
-                    context.Writer.WriteObjectStart();
-=======
-                    context.Writer.WriteArrayEnd();
-                }
+                        var marshaller = AggregatorFiltersMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AggregatorFilters, context);
 
-                if(publicRequest.IsSetAggregatorFilters())
-                {
-                    context.Writer.WritePropertyName("AggregatorFilters");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AggregatorFiltersMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AggregatorFilters, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetConfigurationAggregatorName())
-                {
-                    context.Writer.WritePropertyName("ConfigurationAggregatorName");
-                    context.Writer.Write(publicRequest.ConfigurationAggregatorName);
-                }
-
-                if(publicRequest.IsSetOrganizationAggregationSource())
-                {
-                    context.Writer.WritePropertyName("OrganizationAggregationSource");
-                    context.Writer.WriteObjectStart();
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
+                        context.Writer.WriteObjectEnd();
+                    }
 
                     if(publicRequest.IsSetConfigurationAggregatorName())
                     {

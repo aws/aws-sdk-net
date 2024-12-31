@@ -44,9 +44,9 @@ namespace Amazon.BCMPricingCalculator.Model
         ///  The updated estimated usage amount. 
         /// </para>
         /// </summary>
-        public double Amount
+        public double? Amount
         {
-            get { return this._amount.GetValueOrDefault(); }
+            get { return this._amount; }
             set { this._amount = value; }
         }
 

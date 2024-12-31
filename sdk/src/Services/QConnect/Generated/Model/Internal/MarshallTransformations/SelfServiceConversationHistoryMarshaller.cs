@@ -63,7 +63,7 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTurnNumber())
             {
                 context.Writer.WritePropertyName("turnNumber");
-                context.Writer.Write(requestObject.TurnNumber);
+                context.Writer.Write(requestObject.TurnNumber.Value);
             }
 
         }

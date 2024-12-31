@@ -95,9 +95,9 @@ namespace Amazon.DataZone.Model
         /// The data product of the rule.
         /// </para>
         /// </summary>
-        public bool DataProduct
+        public bool? DataProduct
         {
-            get { return this._dataProduct.GetValueOrDefault(); }
+            get { return this._dataProduct; }
             set { this._dataProduct = value; }
         }
 
@@ -132,9 +132,9 @@ namespace Amazon.DataZone.Model
         /// Specifies whether to include cascading rules in the results.
         /// </para>
         /// </summary>
-        public bool IncludeCascaded
+        public bool? IncludeCascaded
         {
-            get { return this._includeCascaded.GetValueOrDefault(); }
+            get { return this._includeCascaded; }
             set { this._includeCascaded = value; }
         }
 
@@ -154,9 +154,9 @@ namespace Amazon.DataZone.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=25, Max=50)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

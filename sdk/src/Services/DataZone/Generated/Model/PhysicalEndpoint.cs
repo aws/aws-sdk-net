@@ -120,9 +120,9 @@ namespace Amazon.DataZone.Model
         /// The port in the physical endpoints of a connection.
         /// </para>
         /// </summary>
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 

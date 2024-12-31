@@ -105,7 +105,12 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.QueryDefinitionId);
                     }
 
-<<<<<<< HEAD
+                    if(publicRequest.IsSetQueryLanguage())
+                    {
+                        context.Writer.WritePropertyName("queryLanguage");
+                        context.Writer.Write(publicRequest.QueryLanguage);
+                    }
+
                     if(publicRequest.IsSetQueryString())
                     {
                         context.Writer.WritePropertyName("queryString");
@@ -113,23 +118,6 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                     }
 
                     writer.WriteObjectEnd();
-||||||| Commit version number update changes
-                if(publicRequest.IsSetQueryString())
-                {
-                    context.Writer.WritePropertyName("queryString");
-                    context.Writer.Write(publicRequest.QueryString);
-=======
-                if(publicRequest.IsSetQueryLanguage())
-                {
-                    context.Writer.WritePropertyName("queryLanguage");
-                    context.Writer.Write(publicRequest.QueryLanguage);
-                }
-
-                if(publicRequest.IsSetQueryString())
-                {
-                    context.Writer.WritePropertyName("queryString");
-                    context.Writer.Write(publicRequest.QueryString);
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
                 }
 
                 request.Content = memoryStream.ToArray();

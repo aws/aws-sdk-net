@@ -80,7 +80,7 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("isProvisionedSecret", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsProvisionedSecret = unmarshaller.Unmarshall(context);
                     continue;
                 }

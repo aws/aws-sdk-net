@@ -61,64 +61,67 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/rerank";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetNextToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("nextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetQueries())
-                {
-                    context.Writer.WritePropertyName("queries");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestQueriesListValue in publicRequest.Queries)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetNextToken())
                     {
+                        context.Writer.WritePropertyName("nextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetQueries())
+                    {
+                        context.Writer.WritePropertyName("queries");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestQueriesListValue in publicRequest.Queries)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = RerankQueryMarshaller.Instance;
+                            marshaller.Marshall(publicRequestQueriesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetRerankingConfiguration())
+                    {
+                        context.Writer.WritePropertyName("rerankingConfiguration");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = RerankQueryMarshaller.Instance;
-                        marshaller.Marshall(publicRequestQueriesListValue, context);
+                        var marshaller = RerankingConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.RerankingConfiguration, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetRerankingConfiguration())
-                {
-                    context.Writer.WritePropertyName("rerankingConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = RerankingConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.RerankingConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSources())
-                {
-                    context.Writer.WritePropertyName("sources");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSourcesListValue in publicRequest.Sources)
+                    if(publicRequest.IsSetSources())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("sources");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSourcesListValue in publicRequest.Sources)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = RerankSourceMarshaller.Instance;
-                        marshaller.Marshall(publicRequestSourcesListValue, context);
+                            var marshaller = RerankSourceMarshaller.Instance;
+                            marshaller.Marshall(publicRequestSourcesListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

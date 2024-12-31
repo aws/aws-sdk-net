@@ -68,7 +68,7 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("globalConfidenceLevel", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.GlobalConfidenceLevel = unmarshaller.Unmarshall(context);
                     continue;
                 }

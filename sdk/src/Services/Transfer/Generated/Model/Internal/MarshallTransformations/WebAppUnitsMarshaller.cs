@@ -51,7 +51,7 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
             if(requestObject.IsSetProvisioned())
             {
                 context.Writer.WritePropertyName("Provisioned");
-                context.Writer.Write(requestObject.Provisioned);
+                context.Writer.Write(requestObject.Provisioned.Value);
             }
 
         }

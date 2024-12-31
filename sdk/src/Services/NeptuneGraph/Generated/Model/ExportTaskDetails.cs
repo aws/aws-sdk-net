@@ -46,9 +46,9 @@ namespace Amazon.NeptuneGraph.Model
         /// The number of exported edges.
         /// </para>
         /// </summary>
-        public long NumEdgesWritten
+        public long? NumEdgesWritten
         {
-            get { return this._numEdgesWritten.GetValueOrDefault(); }
+            get { return this._numEdgesWritten; }
             set { this._numEdgesWritten = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.NeptuneGraph.Model
         /// The number of exported vertices.
         /// </para>
         /// </summary>
-        public long NumVerticesWritten
+        public long? NumVerticesWritten
         {
-            get { return this._numVerticesWritten.GetValueOrDefault(); }
+            get { return this._numVerticesWritten; }
             set { this._numVerticesWritten = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.NeptuneGraph.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int ProgressPercentage
+        public int? ProgressPercentage
         {
-            get { return this._progressPercentage.GetValueOrDefault(); }
+            get { return this._progressPercentage; }
             set { this._progressPercentage = value; }
         }
 
@@ -102,9 +102,9 @@ namespace Amazon.NeptuneGraph.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 
@@ -121,9 +121,9 @@ namespace Amazon.NeptuneGraph.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long TimeElapsedSeconds
+        public long? TimeElapsedSeconds
         {
-            get { return this._timeElapsedSeconds.GetValueOrDefault(); }
+            get { return this._timeElapsedSeconds; }
             set { this._timeElapsedSeconds = value; }
         }
 

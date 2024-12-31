@@ -72,9 +72,9 @@ namespace Amazon.IoT.Model
         /// The timestamp, when the command execution was completed.
         /// </para>
         /// </summary>
-        public DateTime CompletedAt
+        public DateTime? CompletedAt
         {
-            get { return this._completedAt.GetValueOrDefault(); }
+            get { return this._completedAt; }
             set { this._completedAt = value; }
         }
 
@@ -90,9 +90,9 @@ namespace Amazon.IoT.Model
         /// The timestamp, when the command execution was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -131,9 +131,9 @@ namespace Amazon.IoT.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public long ExecutionTimeoutSeconds
+        public long? ExecutionTimeoutSeconds
         {
-            get { return this._executionTimeoutSeconds.GetValueOrDefault(); }
+            get { return this._executionTimeoutSeconds; }
             set { this._executionTimeoutSeconds = value; }
         }
 
@@ -149,9 +149,9 @@ namespace Amazon.IoT.Model
         /// The timestamp, when the command execution was last updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedAt
+        public DateTime? LastUpdatedAt
         {
-            get { return this._lastUpdatedAt.GetValueOrDefault(); }
+            get { return this._lastUpdatedAt; }
             set { this._lastUpdatedAt = value; }
         }
 
@@ -215,9 +215,9 @@ namespace Amazon.IoT.Model
         /// The timestamp, when the command execution was started.
         /// </para>
         /// </summary>
-        public DateTime StartedAt
+        public DateTime? StartedAt
         {
-            get { return this._startedAt.GetValueOrDefault(); }
+            get { return this._startedAt; }
             set { this._startedAt = value; }
         }
 
@@ -293,9 +293,9 @@ namespace Amazon.IoT.Model
         /// will be retained in your account. The default value is six months.
         /// </para>
         /// </summary>
-        public DateTime TimeToLive
+        public DateTime? TimeToLive
         {
-            get { return this._timeToLive.GetValueOrDefault(); }
+            get { return this._timeToLive; }
             set { this._timeToLive = value; }
         }
 

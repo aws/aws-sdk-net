@@ -61,37 +61,40 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/generateQuery";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetQueryGenerationInput())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("queryGenerationInput");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetQueryGenerationInput())
+                    {
+                        context.Writer.WritePropertyName("queryGenerationInput");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = QueryGenerationInputMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.QueryGenerationInput, context);
+                        var marshaller = QueryGenerationInputMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.QueryGenerationInput, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTransformationConfiguration())
+                    {
+                        context.Writer.WritePropertyName("transformationConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TransformationConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.TransformationConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTransformationConfiguration())
-                {
-                    context.Writer.WritePropertyName("transformationConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TransformationConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TransformationConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

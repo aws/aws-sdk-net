@@ -53,9 +53,9 @@ namespace Amazon.WorkSpacesWeb.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=3)]
-        public int GlobalConfidenceLevel
+        public int? GlobalConfidenceLevel
         {
-            get { return this._globalConfidenceLevel.GetValueOrDefault(); }
+            get { return this._globalConfidenceLevel; }
             set { this._globalConfidenceLevel = value; }
         }
 

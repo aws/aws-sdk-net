@@ -63,9 +63,9 @@ namespace Amazon.TimestreamQuery.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int TargetQueryTCU
+        public int? TargetQueryTCU
         {
-            get { return this._targetQueryTCU.GetValueOrDefault(); }
+            get { return this._targetQueryTCU; }
             set { this._targetQueryTCU = value; }
         }
 

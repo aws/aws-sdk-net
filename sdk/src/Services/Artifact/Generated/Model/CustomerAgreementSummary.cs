@@ -149,9 +149,9 @@ namespace Amazon.Artifact.Model
         /// Timestamp indicating when the agreement was terminated.
         /// </para>
         /// </summary>
-        public DateTime EffectiveEnd
+        public DateTime? EffectiveEnd
         {
-            get { return this._effectiveEnd.GetValueOrDefault(); }
+            get { return this._effectiveEnd; }
             set { this._effectiveEnd = value; }
         }
 
@@ -167,9 +167,9 @@ namespace Amazon.Artifact.Model
         /// Timestamp indicating when the agreement became effective.
         /// </para>
         /// </summary>
-        public DateTime EffectiveStart
+        public DateTime? EffectiveStart
         {
-            get { return this._effectiveStart.GetValueOrDefault(); }
+            get { return this._effectiveStart; }
             set { this._effectiveStart = value; }
         }
 

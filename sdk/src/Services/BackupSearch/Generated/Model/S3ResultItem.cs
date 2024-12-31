@@ -87,9 +87,9 @@ namespace Amazon.BackupSearch.Model
         /// time input during a search of Amazon S3 backup metadata.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -145,9 +145,9 @@ namespace Amazon.BackupSearch.Model
         /// during a search of Amazon S3 backup metadata.
         /// </para>
         /// </summary>
-        public long ObjectSize
+        public long? ObjectSize
         {
-            get { return this._objectSize.GetValueOrDefault(); }
+            get { return this._objectSize; }
             set { this._objectSize = value; }
         }
 

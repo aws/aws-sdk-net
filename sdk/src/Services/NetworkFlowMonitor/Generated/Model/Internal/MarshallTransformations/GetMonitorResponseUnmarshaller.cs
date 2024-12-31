@@ -54,7 +54,7 @@ namespace Amazon.NetworkFlowMonitor.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("createdAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -66,7 +66,7 @@ namespace Amazon.NetworkFlowMonitor.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("modifiedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.ModifiedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }

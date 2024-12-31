@@ -122,9 +122,9 @@ namespace Amazon.Glue.Model
         /// listed.
         /// </para>
         /// </summary>
-        public bool IsParentEntity
+        public bool? IsParentEntity
         {
-            get { return this._isParentEntity.GetValueOrDefault(); }
+            get { return this._isParentEntity; }
             set { this._isParentEntity = value; }
         }
 

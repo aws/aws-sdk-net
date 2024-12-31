@@ -65,9 +65,9 @@ namespace Amazon.SageMaker.Model
         /// Version of the cluster policy.
         /// </para>
         /// </summary>
-        public int ClusterSchedulerConfigVersion
+        public int? ClusterSchedulerConfigVersion
         {
-            get { return this._clusterSchedulerConfigVersion.GetValueOrDefault(); }
+            get { return this._clusterSchedulerConfigVersion; }
             set { this._clusterSchedulerConfigVersion = value; }
         }
 

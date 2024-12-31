@@ -51,13 +51,13 @@ namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNonCurrentDays())
             {
                 context.Writer.WritePropertyName("nonCurrentDays");
-                context.Writer.Write(requestObject.NonCurrentDays);
+                context.Writer.Write(requestObject.NonCurrentDays.Value);
             }
 
             if(requestObject.IsSetUnreferencedDays())
             {
                 context.Writer.WritePropertyName("unreferencedDays");
-                context.Writer.Write(requestObject.UnreferencedDays);
+                context.Writer.Write(requestObject.UnreferencedDays.Value);
             }
 
         }

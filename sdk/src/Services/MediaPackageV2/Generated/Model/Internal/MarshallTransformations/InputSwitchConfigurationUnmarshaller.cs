@@ -68,7 +68,7 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("MQCSInputSwitching", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.MQCSInputSwitching = unmarshaller.Unmarshall(context);
                     continue;
                 }

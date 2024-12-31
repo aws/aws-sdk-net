@@ -44,9 +44,9 @@ namespace Amazon.QApps.Model
         /// Indicates whether an Q App session can accept responses from users.
         /// </para>
         /// </summary>
-        public bool AcceptResponses
+        public bool? AcceptResponses
         {
-            get { return this._acceptResponses.GetValueOrDefault(); }
+            get { return this._acceptResponses; }
             set { this._acceptResponses = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.QApps.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 
@@ -81,9 +81,9 @@ namespace Amazon.QApps.Model
         /// Indicates whether collected responses for an Q App session are revealed for all users.
         /// </para>
         /// </summary>
-        public bool RevealCards
+        public bool? RevealCards
         {
-            get { return this._revealCards.GetValueOrDefault(); }
+            get { return this._revealCards; }
             set { this._revealCards = value; }
         }
 

@@ -51,13 +51,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLineWidth())
             {
                 context.Writer.WritePropertyName("LineWidth");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.LineWidth))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.LineWidth.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.LineWidth));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.LineWidth.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.LineWidth);
+                    context.Writer.Write(requestObject.LineWidth.Value);
                 }
             }
 

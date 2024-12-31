@@ -66,7 +66,7 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("CreatedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -108,7 +108,7 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Revision", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.Revision = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -46,9 +46,9 @@ namespace Amazon.TimestreamQuery.Model
         /// is only visible when the compute mode is <c>PROVISIONED</c>.
         /// </para>
         /// </summary>
-        public int ActiveQueryTCU
+        public int? ActiveQueryTCU
         {
-            get { return this._activeQueryTCU.GetValueOrDefault(); }
+            get { return this._activeQueryTCU; }
             set { this._activeQueryTCU = value; }
         }
 

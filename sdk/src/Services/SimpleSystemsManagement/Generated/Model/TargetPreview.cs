@@ -44,9 +44,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The number of resources of a certain type included in an execution preview.
         /// </para>
         /// </summary>
-        public int Count
+        public int? Count
         {
-            get { return this._count.GetValueOrDefault(); }
+            get { return this._count; }
             set { this._count = value; }
         }
 

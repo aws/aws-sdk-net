@@ -85,9 +85,9 @@ namespace Amazon.EKS.Model
         /// Filter to show only default versions.
         /// </para>
         /// </summary>
-        public bool DefaultOnly
+        public bool? DefaultOnly
         {
-            get { return this._defaultOnly.GetValueOrDefault(); }
+            get { return this._defaultOnly; }
             set { this._defaultOnly = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.EKS.Model
         /// Include all available versions in the response.
         /// </para>
         /// </summary>
-        public bool IncludeAll
+        public bool? IncludeAll
         {
-            get { return this._includeAll.GetValueOrDefault(); }
+            get { return this._includeAll; }
             set { this._includeAll = value; }
         }
 
@@ -122,9 +122,9 @@ namespace Amazon.EKS.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

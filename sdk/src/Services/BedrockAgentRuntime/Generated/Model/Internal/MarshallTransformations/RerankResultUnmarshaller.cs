@@ -74,13 +74,13 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("index", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Index = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("relevanceScore", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.RelevanceScore = unmarshaller.Unmarshall(context);
                     continue;
                 }

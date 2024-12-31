@@ -51,7 +51,7 @@ namespace Amazon.DSQL.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDeletionProtectionEnabled())
             {
                 context.Writer.WritePropertyName("deletionProtectionEnabled");
-                context.Writer.Write(requestObject.DeletionProtectionEnabled);
+                context.Writer.Write(requestObject.DeletionProtectionEnabled.Value);
             }
 
             if(requestObject.IsSetTags())

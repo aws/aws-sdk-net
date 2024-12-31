@@ -295,9 +295,9 @@ namespace Amazon.FSx.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long SizeInBytes
+        public long? SizeInBytes
         {
-            get { return this._sizeInBytes.GetValueOrDefault(); }
+            get { return this._sizeInBytes; }
             set { this._sizeInBytes = value; }
         }
 

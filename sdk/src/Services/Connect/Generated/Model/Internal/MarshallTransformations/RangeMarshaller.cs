@@ -51,26 +51,26 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxProficiencyLevel())
             {
                 context.Writer.WritePropertyName("MaxProficiencyLevel");
-                if(StringUtils.IsSpecialFloatValue(requestObject.MaxProficiencyLevel))
+                if(StringUtils.IsSpecialFloatValue(requestObject.MaxProficiencyLevel.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.MaxProficiencyLevel));
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.MaxProficiencyLevel.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.MaxProficiencyLevel);
+                    context.Writer.Write(requestObject.MaxProficiencyLevel.Value);
                 }
             }
 
             if(requestObject.IsSetMinProficiencyLevel())
             {
                 context.Writer.WritePropertyName("MinProficiencyLevel");
-                if(StringUtils.IsSpecialFloatValue(requestObject.MinProficiencyLevel))
+                if(StringUtils.IsSpecialFloatValue(requestObject.MinProficiencyLevel.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.MinProficiencyLevel));
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.MinProficiencyLevel.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.MinProficiencyLevel);
+                    context.Writer.Write(requestObject.MinProficiencyLevel.Value);
                 }
             }
 

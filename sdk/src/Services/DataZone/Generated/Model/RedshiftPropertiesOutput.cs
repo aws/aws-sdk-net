@@ -87,9 +87,9 @@ namespace Amazon.DataZone.Model
         /// Specifies whether Amaon Redshift properties has a provisioned secret.
         /// </para>
         /// </summary>
-        public bool IsProvisionedSecret
+        public bool? IsProvisionedSecret
         {
-            get { return this._isProvisionedSecret.GetValueOrDefault(); }
+            get { return this._isProvisionedSecret; }
             set { this._isProvisionedSecret = value; }
         }
 

@@ -51,7 +51,7 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIsEditable())
             {
                 context.Writer.WritePropertyName("isEditable");
-                context.Writer.Write(requestObject.IsEditable);
+                context.Writer.Write(requestObject.IsEditable.Value);
             }
 
             if(requestObject.IsSetName())

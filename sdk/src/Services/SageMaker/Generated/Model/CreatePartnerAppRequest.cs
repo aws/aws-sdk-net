@@ -110,9 +110,9 @@ namespace Amazon.SageMaker.Model
         /// AI App user.
         /// </para>
         /// </summary>
-        public bool EnableIamSessionBasedIdentity
+        public bool? EnableIamSessionBasedIdentity
         {
-            get { return this._enableIamSessionBasedIdentity.GetValueOrDefault(); }
+            get { return this._enableIamSessionBasedIdentity; }
             set { this._enableIamSessionBasedIdentity = value; }
         }
 

@@ -63,48 +63,51 @@ namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBillScenarioId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("billScenarioId");
-                    context.Writer.Write(publicRequest.BillScenarioId);
-                }
-
-                if(publicRequest.IsSetClientToken())
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetCommitmentModifications())
-                {
-                    context.Writer.WritePropertyName("commitmentModifications");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestCommitmentModificationsListValue in publicRequest.CommitmentModifications)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBillScenarioId())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = BatchCreateBillScenarioCommitmentModificationEntryMarshaller.Instance;
-                        marshaller.Marshall(publicRequestCommitmentModificationsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("billScenarioId");
+                        context.Writer.Write(publicRequest.BillScenarioId);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetClientToken())
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetCommitmentModifications())
+                    {
+                        context.Writer.WritePropertyName("commitmentModifications");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestCommitmentModificationsListValue in publicRequest.CommitmentModifications)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = BatchCreateBillScenarioCommitmentModificationEntryMarshaller.Instance;
+                            marshaller.Marshall(publicRequestCommitmentModificationsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

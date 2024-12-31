@@ -95,7 +95,6 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.ClientToken);
                     }
 
-<<<<<<< HEAD
                     else if(!(publicRequest.IsSetClientToken()))
                     {
                         context.Writer.WritePropertyName("ClientToken");
@@ -106,23 +105,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                         context.Writer.WritePropertyName("ContactFlowId");
                         context.Writer.Write(publicRequest.ContactFlowId);
                     }
-||||||| Commit version number update changes
-                if(publicRequest.IsSetInitialMessage())
-                {
-                    context.Writer.WritePropertyName("InitialMessage");
-                    context.Writer.WriteObjectStart();
-=======
-                if(publicRequest.IsSetCustomerId())
-                {
-                    context.Writer.WritePropertyName("CustomerId");
-                    context.Writer.Write(publicRequest.CustomerId);
-                }
 
-                if(publicRequest.IsSetInitialMessage())
-                {
-                    context.Writer.WritePropertyName("InitialMessage");
-                    context.Writer.WriteObjectStart();
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
+                    if(publicRequest.IsSetCustomerId())
+                    {
+                        context.Writer.WritePropertyName("CustomerId");
+                        context.Writer.Write(publicRequest.CustomerId);
+                    }
 
                     if(publicRequest.IsSetInitialMessage())
                     {

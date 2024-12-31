@@ -63,45 +63,48 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAccessPointArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AccessPointArn");
-                    context.Writer.Write(publicRequest.AccessPointArn);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAccessPointArn())
+                    {
+                        context.Writer.WritePropertyName("AccessPointArn");
+                        context.Writer.Write(publicRequest.AccessPointArn);
+                    }
+
+                    if(publicRequest.IsSetFileSystemAccessRoleArn())
+                    {
+                        context.Writer.WritePropertyName("FileSystemAccessRoleArn");
+                        context.Writer.Write(publicRequest.FileSystemAccessRoleArn);
+                    }
+
+                    if(publicRequest.IsSetInTransitEncryption())
+                    {
+                        context.Writer.WritePropertyName("InTransitEncryption");
+                        context.Writer.Write(publicRequest.InTransitEncryption);
+                    }
+
+                    if(publicRequest.IsSetLocationArn())
+                    {
+                        context.Writer.WritePropertyName("LocationArn");
+                        context.Writer.Write(publicRequest.LocationArn);
+                    }
+
+                    if(publicRequest.IsSetSubdirectory())
+                    {
+                        context.Writer.WritePropertyName("Subdirectory");
+                        context.Writer.Write(publicRequest.Subdirectory);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetFileSystemAccessRoleArn())
-                {
-                    context.Writer.WritePropertyName("FileSystemAccessRoleArn");
-                    context.Writer.Write(publicRequest.FileSystemAccessRoleArn);
-                }
-
-                if(publicRequest.IsSetInTransitEncryption())
-                {
-                    context.Writer.WritePropertyName("InTransitEncryption");
-                    context.Writer.Write(publicRequest.InTransitEncryption);
-                }
-
-                if(publicRequest.IsSetLocationArn())
-                {
-                    context.Writer.WritePropertyName("LocationArn");
-                    context.Writer.Write(publicRequest.LocationArn);
-                }
-
-                if(publicRequest.IsSetSubdirectory())
-                {
-                    context.Writer.WritePropertyName("Subdirectory");
-                    context.Writer.Write(publicRequest.Subdirectory);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

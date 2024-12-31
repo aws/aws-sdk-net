@@ -92,7 +92,7 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("deploymentOrder", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DeploymentOrder = unmarshaller.Unmarshall(context);
                     continue;
                 }

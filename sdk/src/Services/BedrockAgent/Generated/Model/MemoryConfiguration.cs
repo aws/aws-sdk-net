@@ -82,16 +82,8 @@ namespace Amazon.BedrockAgent.Model
         /// The number of days the agent is configured to retain the conversational context.
         /// </para>
         /// </summary>
-<<<<<<< HEAD
-        [AWSProperty(Min=0, Max=30)]
-        public int? StorageDays
-||||||| Commit version number update changes
-        [AWSProperty(Min=0, Max=30)]
-        public int StorageDays
-=======
         [AWSProperty(Min=0, Max=365)]
-        public int StorageDays
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
+        public int? StorageDays
         {
             get { return this._storageDays; }
             set { this._storageDays = value; }

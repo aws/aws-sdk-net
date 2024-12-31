@@ -120,9 +120,9 @@ namespace Amazon.Omics.Model
         /// Filter results based on stores updated after the specified time.
         /// </para>
         /// </summary>
-        public DateTime UpdatedAfter
+        public DateTime? UpdatedAfter
         {
-            get { return this._updatedAfter.GetValueOrDefault(); }
+            get { return this._updatedAfter; }
             set { this._updatedAfter = value; }
         }
 
@@ -138,9 +138,9 @@ namespace Amazon.Omics.Model
         /// Filter results based on stores updated before the specified time.
         /// </para>
         /// </summary>
-        public DateTime UpdatedBefore
+        public DateTime? UpdatedBefore
         {
-            get { return this._updatedBefore.GetValueOrDefault(); }
+            get { return this._updatedBefore; }
             set { this._updatedBefore = value; }
         }
 

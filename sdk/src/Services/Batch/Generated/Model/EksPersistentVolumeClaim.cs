@@ -70,9 +70,9 @@ namespace Amazon.Batch.Model
         /// Read Only Mounts</a> in the <i>Kubernetes documentation</i>.
         /// </para>
         /// </summary>
-        public bool ReadOnly
+        public bool? ReadOnly
         {
-            get { return this._readOnly.GetValueOrDefault(); }
+            get { return this._readOnly; }
             set { this._readOnly = value; }
         }
 

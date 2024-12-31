@@ -68,9 +68,9 @@ namespace Amazon.Bedrock.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public int InitialInstanceCount
+        public int? InitialInstanceCount
         {
-            get { return this._initialInstanceCount.GetValueOrDefault(); }
+            get { return this._initialInstanceCount; }
             set { this._initialInstanceCount = value; }
         }
 

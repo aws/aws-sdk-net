@@ -75,9 +75,9 @@ namespace Amazon.GuardDuty.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int Count
+        public int? Count
         {
-            get { return this._count.GetValueOrDefault(); }
+            get { return this._count; }
             set { this._count = value; }
         }
 
@@ -94,9 +94,9 @@ namespace Amazon.GuardDuty.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -151,9 +151,9 @@ namespace Amazon.GuardDuty.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime FirstSeenAt
+        public DateTime? FirstSeenAt
         {
-            get { return this._firstSeenAt.GetValueOrDefault(); }
+            get { return this._firstSeenAt; }
             set { this._firstSeenAt = value; }
         }
 
@@ -170,9 +170,9 @@ namespace Amazon.GuardDuty.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime LastSeenAt
+        public DateTime? LastSeenAt
         {
-            get { return this._lastSeenAt.GetValueOrDefault(); }
+            get { return this._lastSeenAt; }
             set { this._lastSeenAt = value; }
         }
 
@@ -229,9 +229,9 @@ namespace Amazon.GuardDuty.Model
         /// severity levels</a> in the <i>GuardDuty User Guide</i>.
         /// </para>
         /// </summary>
-        public double Severity
+        public double? Severity
         {
-            get { return this._severity.GetValueOrDefault(); }
+            get { return this._severity; }
             set { this._severity = value; }
         }
 
@@ -333,9 +333,9 @@ namespace Amazon.GuardDuty.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime UpdatedAt
+        public DateTime? UpdatedAt
         {
-            get { return this._updatedAt.GetValueOrDefault(); }
+            get { return this._updatedAt; }
             set { this._updatedAt = value; }
         }
 

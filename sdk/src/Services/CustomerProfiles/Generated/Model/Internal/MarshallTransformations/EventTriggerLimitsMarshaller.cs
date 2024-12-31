@@ -51,7 +51,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEventExpiration())
             {
                 context.Writer.WritePropertyName("EventExpiration");
-                context.Writer.Write(requestObject.EventExpiration);
+                context.Writer.Write(requestObject.EventExpiration.Value);
             }
 
             if(requestObject.IsSetPeriods())

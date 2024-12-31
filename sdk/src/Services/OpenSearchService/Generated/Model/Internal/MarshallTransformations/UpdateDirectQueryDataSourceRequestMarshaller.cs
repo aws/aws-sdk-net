@@ -64,43 +64,46 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                 throw new AmazonOpenSearchServiceException("Request object does not have required field DataSourceName set");
             request.AddPathResource("{DataSourceName}", StringUtils.FromString(publicRequest.DataSourceName));
             request.ResourcePath = "/2021-01-01/opensearch/directQueryDataSource/{DataSourceName}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDataSourceType())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DataSourceType");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DirectQueryDataSourceTypeMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DataSourceType, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetOpenSearchArns())
-                {
-                    context.Writer.WritePropertyName("OpenSearchArns");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestOpenSearchArnsListValue in publicRequest.OpenSearchArns)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDataSourceType())
                     {
-                            context.Writer.Write(publicRequestOpenSearchArnsListValue);
+                        context.Writer.WritePropertyName("DataSourceType");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DirectQueryDataSourceTypeMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DataSourceType, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetOpenSearchArns())
+                    {
+                        context.Writer.WritePropertyName("OpenSearchArns");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestOpenSearchArnsListValue in publicRequest.OpenSearchArns)
+                        {
+                                context.Writer.Write(publicRequestOpenSearchArnsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

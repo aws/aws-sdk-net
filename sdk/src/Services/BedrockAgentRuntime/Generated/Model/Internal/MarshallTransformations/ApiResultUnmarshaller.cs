@@ -98,7 +98,7 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("httpStatusCode", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.HttpStatusCode = unmarshaller.Unmarshall(context);
                     continue;
                 }

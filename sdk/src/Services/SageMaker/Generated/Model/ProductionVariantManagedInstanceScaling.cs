@@ -66,16 +66,8 @@ namespace Amazon.SageMaker.Model
         /// to accommodate a decrease in traffic.
         /// </para>
         /// </summary>
-<<<<<<< HEAD
-        [AWSProperty(Min=1)]
-        public int? MinInstanceCount
-||||||| Commit version number update changes
-        [AWSProperty(Min=1)]
-        public int MinInstanceCount
-=======
         [AWSProperty(Min=0)]
-        public int MinInstanceCount
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
+        public int? MinInstanceCount
         {
             get { return this._minInstanceCount; }
             set { this._minInstanceCount = value; }

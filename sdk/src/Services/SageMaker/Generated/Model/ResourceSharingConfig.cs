@@ -49,9 +49,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=500)]
-        public int BorrowLimit
+        public int? BorrowLimit
         {
-            get { return this._borrowLimit.GetValueOrDefault(); }
+            get { return this._borrowLimit; }
             set { this._borrowLimit = value; }
         }
 

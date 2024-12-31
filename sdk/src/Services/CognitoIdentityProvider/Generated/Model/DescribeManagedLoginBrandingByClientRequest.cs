@@ -68,9 +68,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// values that you customized in your branding style.
         /// </para>
         /// </summary>
-        public bool ReturnMergedResources
+        public bool? ReturnMergedResources
         {
-            get { return this._returnMergedResources.GetValueOrDefault(); }
+            get { return this._returnMergedResources; }
             set { this._returnMergedResources = value; }
         }
 

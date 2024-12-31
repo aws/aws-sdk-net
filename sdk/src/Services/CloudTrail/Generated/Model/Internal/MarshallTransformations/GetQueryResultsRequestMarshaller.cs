@@ -77,31 +77,17 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.EventDataStore);
                     }
 
-<<<<<<< HEAD
+                    if(publicRequest.IsSetEventDataStoreOwnerAccountId())
+                    {
+                        context.Writer.WritePropertyName("EventDataStoreOwnerAccountId");
+                        context.Writer.Write(publicRequest.EventDataStoreOwnerAccountId);
+                    }
+
                     if(publicRequest.IsSetMaxQueryResults())
                     {
                         context.Writer.WritePropertyName("MaxQueryResults");
                         context.Writer.Write(publicRequest.MaxQueryResults.Value);
                     }
-||||||| Commit version number update changes
-                if(publicRequest.IsSetMaxQueryResults())
-                {
-                    context.Writer.WritePropertyName("MaxQueryResults");
-                    context.Writer.Write(publicRequest.MaxQueryResults);
-                }
-=======
-                if(publicRequest.IsSetEventDataStoreOwnerAccountId())
-                {
-                    context.Writer.WritePropertyName("EventDataStoreOwnerAccountId");
-                    context.Writer.Write(publicRequest.EventDataStoreOwnerAccountId);
-                }
-
-                if(publicRequest.IsSetMaxQueryResults())
-                {
-                    context.Writer.WritePropertyName("MaxQueryResults");
-                    context.Writer.Write(publicRequest.MaxQueryResults);
-                }
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
 
                     if(publicRequest.IsSetNextToken())
                     {

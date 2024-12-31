@@ -106,9 +106,9 @@ namespace Amazon.CloudFront.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int IpCount
+        public int? IpCount
         {
-            get { return this._ipCount.GetValueOrDefault(); }
+            get { return this._ipCount; }
             set { this._ipCount = value; }
         }
 
@@ -125,9 +125,9 @@ namespace Amazon.CloudFront.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime LastModifiedTime
+        public DateTime? LastModifiedTime
         {
-            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            get { return this._lastModifiedTime; }
             set { this._lastModifiedTime = value; }
         }
 

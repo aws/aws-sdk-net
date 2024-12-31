@@ -54,9 +54,9 @@ namespace Amazon.DataZone.Model
         /// The deployment order of the environment.
         /// </para>
         /// </summary>
-        public int DeploymentOrder
+        public int? DeploymentOrder
         {
-            get { return this._deploymentOrder.GetValueOrDefault(); }
+            get { return this._deploymentOrder; }
             set { this._deploymentOrder = value; }
         }
 

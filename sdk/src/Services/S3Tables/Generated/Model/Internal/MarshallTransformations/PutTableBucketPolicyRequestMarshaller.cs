@@ -64,21 +64,24 @@ namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
                 throw new AmazonS3TablesException("Request object does not have required field TableBucketARN set");
             request.AddPathResource("{tableBucketARN}", StringUtils.FromString(publicRequest.TableBucketARN));
             request.ResourcePath = "/buckets/{tableBucketARN}/policy";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetResourcePolicy())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("resourcePolicy");
-                    context.Writer.Write(publicRequest.ResourcePolicy);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetResourcePolicy())
+                    {
+                        context.Writer.WritePropertyName("resourcePolicy");
+                        context.Writer.Write(publicRequest.ResourcePolicy);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

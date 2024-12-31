@@ -61,54 +61,57 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/retrieveAndGenerateStream";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetInput())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("input");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetInput())
+                    {
+                        context.Writer.WritePropertyName("input");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = RetrieveAndGenerateInputMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Input, context);
+                        var marshaller = RetrieveAndGenerateInputMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Input, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetRetrieveAndGenerateConfiguration())
+                    {
+                        context.Writer.WritePropertyName("retrieveAndGenerateConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = RetrieveAndGenerateConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.RetrieveAndGenerateConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetSessionConfiguration())
+                    {
+                        context.Writer.WritePropertyName("sessionConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = RetrieveAndGenerateSessionConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SessionConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetSessionId())
+                    {
+                        context.Writer.WritePropertyName("sessionId");
+                        context.Writer.Write(publicRequest.SessionId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetRetrieveAndGenerateConfiguration())
-                {
-                    context.Writer.WritePropertyName("retrieveAndGenerateConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = RetrieveAndGenerateConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.RetrieveAndGenerateConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSessionConfiguration())
-                {
-                    context.Writer.WritePropertyName("sessionConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = RetrieveAndGenerateSessionConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SessionConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSessionId())
-                {
-                    context.Writer.WritePropertyName("sessionId");
-                    context.Writer.Write(publicRequest.SessionId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

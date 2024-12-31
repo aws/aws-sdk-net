@@ -68,7 +68,7 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("isEditable", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsEditable = unmarshaller.Unmarshall(context);
                     continue;
                 }

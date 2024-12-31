@@ -124,9 +124,9 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         /// </summary>
         [AWSProperty(Max=5000)]
-        public double SavingsPlansCommitment
+        public double? SavingsPlansCommitment
         {
-            get { return this._savingsPlansCommitment.GetValueOrDefault(); }
+            get { return this._savingsPlansCommitment; }
             set { this._savingsPlansCommitment = value; }
         }
 

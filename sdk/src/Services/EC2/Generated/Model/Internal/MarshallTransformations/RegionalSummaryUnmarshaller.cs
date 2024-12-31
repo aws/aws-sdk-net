@@ -57,13 +57,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("numberOfMatchedAccounts", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.NumberOfMatchedAccounts = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("numberOfUnmatchedAccounts", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.NumberOfUnmatchedAccounts = unmarshaller.Unmarshall(context);
                         continue;
                     }

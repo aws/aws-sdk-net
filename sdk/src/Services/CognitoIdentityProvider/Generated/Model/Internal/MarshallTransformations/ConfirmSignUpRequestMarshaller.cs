@@ -120,31 +120,19 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.SecretHash);
                     }
 
+                    if(publicRequest.IsSetSession())
+                    {
+                        context.Writer.WritePropertyName("Session");
+                        context.Writer.Write(publicRequest.Session);
+                    }
+
                     if(publicRequest.IsSetUserContextData())
                     {
                         context.Writer.WritePropertyName("UserContextData");
                         context.Writer.WriteObjectStart();
 
-<<<<<<< HEAD
                         var marshaller = UserContextDataTypeMarshaller.Instance;
                         marshaller.Marshall(publicRequest.UserContextData, context);
-||||||| Commit version number update changes
-                if(publicRequest.IsSetUserContextData())
-                {
-                    context.Writer.WritePropertyName("UserContextData");
-                    context.Writer.WriteObjectStart();
-=======
-                if(publicRequest.IsSetSession())
-                {
-                    context.Writer.WritePropertyName("Session");
-                    context.Writer.Write(publicRequest.Session);
-                }
-
-                if(publicRequest.IsSetUserContextData())
-                {
-                    context.Writer.WritePropertyName("UserContextData");
-                    context.Writer.WriteObjectStart();
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
 
                         context.Writer.WriteObjectEnd();
                     }

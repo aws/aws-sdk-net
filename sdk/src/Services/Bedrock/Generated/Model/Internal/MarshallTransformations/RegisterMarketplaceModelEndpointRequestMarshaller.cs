@@ -64,21 +64,24 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                 throw new AmazonBedrockException("Request object does not have required field EndpointIdentifier set");
             request.AddPathResource("{endpointIdentifier}", StringUtils.FromString(publicRequest.EndpointIdentifier));
             request.ResourcePath = "/marketplace-model/endpoints/{endpointIdentifier}/registration";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetModelSourceIdentifier())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("modelSourceIdentifier");
-                    context.Writer.Write(publicRequest.ModelSourceIdentifier);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetModelSourceIdentifier())
+                    {
+                        context.Writer.WritePropertyName("modelSourceIdentifier");
+                        context.Writer.Write(publicRequest.ModelSourceIdentifier);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -60,7 +60,7 @@ namespace Amazon.QApps.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("expiresAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.ExpiresAt = unmarshaller.Unmarshall(context);
                     continue;
                 }

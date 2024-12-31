@@ -61,33 +61,36 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/assistant/invocation";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetConversationId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("conversationId");
-                    context.Writer.Write(publicRequest.ConversationId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetConversationId())
+                    {
+                        context.Writer.WritePropertyName("conversationId");
+                        context.Writer.Write(publicRequest.ConversationId);
+                    }
+
+                    if(publicRequest.IsSetEnableTrace())
+                    {
+                        context.Writer.WritePropertyName("enableTrace");
+                        context.Writer.Write(publicRequest.EnableTrace.Value);
+                    }
+
+                    if(publicRequest.IsSetMessage())
+                    {
+                        context.Writer.WritePropertyName("message");
+                        context.Writer.Write(publicRequest.Message);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetEnableTrace())
-                {
-                    context.Writer.WritePropertyName("enableTrace");
-                    context.Writer.Write(publicRequest.EnableTrace);
-                }
-
-                if(publicRequest.IsSetMessage())
-                {
-                    context.Writer.WritePropertyName("message");
-                    context.Writer.Write(publicRequest.Message);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             

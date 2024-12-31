@@ -133,9 +133,9 @@ namespace Amazon.DataZone.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2)]
-        public int ConnectionSchemaVersion
+        public int? ConnectionSchemaVersion
         {
-            get { return this._connectionSchemaVersion.GetValueOrDefault(); }
+            get { return this._connectionSchemaVersion; }
             set { this._connectionSchemaVersion = value; }
         }
 
@@ -169,9 +169,9 @@ namespace Amazon.DataZone.Model
         /// The creation time of the Amazon Web Services Glue connection.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -206,9 +206,9 @@ namespace Amazon.DataZone.Model
         /// The last validation time of the Amazon Web Services Glue connection.
         /// </para>
         /// </summary>
-        public DateTime LastConnectionValidationTime
+        public DateTime? LastConnectionValidationTime
         {
-            get { return this._lastConnectionValidationTime.GetValueOrDefault(); }
+            get { return this._lastConnectionValidationTime; }
             set { this._lastConnectionValidationTime = value; }
         }
 
@@ -242,9 +242,9 @@ namespace Amazon.DataZone.Model
         /// The timestamp at which the Amazon Web Services Glue connection was last updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedTime
+        public DateTime? LastUpdatedTime
         {
-            get { return this._lastUpdatedTime.GetValueOrDefault(); }
+            get { return this._lastUpdatedTime; }
             set { this._lastUpdatedTime = value; }
         }
 

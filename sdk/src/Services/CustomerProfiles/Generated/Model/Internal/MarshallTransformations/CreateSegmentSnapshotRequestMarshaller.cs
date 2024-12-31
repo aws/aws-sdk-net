@@ -67,39 +67,42 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                 throw new AmazonCustomerProfilesException("Request object does not have required field SegmentDefinitionName set");
             request.AddPathResource("{SegmentDefinitionName}", StringUtils.FromString(publicRequest.SegmentDefinitionName));
             request.ResourcePath = "/domains/{DomainName}/segments/{SegmentDefinitionName}/snapshots";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDataFormat())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DataFormat");
-                    context.Writer.Write(publicRequest.DataFormat);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDataFormat())
+                    {
+                        context.Writer.WritePropertyName("DataFormat");
+                        context.Writer.Write(publicRequest.DataFormat);
+                    }
+
+                    if(publicRequest.IsSetDestinationUri())
+                    {
+                        context.Writer.WritePropertyName("DestinationUri");
+                        context.Writer.Write(publicRequest.DestinationUri);
+                    }
+
+                    if(publicRequest.IsSetEncryptionKey())
+                    {
+                        context.Writer.WritePropertyName("EncryptionKey");
+                        context.Writer.Write(publicRequest.EncryptionKey);
+                    }
+
+                    if(publicRequest.IsSetRoleArn())
+                    {
+                        context.Writer.WritePropertyName("RoleArn");
+                        context.Writer.Write(publicRequest.RoleArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDestinationUri())
-                {
-                    context.Writer.WritePropertyName("DestinationUri");
-                    context.Writer.Write(publicRequest.DestinationUri);
-                }
-
-                if(publicRequest.IsSetEncryptionKey())
-                {
-                    context.Writer.WritePropertyName("EncryptionKey");
-                    context.Writer.Write(publicRequest.EncryptionKey);
-                }
-
-                if(publicRequest.IsSetRoleArn())
-                {
-                    context.Writer.WritePropertyName("RoleArn");
-                    context.Writer.Write(publicRequest.RoleArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

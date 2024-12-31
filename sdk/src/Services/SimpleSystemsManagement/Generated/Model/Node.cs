@@ -46,9 +46,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The UTC timestamp for when the managed node data was last captured.
         /// </para>
         /// </summary>
-        public DateTime CaptureTime
+        public DateTime? CaptureTime
         {
-            get { return this._captureTime.GetValueOrDefault(); }
+            get { return this._captureTime; }
             set { this._captureTime = value; }
         }
 

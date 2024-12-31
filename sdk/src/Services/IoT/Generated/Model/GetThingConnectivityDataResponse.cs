@@ -45,9 +45,9 @@ namespace Amazon.IoT.Model
         /// A Boolean that indicates the connectivity status.
         /// </para>
         /// </summary>
-        public bool Connected
+        public bool? Connected
         {
-            get { return this._connected.GetValueOrDefault(); }
+            get { return this._connected; }
             set { this._connected = value; }
         }
 
@@ -100,9 +100,9 @@ namespace Amazon.IoT.Model
         /// The timestamp of when the event occurred.
         /// </para>
         /// </summary>
-        public DateTime Timestamp
+        public DateTime? Timestamp
         {
-            get { return this._timestamp.GetValueOrDefault(); }
+            get { return this._timestamp; }
             set { this._timestamp = value; }
         }
 

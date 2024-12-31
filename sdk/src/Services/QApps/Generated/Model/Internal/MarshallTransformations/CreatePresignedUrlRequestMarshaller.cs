@@ -61,51 +61,54 @@ namespace Amazon.QApps.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/apps.createPresignedUrl";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAppId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("appId");
-                    context.Writer.Write(publicRequest.AppId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAppId())
+                    {
+                        context.Writer.WritePropertyName("appId");
+                        context.Writer.Write(publicRequest.AppId);
+                    }
+
+                    if(publicRequest.IsSetCardId())
+                    {
+                        context.Writer.WritePropertyName("cardId");
+                        context.Writer.Write(publicRequest.CardId);
+                    }
+
+                    if(publicRequest.IsSetFileContentsSha256())
+                    {
+                        context.Writer.WritePropertyName("fileContentsSha256");
+                        context.Writer.Write(publicRequest.FileContentsSha256);
+                    }
+
+                    if(publicRequest.IsSetFileName())
+                    {
+                        context.Writer.WritePropertyName("fileName");
+                        context.Writer.Write(publicRequest.FileName);
+                    }
+
+                    if(publicRequest.IsSetScope())
+                    {
+                        context.Writer.WritePropertyName("scope");
+                        context.Writer.Write(publicRequest.Scope);
+                    }
+
+                    if(publicRequest.IsSetSessionId())
+                    {
+                        context.Writer.WritePropertyName("sessionId");
+                        context.Writer.Write(publicRequest.SessionId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetCardId())
-                {
-                    context.Writer.WritePropertyName("cardId");
-                    context.Writer.Write(publicRequest.CardId);
-                }
-
-                if(publicRequest.IsSetFileContentsSha256())
-                {
-                    context.Writer.WritePropertyName("fileContentsSha256");
-                    context.Writer.Write(publicRequest.FileContentsSha256);
-                }
-
-                if(publicRequest.IsSetFileName())
-                {
-                    context.Writer.WritePropertyName("fileName");
-                    context.Writer.Write(publicRequest.FileName);
-                }
-
-                if(publicRequest.IsSetScope())
-                {
-                    context.Writer.WritePropertyName("scope");
-                    context.Writer.Write(publicRequest.Scope);
-                }
-
-                if(publicRequest.IsSetSessionId())
-                {
-                    context.Writer.WritePropertyName("sessionId");
-                    context.Writer.Write(publicRequest.SessionId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
         

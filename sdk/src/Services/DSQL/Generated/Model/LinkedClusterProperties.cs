@@ -43,9 +43,9 @@ namespace Amazon.DSQL.Model
         /// Whether deletion protection is enabled.
         /// </para>
         /// </summary>
-        public bool DeletionProtectionEnabled
+        public bool? DeletionProtectionEnabled
         {
-            get { return this._deletionProtectionEnabled.GetValueOrDefault(); }
+            get { return this._deletionProtectionEnabled; }
             set { this._deletionProtectionEnabled = value; }
         }
 

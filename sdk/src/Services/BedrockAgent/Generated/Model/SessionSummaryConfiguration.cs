@@ -43,9 +43,9 @@ namespace Amazon.BedrockAgent.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int MaxRecentSessions
+        public int? MaxRecentSessions
         {
-            get { return this._maxRecentSessions.GetValueOrDefault(); }
+            get { return this._maxRecentSessions; }
             set { this._maxRecentSessions = value; }
         }
 

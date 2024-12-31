@@ -50,9 +50,9 @@ namespace Amazon.BCMPricingCalculator.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public double Amount
+        public double? Amount
         {
-            get { return this._amount.GetValueOrDefault(); }
+            get { return this._amount; }
             set { this._amount = value; }
         }
 

@@ -4651,286 +4651,6 @@ namespace Amazon.S3
 
         #endregion
         
-<<<<<<< HEAD
-||||||| Commit version number update changes
-        #region  GetACL
-
-        internal virtual GetACLResponse GetACL(GetACLRequest request)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = GetACLRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = GetACLResponseUnmarshaller.Instance;
-
-            return Invoke<GetACLResponse>(request, options);
-        }
-
-
-        /// <summary>
-        /// <note> 
-        /// <para>
-        /// This operation is not supported by directory buckets.
-        /// </para>
-        ///  </note> 
-        /// <para>
-        /// This implementation of the <c>GET</c> action uses the <c>acl</c> subresource to return
-        /// the access control list (ACL) of a bucket. To use <c>GET</c> to return the ACL of
-        /// the bucket, you must have the <c>READ_ACP</c> access to the bucket. If <c>READ_ACP</c>
-        /// permission is granted to the anonymous user, you can return the ACL of the bucket
-        /// without using an authorization header.
-        /// </para>
-        ///  
-        /// <para>
-        /// When you use this API operation with an access point, provide the alias of the access
-        /// point in place of the bucket name.
-        /// </para>
-        ///  
-        /// <para>
-        /// When you use this API operation with an Object Lambda access point, provide the alias
-        /// of the Object Lambda access point in place of the bucket name. If the Object Lambda
-        /// access point alias in a request is not valid, the error code <c>InvalidAccessPointAliasError</c>
-        /// is returned. For more information about <c>InvalidAccessPointAliasError</c>, see <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List
-        /// of Error Codes</a>.
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// If your bucket uses the bucket owner enforced setting for S3 Object Ownership, requests
-        /// to read ACLs are still supported and return the <c>bucket-owner-full-control</c> ACL
-        /// with the owner being the account that created the bucket. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">
-        /// Controlling object ownership and disabling ACLs</a> in the <i>Amazon S3 User Guide</i>.
-        /// </para>
-        ///  </note> 
-        /// <para>
-        /// The following operations are related to <c>GetBucketAcl</c>:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjects.html">ListObjects</a>
-        /// 
-        /// </para>
-        ///  </li> </ul>
-        /// </summary>
-        /// <param name="bucketName">Specifies the S3 bucket whose ACL is being requested. When you use this API operation with an access point, provide the alias of the access point in place of the bucket name. When you use this API operation with an Object Lambda access point, provide the alias of the Object Lambda access point in place of the bucket name. If the Object Lambda access point alias in a request is not valid, the error code <c>InvalidAccessPointAliasError</c> is returned. For more information about <c>InvalidAccessPointAliasError</c>, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List of Error Codes</a>.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the GetACL service method, as returned by S3.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAcl">REST API Reference for GetACL Operation</seealso>
-        public virtual Task<GetACLResponse> GetACLAsync(string bucketName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var request = new GetACLRequest();
-            request.BucketName = bucketName;
-            return GetACLAsync(request, cancellationToken);
-        }
-
-
-
-        /// <summary>
-        /// <note> 
-        /// <para>
-        /// This operation is not supported by directory buckets.
-        /// </para>
-        ///  </note> 
-        /// <para>
-        /// This implementation of the <c>GET</c> action uses the <c>acl</c> subresource to return
-        /// the access control list (ACL) of a bucket. To use <c>GET</c> to return the ACL of
-        /// the bucket, you must have the <c>READ_ACP</c> access to the bucket. If <c>READ_ACP</c>
-        /// permission is granted to the anonymous user, you can return the ACL of the bucket
-        /// without using an authorization header.
-        /// </para>
-        ///  
-        /// <para>
-        /// When you use this API operation with an access point, provide the alias of the access
-        /// point in place of the bucket name.
-        /// </para>
-        ///  
-        /// <para>
-        /// When you use this API operation with an Object Lambda access point, provide the alias
-        /// of the Object Lambda access point in place of the bucket name. If the Object Lambda
-        /// access point alias in a request is not valid, the error code <c>InvalidAccessPointAliasError</c>
-        /// is returned. For more information about <c>InvalidAccessPointAliasError</c>, see <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List
-        /// of Error Codes</a>.
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// If your bucket uses the bucket owner enforced setting for S3 Object Ownership, requests
-        /// to read ACLs are still supported and return the <c>bucket-owner-full-control</c> ACL
-        /// with the owner being the account that created the bucket. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">
-        /// Controlling object ownership and disabling ACLs</a> in the <i>Amazon S3 User Guide</i>.
-        /// </para>
-        ///  </note> 
-        /// <para>
-        /// The following operations are related to <c>GetBucketAcl</c>:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjects.html">ListObjects</a>
-        /// 
-        /// </para>
-        ///  </li> </ul>
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the GetACL service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the GetACL service method, as returned by S3.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAcl">REST API Reference for GetACL Operation</seealso>
-        public virtual Task<GetACLResponse> GetACLAsync(GetACLRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = GetACLRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = GetACLResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetACLResponse>(request, options, cancellationToken);
-        }
-
-        #endregion
-        
-=======
-        #region  GetACL
-
-        internal virtual GetACLResponse GetACL(GetACLRequest request)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = GetACLRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = GetACLResponseUnmarshaller.Instance;
-
-            return Invoke<GetACLResponse>(request, options);
-        }
-
-
-        /// <summary>
-        /// <note> 
-        /// <para>
-        /// This operation is not supported for directory buckets.
-        /// </para>
-        ///  </note> 
-        /// <para>
-        /// This implementation of the <c>GET</c> action uses the <c>acl</c> subresource to return
-        /// the access control list (ACL) of a bucket. To use <c>GET</c> to return the ACL of
-        /// the bucket, you must have the <c>READ_ACP</c> access to the bucket. If <c>READ_ACP</c>
-        /// permission is granted to the anonymous user, you can return the ACL of the bucket
-        /// without using an authorization header.
-        /// </para>
-        ///  
-        /// <para>
-        /// When you use this API operation with an access point, provide the alias of the access
-        /// point in place of the bucket name.
-        /// </para>
-        ///  
-        /// <para>
-        /// When you use this API operation with an Object Lambda access point, provide the alias
-        /// of the Object Lambda access point in place of the bucket name. If the Object Lambda
-        /// access point alias in a request is not valid, the error code <c>InvalidAccessPointAliasError</c>
-        /// is returned. For more information about <c>InvalidAccessPointAliasError</c>, see <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List
-        /// of Error Codes</a>.
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// If your bucket uses the bucket owner enforced setting for S3 Object Ownership, requests
-        /// to read ACLs are still supported and return the <c>bucket-owner-full-control</c> ACL
-        /// with the owner being the account that created the bucket. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">
-        /// Controlling object ownership and disabling ACLs</a> in the <i>Amazon S3 User Guide</i>.
-        /// </para>
-        ///  </note> 
-        /// <para>
-        /// The following operations are related to <c>GetBucketAcl</c>:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjects.html">ListObjects</a>
-        /// 
-        /// </para>
-        ///  </li> </ul>
-        /// </summary>
-        /// <param name="bucketName">Specifies the S3 bucket whose ACL is being requested. When you use this API operation with an access point, provide the alias of the access point in place of the bucket name. When you use this API operation with an Object Lambda access point, provide the alias of the Object Lambda access point in place of the bucket name. If the Object Lambda access point alias in a request is not valid, the error code <c>InvalidAccessPointAliasError</c> is returned. For more information about <c>InvalidAccessPointAliasError</c>, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List of Error Codes</a>.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the GetACL service method, as returned by S3.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAcl">REST API Reference for GetACL Operation</seealso>
-        public virtual Task<GetACLResponse> GetACLAsync(string bucketName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var request = new GetACLRequest();
-            request.BucketName = bucketName;
-            return GetACLAsync(request, cancellationToken);
-        }
-
-
-
-        /// <summary>
-        /// <note> 
-        /// <para>
-        /// This operation is not supported for directory buckets.
-        /// </para>
-        ///  </note> 
-        /// <para>
-        /// This implementation of the <c>GET</c> action uses the <c>acl</c> subresource to return
-        /// the access control list (ACL) of a bucket. To use <c>GET</c> to return the ACL of
-        /// the bucket, you must have the <c>READ_ACP</c> access to the bucket. If <c>READ_ACP</c>
-        /// permission is granted to the anonymous user, you can return the ACL of the bucket
-        /// without using an authorization header.
-        /// </para>
-        ///  
-        /// <para>
-        /// When you use this API operation with an access point, provide the alias of the access
-        /// point in place of the bucket name.
-        /// </para>
-        ///  
-        /// <para>
-        /// When you use this API operation with an Object Lambda access point, provide the alias
-        /// of the Object Lambda access point in place of the bucket name. If the Object Lambda
-        /// access point alias in a request is not valid, the error code <c>InvalidAccessPointAliasError</c>
-        /// is returned. For more information about <c>InvalidAccessPointAliasError</c>, see <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List
-        /// of Error Codes</a>.
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// If your bucket uses the bucket owner enforced setting for S3 Object Ownership, requests
-        /// to read ACLs are still supported and return the <c>bucket-owner-full-control</c> ACL
-        /// with the owner being the account that created the bucket. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">
-        /// Controlling object ownership and disabling ACLs</a> in the <i>Amazon S3 User Guide</i>.
-        /// </para>
-        ///  </note> 
-        /// <para>
-        /// The following operations are related to <c>GetBucketAcl</c>:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjects.html">ListObjects</a>
-        /// 
-        /// </para>
-        ///  </li> </ul>
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the GetACL service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the GetACL service method, as returned by S3.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAcl">REST API Reference for GetACL Operation</seealso>
-        public virtual Task<GetACLResponse> GetACLAsync(GetACLRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = GetACLRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = GetACLResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetACLResponse>(request, options, cancellationToken);
-        }
-
-        #endregion
-        
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
         #region  GetBucketAccelerateConfiguration
 
         internal virtual GetBucketAccelerateConfigurationResponse GetBucketAccelerateConfiguration(GetBucketAccelerateConfigurationRequest request)
@@ -5089,7 +4809,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -7854,7 +7574,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -11621,59 +11341,9 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-<<<<<<< HEAD
         /// This action creates an Amazon S3 bucket. To create an Amazon S3 on Outposts bucket,
         /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateBucket.html">
         /// <c>CreateBucket</c> </a>.
-||||||| Commit version number update changes
-        /// This operation is not supported by directory buckets.
-        /// </para>
-        ///  </note> 
-        /// <para>
-        /// Sets the permissions on an existing bucket using access control lists (ACL). For more
-        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using
-        /// ACLs</a>. To set the ACL of a bucket, you must have the <c>WRITE_ACP</c> permission.
-        /// </para>
-        ///  
-        /// <para>
-        /// You can use one of the following two ways to set a bucket's permissions:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Specify the ACL in the request body
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Specify permissions using request headers
-        /// </para>
-        ///  </li> </ul> <note> 
-        /// <para>
-        /// You cannot specify access permission using both the body and the request headers.
-=======
-        /// This operation is not supported for directory buckets.
-        /// </para>
-        ///  </note> 
-        /// <para>
-        /// Sets the permissions on an existing bucket using access control lists (ACL). For more
-        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using
-        /// ACLs</a>. To set the ACL of a bucket, you must have the <c>WRITE_ACP</c> permission.
-        /// </para>
-        ///  
-        /// <para>
-        /// You can use one of the following two ways to set a bucket's permissions:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Specify the ACL in the request body
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Specify permissions using request headers
-        /// </para>
-        ///  </li> </ul> <note> 
-        /// <para>
-        /// You cannot specify access permission using both the body and the request headers.
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
         /// </para>
         ///  </note> 
         /// <para>
@@ -11703,10 +11373,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
         /// API operation to the Regional endpoint. These endpoints support path-style requests
-        /// in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i>
-        /// </c>. Virtual-hosted-style requests aren't supported. For more information, see <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i>
+        /// </c>. Virtual-hosted-style requests aren't supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </li> </ul> </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
@@ -11790,7 +11462,7 @@ namespace Amazon.S3
         /// </para>
         ///  </important> </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -11808,7 +11480,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket to create.  <b>General purpose buckets</b> - For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html">Bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Directory buckets </b> - When you use this operation with a directory bucket, you must use path-style requests in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i> </c>. Virtual-hosted-style requests aren't supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must also follow the format <c> <i>bucket_base_name</i>--<i>az_id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i> </param>
+        /// <param name="bucketName">The name of the bucket to create.  <b>General purpose buckets</b> - For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html">Bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Directory buckets </b> - When you use this operation with a directory bucket, you must use path-style requests in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i> </c>. Virtual-hosted-style requests aren't supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must also follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i> </param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -12000,7 +11672,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -12099,7 +11771,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -12181,51 +11853,7 @@ namespace Amazon.S3
         ///  <c>emailAddress</c> – if the value specified is the email address of an Amazon Web
         /// Services account
         /// </para>
-<<<<<<< HEAD
         ///  <note> 
-||||||| Commit version number update changes
-        ///  </li> </ul>
-        /// </summary>
-        /// <param name="bucketName">The name of the bucket to create.  <b>General purpose buckets</b> - For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html">Bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Directory buckets </b> - When you use this operation with a directory bucket, you must use path-style requests in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i> </c>. Virtual-hosted-style requests aren't supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must also follow the format <c> <i>bucket_base_name</i>--<i>az_id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i> </param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the PutBucket service method, as returned by S3.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CreateBucket">REST API Reference for PutBucket Operation</seealso>
-        public virtual Task<PutBucketResponse> PutBucketAsync(string bucketName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var request = new PutBucketRequest();
-            request.BucketName = bucketName;
-            return PutBucketAsync(request, cancellationToken);
-        }
-
-
-
-        /// <summary>
-        /// <note> 
-=======
-        ///  </li> </ul>
-        /// </summary>
-        /// <param name="bucketName">The name of the bucket to create.  <b>General purpose buckets</b> - For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html">Bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Directory buckets </b> - When you use this operation with a directory bucket, you must use path-style requests in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i> </c>. Virtual-hosted-style requests aren't supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must also follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i> </param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the PutBucket service method, as returned by S3.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CreateBucket">REST API Reference for PutBucket Operation</seealso>
-        public virtual Task<PutBucketResponse> PutBucketAsync(string bucketName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var request = new PutBucketRequest();
-            request.BucketName = bucketName;
-            return PutBucketAsync(request, cancellationToken);
-        }
-
-
-
-        /// <summary>
-        /// <note> 
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
         /// <para>
         /// Using email addresses to specify a grantee is only supported in the following Amazon
         /// Web Services Regions: 
@@ -12244,25 +11872,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-<<<<<<< HEAD
         ///  Asia Pacific (Singapore)
-||||||| Commit version number update changes
-        ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
-        /// API operation to the Regional endpoint. These endpoints support path-style requests
-        /// in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i>
-        /// </c>. Virtual-hosted-style requests aren't supported. For more information, see <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
-=======
-        ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
-        /// API operation to the Regional endpoint. These endpoints support path-style requests
-        /// in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i>
-        /// </c>. Virtual-hosted-style requests aren't supported. For more information about endpoints
-        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
-        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
-        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -12317,13 +11927,7 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-<<<<<<< HEAD
         /// DisplayName is optional and ignored in the request
-||||||| Commit version number update changes
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
-=======
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region-code</i>.amazonaws.com</c>.
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -12345,14 +11949,8 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-<<<<<<< HEAD
         /// The grantee is resolved to the CanonicalUser and, in a response to a GET Object acl
         /// request, appears as the CanonicalUser. 
-||||||| Commit version number update changes
-        /// This operation is not supported by directory buckets.
-=======
-        /// This operation is not supported for directory buckets.
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
         /// </para>
         ///  <note> 
         /// <para>
@@ -15288,7 +14886,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>

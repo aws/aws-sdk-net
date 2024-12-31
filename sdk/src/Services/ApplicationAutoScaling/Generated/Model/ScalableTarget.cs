@@ -108,9 +108,9 @@ namespace Amazon.ApplicationAutoScaling.Model
         ///  The predicted capacity of the scalable target. 
         /// </para>
         /// </summary>
-        public int PredictedCapacity
+        public int? PredictedCapacity
         {
-            get { return this._predictedCapacity.GetValueOrDefault(); }
+            get { return this._predictedCapacity; }
             set { this._predictedCapacity = value; }
         }
 

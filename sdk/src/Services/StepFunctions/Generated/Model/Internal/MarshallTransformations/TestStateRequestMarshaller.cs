@@ -101,26 +101,16 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.RoleArn);
                     }
 
+                    if(publicRequest.IsSetVariables())
+                    {
+                        context.Writer.WritePropertyName("variables");
+                        context.Writer.Write(publicRequest.Variables);
+                    }
+
                     writer.WriteObjectEnd();
                 }
 
-<<<<<<< HEAD
                 request.Content = memoryStream.ToArray();
-||||||| Commit version number update changes
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
-=======
-                if(publicRequest.IsSetVariables())
-                {
-                    context.Writer.WritePropertyName("variables");
-                    context.Writer.Write(publicRequest.Variables);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
             }
 
             

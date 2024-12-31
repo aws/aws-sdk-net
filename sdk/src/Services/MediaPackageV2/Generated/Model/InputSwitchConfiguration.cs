@@ -44,9 +44,9 @@ namespace Amazon.MediaPackageV2.Model
         /// Default is true. This setting is valid only when <c>InputType</c> is <c>CMAF</c>.
         /// </para>
         /// </summary>
-        public bool MQCSInputSwitching
+        public bool? MQCSInputSwitching
         {
-            get { return this._mqcsInputSwitching.GetValueOrDefault(); }
+            get { return this._mqcsInputSwitching; }
             set { this._mqcsInputSwitching = value; }
         }
 

@@ -119,9 +119,9 @@ namespace Amazon.CloudTrail.Model
         ///  Indicates whether termination protection is enabled for the dashboard. 
         /// </para>
         /// </summary>
-        public bool TerminationProtectionEnabled
+        public bool? TerminationProtectionEnabled
         {
-            get { return this._terminationProtectionEnabled.GetValueOrDefault(); }
+            get { return this._terminationProtectionEnabled; }
             set { this._terminationProtectionEnabled = value; }
         }
 

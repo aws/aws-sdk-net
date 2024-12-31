@@ -169,28 +169,14 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                         var marshaller = UserPoolPolicyTypeMarshaller.Instance;
                         marshaller.Marshall(publicRequest.Policies, context);
 
-<<<<<<< HEAD
                         context.Writer.WriteObjectEnd();
                     }
-||||||| Commit version number update changes
-                if(publicRequest.IsSetSmsAuthenticationMessage())
-                {
-                    context.Writer.WritePropertyName("SmsAuthenticationMessage");
-                    context.Writer.Write(publicRequest.SmsAuthenticationMessage);
-                }
-=======
-                if(publicRequest.IsSetPoolName())
-                {
-                    context.Writer.WritePropertyName("PoolName");
-                    context.Writer.Write(publicRequest.PoolName);
-                }
 
-                if(publicRequest.IsSetSmsAuthenticationMessage())
-                {
-                    context.Writer.WritePropertyName("SmsAuthenticationMessage");
-                    context.Writer.Write(publicRequest.SmsAuthenticationMessage);
-                }
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
+                    if(publicRequest.IsSetPoolName())
+                    {
+                        context.Writer.WritePropertyName("PoolName");
+                        context.Writer.Write(publicRequest.PoolName);
+                    }
 
                     if(publicRequest.IsSetSmsAuthenticationMessage())
                     {
@@ -257,28 +243,16 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
 
-<<<<<<< HEAD
+                    if(publicRequest.IsSetUserPoolTier())
+                    {
+                        context.Writer.WritePropertyName("UserPoolTier");
+                        context.Writer.Write(publicRequest.UserPoolTier);
+                    }
+
                     if(publicRequest.IsSetVerificationMessageTemplate())
                     {
                         context.Writer.WritePropertyName("VerificationMessageTemplate");
                         context.Writer.WriteObjectStart();
-||||||| Commit version number update changes
-                if(publicRequest.IsSetVerificationMessageTemplate())
-                {
-                    context.Writer.WritePropertyName("VerificationMessageTemplate");
-                    context.Writer.WriteObjectStart();
-=======
-                if(publicRequest.IsSetUserPoolTier())
-                {
-                    context.Writer.WritePropertyName("UserPoolTier");
-                    context.Writer.Write(publicRequest.UserPoolTier);
-                }
-
-                if(publicRequest.IsSetVerificationMessageTemplate())
-                {
-                    context.Writer.WritePropertyName("VerificationMessageTemplate");
-                    context.Writer.WriteObjectStart();
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
 
                         var marshaller = VerificationMessageTemplateTypeMarshaller.Instance;
                         marshaller.Marshall(publicRequest.VerificationMessageTemplate, context);

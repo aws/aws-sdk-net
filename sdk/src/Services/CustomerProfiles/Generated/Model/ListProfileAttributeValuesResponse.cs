@@ -101,9 +101,9 @@ namespace Amazon.CustomerProfiles.Model
         /// The status code for the response.
         /// </para>
         /// </summary>
-        public int StatusCode
+        public int? StatusCode
         {
-            get { return this._statusCode.GetValueOrDefault(); }
+            get { return this._statusCode; }
             set { this._statusCode = value; }
         }
 

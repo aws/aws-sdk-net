@@ -51,7 +51,7 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxResponseLengthForInference())
             {
                 context.Writer.WritePropertyName("maxResponseLengthForInference");
-                context.Writer.Write(requestObject.MaxResponseLengthForInference);
+                context.Writer.Write(requestObject.MaxResponseLengthForInference.Value);
             }
 
             if(requestObject.IsSetTeacherModelIdentifier())

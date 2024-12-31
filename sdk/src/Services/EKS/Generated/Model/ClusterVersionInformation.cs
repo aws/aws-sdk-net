@@ -104,9 +104,9 @@ namespace Amazon.EKS.Model
         /// Indicates if this is a default version.
         /// </para>
         /// </summary>
-        public bool DefaultVersion
+        public bool? DefaultVersion
         {
-            get { return this._defaultVersion.GetValueOrDefault(); }
+            get { return this._defaultVersion; }
             set { this._defaultVersion = value; }
         }
 
@@ -122,9 +122,9 @@ namespace Amazon.EKS.Model
         /// Date when extended support ends for this version.
         /// </para>
         /// </summary>
-        public DateTime EndOfExtendedSupportDate
+        public DateTime? EndOfExtendedSupportDate
         {
-            get { return this._endOfExtendedSupportDate.GetValueOrDefault(); }
+            get { return this._endOfExtendedSupportDate; }
             set { this._endOfExtendedSupportDate = value; }
         }
 
@@ -140,9 +140,9 @@ namespace Amazon.EKS.Model
         /// Date when standard support ends for this version.
         /// </para>
         /// </summary>
-        public DateTime EndOfStandardSupportDate
+        public DateTime? EndOfStandardSupportDate
         {
-            get { return this._endOfStandardSupportDate.GetValueOrDefault(); }
+            get { return this._endOfStandardSupportDate; }
             set { this._endOfStandardSupportDate = value; }
         }
 
@@ -176,9 +176,9 @@ namespace Amazon.EKS.Model
         /// The release date of this cluster version.
         /// </para>
         /// </summary>
-        public DateTime ReleaseDate
+        public DateTime? ReleaseDate
         {
-            get { return this._releaseDate.GetValueOrDefault(); }
+            get { return this._releaseDate; }
             set { this._releaseDate = value; }
         }
 

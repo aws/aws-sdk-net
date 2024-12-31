@@ -74,7 +74,7 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("glueLineageSyncEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.GlueLineageSyncEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -80,7 +80,7 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("usePromptResponse", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.UsePromptResponse = unmarshaller.Unmarshall(context);
                     continue;
                 }

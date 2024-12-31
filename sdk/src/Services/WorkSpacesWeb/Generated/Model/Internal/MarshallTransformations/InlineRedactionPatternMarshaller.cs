@@ -57,7 +57,7 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConfidenceLevel())
             {
                 context.Writer.WritePropertyName("confidenceLevel");
-                context.Writer.Write(requestObject.ConfidenceLevel);
+                context.Writer.Write(requestObject.ConfidenceLevel.Value);
             }
 
             if(requestObject.IsSetCustomPattern())

@@ -126,14 +126,8 @@ namespace Amazon.Route53Domains.Model
         /// Example value: 12.0
         /// </para>
         /// </summary>
-<<<<<<< HEAD
-        public double? Price
-||||||| Commit version number update changes
-        public double Price
-=======
         [AWSProperty(Min=0)]
-        public double Price
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
+        public double? Price
         {
             get { return this._price; }
             set { this._price = value; }

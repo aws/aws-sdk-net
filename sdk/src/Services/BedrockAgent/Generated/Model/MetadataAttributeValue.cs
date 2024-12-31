@@ -47,9 +47,9 @@ namespace Amazon.BedrockAgent.Model
         /// The value of the Boolean metadata attribute.
         /// </para>
         /// </summary>
-        public bool BooleanValue
+        public bool? BooleanValue
         {
-            get { return this._booleanValue.GetValueOrDefault(); }
+            get { return this._booleanValue; }
             set { this._booleanValue = value; }
         }
 
@@ -66,9 +66,9 @@ namespace Amazon.BedrockAgent.Model
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
-        public double NumberValue
+        public double? NumberValue
         {
-            get { return this._numberValue.GetValueOrDefault(); }
+            get { return this._numberValue; }
             set { this._numberValue = value; }
         }
 

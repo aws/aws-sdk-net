@@ -68,13 +68,13 @@ namespace Amazon.BackupSearch.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("TotalItemsToScanCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TotalItemsToScanCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TotalRecoveryPointsToScanCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalRecoveryPointsToScanCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

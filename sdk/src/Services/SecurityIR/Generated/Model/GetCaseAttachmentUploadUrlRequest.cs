@@ -86,9 +86,9 @@ namespace Amazon.SecurityIR.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=104857600)]
-        public long ContentLength
+        public long? ContentLength
         {
-            get { return this._contentLength.GetValueOrDefault(); }
+            get { return this._contentLength; }
             set { this._contentLength = value; }
         }
 

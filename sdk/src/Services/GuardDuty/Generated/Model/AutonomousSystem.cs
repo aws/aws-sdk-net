@@ -64,9 +64,9 @@ namespace Amazon.GuardDuty.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int Number
+        public int? Number
         {
-            get { return this._number.GetValueOrDefault(); }
+            get { return this._number; }
             set { this._number = value; }
         }
 

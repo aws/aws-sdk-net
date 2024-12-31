@@ -46,9 +46,9 @@ namespace Amazon.Athena.Model
         /// After deletion, you will have to manage the Glue Connection and Lambda function. 
         /// </para>
         /// </summary>
-        public bool DeleteCatalogOnly
+        public bool? DeleteCatalogOnly
         {
-            get { return this._deleteCatalogOnly.GetValueOrDefault(); }
+            get { return this._deleteCatalogOnly; }
             set { this._deleteCatalogOnly = value; }
         }
 

@@ -68,7 +68,7 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("executionFrequencyMs", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ExecutionFrequencyMs = unmarshaller.Unmarshall(context);
                     continue;
                 }

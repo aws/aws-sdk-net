@@ -51,7 +51,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxInvocationsPerProfile())
             {
                 context.Writer.WritePropertyName("MaxInvocationsPerProfile");
-                context.Writer.Write(requestObject.MaxInvocationsPerProfile);
+                context.Writer.Write(requestObject.MaxInvocationsPerProfile.Value);
             }
 
             if(requestObject.IsSetUnit())
@@ -63,13 +63,13 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             if(requestObject.IsSetUnlimited())
             {
                 context.Writer.WritePropertyName("Unlimited");
-                context.Writer.Write(requestObject.Unlimited);
+                context.Writer.Write(requestObject.Unlimited.Value);
             }
 
             if(requestObject.IsSetValue())
             {
                 context.Writer.WritePropertyName("Value");
-                context.Writer.Write(requestObject.Value);
+                context.Writer.Write(requestObject.Value.Value);
             }
 
         }

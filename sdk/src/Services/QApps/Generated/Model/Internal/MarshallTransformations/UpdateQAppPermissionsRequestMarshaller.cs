@@ -61,53 +61,56 @@ namespace Amazon.QApps.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/apps.updateQAppPermissions";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAppId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("appId");
-                    context.Writer.Write(publicRequest.AppId);
-                }
-
-                if(publicRequest.IsSetGrantPermissions())
-                {
-                    context.Writer.WritePropertyName("grantPermissions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestGrantPermissionsListValue in publicRequest.GrantPermissions)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAppId())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = PermissionInputMarshaller.Instance;
-                        marshaller.Marshall(publicRequestGrantPermissionsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("appId");
+                        context.Writer.Write(publicRequest.AppId);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetRevokePermissions())
-                {
-                    context.Writer.WritePropertyName("revokePermissions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestRevokePermissionsListValue in publicRequest.RevokePermissions)
+                    if(publicRequest.IsSetGrantPermissions())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("grantPermissions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestGrantPermissionsListValue in publicRequest.GrantPermissions)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = PermissionInputMarshaller.Instance;
-                        marshaller.Marshall(publicRequestRevokePermissionsListValue, context);
+                            var marshaller = PermissionInputMarshaller.Instance;
+                            marshaller.Marshall(publicRequestGrantPermissionsListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetRevokePermissions())
+                    {
+                        context.Writer.WritePropertyName("revokePermissions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestRevokePermissionsListValue in publicRequest.RevokePermissions)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = PermissionInputMarshaller.Instance;
+                            marshaller.Marshall(publicRequestRevokePermissionsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
         

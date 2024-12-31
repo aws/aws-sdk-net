@@ -51,7 +51,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSizeGiB())
             {
                 context.Writer.WritePropertyName("SizeGiB");
-                context.Writer.Write(requestObject.SizeGiB);
+                context.Writer.Write(requestObject.SizeGiB.Value);
             }
 
             if(requestObject.IsSetSizingMode())

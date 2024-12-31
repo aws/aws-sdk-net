@@ -62,9 +62,9 @@ namespace Amazon.QApps.Model
         /// The date and time when the card is submitted.
         /// </para>
         /// </summary>
-        public DateTime Timestamp
+        public DateTime? Timestamp
         {
-            get { return this._timestamp.GetValueOrDefault(); }
+            get { return this._timestamp; }
             set { this._timestamp = value; }
         }
 

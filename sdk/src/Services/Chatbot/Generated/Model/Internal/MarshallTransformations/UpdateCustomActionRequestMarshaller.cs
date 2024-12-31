@@ -61,54 +61,57 @@ namespace Amazon.Chatbot.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/update-custom-action";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAliasName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AliasName");
-                    context.Writer.Write(publicRequest.AliasName);
-                }
-
-                if(publicRequest.IsSetAttachments())
-                {
-                    context.Writer.WritePropertyName("Attachments");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAttachmentsListValue in publicRequest.Attachments)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAliasName())
                     {
+                        context.Writer.WritePropertyName("AliasName");
+                        context.Writer.Write(publicRequest.AliasName);
+                    }
+
+                    if(publicRequest.IsSetAttachments())
+                    {
+                        context.Writer.WritePropertyName("Attachments");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAttachmentsListValue in publicRequest.Attachments)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = CustomActionAttachmentMarshaller.Instance;
+                            marshaller.Marshall(publicRequestAttachmentsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetCustomActionArn())
+                    {
+                        context.Writer.WritePropertyName("CustomActionArn");
+                        context.Writer.Write(publicRequest.CustomActionArn);
+                    }
+
+                    if(publicRequest.IsSetDefinition())
+                    {
+                        context.Writer.WritePropertyName("Definition");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = CustomActionAttachmentMarshaller.Instance;
-                        marshaller.Marshall(publicRequestAttachmentsListValue, context);
+                        var marshaller = CustomActionDefinitionMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Definition, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetCustomActionArn())
-                {
-                    context.Writer.WritePropertyName("CustomActionArn");
-                    context.Writer.Write(publicRequest.CustomActionArn);
-                }
-
-                if(publicRequest.IsSetDefinition())
-                {
-                    context.Writer.WritePropertyName("Definition");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CustomActionDefinitionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Definition, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -82,9 +82,9 @@ namespace Amazon.Bedrock.Model
         /// value is <c>False</c>.
         /// </para>
         /// </summary>
-        public bool UsePromptResponse
+        public bool? UsePromptResponse
         {
-            get { return this._usePromptResponse.GetValueOrDefault(); }
+            get { return this._usePromptResponse; }
             set { this._usePromptResponse = value; }
         }
 

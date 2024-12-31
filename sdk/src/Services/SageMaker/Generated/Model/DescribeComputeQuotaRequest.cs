@@ -63,9 +63,9 @@ namespace Amazon.SageMaker.Model
         /// Version of the compute allocation definition.
         /// </para>
         /// </summary>
-        public int ComputeQuotaVersion
+        public int? ComputeQuotaVersion
         {
-            get { return this._computeQuotaVersion.GetValueOrDefault(); }
+            get { return this._computeQuotaVersion; }
             set { this._computeQuotaVersion = value; }
         }
 

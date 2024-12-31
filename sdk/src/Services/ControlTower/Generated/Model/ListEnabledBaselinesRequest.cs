@@ -70,9 +70,9 @@ namespace Amazon.ControlTower.Model
         /// value is false.
         /// </para>
         /// </summary>
-        public bool IncludeChildren
+        public bool? IncludeChildren
         {
-            get { return this._includeChildren.GetValueOrDefault(); }
+            get { return this._includeChildren; }
             set { this._includeChildren = value; }
         }
 

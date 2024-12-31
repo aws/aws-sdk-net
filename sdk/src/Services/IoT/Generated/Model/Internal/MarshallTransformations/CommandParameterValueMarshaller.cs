@@ -51,7 +51,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if(requestObject.IsSetB())
             {
                 context.Writer.WritePropertyName("B");
-                context.Writer.Write(requestObject.B);
+                context.Writer.Write(requestObject.B.Value);
             }
 
             if(requestObject.IsSetBIN())
@@ -63,26 +63,26 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if(requestObject.IsSetD())
             {
                 context.Writer.WritePropertyName("D");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.D))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.D.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.D));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.D.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.D);
+                    context.Writer.Write(requestObject.D.Value);
                 }
             }
 
             if(requestObject.IsSetI())
             {
                 context.Writer.WritePropertyName("I");
-                context.Writer.Write(requestObject.I);
+                context.Writer.Write(requestObject.I.Value);
             }
 
             if(requestObject.IsSetL())
             {
                 context.Writer.WritePropertyName("L");
-                context.Writer.Write(requestObject.L);
+                context.Writer.Write(requestObject.L.Value);
             }
 
             if(requestObject.IsSetS())

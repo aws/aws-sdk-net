@@ -43,9 +43,9 @@ namespace Amazon.BCMPricingCalculator.Model
         ///  Include results after this timestamp. 
         /// </para>
         /// </summary>
-        public DateTime AfterTimestamp
+        public DateTime? AfterTimestamp
         {
-            get { return this._afterTimestamp.GetValueOrDefault(); }
+            get { return this._afterTimestamp; }
             set { this._afterTimestamp = value; }
         }
 
@@ -61,9 +61,9 @@ namespace Amazon.BCMPricingCalculator.Model
         ///  Include results before this timestamp. 
         /// </para>
         /// </summary>
-        public DateTime BeforeTimestamp
+        public DateTime? BeforeTimestamp
         {
-            get { return this._beforeTimestamp.GetValueOrDefault(); }
+            get { return this._beforeTimestamp; }
             set { this._beforeTimestamp = value; }
         }
 

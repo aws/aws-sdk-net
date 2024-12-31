@@ -50,9 +50,9 @@ namespace Amazon.Bedrock.Model
         /// Set to <c>true</c> to accept the EULA.
         /// </para>
         /// </summary>
-        public bool AcceptEula
+        public bool? AcceptEula
         {
-            get { return this._acceptEula.GetValueOrDefault(); }
+            get { return this._acceptEula; }
             set { this._acceptEula = value; }
         }
 

@@ -66,37 +66,23 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             request.ResourcePath = "/accounts/{AwsAccountId}/topics";
             using (MemoryStream memoryStream = new MemoryStream())
             {
-<<<<<<< HEAD
                 using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-||||||| Commit version number update changes
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetTags())
-=======
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFolderArns())
-                {
-                    context.Writer.WritePropertyName("FolderArns");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestFolderArnsListValue in publicRequest.FolderArns)
-                    {
-                            context.Writer.Write(publicRequestFolderArnsListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetTags())
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
                 {
                     JsonWriter writer = new JsonWriter(streamWriter);
                     writer.Validate = false;
                     writer.WriteObjectStart();
                     var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFolderArns())
+                    {
+                        context.Writer.WritePropertyName("FolderArns");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestFolderArnsListValue in publicRequest.FolderArns)
+                        {
+                                context.Writer.Write(publicRequestFolderArnsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
                     if(publicRequest.IsSetTags())
                     {
                         context.Writer.WritePropertyName("Tags");

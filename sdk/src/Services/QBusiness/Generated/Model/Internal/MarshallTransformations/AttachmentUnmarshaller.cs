@@ -86,7 +86,7 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("createdAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -98,7 +98,7 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("fileSize", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.FileSize = unmarshaller.Unmarshall(context);
                     continue;
                 }

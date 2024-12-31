@@ -84,9 +84,9 @@ namespace Amazon.QApps.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime PresignedUrlExpiration
+        public DateTime? PresignedUrlExpiration
         {
-            get { return this._presignedUrlExpiration.GetValueOrDefault(); }
+            get { return this._presignedUrlExpiration; }
             set { this._presignedUrlExpiration = value; }
         }
 

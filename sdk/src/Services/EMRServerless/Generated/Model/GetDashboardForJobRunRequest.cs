@@ -60,9 +60,9 @@ namespace Amazon.EMRServerless.Model
         /// Allows access to system profile logs for Lake Formation-enabled jobs. Default is false.
         /// </para>
         /// </summary>
-        public bool AccessSystemProfileLogs
+        public bool? AccessSystemProfileLogs
         {
-            get { return this._accessSystemProfileLogs.GetValueOrDefault(); }
+            get { return this._accessSystemProfileLogs; }
             set { this._accessSystemProfileLogs = value; }
         }
 

@@ -64,9 +64,9 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1000)]
-        public int Index
+        public int? Index
         {
-            get { return this._index.GetValueOrDefault(); }
+            get { return this._index; }
             set { this._index = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public float RelevanceScore
+        public float? RelevanceScore
         {
-            get { return this._relevanceScore.GetValueOrDefault(); }
+            get { return this._relevanceScore; }
             set { this._relevanceScore = value; }
         }
 

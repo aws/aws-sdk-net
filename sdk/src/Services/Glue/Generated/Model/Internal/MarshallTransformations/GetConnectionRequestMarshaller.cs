@@ -65,32 +65,18 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             request.ResourcePath = "/";
             using (MemoryStream memoryStream = new MemoryStream())
             {
-<<<<<<< HEAD
                 using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-||||||| Commit version number update changes
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCatalogId())
-=======
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetApplyOverrideForComputeEnvironment())
-                {
-                    context.Writer.WritePropertyName("ApplyOverrideForComputeEnvironment");
-                    context.Writer.Write(publicRequest.ApplyOverrideForComputeEnvironment);
-                }
-
-                if(publicRequest.IsSetCatalogId())
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
                 {
                     JsonWriter writer = new JsonWriter(streamWriter);
                     writer.Validate = false;
                     writer.WriteObjectStart();
                     var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetApplyOverrideForComputeEnvironment())
+                    {
+                        context.Writer.WritePropertyName("ApplyOverrideForComputeEnvironment");
+                        context.Writer.Write(publicRequest.ApplyOverrideForComputeEnvironment);
+                    }
+
                     if(publicRequest.IsSetCatalogId())
                     {
                         context.Writer.WritePropertyName("CatalogId");

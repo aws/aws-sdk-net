@@ -102,9 +102,9 @@ namespace Amazon.RDS.Model
         /// The default is 300 seconds.
         /// </para>
         /// </summary>
-        public int SecondsUntilAutoPause
+        public int? SecondsUntilAutoPause
         {
-            get { return this._secondsUntilAutoPause.GetValueOrDefault(); }
+            get { return this._secondsUntilAutoPause; }
             set { this._secondsUntilAutoPause = value; }
         }
 

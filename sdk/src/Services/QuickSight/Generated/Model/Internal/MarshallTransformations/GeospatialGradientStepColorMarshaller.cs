@@ -57,13 +57,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDataValue())
             {
                 context.Writer.WritePropertyName("DataValue");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.DataValue))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.DataValue.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.DataValue));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.DataValue.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.DataValue);
+                    context.Writer.Write(requestObject.DataValue.Value);
                 }
             }
 

@@ -68,7 +68,7 @@ namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("cost", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Cost = unmarshaller.Unmarshall(context);
                     continue;
                 }

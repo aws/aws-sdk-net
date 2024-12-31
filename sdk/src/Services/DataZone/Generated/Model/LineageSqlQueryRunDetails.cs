@@ -65,9 +65,9 @@ namespace Amazon.DataZone.Model
         /// The number of queries that failed in the SQL query run details of a data lineage run.
         /// </para>
         /// </summary>
-        public int NumQueriesFailed
+        public int? NumQueriesFailed
         {
-            get { return this._numQueriesFailed.GetValueOrDefault(); }
+            get { return this._numQueriesFailed; }
             set { this._numQueriesFailed = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.DataZone.Model
         /// The query end time in the SQL query run details of a data lineage run.
         /// </para>
         /// </summary>
-        public DateTime QueryEndTime
+        public DateTime? QueryEndTime
         {
-            get { return this._queryEndTime.GetValueOrDefault(); }
+            get { return this._queryEndTime; }
             set { this._queryEndTime = value; }
         }
 
@@ -101,9 +101,9 @@ namespace Amazon.DataZone.Model
         /// The query start time in the SQL query run details of a data lineage run.
         /// </para>
         /// </summary>
-        public DateTime QueryStartTime
+        public DateTime? QueryStartTime
         {
-            get { return this._queryStartTime.GetValueOrDefault(); }
+            get { return this._queryStartTime; }
             set { this._queryStartTime = value; }
         }
 
@@ -119,9 +119,9 @@ namespace Amazon.DataZone.Model
         /// The total queries processed in the SQL query run details of a data lineage run.
         /// </para>
         /// </summary>
-        public int TotalQueriesProcessed
+        public int? TotalQueriesProcessed
         {
-            get { return this._totalQueriesProcessed.GetValueOrDefault(); }
+            get { return this._totalQueriesProcessed; }
             set { this._totalQueriesProcessed = value; }
         }
 

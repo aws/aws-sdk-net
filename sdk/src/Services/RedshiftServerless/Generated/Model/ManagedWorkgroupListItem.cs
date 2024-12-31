@@ -46,9 +46,9 @@ namespace Amazon.RedshiftServerless.Model
         /// The creation date of the managed workgroup.
         /// </para>
         /// </summary>
-        public DateTime CreationDate
+        public DateTime? CreationDate
         {
-            get { return this._creationDate.GetValueOrDefault(); }
+            get { return this._creationDate; }
             set { this._creationDate = value; }
         }
 

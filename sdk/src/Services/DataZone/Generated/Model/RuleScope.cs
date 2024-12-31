@@ -62,9 +62,9 @@ namespace Amazon.DataZone.Model
         /// The data product included in the rule scope.
         /// </para>
         /// </summary>
-        public bool DataProduct
+        public bool? DataProduct
         {
-            get { return this._dataProduct.GetValueOrDefault(); }
+            get { return this._dataProduct; }
             set { this._dataProduct = value; }
         }
 

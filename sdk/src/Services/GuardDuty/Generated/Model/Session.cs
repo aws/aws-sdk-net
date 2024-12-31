@@ -49,9 +49,9 @@ namespace Amazon.GuardDuty.Model
         /// In Amazon Web Services CloudTrail, you can find this value as <c>userIdentity.sessionContext.attributes.creationDate</c>.
         /// </para>
         /// </summary>
-        public DateTime CreatedTime
+        public DateTime? CreatedTime
         {
-            get { return this._createdTime.GetValueOrDefault(); }
+            get { return this._createdTime; }
             set { this._createdTime = value; }
         }
 

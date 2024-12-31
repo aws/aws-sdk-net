@@ -130,9 +130,9 @@ namespace Amazon.SageMaker.Model
         /// The time that the SageMaker Partner AI App was created.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -150,9 +150,9 @@ namespace Amazon.SageMaker.Model
         /// AI App user.
         /// </para>
         /// </summary>
-        public bool EnableIamSessionBasedIdentity
+        public bool? EnableIamSessionBasedIdentity
         {
-            get { return this._enableIamSessionBasedIdentity.GetValueOrDefault(); }
+            get { return this._enableIamSessionBasedIdentity; }
             set { this._enableIamSessionBasedIdentity = value; }
         }
 

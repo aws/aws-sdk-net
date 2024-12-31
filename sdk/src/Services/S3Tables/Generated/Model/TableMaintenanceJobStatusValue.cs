@@ -62,9 +62,9 @@ namespace Amazon.S3Tables.Model
         /// The date and time that the maintenance job was last run.
         /// </para>
         /// </summary>
-        public DateTime LastRunTimestamp
+        public DateTime? LastRunTimestamp
         {
-            get { return this._lastRunTimestamp.GetValueOrDefault(); }
+            get { return this._lastRunTimestamp; }
             set { this._lastRunTimestamp = value; }
         }
 

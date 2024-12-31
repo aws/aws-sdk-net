@@ -44,7 +44,7 @@ namespace Amazon.NetworkFirewall
     /// detailed information about the Network Firewall API actions, data types, and errors.
     /// 
     /// 
-    ///  <ul> <li> 
+    ///  
     /// <para>
     /// The REST API requires you to handle connection details, such as calculating signatures,
     /// handling request retries, and error handling. For general information about using
@@ -53,22 +53,33 @@ namespace Amazon.NetworkFirewall
     /// </para>
     ///  
     /// <para>
-    /// To access Network Firewall using the REST API endpoint: <c>https://network-firewall.&lt;region&gt;.amazonaws.com
+    /// To view the complete list of Amazon Web Services Regions where Network Firewall is
+    /// available, see <a href="https://docs.aws.amazon.com/general/latest/gr/network-firewall.html">Service
+    /// endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>. 
+    /// </para>
+    ///  
+    /// <para>
+    /// To access Network Firewall using the IPv4 REST API endpoint: <c>https://network-firewall.&lt;region&gt;.amazonaws.com
     /// </c> 
     /// </para>
-    ///  </li> <li> 
+    ///  
+    /// <para>
+    /// To access Network Firewall using the Dualstack (IPv4 and IPv6) REST API endpoint:
+    /// <c>https://network-firewall.&lt;region&gt;.aws.api </c> 
+    /// </para>
+    ///  
     /// <para>
     /// Alternatively, you can use one of the Amazon Web Services SDKs to access an API that's
     /// tailored to the programming language or platform that you're using. For more information,
     /// see <a href="http://aws.amazon.com/tools/#SDKs">Amazon Web Services SDKs</a>.
     /// </para>
-    ///  </li> <li> 
+    ///  
     /// <para>
     /// For descriptions of Network Firewall features, including and step-by-step instructions
     /// on how to use them through the Network Firewall console, see the <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/">Network
     /// Firewall Developer Guide</a>.
     /// </para>
-    ///  </li> </ul> 
+    ///  
     /// <para>
     /// Network Firewall is a stateful, managed, network firewall and intrusion detection
     /// and prevention service for Amazon Virtual Private Cloud (Amazon VPC). With Network

@@ -160,63 +160,13 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.KMSKeyArn);
                     }
 
-<<<<<<< HEAD
                     if(publicRequest.IsSetMaximumBatchingWindowInSeconds())
                     {
                         context.Writer.WritePropertyName("MaximumBatchingWindowInSeconds");
                         context.Writer.Write(publicRequest.MaximumBatchingWindowInSeconds.Value);
                     }
-||||||| Commit version number update changes
-                if(publicRequest.IsSetParallelizationFactor())
-                {
-                    context.Writer.WritePropertyName("ParallelizationFactor");
-                    context.Writer.Write(publicRequest.ParallelizationFactor);
-                }
-=======
-                if(publicRequest.IsSetMetricsConfig())
-                {
-                    context.Writer.WritePropertyName("MetricsConfig");
-                    context.Writer.WriteObjectStart();
 
-                    var marshaller = EventSourceMappingMetricsConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.MetricsConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetParallelizationFactor())
-                {
-                    context.Writer.WritePropertyName("ParallelizationFactor");
-                    context.Writer.Write(publicRequest.ParallelizationFactor);
-                }
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
-
-<<<<<<< HEAD
                     if(publicRequest.IsSetMaximumRecordAgeInSeconds())
-||||||| Commit version number update changes
-                if(publicRequest.IsSetQueues())
-                {
-                    context.Writer.WritePropertyName("Queues");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestQueuesListValue in publicRequest.Queues)
-=======
-                if(publicRequest.IsSetProvisionedPollerConfig())
-                {
-                    context.Writer.WritePropertyName("ProvisionedPollerConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ProvisionedPollerConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ProvisionedPollerConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetQueues())
-                {
-                    context.Writer.WritePropertyName("Queues");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestQueuesListValue in publicRequest.Queues)
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
                     {
                         context.Writer.WritePropertyName("MaximumRecordAgeInSeconds");
                         context.Writer.Write(publicRequest.MaximumRecordAgeInSeconds.Value);
@@ -228,10 +178,32 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.MaximumRetryAttempts.Value);
                     }
 
+                    if(publicRequest.IsSetMetricsConfig())
+                    {
+                        context.Writer.WritePropertyName("MetricsConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = EventSourceMappingMetricsConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.MetricsConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
                     if(publicRequest.IsSetParallelizationFactor())
                     {
                         context.Writer.WritePropertyName("ParallelizationFactor");
                         context.Writer.Write(publicRequest.ParallelizationFactor.Value);
+                    }
+
+                    if(publicRequest.IsSetProvisionedPollerConfig())
+                    {
+                        context.Writer.WritePropertyName("ProvisionedPollerConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ProvisionedPollerConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ProvisionedPollerConfig, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
 
                     if(publicRequest.IsSetQueues())

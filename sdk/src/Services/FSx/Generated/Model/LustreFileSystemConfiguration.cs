@@ -223,9 +223,9 @@ namespace Amazon.FSx.Model
         /// is enabled for the Amazon FSx for Lustre file system.
         /// </para>
         /// </summary>
-        public bool EfaEnabled
+        public bool? EfaEnabled
         {
-            get { return this._efaEnabled.GetValueOrDefault(); }
+            get { return this._efaEnabled; }
             set { this._efaEnabled = value; }
         }
 

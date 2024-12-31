@@ -162,9 +162,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// and <c>Assets</c> in the request.
         /// </para>
         /// </summary>
-        public bool UseCognitoProvidedValues
+        public bool? UseCognitoProvidedValues
         {
-            get { return this._useCognitoProvidedValues.GetValueOrDefault(); }
+            get { return this._useCognitoProvidedValues; }
             set { this._useCognitoProvidedValues = value; }
         }
 

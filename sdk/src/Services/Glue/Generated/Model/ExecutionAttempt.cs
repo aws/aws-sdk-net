@@ -83,9 +83,9 @@ namespace Amazon.Glue.Model
         /// A timestamp when the last column statistics task run occurred.
         /// </para>
         /// </summary>
-        public DateTime ExecutionTimestamp
+        public DateTime? ExecutionTimestamp
         {
-            get { return this._executionTimestamp.GetValueOrDefault(); }
+            get { return this._executionTimestamp; }
             set { this._executionTimestamp = value; }
         }
 

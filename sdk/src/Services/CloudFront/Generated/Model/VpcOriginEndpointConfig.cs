@@ -67,9 +67,9 @@ namespace Amazon.CloudFront.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int HTTPPort
+        public int? HTTPPort
         {
-            get { return this._httpPort.GetValueOrDefault(); }
+            get { return this._httpPort; }
             set { this._httpPort = value; }
         }
 
@@ -86,9 +86,9 @@ namespace Amazon.CloudFront.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int HTTPSPort
+        public int? HTTPSPort
         {
-            get { return this._httpsPort.GetValueOrDefault(); }
+            get { return this._httpsPort; }
             set { this._httpsPort = value; }
         }
 

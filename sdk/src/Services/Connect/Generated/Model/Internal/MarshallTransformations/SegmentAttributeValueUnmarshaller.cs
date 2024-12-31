@@ -68,7 +68,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ValueInteger", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ValueInteger = unmarshaller.Unmarshall(context);
                     continue;
                 }

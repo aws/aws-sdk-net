@@ -72,7 +72,7 @@ namespace Amazon.QApps.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("sessionOwner", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.SessionOwner = unmarshaller.Unmarshall(context);
                     continue;
                 }

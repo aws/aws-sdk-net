@@ -52,9 +52,9 @@ namespace Amazon.IoTJobsDataPlane.Model
         ///  <c>"BOOL": true</c> 
         /// </para>
         /// </summary>
-        public bool B
+        public bool? B
         {
-            get { return this._b.GetValueOrDefault(); }
+            get { return this._b; }
             set { this._b = value; }
         }
 
@@ -89,9 +89,9 @@ namespace Amazon.IoTJobsDataPlane.Model
         /// An attribute of type Double (Sixty-Four Bits).
         /// </para>
         /// </summary>
-        public double D
+        public double? D
         {
-            get { return this._d.GetValueOrDefault(); }
+            get { return this._d; }
             set { this._d = value; }
         }
 
@@ -107,9 +107,9 @@ namespace Amazon.IoTJobsDataPlane.Model
         /// An attribute of type Integer (Thirty-Two Bits).
         /// </para>
         /// </summary>
-        public int I
+        public int? I
         {
-            get { return this._i.GetValueOrDefault(); }
+            get { return this._i; }
             set { this._i = value; }
         }
 
@@ -125,9 +125,9 @@ namespace Amazon.IoTJobsDataPlane.Model
         /// An attribute of type Long.
         /// </para>
         /// </summary>
-        public long L
+        public long? L
         {
-            get { return this._l.GetValueOrDefault(); }
+            get { return this._l; }
             set { this._l = value; }
         }
 

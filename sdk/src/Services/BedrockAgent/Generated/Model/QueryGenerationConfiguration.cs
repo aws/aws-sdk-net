@@ -46,9 +46,9 @@ namespace Amazon.BedrockAgent.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
-        public int ExecutionTimeoutSeconds
+        public int? ExecutionTimeoutSeconds
         {
-            get { return this._executionTimeoutSeconds.GetValueOrDefault(); }
+            get { return this._executionTimeoutSeconds; }
             set { this._executionTimeoutSeconds = value; }
         }
 

@@ -45,9 +45,9 @@ namespace Amazon.Connect.Model
         /// The value of a segment attribute.
         /// </para>
         /// </summary>
-        public int ValueInteger
+        public int? ValueInteger
         {
-            get { return this._valueInteger.GetValueOrDefault(); }
+            get { return this._valueInteger; }
             set { this._valueInteger = value; }
         }
 

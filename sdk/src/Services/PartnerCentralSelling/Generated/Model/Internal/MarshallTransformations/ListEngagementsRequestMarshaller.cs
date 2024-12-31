@@ -63,77 +63,80 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCatalog())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Catalog");
-                    context.Writer.Write(publicRequest.Catalog);
-                }
-
-                if(publicRequest.IsSetCreatedBy())
-                {
-                    context.Writer.WritePropertyName("CreatedBy");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestCreatedByListValue in publicRequest.CreatedBy)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCatalog())
                     {
-                            context.Writer.Write(publicRequestCreatedByListValue);
+                        context.Writer.WritePropertyName("Catalog");
+                        context.Writer.Write(publicRequest.Catalog);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetEngagementIdentifier())
-                {
-                    context.Writer.WritePropertyName("EngagementIdentifier");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestEngagementIdentifierListValue in publicRequest.EngagementIdentifier)
+                    if(publicRequest.IsSetCreatedBy())
                     {
-                            context.Writer.Write(publicRequestEngagementIdentifierListValue);
+                        context.Writer.WritePropertyName("CreatedBy");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestCreatedByListValue in publicRequest.CreatedBy)
+                        {
+                                context.Writer.Write(publicRequestCreatedByListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetExcludeCreatedBy())
-                {
-                    context.Writer.WritePropertyName("ExcludeCreatedBy");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestExcludeCreatedByListValue in publicRequest.ExcludeCreatedBy)
+                    if(publicRequest.IsSetEngagementIdentifier())
                     {
-                            context.Writer.Write(publicRequestExcludeCreatedByListValue);
+                        context.Writer.WritePropertyName("EngagementIdentifier");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestEngagementIdentifierListValue in publicRequest.EngagementIdentifier)
+                        {
+                                context.Writer.Write(publicRequestEngagementIdentifierListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetExcludeCreatedBy())
+                    {
+                        context.Writer.WritePropertyName("ExcludeCreatedBy");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestExcludeCreatedByListValue in publicRequest.ExcludeCreatedBy)
+                        {
+                                context.Writer.Write(publicRequestExcludeCreatedByListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("MaxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetSort())
+                    {
+                        context.Writer.WritePropertyName("Sort");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = EngagementSortMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Sort, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetSort())
-                {
-                    context.Writer.WritePropertyName("Sort");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = EngagementSortMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Sort, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

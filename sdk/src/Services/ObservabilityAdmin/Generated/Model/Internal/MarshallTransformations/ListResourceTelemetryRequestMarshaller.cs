@@ -61,72 +61,75 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/ListResourceTelemetry";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetMaxResults())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetResourceIdentifierPrefix())
-                {
-                    context.Writer.WritePropertyName("ResourceIdentifierPrefix");
-                    context.Writer.Write(publicRequest.ResourceIdentifierPrefix);
-                }
-
-                if(publicRequest.IsSetResourceTags())
-                {
-                    context.Writer.WritePropertyName("ResourceTags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestResourceTagsKvp in publicRequest.ResourceTags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetMaxResults())
                     {
-                        context.Writer.WritePropertyName(publicRequestResourceTagsKvp.Key);
-                        var publicRequestResourceTagsValue = publicRequestResourceTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestResourceTagsValue);
+                        context.Writer.WritePropertyName("MaxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetResourceTypes())
-                {
-                    context.Writer.WritePropertyName("ResourceTypes");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestResourceTypesListValue in publicRequest.ResourceTypes)
+                    if(publicRequest.IsSetNextToken())
                     {
-                            context.Writer.Write(publicRequestResourceTypesListValue);
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetTelemetryConfigurationState())
-                {
-                    context.Writer.WritePropertyName("TelemetryConfigurationState");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTelemetryConfigurationStateKvp in publicRequest.TelemetryConfigurationState)
+                    if(publicRequest.IsSetResourceIdentifierPrefix())
                     {
-                        context.Writer.WritePropertyName(publicRequestTelemetryConfigurationStateKvp.Key);
-                        var publicRequestTelemetryConfigurationStateValue = publicRequestTelemetryConfigurationStateKvp.Value;
-
-                            context.Writer.Write(publicRequestTelemetryConfigurationStateValue);
+                        context.Writer.WritePropertyName("ResourceIdentifierPrefix");
+                        context.Writer.Write(publicRequest.ResourceIdentifierPrefix);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetResourceTags())
+                    {
+                        context.Writer.WritePropertyName("ResourceTags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestResourceTagsKvp in publicRequest.ResourceTags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestResourceTagsKvp.Key);
+                            var publicRequestResourceTagsValue = publicRequestResourceTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestResourceTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetResourceTypes())
+                    {
+                        context.Writer.WritePropertyName("ResourceTypes");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestResourceTypesListValue in publicRequest.ResourceTypes)
+                        {
+                                context.Writer.Write(publicRequestResourceTypesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTelemetryConfigurationState())
+                    {
+                        context.Writer.WritePropertyName("TelemetryConfigurationState");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTelemetryConfigurationStateKvp in publicRequest.TelemetryConfigurationState)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTelemetryConfigurationStateKvp.Key);
+                            var publicRequestTelemetryConfigurationStateValue = publicRequestTelemetryConfigurationStateKvp.Value;
+
+                                context.Writer.Write(publicRequestTelemetryConfigurationStateValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

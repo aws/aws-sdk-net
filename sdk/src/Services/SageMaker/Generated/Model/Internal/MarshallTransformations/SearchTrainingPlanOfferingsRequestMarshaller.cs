@@ -63,56 +63,59 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDurationHours())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DurationHours");
-                    context.Writer.Write(publicRequest.DurationHours);
-                }
-
-                if(publicRequest.IsSetEndTimeBefore())
-                {
-                    context.Writer.WritePropertyName("EndTimeBefore");
-                    context.Writer.Write(publicRequest.EndTimeBefore);
-                }
-
-                if(publicRequest.IsSetInstanceCount())
-                {
-                    context.Writer.WritePropertyName("InstanceCount");
-                    context.Writer.Write(publicRequest.InstanceCount);
-                }
-
-                if(publicRequest.IsSetInstanceType())
-                {
-                    context.Writer.WritePropertyName("InstanceType");
-                    context.Writer.Write(publicRequest.InstanceType);
-                }
-
-                if(publicRequest.IsSetStartTimeAfter())
-                {
-                    context.Writer.WritePropertyName("StartTimeAfter");
-                    context.Writer.Write(publicRequest.StartTimeAfter);
-                }
-
-                if(publicRequest.IsSetTargetResources())
-                {
-                    context.Writer.WritePropertyName("TargetResources");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTargetResourcesListValue in publicRequest.TargetResources)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDurationHours())
                     {
-                            context.Writer.Write(publicRequestTargetResourcesListValue);
+                        context.Writer.WritePropertyName("DurationHours");
+                        context.Writer.Write(publicRequest.DurationHours.Value);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetEndTimeBefore())
+                    {
+                        context.Writer.WritePropertyName("EndTimeBefore");
+                        context.Writer.Write(publicRequest.EndTimeBefore.Value);
+                    }
+
+                    if(publicRequest.IsSetInstanceCount())
+                    {
+                        context.Writer.WritePropertyName("InstanceCount");
+                        context.Writer.Write(publicRequest.InstanceCount.Value);
+                    }
+
+                    if(publicRequest.IsSetInstanceType())
+                    {
+                        context.Writer.WritePropertyName("InstanceType");
+                        context.Writer.Write(publicRequest.InstanceType);
+                    }
+
+                    if(publicRequest.IsSetStartTimeAfter())
+                    {
+                        context.Writer.WritePropertyName("StartTimeAfter");
+                        context.Writer.Write(publicRequest.StartTimeAfter.Value);
+                    }
+
+                    if(publicRequest.IsSetTargetResources())
+                    {
+                        context.Writer.WritePropertyName("TargetResources");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTargetResourcesListValue in publicRequest.TargetResources)
+                        {
+                                context.Writer.Write(publicRequestTargetResourcesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

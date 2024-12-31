@@ -89,9 +89,9 @@ namespace Amazon.DataZone.Model
         /// The credential expiration of the Spark EMR.
         /// </para>
         /// </summary>
-        public DateTime CredentialsExpiration
+        public DateTime? CredentialsExpiration
         {
-            get { return this._credentialsExpiration.GetValueOrDefault(); }
+            get { return this._credentialsExpiration; }
             set { this._credentialsExpiration = value; }
         }
 

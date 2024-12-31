@@ -47,9 +47,9 @@ namespace Amazon.Lambda.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2000)]
-        public int MaximumPollers
+        public int? MaximumPollers
         {
-            get { return this._maximumPollers.GetValueOrDefault(); }
+            get { return this._maximumPollers; }
             set { this._maximumPollers = value; }
         }
 
@@ -66,9 +66,9 @@ namespace Amazon.Lambda.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
-        public int MinimumPollers
+        public int? MinimumPollers
         {
-            get { return this._minimumPollers.GetValueOrDefault(); }
+            get { return this._minimumPollers; }
             set { this._minimumPollers = value; }
         }
 

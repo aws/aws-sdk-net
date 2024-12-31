@@ -43,9 +43,9 @@ namespace Amazon.BedrockDataAutomation.Model
         /// Gets and sets the property CreationTime.
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 

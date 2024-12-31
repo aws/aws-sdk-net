@@ -51,7 +51,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCreatedTime())
             {
                 context.Writer.WritePropertyName("CreatedTime");
-                context.Writer.Write(requestObject.CreatedTime);
+                context.Writer.Write(requestObject.CreatedTime.Value);
             }
 
             if(requestObject.IsSetIssuer())

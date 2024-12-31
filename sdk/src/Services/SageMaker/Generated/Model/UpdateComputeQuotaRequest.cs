@@ -147,9 +147,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int TargetVersion
+        public int? TargetVersion
         {
-            get { return this._targetVersion.GetValueOrDefault(); }
+            get { return this._targetVersion; }
             set { this._targetVersion = value; }
         }
 

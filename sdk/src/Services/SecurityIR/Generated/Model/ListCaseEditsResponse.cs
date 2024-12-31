@@ -81,9 +81,9 @@ namespace Amazon.SecurityIR.Model
         /// Response element for ListCaseEdits that identifies the total number of edits.
         /// </para>
         /// </summary>
-        public int Total
+        public int? Total
         {
-            get { return this._total.GetValueOrDefault(); }
+            get { return this._total; }
             set { this._total = value; }
         }
 

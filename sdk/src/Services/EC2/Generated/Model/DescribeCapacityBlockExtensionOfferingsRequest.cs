@@ -48,9 +48,9 @@ namespace Amazon.EC2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int CapacityBlockExtensionDurationHours
+        public int? CapacityBlockExtensionDurationHours
         {
-            get { return this._capacityBlockExtensionDurationHours.GetValueOrDefault(); }
+            get { return this._capacityBlockExtensionDurationHours; }
             set { this._capacityBlockExtensionDurationHours = value; }
         }
 
@@ -88,9 +88,9 @@ namespace Amazon.EC2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

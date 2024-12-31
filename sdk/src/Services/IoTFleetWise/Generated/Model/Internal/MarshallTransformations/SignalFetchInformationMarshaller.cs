@@ -62,7 +62,7 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConditionLanguageVersion())
             {
                 context.Writer.WritePropertyName("conditionLanguageVersion");
-                context.Writer.Write(requestObject.ConditionLanguageVersion);
+                context.Writer.Write(requestObject.ConditionLanguageVersion.Value);
             }
 
             if(requestObject.IsSetFullyQualifiedName())

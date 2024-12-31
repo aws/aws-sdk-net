@@ -248,16 +248,8 @@ namespace Amazon.SageMaker.Model
         /// HyperPod cluster.
         /// </para>
         /// </summary>
-<<<<<<< HEAD
-        [AWSProperty(Min=0)]
-        public int? TargetCount
-||||||| Commit version number update changes
-        [AWSProperty(Min=0)]
-        public int TargetCount
-=======
         [AWSProperty(Min=0, Max=6758)]
-        public int TargetCount
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
+        public int? TargetCount
         {
             get { return this._targetCount; }
             set { this._targetCount = value; }

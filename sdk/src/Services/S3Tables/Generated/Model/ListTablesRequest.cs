@@ -69,9 +69,9 @@ namespace Amazon.S3Tables.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
-        public int MaxTables
+        public int? MaxTables
         {
-            get { return this._maxTables.GetValueOrDefault(); }
+            get { return this._maxTables; }
             set { this._maxTables = value; }
         }
 

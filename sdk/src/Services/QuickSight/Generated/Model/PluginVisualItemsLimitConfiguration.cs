@@ -42,9 +42,9 @@ namespace Amazon.QuickSight.Model
         /// Determines how many values are be fetched at once.
         /// </para>
         /// </summary>
-        public long ItemsLimit
+        public long? ItemsLimit
         {
-            get { return this._itemsLimit.GetValueOrDefault(); }
+            get { return this._itemsLimit; }
             set { this._itemsLimit = value; }
         }
 

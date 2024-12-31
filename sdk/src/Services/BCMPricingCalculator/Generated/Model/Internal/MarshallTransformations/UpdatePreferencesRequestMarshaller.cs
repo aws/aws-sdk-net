@@ -63,37 +63,40 @@ namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetManagementAccountRateTypeSelections())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("managementAccountRateTypeSelections");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestManagementAccountRateTypeSelectionsListValue in publicRequest.ManagementAccountRateTypeSelections)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetManagementAccountRateTypeSelections())
                     {
-                            context.Writer.Write(publicRequestManagementAccountRateTypeSelectionsListValue);
+                        context.Writer.WritePropertyName("managementAccountRateTypeSelections");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestManagementAccountRateTypeSelectionsListValue in publicRequest.ManagementAccountRateTypeSelections)
+                        {
+                                context.Writer.Write(publicRequestManagementAccountRateTypeSelectionsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetMemberAccountRateTypeSelections())
+                    {
+                        context.Writer.WritePropertyName("memberAccountRateTypeSelections");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestMemberAccountRateTypeSelectionsListValue in publicRequest.MemberAccountRateTypeSelections)
+                        {
+                                context.Writer.Write(publicRequestMemberAccountRateTypeSelectionsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetMemberAccountRateTypeSelections())
-                {
-                    context.Writer.WritePropertyName("memberAccountRateTypeSelections");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestMemberAccountRateTypeSelectionsListValue in publicRequest.MemberAccountRateTypeSelections)
-                    {
-                            context.Writer.Write(publicRequestMemberAccountRateTypeSelectionsListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

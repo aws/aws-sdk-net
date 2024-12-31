@@ -84,9 +84,9 @@ namespace Amazon.QConnect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int TurnNumber
+        public int? TurnNumber
         {
-            get { return this._turnNumber.GetValueOrDefault(); }
+            get { return this._turnNumber; }
             set { this._turnNumber = value; }
         }
 

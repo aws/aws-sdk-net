@@ -44,9 +44,9 @@ namespace Amazon.BCMPricingCalculator.Model
         ///  The numeric value of the usage quantity. 
         /// </para>
         /// </summary>
-        public double Amount
+        public double? Amount
         {
-            get { return this._amount.GetValueOrDefault(); }
+            get { return this._amount; }
             set { this._amount = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.BCMPricingCalculator.Model
         ///  The start hour of the usage period. 
         /// </para>
         /// </summary>
-        public DateTime StartHour
+        public DateTime? StartHour
         {
-            get { return this._startHour.GetValueOrDefault(); }
+            get { return this._startHour; }
             set { this._startHour = value; }
         }
 

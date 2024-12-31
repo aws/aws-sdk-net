@@ -82,9 +82,9 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int NumberOfRerankedResults
+        public int? NumberOfRerankedResults
         {
-            get { return this._numberOfRerankedResults.GetValueOrDefault(); }
+            get { return this._numberOfRerankedResults; }
             set { this._numberOfRerankedResults = value; }
         }
 

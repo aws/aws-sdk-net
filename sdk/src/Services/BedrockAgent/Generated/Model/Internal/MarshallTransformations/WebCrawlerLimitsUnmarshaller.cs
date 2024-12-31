@@ -68,7 +68,7 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("maxPages", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxPages = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -64,37 +64,40 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                 throw new AmazonBedrockException("Request object does not have required field EndpointArn set");
             request.AddPathResource("{endpointArn}", StringUtils.FromString(publicRequest.EndpointArn));
             request.ResourcePath = "/marketplace-model/endpoints/{endpointArn}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientRequestToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("clientRequestToken");
-                    context.Writer.Write(publicRequest.ClientRequestToken);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientRequestToken())
+                    {
+                        context.Writer.WritePropertyName("clientRequestToken");
+                        context.Writer.Write(publicRequest.ClientRequestToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientRequestToken()))
+                    {
+                        context.Writer.WritePropertyName("clientRequestToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetEndpointConfig())
+                    {
+                        context.Writer.WritePropertyName("endpointConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = EndpointConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.EndpointConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                else if(!(publicRequest.IsSetClientRequestToken()))
-                {
-                    context.Writer.WritePropertyName("clientRequestToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetEndpointConfig())
-                {
-                    context.Writer.WritePropertyName("endpointConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = EndpointConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.EndpointConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -44,9 +44,9 @@ namespace Amazon.DataZone.Model
         /// profile policy grant details
         /// </para>
         /// </summary>
-        public bool IncludeChildDomainUnits
+        public bool? IncludeChildDomainUnits
         {
-            get { return this._includeChildDomainUnits.GetValueOrDefault(); }
+            get { return this._includeChildDomainUnits; }
             set { this._includeChildDomainUnits = value; }
         }
 

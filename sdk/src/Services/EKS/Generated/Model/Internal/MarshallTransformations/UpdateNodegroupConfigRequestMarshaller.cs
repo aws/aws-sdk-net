@@ -97,6 +97,17 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
 
+                    if(publicRequest.IsSetNodeRepairConfig())
+                    {
+                        context.Writer.WritePropertyName("nodeRepairConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = NodeRepairConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.NodeRepairConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
                     if(publicRequest.IsSetScalingConfig())
                     {
                         context.Writer.WritePropertyName("scalingConfig");
@@ -133,126 +144,7 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                     writer.WriteObjectEnd();
                 }
 
-<<<<<<< HEAD
                 request.Content = memoryStream.ToArray();
-||||||| Commit version number update changes
-                else if(!(publicRequest.IsSetClientRequestToken()))
-                {
-                    context.Writer.WritePropertyName("clientRequestToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetLabels())
-                {
-                    context.Writer.WritePropertyName("labels");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = UpdateLabelsPayloadMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Labels, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetScalingConfig())
-                {
-                    context.Writer.WritePropertyName("scalingConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = NodegroupScalingConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ScalingConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTaints())
-                {
-                    context.Writer.WritePropertyName("taints");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = UpdateTaintsPayloadMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Taints, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetUpdateConfig())
-                {
-                    context.Writer.WritePropertyName("updateConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = NodegroupUpdateConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.UpdateConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
-=======
-                else if(!(publicRequest.IsSetClientRequestToken()))
-                {
-                    context.Writer.WritePropertyName("clientRequestToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetLabels())
-                {
-                    context.Writer.WritePropertyName("labels");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = UpdateLabelsPayloadMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Labels, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetNodeRepairConfig())
-                {
-                    context.Writer.WritePropertyName("nodeRepairConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = NodeRepairConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.NodeRepairConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetScalingConfig())
-                {
-                    context.Writer.WritePropertyName("scalingConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = NodegroupScalingConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ScalingConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTaints())
-                {
-                    context.Writer.WritePropertyName("taints");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = UpdateTaintsPayloadMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Taints, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetUpdateConfig())
-                {
-                    context.Writer.WritePropertyName("updateConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = NodegroupUpdateConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.UpdateConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
             }
 
 

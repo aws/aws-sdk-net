@@ -51,13 +51,13 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaximumPollers())
             {
                 context.Writer.WritePropertyName("MaximumPollers");
-                context.Writer.Write(requestObject.MaximumPollers);
+                context.Writer.Write(requestObject.MaximumPollers.Value);
             }
 
             if(requestObject.IsSetMinimumPollers())
             {
                 context.Writer.WritePropertyName("MinimumPollers");
-                context.Writer.Write(requestObject.MinimumPollers);
+                context.Writer.Write(requestObject.MinimumPollers.Value);
             }
 
         }

@@ -63,32 +63,18 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             request.ResourcePath = "/agents/";
             using (MemoryStream memoryStream = new MemoryStream())
             {
-<<<<<<< HEAD
                 using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-||||||| Commit version number update changes
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAgentName())
-=======
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAgentCollaboration())
-                {
-                    context.Writer.WritePropertyName("agentCollaboration");
-                    context.Writer.Write(publicRequest.AgentCollaboration);
-                }
-
-                if(publicRequest.IsSetAgentName())
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
                 {
                     JsonWriter writer = new JsonWriter(streamWriter);
                     writer.Validate = false;
                     writer.WriteObjectStart();
                     var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAgentCollaboration())
+                    {
+                        context.Writer.WritePropertyName("agentCollaboration");
+                        context.Writer.Write(publicRequest.AgentCollaboration);
+                    }
+
                     if(publicRequest.IsSetAgentName())
                     {
                         context.Writer.WritePropertyName("agentName");
@@ -118,36 +104,22 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.CustomerEncryptionKeyArn);
                     }
 
-<<<<<<< HEAD
+                    if(publicRequest.IsSetCustomOrchestration())
+                    {
+                        context.Writer.WritePropertyName("customOrchestration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CustomOrchestrationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.CustomOrchestration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
                     if(publicRequest.IsSetDescription())
                     {
                         context.Writer.WritePropertyName("description");
                         context.Writer.Write(publicRequest.Description);
                     }
-||||||| Commit version number update changes
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-=======
-                if(publicRequest.IsSetCustomOrchestration())
-                {
-                    context.Writer.WritePropertyName("customOrchestration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CustomOrchestrationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.CustomOrchestration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
 
                     if(publicRequest.IsSetFoundationModel())
                     {
@@ -189,28 +161,16 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
 
-<<<<<<< HEAD
+                    if(publicRequest.IsSetOrchestrationType())
+                    {
+                        context.Writer.WritePropertyName("orchestrationType");
+                        context.Writer.Write(publicRequest.OrchestrationType);
+                    }
+
                     if(publicRequest.IsSetPromptOverrideConfiguration())
                     {
                         context.Writer.WritePropertyName("promptOverrideConfiguration");
                         context.Writer.WriteObjectStart();
-||||||| Commit version number update changes
-                if(publicRequest.IsSetPromptOverrideConfiguration())
-                {
-                    context.Writer.WritePropertyName("promptOverrideConfiguration");
-                    context.Writer.WriteObjectStart();
-=======
-                if(publicRequest.IsSetOrchestrationType())
-                {
-                    context.Writer.WritePropertyName("orchestrationType");
-                    context.Writer.Write(publicRequest.OrchestrationType);
-                }
-
-                if(publicRequest.IsSetPromptOverrideConfiguration())
-                {
-                    context.Writer.WritePropertyName("promptOverrideConfiguration");
-                    context.Writer.WriteObjectStart();
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
 
                         var marshaller = PromptOverrideConfigurationMarshaller.Instance;
                         marshaller.Marshall(publicRequest.PromptOverrideConfiguration, context);

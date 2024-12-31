@@ -42,9 +42,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// The number of capacity units.
         /// </para>
         /// </summary>
-        public int CapacityUnits
+        public int? CapacityUnits
         {
-            get { return this._capacityUnits.GetValueOrDefault(); }
+            get { return this._capacityUnits; }
             set { this._capacityUnits = value; }
         }
 

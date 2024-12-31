@@ -142,9 +142,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// plan</a> other than <c>Lite</c>.
         /// </para>
         /// </summary>
-        public int ManagedLoginVersion
+        public int? ManagedLoginVersion
         {
-            get { return this._managedLoginVersion.GetValueOrDefault(); }
+            get { return this._managedLoginVersion; }
             set { this._managedLoginVersion = value; }
         }
 

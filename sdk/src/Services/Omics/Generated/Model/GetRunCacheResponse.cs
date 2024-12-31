@@ -126,9 +126,9 @@ namespace Amazon.Omics.Model
         /// Creation time of the run cache (an ISO 8601 formatted string).
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 

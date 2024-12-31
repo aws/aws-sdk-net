@@ -106,9 +106,9 @@ namespace Amazon.Invoicing.Model
         /// 
         /// </para>
         /// </summary>
-        public bool TaxInheritanceDisabled
+        public bool? TaxInheritanceDisabled
         {
-            get { return this._taxInheritanceDisabled.GetValueOrDefault(); }
+            get { return this._taxInheritanceDisabled; }
             set { this._taxInheritanceDisabled = value; }
         }
 

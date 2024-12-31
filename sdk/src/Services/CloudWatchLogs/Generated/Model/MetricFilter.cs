@@ -54,9 +54,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// of the log events instead of the original ingested log events.
         /// </para>
         /// </summary>
-        public bool ApplyOnTransformedLogs
+        public bool? ApplyOnTransformedLogs
         {
-            get { return this._applyOnTransformedLogs.GetValueOrDefault(); }
+            get { return this._applyOnTransformedLogs; }
             set { this._applyOnTransformedLogs = value; }
         }
 

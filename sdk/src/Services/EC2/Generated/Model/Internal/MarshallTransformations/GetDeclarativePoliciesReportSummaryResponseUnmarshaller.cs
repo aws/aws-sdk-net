@@ -69,19 +69,19 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("endTime", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         response.EndTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("numberOfAccounts", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         response.NumberOfAccounts = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("numberOfFailedAccounts", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         response.NumberOfFailedAccounts = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -105,7 +105,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("startTime", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         response.StartTime = unmarshaller.Unmarshall(context);
                         continue;
                     }

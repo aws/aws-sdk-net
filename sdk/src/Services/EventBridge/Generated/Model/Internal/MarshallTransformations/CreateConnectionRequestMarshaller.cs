@@ -94,6 +94,17 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.Description);
                     }
 
+                    if(publicRequest.IsSetInvocationConnectivityParameters())
+                    {
+                        context.Writer.WritePropertyName("InvocationConnectivityParameters");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ConnectivityResourceParametersMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.InvocationConnectivityParameters, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
                     if(publicRequest.IsSetName())
                     {
                         context.Writer.WritePropertyName("Name");
@@ -103,74 +114,7 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
                     writer.WriteObjectEnd();
                 }
 
-<<<<<<< HEAD
                 request.Content = memoryStream.ToArray();
-||||||| Commit version number update changes
-                if(publicRequest.IsSetAuthParameters())
-                {
-                    context.Writer.WritePropertyName("AuthParameters");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CreateConnectionAuthRequestParametersMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AuthParameters, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
-=======
-                if(publicRequest.IsSetAuthParameters())
-                {
-                    context.Writer.WritePropertyName("AuthParameters");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CreateConnectionAuthRequestParametersMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AuthParameters, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetInvocationConnectivityParameters())
-                {
-                    context.Writer.WritePropertyName("InvocationConnectivityParameters");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ConnectivityResourceParametersMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.InvocationConnectivityParameters, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
             }
 
 

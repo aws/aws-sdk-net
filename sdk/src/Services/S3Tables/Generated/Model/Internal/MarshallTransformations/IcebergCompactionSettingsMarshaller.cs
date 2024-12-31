@@ -51,7 +51,7 @@ namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTargetFileSizeMB())
             {
                 context.Writer.WritePropertyName("targetFileSizeMB");
-                context.Writer.Write(requestObject.TargetFileSizeMB);
+                context.Writer.Write(requestObject.TargetFileSizeMB.Value);
             }
 
         }

@@ -68,7 +68,7 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Provisioned", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Provisioned = unmarshaller.Unmarshall(context);
                     continue;
                 }

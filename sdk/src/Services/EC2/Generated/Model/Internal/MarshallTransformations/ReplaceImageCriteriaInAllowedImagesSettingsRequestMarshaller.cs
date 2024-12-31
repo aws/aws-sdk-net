@@ -61,19 +61,29 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if(publicRequest.IsSetImageCriteria())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.ImageCriteria)
+                    if (publicRequest.ImageCriteria.Count == 0)
+                        request.Parameters.Add("ImageCriterion", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetImageProviders())
-                        {
-                            int publicRequestlistValuelistValueIndex = 1;
-                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.ImageProviders)
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.ImageCriteria)
+                         {
+                            if(publicRequestlistValue.IsSetImageProviders())
                             {
-                                request.Parameters.Add("ImageCriterion" + "." + publicRequestlistValueIndex + "." + "ImageProvider" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
-                                publicRequestlistValuelistValueIndex++;
+                                if (publicRequestlistValue.ImageProviders.Count == 0)
+                                    request.Parameters.Add("ImageCriterion" + "." + publicRequestlistValueIndex + "." + "ImageProvider", "");
+                                else
+                                {
+                                     int publicRequestlistValuelistValueIndex = 1;
+                                     foreach(var publicRequestlistValuelistValue in publicRequestlistValue.ImageProviders)
+                                     {
+                                         request.Parameters.Add("ImageCriterion" + "." + publicRequestlistValueIndex + "." + "ImageProvider" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
+                                         publicRequestlistValuelistValueIndex++;
+                                     }
+                                }
                             }
-                        }
-                        publicRequestlistValueIndex++;
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
             }

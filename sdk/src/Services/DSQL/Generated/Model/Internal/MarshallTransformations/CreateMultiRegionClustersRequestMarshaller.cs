@@ -61,62 +61,65 @@ namespace Amazon.DSQL.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/multi-region-clusters";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetClusterProperties())
-                {
-                    context.Writer.WritePropertyName("clusterProperties");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestClusterPropertiesKvp in publicRequest.ClusterProperties)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientToken())
                     {
-                        context.Writer.WritePropertyName(publicRequestClusterPropertiesKvp.Key);
-                        var publicRequestClusterPropertiesValue = publicRequestClusterPropertiesKvp.Value;
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
 
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetClusterProperties())
+                    {
+                        context.Writer.WritePropertyName("clusterProperties");
                         context.Writer.WriteObjectStart();
+                        foreach (var publicRequestClusterPropertiesKvp in publicRequest.ClusterProperties)
+                        {
+                            context.Writer.WritePropertyName(publicRequestClusterPropertiesKvp.Key);
+                            var publicRequestClusterPropertiesValue = publicRequestClusterPropertiesKvp.Value;
 
-                        var marshaller = LinkedClusterPropertiesMarshaller.Instance;
-                        marshaller.Marshall(publicRequestClusterPropertiesValue, context);
+                            context.Writer.WriteObjectStart();
 
+                            var marshaller = LinkedClusterPropertiesMarshaller.Instance;
+                            marshaller.Marshall(publicRequestClusterPropertiesValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetLinkedRegionList())
-                {
-                    context.Writer.WritePropertyName("linkedRegionList");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestLinkedRegionListListValue in publicRequest.LinkedRegionList)
+                    if(publicRequest.IsSetLinkedRegionList())
                     {
-                            context.Writer.Write(publicRequestLinkedRegionListListValue);
+                        context.Writer.WritePropertyName("linkedRegionList");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestLinkedRegionListListValue in publicRequest.LinkedRegionList)
+                        {
+                                context.Writer.Write(publicRequestLinkedRegionListListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetWitnessRegion())
+                    {
+                        context.Writer.WritePropertyName("witnessRegion");
+                        context.Writer.Write(publicRequest.WitnessRegion);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetWitnessRegion())
-                {
-                    context.Writer.WritePropertyName("witnessRegion");
-                    context.Writer.Write(publicRequest.WitnessRegion);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

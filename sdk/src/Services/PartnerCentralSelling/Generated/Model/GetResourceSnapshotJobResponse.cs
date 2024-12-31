@@ -93,9 +93,9 @@ namespace Amazon.PartnerCentralSelling.Model
         /// "2023-05-01T20:37:46Z" 
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -170,9 +170,9 @@ namespace Amazon.PartnerCentralSelling.Model
         /// (UTC). Example: "2023-05-01T20:37:46Z" 
         /// </para>
         /// </summary>
-        public DateTime LastSuccessfulExecutionDate
+        public DateTime? LastSuccessfulExecutionDate
         {
-            get { return this._lastSuccessfulExecutionDate.GetValueOrDefault(); }
+            get { return this._lastSuccessfulExecutionDate; }
             set { this._lastSuccessfulExecutionDate = value; }
         }
 

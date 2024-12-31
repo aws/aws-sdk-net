@@ -87,7 +87,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDisableUnicodeSourceFilter())
             {
                 context.Writer.WritePropertyName("DisableUnicodeSourceFilter");
-                context.Writer.Write(requestObject.DisableUnicodeSourceFilter);
+                context.Writer.Write(requestObject.DisableUnicodeSourceFilter.Value);
             }
 
             if(requestObject.IsSetExecuteTimeout())

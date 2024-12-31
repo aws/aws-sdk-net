@@ -63,13 +63,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("completionDurationMinutes", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.CompletionDurationMinutes = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("completionTime", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.CompletionTime = unmarshaller.Unmarshall(context);
                         continue;
                     }

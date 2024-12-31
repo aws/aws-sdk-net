@@ -144,9 +144,9 @@ namespace Amazon.EC2.Model
         /// The last time the VPC BPA mode was updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdateTimestamp
+        public DateTime? LastUpdateTimestamp
         {
-            get { return this._lastUpdateTimestamp.GetValueOrDefault(); }
+            get { return this._lastUpdateTimestamp; }
             set { this._lastUpdateTimestamp = value; }
         }
 

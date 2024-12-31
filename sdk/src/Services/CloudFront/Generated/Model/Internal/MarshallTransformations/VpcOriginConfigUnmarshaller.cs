@@ -58,13 +58,13 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("OriginKeepaliveTimeout", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.OriginKeepaliveTimeout = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("OriginReadTimeout", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.OriginReadTimeout = unmarshaller.Unmarshall(context);
                         continue;
                     }

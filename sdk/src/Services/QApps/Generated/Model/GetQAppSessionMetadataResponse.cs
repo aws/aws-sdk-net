@@ -103,9 +103,9 @@ namespace Amazon.QApps.Model
         /// Indicates whether the current user is the owner of the Q App session.
         /// </para>
         /// </summary>
-        public bool SessionOwner
+        public bool? SessionOwner
         {
-            get { return this._sessionOwner.GetValueOrDefault(); }
+            get { return this._sessionOwner; }
             set { this._sessionOwner = value; }
         }
 

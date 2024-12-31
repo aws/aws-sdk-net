@@ -92,47 +92,23 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.ClientRequestToken);
                     }
 
-<<<<<<< HEAD
                     else if(!(publicRequest.IsSetClientRequestToken()))
                     {
                         context.Writer.WritePropertyName("clientRequestToken");
                         context.Writer.Write(Guid.NewGuid().ToString());
                     }
+                    if(publicRequest.IsSetComputeConfig())
+                    {
+                        context.Writer.WritePropertyName("computeConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ComputeConfigRequestMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ComputeConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
                     if(publicRequest.IsSetEncryptionConfig())
-||||||| Commit version number update changes
-                else if(!(publicRequest.IsSetClientRequestToken()))
-                {
-                    context.Writer.WritePropertyName("clientRequestToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetEncryptionConfig())
-                {
-                    context.Writer.WritePropertyName("encryptionConfig");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestEncryptionConfigListValue in publicRequest.EncryptionConfig)
-=======
-                else if(!(publicRequest.IsSetClientRequestToken()))
-                {
-                    context.Writer.WritePropertyName("clientRequestToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetComputeConfig())
-                {
-                    context.Writer.WritePropertyName("computeConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ComputeConfigRequestMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ComputeConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetEncryptionConfig())
-                {
-                    context.Writer.WritePropertyName("encryptionConfig");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestEncryptionConfigListValue in publicRequest.EncryptionConfig)
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
                     {
                         context.Writer.WritePropertyName("encryptionConfig");
                         context.Writer.WriteArrayStart();
@@ -187,33 +163,21 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
 
-<<<<<<< HEAD
+                    if(publicRequest.IsSetRemoteNetworkConfig())
+                    {
+                        context.Writer.WritePropertyName("remoteNetworkConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = RemoteNetworkConfigRequestMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.RemoteNetworkConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
                     if(publicRequest.IsSetResourcesVpcConfig())
                     {
                         context.Writer.WritePropertyName("resourcesVpcConfig");
                         context.Writer.WriteObjectStart();
-||||||| Commit version number update changes
-                if(publicRequest.IsSetResourcesVpcConfig())
-                {
-                    context.Writer.WritePropertyName("resourcesVpcConfig");
-                    context.Writer.WriteObjectStart();
-=======
-                if(publicRequest.IsSetRemoteNetworkConfig())
-                {
-                    context.Writer.WritePropertyName("remoteNetworkConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = RemoteNetworkConfigRequestMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.RemoteNetworkConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetResourcesVpcConfig())
-                {
-                    context.Writer.WritePropertyName("resourcesVpcConfig");
-                    context.Writer.WriteObjectStart();
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
 
                         var marshaller = VpcConfigRequestMarshaller.Instance;
                         marshaller.Marshall(publicRequest.ResourcesVpcConfig, context);
@@ -227,32 +191,18 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.RoleArn);
                     }
 
-<<<<<<< HEAD
+                    if(publicRequest.IsSetStorageConfig())
+                    {
+                        context.Writer.WritePropertyName("storageConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = StorageConfigRequestMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.StorageConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
                     if(publicRequest.IsSetTags())
-||||||| Commit version number update changes
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
-=======
-                if(publicRequest.IsSetStorageConfig())
-                {
-                    context.Writer.WritePropertyName("storageConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = StorageConfigRequestMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.StorageConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
                     {
                         context.Writer.WritePropertyName("tags");
                         context.Writer.WriteObjectStart();

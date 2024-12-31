@@ -68,9 +68,9 @@ namespace Amazon.S3Tables.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
-        public int MaxNamespaces
+        public int? MaxNamespaces
         {
-            get { return this._maxNamespaces.GetValueOrDefault(); }
+            get { return this._maxNamespaces; }
             set { this._maxNamespaces = value; }
         }
 

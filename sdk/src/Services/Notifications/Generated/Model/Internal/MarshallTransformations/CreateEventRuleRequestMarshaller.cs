@@ -61,50 +61,53 @@ namespace Amazon.Notifications.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/event-rules";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEventPattern())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("eventPattern");
-                    context.Writer.Write(publicRequest.EventPattern);
-                }
-
-                if(publicRequest.IsSetEventType())
-                {
-                    context.Writer.WritePropertyName("eventType");
-                    context.Writer.Write(publicRequest.EventType);
-                }
-
-                if(publicRequest.IsSetNotificationConfigurationArn())
-                {
-                    context.Writer.WritePropertyName("notificationConfigurationArn");
-                    context.Writer.Write(publicRequest.NotificationConfigurationArn);
-                }
-
-                if(publicRequest.IsSetRegions())
-                {
-                    context.Writer.WritePropertyName("regions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestRegionsListValue in publicRequest.Regions)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEventPattern())
                     {
-                            context.Writer.Write(publicRequestRegionsListValue);
+                        context.Writer.WritePropertyName("eventPattern");
+                        context.Writer.Write(publicRequest.EventPattern);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetEventType())
+                    {
+                        context.Writer.WritePropertyName("eventType");
+                        context.Writer.Write(publicRequest.EventType);
+                    }
+
+                    if(publicRequest.IsSetNotificationConfigurationArn())
+                    {
+                        context.Writer.WritePropertyName("notificationConfigurationArn");
+                        context.Writer.Write(publicRequest.NotificationConfigurationArn);
+                    }
+
+                    if(publicRequest.IsSetRegions())
+                    {
+                        context.Writer.WritePropertyName("regions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestRegionsListValue in publicRequest.Regions)
+                        {
+                                context.Writer.Write(publicRequestRegionsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetSource())
+                    {
+                        context.Writer.WritePropertyName("source");
+                        context.Writer.Write(publicRequest.Source);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetSource())
-                {
-                    context.Writer.WritePropertyName("source");
-                    context.Writer.Write(publicRequest.Source);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

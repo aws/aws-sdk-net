@@ -66,37 +66,23 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             request.ResourcePath = "/knowledgebases/{knowledgeBaseId}/retrieve";
             using (MemoryStream memoryStream = new MemoryStream())
             {
-<<<<<<< HEAD
                 using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-||||||| Commit version number update changes
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetNextToken())
-=======
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetGuardrailConfiguration())
-                {
-                    context.Writer.WritePropertyName("guardrailConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = GuardrailConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.GuardrailConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetNextToken())
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
                 {
                     JsonWriter writer = new JsonWriter(streamWriter);
                     writer.Validate = false;
                     writer.WriteObjectStart();
                     var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetGuardrailConfiguration())
+                    {
+                        context.Writer.WritePropertyName("guardrailConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = GuardrailConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.GuardrailConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
                     if(publicRequest.IsSetNextToken())
                     {
                         context.Writer.WritePropertyName("nextToken");

@@ -46,9 +46,9 @@ namespace Amazon.FSx.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2147483647)]
-        public int SizeGiB
+        public int? SizeGiB
         {
-            get { return this._sizeGiB.GetValueOrDefault(); }
+            get { return this._sizeGiB; }
             set { this._sizeGiB = value; }
         }
 

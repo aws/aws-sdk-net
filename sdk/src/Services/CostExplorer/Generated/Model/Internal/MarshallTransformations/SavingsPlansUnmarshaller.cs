@@ -92,7 +92,7 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("SavingsPlansCommitment", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.SavingsPlansCommitment = unmarshaller.Unmarshall(context);
                     continue;
                 }

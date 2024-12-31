@@ -139,9 +139,9 @@ namespace Amazon.Connect.Model
         /// Number of minutes the contact will be active for before expiring
         /// </para>
         /// </summary>
-        public int ExpiryDurationInMinutes
+        public int? ExpiryDurationInMinutes
         {
-            get { return this._expiryDurationInMinutes.GetValueOrDefault(); }
+            get { return this._expiryDurationInMinutes; }
             set { this._expiryDurationInMinutes = value; }
         }
 

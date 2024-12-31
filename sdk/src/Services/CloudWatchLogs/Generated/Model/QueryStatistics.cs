@@ -79,9 +79,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// indexes, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutIndexPolicy.html">PutIndexPolicy</a>.
         /// </para>
         /// </summary>
-        public double EstimatedBytesSkipped
+        public double? EstimatedBytesSkipped
         {
-            get { return this._estimatedBytesSkipped.GetValueOrDefault(); }
+            get { return this._estimatedBytesSkipped; }
             set { this._estimatedBytesSkipped = value; }
         }
 
@@ -100,9 +100,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutIndexPolicy.html">PutIndexPolicy</a>.
         /// </para>
         /// </summary>
-        public double EstimatedRecordsSkipped
+        public double? EstimatedRecordsSkipped
         {
-            get { return this._estimatedRecordsSkipped.GetValueOrDefault(); }
+            get { return this._estimatedRecordsSkipped; }
             set { this._estimatedRecordsSkipped = value; }
         }
 
@@ -118,9 +118,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// The number of log groups that were scanned by this query.
         /// </para>
         /// </summary>
-        public double LogGroupsScanned
+        public double? LogGroupsScanned
         {
-            get { return this._logGroupsScanned.GetValueOrDefault(); }
+            get { return this._logGroupsScanned; }
             set { this._logGroupsScanned = value; }
         }
 

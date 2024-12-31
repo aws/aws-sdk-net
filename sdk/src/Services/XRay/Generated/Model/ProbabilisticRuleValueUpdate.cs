@@ -44,9 +44,9 @@ namespace Amazon.XRay.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public double DesiredSamplingPercentage
+        public double? DesiredSamplingPercentage
         {
-            get { return this._desiredSamplingPercentage.GetValueOrDefault(); }
+            get { return this._desiredSamplingPercentage; }
             set { this._desiredSamplingPercentage = value; }
         }
 

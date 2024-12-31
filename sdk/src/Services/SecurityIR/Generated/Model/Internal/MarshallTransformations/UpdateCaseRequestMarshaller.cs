@@ -64,185 +64,188 @@ namespace Amazon.SecurityIR.Model.Internal.MarshallTransformations
                 throw new AmazonSecurityIRException("Request object does not have required field CaseId set");
             request.AddPathResource("{caseId}", StringUtils.FromString(publicRequest.CaseId));
             request.ResourcePath = "/v1/cases/{caseId}/update-case";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetActualIncidentStartDate())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("actualIncidentStartDate");
-                    context.Writer.Write(publicRequest.ActualIncidentStartDate);
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetEngagementType())
-                {
-                    context.Writer.WritePropertyName("engagementType");
-                    context.Writer.Write(publicRequest.EngagementType);
-                }
-
-                if(publicRequest.IsSetImpactedAccountsToAdd())
-                {
-                    context.Writer.WritePropertyName("impactedAccountsToAdd");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestImpactedAccountsToAddListValue in publicRequest.ImpactedAccountsToAdd)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetActualIncidentStartDate())
                     {
-                            context.Writer.Write(publicRequestImpactedAccountsToAddListValue);
+                        context.Writer.WritePropertyName("actualIncidentStartDate");
+                        context.Writer.Write(publicRequest.ActualIncidentStartDate.Value);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetImpactedAccountsToDelete())
-                {
-                    context.Writer.WritePropertyName("impactedAccountsToDelete");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestImpactedAccountsToDeleteListValue in publicRequest.ImpactedAccountsToDelete)
+                    if(publicRequest.IsSetDescription())
                     {
-                            context.Writer.Write(publicRequestImpactedAccountsToDeleteListValue);
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetImpactedAwsRegionsToAdd())
-                {
-                    context.Writer.WritePropertyName("impactedAwsRegionsToAdd");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestImpactedAwsRegionsToAddListValue in publicRequest.ImpactedAwsRegionsToAdd)
+                    if(publicRequest.IsSetEngagementType())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ImpactedAwsRegionMarshaller.Instance;
-                        marshaller.Marshall(publicRequestImpactedAwsRegionsToAddListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("engagementType");
+                        context.Writer.Write(publicRequest.EngagementType);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetImpactedAwsRegionsToDelete())
-                {
-                    context.Writer.WritePropertyName("impactedAwsRegionsToDelete");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestImpactedAwsRegionsToDeleteListValue in publicRequest.ImpactedAwsRegionsToDelete)
+                    if(publicRequest.IsSetImpactedAccountsToAdd())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ImpactedAwsRegionMarshaller.Instance;
-                        marshaller.Marshall(publicRequestImpactedAwsRegionsToDeleteListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("impactedAccountsToAdd");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestImpactedAccountsToAddListValue in publicRequest.ImpactedAccountsToAdd)
+                        {
+                                context.Writer.Write(publicRequestImpactedAccountsToAddListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetImpactedServicesToAdd())
-                {
-                    context.Writer.WritePropertyName("impactedServicesToAdd");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestImpactedServicesToAddListValue in publicRequest.ImpactedServicesToAdd)
+                    if(publicRequest.IsSetImpactedAccountsToDelete())
                     {
-                            context.Writer.Write(publicRequestImpactedServicesToAddListValue);
+                        context.Writer.WritePropertyName("impactedAccountsToDelete");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestImpactedAccountsToDeleteListValue in publicRequest.ImpactedAccountsToDelete)
+                        {
+                                context.Writer.Write(publicRequestImpactedAccountsToDeleteListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetImpactedServicesToDelete())
-                {
-                    context.Writer.WritePropertyName("impactedServicesToDelete");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestImpactedServicesToDeleteListValue in publicRequest.ImpactedServicesToDelete)
+                    if(publicRequest.IsSetImpactedAwsRegionsToAdd())
                     {
-                            context.Writer.Write(publicRequestImpactedServicesToDeleteListValue);
+                        context.Writer.WritePropertyName("impactedAwsRegionsToAdd");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestImpactedAwsRegionsToAddListValue in publicRequest.ImpactedAwsRegionsToAdd)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = ImpactedAwsRegionMarshaller.Instance;
+                            marshaller.Marshall(publicRequestImpactedAwsRegionsToAddListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetReportedIncidentStartDate())
-                {
-                    context.Writer.WritePropertyName("reportedIncidentStartDate");
-                    context.Writer.Write(publicRequest.ReportedIncidentStartDate);
-                }
-
-                if(publicRequest.IsSetThreatActorIpAddressesToAdd())
-                {
-                    context.Writer.WritePropertyName("threatActorIpAddressesToAdd");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestThreatActorIpAddressesToAddListValue in publicRequest.ThreatActorIpAddressesToAdd)
+                    if(publicRequest.IsSetImpactedAwsRegionsToDelete())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("impactedAwsRegionsToDelete");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestImpactedAwsRegionsToDeleteListValue in publicRequest.ImpactedAwsRegionsToDelete)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = ThreatActorIpMarshaller.Instance;
-                        marshaller.Marshall(publicRequestThreatActorIpAddressesToAddListValue, context);
+                            var marshaller = ImpactedAwsRegionMarshaller.Instance;
+                            marshaller.Marshall(publicRequestImpactedAwsRegionsToDeleteListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetThreatActorIpAddressesToDelete())
-                {
-                    context.Writer.WritePropertyName("threatActorIpAddressesToDelete");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestThreatActorIpAddressesToDeleteListValue in publicRequest.ThreatActorIpAddressesToDelete)
+                    if(publicRequest.IsSetImpactedServicesToAdd())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ThreatActorIpMarshaller.Instance;
-                        marshaller.Marshall(publicRequestThreatActorIpAddressesToDeleteListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("impactedServicesToAdd");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestImpactedServicesToAddListValue in publicRequest.ImpactedServicesToAdd)
+                        {
+                                context.Writer.Write(publicRequestImpactedServicesToAddListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetTitle())
-                {
-                    context.Writer.WritePropertyName("title");
-                    context.Writer.Write(publicRequest.Title);
-                }
-
-                if(publicRequest.IsSetWatchersToAdd())
-                {
-                    context.Writer.WritePropertyName("watchersToAdd");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestWatchersToAddListValue in publicRequest.WatchersToAdd)
+                    if(publicRequest.IsSetImpactedServicesToDelete())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = WatcherMarshaller.Instance;
-                        marshaller.Marshall(publicRequestWatchersToAddListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("impactedServicesToDelete");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestImpactedServicesToDeleteListValue in publicRequest.ImpactedServicesToDelete)
+                        {
+                                context.Writer.Write(publicRequestImpactedServicesToDeleteListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetWatchersToDelete())
-                {
-                    context.Writer.WritePropertyName("watchersToDelete");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestWatchersToDeleteListValue in publicRequest.WatchersToDelete)
+                    if(publicRequest.IsSetReportedIncidentStartDate())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = WatcherMarshaller.Instance;
-                        marshaller.Marshall(publicRequestWatchersToDeleteListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("reportedIncidentStartDate");
+                        context.Writer.Write(publicRequest.ReportedIncidentStartDate.Value);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetThreatActorIpAddressesToAdd())
+                    {
+                        context.Writer.WritePropertyName("threatActorIpAddressesToAdd");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestThreatActorIpAddressesToAddListValue in publicRequest.ThreatActorIpAddressesToAdd)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = ThreatActorIpMarshaller.Instance;
+                            marshaller.Marshall(publicRequestThreatActorIpAddressesToAddListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetThreatActorIpAddressesToDelete())
+                    {
+                        context.Writer.WritePropertyName("threatActorIpAddressesToDelete");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestThreatActorIpAddressesToDeleteListValue in publicRequest.ThreatActorIpAddressesToDelete)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = ThreatActorIpMarshaller.Instance;
+                            marshaller.Marshall(publicRequestThreatActorIpAddressesToDeleteListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTitle())
+                    {
+                        context.Writer.WritePropertyName("title");
+                        context.Writer.Write(publicRequest.Title);
+                    }
+
+                    if(publicRequest.IsSetWatchersToAdd())
+                    {
+                        context.Writer.WritePropertyName("watchersToAdd");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestWatchersToAddListValue in publicRequest.WatchersToAdd)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = WatcherMarshaller.Instance;
+                            marshaller.Marshall(publicRequestWatchersToAddListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetWatchersToDelete())
+                    {
+                        context.Writer.WritePropertyName("watchersToDelete");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestWatchersToDeleteListValue in publicRequest.WatchersToDelete)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = WatcherMarshaller.Instance;
+                            marshaller.Marshall(publicRequestWatchersToDeleteListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

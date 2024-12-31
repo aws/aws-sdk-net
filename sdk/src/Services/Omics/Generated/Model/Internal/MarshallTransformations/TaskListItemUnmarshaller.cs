@@ -68,7 +68,7 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("cacheHit", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CacheHit = unmarshaller.Unmarshall(context);
                     continue;
                 }

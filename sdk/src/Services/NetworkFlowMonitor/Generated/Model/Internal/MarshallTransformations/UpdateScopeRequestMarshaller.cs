@@ -64,47 +64,50 @@ namespace Amazon.NetworkFlowMonitor.Model.Internal.MarshallTransformations
                 throw new AmazonNetworkFlowMonitorException("Request object does not have required field ScopeId set");
             request.AddPathResource("{scopeId}", StringUtils.FromString(publicRequest.ScopeId));
             request.ResourcePath = "/scopes/{scopeId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetResourcesToAdd())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("resourcesToAdd");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestResourcesToAddListValue in publicRequest.ResourcesToAdd)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetResourcesToAdd())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("resourcesToAdd");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestResourcesToAddListValue in publicRequest.ResourcesToAdd)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = TargetResourceMarshaller.Instance;
-                        marshaller.Marshall(publicRequestResourcesToAddListValue, context);
+                            var marshaller = TargetResourceMarshaller.Instance;
+                            marshaller.Marshall(publicRequestResourcesToAddListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetResourcesToDelete())
+                    {
+                        context.Writer.WritePropertyName("resourcesToDelete");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestResourcesToDeleteListValue in publicRequest.ResourcesToDelete)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TargetResourceMarshaller.Instance;
+                            marshaller.Marshall(publicRequestResourcesToDeleteListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetResourcesToDelete())
-                {
-                    context.Writer.WritePropertyName("resourcesToDelete");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestResourcesToDeleteListValue in publicRequest.ResourcesToDelete)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TargetResourceMarshaller.Instance;
-                        marshaller.Marshall(publicRequestResourcesToDeleteListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

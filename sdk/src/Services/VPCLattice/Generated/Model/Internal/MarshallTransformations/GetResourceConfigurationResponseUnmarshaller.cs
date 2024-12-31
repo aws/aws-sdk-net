@@ -54,13 +54,13 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("allowAssociationToShareableServiceNetwork", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.AllowAssociationToShareableServiceNetwork = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("amazonManaged", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.AmazonManaged = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -72,7 +72,7 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("createdAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -96,7 +96,7 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("lastUpdatedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastUpdatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }

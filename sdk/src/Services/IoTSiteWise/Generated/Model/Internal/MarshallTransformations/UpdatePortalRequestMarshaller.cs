@@ -68,7 +68,6 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             {
                 using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-<<<<<<< HEAD
                     JsonWriter writer = new JsonWriter(streamWriter);
                     writer.Validate = false;
                     writer.WriteObjectStart();
@@ -130,6 +129,31 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.PortalName);
                     }
 
+                    if(publicRequest.IsSetPortalType())
+                    {
+                        context.Writer.WritePropertyName("portalType");
+                        context.Writer.Write(publicRequest.PortalType);
+                    }
+
+                    if(publicRequest.IsSetPortalTypeConfiguration())
+                    {
+                        context.Writer.WritePropertyName("portalTypeConfiguration");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestPortalTypeConfigurationKvp in publicRequest.PortalTypeConfiguration)
+                        {
+                            context.Writer.WritePropertyName(publicRequestPortalTypeConfigurationKvp.Key);
+                            var publicRequestPortalTypeConfigurationValue = publicRequestPortalTypeConfigurationKvp.Value;
+
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = PortalTypeEntryMarshaller.Instance;
+                            marshaller.Marshall(publicRequestPortalTypeConfigurationValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
                     if(publicRequest.IsSetRoleArn())
                     {
                         context.Writer.WritePropertyName("roleArn");
@@ -137,152 +161,6 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                     }
 
                     writer.WriteObjectEnd();
-||||||| Commit version number update changes
-                    context.Writer.WritePropertyName("alarms");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AlarmsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Alarms, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetClientToken())
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetNotificationSenderEmail())
-                {
-                    context.Writer.WritePropertyName("notificationSenderEmail");
-                    context.Writer.Write(publicRequest.NotificationSenderEmail);
-                }
-
-                if(publicRequest.IsSetPortalContactEmail())
-                {
-                    context.Writer.WritePropertyName("portalContactEmail");
-                    context.Writer.Write(publicRequest.PortalContactEmail);
-                }
-
-                if(publicRequest.IsSetPortalDescription())
-                {
-                    context.Writer.WritePropertyName("portalDescription");
-                    context.Writer.Write(publicRequest.PortalDescription);
-                }
-
-                if(publicRequest.IsSetPortalLogoImage())
-                {
-                    context.Writer.WritePropertyName("portalLogoImage");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ImageMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.PortalLogoImage, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetPortalName())
-                {
-                    context.Writer.WritePropertyName("portalName");
-                    context.Writer.Write(publicRequest.PortalName);
-                }
-
-                if(publicRequest.IsSetRoleArn())
-                {
-                    context.Writer.WritePropertyName("roleArn");
-                    context.Writer.Write(publicRequest.RoleArn);
-=======
-                    context.Writer.WritePropertyName("alarms");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AlarmsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Alarms, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetClientToken())
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetNotificationSenderEmail())
-                {
-                    context.Writer.WritePropertyName("notificationSenderEmail");
-                    context.Writer.Write(publicRequest.NotificationSenderEmail);
-                }
-
-                if(publicRequest.IsSetPortalContactEmail())
-                {
-                    context.Writer.WritePropertyName("portalContactEmail");
-                    context.Writer.Write(publicRequest.PortalContactEmail);
-                }
-
-                if(publicRequest.IsSetPortalDescription())
-                {
-                    context.Writer.WritePropertyName("portalDescription");
-                    context.Writer.Write(publicRequest.PortalDescription);
-                }
-
-                if(publicRequest.IsSetPortalLogoImage())
-                {
-                    context.Writer.WritePropertyName("portalLogoImage");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ImageMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.PortalLogoImage, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetPortalName())
-                {
-                    context.Writer.WritePropertyName("portalName");
-                    context.Writer.Write(publicRequest.PortalName);
-                }
-
-                if(publicRequest.IsSetPortalType())
-                {
-                    context.Writer.WritePropertyName("portalType");
-                    context.Writer.Write(publicRequest.PortalType);
-                }
-
-                if(publicRequest.IsSetPortalTypeConfiguration())
-                {
-                    context.Writer.WritePropertyName("portalTypeConfiguration");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestPortalTypeConfigurationKvp in publicRequest.PortalTypeConfiguration)
-                    {
-                        context.Writer.WritePropertyName(publicRequestPortalTypeConfigurationKvp.Key);
-                        var publicRequestPortalTypeConfigurationValue = publicRequestPortalTypeConfigurationKvp.Value;
-
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = PortalTypeEntryMarshaller.Instance;
-                        marshaller.Marshall(publicRequestPortalTypeConfigurationValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRoleArn())
-                {
-                    context.Writer.WritePropertyName("roleArn");
-                    context.Writer.Write(publicRequest.RoleArn);
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
                 }
 
                 request.Content = memoryStream.ToArray();

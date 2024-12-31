@@ -59,9 +59,9 @@ namespace Amazon.MigrationHub.Model
         /// The timestamp for the update.
         /// </para>
         /// </summary>
-        public DateTime UpdateDateTime
+        public DateTime? UpdateDateTime
         {
-            get { return this._updateDateTime.GetValueOrDefault(); }
+            get { return this._updateDateTime; }
             set { this._updateDateTime = value; }
         }
 

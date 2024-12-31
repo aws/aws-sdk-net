@@ -206,9 +206,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// text column in the Source database that is indexed.
         /// </para>
         /// </summary>
-        public bool DisableUnicodeSourceFilter
+        public bool? DisableUnicodeSourceFilter
         {
-            get { return this._disableUnicodeSourceFilter.GetValueOrDefault(); }
+            get { return this._disableUnicodeSourceFilter; }
             set { this._disableUnicodeSourceFilter = value; }
         }
 

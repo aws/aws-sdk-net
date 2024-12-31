@@ -54,7 +54,7 @@ namespace Amazon.ConnectParticipant.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AttachmentSizeInBytes", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.AttachmentSizeInBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -67,37 +67,40 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                 throw new AmazonQBusinessException("Request object does not have required field DataAccessorId set");
             request.AddPathResource("{dataAccessorId}", StringUtils.FromString(publicRequest.DataAccessorId));
             request.ResourcePath = "/applications/{applicationId}/dataaccessors/{dataAccessorId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetActionConfigurations())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("actionConfigurations");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestActionConfigurationsListValue in publicRequest.ActionConfigurations)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetActionConfigurations())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("actionConfigurations");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestActionConfigurationsListValue in publicRequest.ActionConfigurations)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = ActionConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequestActionConfigurationsListValue, context);
+                            var marshaller = ActionConfigurationMarshaller.Instance;
+                            marshaller.Marshall(publicRequestActionConfigurationsListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetDisplayName())
+                    {
+                        context.Writer.WritePropertyName("displayName");
+                        context.Writer.Write(publicRequest.DisplayName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDisplayName())
-                {
-                    context.Writer.WritePropertyName("displayName");
-                    context.Writer.Write(publicRequest.DisplayName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

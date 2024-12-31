@@ -74,25 +74,25 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("DurationHours", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.DurationHours = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("DurationMinutes", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.DurationMinutes = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RequestedEndTimeBefore", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.RequestedEndTimeBefore = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RequestedStartTimeAfter", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.RequestedStartTimeAfter = unmarshaller.Unmarshall(context);
                     continue;
                 }

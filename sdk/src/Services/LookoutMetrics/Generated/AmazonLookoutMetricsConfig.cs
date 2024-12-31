@@ -34,16 +34,10 @@ namespace Amazon.LookoutMetrics
     public partial class AmazonLookoutMetricsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("LookoutMetrics", "4.0.0.0");
 
         private static readonly AmazonLookoutMetricsEndpointResolver EndpointResolver =
             new AmazonLookoutMetricsEndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("LookoutMetrics", "3.7.400.53");
-=======
-            InternalSDKUtils.BuildUserAgentString("LookoutMetrics", "3.7.400.70");
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
 
         private string _userAgent = UserAgentString;
         ///<summary>

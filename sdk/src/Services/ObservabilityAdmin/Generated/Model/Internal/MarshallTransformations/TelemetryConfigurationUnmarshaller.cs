@@ -74,7 +74,7 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("LastUpdateTimeStamp", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.LastUpdateTimeStamp = unmarshaller.Unmarshall(context);
                     continue;
                 }

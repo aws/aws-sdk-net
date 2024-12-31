@@ -69,9 +69,9 @@ namespace Amazon.ObservabilityAdmin.Model
         /// For example, <c>1728679196318</c>. 
         /// </para>
         /// </summary>
-        public long LastUpdateTimeStamp
+        public long? LastUpdateTimeStamp
         {
-            get { return this._lastUpdateTimeStamp.GetValueOrDefault(); }
+            get { return this._lastUpdateTimeStamp; }
             set { this._lastUpdateTimeStamp = value; }
         }
 

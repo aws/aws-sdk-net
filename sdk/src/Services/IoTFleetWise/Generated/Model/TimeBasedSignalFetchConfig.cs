@@ -43,9 +43,9 @@ namespace Amazon.IoTFleetWise.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public long ExecutionFrequencyMs
+        public long? ExecutionFrequencyMs
         {
-            get { return this._executionFrequencyMs.GetValueOrDefault(); }
+            get { return this._executionFrequencyMs; }
             set { this._executionFrequencyMs = value; }
         }
 

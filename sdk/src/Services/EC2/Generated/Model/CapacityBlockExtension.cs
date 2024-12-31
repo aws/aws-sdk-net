@@ -91,9 +91,9 @@ namespace Amazon.EC2.Model
         /// The duration of the Capacity Block extension in hours.
         /// </para>
         /// </summary>
-        public int CapacityBlockExtensionDurationHours
+        public int? CapacityBlockExtensionDurationHours
         {
-            get { return this._capacityBlockExtensionDurationHours.GetValueOrDefault(); }
+            get { return this._capacityBlockExtensionDurationHours; }
             set { this._capacityBlockExtensionDurationHours = value; }
         }
 
@@ -109,9 +109,9 @@ namespace Amazon.EC2.Model
         /// The end date of the Capacity Block extension.
         /// </para>
         /// </summary>
-        public DateTime CapacityBlockExtensionEndDate
+        public DateTime? CapacityBlockExtensionEndDate
         {
-            get { return this._capacityBlockExtensionEndDate.GetValueOrDefault(); }
+            get { return this._capacityBlockExtensionEndDate; }
             set { this._capacityBlockExtensionEndDate = value; }
         }
 
@@ -145,9 +145,9 @@ namespace Amazon.EC2.Model
         /// The date when the Capacity Block extension was purchased.
         /// </para>
         /// </summary>
-        public DateTime CapacityBlockExtensionPurchaseDate
+        public DateTime? CapacityBlockExtensionPurchaseDate
         {
-            get { return this._capacityBlockExtensionPurchaseDate.GetValueOrDefault(); }
+            get { return this._capacityBlockExtensionPurchaseDate; }
             set { this._capacityBlockExtensionPurchaseDate = value; }
         }
 
@@ -163,9 +163,9 @@ namespace Amazon.EC2.Model
         /// The start date of the Capacity Block extension.
         /// </para>
         /// </summary>
-        public DateTime CapacityBlockExtensionStartDate
+        public DateTime? CapacityBlockExtensionStartDate
         {
-            get { return this._capacityBlockExtensionStartDate.GetValueOrDefault(); }
+            get { return this._capacityBlockExtensionStartDate; }
             set { this._capacityBlockExtensionStartDate = value; }
         }
 
@@ -253,9 +253,9 @@ namespace Amazon.EC2.Model
         /// The number of instances in the Capacity Block extension.
         /// </para>
         /// </summary>
-        public int InstanceCount
+        public int? InstanceCount
         {
-            get { return this._instanceCount.GetValueOrDefault(); }
+            get { return this._instanceCount; }
             set { this._instanceCount = value; }
         }
 

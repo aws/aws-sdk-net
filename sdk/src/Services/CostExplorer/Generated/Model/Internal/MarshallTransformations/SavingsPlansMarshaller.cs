@@ -75,13 +75,13 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSavingsPlansCommitment())
             {
                 context.Writer.WritePropertyName("SavingsPlansCommitment");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.SavingsPlansCommitment))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.SavingsPlansCommitment.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.SavingsPlansCommitment));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.SavingsPlansCommitment.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.SavingsPlansCommitment);
+                    context.Writer.Write(requestObject.SavingsPlansCommitment.Value);
                 }
             }
 

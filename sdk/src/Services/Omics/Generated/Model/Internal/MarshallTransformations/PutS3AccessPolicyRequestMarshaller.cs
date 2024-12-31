@@ -64,21 +64,24 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                 throw new AmazonOmicsException("Request object does not have required field S3AccessPointArn set");
             request.AddPathResource("{s3AccessPointArn}", StringUtils.FromString(publicRequest.S3AccessPointArn));
             request.ResourcePath = "/s3accesspolicy/{s3AccessPointArn}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetS3AccessPolicy())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("s3AccessPolicy");
-                    context.Writer.Write(publicRequest.S3AccessPolicy);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetS3AccessPolicy())
+                    {
+                        context.Writer.WritePropertyName("s3AccessPolicy");
+                        context.Writer.Write(publicRequest.S3AccessPolicy);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             

@@ -150,9 +150,9 @@ namespace Amazon.CloudTrail.Model
         /// is disabled. 
         /// </para>
         /// </summary>
-        public bool TerminationProtectionEnabled
+        public bool? TerminationProtectionEnabled
         {
-            get { return this._terminationProtectionEnabled.GetValueOrDefault(); }
+            get { return this._terminationProtectionEnabled; }
             set { this._terminationProtectionEnabled = value; }
         }
 

@@ -341,16 +341,8 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-<<<<<<< HEAD
-        [AWSProperty(Required=true, Min=0, Max=2147483647)]
-        public int? StorageCapacity
-||||||| Commit version number update changes
-        [AWSProperty(Required=true, Min=0, Max=2147483647)]
-        public int StorageCapacity
-=======
         [AWSProperty(Min=0, Max=2147483647)]
-        public int StorageCapacity
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
+        public int? StorageCapacity
         {
             get { return this._storageCapacity; }
             set { this._storageCapacity = value; }

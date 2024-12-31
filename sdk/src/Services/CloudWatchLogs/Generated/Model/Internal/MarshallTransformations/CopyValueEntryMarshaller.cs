@@ -51,7 +51,7 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOverwriteIfExists())
             {
                 context.Writer.WritePropertyName("overwriteIfExists");
-                context.Writer.Write(requestObject.OverwriteIfExists);
+                context.Writer.Write(requestObject.OverwriteIfExists.Value);
             }
 
             if(requestObject.IsSetSource())

@@ -91,7 +91,7 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             if(requestObject.IsSetVideoDataDeliveryEnabled())
             {
                 context.Writer.WritePropertyName("videoDataDeliveryEnabled");
-                context.Writer.Write(requestObject.VideoDataDeliveryEnabled);
+                context.Writer.Write(requestObject.VideoDataDeliveryEnabled.Value);
             }
 
         }

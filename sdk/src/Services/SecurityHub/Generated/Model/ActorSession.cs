@@ -54,9 +54,9 @@ namespace Amazon.SecurityHub.Model
         /// In CloudTrail, you can find this value as <c>userIdentity.sessionContext.attributes.creationDate</c>.
         /// </para>
         /// </summary>
-        public long CreatedTime
+        public long? CreatedTime
         {
-            get { return this._createdTime.GetValueOrDefault(); }
+            get { return this._createdTime; }
             set { this._createdTime = value; }
         }
 

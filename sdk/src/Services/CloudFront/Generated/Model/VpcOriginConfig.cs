@@ -51,9 +51,9 @@ namespace Amazon.CloudFront.Model
         /// timeout (custom origins only)</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </para>
         /// </summary>
-        public int OriginKeepaliveTimeout
+        public int? OriginKeepaliveTimeout
         {
-            get { return this._originKeepaliveTimeout.GetValueOrDefault(); }
+            get { return this._originKeepaliveTimeout; }
             set { this._originKeepaliveTimeout = value; }
         }
 
@@ -77,9 +77,9 @@ namespace Amazon.CloudFront.Model
         /// timeout (custom origins only)</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </para>
         /// </summary>
-        public int OriginReadTimeout
+        public int? OriginReadTimeout
         {
-            get { return this._originReadTimeout.GetValueOrDefault(); }
+            get { return this._originReadTimeout; }
             set { this._originReadTimeout = value; }
         }
 

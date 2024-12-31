@@ -92,55 +92,55 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("IsCreateable", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsCreateable = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("IsDefaultOnCreate", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsDefaultOnCreate = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("IsFilterable", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsFilterable = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("IsNullable", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsNullable = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("IsPartitionable", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsPartitionable = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("IsPrimaryKey", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsPrimaryKey = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("IsRetrievable", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsRetrievable = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("IsUpdateable", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsUpdateable = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("IsUpsertable", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsUpsertable = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -68,7 +68,7 @@ namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("commitment", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Commitment = unmarshaller.Unmarshall(context);
                     continue;
                 }

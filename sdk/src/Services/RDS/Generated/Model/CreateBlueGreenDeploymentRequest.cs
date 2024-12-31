@@ -157,9 +157,9 @@ namespace Amazon.RDS.Model
         /// This setting doesn't apply to Amazon Aurora blue/green deployments.
         /// </para>
         /// </summary>
-        public int TargetAllocatedStorage
+        public int? TargetAllocatedStorage
         {
-            get { return this._targetAllocatedStorage.GetValueOrDefault(); }
+            get { return this._targetAllocatedStorage; }
             set { this._targetAllocatedStorage = value; }
         }
 
@@ -280,9 +280,9 @@ namespace Amazon.RDS.Model
         /// This setting doesn't apply to Amazon Aurora blue/green deployments.
         /// </para>
         /// </summary>
-        public int TargetIops
+        public int? TargetIops
         {
-            get { return this._targetIops.GetValueOrDefault(); }
+            get { return this._targetIops; }
             set { this._targetIops = value; }
         }
 
@@ -306,9 +306,9 @@ namespace Amazon.RDS.Model
         /// This setting doesn't apply to Amazon Aurora blue/green deployments.
         /// </para>
         /// </summary>
-        public int TargetStorageThroughput
+        public int? TargetStorageThroughput
         {
-            get { return this._targetStorageThroughput.GetValueOrDefault(); }
+            get { return this._targetStorageThroughput; }
             set { this._targetStorageThroughput = value; }
         }
 

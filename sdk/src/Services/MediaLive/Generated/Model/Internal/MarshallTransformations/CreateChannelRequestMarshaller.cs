@@ -80,32 +80,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
 
-<<<<<<< HEAD
                     if(publicRequest.IsSetCdiInputSpecification())
-||||||| Commit version number update changes
-                if(publicRequest.IsSetDestinations())
-                {
-                    context.Writer.WritePropertyName("destinations");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestDestinationsListValue in publicRequest.Destinations)
-=======
-                if(publicRequest.IsSetChannelEngineVersion())
-                {
-                    context.Writer.WritePropertyName("channelEngineVersion");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ChannelEngineVersionRequestMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ChannelEngineVersion, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDestinations())
-                {
-                    context.Writer.WritePropertyName("destinations");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestDestinationsListValue in publicRequest.Destinations)
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
                     {
                         context.Writer.WritePropertyName("cdiInputSpecification");
                         context.Writer.WriteObjectStart();
@@ -116,35 +91,22 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
 
-<<<<<<< HEAD
                     if(publicRequest.IsSetChannelClass())
                     {
                         context.Writer.WritePropertyName("channelClass");
                         context.Writer.Write(publicRequest.ChannelClass);
                     }
-||||||| Commit version number update changes
-                if(publicRequest.IsSetEncoderSettings())
-                {
-                    context.Writer.WritePropertyName("encoderSettings");
-                    context.Writer.WriteObjectStart();
 
-                    var marshaller = EncoderSettingsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.EncoderSettings, context);
-=======
-                if(publicRequest.IsSetDryRun())
-                {
-                    context.Writer.WritePropertyName("dryRun");
-                    context.Writer.Write(publicRequest.DryRun);
-                }
+                    if(publicRequest.IsSetChannelEngineVersion())
+                    {
+                        context.Writer.WritePropertyName("channelEngineVersion");
+                        context.Writer.WriteObjectStart();
 
-                if(publicRequest.IsSetEncoderSettings())
-                {
-                    context.Writer.WritePropertyName("encoderSettings");
-                    context.Writer.WriteObjectStart();
+                        var marshaller = ChannelEngineVersionRequestMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ChannelEngineVersion, context);
 
-                    var marshaller = EncoderSettingsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.EncoderSettings, context);
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
+                        context.Writer.WriteObjectEnd();
+                    }
 
                     if(publicRequest.IsSetDestinations())
                     {
@@ -160,6 +122,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                             context.Writer.WriteObjectEnd();
                         }
                         context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetDryRun())
+                    {
+                        context.Writer.WritePropertyName("dryRun");
+                        context.Writer.Write(publicRequest.DryRun.Value);
                     }
 
                     if(publicRequest.IsSetEncoderSettings())

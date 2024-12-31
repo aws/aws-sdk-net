@@ -64,53 +64,56 @@ namespace Amazon.SecurityIR.Model.Internal.MarshallTransformations
                 throw new AmazonSecurityIRException("Request object does not have required field MembershipId set");
             request.AddPathResource("{membershipId}", StringUtils.FromString(publicRequest.MembershipId));
             request.ResourcePath = "/v1/membership/{membershipId}/update-membership";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetIncidentResponseTeam())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("incidentResponseTeam");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestIncidentResponseTeamListValue in publicRequest.IncidentResponseTeam)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetIncidentResponseTeam())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("incidentResponseTeam");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestIncidentResponseTeamListValue in publicRequest.IncidentResponseTeam)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = IncidentResponderMarshaller.Instance;
-                        marshaller.Marshall(publicRequestIncidentResponseTeamListValue, context);
+                            var marshaller = IncidentResponderMarshaller.Instance;
+                            marshaller.Marshall(publicRequestIncidentResponseTeamListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetMembershipName())
-                {
-                    context.Writer.WritePropertyName("membershipName");
-                    context.Writer.Write(publicRequest.MembershipName);
-                }
-
-                if(publicRequest.IsSetOptInFeatures())
-                {
-                    context.Writer.WritePropertyName("optInFeatures");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestOptInFeaturesListValue in publicRequest.OptInFeatures)
+                    if(publicRequest.IsSetMembershipName())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = OptInFeatureMarshaller.Instance;
-                        marshaller.Marshall(publicRequestOptInFeaturesListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("membershipName");
+                        context.Writer.Write(publicRequest.MembershipName);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetOptInFeatures())
+                    {
+                        context.Writer.WritePropertyName("optInFeatures");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestOptInFeaturesListValue in publicRequest.OptInFeatures)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = OptInFeatureMarshaller.Instance;
+                            marshaller.Marshall(publicRequestOptInFeaturesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -145,9 +145,9 @@ namespace Amazon.PartnerCentralSelling.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int Revision
+        public int? Revision
         {
-            get { return this._revision.GetValueOrDefault(); }
+            get { return this._revision; }
             set { this._revision = value; }
         }
 

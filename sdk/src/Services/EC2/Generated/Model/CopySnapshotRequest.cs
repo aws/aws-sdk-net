@@ -95,9 +95,9 @@ namespace Amazon.EC2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2880)]
-        public int CompletionDurationMinutes
+        public int? CompletionDurationMinutes
         {
-            get { return this._completionDurationMinutes.GetValueOrDefault(); }
+            get { return this._completionDurationMinutes; }
             set { this._completionDurationMinutes = value; }
         }
 

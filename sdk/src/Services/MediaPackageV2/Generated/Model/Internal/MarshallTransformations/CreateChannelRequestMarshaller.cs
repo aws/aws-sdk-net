@@ -84,63 +84,35 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.Description);
                     }
 
-<<<<<<< HEAD
+                    if(publicRequest.IsSetInputSwitchConfiguration())
+                    {
+                        context.Writer.WritePropertyName("InputSwitchConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = InputSwitchConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.InputSwitchConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
                     if(publicRequest.IsSetInputType())
                     {
                         context.Writer.WritePropertyName("InputType");
                         context.Writer.Write(publicRequest.InputType);
                     }
-||||||| Commit version number update changes
-                if(publicRequest.IsSetInputType())
-                {
-                    context.Writer.WritePropertyName("InputType");
-                    context.Writer.Write(publicRequest.InputType);
-                }
-=======
-                if(publicRequest.IsSetInputSwitchConfiguration())
-                {
-                    context.Writer.WritePropertyName("InputSwitchConfiguration");
-                    context.Writer.WriteObjectStart();
 
-                    var marshaller = InputSwitchConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.InputSwitchConfiguration, context);
+                    if(publicRequest.IsSetOutputHeaderConfiguration())
+                    {
+                        context.Writer.WritePropertyName("OutputHeaderConfiguration");
+                        context.Writer.WriteObjectStart();
 
-                    context.Writer.WriteObjectEnd();
-                }
+                        var marshaller = OutputHeaderConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.OutputHeaderConfiguration, context);
 
-                if(publicRequest.IsSetInputType())
-                {
-                    context.Writer.WritePropertyName("InputType");
-                    context.Writer.Write(publicRequest.InputType);
-                }
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
+                        context.Writer.WriteObjectEnd();
+                    }
 
-<<<<<<< HEAD
                     if(publicRequest.IsSetTags())
-||||||| Commit version number update changes
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
-=======
-                if(publicRequest.IsSetOutputHeaderConfiguration())
-                {
-                    context.Writer.WritePropertyName("OutputHeaderConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = OutputHeaderConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.OutputHeaderConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
                     {
                         context.Writer.WritePropertyName("tags");
                         context.Writer.WriteObjectStart();

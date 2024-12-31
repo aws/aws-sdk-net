@@ -66,9 +66,9 @@ namespace Amazon.TaxSettings.Model
         /// The tax exemption effective date. 
         /// </para>
         /// </summary>
-        public DateTime EffectiveDate
+        public DateTime? EffectiveDate
         {
-            get { return this._effectiveDate.GetValueOrDefault(); }
+            get { return this._effectiveDate; }
             set { this._effectiveDate = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.TaxSettings.Model
         /// The tax exemption expiration date. 
         /// </para>
         /// </summary>
-        public DateTime ExpirationDate
+        public DateTime? ExpirationDate
         {
-            get { return this._expirationDate.GetValueOrDefault(); }
+            get { return this._expirationDate; }
             set { this._expirationDate = value; }
         }
 
@@ -120,9 +120,9 @@ namespace Amazon.TaxSettings.Model
         /// The tax exemption recording time in the <c>TaxSettings</c> system. 
         /// </para>
         /// </summary>
-        public DateTime SystemEffectiveDate
+        public DateTime? SystemEffectiveDate
         {
-            get { return this._systemEffectiveDate.GetValueOrDefault(); }
+            get { return this._systemEffectiveDate; }
             set { this._systemEffectiveDate = value; }
         }
 

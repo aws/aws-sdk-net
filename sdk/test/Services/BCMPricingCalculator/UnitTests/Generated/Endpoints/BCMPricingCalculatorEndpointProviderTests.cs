@@ -23,7 +23,7 @@ using Amazon.Runtime;
 using Amazon.BCMPricingCalculator.Endpoints;
 using Amazon.BCMPricingCalculator.Internal;
 
-namespace AWSSDK_DotNet35.UnitTests.Endpoints
+namespace AWSSDK_DotNet.UnitTests.Endpoints
 {
     [TestClass]
     public partial class BCMPricingCalculatorEndpointsTests

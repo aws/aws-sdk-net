@@ -74,7 +74,7 @@ namespace Amazon.SecurityIR.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("isEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }

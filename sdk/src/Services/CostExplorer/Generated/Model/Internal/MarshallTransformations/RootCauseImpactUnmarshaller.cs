@@ -68,7 +68,7 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Contribution", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Contribution = unmarshaller.Unmarshall(context);
                     continue;
                 }

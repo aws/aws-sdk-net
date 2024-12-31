@@ -108,9 +108,9 @@ namespace Amazon.QBusiness.Model
         /// The Unix timestamp when the Amazon Q Business attachment was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -144,9 +144,9 @@ namespace Amazon.QBusiness.Model
         /// Size in bytes of the Amazon Q Business attachment.
         /// </para>
         /// </summary>
-        public int FileSize
+        public int? FileSize
         {
-            get { return this._fileSize.GetValueOrDefault(); }
+            get { return this._fileSize; }
             set { this._fileSize = value; }
         }
 

@@ -56,9 +56,9 @@ namespace Amazon.Glue.Model
         /// as <c>false</c> or <c>true</c>, an <c>InvalidInputException</c> is thrown.
         /// </para>
         /// </summary>
-        public bool IncludeRoot
+        public bool? IncludeRoot
         {
-            get { return this._includeRoot.GetValueOrDefault(); }
+            get { return this._includeRoot; }
             set { this._includeRoot = value; }
         }
 
@@ -75,9 +75,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -133,9 +133,9 @@ namespace Amazon.Glue.Model
         /// hierarchy are enumerated in the response.
         /// </para>
         /// </summary>
-        public bool Recursive
+        public bool? Recursive
         {
-            get { return this._recursive.GetValueOrDefault(); }
+            get { return this._recursive; }
             set { this._recursive = value; }
         }
 

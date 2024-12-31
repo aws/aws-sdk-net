@@ -63,88 +63,91 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCatalogId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("CatalogId");
-                    context.Writer.Write(publicRequest.CatalogId);
-                }
-
-                if(publicRequest.IsSetConnectionName())
-                {
-                    context.Writer.WritePropertyName("ConnectionName");
-                    context.Writer.Write(publicRequest.ConnectionName);
-                }
-
-                if(publicRequest.IsSetConnectionOptions())
-                {
-                    context.Writer.WritePropertyName("ConnectionOptions");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestConnectionOptionsKvp in publicRequest.ConnectionOptions)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCatalogId())
                     {
-                        context.Writer.WritePropertyName(publicRequestConnectionOptionsKvp.Key);
-                        var publicRequestConnectionOptionsValue = publicRequestConnectionOptionsKvp.Value;
-
-                            context.Writer.Write(publicRequestConnectionOptionsValue);
+                        context.Writer.WritePropertyName("CatalogId");
+                        context.Writer.Write(publicRequest.CatalogId);
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetDataStoreApiVersion())
-                {
-                    context.Writer.WritePropertyName("DataStoreApiVersion");
-                    context.Writer.Write(publicRequest.DataStoreApiVersion);
-                }
-
-                if(publicRequest.IsSetEntityName())
-                {
-                    context.Writer.WritePropertyName("EntityName");
-                    context.Writer.Write(publicRequest.EntityName);
-                }
-
-                if(publicRequest.IsSetFilterPredicate())
-                {
-                    context.Writer.WritePropertyName("FilterPredicate");
-                    context.Writer.Write(publicRequest.FilterPredicate);
-                }
-
-                if(publicRequest.IsSetLimit())
-                {
-                    context.Writer.WritePropertyName("Limit");
-                    context.Writer.Write(publicRequest.Limit);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetOrderBy())
-                {
-                    context.Writer.WritePropertyName("OrderBy");
-                    context.Writer.Write(publicRequest.OrderBy);
-                }
-
-                if(publicRequest.IsSetSelectedFields())
-                {
-                    context.Writer.WritePropertyName("SelectedFields");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSelectedFieldsListValue in publicRequest.SelectedFields)
+                    if(publicRequest.IsSetConnectionName())
                     {
-                            context.Writer.Write(publicRequestSelectedFieldsListValue);
+                        context.Writer.WritePropertyName("ConnectionName");
+                        context.Writer.Write(publicRequest.ConnectionName);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetConnectionOptions())
+                    {
+                        context.Writer.WritePropertyName("ConnectionOptions");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestConnectionOptionsKvp in publicRequest.ConnectionOptions)
+                        {
+                            context.Writer.WritePropertyName(publicRequestConnectionOptionsKvp.Key);
+                            var publicRequestConnectionOptionsValue = publicRequestConnectionOptionsKvp.Value;
+
+                                context.Writer.Write(publicRequestConnectionOptionsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetDataStoreApiVersion())
+                    {
+                        context.Writer.WritePropertyName("DataStoreApiVersion");
+                        context.Writer.Write(publicRequest.DataStoreApiVersion);
+                    }
+
+                    if(publicRequest.IsSetEntityName())
+                    {
+                        context.Writer.WritePropertyName("EntityName");
+                        context.Writer.Write(publicRequest.EntityName);
+                    }
+
+                    if(publicRequest.IsSetFilterPredicate())
+                    {
+                        context.Writer.WritePropertyName("FilterPredicate");
+                        context.Writer.Write(publicRequest.FilterPredicate);
+                    }
+
+                    if(publicRequest.IsSetLimit())
+                    {
+                        context.Writer.WritePropertyName("Limit");
+                        context.Writer.Write(publicRequest.Limit.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetOrderBy())
+                    {
+                        context.Writer.WritePropertyName("OrderBy");
+                        context.Writer.Write(publicRequest.OrderBy);
+                    }
+
+                    if(publicRequest.IsSetSelectedFields())
+                    {
+                        context.Writer.WritePropertyName("SelectedFields");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSelectedFieldsListValue in publicRequest.SelectedFields)
+                        {
+                                context.Writer.Write(publicRequestSelectedFieldsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

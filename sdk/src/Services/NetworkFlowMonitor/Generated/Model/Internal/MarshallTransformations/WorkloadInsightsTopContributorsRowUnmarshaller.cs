@@ -116,7 +116,7 @@ namespace Amazon.NetworkFlowMonitor.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("value", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Value = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -63,97 +63,100 @@ namespace Amazon.BedrockDataAutomationRuntime.Model.Internal.MarshallTransformat
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBlueprints())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("blueprints");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestBlueprintsListValue in publicRequest.Blueprints)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBlueprints())
                     {
+                        context.Writer.WritePropertyName("blueprints");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestBlueprintsListValue in publicRequest.Blueprints)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = BlueprintMarshaller.Instance;
+                            marshaller.Marshall(publicRequestBlueprintsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetClientToken())
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetDataAutomationConfiguration())
+                    {
+                        context.Writer.WritePropertyName("dataAutomationConfiguration");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = BlueprintMarshaller.Instance;
-                        marshaller.Marshall(publicRequestBlueprintsListValue, context);
+                        var marshaller = DataAutomationConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DataAutomationConfiguration, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetEncryptionConfiguration())
+                    {
+                        context.Writer.WritePropertyName("encryptionConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = EncryptionConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.EncryptionConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetInputConfiguration())
+                    {
+                        context.Writer.WritePropertyName("inputConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = InputConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.InputConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetNotificationConfiguration())
+                    {
+                        context.Writer.WritePropertyName("notificationConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = NotificationConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.NotificationConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetOutputConfiguration())
+                    {
+                        context.Writer.WritePropertyName("outputConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = OutputConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.OutputConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetClientToken())
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetDataAutomationConfiguration())
-                {
-                    context.Writer.WritePropertyName("dataAutomationConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DataAutomationConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DataAutomationConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetEncryptionConfiguration())
-                {
-                    context.Writer.WritePropertyName("encryptionConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = EncryptionConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.EncryptionConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetInputConfiguration())
-                {
-                    context.Writer.WritePropertyName("inputConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = InputConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.InputConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetNotificationConfiguration())
-                {
-                    context.Writer.WritePropertyName("notificationConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = NotificationConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.NotificationConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetOutputConfiguration())
-                {
-                    context.Writer.WritePropertyName("outputConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = OutputConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.OutputConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

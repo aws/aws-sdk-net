@@ -68,13 +68,13 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("MaxProficiencyLevel", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.MaxProficiencyLevel = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MinProficiencyLevel", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.MinProficiencyLevel = unmarshaller.Unmarshall(context);
                     continue;
                 }

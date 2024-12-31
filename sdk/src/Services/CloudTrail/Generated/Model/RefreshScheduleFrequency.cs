@@ -88,9 +88,9 @@ namespace Amazon.CloudTrail.Model
         /// For the Highlights dashboard, the <c>Value</c> must be <c>6</c>.
         /// </para>
         /// </summary>
-        public int Value
+        public int? Value
         {
-            get { return this._value.GetValueOrDefault(); }
+            get { return this._value; }
             set { this._value = value; }
         }
 

@@ -51,9 +51,9 @@ namespace Amazon.Transfer.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int Provisioned
+        public int? Provisioned
         {
-            get { return this._provisioned.GetValueOrDefault(); }
+            get { return this._provisioned; }
             set { this._provisioned = value; }
         }
 

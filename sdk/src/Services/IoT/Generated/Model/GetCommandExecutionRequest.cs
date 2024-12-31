@@ -68,9 +68,9 @@ namespace Amazon.IoT.Model
         /// field when using the <c>AWS-IoT</c> namespace.
         /// </para>
         /// </summary>
-        public bool IncludeResult
+        public bool? IncludeResult
         {
-            get { return this._includeResult.GetValueOrDefault(); }
+            get { return this._includeResult; }
             set { this._includeResult = value; }
         }
 

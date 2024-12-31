@@ -51,7 +51,7 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllowFuzziness())
             {
                 context.Writer.WritePropertyName("allowFuzziness");
-                context.Writer.Write(requestObject.AllowFuzziness);
+                context.Writer.Write(requestObject.AllowFuzziness.Value);
             }
 
             if(requestObject.IsSetName())

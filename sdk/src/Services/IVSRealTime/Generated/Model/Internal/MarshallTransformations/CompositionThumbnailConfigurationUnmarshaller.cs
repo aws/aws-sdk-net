@@ -74,7 +74,7 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("targetIntervalSeconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TargetIntervalSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }

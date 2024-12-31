@@ -63,44 +63,47 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetLocationArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("LocationArn");
-                    context.Writer.Write(publicRequest.LocationArn);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetLocationArn())
+                    {
+                        context.Writer.WritePropertyName("LocationArn");
+                        context.Writer.Write(publicRequest.LocationArn);
+                    }
+
+                    if(publicRequest.IsSetS3Config())
+                    {
+                        context.Writer.WritePropertyName("S3Config");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = S3ConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.S3Config, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetS3StorageClass())
+                    {
+                        context.Writer.WritePropertyName("S3StorageClass");
+                        context.Writer.Write(publicRequest.S3StorageClass);
+                    }
+
+                    if(publicRequest.IsSetSubdirectory())
+                    {
+                        context.Writer.WritePropertyName("Subdirectory");
+                        context.Writer.Write(publicRequest.Subdirectory);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetS3Config())
-                {
-                    context.Writer.WritePropertyName("S3Config");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = S3ConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.S3Config, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetS3StorageClass())
-                {
-                    context.Writer.WritePropertyName("S3StorageClass");
-                    context.Writer.Write(publicRequest.S3StorageClass);
-                }
-
-                if(publicRequest.IsSetSubdirectory())
-                {
-                    context.Writer.WritePropertyName("Subdirectory");
-                    context.Writer.Write(publicRequest.Subdirectory);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

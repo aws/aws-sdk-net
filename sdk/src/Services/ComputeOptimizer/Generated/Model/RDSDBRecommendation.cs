@@ -335,9 +335,9 @@ namespace Amazon.ComputeOptimizer.Model
         /// The promotion tier for the Aurora instance.
         /// </para>
         /// </summary>
-        public int PromotionTier
+        public int? PromotionTier
         {
-            get { return this._promotionTier.GetValueOrDefault(); }
+            get { return this._promotionTier; }
             set { this._promotionTier = value; }
         }
 

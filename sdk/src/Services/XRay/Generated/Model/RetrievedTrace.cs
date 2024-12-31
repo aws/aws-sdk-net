@@ -45,9 +45,9 @@ namespace Amazon.XRay.Model
         /// time of the last span that completed. 
         /// </para>
         /// </summary>
-        public double Duration
+        public double? Duration
         {
-            get { return this._duration.GetValueOrDefault(); }
+            get { return this._duration; }
             set { this._duration = value; }
         }
 

@@ -46,9 +46,9 @@ namespace Amazon.Invoicing.Model
         /// If an <c>AsOf</c> is not provided, the default value is the current time. 
         /// </para>
         /// </summary>
-        public DateTime AsOf
+        public DateTime? AsOf
         {
-            get { return this._asOf.GetValueOrDefault(); }
+            get { return this._asOf; }
             set { this._asOf = value; }
         }
 

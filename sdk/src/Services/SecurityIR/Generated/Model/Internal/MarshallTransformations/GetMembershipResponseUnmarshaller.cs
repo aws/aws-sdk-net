@@ -72,7 +72,7 @@ namespace Amazon.SecurityIR.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("membershipActivationTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.MembershipActivationTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -84,7 +84,7 @@ namespace Amazon.SecurityIR.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("membershipDeactivationTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.MembershipDeactivationTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -108,7 +108,7 @@ namespace Amazon.SecurityIR.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("numberOfAccountsCovered", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.NumberOfAccountsCovered = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -51,13 +51,13 @@ namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAfterTimestamp())
             {
                 context.Writer.WritePropertyName("afterTimestamp");
-                context.Writer.Write(requestObject.AfterTimestamp);
+                context.Writer.Write(requestObject.AfterTimestamp.Value);
             }
 
             if(requestObject.IsSetBeforeTimestamp())
             {
                 context.Writer.WritePropertyName("beforeTimestamp");
-                context.Writer.Write(requestObject.BeforeTimestamp);
+                context.Writer.Write(requestObject.BeforeTimestamp.Value);
             }
 
         }

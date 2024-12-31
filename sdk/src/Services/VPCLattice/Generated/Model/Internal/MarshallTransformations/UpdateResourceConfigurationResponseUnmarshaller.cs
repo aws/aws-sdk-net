@@ -54,7 +54,7 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("allowAssociationToShareableServiceNetwork", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.AllowAssociationToShareableServiceNetwork = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -66,7 +66,7 @@ namespace Amazon.QApps.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("presignedUrlExpiration", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.PresignedUrlExpiration = unmarshaller.Unmarshall(context);
                     continue;
                 }

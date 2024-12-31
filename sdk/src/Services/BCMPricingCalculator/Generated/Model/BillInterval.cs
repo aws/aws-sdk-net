@@ -43,9 +43,9 @@ namespace Amazon.BCMPricingCalculator.Model
         ///  The end date and time of the interval. 
         /// </para>
         /// </summary>
-        public DateTime End
+        public DateTime? End
         {
-            get { return this._end.GetValueOrDefault(); }
+            get { return this._end; }
             set { this._end = value; }
         }
 
@@ -61,9 +61,9 @@ namespace Amazon.BCMPricingCalculator.Model
         ///  The start date and time of the interval. 
         /// </para>
         /// </summary>
-        public DateTime Start
+        public DateTime? Start
         {
-            get { return this._start.GetValueOrDefault(); }
+            get { return this._start; }
             set { this._start = value; }
         }
 

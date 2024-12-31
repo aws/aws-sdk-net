@@ -48,9 +48,9 @@ namespace Amazon.DataZone.Model
         /// The timestamp of when the lineage event was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -121,9 +121,9 @@ namespace Amazon.DataZone.Model
         /// The time of the lineage event.
         /// </para>
         /// </summary>
-        public DateTime EventTime
+        public DateTime? EventTime
         {
-            get { return this._eventTime.GetValueOrDefault(); }
+            get { return this._eventTime; }
             set { this._eventTime = value; }
         }
 

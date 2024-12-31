@@ -51,7 +51,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBorrowLimit())
             {
                 context.Writer.WritePropertyName("BorrowLimit");
-                context.Writer.Write(requestObject.BorrowLimit);
+                context.Writer.Write(requestObject.BorrowLimit.Value);
             }
 
             if(requestObject.IsSetStrategy())

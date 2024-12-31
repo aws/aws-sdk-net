@@ -23,7 +23,7 @@ using Amazon.Runtime;
 using Amazon.BedrockDataAutomationRuntime.Endpoints;
 using Amazon.BedrockDataAutomationRuntime.Internal;
 
-namespace AWSSDK_DotNet35.UnitTests.Endpoints
+namespace AWSSDK_DotNet.UnitTests.Endpoints
 {
     [TestClass]
     public partial class BedrockDataAutomationRuntimeEndpointsTests

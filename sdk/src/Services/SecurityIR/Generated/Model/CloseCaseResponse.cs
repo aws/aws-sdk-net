@@ -63,9 +63,9 @@ namespace Amazon.SecurityIR.Model
         /// with the case closure date following the action. 
         /// </para>
         /// </summary>
-        public DateTime ClosedDate
+        public DateTime? ClosedDate
         {
-            get { return this._closedDate.GetValueOrDefault(); }
+            get { return this._closedDate; }
             set { this._closedDate = value; }
         }
 

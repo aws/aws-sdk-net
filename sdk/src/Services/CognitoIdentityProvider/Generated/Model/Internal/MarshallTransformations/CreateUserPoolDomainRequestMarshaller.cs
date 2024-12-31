@@ -88,7 +88,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.Domain);
                     }
 
-<<<<<<< HEAD
+                    if(publicRequest.IsSetManagedLoginVersion())
+                    {
+                        context.Writer.WritePropertyName("ManagedLoginVersion");
+                        context.Writer.Write(publicRequest.ManagedLoginVersion.Value);
+                    }
+
                     if(publicRequest.IsSetUserPoolId())
                     {
                         context.Writer.WritePropertyName("UserPoolId");
@@ -96,23 +101,6 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     }
 
                     writer.WriteObjectEnd();
-||||||| Commit version number update changes
-                if(publicRequest.IsSetUserPoolId())
-                {
-                    context.Writer.WritePropertyName("UserPoolId");
-                    context.Writer.Write(publicRequest.UserPoolId);
-=======
-                if(publicRequest.IsSetManagedLoginVersion())
-                {
-                    context.Writer.WritePropertyName("ManagedLoginVersion");
-                    context.Writer.Write(publicRequest.ManagedLoginVersion);
-                }
-
-                if(publicRequest.IsSetUserPoolId())
-                {
-                    context.Writer.WritePropertyName("UserPoolId");
-                    context.Writer.Write(publicRequest.UserPoolId);
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
                 }
 
                 request.Content = memoryStream.ToArray();

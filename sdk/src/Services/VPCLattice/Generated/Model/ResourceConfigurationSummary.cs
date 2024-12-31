@@ -51,9 +51,9 @@ namespace Amazon.VPCLattice.Model
         /// Indicates whether the resource configuration was created and is managed by Amazon.
         /// </para>
         /// </summary>
-        public bool AmazonManaged
+        public bool? AmazonManaged
         {
-            get { return this._amazonManaged.GetValueOrDefault(); }
+            get { return this._amazonManaged; }
             set { this._amazonManaged = value; }
         }
 
@@ -88,9 +88,9 @@ namespace Amazon.VPCLattice.Model
         /// The date and time that the resource configuration was created, in ISO-8601 format.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -126,9 +126,9 @@ namespace Amazon.VPCLattice.Model
         /// format.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedAt
+        public DateTime? LastUpdatedAt
         {
-            get { return this._lastUpdatedAt.GetValueOrDefault(); }
+            get { return this._lastUpdatedAt; }
             set { this._lastUpdatedAt = value; }
         }
 

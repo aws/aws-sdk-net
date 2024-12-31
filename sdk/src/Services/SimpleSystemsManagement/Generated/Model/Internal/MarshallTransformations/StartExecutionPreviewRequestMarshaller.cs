@@ -63,38 +63,41 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDocumentName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DocumentName");
-                    context.Writer.Write(publicRequest.DocumentName);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDocumentName())
+                    {
+                        context.Writer.WritePropertyName("DocumentName");
+                        context.Writer.Write(publicRequest.DocumentName);
+                    }
+
+                    if(publicRequest.IsSetDocumentVersion())
+                    {
+                        context.Writer.WritePropertyName("DocumentVersion");
+                        context.Writer.Write(publicRequest.DocumentVersion);
+                    }
+
+                    if(publicRequest.IsSetExecutionInputs())
+                    {
+                        context.Writer.WritePropertyName("ExecutionInputs");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ExecutionInputsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ExecutionInputs, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDocumentVersion())
-                {
-                    context.Writer.WritePropertyName("DocumentVersion");
-                    context.Writer.Write(publicRequest.DocumentVersion);
-                }
-
-                if(publicRequest.IsSetExecutionInputs())
-                {
-                    context.Writer.WritePropertyName("ExecutionInputs");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ExecutionInputsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ExecutionInputs, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

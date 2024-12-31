@@ -65,9 +65,9 @@ namespace Amazon.CloudFront.Model
         /// The maximum number of Anycast static IP lists that you want returned in the response.
         /// </para>
         /// </summary>
-        public int MaxItems
+        public int? MaxItems
         {
-            get { return this._maxItems.GetValueOrDefault(); }
+            get { return this._maxItems; }
             set { this._maxItems = value; }
         }
 

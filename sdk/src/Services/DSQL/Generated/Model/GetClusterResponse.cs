@@ -68,9 +68,9 @@ namespace Amazon.DSQL.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -87,9 +87,9 @@ namespace Amazon.DSQL.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool DeletionProtectionEnabled
+        public bool? DeletionProtectionEnabled
         {
-            get { return this._deletionProtectionEnabled.GetValueOrDefault(); }
+            get { return this._deletionProtectionEnabled; }
             set { this._deletionProtectionEnabled = value; }
         }
 

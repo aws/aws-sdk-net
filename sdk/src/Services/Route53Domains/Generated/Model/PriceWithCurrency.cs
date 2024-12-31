@@ -62,16 +62,8 @@ namespace Amazon.Route53Domains.Model
         /// The price of a domain, in a specific currency.
         /// </para>
         /// </summary>
-<<<<<<< HEAD
-        [AWSProperty(Required=true)]
-        public double? Price
-||||||| Commit version number update changes
-        [AWSProperty(Required=true)]
-        public double Price
-=======
         [AWSProperty(Required=true, Min=0)]
-        public double Price
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
+        public double? Price
         {
             get { return this._price; }
             set { this._price = value; }

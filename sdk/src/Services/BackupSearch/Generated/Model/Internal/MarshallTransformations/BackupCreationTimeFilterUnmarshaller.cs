@@ -68,13 +68,13 @@ namespace Amazon.BackupSearch.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("CreatedAfter", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedAfter = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CreatedBefore", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedBefore = unmarshaller.Unmarshall(context);
                     continue;
                 }

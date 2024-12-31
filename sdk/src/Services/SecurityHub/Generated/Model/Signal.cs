@@ -84,9 +84,9 @@ namespace Amazon.SecurityHub.Model
         ///  The number of times this signal was observed. 
         /// </para>
         /// </summary>
-        public int Count
+        public int? Count
         {
-            get { return this._count.GetValueOrDefault(); }
+            get { return this._count; }
             set { this._count = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.SecurityHub.Model
         /// 
         /// </para>
         /// </summary>
-        public long CreatedAt
+        public long? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -140,9 +140,9 @@ namespace Amazon.SecurityHub.Model
         /// 
         /// </para>
         /// </summary>
-        public long FirstSeenAt
+        public long? FirstSeenAt
         {
-            get { return this._firstSeenAt.GetValueOrDefault(); }
+            get { return this._firstSeenAt; }
             set { this._firstSeenAt = value; }
         }
 
@@ -177,9 +177,9 @@ namespace Amazon.SecurityHub.Model
         /// 
         /// </para>
         /// </summary>
-        public long LastSeenAt
+        public long? LastSeenAt
         {
-            get { return this._lastSeenAt.GetValueOrDefault(); }
+            get { return this._lastSeenAt; }
             set { this._lastSeenAt = value; }
         }
 
@@ -252,9 +252,9 @@ namespace Amazon.SecurityHub.Model
         /// levels for GuardDuty findings</a> in the <i>Amazon GuardDuty User Guide</i>.
         /// </para>
         /// </summary>
-        public double Severity
+        public double? Severity
         {
-            get { return this._severity.GetValueOrDefault(); }
+            get { return this._severity; }
             set { this._severity = value; }
         }
 
@@ -355,9 +355,9 @@ namespace Amazon.SecurityHub.Model
         ///  The timestamp when this signal was last observed. 
         /// </para>
         /// </summary>
-        public long UpdatedAt
+        public long? UpdatedAt
         {
-            get { return this._updatedAt.GetValueOrDefault(); }
+            get { return this._updatedAt; }
             set { this._updatedAt = value; }
         }
 

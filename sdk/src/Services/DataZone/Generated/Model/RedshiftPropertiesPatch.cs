@@ -122,9 +122,9 @@ namespace Amazon.DataZone.Model
         /// The port in the Amazon Redshift properties patch.
         /// </para>
         /// </summary>
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 

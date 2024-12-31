@@ -64,66 +64,69 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                 throw new AmazonOmicsException("Request object does not have required field Id set");
             request.AddPathResource("{id}", StringUtils.FromString(publicRequest.Id));
             request.ResourcePath = "/sequencestore/{id}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetFallbackLocation())
-                {
-                    context.Writer.WritePropertyName("fallbackLocation");
-                    context.Writer.Write(publicRequest.FallbackLocation);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetPropagatedSetLevelTags())
-                {
-                    context.Writer.WritePropertyName("propagatedSetLevelTags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPropagatedSetLevelTagsListValue in publicRequest.PropagatedSetLevelTags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientToken())
                     {
-                            context.Writer.Write(publicRequestPropagatedSetLevelTagsListValue);
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetFallbackLocation())
+                    {
+                        context.Writer.WritePropertyName("fallbackLocation");
+                        context.Writer.Write(publicRequest.FallbackLocation);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetPropagatedSetLevelTags())
+                    {
+                        context.Writer.WritePropertyName("propagatedSetLevelTags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestPropagatedSetLevelTagsListValue in publicRequest.PropagatedSetLevelTags)
+                        {
+                                context.Writer.Write(publicRequestPropagatedSetLevelTagsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetS3AccessConfig())
+                    {
+                        context.Writer.WritePropertyName("s3AccessConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = S3AccessConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.S3AccessConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetS3AccessConfig())
-                {
-                    context.Writer.WritePropertyName("s3AccessConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = S3AccessConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.S3AccessConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             

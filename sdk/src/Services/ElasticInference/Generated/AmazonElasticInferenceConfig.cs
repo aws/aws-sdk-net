@@ -34,16 +34,10 @@ namespace Amazon.ElasticInference
     public partial class AmazonElasticInferenceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("Elastic Inference", "4.0.0.0");
 
         private static readonly AmazonElasticInferenceEndpointResolver EndpointResolver =
             new AmazonElasticInferenceEndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("Elastic Inference", "3.7.400.54");
-=======
-            InternalSDKUtils.BuildUserAgentString("Elastic Inference", "3.7.400.71");
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
 
         private string _userAgent = UserAgentString;
         ///<summary>

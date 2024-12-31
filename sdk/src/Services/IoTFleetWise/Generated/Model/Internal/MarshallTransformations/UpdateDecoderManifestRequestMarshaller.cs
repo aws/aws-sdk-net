@@ -65,32 +65,18 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             request.ResourcePath = "/";
             using (MemoryStream memoryStream = new MemoryStream())
             {
-<<<<<<< HEAD
                 using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-||||||| Commit version number update changes
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
-=======
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDefaultForUnmappedSignals())
-                {
-                    context.Writer.WritePropertyName("defaultForUnmappedSignals");
-                    context.Writer.Write(publicRequest.DefaultForUnmappedSignals);
-                }
-
-                if(publicRequest.IsSetDescription())
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
                 {
                     JsonWriter writer = new JsonWriter(streamWriter);
                     writer.Validate = false;
                     writer.WriteObjectStart();
                     var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDefaultForUnmappedSignals())
+                    {
+                        context.Writer.WritePropertyName("defaultForUnmappedSignals");
+                        context.Writer.Write(publicRequest.DefaultForUnmappedSignals);
+                    }
+
                     if(publicRequest.IsSetDescription())
                     {
                         context.Writer.WritePropertyName("description");

@@ -56,9 +56,9 @@ namespace Amazon.Notifications.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime EventOccurrenceTime
+        public DateTime? EventOccurrenceTime
         {
-            get { return this._eventOccurrenceTime.GetValueOrDefault(); }
+            get { return this._eventOccurrenceTime; }
             set { this._eventOccurrenceTime = value; }
         }
 

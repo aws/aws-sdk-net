@@ -67,9 +67,9 @@ namespace Amazon.S3Tables.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
-        public int MaxBuckets
+        public int? MaxBuckets
         {
-            get { return this._maxBuckets.GetValueOrDefault(); }
+            get { return this._maxBuckets; }
             set { this._maxBuckets = value; }
         }
 

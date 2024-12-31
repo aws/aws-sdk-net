@@ -63,61 +63,64 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetActivationState())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ActivationState");
-                    context.Writer.Write(publicRequest.ActivationState);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetActivationState())
+                    {
+                        context.Writer.WritePropertyName("ActivationState");
+                        context.Writer.Write(publicRequest.ActivationState);
+                    }
+
+                    if(publicRequest.IsSetComputeQuotaConfig())
+                    {
+                        context.Writer.WritePropertyName("ComputeQuotaConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ComputeQuotaConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ComputeQuotaConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetComputeQuotaId())
+                    {
+                        context.Writer.WritePropertyName("ComputeQuotaId");
+                        context.Writer.Write(publicRequest.ComputeQuotaId);
+                    }
+
+                    if(publicRequest.IsSetComputeQuotaTarget())
+                    {
+                        context.Writer.WritePropertyName("ComputeQuotaTarget");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ComputeQuotaTargetMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ComputeQuotaTarget, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetTargetVersion())
+                    {
+                        context.Writer.WritePropertyName("TargetVersion");
+                        context.Writer.Write(publicRequest.TargetVersion.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetComputeQuotaConfig())
-                {
-                    context.Writer.WritePropertyName("ComputeQuotaConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ComputeQuotaConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ComputeQuotaConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetComputeQuotaId())
-                {
-                    context.Writer.WritePropertyName("ComputeQuotaId");
-                    context.Writer.Write(publicRequest.ComputeQuotaId);
-                }
-
-                if(publicRequest.IsSetComputeQuotaTarget())
-                {
-                    context.Writer.WritePropertyName("ComputeQuotaTarget");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ComputeQuotaTargetMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ComputeQuotaTarget, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetTargetVersion())
-                {
-                    context.Writer.WritePropertyName("TargetVersion");
-                    context.Writer.Write(publicRequest.TargetVersion);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

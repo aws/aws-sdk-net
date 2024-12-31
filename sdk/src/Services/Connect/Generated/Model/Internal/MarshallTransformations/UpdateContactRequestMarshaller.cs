@@ -69,72 +69,44 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             request.ResourcePath = "/contacts/{InstanceId}/{ContactId}";
             using (MemoryStream memoryStream = new MemoryStream())
             {
-<<<<<<< HEAD
                 using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-||||||| Commit version number update changes
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
-=======
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCustomerEndpoint())
-                {
-                    context.Writer.WritePropertyName("CustomerEndpoint");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = EndpointMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.CustomerEndpoint, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDescription())
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
                 {
                     JsonWriter writer = new JsonWriter(streamWriter);
                     writer.Validate = false;
                     writer.WriteObjectStart();
                     var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCustomerEndpoint())
+                    {
+                        context.Writer.WritePropertyName("CustomerEndpoint");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = EndpointMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.CustomerEndpoint, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
                     if(publicRequest.IsSetDescription())
                     {
                         context.Writer.WritePropertyName("Description");
                         context.Writer.Write(publicRequest.Description);
                     }
 
-<<<<<<< HEAD
                     if(publicRequest.IsSetName())
-||||||| Commit version number update changes
-                if(publicRequest.IsSetReferences())
-                {
-                    context.Writer.WritePropertyName("References");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestReferencesKvp in publicRequest.References)
-=======
-                if(publicRequest.IsSetQueueInfo())
-                {
-                    context.Writer.WritePropertyName("QueueInfo");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = QueueInfoInputMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.QueueInfo, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetReferences())
-                {
-                    context.Writer.WritePropertyName("References");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestReferencesKvp in publicRequest.References)
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
                     {
                         context.Writer.WritePropertyName("Name");
                         context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetQueueInfo())
+                    {
+                        context.Writer.WritePropertyName("QueueInfo");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = QueueInfoInputMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.QueueInfo, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
 
                     if(publicRequest.IsSetReferences())
@@ -156,61 +128,51 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
 
-                    writer.WriteObjectEnd();
-                }
-
-<<<<<<< HEAD
-                request.Content = memoryStream.ToArray();
-||||||| Commit version number update changes
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
-=======
-                if(publicRequest.IsSetSegmentAttributes())
-                {
-                    context.Writer.WritePropertyName("SegmentAttributes");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestSegmentAttributesKvp in publicRequest.SegmentAttributes)
+                    if(publicRequest.IsSetSegmentAttributes())
                     {
-                        context.Writer.WritePropertyName(publicRequestSegmentAttributesKvp.Key);
-                        var publicRequestSegmentAttributesValue = publicRequestSegmentAttributesKvp.Value;
+                        context.Writer.WritePropertyName("SegmentAttributes");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestSegmentAttributesKvp in publicRequest.SegmentAttributes)
+                        {
+                            context.Writer.WritePropertyName(publicRequestSegmentAttributesKvp.Key);
+                            var publicRequestSegmentAttributesValue = publicRequestSegmentAttributesKvp.Value;
 
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = SegmentAttributeValueMarshaller.Instance;
+                            marshaller.Marshall(publicRequestSegmentAttributesValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetSystemEndpoint())
+                    {
+                        context.Writer.WritePropertyName("SystemEndpoint");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = SegmentAttributeValueMarshaller.Instance;
-                        marshaller.Marshall(publicRequestSegmentAttributesValue, context);
+                        var marshaller = EndpointMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SystemEndpoint, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetUserInfo())
+                    {
+                        context.Writer.WritePropertyName("UserInfo");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = UserInfoMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.UserInfo, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetSystemEndpoint())
-                {
-                    context.Writer.WritePropertyName("SystemEndpoint");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = EndpointMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SystemEndpoint, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetUserInfo())
-                {
-                    context.Writer.WritePropertyName("UserInfo");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = UserInfoMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.UserInfo, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
+                request.Content = memoryStream.ToArray();
             }
 
 

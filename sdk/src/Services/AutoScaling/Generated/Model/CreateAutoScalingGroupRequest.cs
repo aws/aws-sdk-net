@@ -732,9 +732,9 @@ namespace Amazon.AutoScaling.Model
         /// Scaling group zonal shift</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. 
         /// </para>
         /// </summary>
-        public bool SkipZonalShiftValidation
+        public bool? SkipZonalShiftValidation
         {
-            get { return this._skipZonalShiftValidation.GetValueOrDefault(); }
+            get { return this._skipZonalShiftValidation; }
             set { this._skipZonalShiftValidation = value; }
         }
 

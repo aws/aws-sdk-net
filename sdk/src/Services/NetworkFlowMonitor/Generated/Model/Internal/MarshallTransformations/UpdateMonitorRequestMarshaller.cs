@@ -64,90 +64,93 @@ namespace Amazon.NetworkFlowMonitor.Model.Internal.MarshallTransformations
                 throw new AmazonNetworkFlowMonitorException("Request object does not have required field MonitorName set");
             request.AddPathResource("{monitorName}", StringUtils.FromString(publicRequest.MonitorName));
             request.ResourcePath = "/monitors/{monitorName}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetLocalResourcesToAdd())
-                {
-                    context.Writer.WritePropertyName("localResourcesToAdd");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestLocalResourcesToAddListValue in publicRequest.LocalResourcesToAdd)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientToken())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = MonitorLocalResourceMarshaller.Instance;
-                        marshaller.Marshall(publicRequestLocalResourcesToAddListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetLocalResourcesToRemove())
-                {
-                    context.Writer.WritePropertyName("localResourcesToRemove");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestLocalResourcesToRemoveListValue in publicRequest.LocalResourcesToRemove)
+                    else if(!(publicRequest.IsSetClientToken()))
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = MonitorLocalResourceMarshaller.Instance;
-                        marshaller.Marshall(publicRequestLocalResourcesToRemoveListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
                     }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetRemoteResourcesToAdd())
-                {
-                    context.Writer.WritePropertyName("remoteResourcesToAdd");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestRemoteResourcesToAddListValue in publicRequest.RemoteResourcesToAdd)
+                    if(publicRequest.IsSetLocalResourcesToAdd())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("localResourcesToAdd");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestLocalResourcesToAddListValue in publicRequest.LocalResourcesToAdd)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = MonitorRemoteResourceMarshaller.Instance;
-                        marshaller.Marshall(publicRequestRemoteResourcesToAddListValue, context);
+                            var marshaller = MonitorLocalResourceMarshaller.Instance;
+                            marshaller.Marshall(publicRequestLocalResourcesToAddListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetRemoteResourcesToRemove())
-                {
-                    context.Writer.WritePropertyName("remoteResourcesToRemove");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestRemoteResourcesToRemoveListValue in publicRequest.RemoteResourcesToRemove)
+                    if(publicRequest.IsSetLocalResourcesToRemove())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("localResourcesToRemove");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestLocalResourcesToRemoveListValue in publicRequest.LocalResourcesToRemove)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = MonitorRemoteResourceMarshaller.Instance;
-                        marshaller.Marshall(publicRequestRemoteResourcesToRemoveListValue, context);
+                            var marshaller = MonitorLocalResourceMarshaller.Instance;
+                            marshaller.Marshall(publicRequestLocalResourcesToRemoveListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetRemoteResourcesToAdd())
+                    {
+                        context.Writer.WritePropertyName("remoteResourcesToAdd");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestRemoteResourcesToAddListValue in publicRequest.RemoteResourcesToAdd)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = MonitorRemoteResourceMarshaller.Instance;
+                            marshaller.Marshall(publicRequestRemoteResourcesToAddListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetRemoteResourcesToRemove())
+                    {
+                        context.Writer.WritePropertyName("remoteResourcesToRemove");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestRemoteResourcesToRemoveListValue in publicRequest.RemoteResourcesToRemove)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = MonitorRemoteResourceMarshaller.Instance;
+                            marshaller.Marshall(publicRequestRemoteResourcesToRemoveListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

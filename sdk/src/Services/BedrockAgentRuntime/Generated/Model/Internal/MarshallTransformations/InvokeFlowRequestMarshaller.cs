@@ -97,31 +97,21 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                         context.Writer.WriteArrayEnd();
                     }
 
+                    if(publicRequest.IsSetModelPerformanceConfiguration())
+                    {
+                        context.Writer.WritePropertyName("modelPerformanceConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ModelPerformanceConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ModelPerformanceConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
                     writer.WriteObjectEnd();
                 }
 
-<<<<<<< HEAD
                 request.Content = memoryStream.ToArray();
-||||||| Commit version number update changes
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
-=======
-                if(publicRequest.IsSetModelPerformanceConfiguration())
-                {
-                    context.Writer.WritePropertyName("modelPerformanceConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ModelPerformanceConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ModelPerformanceConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
             }
 
 

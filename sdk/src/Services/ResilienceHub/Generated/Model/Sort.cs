@@ -44,9 +44,9 @@ namespace Amazon.ResilienceHub.Model
         /// the basis for sorting the metrics.
         /// </para>
         /// </summary>
-        public bool Ascending
+        public bool? Ascending
         {
-            get { return this._ascending.GetValueOrDefault(); }
+            get { return this._ascending; }
             set { this._ascending = value; }
         }
 

@@ -124,9 +124,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether Proof of Key Code Exchange (PKCE) is enabled.
         /// </para>
         /// </summary>
-        public bool PkceEnabled
+        public bool? PkceEnabled
         {
-            get { return this._pkceEnabled.GetValueOrDefault(); }
+            get { return this._pkceEnabled; }
             set { this._pkceEnabled = value; }
         }
 

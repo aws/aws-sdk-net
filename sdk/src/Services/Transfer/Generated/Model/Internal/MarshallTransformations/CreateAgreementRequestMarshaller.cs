@@ -77,31 +77,11 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.AccessRole);
                     }
 
-<<<<<<< HEAD
                     if(publicRequest.IsSetBaseDirectory())
                     {
                         context.Writer.WritePropertyName("BaseDirectory");
                         context.Writer.Write(publicRequest.BaseDirectory);
                     }
-||||||| Commit version number update changes
-                if(publicRequest.IsSetLocalProfileId())
-                {
-                    context.Writer.WritePropertyName("LocalProfileId");
-                    context.Writer.Write(publicRequest.LocalProfileId);
-                }
-=======
-                if(publicRequest.IsSetEnforceMessageSigning())
-                {
-                    context.Writer.WritePropertyName("EnforceMessageSigning");
-                    context.Writer.Write(publicRequest.EnforceMessageSigning);
-                }
-
-                if(publicRequest.IsSetLocalProfileId())
-                {
-                    context.Writer.WritePropertyName("LocalProfileId");
-                    context.Writer.Write(publicRequest.LocalProfileId);
-                }
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
 
                     if(publicRequest.IsSetDescription())
                     {
@@ -109,36 +89,28 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.Description);
                     }
 
-<<<<<<< HEAD
+                    if(publicRequest.IsSetEnforceMessageSigning())
+                    {
+                        context.Writer.WritePropertyName("EnforceMessageSigning");
+                        context.Writer.Write(publicRequest.EnforceMessageSigning);
+                    }
+
                     if(publicRequest.IsSetLocalProfileId())
                     {
                         context.Writer.WritePropertyName("LocalProfileId");
                         context.Writer.Write(publicRequest.LocalProfileId);
                     }
-||||||| Commit version number update changes
-                if(publicRequest.IsSetServerId())
-                {
-                    context.Writer.WritePropertyName("ServerId");
-                    context.Writer.Write(publicRequest.ServerId);
-                }
-=======
-                if(publicRequest.IsSetPreserveFilename())
-                {
-                    context.Writer.WritePropertyName("PreserveFilename");
-                    context.Writer.Write(publicRequest.PreserveFilename);
-                }
-
-                if(publicRequest.IsSetServerId())
-                {
-                    context.Writer.WritePropertyName("ServerId");
-                    context.Writer.Write(publicRequest.ServerId);
-                }
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
 
                     if(publicRequest.IsSetPartnerProfileId())
                     {
                         context.Writer.WritePropertyName("PartnerProfileId");
                         context.Writer.Write(publicRequest.PartnerProfileId);
+                    }
+
+                    if(publicRequest.IsSetPreserveFilename())
+                    {
+                        context.Writer.WritePropertyName("PreserveFilename");
+                        context.Writer.Write(publicRequest.PreserveFilename);
                     }
 
                     if(publicRequest.IsSetServerId())

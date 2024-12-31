@@ -68,7 +68,7 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("maxRecentSessions", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxRecentSessions = unmarshaller.Unmarshall(context);
                     continue;
                 }

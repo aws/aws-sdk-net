@@ -43,9 +43,9 @@ namespace Amazon.S3Tables.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2147483647)]
-        public int TargetFileSizeMB
+        public int? TargetFileSizeMB
         {
-            get { return this._targetFileSizeMB.GetValueOrDefault(); }
+            get { return this._targetFileSizeMB; }
             set { this._targetFileSizeMB = value; }
         }
 

@@ -45,9 +45,9 @@ namespace Amazon.XRay.Model
         ///  Displays when the rule was last modified, in Unix time seconds. 
         /// </para>
         /// </summary>
-        public DateTime ModifiedAt
+        public DateTime? ModifiedAt
         {
-            get { return this._modifiedAt.GetValueOrDefault(); }
+            get { return this._modifiedAt; }
             set { this._modifiedAt = value; }
         }
 

@@ -63,9 +63,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// The amount of daily capacity decreases remaining.
         /// </para>
         /// </summary>
-        public int DecreaseRequestsRemaining
+        public int? DecreaseRequestsRemaining
         {
-            get { return this._decreaseRequestsRemaining.GetValueOrDefault(); }
+            get { return this._decreaseRequestsRemaining; }
             set { this._decreaseRequestsRemaining = value; }
         }
 
@@ -81,9 +81,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// The last time the capacity reservation was modified.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedTime
+        public DateTime? LastModifiedTime
         {
-            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            get { return this._lastModifiedTime; }
             set { this._lastModifiedTime = value; }
         }
 

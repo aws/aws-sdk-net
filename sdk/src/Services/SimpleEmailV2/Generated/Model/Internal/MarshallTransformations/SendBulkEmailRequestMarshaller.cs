@@ -102,7 +102,6 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
 
-<<<<<<< HEAD
                     if(publicRequest.IsSetDefaultEmailTags())
                     {
                         context.Writer.WritePropertyName("DefaultEmailTags");
@@ -118,25 +117,12 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                         }
                         context.Writer.WriteArrayEnd();
                     }
-||||||| Commit version number update changes
-                if(publicRequest.IsSetFeedbackForwardingEmailAddress())
-                {
-                    context.Writer.WritePropertyName("FeedbackForwardingEmailAddress");
-                    context.Writer.Write(publicRequest.FeedbackForwardingEmailAddress);
-                }
-=======
-                if(publicRequest.IsSetEndpointId())
-                {
-                    context.Writer.WritePropertyName("EndpointId");
-                    context.Writer.Write(publicRequest.EndpointId);
-                }
 
-                if(publicRequest.IsSetFeedbackForwardingEmailAddress())
-                {
-                    context.Writer.WritePropertyName("FeedbackForwardingEmailAddress");
-                    context.Writer.Write(publicRequest.FeedbackForwardingEmailAddress);
-                }
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
+                    if(publicRequest.IsSetEndpointId())
+                    {
+                        context.Writer.WritePropertyName("EndpointId");
+                        context.Writer.Write(publicRequest.EndpointId);
+                    }
 
                     if(publicRequest.IsSetFeedbackForwardingEmailAddress())
                     {

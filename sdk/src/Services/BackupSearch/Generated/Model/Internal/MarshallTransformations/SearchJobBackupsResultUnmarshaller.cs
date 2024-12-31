@@ -68,7 +68,7 @@ namespace Amazon.BackupSearch.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("BackupCreationTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.BackupCreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -80,7 +80,7 @@ namespace Amazon.BackupSearch.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("IndexCreationTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.IndexCreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

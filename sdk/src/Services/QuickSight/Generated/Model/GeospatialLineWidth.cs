@@ -43,9 +43,9 @@ namespace Amazon.QuickSight.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public double LineWidth
+        public double? LineWidth
         {
-            get { return this._lineWidth.GetValueOrDefault(); }
+            get { return this._lineWidth; }
             set { this._lineWidth = value; }
         }
 

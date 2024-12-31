@@ -68,13 +68,13 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("guarded", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Guarded = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("total", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Total = unmarshaller.Unmarshall(context);
                     continue;
                 }

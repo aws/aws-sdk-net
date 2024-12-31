@@ -63,54 +63,57 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDashboardId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DashboardId");
-                    context.Writer.Write(publicRequest.DashboardId);
-                }
-
-                if(publicRequest.IsSetRefreshSchedule())
-                {
-                    context.Writer.WritePropertyName("RefreshSchedule");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = RefreshScheduleMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.RefreshSchedule, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTerminationProtectionEnabled())
-                {
-                    context.Writer.WritePropertyName("TerminationProtectionEnabled");
-                    context.Writer.Write(publicRequest.TerminationProtectionEnabled);
-                }
-
-                if(publicRequest.IsSetWidgets())
-                {
-                    context.Writer.WritePropertyName("Widgets");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestWidgetsListValue in publicRequest.Widgets)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDashboardId())
                     {
+                        context.Writer.WritePropertyName("DashboardId");
+                        context.Writer.Write(publicRequest.DashboardId);
+                    }
+
+                    if(publicRequest.IsSetRefreshSchedule())
+                    {
+                        context.Writer.WritePropertyName("RefreshSchedule");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = RequestWidgetMarshaller.Instance;
-                        marshaller.Marshall(publicRequestWidgetsListValue, context);
+                        var marshaller = RefreshScheduleMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.RefreshSchedule, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetTerminationProtectionEnabled())
+                    {
+                        context.Writer.WritePropertyName("TerminationProtectionEnabled");
+                        context.Writer.Write(publicRequest.TerminationProtectionEnabled.Value);
+                    }
+
+                    if(publicRequest.IsSetWidgets())
+                    {
+                        context.Writer.WritePropertyName("Widgets");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestWidgetsListValue in publicRequest.Widgets)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = RequestWidgetMarshaller.Instance;
+                            marshaller.Marshall(publicRequestWidgetsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

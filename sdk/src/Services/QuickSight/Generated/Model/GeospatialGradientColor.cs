@@ -46,9 +46,9 @@ namespace Amazon.QuickSight.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
-        public double DefaultOpacity
+        public double? DefaultOpacity
         {
-            get { return this._defaultOpacity.GetValueOrDefault(); }
+            get { return this._defaultOpacity; }
             set { this._defaultOpacity = value; }
         }
 

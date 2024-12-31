@@ -110,7 +110,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("PhysicalConnectionPropertiesRequired", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.PhysicalConnectionPropertiesRequired = unmarshaller.Unmarshall(context);
                     continue;
                 }

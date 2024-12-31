@@ -49,9 +49,9 @@ namespace Amazon.BackupSearch.Model
         /// This is the creation time of the backup (recovery point).
         /// </para>
         /// </summary>
-        public DateTime BackupCreationTime
+        public DateTime? BackupCreationTime
         {
-            get { return this._backupCreationTime.GetValueOrDefault(); }
+            get { return this._backupCreationTime; }
             set { this._backupCreationTime = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.BackupSearch.Model
         /// This is the creation time of the backup index.
         /// </para>
         /// </summary>
-        public DateTime IndexCreationTime
+        public DateTime? IndexCreationTime
         {
-            get { return this._indexCreationTime.GetValueOrDefault(); }
+            get { return this._indexCreationTime; }
             set { this._indexCreationTime = value; }
         }
 

@@ -54,7 +54,7 @@ namespace Amazon.SecurityIR.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("actualIncidentStartDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.ActualIncidentStartDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -78,7 +78,7 @@ namespace Amazon.SecurityIR.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("closedDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.ClosedDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -90,7 +90,7 @@ namespace Amazon.SecurityIR.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("createdDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreatedDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -126,7 +126,7 @@ namespace Amazon.SecurityIR.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("lastUpdatedDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastUpdatedDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -138,7 +138,7 @@ namespace Amazon.SecurityIR.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("reportedIncidentStartDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.ReportedIncidentStartDate = unmarshaller.Unmarshall(context);
                     continue;
                 }

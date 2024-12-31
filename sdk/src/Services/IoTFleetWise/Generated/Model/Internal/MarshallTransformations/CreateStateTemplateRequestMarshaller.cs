@@ -63,82 +63,85 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDataExtraDimensions())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("dataExtraDimensions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestDataExtraDimensionsListValue in publicRequest.DataExtraDimensions)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDataExtraDimensions())
                     {
-                            context.Writer.Write(publicRequestDataExtraDimensionsListValue);
+                        context.Writer.WritePropertyName("dataExtraDimensions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestDataExtraDimensionsListValue in publicRequest.DataExtraDimensions)
+                        {
+                                context.Writer.Write(publicRequestDataExtraDimensionsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetMetadataExtraDimensions())
-                {
-                    context.Writer.WritePropertyName("metadataExtraDimensions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestMetadataExtraDimensionsListValue in publicRequest.MetadataExtraDimensions)
+                    if(publicRequest.IsSetDescription())
                     {
-                            context.Writer.Write(publicRequestMetadataExtraDimensionsListValue);
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetSignalCatalogArn())
-                {
-                    context.Writer.WritePropertyName("signalCatalogArn");
-                    context.Writer.Write(publicRequest.SignalCatalogArn);
-                }
-
-                if(publicRequest.IsSetStateTemplateProperties())
-                {
-                    context.Writer.WritePropertyName("stateTemplateProperties");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestStateTemplatePropertiesListValue in publicRequest.StateTemplateProperties)
+                    if(publicRequest.IsSetMetadataExtraDimensions())
                     {
-                            context.Writer.Write(publicRequestStateTemplatePropertiesListValue);
+                        context.Writer.WritePropertyName("metadataExtraDimensions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestMetadataExtraDimensionsListValue in publicRequest.MetadataExtraDimensions)
+                        {
+                                context.Writer.Write(publicRequestMetadataExtraDimensionsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    if(publicRequest.IsSetName())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetSignalCatalogArn())
+                    {
+                        context.Writer.WritePropertyName("signalCatalogArn");
+                        context.Writer.Write(publicRequest.SignalCatalogArn);
+                    }
+
+                    if(publicRequest.IsSetStateTemplateProperties())
+                    {
+                        context.Writer.WritePropertyName("stateTemplateProperties");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestStateTemplatePropertiesListValue in publicRequest.StateTemplateProperties)
+                        {
+                                context.Writer.Write(publicRequestStateTemplatePropertiesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -112,9 +112,9 @@ namespace Amazon.BedrockDataAutomation.Model
         /// Gets and sets the property CreationTime.
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -160,9 +160,9 @@ namespace Amazon.BedrockDataAutomation.Model
         /// Gets and sets the property LastModifiedTime.
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime LastModifiedTime
+        public DateTime? LastModifiedTime
         {
-            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            get { return this._lastModifiedTime; }
             set { this._lastModifiedTime = value; }
         }
 

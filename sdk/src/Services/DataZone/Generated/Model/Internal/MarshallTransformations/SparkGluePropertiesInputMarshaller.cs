@@ -74,7 +74,7 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIdleTimeout())
             {
                 context.Writer.WritePropertyName("idleTimeout");
-                context.Writer.Write(requestObject.IdleTimeout);
+                context.Writer.Write(requestObject.IdleTimeout.Value);
             }
 
             if(requestObject.IsSetJavaVirtualEnv())
@@ -86,7 +86,7 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNumberOfWorkers())
             {
                 context.Writer.WritePropertyName("numberOfWorkers");
-                context.Writer.Write(requestObject.NumberOfWorkers);
+                context.Writer.Write(requestObject.NumberOfWorkers.Value);
             }
 
             if(requestObject.IsSetPythonVirtualEnv())

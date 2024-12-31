@@ -63,38 +63,41 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetIntegrationName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("integrationName");
-                    context.Writer.Write(publicRequest.IntegrationName);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetIntegrationName())
+                    {
+                        context.Writer.WritePropertyName("integrationName");
+                        context.Writer.Write(publicRequest.IntegrationName);
+                    }
+
+                    if(publicRequest.IsSetIntegrationType())
+                    {
+                        context.Writer.WritePropertyName("integrationType");
+                        context.Writer.Write(publicRequest.IntegrationType);
+                    }
+
+                    if(publicRequest.IsSetResourceConfig())
+                    {
+                        context.Writer.WritePropertyName("resourceConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ResourceConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ResourceConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetIntegrationType())
-                {
-                    context.Writer.WritePropertyName("integrationType");
-                    context.Writer.Write(publicRequest.IntegrationType);
-                }
-
-                if(publicRequest.IsSetResourceConfig())
-                {
-                    context.Writer.WritePropertyName("resourceConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ResourceConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ResourceConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

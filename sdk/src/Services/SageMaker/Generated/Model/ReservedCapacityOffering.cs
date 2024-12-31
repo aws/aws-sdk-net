@@ -75,9 +75,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=87600)]
-        public long DurationHours
+        public long? DurationHours
         {
-            get { return this._durationHours.GetValueOrDefault(); }
+            get { return this._durationHours; }
             set { this._durationHours = value; }
         }
 
@@ -95,9 +95,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=59)]
-        public long DurationMinutes
+        public long? DurationMinutes
         {
-            get { return this._durationMinutes.GetValueOrDefault(); }
+            get { return this._durationMinutes; }
             set { this._durationMinutes = value; }
         }
 
@@ -113,9 +113,9 @@ namespace Amazon.SageMaker.Model
         /// The end time of the reserved capacity offering.
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -132,9 +132,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
-        public int InstanceCount
+        public int? InstanceCount
         {
-            get { return this._instanceCount.GetValueOrDefault(); }
+            get { return this._instanceCount; }
             set { this._instanceCount = value; }
         }
 
@@ -169,9 +169,9 @@ namespace Amazon.SageMaker.Model
         /// The start time of the reserved capacity offering.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

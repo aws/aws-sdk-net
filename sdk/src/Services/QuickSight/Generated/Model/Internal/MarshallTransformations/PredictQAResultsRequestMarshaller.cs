@@ -64,39 +64,42 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 throw new AmazonQuickSightException("Request object does not have required field AwsAccountId set");
             request.AddPathResource("{AwsAccountId}", StringUtils.FromString(publicRequest.AwsAccountId));
             request.ResourcePath = "/accounts/{AwsAccountId}/qa/predict";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetIncludeGeneratedAnswer())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("IncludeGeneratedAnswer");
-                    context.Writer.Write(publicRequest.IncludeGeneratedAnswer);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetIncludeGeneratedAnswer())
+                    {
+                        context.Writer.WritePropertyName("IncludeGeneratedAnswer");
+                        context.Writer.Write(publicRequest.IncludeGeneratedAnswer);
+                    }
+
+                    if(publicRequest.IsSetIncludeQuickSightQIndex())
+                    {
+                        context.Writer.WritePropertyName("IncludeQuickSightQIndex");
+                        context.Writer.Write(publicRequest.IncludeQuickSightQIndex);
+                    }
+
+                    if(publicRequest.IsSetMaxTopicsToConsider())
+                    {
+                        context.Writer.WritePropertyName("MaxTopicsToConsider");
+                        context.Writer.Write(publicRequest.MaxTopicsToConsider.Value);
+                    }
+
+                    if(publicRequest.IsSetQueryText())
+                    {
+                        context.Writer.WritePropertyName("QueryText");
+                        context.Writer.Write(publicRequest.QueryText);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetIncludeQuickSightQIndex())
-                {
-                    context.Writer.WritePropertyName("IncludeQuickSightQIndex");
-                    context.Writer.Write(publicRequest.IncludeQuickSightQIndex);
-                }
-
-                if(publicRequest.IsSetMaxTopicsToConsider())
-                {
-                    context.Writer.WritePropertyName("MaxTopicsToConsider");
-                    context.Writer.Write(publicRequest.MaxTopicsToConsider);
-                }
-
-                if(publicRequest.IsSetQueryText())
-                {
-                    context.Writer.WritePropertyName("QueryText");
-                    context.Writer.Write(publicRequest.QueryText);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

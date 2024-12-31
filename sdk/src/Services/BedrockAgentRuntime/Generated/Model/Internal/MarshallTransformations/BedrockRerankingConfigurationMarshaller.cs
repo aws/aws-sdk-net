@@ -62,7 +62,7 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNumberOfResults())
             {
                 context.Writer.WritePropertyName("numberOfResults");
-                context.Writer.Write(requestObject.NumberOfResults);
+                context.Writer.Write(requestObject.NumberOfResults.Value);
             }
 
         }

@@ -51,13 +51,13 @@ namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCommitment())
             {
                 context.Writer.WritePropertyName("commitment");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.Commitment))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Commitment.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Commitment));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Commitment.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Commitment);
+                    context.Writer.Write(requestObject.Commitment.Value);
                 }
             }
 

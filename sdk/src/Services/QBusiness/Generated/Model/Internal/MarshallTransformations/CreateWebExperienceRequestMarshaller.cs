@@ -66,85 +66,49 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             request.ResourcePath = "/applications/{applicationId}/experiences";
             using (MemoryStream memoryStream = new MemoryStream())
             {
-<<<<<<< HEAD
                 using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-||||||| Commit version number update changes
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
-=======
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBrowserExtensionConfiguration())
-                {
-                    context.Writer.WritePropertyName("browserExtensionConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = BrowserExtensionConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.BrowserExtensionConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetClientToken())
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
                 {
                     JsonWriter writer = new JsonWriter(streamWriter);
                     writer.Validate = false;
                     writer.WriteObjectStart();
                     var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBrowserExtensionConfiguration())
+                    {
+                        context.Writer.WritePropertyName("browserExtensionConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = BrowserExtensionConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.BrowserExtensionConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
                     if(publicRequest.IsSetClientToken())
                     {
                         context.Writer.WritePropertyName("clientToken");
                         context.Writer.Write(publicRequest.ClientToken);
                     }
 
-<<<<<<< HEAD
                     else if(!(publicRequest.IsSetClientToken()))
                     {
                         context.Writer.WritePropertyName("clientToken");
                         context.Writer.Write(Guid.NewGuid().ToString());
                     }
+                    if(publicRequest.IsSetCustomizationConfiguration())
+                    {
+                        context.Writer.WritePropertyName("customizationConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CustomizationConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.CustomizationConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
                     if(publicRequest.IsSetIdentityProviderConfiguration())
                     {
                         context.Writer.WritePropertyName("identityProviderConfiguration");
                         context.Writer.WriteObjectStart();
-||||||| Commit version number update changes
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetIdentityProviderConfiguration())
-                {
-                    context.Writer.WritePropertyName("identityProviderConfiguration");
-                    context.Writer.WriteObjectStart();
-=======
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetCustomizationConfiguration())
-                {
-                    context.Writer.WritePropertyName("customizationConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CustomizationConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.CustomizationConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetIdentityProviderConfiguration())
-                {
-                    context.Writer.WritePropertyName("identityProviderConfiguration");
-                    context.Writer.WriteObjectStart();
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
 
                         var marshaller = IdentityProviderConfigurationMarshaller.Instance;
                         marshaller.Marshall(publicRequest.IdentityProviderConfiguration, context);

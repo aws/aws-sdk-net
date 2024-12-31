@@ -119,31 +119,17 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.KmsKeyId);
                     }
 
-<<<<<<< HEAD
                     if(publicRequest.IsSetMaintenanceWindow())
                     {
                         context.Writer.WritePropertyName("MaintenanceWindow");
                         context.Writer.Write(publicRequest.MaintenanceWindow);
                     }
-||||||| Commit version number update changes
-                if(publicRequest.IsSetNodeType())
-                {
-                    context.Writer.WritePropertyName("NodeType");
-                    context.Writer.Write(publicRequest.NodeType);
-                }
-=======
-                if(publicRequest.IsSetMultiRegionClusterName())
-                {
-                    context.Writer.WritePropertyName("MultiRegionClusterName");
-                    context.Writer.Write(publicRequest.MultiRegionClusterName);
-                }
 
-                if(publicRequest.IsSetNodeType())
-                {
-                    context.Writer.WritePropertyName("NodeType");
-                    context.Writer.Write(publicRequest.NodeType);
-                }
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
+                    if(publicRequest.IsSetMultiRegionClusterName())
+                    {
+                        context.Writer.WritePropertyName("MultiRegionClusterName");
+                        context.Writer.Write(publicRequest.MultiRegionClusterName);
+                    }
 
                     if(publicRequest.IsSetNodeType())
                     {

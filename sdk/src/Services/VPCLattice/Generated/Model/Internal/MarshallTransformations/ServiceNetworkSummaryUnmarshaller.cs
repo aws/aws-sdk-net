@@ -98,7 +98,7 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("numberOfAssociatedResourceConfigurations", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.NumberOfAssociatedResourceConfigurations = unmarshaller.Unmarshall(context);
                     continue;
                 }

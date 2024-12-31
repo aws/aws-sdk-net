@@ -63,39 +63,42 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFaviconFile())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("FaviconFile");
-                    context.Writer.Write(StringUtils.FromMemoryStream(publicRequest.FaviconFile));
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFaviconFile())
+                    {
+                        context.Writer.WritePropertyName("FaviconFile");
+                        context.Writer.Write(StringUtils.FromMemoryStream(publicRequest.FaviconFile));
+                    }
+
+                    if(publicRequest.IsSetLogoFile())
+                    {
+                        context.Writer.WritePropertyName("LogoFile");
+                        context.Writer.Write(StringUtils.FromMemoryStream(publicRequest.LogoFile));
+                    }
+
+                    if(publicRequest.IsSetTitle())
+                    {
+                        context.Writer.WritePropertyName("Title");
+                        context.Writer.Write(publicRequest.Title);
+                    }
+
+                    if(publicRequest.IsSetWebAppId())
+                    {
+                        context.Writer.WritePropertyName("WebAppId");
+                        context.Writer.Write(publicRequest.WebAppId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetLogoFile())
-                {
-                    context.Writer.WritePropertyName("LogoFile");
-                    context.Writer.Write(StringUtils.FromMemoryStream(publicRequest.LogoFile));
-                }
-
-                if(publicRequest.IsSetTitle())
-                {
-                    context.Writer.WritePropertyName("Title");
-                    context.Writer.Write(publicRequest.Title);
-                }
-
-                if(publicRequest.IsSetWebAppId())
-                {
-                    context.Writer.WritePropertyName("WebAppId");
-                    context.Writer.Write(publicRequest.WebAppId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

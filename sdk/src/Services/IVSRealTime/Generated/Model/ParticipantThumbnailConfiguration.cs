@@ -88,9 +88,9 @@ namespace Amazon.IVSRealTime.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=86400)]
-        public int TargetIntervalSeconds
+        public int? TargetIntervalSeconds
         {
-            get { return this._targetIntervalSeconds.GetValueOrDefault(); }
+            get { return this._targetIntervalSeconds; }
             set { this._targetIntervalSeconds = value; }
         }
 

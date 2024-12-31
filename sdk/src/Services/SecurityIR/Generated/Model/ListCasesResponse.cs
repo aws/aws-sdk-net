@@ -82,9 +82,9 @@ namespace Amazon.SecurityIR.Model
         /// Response element for ListCases providing the total number of responses.
         /// </para>
         /// </summary>
-        public long Total
+        public long? Total
         {
-            get { return this._total.GetValueOrDefault(); }
+            get { return this._total; }
             set { this._total = value; }
         }
 

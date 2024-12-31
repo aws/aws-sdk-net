@@ -131,31 +131,19 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.Name);
                     }
 
+                    if(publicRequest.IsSetSelfAssignFlowId())
+                    {
+                        context.Writer.WritePropertyName("SelfAssignFlowId");
+                        context.Writer.Write(publicRequest.SelfAssignFlowId);
+                    }
+
                     if(publicRequest.IsSetStatus())
                     {
                         context.Writer.WritePropertyName("Status");
                         context.Writer.Write(publicRequest.Status);
                     }
 
-<<<<<<< HEAD
                     writer.WriteObjectEnd();
-||||||| Commit version number update changes
-                if(publicRequest.IsSetStatus())
-                {
-                    context.Writer.WritePropertyName("Status");
-                    context.Writer.Write(publicRequest.Status);
-=======
-                if(publicRequest.IsSetSelfAssignFlowId())
-                {
-                    context.Writer.WritePropertyName("SelfAssignFlowId");
-                    context.Writer.Write(publicRequest.SelfAssignFlowId);
-                }
-
-                if(publicRequest.IsSetStatus())
-                {
-                    context.Writer.WritePropertyName("Status");
-                    context.Writer.Write(publicRequest.Status);
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
                 }
 
                 request.Content = memoryStream.ToArray();

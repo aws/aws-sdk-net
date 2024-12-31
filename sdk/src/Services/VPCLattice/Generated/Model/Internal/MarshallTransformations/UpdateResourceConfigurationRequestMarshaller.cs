@@ -64,43 +64,46 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
                 throw new AmazonVPCLatticeException("Request object does not have required field ResourceConfigurationIdentifier set");
             request.AddPathResource("{resourceConfigurationIdentifier}", StringUtils.FromString(publicRequest.ResourceConfigurationIdentifier));
             request.ResourcePath = "/resourceconfigurations/{resourceConfigurationIdentifier}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAllowAssociationToShareableServiceNetwork())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("allowAssociationToShareableServiceNetwork");
-                    context.Writer.Write(publicRequest.AllowAssociationToShareableServiceNetwork);
-                }
-
-                if(publicRequest.IsSetPortRanges())
-                {
-                    context.Writer.WritePropertyName("portRanges");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPortRangesListValue in publicRequest.PortRanges)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAllowAssociationToShareableServiceNetwork())
                     {
-                            context.Writer.Write(publicRequestPortRangesListValue);
+                        context.Writer.WritePropertyName("allowAssociationToShareableServiceNetwork");
+                        context.Writer.Write(publicRequest.AllowAssociationToShareableServiceNetwork.Value);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetPortRanges())
+                    {
+                        context.Writer.WritePropertyName("portRanges");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestPortRangesListValue in publicRequest.PortRanges)
+                        {
+                                context.Writer.Write(publicRequestPortRangesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetResourceConfigurationDefinition())
+                    {
+                        context.Writer.WritePropertyName("resourceConfigurationDefinition");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ResourceConfigurationDefinitionMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ResourceConfigurationDefinition, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetResourceConfigurationDefinition())
-                {
-                    context.Writer.WritePropertyName("resourceConfigurationDefinition");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ResourceConfigurationDefinitionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ResourceConfigurationDefinition, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

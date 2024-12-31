@@ -581,9 +581,9 @@ namespace Amazon.Amplify.Model
         /// A timestamp of when Amplify created the webhook in your Git repository.
         /// </para>
         /// </summary>
-        public DateTime WebhookCreateTime
+        public DateTime? WebhookCreateTime
         {
-            get { return this._webhookCreateTime.GetValueOrDefault(); }
+            get { return this._webhookCreateTime; }
             set { this._webhookCreateTime = value; }
         }
 

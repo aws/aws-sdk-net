@@ -51,13 +51,13 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             if(requestObject.IsSetApplyGuardrailInterval())
             {
                 context.Writer.WritePropertyName("applyGuardrailInterval");
-                context.Writer.Write(requestObject.ApplyGuardrailInterval);
+                context.Writer.Write(requestObject.ApplyGuardrailInterval.Value);
             }
 
             if(requestObject.IsSetStreamFinalResponse())
             {
                 context.Writer.WritePropertyName("streamFinalResponse");
-                context.Writer.Write(requestObject.StreamFinalResponse);
+                context.Writer.Write(requestObject.StreamFinalResponse.Value);
             }
 
         }

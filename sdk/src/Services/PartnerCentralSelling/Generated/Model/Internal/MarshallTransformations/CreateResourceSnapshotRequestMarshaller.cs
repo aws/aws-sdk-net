@@ -63,56 +63,59 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCatalog())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Catalog");
-                    context.Writer.Write(publicRequest.Catalog);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCatalog())
+                    {
+                        context.Writer.WritePropertyName("Catalog");
+                        context.Writer.Write(publicRequest.Catalog);
+                    }
+
+                    if(publicRequest.IsSetClientToken())
+                    {
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetEngagementIdentifier())
+                    {
+                        context.Writer.WritePropertyName("EngagementIdentifier");
+                        context.Writer.Write(publicRequest.EngagementIdentifier);
+                    }
+
+                    if(publicRequest.IsSetResourceIdentifier())
+                    {
+                        context.Writer.WritePropertyName("ResourceIdentifier");
+                        context.Writer.Write(publicRequest.ResourceIdentifier);
+                    }
+
+                    if(publicRequest.IsSetResourceSnapshotTemplateIdentifier())
+                    {
+                        context.Writer.WritePropertyName("ResourceSnapshotTemplateIdentifier");
+                        context.Writer.Write(publicRequest.ResourceSnapshotTemplateIdentifier);
+                    }
+
+                    if(publicRequest.IsSetResourceType())
+                    {
+                        context.Writer.WritePropertyName("ResourceType");
+                        context.Writer.Write(publicRequest.ResourceType);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetClientToken())
-                {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetEngagementIdentifier())
-                {
-                    context.Writer.WritePropertyName("EngagementIdentifier");
-                    context.Writer.Write(publicRequest.EngagementIdentifier);
-                }
-
-                if(publicRequest.IsSetResourceIdentifier())
-                {
-                    context.Writer.WritePropertyName("ResourceIdentifier");
-                    context.Writer.Write(publicRequest.ResourceIdentifier);
-                }
-
-                if(publicRequest.IsSetResourceSnapshotTemplateIdentifier())
-                {
-                    context.Writer.WritePropertyName("ResourceSnapshotTemplateIdentifier");
-                    context.Writer.Write(publicRequest.ResourceSnapshotTemplateIdentifier);
-                }
-
-                if(publicRequest.IsSetResourceType())
-                {
-                    context.Writer.WritePropertyName("ResourceType");
-                    context.Writer.Write(publicRequest.ResourceType);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -61,98 +61,101 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/resourceconfigurations";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAllowAssociationToShareableServiceNetwork())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("allowAssociationToShareableServiceNetwork");
-                    context.Writer.Write(publicRequest.AllowAssociationToShareableServiceNetwork);
-                }
-
-                if(publicRequest.IsSetClientToken())
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetPortRanges())
-                {
-                    context.Writer.WritePropertyName("portRanges");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPortRangesListValue in publicRequest.PortRanges)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAllowAssociationToShareableServiceNetwork())
                     {
-                            context.Writer.Write(publicRequestPortRangesListValue);
+                        context.Writer.WritePropertyName("allowAssociationToShareableServiceNetwork");
+                        context.Writer.Write(publicRequest.AllowAssociationToShareableServiceNetwork.Value);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetProtocol())
-                {
-                    context.Writer.WritePropertyName("protocol");
-                    context.Writer.Write(publicRequest.Protocol);
-                }
-
-                if(publicRequest.IsSetResourceConfigurationDefinition())
-                {
-                    context.Writer.WritePropertyName("resourceConfigurationDefinition");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ResourceConfigurationDefinitionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ResourceConfigurationDefinition, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetResourceConfigurationGroupIdentifier())
-                {
-                    context.Writer.WritePropertyName("resourceConfigurationGroupIdentifier");
-                    context.Writer.Write(publicRequest.ResourceConfigurationGroupIdentifier);
-                }
-
-                if(publicRequest.IsSetResourceGatewayIdentifier())
-                {
-                    context.Writer.WritePropertyName("resourceGatewayIdentifier");
-                    context.Writer.Write(publicRequest.ResourceGatewayIdentifier);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    if(publicRequest.IsSetClientToken())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetPortRanges())
+                    {
+                        context.Writer.WritePropertyName("portRanges");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestPortRangesListValue in publicRequest.PortRanges)
+                        {
+                                context.Writer.Write(publicRequestPortRangesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetProtocol())
+                    {
+                        context.Writer.WritePropertyName("protocol");
+                        context.Writer.Write(publicRequest.Protocol);
+                    }
+
+                    if(publicRequest.IsSetResourceConfigurationDefinition())
+                    {
+                        context.Writer.WritePropertyName("resourceConfigurationDefinition");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ResourceConfigurationDefinitionMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ResourceConfigurationDefinition, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetResourceConfigurationGroupIdentifier())
+                    {
+                        context.Writer.WritePropertyName("resourceConfigurationGroupIdentifier");
+                        context.Writer.Write(publicRequest.ResourceConfigurationGroupIdentifier);
+                    }
+
+                    if(publicRequest.IsSetResourceGatewayIdentifier())
+                    {
+                        context.Writer.WritePropertyName("resourceGatewayIdentifier");
+                        context.Writer.Write(publicRequest.ResourceGatewayIdentifier);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetType())
+                    {
+                        context.Writer.WritePropertyName("type");
+                        context.Writer.Write(publicRequest.Type);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetType())
-                {
-                    context.Writer.WritePropertyName("type");
-                    context.Writer.Write(publicRequest.Type);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -45,9 +45,9 @@ namespace Amazon.CustomerProfiles.Model
         /// processed within a certain latency period.
         /// </para>
         /// </summary>
-        public long EventExpiration
+        public long? EventExpiration
         {
-            get { return this._eventExpiration.GetValueOrDefault(); }
+            get { return this._eventExpiration; }
             set { this._eventExpiration = value; }
         }
 

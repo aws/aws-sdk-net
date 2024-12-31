@@ -68,7 +68,7 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("applyOnTransformedLogs", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ApplyOnTransformedLogs = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -51,13 +51,13 @@ namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAmount())
             {
                 context.Writer.WritePropertyName("amount");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.Amount))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Amount.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Amount));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Amount.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Amount);
+                    context.Writer.Write(requestObject.Amount.Value);
                 }
             }
 

@@ -653,10 +653,19 @@ namespace Amazon.EventBridge
         /// <summary>
         /// Creates a connection. A connection defines the authorization type and credentials
         /// to use for authorization with an API destination HTTP endpoint.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-target-connection.html">Connections
+        /// for endpoint targets</a> in the <i>Amazon EventBridge User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateConnection service method.</param>
         /// 
         /// <returns>The response from the CreateConnection service method, as returned by EventBridge.</returns>
+        /// <exception cref="Amazon.EventBridge.Model.AccessDeniedException">
+        /// You do not have the necessary permissons for this action.
+        /// </exception>
         /// <exception cref="Amazon.EventBridge.Model.InternalException">
         /// This exception occurs due to unexpected causes.
         /// </exception>
@@ -666,6 +675,12 @@ namespace Amazon.EventBridge
         /// </exception>
         /// <exception cref="Amazon.EventBridge.Model.ResourceAlreadyExistsException">
         /// The resource you are trying to create already exists.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.ResourceNotFoundException">
+        /// An entity that you specified does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.ThrottlingException">
+        /// This request cannot be completed due to throttling issues.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/CreateConnection">REST API Reference for CreateConnection Operation</seealso>
         public virtual CreateConnectionResponse CreateConnection(CreateConnectionRequest request)
@@ -681,6 +696,12 @@ namespace Amazon.EventBridge
         /// <summary>
         /// Creates a connection. A connection defines the authorization type and credentials
         /// to use for authorization with an API destination HTTP endpoint.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-target-connection.html">Connections
+        /// for endpoint targets</a> in the <i>Amazon EventBridge User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateConnection service method.</param>
         /// <param name="cancellationToken">
@@ -688,6 +709,9 @@ namespace Amazon.EventBridge
         /// </param>
         /// 
         /// <returns>The response from the CreateConnection service method, as returned by EventBridge.</returns>
+        /// <exception cref="Amazon.EventBridge.Model.AccessDeniedException">
+        /// You do not have the necessary permissons for this action.
+        /// </exception>
         /// <exception cref="Amazon.EventBridge.Model.InternalException">
         /// This exception occurs due to unexpected causes.
         /// </exception>
@@ -697,6 +721,12 @@ namespace Amazon.EventBridge
         /// </exception>
         /// <exception cref="Amazon.EventBridge.Model.ResourceAlreadyExistsException">
         /// The resource you are trying to create already exists.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.ResourceNotFoundException">
+        /// An entity that you specified does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.ThrottlingException">
+        /// This request cannot be completed due to throttling issues.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/CreateConnection">REST API Reference for CreateConnection Operation</seealso>
         public virtual Task<CreateConnectionResponse> CreateConnectionAsync(CreateConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3194,7 +3224,7 @@ namespace Amazon.EventBridge
         /// </para>
         ///  <note> 
         /// <para>
-        /// PutEvents will only process nested JSON up to 1100 levels deep.
+        /// PutEvents will only process nested JSON up to 1000 levels deep.
         /// </para>
         ///  </note>
         /// </summary>
@@ -3234,7 +3264,7 @@ namespace Amazon.EventBridge
         /// </para>
         ///  <note> 
         /// <para>
-        /// PutEvents will only process nested JSON up to 1100 levels deep.
+        /// PutEvents will only process nested JSON up to 1000 levels deep.
         /// </para>
         ///  </note>
         /// </summary>
@@ -3332,8 +3362,8 @@ namespace Amazon.EventBridge
         /// <summary>
         /// Running <c>PutPermission</c> permits the specified Amazon Web Services account or
         /// Amazon Web Services organization to put events to the specified <i>event bus</i>.
-        /// Amazon EventBridge (CloudWatch Events) rules in your account are triggered by these
-        /// events arriving to an event bus in your account. 
+        /// Amazon EventBridge rules in your account are triggered by these events arriving to
+        /// an event bus in your account. 
         /// 
         ///  
         /// <para>
@@ -3393,8 +3423,8 @@ namespace Amazon.EventBridge
         /// <summary>
         /// Running <c>PutPermission</c> permits the specified Amazon Web Services account or
         /// Amazon Web Services organization to put events to the specified <i>event bus</i>.
-        /// Amazon EventBridge (CloudWatch Events) rules in your account are triggered by these
-        /// events arriving to an event bus in your account. 
+        /// Amazon EventBridge rules in your account are triggered by these events arriving to
+        /// an event bus in your account. 
         /// 
         ///  
         /// <para>
@@ -3531,6 +3561,13 @@ namespace Amazon.EventBridge
         /// more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/budgets-managing-costs.html">Managing
         /// Your Costs with Budgets</a>.
         /// </para>
+        ///  
+        /// <para>
+        /// To create a rule that filters for management events from Amazon Web Services services,
+        /// see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-service-event-cloudtrail.html#eb-service-event-cloudtrail-management">Receiving
+        /// read-only management events from Amazon Web Services services</a> in the <i>EventBridge
+        /// User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutRule service method.</param>
         /// 
@@ -3642,6 +3679,13 @@ namespace Amazon.EventBridge
         /// you use budgeting, which alerts you when charges exceed your specified limit. For
         /// more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/budgets-managing-costs.html">Managing
         /// Your Costs with Budgets</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To create a rule that filters for management events from Amazon Web Services services,
+        /// see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-service-event-cloudtrail.html#eb-service-event-cloudtrail-management">Receiving
+        /// read-only management events from Amazon Web Services services</a> in the <i>EventBridge
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutRule service method.</param>
@@ -4532,8 +4576,8 @@ namespace Amazon.EventBridge
 
 
         /// <summary>
-        /// Removes one or more tags from the specified EventBridge resource. In Amazon EventBridge
-        /// (CloudWatch Events), rules and event buses can be tagged.
+        /// Removes one or more tags from the specified EventBridge resource. In Amazon EventBridge,
+        /// rules and event buses can be tagged.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
@@ -4567,8 +4611,8 @@ namespace Amazon.EventBridge
 
 
         /// <summary>
-        /// Removes one or more tags from the specified EventBridge resource. In Amazon EventBridge
-        /// (CloudWatch Events), rules and event buses can be tagged.
+        /// Removes one or more tags from the specified EventBridge resource. In Amazon EventBridge,
+        /// rules and event buses can be tagged.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">
@@ -4754,6 +4798,9 @@ namespace Amazon.EventBridge
         /// <param name="request">Container for the necessary parameters to execute the UpdateConnection service method.</param>
         /// 
         /// <returns>The response from the UpdateConnection service method, as returned by EventBridge.</returns>
+        /// <exception cref="Amazon.EventBridge.Model.AccessDeniedException">
+        /// You do not have the necessary permissons for this action.
+        /// </exception>
         /// <exception cref="Amazon.EventBridge.Model.ConcurrentModificationException">
         /// There is concurrent modification on a rule, target, archive, or replay.
         /// </exception>
@@ -4766,6 +4813,9 @@ namespace Amazon.EventBridge
         /// </exception>
         /// <exception cref="Amazon.EventBridge.Model.ResourceNotFoundException">
         /// An entity that you specified does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.ThrottlingException">
+        /// This request cannot be completed due to throttling issues.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/UpdateConnection">REST API Reference for UpdateConnection Operation</seealso>
         public virtual UpdateConnectionResponse UpdateConnection(UpdateConnectionRequest request)
@@ -4787,6 +4837,9 @@ namespace Amazon.EventBridge
         /// </param>
         /// 
         /// <returns>The response from the UpdateConnection service method, as returned by EventBridge.</returns>
+        /// <exception cref="Amazon.EventBridge.Model.AccessDeniedException">
+        /// You do not have the necessary permissons for this action.
+        /// </exception>
         /// <exception cref="Amazon.EventBridge.Model.ConcurrentModificationException">
         /// There is concurrent modification on a rule, target, archive, or replay.
         /// </exception>
@@ -4799,6 +4852,9 @@ namespace Amazon.EventBridge
         /// </exception>
         /// <exception cref="Amazon.EventBridge.Model.ResourceNotFoundException">
         /// An entity that you specified does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.ThrottlingException">
+        /// This request cannot be completed due to throttling issues.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/UpdateConnection">REST API Reference for UpdateConnection Operation</seealso>
         public virtual Task<UpdateConnectionResponse> UpdateConnectionAsync(UpdateConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))

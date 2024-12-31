@@ -158,9 +158,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// you omit this, the default is <c>false</c>.
         /// </para>
         /// </summary>
-        public bool OverwriteIfExists
+        public bool? OverwriteIfExists
         {
-            get { return this._overwriteIfExists.GetValueOrDefault(); }
+            get { return this._overwriteIfExists; }
             set { this._overwriteIfExists = value; }
         }
 

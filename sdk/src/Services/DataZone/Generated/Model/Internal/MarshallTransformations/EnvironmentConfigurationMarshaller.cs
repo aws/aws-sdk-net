@@ -90,7 +90,7 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDeploymentOrder())
             {
                 context.Writer.WritePropertyName("deploymentOrder");
-                context.Writer.Write(requestObject.DeploymentOrder);
+                context.Writer.Write(requestObject.DeploymentOrder.Value);
             }
 
             if(requestObject.IsSetDescription())

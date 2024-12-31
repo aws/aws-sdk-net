@@ -127,31 +127,17 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
 
-<<<<<<< HEAD
                     if(publicRequest.IsSetOwnershipVerificationCertificateArn())
                     {
                         context.Writer.WritePropertyName("ownershipVerificationCertificateArn");
                         context.Writer.Write(publicRequest.OwnershipVerificationCertificateArn);
                     }
-||||||| Commit version number update changes
-                if(publicRequest.IsSetRegionalCertificateArn())
-                {
-                    context.Writer.WritePropertyName("regionalCertificateArn");
-                    context.Writer.Write(publicRequest.RegionalCertificateArn);
-                }
-=======
-                if(publicRequest.IsSetPolicy())
-                {
-                    context.Writer.WritePropertyName("policy");
-                    context.Writer.Write(publicRequest.Policy);
-                }
 
-                if(publicRequest.IsSetRegionalCertificateArn())
-                {
-                    context.Writer.WritePropertyName("regionalCertificateArn");
-                    context.Writer.Write(publicRequest.RegionalCertificateArn);
-                }
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
+                    if(publicRequest.IsSetPolicy())
+                    {
+                        context.Writer.WritePropertyName("policy");
+                        context.Writer.Write(publicRequest.Policy);
+                    }
 
                     if(publicRequest.IsSetRegionalCertificateArn())
                     {

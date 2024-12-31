@@ -68,9 +68,9 @@ namespace Amazon.EC2.Model
         /// The time when the report generation ended.
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -86,9 +86,9 @@ namespace Amazon.EC2.Model
         /// The total number of accounts associated with the specified <c>targetId</c>.
         /// </para>
         /// </summary>
-        public int NumberOfAccounts
+        public int? NumberOfAccounts
         {
-            get { return this._numberOfAccounts.GetValueOrDefault(); }
+            get { return this._numberOfAccounts; }
             set { this._numberOfAccounts = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.EC2.Model
         /// The number of accounts where attributes could not be retrieved in any Region.
         /// </para>
         /// </summary>
-        public int NumberOfFailedAccounts
+        public int? NumberOfFailedAccounts
         {
-            get { return this._numberOfFailedAccounts.GetValueOrDefault(); }
+            get { return this._numberOfFailedAccounts; }
             set { this._numberOfFailedAccounts = value; }
         }
 
@@ -176,9 +176,9 @@ namespace Amazon.EC2.Model
         /// The time when the report generation started.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

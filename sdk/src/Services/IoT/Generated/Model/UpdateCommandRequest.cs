@@ -65,9 +65,9 @@ namespace Amazon.IoT.Model
         /// A boolean that you can use to specify whether to deprecate a command.
         /// </para>
         /// </summary>
-        public bool Deprecated
+        public bool? Deprecated
         {
-            get { return this._deprecated.GetValueOrDefault(); }
+            get { return this._deprecated; }
             set { this._deprecated = value; }
         }
 

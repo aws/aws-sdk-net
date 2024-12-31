@@ -187,9 +187,9 @@ namespace Amazon.ECS.Model
         /// <c>false</c>.
         /// </para>
         /// </summary>
-        public bool EnableFaultInjection
+        public bool? EnableFaultInjection
         {
-            get { return this._enableFaultInjection.GetValueOrDefault(); }
+            get { return this._enableFaultInjection; }
             set { this._enableFaultInjection = value; }
         }
 

@@ -68,7 +68,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             if(requestObject.IsSetUtilizationPerformanceIndex())
             {
                 context.Writer.WritePropertyName("UtilizationPerformanceIndex");
-                context.Writer.Write(requestObject.UtilizationPerformanceIndex);
+                context.Writer.Write(requestObject.UtilizationPerformanceIndex.Value);
             }
 
         }

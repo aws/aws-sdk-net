@@ -64,9 +64,9 @@ namespace Amazon.QApps.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime ExpiresAt
+        public DateTime? ExpiresAt
         {
-            get { return this._expiresAt.GetValueOrDefault(); }
+            get { return this._expiresAt; }
             set { this._expiresAt = value; }
         }
 

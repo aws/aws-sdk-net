@@ -43,9 +43,9 @@ namespace Amazon.QuickSight.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public double Radius
+        public double? Radius
         {
-            get { return this._radius.GetValueOrDefault(); }
+            get { return this._radius; }
             set { this._radius = value; }
         }
 

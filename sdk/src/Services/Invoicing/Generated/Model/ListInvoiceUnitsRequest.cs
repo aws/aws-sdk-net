@@ -49,9 +49,9 @@ namespace Amazon.Invoicing.Model
         /// If an <c>AsOf</c> is not provided, the default value is the current time. 
         /// </para>
         /// </summary>
-        public DateTime AsOf
+        public DateTime? AsOf
         {
-            get { return this._asOf.GetValueOrDefault(); }
+            get { return this._asOf; }
             set { this._asOf = value; }
         }
 
@@ -88,9 +88,9 @@ namespace Amazon.Invoicing.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=500)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

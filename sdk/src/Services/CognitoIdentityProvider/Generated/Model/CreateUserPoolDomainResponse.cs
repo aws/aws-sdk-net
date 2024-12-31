@@ -66,9 +66,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// hosted UI (classic) and a version of <c>2</c> indicates managed login.
         /// </para>
         /// </summary>
-        public int ManagedLoginVersion
+        public int? ManagedLoginVersion
         {
-            get { return this._managedLoginVersion.GetValueOrDefault(); }
+            get { return this._managedLoginVersion; }
             set { this._managedLoginVersion = value; }
         }
 

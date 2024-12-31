@@ -57,7 +57,7 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxCapacityBuffer())
             {
                 context.Writer.WritePropertyName("MaxCapacityBuffer");
-                context.Writer.Write(requestObject.MaxCapacityBuffer);
+                context.Writer.Write(requestObject.MaxCapacityBuffer.Value);
             }
 
             if(requestObject.IsSetMetricSpecifications())
@@ -85,7 +85,7 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSchedulingBufferTime())
             {
                 context.Writer.WritePropertyName("SchedulingBufferTime");
-                context.Writer.Write(requestObject.SchedulingBufferTime);
+                context.Writer.Write(requestObject.SchedulingBufferTime.Value);
             }
 
         }

@@ -76,9 +76,9 @@ namespace Amazon.VPCLattice.Model
         /// The date and time that the association was created, in ISO-8601 format.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -168,9 +168,9 @@ namespace Amazon.VPCLattice.Model
         /// Specifies whether the association is managed by Amazon.
         /// </para>
         /// </summary>
-        public bool IsManagedAssociation
+        public bool? IsManagedAssociation
         {
-            get { return this._isManagedAssociation.GetValueOrDefault(); }
+            get { return this._isManagedAssociation; }
             set { this._isManagedAssociation = value; }
         }
 

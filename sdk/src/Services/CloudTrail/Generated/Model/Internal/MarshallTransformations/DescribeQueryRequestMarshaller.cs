@@ -77,31 +77,17 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.EventDataStore);
                     }
 
-<<<<<<< HEAD
+                    if(publicRequest.IsSetEventDataStoreOwnerAccountId())
+                    {
+                        context.Writer.WritePropertyName("EventDataStoreOwnerAccountId");
+                        context.Writer.Write(publicRequest.EventDataStoreOwnerAccountId);
+                    }
+
                     if(publicRequest.IsSetQueryAlias())
                     {
                         context.Writer.WritePropertyName("QueryAlias");
                         context.Writer.Write(publicRequest.QueryAlias);
                     }
-||||||| Commit version number update changes
-                if(publicRequest.IsSetQueryAlias())
-                {
-                    context.Writer.WritePropertyName("QueryAlias");
-                    context.Writer.Write(publicRequest.QueryAlias);
-                }
-=======
-                if(publicRequest.IsSetEventDataStoreOwnerAccountId())
-                {
-                    context.Writer.WritePropertyName("EventDataStoreOwnerAccountId");
-                    context.Writer.Write(publicRequest.EventDataStoreOwnerAccountId);
-                }
-
-                if(publicRequest.IsSetQueryAlias())
-                {
-                    context.Writer.WritePropertyName("QueryAlias");
-                    context.Writer.Write(publicRequest.QueryAlias);
-                }
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
 
                     if(publicRequest.IsSetQueryId())
                     {
@@ -109,26 +95,16 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.QueryId);
                     }
 
+                    if(publicRequest.IsSetRefreshId())
+                    {
+                        context.Writer.WritePropertyName("RefreshId");
+                        context.Writer.Write(publicRequest.RefreshId);
+                    }
+
                     writer.WriteObjectEnd();
                 }
 
-<<<<<<< HEAD
                 request.Content = memoryStream.ToArray();
-||||||| Commit version number update changes
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
-=======
-                if(publicRequest.IsSetRefreshId())
-                {
-                    context.Writer.WritePropertyName("RefreshId");
-                    context.Writer.Write(publicRequest.RefreshId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
             }
 
 

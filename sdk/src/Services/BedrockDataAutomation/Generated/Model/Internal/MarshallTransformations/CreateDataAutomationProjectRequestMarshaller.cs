@@ -61,88 +61,91 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/data-automation-projects/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientToken())
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetCustomOutputConfiguration())
+                    {
+                        context.Writer.WritePropertyName("customOutputConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CustomOutputConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.CustomOutputConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetEncryptionConfiguration())
+                    {
+                        context.Writer.WritePropertyName("encryptionConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = EncryptionConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.EncryptionConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetOverrideConfiguration())
+                    {
+                        context.Writer.WritePropertyName("overrideConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = OverrideConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.OverrideConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetProjectDescription())
+                    {
+                        context.Writer.WritePropertyName("projectDescription");
+                        context.Writer.Write(publicRequest.ProjectDescription);
+                    }
+
+                    if(publicRequest.IsSetProjectName())
+                    {
+                        context.Writer.WritePropertyName("projectName");
+                        context.Writer.Write(publicRequest.ProjectName);
+                    }
+
+                    if(publicRequest.IsSetProjectStage())
+                    {
+                        context.Writer.WritePropertyName("projectStage");
+                        context.Writer.Write(publicRequest.ProjectStage);
+                    }
+
+                    if(publicRequest.IsSetStandardOutputConfiguration())
+                    {
+                        context.Writer.WritePropertyName("standardOutputConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = StandardOutputConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.StandardOutputConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetCustomOutputConfiguration())
-                {
-                    context.Writer.WritePropertyName("customOutputConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CustomOutputConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.CustomOutputConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetEncryptionConfiguration())
-                {
-                    context.Writer.WritePropertyName("encryptionConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = EncryptionConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.EncryptionConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetOverrideConfiguration())
-                {
-                    context.Writer.WritePropertyName("overrideConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = OverrideConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.OverrideConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetProjectDescription())
-                {
-                    context.Writer.WritePropertyName("projectDescription");
-                    context.Writer.Write(publicRequest.ProjectDescription);
-                }
-
-                if(publicRequest.IsSetProjectName())
-                {
-                    context.Writer.WritePropertyName("projectName");
-                    context.Writer.Write(publicRequest.ProjectName);
-                }
-
-                if(publicRequest.IsSetProjectStage())
-                {
-                    context.Writer.WritePropertyName("projectStage");
-                    context.Writer.Write(publicRequest.ProjectStage);
-                }
-
-                if(publicRequest.IsSetStandardOutputConfiguration())
-                {
-                    context.Writer.WritePropertyName("standardOutputConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = StandardOutputConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.StandardOutputConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

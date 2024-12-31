@@ -64,37 +64,40 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
                 throw new AmazonChimeSDKVoiceException("Request object does not have required field VoiceConnectorId set");
             request.AddPathResource("{voiceConnectorId}", StringUtils.FromString(publicRequest.VoiceConnectorId));
             request.ResourcePath = "/voice-connectors/{voiceConnectorId}/external-systems-configuration";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetContactCenterSystemTypes())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ContactCenterSystemTypes");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestContactCenterSystemTypesListValue in publicRequest.ContactCenterSystemTypes)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetContactCenterSystemTypes())
                     {
-                            context.Writer.Write(publicRequestContactCenterSystemTypesListValue);
+                        context.Writer.WritePropertyName("ContactCenterSystemTypes");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestContactCenterSystemTypesListValue in publicRequest.ContactCenterSystemTypes)
+                        {
+                                context.Writer.Write(publicRequestContactCenterSystemTypesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetSessionBorderControllerTypes())
+                    {
+                        context.Writer.WritePropertyName("SessionBorderControllerTypes");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSessionBorderControllerTypesListValue in publicRequest.SessionBorderControllerTypes)
+                        {
+                                context.Writer.Write(publicRequestSessionBorderControllerTypesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetSessionBorderControllerTypes())
-                {
-                    context.Writer.WritePropertyName("SessionBorderControllerTypes");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSessionBorderControllerTypesListValue in publicRequest.SessionBorderControllerTypes)
-                    {
-                            context.Writer.Write(publicRequestSessionBorderControllerTypesListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

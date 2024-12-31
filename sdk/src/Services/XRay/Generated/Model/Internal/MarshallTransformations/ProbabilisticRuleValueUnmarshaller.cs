@@ -68,13 +68,13 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ActualSamplingPercentage", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.ActualSamplingPercentage = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("DesiredSamplingPercentage", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.DesiredSamplingPercentage = unmarshaller.Unmarshall(context);
                     continue;
                 }

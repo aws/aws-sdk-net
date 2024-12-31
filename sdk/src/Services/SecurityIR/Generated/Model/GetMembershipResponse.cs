@@ -113,9 +113,9 @@ namespace Amazon.SecurityIR.Model
         /// timestamp.
         /// </para>
         /// </summary>
-        public DateTime MembershipActivationTimestamp
+        public DateTime? MembershipActivationTimestamp
         {
-            get { return this._membershipActivationTimestamp.GetValueOrDefault(); }
+            get { return this._membershipActivationTimestamp; }
             set { this._membershipActivationTimestamp = value; }
         }
 
@@ -151,9 +151,9 @@ namespace Amazon.SecurityIR.Model
         /// timestamp. 
         /// </para>
         /// </summary>
-        public DateTime MembershipDeactivationTimestamp
+        public DateTime? MembershipDeactivationTimestamp
         {
-            get { return this._membershipDeactivationTimestamp.GetValueOrDefault(); }
+            get { return this._membershipDeactivationTimestamp; }
             set { this._membershipDeactivationTimestamp = value; }
         }
 
@@ -225,9 +225,9 @@ namespace Amazon.SecurityIR.Model
         /// Response element for GetMembership that provides the number of accounts in the membership.
         /// </para>
         /// </summary>
-        public long NumberOfAccountsCovered
+        public long? NumberOfAccountsCovered
         {
-            get { return this._numberOfAccountsCovered.GetValueOrDefault(); }
+            get { return this._numberOfAccountsCovered; }
             set { this._numberOfAccountsCovered = value; }
         }
 

@@ -67,43 +67,46 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                 throw new AmazonQConnectException("Request object does not have required field MessageTemplateId set");
             request.AddPathResource("{messageTemplateId}", StringUtils.FromString(publicRequest.MessageTemplateId));
             request.ResourcePath = "/knowledgeBases/{knowledgeBaseId}/messageTemplates/{messageTemplateId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetContent())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("content");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetContent())
+                    {
+                        context.Writer.WritePropertyName("content");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = MessageTemplateContentProviderMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Content, context);
+                        var marshaller = MessageTemplateContentProviderMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Content, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetDefaultAttributes())
+                    {
+                        context.Writer.WritePropertyName("defaultAttributes");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = MessageTemplateAttributesMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DefaultAttributes, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetLanguage())
+                    {
+                        context.Writer.WritePropertyName("language");
+                        context.Writer.Write(publicRequest.Language);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDefaultAttributes())
-                {
-                    context.Writer.WritePropertyName("defaultAttributes");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = MessageTemplateAttributesMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DefaultAttributes, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetLanguage())
-                {
-                    context.Writer.WritePropertyName("language");
-                    context.Writer.Write(publicRequest.Language);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

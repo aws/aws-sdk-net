@@ -70,33 +70,36 @@ namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
                 throw new AmazonS3TablesException("Request object does not have required field TableBucketARN set");
             request.AddPathResource("{tableBucketARN}", StringUtils.FromString(publicRequest.TableBucketARN));
             request.ResourcePath = "/tables/{tableBucketARN}/{namespace}/{name}/rename";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetNewName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("newName");
-                    context.Writer.Write(publicRequest.NewName);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetNewName())
+                    {
+                        context.Writer.WritePropertyName("newName");
+                        context.Writer.Write(publicRequest.NewName);
+                    }
+
+                    if(publicRequest.IsSetNewNamespaceName())
+                    {
+                        context.Writer.WritePropertyName("newNamespaceName");
+                        context.Writer.Write(publicRequest.NewNamespaceName);
+                    }
+
+                    if(publicRequest.IsSetVersionToken())
+                    {
+                        context.Writer.WritePropertyName("versionToken");
+                        context.Writer.Write(publicRequest.VersionToken);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetNewNamespaceName())
-                {
-                    context.Writer.WritePropertyName("newNamespaceName");
-                    context.Writer.Write(publicRequest.NewNamespaceName);
-                }
-
-                if(publicRequest.IsSetVersionToken())
-                {
-                    context.Writer.WritePropertyName("versionToken");
-                    context.Writer.Write(publicRequest.VersionToken);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

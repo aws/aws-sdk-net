@@ -60,13 +60,13 @@ namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("createdAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("expiresAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.ExpiresAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -90,7 +90,7 @@ namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("rateTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.RateTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -108,7 +108,7 @@ namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("totalCost", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     response.TotalCost = unmarshaller.Unmarshall(context);
                     continue;
                 }

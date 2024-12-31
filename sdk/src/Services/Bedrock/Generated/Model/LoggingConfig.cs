@@ -137,9 +137,9 @@ namespace Amazon.Bedrock.Model
         /// Set to include video data in the log delivery.
         /// </para>
         /// </summary>
-        public bool VideoDataDeliveryEnabled
+        public bool? VideoDataDeliveryEnabled
         {
-            get { return this._videoDataDeliveryEnabled.GetValueOrDefault(); }
+            get { return this._videoDataDeliveryEnabled; }
             set { this._videoDataDeliveryEnabled = value; }
         }
 

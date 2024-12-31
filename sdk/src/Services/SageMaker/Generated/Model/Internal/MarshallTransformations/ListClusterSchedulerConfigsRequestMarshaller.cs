@@ -63,69 +63,72 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClusterArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ClusterArn");
-                    context.Writer.Write(publicRequest.ClusterArn);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClusterArn())
+                    {
+                        context.Writer.WritePropertyName("ClusterArn");
+                        context.Writer.Write(publicRequest.ClusterArn);
+                    }
+
+                    if(publicRequest.IsSetCreatedAfter())
+                    {
+                        context.Writer.WritePropertyName("CreatedAfter");
+                        context.Writer.Write(publicRequest.CreatedAfter.Value);
+                    }
+
+                    if(publicRequest.IsSetCreatedBefore())
+                    {
+                        context.Writer.WritePropertyName("CreatedBefore");
+                        context.Writer.Write(publicRequest.CreatedBefore.Value);
+                    }
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("MaxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNameContains())
+                    {
+                        context.Writer.WritePropertyName("NameContains");
+                        context.Writer.Write(publicRequest.NameContains);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetSortBy())
+                    {
+                        context.Writer.WritePropertyName("SortBy");
+                        context.Writer.Write(publicRequest.SortBy);
+                    }
+
+                    if(publicRequest.IsSetSortOrder())
+                    {
+                        context.Writer.WritePropertyName("SortOrder");
+                        context.Writer.Write(publicRequest.SortOrder);
+                    }
+
+                    if(publicRequest.IsSetStatus())
+                    {
+                        context.Writer.WritePropertyName("Status");
+                        context.Writer.Write(publicRequest.Status);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetCreatedAfter())
-                {
-                    context.Writer.WritePropertyName("CreatedAfter");
-                    context.Writer.Write(publicRequest.CreatedAfter);
-                }
-
-                if(publicRequest.IsSetCreatedBefore())
-                {
-                    context.Writer.WritePropertyName("CreatedBefore");
-                    context.Writer.Write(publicRequest.CreatedBefore);
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
-                }
-
-                if(publicRequest.IsSetNameContains())
-                {
-                    context.Writer.WritePropertyName("NameContains");
-                    context.Writer.Write(publicRequest.NameContains);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetSortBy())
-                {
-                    context.Writer.WritePropertyName("SortBy");
-                    context.Writer.Write(publicRequest.SortBy);
-                }
-
-                if(publicRequest.IsSetSortOrder())
-                {
-                    context.Writer.WritePropertyName("SortOrder");
-                    context.Writer.Write(publicRequest.SortOrder);
-                }
-
-                if(publicRequest.IsSetStatus())
-                {
-                    context.Writer.WritePropertyName("Status");
-                    context.Writer.Write(publicRequest.Status);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

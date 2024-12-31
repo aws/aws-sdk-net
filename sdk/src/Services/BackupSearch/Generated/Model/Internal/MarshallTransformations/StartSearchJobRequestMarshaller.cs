@@ -61,69 +61,72 @@ namespace Amazon.BackupSearch.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/search-jobs";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                if(publicRequest.IsSetEncryptionKeyArn())
-                {
-                    context.Writer.WritePropertyName("EncryptionKeyArn");
-                    context.Writer.Write(publicRequest.EncryptionKeyArn);
-                }
-
-                if(publicRequest.IsSetItemFilters())
-                {
-                    context.Writer.WritePropertyName("ItemFilters");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ItemFiltersMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ItemFilters, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetSearchScope())
-                {
-                    context.Writer.WritePropertyName("SearchScope");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SearchScopeMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SearchScope, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientToken())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetEncryptionKeyArn())
+                    {
+                        context.Writer.WritePropertyName("EncryptionKeyArn");
+                        context.Writer.Write(publicRequest.EncryptionKeyArn);
+                    }
+
+                    if(publicRequest.IsSetItemFilters())
+                    {
+                        context.Writer.WritePropertyName("ItemFilters");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ItemFiltersMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ItemFilters, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetSearchScope())
+                    {
+                        context.Writer.WritePropertyName("SearchScope");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SearchScopeMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SearchScope, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

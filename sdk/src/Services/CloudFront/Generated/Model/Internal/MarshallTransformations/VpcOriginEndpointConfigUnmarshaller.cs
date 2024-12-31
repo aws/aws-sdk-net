@@ -64,13 +64,13 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("HTTPPort", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.HTTPPort = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("HTTPSPort", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.HTTPSPort = unmarshaller.Unmarshall(context);
                         continue;
                     }

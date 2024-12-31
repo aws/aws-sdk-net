@@ -42,9 +42,9 @@ namespace Amazon.VPCLattice.Model
         /// Specifies if the service network is enabled for sharing.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 

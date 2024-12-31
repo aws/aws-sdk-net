@@ -61,65 +61,68 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/2021-01-01/opensearch/directQueryDataSource";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDataSourceName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DataSourceName");
-                    context.Writer.Write(publicRequest.DataSourceName);
-                }
-
-                if(publicRequest.IsSetDataSourceType())
-                {
-                    context.Writer.WritePropertyName("DataSourceType");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DirectQueryDataSourceTypeMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DataSourceType, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetOpenSearchArns())
-                {
-                    context.Writer.WritePropertyName("OpenSearchArns");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestOpenSearchArnsListValue in publicRequest.OpenSearchArns)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDataSourceName())
                     {
-                            context.Writer.Write(publicRequestOpenSearchArnsListValue);
+                        context.Writer.WritePropertyName("DataSourceName");
+                        context.Writer.Write(publicRequest.DataSourceName);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetTagList())
-                {
-                    context.Writer.WritePropertyName("TagList");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagListListValue in publicRequest.TagList)
+                    if(publicRequest.IsSetDataSourceType())
                     {
+                        context.Writer.WritePropertyName("DataSourceType");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagListListValue, context);
+                        var marshaller = DirectQueryDataSourceTypeMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DataSourceType, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetOpenSearchArns())
+                    {
+                        context.Writer.WritePropertyName("OpenSearchArns");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestOpenSearchArnsListValue in publicRequest.OpenSearchArns)
+                        {
+                                context.Writer.Write(publicRequestOpenSearchArnsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTagList())
+                    {
+                        context.Writer.WritePropertyName("TagList");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagListListValue in publicRequest.TagList)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagListListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

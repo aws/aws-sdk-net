@@ -68,7 +68,7 @@ namespace Amazon.Notifications.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("eventOccurrenceTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.EventOccurrenceTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

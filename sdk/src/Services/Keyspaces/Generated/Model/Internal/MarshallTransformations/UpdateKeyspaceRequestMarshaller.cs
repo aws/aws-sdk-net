@@ -63,43 +63,46 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientSideTimestamps())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("clientSideTimestamps");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientSideTimestamps())
+                    {
+                        context.Writer.WritePropertyName("clientSideTimestamps");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = ClientSideTimestampsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ClientSideTimestamps, context);
+                        var marshaller = ClientSideTimestampsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ClientSideTimestamps, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetKeyspaceName())
+                    {
+                        context.Writer.WritePropertyName("keyspaceName");
+                        context.Writer.Write(publicRequest.KeyspaceName);
+                    }
+
+                    if(publicRequest.IsSetReplicationSpecification())
+                    {
+                        context.Writer.WritePropertyName("replicationSpecification");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ReplicationSpecificationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ReplicationSpecification, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetKeyspaceName())
-                {
-                    context.Writer.WritePropertyName("keyspaceName");
-                    context.Writer.Write(publicRequest.KeyspaceName);
-                }
-
-                if(publicRequest.IsSetReplicationSpecification())
-                {
-                    context.Writer.WritePropertyName("replicationSpecification");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ReplicationSpecificationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ReplicationSpecification, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

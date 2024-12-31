@@ -63,9 +63,9 @@ namespace Amazon.QuickSight.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public double DataValue
+        public double? DataValue
         {
-            get { return this._dataValue.GetValueOrDefault(); }
+            get { return this._dataValue; }
             set { this._dataValue = value; }
         }
 

@@ -80,7 +80,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("UtilizationPerformanceIndex", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.UtilizationPerformanceIndex = unmarshaller.Unmarshall(context);
                     continue;
                 }

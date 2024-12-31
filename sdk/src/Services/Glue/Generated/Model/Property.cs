@@ -160,9 +160,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool Required
+        public bool? Required
         {
-            get { return this._required.GetValueOrDefault(); }
+            get { return this._required; }
             set { this._required = value; }
         }
 

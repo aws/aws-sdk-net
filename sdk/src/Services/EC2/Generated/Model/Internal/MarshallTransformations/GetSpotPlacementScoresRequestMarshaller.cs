@@ -176,14 +176,19 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             {
                                 if(publicRequest.InstanceRequirementsWithMetadata.InstanceRequirements.BaselinePerformanceFactors.Cpu.IsSetReferences())
                                 {
-                                    int publicRequestInstanceRequirementsWithMetadataInstanceRequirementsBaselinePerformanceFactorsCpulistValueIndex = 1;
-                                    foreach(var publicRequestInstanceRequirementsWithMetadataInstanceRequirementsBaselinePerformanceFactorsCpulistValue in publicRequest.InstanceRequirementsWithMetadata.InstanceRequirements.BaselinePerformanceFactors.Cpu.References)
+                                    if (publicRequest.InstanceRequirementsWithMetadata.InstanceRequirements.BaselinePerformanceFactors.Cpu.References.Count == 0)
+                                        request.Parameters.Add("InstanceRequirementsWithMetadata" + "." + "InstanceRequirements" + "." + "BaselinePerformanceFactors" + "." + "Cpu" + "." + "Reference", "");
+                                    else
                                     {
-                                        if(publicRequestInstanceRequirementsWithMetadataInstanceRequirementsBaselinePerformanceFactorsCpulistValue.IsSetInstanceFamily())
-                                        {
-                                            request.Parameters.Add("InstanceRequirementsWithMetadata" + "." + "InstanceRequirements" + "." + "BaselinePerformanceFactors" + "." + "Cpu" + "." + "Reference" + "." + publicRequestInstanceRequirementsWithMetadataInstanceRequirementsBaselinePerformanceFactorsCpulistValueIndex + "." + "InstanceFamily", StringUtils.FromString(publicRequestInstanceRequirementsWithMetadataInstanceRequirementsBaselinePerformanceFactorsCpulistValue.InstanceFamily));
-                                        }
-                                        publicRequestInstanceRequirementsWithMetadataInstanceRequirementsBaselinePerformanceFactorsCpulistValueIndex++;
+                                         int publicRequestInstanceRequirementsWithMetadataInstanceRequirementsBaselinePerformanceFactorsCpulistValueIndex = 1;
+                                         foreach(var publicRequestInstanceRequirementsWithMetadataInstanceRequirementsBaselinePerformanceFactorsCpulistValue in publicRequest.InstanceRequirementsWithMetadata.InstanceRequirements.BaselinePerformanceFactors.Cpu.References)
+                                         {
+                                            if(publicRequestInstanceRequirementsWithMetadataInstanceRequirementsBaselinePerformanceFactorsCpulistValue.IsSetInstanceFamily())
+                                            {
+                                                request.Parameters.Add("InstanceRequirementsWithMetadata" + "." + "InstanceRequirements" + "." + "BaselinePerformanceFactors" + "." + "Cpu" + "." + "Reference" + "." + publicRequestInstanceRequirementsWithMetadataInstanceRequirementsBaselinePerformanceFactorsCpulistValueIndex + "." + "InstanceFamily", StringUtils.FromString(publicRequestInstanceRequirementsWithMetadataInstanceRequirementsBaselinePerformanceFactorsCpulistValue.InstanceFamily));
+                                            }
+                                             publicRequestInstanceRequirementsWithMetadataInstanceRequirementsBaselinePerformanceFactorsCpulistValueIndex++;
+                                         }
                                     }
                                 }
                             }

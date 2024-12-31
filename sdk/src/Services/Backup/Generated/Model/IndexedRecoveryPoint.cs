@@ -57,9 +57,9 @@ namespace Amazon.Backup.Model
         /// the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.
         /// </para>
         /// </summary>
-        public DateTime BackupCreationDate
+        public DateTime? BackupCreationDate
         {
-            get { return this._backupCreationDate.GetValueOrDefault(); }
+            get { return this._backupCreationDate; }
             set { this._backupCreationDate = value; }
         }
 
@@ -123,9 +123,9 @@ namespace Amazon.Backup.Model
         /// AM.
         /// </para>
         /// </summary>
-        public DateTime IndexCreationDate
+        public DateTime? IndexCreationDate
         {
-            get { return this._indexCreationDate.GetValueOrDefault(); }
+            get { return this._indexCreationDate; }
             set { this._indexCreationDate = value; }
         }
 

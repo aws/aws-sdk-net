@@ -63,71 +63,74 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDataExtraDimensions())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("dataExtraDimensions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestDataExtraDimensionsListValue in publicRequest.DataExtraDimensions)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDataExtraDimensions())
                     {
-                            context.Writer.Write(publicRequestDataExtraDimensionsListValue);
+                        context.Writer.WritePropertyName("dataExtraDimensions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestDataExtraDimensionsListValue in publicRequest.DataExtraDimensions)
+                        {
+                                context.Writer.Write(publicRequestDataExtraDimensionsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetIdentifier())
-                {
-                    context.Writer.WritePropertyName("identifier");
-                    context.Writer.Write(publicRequest.Identifier);
-                }
-
-                if(publicRequest.IsSetMetadataExtraDimensions())
-                {
-                    context.Writer.WritePropertyName("metadataExtraDimensions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestMetadataExtraDimensionsListValue in publicRequest.MetadataExtraDimensions)
+                    if(publicRequest.IsSetDescription())
                     {
-                            context.Writer.Write(publicRequestMetadataExtraDimensionsListValue);
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetStateTemplatePropertiesToAdd())
-                {
-                    context.Writer.WritePropertyName("stateTemplatePropertiesToAdd");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestStateTemplatePropertiesToAddListValue in publicRequest.StateTemplatePropertiesToAdd)
+                    if(publicRequest.IsSetIdentifier())
                     {
-                            context.Writer.Write(publicRequestStateTemplatePropertiesToAddListValue);
+                        context.Writer.WritePropertyName("identifier");
+                        context.Writer.Write(publicRequest.Identifier);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetStateTemplatePropertiesToRemove())
-                {
-                    context.Writer.WritePropertyName("stateTemplatePropertiesToRemove");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestStateTemplatePropertiesToRemoveListValue in publicRequest.StateTemplatePropertiesToRemove)
+                    if(publicRequest.IsSetMetadataExtraDimensions())
                     {
-                            context.Writer.Write(publicRequestStateTemplatePropertiesToRemoveListValue);
+                        context.Writer.WritePropertyName("metadataExtraDimensions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestMetadataExtraDimensionsListValue in publicRequest.MetadataExtraDimensions)
+                        {
+                                context.Writer.Write(publicRequestMetadataExtraDimensionsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetStateTemplatePropertiesToAdd())
+                    {
+                        context.Writer.WritePropertyName("stateTemplatePropertiesToAdd");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestStateTemplatePropertiesToAddListValue in publicRequest.StateTemplatePropertiesToAdd)
+                        {
+                                context.Writer.Write(publicRequestStateTemplatePropertiesToAddListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetStateTemplatePropertiesToRemove())
+                    {
+                        context.Writer.WritePropertyName("stateTemplatePropertiesToRemove");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestStateTemplatePropertiesToRemoveListValue in publicRequest.StateTemplatePropertiesToRemove)
+                        {
+                                context.Writer.Write(publicRequestStateTemplatePropertiesToRemoveListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

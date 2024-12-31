@@ -76,9 +76,9 @@ namespace Amazon.SecurityIR.Model
         /// Gets and sets the property CreatedDate.
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreatedDate
+        public DateTime? CreatedDate
         {
-            get { return this._createdDate.GetValueOrDefault(); }
+            get { return this._createdDate; }
             set { this._createdDate = value; }
         }
 

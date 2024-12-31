@@ -51,7 +51,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFairShareWeight())
             {
                 context.Writer.WritePropertyName("FairShareWeight");
-                context.Writer.Write(requestObject.FairShareWeight);
+                context.Writer.Write(requestObject.FairShareWeight.Value);
             }
 
             if(requestObject.IsSetTeamName())

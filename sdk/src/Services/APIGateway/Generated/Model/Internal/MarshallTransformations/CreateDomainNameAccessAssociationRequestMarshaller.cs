@@ -61,47 +61,50 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/domainnameaccessassociations";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAccessAssociationSource())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("accessAssociationSource");
-                    context.Writer.Write(publicRequest.AccessAssociationSource);
-                }
-
-                if(publicRequest.IsSetAccessAssociationSourceType())
-                {
-                    context.Writer.WritePropertyName("accessAssociationSourceType");
-                    context.Writer.Write(publicRequest.AccessAssociationSourceType);
-                }
-
-                if(publicRequest.IsSetDomainNameArn())
-                {
-                    context.Writer.WritePropertyName("domainNameArn");
-                    context.Writer.Write(publicRequest.DomainNameArn);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAccessAssociationSource())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("accessAssociationSource");
+                        context.Writer.Write(publicRequest.AccessAssociationSource);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetAccessAssociationSourceType())
+                    {
+                        context.Writer.WritePropertyName("accessAssociationSourceType");
+                        context.Writer.Write(publicRequest.AccessAssociationSourceType);
+                    }
+
+                    if(publicRequest.IsSetDomainNameArn())
+                    {
+                        context.Writer.WritePropertyName("domainNameArn");
+                        context.Writer.Write(publicRequest.DomainNameArn);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

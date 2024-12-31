@@ -67,43 +67,46 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 throw new AmazonDataZoneException("Request object does not have required field Identifier set");
             request.AddPathResource("{identifier}", StringUtils.FromString(publicRequest.Identifier));
             request.ResourcePath = "/v2/domains/{domainIdentifier}/connections/{identifier}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAwsLocation())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("awsLocation");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAwsLocation())
+                    {
+                        context.Writer.WritePropertyName("awsLocation");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = AwsLocationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AwsLocation, context);
+                        var marshaller = AwsLocationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AwsLocation, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetProps())
+                    {
+                        context.Writer.WritePropertyName("props");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ConnectionPropertiesPatchMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Props, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetProps())
-                {
-                    context.Writer.WritePropertyName("props");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ConnectionPropertiesPatchMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Props, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

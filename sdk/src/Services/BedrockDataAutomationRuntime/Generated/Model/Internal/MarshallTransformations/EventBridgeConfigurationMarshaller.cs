@@ -51,7 +51,7 @@ namespace Amazon.BedrockDataAutomationRuntime.Model.Internal.MarshallTransformat
             if(requestObject.IsSetEventBridgeEnabled())
             {
                 context.Writer.WritePropertyName("eventBridgeEnabled");
-                context.Writer.Write(requestObject.EventBridgeEnabled);
+                context.Writer.Write(requestObject.EventBridgeEnabled.Value);
             }
 
         }

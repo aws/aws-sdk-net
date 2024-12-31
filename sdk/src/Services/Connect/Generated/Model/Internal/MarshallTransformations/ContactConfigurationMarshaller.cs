@@ -57,7 +57,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIncludeRawMessage())
             {
                 context.Writer.WritePropertyName("IncludeRawMessage");
-                context.Writer.Write(requestObject.IncludeRawMessage);
+                context.Writer.Write(requestObject.IncludeRawMessage.Value);
             }
 
             if(requestObject.IsSetParticipantRole())

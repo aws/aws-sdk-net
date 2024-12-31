@@ -235,9 +235,9 @@ namespace Amazon.DataZone.Model
         /// Speciefies whether to validate credentials of the Amazon Web Services Glue connection.
         /// </para>
         /// </summary>
-        public bool ValidateCredentials
+        public bool? ValidateCredentials
         {
-            get { return this._validateCredentials.GetValueOrDefault(); }
+            get { return this._validateCredentials; }
             set { this._validateCredentials = value; }
         }
 

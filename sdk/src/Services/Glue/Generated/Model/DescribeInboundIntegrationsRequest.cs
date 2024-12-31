@@ -85,9 +85,9 @@ namespace Amazon.Glue.Model
         /// The total number of items to return in the output.
         /// </para>
         /// </summary>
-        public int MaxRecords
+        public int? MaxRecords
         {
-            get { return this._maxRecords.GetValueOrDefault(); }
+            get { return this._maxRecords; }
             set { this._maxRecords = value; }
         }
 

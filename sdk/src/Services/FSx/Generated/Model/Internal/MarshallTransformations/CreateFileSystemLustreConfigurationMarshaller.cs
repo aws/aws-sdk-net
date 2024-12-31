@@ -93,7 +93,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEfaEnabled())
             {
                 context.Writer.WritePropertyName("EfaEnabled");
-                context.Writer.Write(requestObject.EfaEnabled);
+                context.Writer.Write(requestObject.EfaEnabled.Value);
             }
 
             if(requestObject.IsSetExportPath())

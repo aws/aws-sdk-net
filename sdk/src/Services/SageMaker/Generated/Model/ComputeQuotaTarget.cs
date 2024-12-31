@@ -49,9 +49,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public int FairShareWeight
+        public int? FairShareWeight
         {
-            get { return this._fairShareWeight.GetValueOrDefault(); }
+            get { return this._fairShareWeight; }
             set { this._fairShareWeight = value; }
         }
 

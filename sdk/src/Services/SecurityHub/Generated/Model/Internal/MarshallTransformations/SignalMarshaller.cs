@@ -62,13 +62,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCount())
             {
                 context.Writer.WritePropertyName("Count");
-                context.Writer.Write(requestObject.Count);
+                context.Writer.Write(requestObject.Count.Value);
             }
 
             if(requestObject.IsSetCreatedAt())
             {
                 context.Writer.WritePropertyName("CreatedAt");
-                context.Writer.Write(requestObject.CreatedAt);
+                context.Writer.Write(requestObject.CreatedAt.Value);
             }
 
             if(requestObject.IsSetEndpointIds())
@@ -85,7 +85,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFirstSeenAt())
             {
                 context.Writer.WritePropertyName("FirstSeenAt");
-                context.Writer.Write(requestObject.FirstSeenAt);
+                context.Writer.Write(requestObject.FirstSeenAt.Value);
             }
 
             if(requestObject.IsSetId())
@@ -97,7 +97,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLastSeenAt())
             {
                 context.Writer.WritePropertyName("LastSeenAt");
-                context.Writer.Write(requestObject.LastSeenAt);
+                context.Writer.Write(requestObject.LastSeenAt.Value);
             }
 
             if(requestObject.IsSetName())
@@ -126,13 +126,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSeverity())
             {
                 context.Writer.WritePropertyName("Severity");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.Severity))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Severity.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Severity));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Severity.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Severity);
+                    context.Writer.Write(requestObject.Severity.Value);
                 }
             }
 
@@ -167,7 +167,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetUpdatedAt())
             {
                 context.Writer.WritePropertyName("UpdatedAt");
-                context.Writer.Write(requestObject.UpdatedAt);
+                context.Writer.Write(requestObject.UpdatedAt.Value);
             }
 
         }

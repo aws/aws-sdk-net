@@ -67,7 +67,6 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                             request.Parameters.Add("Rule" + "." + "Actions", "");
                         else
                         {
-<<<<<<< HEAD
                              int publicRequestRulelistValueIndex = 1;
                              foreach(var publicRequestRulelistValue in publicRequest.Rule.Actions)
                              {
@@ -103,6 +102,17 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                                     if(publicRequestRulelistValue.BounceAction.IsSetTopicArn())
                                     {
                                         request.Parameters.Add("Rule" + "." + "Actions" + "." + "member" + "." + publicRequestRulelistValueIndex + "." + "BounceAction" + "." + "TopicArn", StringUtils.FromString(publicRequestRulelistValue.BounceAction.TopicArn));
+                                    }
+                                }
+                                if(publicRequestRulelistValue.IsSetConnectAction())
+                                {
+                                    if(publicRequestRulelistValue.ConnectAction.IsSetIAMRoleARN())
+                                    {
+                                        request.Parameters.Add("Rule" + "." + "Actions" + "." + "member" + "." + publicRequestRulelistValueIndex + "." + "ConnectAction" + "." + "IAMRoleARN", StringUtils.FromString(publicRequestRulelistValue.ConnectAction.IAMRoleARN));
+                                    }
+                                    if(publicRequestRulelistValue.ConnectAction.IsSetInstanceARN())
+                                    {
+                                        request.Parameters.Add("Rule" + "." + "Actions" + "." + "member" + "." + publicRequestRulelistValueIndex + "." + "ConnectAction" + "." + "InstanceARN", StringUtils.FromString(publicRequestRulelistValue.ConnectAction.InstanceARN));
                                     }
                                 }
                                 if(publicRequestRulelistValue.IsSetLambdaAction())
@@ -178,232 +188,6 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                                 }
                                  publicRequestRulelistValueIndex++;
                              }
-||||||| Commit version number update changes
-                            if(publicRequestRulelistValue.IsSetAddHeaderAction())
-                            {
-                                if(publicRequestRulelistValue.AddHeaderAction.IsSetHeaderName())
-                                {
-                                    request.Parameters.Add("Rule" + "." + "Actions" + "." + "member" + "." + publicRequestRulelistValueIndex + "." + "AddHeaderAction" + "." + "HeaderName", StringUtils.FromString(publicRequestRulelistValue.AddHeaderAction.HeaderName));
-                                }
-                                if(publicRequestRulelistValue.AddHeaderAction.IsSetHeaderValue())
-                                {
-                                    request.Parameters.Add("Rule" + "." + "Actions" + "." + "member" + "." + publicRequestRulelistValueIndex + "." + "AddHeaderAction" + "." + "HeaderValue", StringUtils.FromString(publicRequestRulelistValue.AddHeaderAction.HeaderValue));
-                                }
-                            }
-                            if(publicRequestRulelistValue.IsSetBounceAction())
-                            {
-                                if(publicRequestRulelistValue.BounceAction.IsSetMessage())
-                                {
-                                    request.Parameters.Add("Rule" + "." + "Actions" + "." + "member" + "." + publicRequestRulelistValueIndex + "." + "BounceAction" + "." + "Message", StringUtils.FromString(publicRequestRulelistValue.BounceAction.Message));
-                                }
-                                if(publicRequestRulelistValue.BounceAction.IsSetSender())
-                                {
-                                    request.Parameters.Add("Rule" + "." + "Actions" + "." + "member" + "." + publicRequestRulelistValueIndex + "." + "BounceAction" + "." + "Sender", StringUtils.FromString(publicRequestRulelistValue.BounceAction.Sender));
-                                }
-                                if(publicRequestRulelistValue.BounceAction.IsSetSmtpReplyCode())
-                                {
-                                    request.Parameters.Add("Rule" + "." + "Actions" + "." + "member" + "." + publicRequestRulelistValueIndex + "." + "BounceAction" + "." + "SmtpReplyCode", StringUtils.FromString(publicRequestRulelistValue.BounceAction.SmtpReplyCode));
-                                }
-                                if(publicRequestRulelistValue.BounceAction.IsSetStatusCode())
-                                {
-                                    request.Parameters.Add("Rule" + "." + "Actions" + "." + "member" + "." + publicRequestRulelistValueIndex + "." + "BounceAction" + "." + "StatusCode", StringUtils.FromString(publicRequestRulelistValue.BounceAction.StatusCode));
-                                }
-                                if(publicRequestRulelistValue.BounceAction.IsSetTopicArn())
-                                {
-                                    request.Parameters.Add("Rule" + "." + "Actions" + "." + "member" + "." + publicRequestRulelistValueIndex + "." + "BounceAction" + "." + "TopicArn", StringUtils.FromString(publicRequestRulelistValue.BounceAction.TopicArn));
-                                }
-                            }
-                            if(publicRequestRulelistValue.IsSetLambdaAction())
-                            {
-                                if(publicRequestRulelistValue.LambdaAction.IsSetFunctionArn())
-                                {
-                                    request.Parameters.Add("Rule" + "." + "Actions" + "." + "member" + "." + publicRequestRulelistValueIndex + "." + "LambdaAction" + "." + "FunctionArn", StringUtils.FromString(publicRequestRulelistValue.LambdaAction.FunctionArn));
-                                }
-                                if(publicRequestRulelistValue.LambdaAction.IsSetInvocationType())
-                                {
-                                    request.Parameters.Add("Rule" + "." + "Actions" + "." + "member" + "." + publicRequestRulelistValueIndex + "." + "LambdaAction" + "." + "InvocationType", StringUtils.FromString(publicRequestRulelistValue.LambdaAction.InvocationType));
-                                }
-                                if(publicRequestRulelistValue.LambdaAction.IsSetTopicArn())
-                                {
-                                    request.Parameters.Add("Rule" + "." + "Actions" + "." + "member" + "." + publicRequestRulelistValueIndex + "." + "LambdaAction" + "." + "TopicArn", StringUtils.FromString(publicRequestRulelistValue.LambdaAction.TopicArn));
-                                }
-                            }
-                            if(publicRequestRulelistValue.IsSetS3Action())
-                            {
-                                if(publicRequestRulelistValue.S3Action.IsSetBucketName())
-                                {
-                                    request.Parameters.Add("Rule" + "." + "Actions" + "." + "member" + "." + publicRequestRulelistValueIndex + "." + "S3Action" + "." + "BucketName", StringUtils.FromString(publicRequestRulelistValue.S3Action.BucketName));
-                                }
-                                if(publicRequestRulelistValue.S3Action.IsSetIamRoleArn())
-                                {
-                                    request.Parameters.Add("Rule" + "." + "Actions" + "." + "member" + "." + publicRequestRulelistValueIndex + "." + "S3Action" + "." + "IamRoleArn", StringUtils.FromString(publicRequestRulelistValue.S3Action.IamRoleArn));
-                                }
-                                if(publicRequestRulelistValue.S3Action.IsSetKmsKeyArn())
-                                {
-                                    request.Parameters.Add("Rule" + "." + "Actions" + "." + "member" + "." + publicRequestRulelistValueIndex + "." + "S3Action" + "." + "KmsKeyArn", StringUtils.FromString(publicRequestRulelistValue.S3Action.KmsKeyArn));
-                                }
-                                if(publicRequestRulelistValue.S3Action.IsSetObjectKeyPrefix())
-                                {
-                                    request.Parameters.Add("Rule" + "." + "Actions" + "." + "member" + "." + publicRequestRulelistValueIndex + "." + "S3Action" + "." + "ObjectKeyPrefix", StringUtils.FromString(publicRequestRulelistValue.S3Action.ObjectKeyPrefix));
-                                }
-                                if(publicRequestRulelistValue.S3Action.IsSetTopicArn())
-                                {
-                                    request.Parameters.Add("Rule" + "." + "Actions" + "." + "member" + "." + publicRequestRulelistValueIndex + "." + "S3Action" + "." + "TopicArn", StringUtils.FromString(publicRequestRulelistValue.S3Action.TopicArn));
-                                }
-                            }
-                            if(publicRequestRulelistValue.IsSetSNSAction())
-                            {
-                                if(publicRequestRulelistValue.SNSAction.IsSetEncoding())
-                                {
-                                    request.Parameters.Add("Rule" + "." + "Actions" + "." + "member" + "." + publicRequestRulelistValueIndex + "." + "SNSAction" + "." + "Encoding", StringUtils.FromString(publicRequestRulelistValue.SNSAction.Encoding));
-                                }
-                                if(publicRequestRulelistValue.SNSAction.IsSetTopicArn())
-                                {
-                                    request.Parameters.Add("Rule" + "." + "Actions" + "." + "member" + "." + publicRequestRulelistValueIndex + "." + "SNSAction" + "." + "TopicArn", StringUtils.FromString(publicRequestRulelistValue.SNSAction.TopicArn));
-                                }
-                            }
-                            if(publicRequestRulelistValue.IsSetStopAction())
-                            {
-                                if(publicRequestRulelistValue.StopAction.IsSetScope())
-                                {
-                                    request.Parameters.Add("Rule" + "." + "Actions" + "." + "member" + "." + publicRequestRulelistValueIndex + "." + "StopAction" + "." + "Scope", StringUtils.FromString(publicRequestRulelistValue.StopAction.Scope));
-                                }
-                                if(publicRequestRulelistValue.StopAction.IsSetTopicArn())
-                                {
-                                    request.Parameters.Add("Rule" + "." + "Actions" + "." + "member" + "." + publicRequestRulelistValueIndex + "." + "StopAction" + "." + "TopicArn", StringUtils.FromString(publicRequestRulelistValue.StopAction.TopicArn));
-                                }
-                            }
-                            if(publicRequestRulelistValue.IsSetWorkmailAction())
-                            {
-                                if(publicRequestRulelistValue.WorkmailAction.IsSetOrganizationArn())
-                                {
-                                    request.Parameters.Add("Rule" + "." + "Actions" + "." + "member" + "." + publicRequestRulelistValueIndex + "." + "WorkmailAction" + "." + "OrganizationArn", StringUtils.FromString(publicRequestRulelistValue.WorkmailAction.OrganizationArn));
-                                }
-                                if(publicRequestRulelistValue.WorkmailAction.IsSetTopicArn())
-                                {
-                                    request.Parameters.Add("Rule" + "." + "Actions" + "." + "member" + "." + publicRequestRulelistValueIndex + "." + "WorkmailAction" + "." + "TopicArn", StringUtils.FromString(publicRequestRulelistValue.WorkmailAction.TopicArn));
-                                }
-                            }
-                            publicRequestRulelistValueIndex++;
-=======
-                            if(publicRequestRulelistValue.IsSetAddHeaderAction())
-                            {
-                                if(publicRequestRulelistValue.AddHeaderAction.IsSetHeaderName())
-                                {
-                                    request.Parameters.Add("Rule" + "." + "Actions" + "." + "member" + "." + publicRequestRulelistValueIndex + "." + "AddHeaderAction" + "." + "HeaderName", StringUtils.FromString(publicRequestRulelistValue.AddHeaderAction.HeaderName));
-                                }
-                                if(publicRequestRulelistValue.AddHeaderAction.IsSetHeaderValue())
-                                {
-                                    request.Parameters.Add("Rule" + "." + "Actions" + "." + "member" + "." + publicRequestRulelistValueIndex + "." + "AddHeaderAction" + "." + "HeaderValue", StringUtils.FromString(publicRequestRulelistValue.AddHeaderAction.HeaderValue));
-                                }
-                            }
-                            if(publicRequestRulelistValue.IsSetBounceAction())
-                            {
-                                if(publicRequestRulelistValue.BounceAction.IsSetMessage())
-                                {
-                                    request.Parameters.Add("Rule" + "." + "Actions" + "." + "member" + "." + publicRequestRulelistValueIndex + "." + "BounceAction" + "." + "Message", StringUtils.FromString(publicRequestRulelistValue.BounceAction.Message));
-                                }
-                                if(publicRequestRulelistValue.BounceAction.IsSetSender())
-                                {
-                                    request.Parameters.Add("Rule" + "." + "Actions" + "." + "member" + "." + publicRequestRulelistValueIndex + "." + "BounceAction" + "." + "Sender", StringUtils.FromString(publicRequestRulelistValue.BounceAction.Sender));
-                                }
-                                if(publicRequestRulelistValue.BounceAction.IsSetSmtpReplyCode())
-                                {
-                                    request.Parameters.Add("Rule" + "." + "Actions" + "." + "member" + "." + publicRequestRulelistValueIndex + "." + "BounceAction" + "." + "SmtpReplyCode", StringUtils.FromString(publicRequestRulelistValue.BounceAction.SmtpReplyCode));
-                                }
-                                if(publicRequestRulelistValue.BounceAction.IsSetStatusCode())
-                                {
-                                    request.Parameters.Add("Rule" + "." + "Actions" + "." + "member" + "." + publicRequestRulelistValueIndex + "." + "BounceAction" + "." + "StatusCode", StringUtils.FromString(publicRequestRulelistValue.BounceAction.StatusCode));
-                                }
-                                if(publicRequestRulelistValue.BounceAction.IsSetTopicArn())
-                                {
-                                    request.Parameters.Add("Rule" + "." + "Actions" + "." + "member" + "." + publicRequestRulelistValueIndex + "." + "BounceAction" + "." + "TopicArn", StringUtils.FromString(publicRequestRulelistValue.BounceAction.TopicArn));
-                                }
-                            }
-                            if(publicRequestRulelistValue.IsSetConnectAction())
-                            {
-                                if(publicRequestRulelistValue.ConnectAction.IsSetIAMRoleARN())
-                                {
-                                    request.Parameters.Add("Rule" + "." + "Actions" + "." + "member" + "." + publicRequestRulelistValueIndex + "." + "ConnectAction" + "." + "IAMRoleARN", StringUtils.FromString(publicRequestRulelistValue.ConnectAction.IAMRoleARN));
-                                }
-                                if(publicRequestRulelistValue.ConnectAction.IsSetInstanceARN())
-                                {
-                                    request.Parameters.Add("Rule" + "." + "Actions" + "." + "member" + "." + publicRequestRulelistValueIndex + "." + "ConnectAction" + "." + "InstanceARN", StringUtils.FromString(publicRequestRulelistValue.ConnectAction.InstanceARN));
-                                }
-                            }
-                            if(publicRequestRulelistValue.IsSetLambdaAction())
-                            {
-                                if(publicRequestRulelistValue.LambdaAction.IsSetFunctionArn())
-                                {
-                                    request.Parameters.Add("Rule" + "." + "Actions" + "." + "member" + "." + publicRequestRulelistValueIndex + "." + "LambdaAction" + "." + "FunctionArn", StringUtils.FromString(publicRequestRulelistValue.LambdaAction.FunctionArn));
-                                }
-                                if(publicRequestRulelistValue.LambdaAction.IsSetInvocationType())
-                                {
-                                    request.Parameters.Add("Rule" + "." + "Actions" + "." + "member" + "." + publicRequestRulelistValueIndex + "." + "LambdaAction" + "." + "InvocationType", StringUtils.FromString(publicRequestRulelistValue.LambdaAction.InvocationType));
-                                }
-                                if(publicRequestRulelistValue.LambdaAction.IsSetTopicArn())
-                                {
-                                    request.Parameters.Add("Rule" + "." + "Actions" + "." + "member" + "." + publicRequestRulelistValueIndex + "." + "LambdaAction" + "." + "TopicArn", StringUtils.FromString(publicRequestRulelistValue.LambdaAction.TopicArn));
-                                }
-                            }
-                            if(publicRequestRulelistValue.IsSetS3Action())
-                            {
-                                if(publicRequestRulelistValue.S3Action.IsSetBucketName())
-                                {
-                                    request.Parameters.Add("Rule" + "." + "Actions" + "." + "member" + "." + publicRequestRulelistValueIndex + "." + "S3Action" + "." + "BucketName", StringUtils.FromString(publicRequestRulelistValue.S3Action.BucketName));
-                                }
-                                if(publicRequestRulelistValue.S3Action.IsSetIamRoleArn())
-                                {
-                                    request.Parameters.Add("Rule" + "." + "Actions" + "." + "member" + "." + publicRequestRulelistValueIndex + "." + "S3Action" + "." + "IamRoleArn", StringUtils.FromString(publicRequestRulelistValue.S3Action.IamRoleArn));
-                                }
-                                if(publicRequestRulelistValue.S3Action.IsSetKmsKeyArn())
-                                {
-                                    request.Parameters.Add("Rule" + "." + "Actions" + "." + "member" + "." + publicRequestRulelistValueIndex + "." + "S3Action" + "." + "KmsKeyArn", StringUtils.FromString(publicRequestRulelistValue.S3Action.KmsKeyArn));
-                                }
-                                if(publicRequestRulelistValue.S3Action.IsSetObjectKeyPrefix())
-                                {
-                                    request.Parameters.Add("Rule" + "." + "Actions" + "." + "member" + "." + publicRequestRulelistValueIndex + "." + "S3Action" + "." + "ObjectKeyPrefix", StringUtils.FromString(publicRequestRulelistValue.S3Action.ObjectKeyPrefix));
-                                }
-                                if(publicRequestRulelistValue.S3Action.IsSetTopicArn())
-                                {
-                                    request.Parameters.Add("Rule" + "." + "Actions" + "." + "member" + "." + publicRequestRulelistValueIndex + "." + "S3Action" + "." + "TopicArn", StringUtils.FromString(publicRequestRulelistValue.S3Action.TopicArn));
-                                }
-                            }
-                            if(publicRequestRulelistValue.IsSetSNSAction())
-                            {
-                                if(publicRequestRulelistValue.SNSAction.IsSetEncoding())
-                                {
-                                    request.Parameters.Add("Rule" + "." + "Actions" + "." + "member" + "." + publicRequestRulelistValueIndex + "." + "SNSAction" + "." + "Encoding", StringUtils.FromString(publicRequestRulelistValue.SNSAction.Encoding));
-                                }
-                                if(publicRequestRulelistValue.SNSAction.IsSetTopicArn())
-                                {
-                                    request.Parameters.Add("Rule" + "." + "Actions" + "." + "member" + "." + publicRequestRulelistValueIndex + "." + "SNSAction" + "." + "TopicArn", StringUtils.FromString(publicRequestRulelistValue.SNSAction.TopicArn));
-                                }
-                            }
-                            if(publicRequestRulelistValue.IsSetStopAction())
-                            {
-                                if(publicRequestRulelistValue.StopAction.IsSetScope())
-                                {
-                                    request.Parameters.Add("Rule" + "." + "Actions" + "." + "member" + "." + publicRequestRulelistValueIndex + "." + "StopAction" + "." + "Scope", StringUtils.FromString(publicRequestRulelistValue.StopAction.Scope));
-                                }
-                                if(publicRequestRulelistValue.StopAction.IsSetTopicArn())
-                                {
-                                    request.Parameters.Add("Rule" + "." + "Actions" + "." + "member" + "." + publicRequestRulelistValueIndex + "." + "StopAction" + "." + "TopicArn", StringUtils.FromString(publicRequestRulelistValue.StopAction.TopicArn));
-                                }
-                            }
-                            if(publicRequestRulelistValue.IsSetWorkmailAction())
-                            {
-                                if(publicRequestRulelistValue.WorkmailAction.IsSetOrganizationArn())
-                                {
-                                    request.Parameters.Add("Rule" + "." + "Actions" + "." + "member" + "." + publicRequestRulelistValueIndex + "." + "WorkmailAction" + "." + "OrganizationArn", StringUtils.FromString(publicRequestRulelistValue.WorkmailAction.OrganizationArn));
-                                }
-                                if(publicRequestRulelistValue.WorkmailAction.IsSetTopicArn())
-                                {
-                                    request.Parameters.Add("Rule" + "." + "Actions" + "." + "member" + "." + publicRequestRulelistValueIndex + "." + "WorkmailAction" + "." + "TopicArn", StringUtils.FromString(publicRequestRulelistValue.WorkmailAction.TopicArn));
-                                }
-                            }
-                            publicRequestRulelistValueIndex++;
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
                         }
                     }
                     if(publicRequest.Rule.IsSetEnabled())

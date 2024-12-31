@@ -43,9 +43,9 @@ namespace Amazon.Bedrock.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1)]
-        public double ResponseQualityDifference
+        public double? ResponseQualityDifference
         {
-            get { return this._responseQualityDifference.GetValueOrDefault(); }
+            get { return this._responseQualityDifference; }
             set { this._responseQualityDifference = value; }
         }
 

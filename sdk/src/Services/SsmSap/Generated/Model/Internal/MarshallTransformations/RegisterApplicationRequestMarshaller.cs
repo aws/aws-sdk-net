@@ -65,61 +65,11 @@ namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
             {
                 using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-<<<<<<< HEAD
                     JsonWriter writer = new JsonWriter(streamWriter);
                     writer.Validate = false;
                     writer.WriteObjectStart();
                     var context = new JsonMarshallerContext(request, writer);
                     if(publicRequest.IsSetApplicationId())
-||||||| Commit version number update changes
-                    context.Writer.WritePropertyName("ApplicationId");
-                    context.Writer.Write(publicRequest.ApplicationId);
-                }
-
-                if(publicRequest.IsSetApplicationType())
-                {
-                    context.Writer.WritePropertyName("ApplicationType");
-                    context.Writer.Write(publicRequest.ApplicationType);
-                }
-
-                if(publicRequest.IsSetCredentials())
-                {
-                    context.Writer.WritePropertyName("Credentials");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestCredentialsListValue in publicRequest.Credentials)
-=======
-                    context.Writer.WritePropertyName("ApplicationId");
-                    context.Writer.Write(publicRequest.ApplicationId);
-                }
-
-                if(publicRequest.IsSetApplicationType())
-                {
-                    context.Writer.WritePropertyName("ApplicationType");
-                    context.Writer.Write(publicRequest.ApplicationType);
-                }
-
-                if(publicRequest.IsSetComponentsInfo())
-                {
-                    context.Writer.WritePropertyName("ComponentsInfo");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestComponentsInfoListValue in publicRequest.ComponentsInfo)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ComponentInfoMarshaller.Instance;
-                        marshaller.Marshall(publicRequestComponentsInfoListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetCredentials())
-                {
-                    context.Writer.WritePropertyName("Credentials");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestCredentialsListValue in publicRequest.Credentials)
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
                     {
                         context.Writer.WritePropertyName("ApplicationId");
                         context.Writer.Write(publicRequest.ApplicationId);
@@ -129,6 +79,22 @@ namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
                     {
                         context.Writer.WritePropertyName("ApplicationType");
                         context.Writer.Write(publicRequest.ApplicationType);
+                    }
+
+                    if(publicRequest.IsSetComponentsInfo())
+                    {
+                        context.Writer.WritePropertyName("ComponentsInfo");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestComponentsInfoListValue in publicRequest.ComponentsInfo)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = ComponentInfoMarshaller.Instance;
+                            marshaller.Marshall(publicRequestComponentsInfoListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
 
                     if(publicRequest.IsSetCredentials())

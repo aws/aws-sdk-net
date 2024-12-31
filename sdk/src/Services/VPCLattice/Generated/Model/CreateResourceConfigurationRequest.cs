@@ -54,9 +54,9 @@ namespace Amazon.VPCLattice.Model
         /// with a sharable service network. The default is false.
         /// </para>
         /// </summary>
-        public bool AllowAssociationToShareableServiceNetwork
+        public bool? AllowAssociationToShareableServiceNetwork
         {
-            get { return this._allowAssociationToShareableServiceNetwork.GetValueOrDefault(); }
+            get { return this._allowAssociationToShareableServiceNetwork; }
             set { this._allowAssociationToShareableServiceNetwork = value; }
         }
 

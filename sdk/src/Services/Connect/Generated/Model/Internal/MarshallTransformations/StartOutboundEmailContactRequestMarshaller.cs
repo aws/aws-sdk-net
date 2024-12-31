@@ -61,82 +61,85 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/contact/outbound-email";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAdditionalRecipients())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AdditionalRecipients");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAdditionalRecipients())
+                    {
+                        context.Writer.WritePropertyName("AdditionalRecipients");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = OutboundAdditionalRecipientsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AdditionalRecipients, context);
+                        var marshaller = OutboundAdditionalRecipientsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AdditionalRecipients, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetClientToken())
+                    {
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetContactId())
+                    {
+                        context.Writer.WritePropertyName("ContactId");
+                        context.Writer.Write(publicRequest.ContactId);
+                    }
+
+                    if(publicRequest.IsSetDestinationEmailAddress())
+                    {
+                        context.Writer.WritePropertyName("DestinationEmailAddress");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = EmailAddressInfoMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DestinationEmailAddress, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetEmailMessage())
+                    {
+                        context.Writer.WritePropertyName("EmailMessage");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = OutboundEmailContentMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.EmailMessage, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetFromEmailAddress())
+                    {
+                        context.Writer.WritePropertyName("FromEmailAddress");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = EmailAddressInfoMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.FromEmailAddress, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetInstanceId())
+                    {
+                        context.Writer.WritePropertyName("InstanceId");
+                        context.Writer.Write(publicRequest.InstanceId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetClientToken())
-                {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetContactId())
-                {
-                    context.Writer.WritePropertyName("ContactId");
-                    context.Writer.Write(publicRequest.ContactId);
-                }
-
-                if(publicRequest.IsSetDestinationEmailAddress())
-                {
-                    context.Writer.WritePropertyName("DestinationEmailAddress");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = EmailAddressInfoMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DestinationEmailAddress, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetEmailMessage())
-                {
-                    context.Writer.WritePropertyName("EmailMessage");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = OutboundEmailContentMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.EmailMessage, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetFromEmailAddress())
-                {
-                    context.Writer.WritePropertyName("FromEmailAddress");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = EmailAddressInfoMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.FromEmailAddress, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetInstanceId())
-                {
-                    context.Writer.WritePropertyName("InstanceId");
-                    context.Writer.Write(publicRequest.InstanceId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

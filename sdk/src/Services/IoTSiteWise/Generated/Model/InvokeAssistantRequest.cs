@@ -68,9 +68,9 @@ namespace Amazon.IoTSiteWise.Model
         /// reasoning, and data access process.
         /// </para>
         /// </summary>
-        public bool EnableTrace
+        public bool? EnableTrace
         {
-            get { return this._enableTrace.GetValueOrDefault(); }
+            get { return this._enableTrace; }
             set { this._enableTrace = value; }
         }
 

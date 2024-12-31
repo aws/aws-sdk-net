@@ -45,9 +45,9 @@ namespace Amazon.EC2.Model
         /// that is most frequently observed.
         /// </para>
         /// </summary>
-        public int NumberOfMatchedAccounts
+        public int? NumberOfMatchedAccounts
         {
-            get { return this._numberOfMatchedAccounts.GetValueOrDefault(); }
+            get { return this._numberOfMatchedAccounts; }
             set { this._numberOfMatchedAccounts = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.EC2.Model
         /// most frequently observed value for the attribute.
         /// </para>
         /// </summary>
-        public int NumberOfUnmatchedAccounts
+        public int? NumberOfUnmatchedAccounts
         {
-            get { return this._numberOfUnmatchedAccounts.GetValueOrDefault(); }
+            get { return this._numberOfUnmatchedAccounts; }
             set { this._numberOfUnmatchedAccounts = value; }
         }
 

@@ -76,9 +76,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=87600)]
-        public long DurationHours
+        public long? DurationHours
         {
-            get { return this._durationHours.GetValueOrDefault(); }
+            get { return this._durationHours; }
             set { this._durationHours = value; }
         }
 
@@ -96,9 +96,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=59)]
-        public long DurationMinutes
+        public long? DurationMinutes
         {
-            get { return this._durationMinutes.GetValueOrDefault(); }
+            get { return this._durationMinutes; }
             set { this._durationMinutes = value; }
         }
 
@@ -115,9 +115,9 @@ namespace Amazon.SageMaker.Model
         /// offering.
         /// </para>
         /// </summary>
-        public DateTime RequestedEndTimeBefore
+        public DateTime? RequestedEndTimeBefore
         {
-            get { return this._requestedEndTimeBefore.GetValueOrDefault(); }
+            get { return this._requestedEndTimeBefore; }
             set { this._requestedEndTimeBefore = value; }
         }
 
@@ -134,9 +134,9 @@ namespace Amazon.SageMaker.Model
         /// offering.
         /// </para>
         /// </summary>
-        public DateTime RequestedStartTimeAfter
+        public DateTime? RequestedStartTimeAfter
         {
-            get { return this._requestedStartTimeAfter.GetValueOrDefault(); }
+            get { return this._requestedStartTimeAfter; }
             set { this._requestedStartTimeAfter = value; }
         }
 

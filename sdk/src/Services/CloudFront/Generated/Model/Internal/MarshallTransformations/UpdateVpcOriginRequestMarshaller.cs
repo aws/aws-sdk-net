@@ -77,10 +77,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         xmlWriter.WriteElementString("Arn", StringUtils.FromString(publicRequest.VpcOriginEndpointConfig.Arn));
 
                     if(publicRequest.VpcOriginEndpointConfig.IsSetHTTPPort())
-                        xmlWriter.WriteElementString("HTTPPort", StringUtils.FromInt(publicRequest.VpcOriginEndpointConfig.HTTPPort));
+                        xmlWriter.WriteElementString("HTTPPort", StringUtils.FromInt(publicRequest.VpcOriginEndpointConfig.HTTPPort.Value));
 
                     if(publicRequest.VpcOriginEndpointConfig.IsSetHTTPSPort())
-                        xmlWriter.WriteElementString("HTTPSPort", StringUtils.FromInt(publicRequest.VpcOriginEndpointConfig.HTTPSPort));
+                        xmlWriter.WriteElementString("HTTPSPort", StringUtils.FromInt(publicRequest.VpcOriginEndpointConfig.HTTPSPort.Value));
 
                     if(publicRequest.VpcOriginEndpointConfig.IsSetName())
                         xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequest.VpcOriginEndpointConfig.Name));
@@ -104,8 +104,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             xmlWriter.WriteEndElement();            
                         }
                         if(publicRequest.VpcOriginEndpointConfig.OriginSslProtocols.IsSetQuantity())
-                            xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequest.VpcOriginEndpointConfig.OriginSslProtocols.Quantity));                 
-
+                            xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequest.VpcOriginEndpointConfig.OriginSslProtocols.Quantity.Value));
                         xmlWriter.WriteEndElement();
                     }
 

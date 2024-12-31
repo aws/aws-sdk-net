@@ -62,7 +62,7 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTargetQueryTCU())
             {
                 context.Writer.WritePropertyName("TargetQueryTCU");
-                context.Writer.Write(requestObject.TargetQueryTCU);
+                context.Writer.Write(requestObject.TargetQueryTCU.Value);
             }
 
         }

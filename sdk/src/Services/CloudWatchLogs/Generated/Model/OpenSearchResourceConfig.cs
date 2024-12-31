@@ -140,9 +140,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=30)]
-        public int RetentionDays
+        public int? RetentionDays
         {
-            get { return this._retentionDays.GetValueOrDefault(); }
+            get { return this._retentionDays; }
             set { this._retentionDays = value; }
         }
 

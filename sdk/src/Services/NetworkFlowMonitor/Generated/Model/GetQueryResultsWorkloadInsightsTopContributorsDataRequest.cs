@@ -67,9 +67,9 @@ namespace Amazon.NetworkFlowMonitor.Model
         /// The number of query results that you want to return with this call.
         /// </para>
         /// </summary>
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

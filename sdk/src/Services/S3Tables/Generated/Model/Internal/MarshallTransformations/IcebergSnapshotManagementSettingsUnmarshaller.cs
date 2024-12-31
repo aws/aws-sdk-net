@@ -68,13 +68,13 @@ namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("maxSnapshotAgeHours", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxSnapshotAgeHours = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("minSnapshotsToKeep", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MinSnapshotsToKeep = unmarshaller.Unmarshall(context);
                     continue;
                 }

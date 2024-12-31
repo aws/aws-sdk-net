@@ -62,9 +62,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// The number of effective capacity units.
         /// </para>
         /// </summary>
-        public double EffectiveCapacityUnits
+        public double? EffectiveCapacityUnits
         {
-            get { return this._effectiveCapacityUnits.GetValueOrDefault(); }
+            get { return this._effectiveCapacityUnits; }
             set { this._effectiveCapacityUnits = value; }
         }
 

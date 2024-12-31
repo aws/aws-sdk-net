@@ -66,32 +66,18 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             request.ResourcePath = "/2017-08-29/queues/{name}";
             using (MemoryStream memoryStream = new MemoryStream())
             {
-<<<<<<< HEAD
                 using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-||||||| Commit version number update changes
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
-=======
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetConcurrentJobs())
-                {
-                    context.Writer.WritePropertyName("concurrentJobs");
-                    context.Writer.Write(publicRequest.ConcurrentJobs);
-                }
-
-                if(publicRequest.IsSetDescription())
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
                 {
                     JsonWriter writer = new JsonWriter(streamWriter);
                     writer.Validate = false;
                     writer.WriteObjectStart();
                     var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetConcurrentJobs())
+                    {
+                        context.Writer.WritePropertyName("concurrentJobs");
+                        context.Writer.Write(publicRequest.ConcurrentJobs.Value);
+                    }
+
                     if(publicRequest.IsSetDescription())
                     {
                         context.Writer.WritePropertyName("description");

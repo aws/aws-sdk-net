@@ -73,7 +73,7 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNumberOfRerankedResults())
             {
                 context.Writer.WritePropertyName("numberOfRerankedResults");
-                context.Writer.Write(requestObject.NumberOfRerankedResults);
+                context.Writer.Write(requestObject.NumberOfRerankedResults.Value);
             }
 
         }

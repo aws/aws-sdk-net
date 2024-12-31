@@ -185,9 +185,9 @@ namespace Amazon.Glue.Model
         /// environment.
         /// </para>
         /// </summary>
-        public bool PhysicalConnectionPropertiesRequired
+        public bool? PhysicalConnectionPropertiesRequired
         {
-            get { return this._physicalConnectionPropertiesRequired.GetValueOrDefault(); }
+            get { return this._physicalConnectionPropertiesRequired; }
             set { this._physicalConnectionPropertiesRequired = value; }
         }
 

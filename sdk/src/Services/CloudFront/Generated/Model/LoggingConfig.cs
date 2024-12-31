@@ -96,15 +96,7 @@ namespace Amazon.CloudFront.Model
         /// values are automatically deleted.
         /// </para>
         /// </summary>
-<<<<<<< HEAD
-        [AWSProperty(Required=true)]
         public bool? Enabled
-||||||| Commit version number update changes
-        [AWSProperty(Required=true)]
-        public bool Enabled
-=======
-        public bool Enabled
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
         {
             get { return this._enabled; }
             set { this._enabled = value; }
@@ -127,15 +119,7 @@ namespace Amazon.CloudFront.Model
         /// <c>IncludeCookies</c>.
         /// </para>
         /// </summary>
-<<<<<<< HEAD
-        [AWSProperty(Required=true)]
         public bool? IncludeCookies
-||||||| Commit version number update changes
-        [AWSProperty(Required=true)]
-        public bool IncludeCookies
-=======
-        public bool IncludeCookies
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
         {
             get { return this._includeCookies; }
             set { this._includeCookies = value; }

@@ -51,15 +51,16 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             var ms = new MemoryStream();
             Amazon.Util.AWSSDKUtils.CopyStream(context.Stream, ms);
             ms.Seek(0, SeekOrigin.Begin);
-            response.Event = ms;
+            if (ms.Length > 0)
+                response.Event = ms;
             if (context.ResponseData.IsHeaderPresent("Created-At"))
-                response.CreatedAt = DateTime.Parse(context.ResponseData.GetHeaderValue("Created-At"), CultureInfo.InvariantCulture);
+                response.CreatedAt = DateTime.Parse(context.ResponseData.GetHeaderValue("Created-At"), CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal);
             if (context.ResponseData.IsHeaderPresent("Created-By"))
                 response.CreatedBy = context.ResponseData.GetHeaderValue("Created-By");
             if (context.ResponseData.IsHeaderPresent("Domain-Id"))
                 response.DomainId = context.ResponseData.GetHeaderValue("Domain-Id");
             if (context.ResponseData.IsHeaderPresent("Event-Time"))
-                response.EventTime = DateTime.Parse(context.ResponseData.GetHeaderValue("Event-Time"), CultureInfo.InvariantCulture);
+                response.EventTime = DateTime.Parse(context.ResponseData.GetHeaderValue("Event-Time"), CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal);
             if (context.ResponseData.IsHeaderPresent("Id"))
                 response.Id = context.ResponseData.GetHeaderValue("Id");
             if (context.ResponseData.IsHeaderPresent("Processing-Status"))

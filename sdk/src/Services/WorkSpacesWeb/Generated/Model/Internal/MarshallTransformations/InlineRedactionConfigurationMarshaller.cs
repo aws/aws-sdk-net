@@ -51,7 +51,7 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
             if(requestObject.IsSetGlobalConfidenceLevel())
             {
                 context.Writer.WritePropertyName("globalConfidenceLevel");
-                context.Writer.Write(requestObject.GlobalConfidenceLevel);
+                context.Writer.Write(requestObject.GlobalConfidenceLevel.Value);
             }
 
             if(requestObject.IsSetGlobalEnforcedUrls())

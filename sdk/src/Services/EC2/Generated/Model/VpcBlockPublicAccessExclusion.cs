@@ -55,9 +55,9 @@ namespace Amazon.EC2.Model
         /// When the exclusion was created.
         /// </para>
         /// </summary>
-        public DateTime CreationTimestamp
+        public DateTime? CreationTimestamp
         {
-            get { return this._creationTimestamp.GetValueOrDefault(); }
+            get { return this._creationTimestamp; }
             set { this._creationTimestamp = value; }
         }
 
@@ -73,9 +73,9 @@ namespace Amazon.EC2.Model
         /// When the exclusion was deleted.
         /// </para>
         /// </summary>
-        public DateTime DeletionTimestamp
+        public DateTime? DeletionTimestamp
         {
-            get { return this._deletionTimestamp.GetValueOrDefault(); }
+            get { return this._deletionTimestamp; }
             set { this._deletionTimestamp = value; }
         }
 
@@ -139,9 +139,9 @@ namespace Amazon.EC2.Model
         /// When the exclusion was last updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdateTimestamp
+        public DateTime? LastUpdateTimestamp
         {
-            get { return this._lastUpdateTimestamp.GetValueOrDefault(); }
+            get { return this._lastUpdateTimestamp; }
             set { this._lastUpdateTimestamp = value; }
         }
 

@@ -74,7 +74,7 @@ namespace Amazon.SecurityIR.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("eventTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.EventTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }

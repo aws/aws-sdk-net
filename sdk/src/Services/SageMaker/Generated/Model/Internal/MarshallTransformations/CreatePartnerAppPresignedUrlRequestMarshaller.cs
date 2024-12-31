@@ -63,33 +63,36 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Arn");
-                    context.Writer.Write(publicRequest.Arn);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetArn())
+                    {
+                        context.Writer.WritePropertyName("Arn");
+                        context.Writer.Write(publicRequest.Arn);
+                    }
+
+                    if(publicRequest.IsSetExpiresInSeconds())
+                    {
+                        context.Writer.WritePropertyName("ExpiresInSeconds");
+                        context.Writer.Write(publicRequest.ExpiresInSeconds.Value);
+                    }
+
+                    if(publicRequest.IsSetSessionExpirationDurationInSeconds())
+                    {
+                        context.Writer.WritePropertyName("SessionExpirationDurationInSeconds");
+                        context.Writer.Write(publicRequest.SessionExpirationDurationInSeconds.Value);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetExpiresInSeconds())
-                {
-                    context.Writer.WritePropertyName("ExpiresInSeconds");
-                    context.Writer.Write(publicRequest.ExpiresInSeconds);
-                }
-
-                if(publicRequest.IsSetSessionExpirationDurationInSeconds())
-                {
-                    context.Writer.WritePropertyName("SessionExpirationDurationInSeconds");
-                    context.Writer.Write(publicRequest.SessionExpirationDurationInSeconds);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

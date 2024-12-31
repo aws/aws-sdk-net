@@ -70,9 +70,9 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property ConcurrentJobs. The maximum number of jobs your queue can
         /// process concurrently.
         /// </summary>
-        public int ConcurrentJobs
+        public int? ConcurrentJobs
         {
-            get { return this._concurrentJobs.GetValueOrDefault(); }
+            get { return this._concurrentJobs; }
             set { this._concurrentJobs = value; }
         }
 

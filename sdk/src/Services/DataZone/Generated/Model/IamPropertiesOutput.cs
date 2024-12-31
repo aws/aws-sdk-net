@@ -61,9 +61,9 @@ namespace Amazon.DataZone.Model
         /// Specifies whether Amazon Web Services Glue lineage sync is enabled for a connection.
         /// </para>
         /// </summary>
-        public bool GlueLineageSyncEnabled
+        public bool? GlueLineageSyncEnabled
         {
-            get { return this._glueLineageSyncEnabled.GetValueOrDefault(); }
+            get { return this._glueLineageSyncEnabled; }
             set { this._glueLineageSyncEnabled = value; }
         }
 

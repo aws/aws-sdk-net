@@ -492,9 +492,9 @@ namespace Amazon.NetworkFlowMonitor.Model
         /// The target port.
         /// </para>
         /// </summary>
-        public int TargetPort
+        public int? TargetPort
         {
-            get { return this._targetPort.GetValueOrDefault(); }
+            get { return this._targetPort; }
             set { this._targetPort = value; }
         }
 
@@ -528,9 +528,9 @@ namespace Amazon.NetworkFlowMonitor.Model
         /// The value of the metric for a top contributor network flow.
         /// </para>
         /// </summary>
-        public long Value
+        public long? Value
         {
-            get { return this._value.GetValueOrDefault(); }
+            get { return this._value; }
             set { this._value = value; }
         }
 

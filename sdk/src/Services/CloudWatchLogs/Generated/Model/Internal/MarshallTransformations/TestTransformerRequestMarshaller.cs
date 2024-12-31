@@ -63,42 +63,45 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetLogEventMessages())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("logEventMessages");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestLogEventMessagesListValue in publicRequest.LogEventMessages)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetLogEventMessages())
                     {
-                            context.Writer.Write(publicRequestLogEventMessagesListValue);
+                        context.Writer.WritePropertyName("logEventMessages");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestLogEventMessagesListValue in publicRequest.LogEventMessages)
+                        {
+                                context.Writer.Write(publicRequestLogEventMessagesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetTransformerConfig())
+                    {
+                        context.Writer.WritePropertyName("transformerConfig");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTransformerConfigListValue in publicRequest.TransformerConfig)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = ProcessorMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTransformerConfigListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTransformerConfig())
-                {
-                    context.Writer.WritePropertyName("transformerConfig");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTransformerConfigListValue in publicRequest.TransformerConfig)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ProcessorMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTransformerConfigListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

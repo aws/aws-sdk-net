@@ -104,7 +104,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("DisableUnicodeSourceFilter", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DisableUnicodeSourceFilter = unmarshaller.Unmarshall(context);
                     continue;
                 }

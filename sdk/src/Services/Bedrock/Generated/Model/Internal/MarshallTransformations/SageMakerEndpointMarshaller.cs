@@ -57,7 +57,7 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInitialInstanceCount())
             {
                 context.Writer.WritePropertyName("initialInstanceCount");
-                context.Writer.Write(requestObject.InitialInstanceCount);
+                context.Writer.Write(requestObject.InitialInstanceCount.Value);
             }
 
             if(requestObject.IsSetInstanceType())

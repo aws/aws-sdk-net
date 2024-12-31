@@ -61,9 +61,9 @@ namespace Amazon.SecurityIR.Model
         /// by data analysis during the investigation. 
         /// </para>
         /// </summary>
-        public DateTime ActualIncidentStartDate
+        public DateTime? ActualIncidentStartDate
         {
-            get { return this._actualIncidentStartDate.GetValueOrDefault(); }
+            get { return this._actualIncidentStartDate; }
             set { this._actualIncidentStartDate = value; }
         }
 
@@ -137,9 +137,9 @@ namespace Amazon.SecurityIR.Model
         /// Response element for GetCase that provides the date a specified case was closed.
         /// </para>
         /// </summary>
-        public DateTime ClosedDate
+        public DateTime? ClosedDate
         {
-            get { return this._closedDate.GetValueOrDefault(); }
+            get { return this._closedDate; }
             set { this._closedDate = value; }
         }
 
@@ -173,9 +173,9 @@ namespace Amazon.SecurityIR.Model
         /// Response element for GetCase that provides the date the case was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedDate
+        public DateTime? CreatedDate
         {
-            get { return this._createdDate.GetValueOrDefault(); }
+            get { return this._createdDate; }
             set { this._createdDate = value; }
         }
 
@@ -286,9 +286,9 @@ namespace Amazon.SecurityIR.Model
         /// Response element for GetCase that provides the date a case was last modified.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedDate
+        public DateTime? LastUpdatedDate
         {
-            get { return this._lastUpdatedDate.GetValueOrDefault(); }
+            get { return this._lastUpdatedDate; }
             set { this._lastUpdatedDate = value; }
         }
 
@@ -323,9 +323,9 @@ namespace Amazon.SecurityIR.Model
         /// Response element for GetCase that provides the customer provided incident start date.
         /// </para>
         /// </summary>
-        public DateTime ReportedIncidentStartDate
+        public DateTime? ReportedIncidentStartDate
         {
-            get { return this._reportedIncidentStartDate.GetValueOrDefault(); }
+            get { return this._reportedIncidentStartDate; }
             set { this._reportedIncidentStartDate = value; }
         }
 

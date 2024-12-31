@@ -57,7 +57,7 @@ namespace Amazon.SecurityIR.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIsEnabled())
             {
                 context.Writer.WritePropertyName("isEnabled");
-                context.Writer.Write(requestObject.IsEnabled);
+                context.Writer.Write(requestObject.IsEnabled.Value);
             }
 
         }

@@ -106,9 +106,9 @@ namespace Amazon.Invoicing.Model
         ///  The most recent date the invoice unit response was updated. 
         /// </para>
         /// </summary>
-        public DateTime LastModified
+        public DateTime? LastModified
         {
-            get { return this._lastModified.GetValueOrDefault(); }
+            get { return this._lastModified; }
             set { this._lastModified = value; }
         }
 
@@ -159,9 +159,9 @@ namespace Amazon.Invoicing.Model
         /// 
         /// </para>
         /// </summary>
-        public bool TaxInheritanceDisabled
+        public bool? TaxInheritanceDisabled
         {
-            get { return this._taxInheritanceDisabled.GetValueOrDefault(); }
+            get { return this._taxInheritanceDisabled; }
             set { this._taxInheritanceDisabled = value; }
         }
 

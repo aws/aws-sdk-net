@@ -44,9 +44,9 @@ namespace Amazon.Connect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5)]
-        public float MaxProficiencyLevel
+        public float? MaxProficiencyLevel
         {
-            get { return this._maxProficiencyLevel.GetValueOrDefault(); }
+            get { return this._maxProficiencyLevel; }
             set { this._maxProficiencyLevel = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.Connect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5)]
-        public float MinProficiencyLevel
+        public float? MinProficiencyLevel
         {
-            get { return this._minProficiencyLevel.GetValueOrDefault(); }
+            get { return this._minProficiencyLevel; }
             set { this._minProficiencyLevel = value; }
         }
 

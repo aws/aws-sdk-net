@@ -66,7 +66,7 @@ namespace Amazon.SecurityIR.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("total", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.Total = unmarshaller.Unmarshall(context);
                     continue;
                 }

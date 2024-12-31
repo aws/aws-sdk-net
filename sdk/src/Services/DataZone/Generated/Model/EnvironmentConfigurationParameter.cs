@@ -44,9 +44,9 @@ namespace Amazon.DataZone.Model
         /// Specifies whether the environment parameter is editable.
         /// </para>
         /// </summary>
-        public bool IsEditable
+        public bool? IsEditable
         {
-            get { return this._isEditable.GetValueOrDefault(); }
+            get { return this._isEditable; }
             set { this._isEditable = value; }
         }
 

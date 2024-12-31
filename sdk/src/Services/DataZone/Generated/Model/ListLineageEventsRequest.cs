@@ -72,9 +72,9 @@ namespace Amazon.DataZone.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -149,9 +149,9 @@ namespace Amazon.DataZone.Model
         /// The after timestamp of a lineage event.
         /// </para>
         /// </summary>
-        public DateTime TimestampAfter
+        public DateTime? TimestampAfter
         {
-            get { return this._timestampAfter.GetValueOrDefault(); }
+            get { return this._timestampAfter; }
             set { this._timestampAfter = value; }
         }
 
@@ -167,9 +167,9 @@ namespace Amazon.DataZone.Model
         /// The before timestamp of a lineage event.
         /// </para>
         /// </summary>
-        public DateTime TimestampBefore
+        public DateTime? TimestampBefore
         {
-            get { return this._timestampBefore.GetValueOrDefault(); }
+            get { return this._timestampBefore; }
             set { this._timestampBefore = value; }
         }
 

@@ -69,7 +69,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("SecondsUntilAutoPause", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.SecondsUntilAutoPause = unmarshaller.Unmarshall(context);
                         continue;
                     }

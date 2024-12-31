@@ -68,7 +68,7 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("threshold", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Threshold = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -89,9 +89,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int UtilizationPerformanceIndex
+        public int? UtilizationPerformanceIndex
         {
-            get { return this._utilizationPerformanceIndex.GetValueOrDefault(); }
+            get { return this._utilizationPerformanceIndex; }
             set { this._utilizationPerformanceIndex = value; }
         }
 

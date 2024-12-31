@@ -82,36 +82,22 @@ namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
 
-<<<<<<< HEAD
                     if(publicRequest.IsSetHsmType())
                     {
                         context.Writer.WritePropertyName("HsmType");
                         context.Writer.Write(publicRequest.HsmType);
                     }
-||||||| Commit version number update changes
-                if(publicRequest.IsSetSourceBackupId())
-                {
-                    context.Writer.WritePropertyName("SourceBackupId");
-                    context.Writer.Write(publicRequest.SourceBackupId);
-                }
-=======
-                if(publicRequest.IsSetNetworkType())
-                {
-                    context.Writer.WritePropertyName("NetworkType");
-                    context.Writer.Write(publicRequest.NetworkType);
-                }
-
-                if(publicRequest.IsSetSourceBackupId())
-                {
-                    context.Writer.WritePropertyName("SourceBackupId");
-                    context.Writer.Write(publicRequest.SourceBackupId);
-                }
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
 
                     if(publicRequest.IsSetMode())
                     {
                         context.Writer.WritePropertyName("Mode");
                         context.Writer.Write(publicRequest.Mode);
+                    }
+
+                    if(publicRequest.IsSetNetworkType())
+                    {
+                        context.Writer.WritePropertyName("NetworkType");
+                        context.Writer.Write(publicRequest.NetworkType);
                     }
 
                     if(publicRequest.IsSetSourceBackupId())

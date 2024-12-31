@@ -63,7 +63,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("EffectiveCapacityUnits", targetDepth))
                     {
-                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        var unmarshaller = NullableDoubleUnmarshaller.Instance;
                         unmarshalledObject.EffectiveCapacityUnits = unmarshaller.Unmarshall(context);
                         continue;
                     }

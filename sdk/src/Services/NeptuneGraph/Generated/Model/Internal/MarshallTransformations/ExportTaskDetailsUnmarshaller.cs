@@ -68,31 +68,31 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("numEdgesWritten", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.NumEdgesWritten = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("numVerticesWritten", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.NumVerticesWritten = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("progressPercentage", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ProgressPercentage = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("startTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("timeElapsedSeconds", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TimeElapsedSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }

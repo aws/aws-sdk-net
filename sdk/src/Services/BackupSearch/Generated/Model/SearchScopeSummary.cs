@@ -53,9 +53,9 @@ namespace Amazon.BackupSearch.Model
         /// This is the count of the total number of items that will be scanned in a search.
         /// </para>
         /// </summary>
-        public long TotalItemsToScanCount
+        public long? TotalItemsToScanCount
         {
-            get { return this._totalItemsToScanCount.GetValueOrDefault(); }
+            get { return this._totalItemsToScanCount; }
             set { this._totalItemsToScanCount = value; }
         }
 
@@ -71,9 +71,9 @@ namespace Amazon.BackupSearch.Model
         /// This is the count of the total number of backups that will be scanned in a search.
         /// </para>
         /// </summary>
-        public int TotalRecoveryPointsToScanCount
+        public int? TotalRecoveryPointsToScanCount
         {
-            get { return this._totalRecoveryPointsToScanCount.GetValueOrDefault(); }
+            get { return this._totalRecoveryPointsToScanCount; }
             set { this._totalRecoveryPointsToScanCount = value; }
         }
 

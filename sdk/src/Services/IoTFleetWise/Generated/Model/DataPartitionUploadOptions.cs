@@ -55,9 +55,9 @@ namespace Amazon.IoTFleetWise.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]
-        public int ConditionLanguageVersion
+        public int? ConditionLanguageVersion
         {
-            get { return this._conditionLanguageVersion.GetValueOrDefault(); }
+            get { return this._conditionLanguageVersion; }
             set { this._conditionLanguageVersion = value; }
         }
 

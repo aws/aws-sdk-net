@@ -278,9 +278,9 @@ namespace Amazon.Omics.Model
         /// The last-updated time of the sequence store.
         /// </para>
         /// </summary>
-        public DateTime UpdateTime
+        public DateTime? UpdateTime
         {
-            get { return this._updateTime.GetValueOrDefault(); }
+            get { return this._updateTime; }
             set { this._updateTime = value; }
         }
 

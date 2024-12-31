@@ -68,13 +68,13 @@ namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("amount", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Amount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("startHour", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StartHour = unmarshaller.Unmarshall(context);
                     continue;
                 }

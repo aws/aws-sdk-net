@@ -77,7 +77,12 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.EventDataStore);
                     }
 
-<<<<<<< HEAD
+                    if(publicRequest.IsSetEventDataStoreOwnerAccountId())
+                    {
+                        context.Writer.WritePropertyName("EventDataStoreOwnerAccountId");
+                        context.Writer.Write(publicRequest.EventDataStoreOwnerAccountId);
+                    }
+
                     if(publicRequest.IsSetQueryId())
                     {
                         context.Writer.WritePropertyName("QueryId");
@@ -85,23 +90,6 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                     }
 
                     writer.WriteObjectEnd();
-||||||| Commit version number update changes
-                if(publicRequest.IsSetQueryId())
-                {
-                    context.Writer.WritePropertyName("QueryId");
-                    context.Writer.Write(publicRequest.QueryId);
-=======
-                if(publicRequest.IsSetEventDataStoreOwnerAccountId())
-                {
-                    context.Writer.WritePropertyName("EventDataStoreOwnerAccountId");
-                    context.Writer.Write(publicRequest.EventDataStoreOwnerAccountId);
-                }
-
-                if(publicRequest.IsSetQueryId())
-                {
-                    context.Writer.WritePropertyName("QueryId");
-                    context.Writer.Write(publicRequest.QueryId);
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
                 }
 
                 request.Content = memoryStream.ToArray();

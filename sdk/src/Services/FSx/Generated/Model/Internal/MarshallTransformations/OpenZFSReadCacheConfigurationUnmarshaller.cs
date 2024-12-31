@@ -68,7 +68,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("SizeGiB", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SizeGiB = unmarshaller.Unmarshall(context);
                     continue;
                 }

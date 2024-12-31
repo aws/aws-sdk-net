@@ -65,9 +65,9 @@ namespace Amazon.IoT.Model
         /// The boolean that indicates whether the command was deprecated.
         /// </para>
         /// </summary>
-        public bool Deprecated
+        public bool? Deprecated
         {
-            get { return this._deprecated.GetValueOrDefault(); }
+            get { return this._deprecated; }
             set { this._deprecated = value; }
         }
 
@@ -121,9 +121,9 @@ namespace Amazon.IoT.Model
         /// The date and time (epoch timestamp in seconds) when the command was last updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedAt
+        public DateTime? LastUpdatedAt
         {
-            get { return this._lastUpdatedAt.GetValueOrDefault(); }
+            get { return this._lastUpdatedAt; }
             set { this._lastUpdatedAt = value; }
         }
 

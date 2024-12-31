@@ -143,36 +143,22 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.NodegroupName);
                     }
 
-<<<<<<< HEAD
+                    if(publicRequest.IsSetNodeRepairConfig())
+                    {
+                        context.Writer.WritePropertyName("nodeRepairConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = NodeRepairConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.NodeRepairConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
                     if(publicRequest.IsSetNodeRole())
                     {
                         context.Writer.WritePropertyName("nodeRole");
                         context.Writer.Write(publicRequest.NodeRole);
                     }
-||||||| Commit version number update changes
-                if(publicRequest.IsSetNodeRole())
-                {
-                    context.Writer.WritePropertyName("nodeRole");
-                    context.Writer.Write(publicRequest.NodeRole);
-                }
-=======
-                if(publicRequest.IsSetNodeRepairConfig())
-                {
-                    context.Writer.WritePropertyName("nodeRepairConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = NodeRepairConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.NodeRepairConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetNodeRole())
-                {
-                    context.Writer.WritePropertyName("nodeRole");
-                    context.Writer.Write(publicRequest.NodeRole);
-                }
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
 
                     if(publicRequest.IsSetReleaseVersion())
                     {

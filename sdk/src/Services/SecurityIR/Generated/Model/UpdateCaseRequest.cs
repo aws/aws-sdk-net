@@ -58,9 +58,9 @@ namespace Amazon.SecurityIR.Model
         /// Optional element for UpdateCase to provide content for the incident start date field.
         /// </para>
         /// </summary>
-        public DateTime ActualIncidentStartDate
+        public DateTime? ActualIncidentStartDate
         {
-            get { return this._actualIncidentStartDate.GetValueOrDefault(); }
+            get { return this._actualIncidentStartDate; }
             set { this._actualIncidentStartDate = value; }
         }
 
@@ -248,9 +248,9 @@ namespace Amazon.SecurityIR.Model
         /// start date field. 
         /// </para>
         /// </summary>
-        public DateTime ReportedIncidentStartDate
+        public DateTime? ReportedIncidentStartDate
         {
-            get { return this._reportedIncidentStartDate.GetValueOrDefault(); }
+            get { return this._reportedIncidentStartDate; }
             set { this._reportedIncidentStartDate = value; }
         }
 

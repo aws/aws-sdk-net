@@ -81,9 +81,9 @@ namespace Amazon.SecurityIR.Model
         /// Response element for ListComments identifying the number of responses.
         /// </para>
         /// </summary>
-        public int Total
+        public int? Total
         {
-            get { return this._total.GetValueOrDefault(); }
+            get { return this._total; }
             set { this._total = value; }
         }
 

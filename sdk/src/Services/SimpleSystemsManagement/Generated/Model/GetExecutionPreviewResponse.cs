@@ -46,9 +46,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// A UTC timestamp indicating when the execution preview operation ended.
         /// </para>
         /// </summary>
-        public DateTime EndedAt
+        public DateTime? EndedAt
         {
-            get { return this._endedAt.GetValueOrDefault(); }
+            get { return this._endedAt; }
             set { this._endedAt = value; }
         }
 

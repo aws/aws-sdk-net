@@ -50,9 +50,9 @@ namespace Amazon.QApps.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2147483647)]
-        public int AppVersion
+        public int? AppVersion
         {
-            get { return this._appVersion.GetValueOrDefault(); }
+            get { return this._appVersion; }
             set { this._appVersion = value; }
         }
 
@@ -88,9 +88,9 @@ namespace Amazon.QApps.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2147483647)]
-        public int LatestPublishedAppVersion
+        public int? LatestPublishedAppVersion
         {
-            get { return this._latestPublishedAppVersion.GetValueOrDefault(); }
+            get { return this._latestPublishedAppVersion; }
             set { this._latestPublishedAppVersion = value; }
         }
 
@@ -182,9 +182,9 @@ namespace Amazon.QApps.Model
         /// Indicates whether the current user is the owner of the Q App data collection session.
         /// </para>
         /// </summary>
-        public bool UserIsHost
+        public bool? UserIsHost
         {
-            get { return this._userIsHost.GetValueOrDefault(); }
+            get { return this._userIsHost; }
             set { this._userIsHost = value; }
         }
 

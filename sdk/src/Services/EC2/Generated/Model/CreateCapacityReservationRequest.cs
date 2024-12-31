@@ -167,9 +167,9 @@ namespace Amazon.EC2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200000000)]
-        public long CommitmentDuration
+        public long? CommitmentDuration
         {
-            get { return this._commitmentDuration.GetValueOrDefault(); }
+            get { return this._commitmentDuration; }
             set { this._commitmentDuration = value; }
         }
 
@@ -495,9 +495,9 @@ namespace Amazon.EC2.Model
         /// You can request a future-dated Capacity Reservation between 5 and 120 days in advance.
         /// </para>
         /// </summary>
-        public DateTime StartDate
+        public DateTime? StartDate
         {
-            get { return this._startDate.GetValueOrDefault(); }
+            get { return this._startDate; }
             set { this._startDate = value; }
         }
 

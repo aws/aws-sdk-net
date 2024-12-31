@@ -66,9 +66,9 @@ namespace Amazon.IoT.Model
         /// The date and time at which the command completed executing on the target device.
         /// </para>
         /// </summary>
-        public DateTime CompletedAt
+        public DateTime? CompletedAt
         {
-            get { return this._completedAt.GetValueOrDefault(); }
+            get { return this._completedAt; }
             set { this._completedAt = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.IoT.Model
         /// The date and time at which the command execution was created for the target device.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -121,9 +121,9 @@ namespace Amazon.IoT.Model
         /// The date and time at which the command started executing on the target device.
         /// </para>
         /// </summary>
-        public DateTime StartedAt
+        public DateTime? StartedAt
         {
-            get { return this._startedAt.GetValueOrDefault(); }
+            get { return this._startedAt; }
             set { this._startedAt = value; }
         }
 

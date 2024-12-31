@@ -92,7 +92,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ConnectionSchemaVersion", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ConnectionSchemaVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }

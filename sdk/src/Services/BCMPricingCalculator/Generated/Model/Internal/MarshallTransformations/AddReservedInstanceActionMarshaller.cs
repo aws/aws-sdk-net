@@ -51,7 +51,7 @@ namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInstanceCount())
             {
                 context.Writer.WritePropertyName("instanceCount");
-                context.Writer.Write(requestObject.InstanceCount);
+                context.Writer.Write(requestObject.InstanceCount.Value);
             }
 
             if(requestObject.IsSetReservedInstancesOfferingId())

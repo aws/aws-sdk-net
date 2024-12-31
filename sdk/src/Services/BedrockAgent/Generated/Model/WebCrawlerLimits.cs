@@ -47,9 +47,9 @@ namespace Amazon.BedrockAgent.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int MaxPages
+        public int? MaxPages
         {
-            get { return this._maxPages.GetValueOrDefault(); }
+            get { return this._maxPages; }
             set { this._maxPages = value; }
         }
 

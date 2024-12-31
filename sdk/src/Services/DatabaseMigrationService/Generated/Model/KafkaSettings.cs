@@ -462,9 +462,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Specifies using the large integer value with Kafka.
         /// </para>
         /// </summary>
-        public bool UseLargeIntegerValue
+        public bool? UseLargeIntegerValue
         {
-            get { return this._useLargeIntegerValue.GetValueOrDefault(); }
+            get { return this._useLargeIntegerValue; }
             set { this._useLargeIntegerValue = value; }
         }
 

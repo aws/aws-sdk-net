@@ -67,37 +67,40 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                 throw new AmazonCustomerProfilesException("Request object does not have required field DomainName set");
             request.AddPathResource("{DomainName}", StringUtils.FromString(publicRequest.DomainName));
             request.ResourcePath = "/domains/{DomainName}/calculated-attributes/{CalculatedAttributeName}/batch-get-for-profiles";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetConditionOverrides())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ConditionOverrides");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ConditionOverridesMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ConditionOverrides, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetProfileIds())
-                {
-                    context.Writer.WritePropertyName("ProfileIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestProfileIdsListValue in publicRequest.ProfileIds)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetConditionOverrides())
                     {
-                            context.Writer.Write(publicRequestProfileIdsListValue);
+                        context.Writer.WritePropertyName("ConditionOverrides");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ConditionOverridesMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ConditionOverrides, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetProfileIds())
+                    {
+                        context.Writer.WritePropertyName("ProfileIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestProfileIdsListValue in publicRequest.ProfileIds)
+                        {
+                                context.Writer.Write(publicRequestProfileIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

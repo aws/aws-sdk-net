@@ -125,9 +125,9 @@ namespace Amazon.DataZone.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=16)]
-        public int DeploymentOrder
+        public int? DeploymentOrder
         {
-            get { return this._deploymentOrder.GetValueOrDefault(); }
+            get { return this._deploymentOrder; }
             set { this._deploymentOrder = value; }
         }
 

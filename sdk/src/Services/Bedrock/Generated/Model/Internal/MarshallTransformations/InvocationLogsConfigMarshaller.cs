@@ -73,7 +73,7 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             if(requestObject.IsSetUsePromptResponse())
             {
                 context.Writer.WritePropertyName("usePromptResponse");
-                context.Writer.Write(requestObject.UsePromptResponse);
+                context.Writer.Write(requestObject.UsePromptResponse.Value);
             }
 
         }

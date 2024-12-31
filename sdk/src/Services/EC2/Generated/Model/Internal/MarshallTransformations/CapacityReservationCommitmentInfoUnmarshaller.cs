@@ -57,13 +57,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("commitmentEndDate", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.CommitmentEndDate = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("committedInstanceCount", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.CommittedInstanceCount = unmarshaller.Unmarshall(context);
                         continue;
                     }

@@ -75,31 +75,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.ContactId);
                     }
 
-<<<<<<< HEAD
+                    if(publicRequest.IsSetContactRecordingType())
+                    {
+                        context.Writer.WritePropertyName("ContactRecordingType");
+                        context.Writer.Write(publicRequest.ContactRecordingType);
+                    }
+
                     if(publicRequest.IsSetInitialContactId())
                     {
                         context.Writer.WritePropertyName("InitialContactId");
                         context.Writer.Write(publicRequest.InitialContactId);
                     }
-||||||| Commit version number update changes
-                if(publicRequest.IsSetInitialContactId())
-                {
-                    context.Writer.WritePropertyName("InitialContactId");
-                    context.Writer.Write(publicRequest.InitialContactId);
-                }
-=======
-                if(publicRequest.IsSetContactRecordingType())
-                {
-                    context.Writer.WritePropertyName("ContactRecordingType");
-                    context.Writer.Write(publicRequest.ContactRecordingType);
-                }
-
-                if(publicRequest.IsSetInitialContactId())
-                {
-                    context.Writer.WritePropertyName("InitialContactId");
-                    context.Writer.Write(publicRequest.InitialContactId);
-                }
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
 
                     if(publicRequest.IsSetInstanceId())
                     {

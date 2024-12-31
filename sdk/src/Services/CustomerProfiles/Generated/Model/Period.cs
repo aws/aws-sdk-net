@@ -46,9 +46,9 @@ namespace Amazon.CustomerProfiles.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
-        public int MaxInvocationsPerProfile
+        public int? MaxInvocationsPerProfile
         {
-            get { return this._maxInvocationsPerProfile.GetValueOrDefault(); }
+            get { return this._maxInvocationsPerProfile; }
             set { this._maxInvocationsPerProfile = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.CustomerProfiles.Model
         /// The default is false.
         /// </para>
         /// </summary>
-        public bool Unlimited
+        public bool? Unlimited
         {
-            get { return this._unlimited.GetValueOrDefault(); }
+            get { return this._unlimited; }
             set { this._unlimited = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.CustomerProfiles.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=24)]
-        public int Value
+        public int? Value
         {
-            get { return this._value.GetValueOrDefault(); }
+            get { return this._value; }
             set { this._value = value; }
         }
 

@@ -69,9 +69,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -142,9 +142,9 @@ namespace Amazon.SageMaker.Model
         /// Filter to list only training plans with an actual start time after this date.
         /// </para>
         /// </summary>
-        public DateTime StartTimeAfter
+        public DateTime? StartTimeAfter
         {
-            get { return this._startTimeAfter.GetValueOrDefault(); }
+            get { return this._startTimeAfter; }
             set { this._startTimeAfter = value; }
         }
 
@@ -160,9 +160,9 @@ namespace Amazon.SageMaker.Model
         /// Filter to list only training plans with an actual start time before this date.
         /// </para>
         /// </summary>
-        public DateTime StartTimeBefore
+        public DateTime? StartTimeBefore
         {
-            get { return this._startTimeBefore.GetValueOrDefault(); }
+            get { return this._startTimeBefore; }
             set { this._startTimeBefore = value; }
         }
 

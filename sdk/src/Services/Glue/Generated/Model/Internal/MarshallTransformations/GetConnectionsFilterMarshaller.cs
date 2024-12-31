@@ -51,7 +51,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConnectionSchemaVersion())
             {
                 context.Writer.WritePropertyName("ConnectionSchemaVersion");
-                context.Writer.Write(requestObject.ConnectionSchemaVersion);
+                context.Writer.Write(requestObject.ConnectionSchemaVersion.Value);
             }
 
             if(requestObject.IsSetConnectionType())

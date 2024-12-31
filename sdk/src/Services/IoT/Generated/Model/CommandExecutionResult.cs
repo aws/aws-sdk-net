@@ -56,9 +56,9 @@ namespace Amazon.IoT.Model
         ///  <c>"BOOL": true</c> 
         /// </para>
         /// </summary>
-        public bool B
+        public bool? B
         {
-            get { return this._b.GetValueOrDefault(); }
+            get { return this._b; }
             set { this._b = value; }
         }
 

@@ -89,9 +89,9 @@ namespace Amazon.EC2.Model
         /// The amount of time of the Capacity Block extension offering in hours.
         /// </para>
         /// </summary>
-        public int CapacityBlockExtensionDurationHours
+        public int? CapacityBlockExtensionDurationHours
         {
-            get { return this._capacityBlockExtensionDurationHours.GetValueOrDefault(); }
+            get { return this._capacityBlockExtensionDurationHours; }
             set { this._capacityBlockExtensionDurationHours = value; }
         }
 
@@ -110,9 +110,9 @@ namespace Amazon.EC2.Model
         /// end date
         /// </para>
         /// </summary>
-        public DateTime CapacityBlockExtensionEndDate
+        public DateTime? CapacityBlockExtensionEndDate
         {
-            get { return this._capacityBlockExtensionEndDate.GetValueOrDefault(); }
+            get { return this._capacityBlockExtensionEndDate; }
             set { this._capacityBlockExtensionEndDate = value; }
         }
 
@@ -147,9 +147,9 @@ namespace Amazon.EC2.Model
         /// the same as the end date of the Capacity Block that will be extended.
         /// </para>
         /// </summary>
-        public DateTime CapacityBlockExtensionStartDate
+        public DateTime? CapacityBlockExtensionStartDate
         {
-            get { return this._capacityBlockExtensionStartDate.GetValueOrDefault(); }
+            get { return this._capacityBlockExtensionStartDate; }
             set { this._capacityBlockExtensionStartDate = value; }
         }
 
@@ -183,9 +183,9 @@ namespace Amazon.EC2.Model
         /// The number of instances in the Capacity Block extension offering.
         /// </para>
         /// </summary>
-        public int InstanceCount
+        public int? InstanceCount
         {
-            get { return this._instanceCount.GetValueOrDefault(); }
+            get { return this._instanceCount; }
             set { this._instanceCount = value; }
         }
 
@@ -219,9 +219,9 @@ namespace Amazon.EC2.Model
         /// The start date of the Capacity Block that will be extended.
         /// </para>
         /// </summary>
-        public DateTime StartDate
+        public DateTime? StartDate
         {
-            get { return this._startDate.GetValueOrDefault(); }
+            get { return this._startDate; }
             set { this._startDate = value; }
         }
 

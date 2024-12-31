@@ -86,9 +86,9 @@ namespace Amazon.EC2.Model
         /// The completion duration requested for the time-based snapshot copy operation.
         /// </para>
         /// </summary>
-        public int CompletionDurationMinutes
+        public int? CompletionDurationMinutes
         {
-            get { return this._completionDurationMinutes.GetValueOrDefault(); }
+            get { return this._completionDurationMinutes; }
             set { this._completionDurationMinutes = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.EC2.Model
         /// The time stamp when the snapshot was completed.
         /// </para>
         /// </summary>
-        public DateTime CompletionTime
+        public DateTime? CompletionTime
         {
-            get { return this._completionTime.GetValueOrDefault(); }
+            get { return this._completionTime; }
             set { this._completionTime = value; }
         }
 

@@ -47,9 +47,9 @@ namespace Amazon.VPCLattice.Model
         /// with other accounts.
         /// </para>
         /// </summary>
-        public bool AllowAssociationToShareableServiceNetwork
+        public bool? AllowAssociationToShareableServiceNetwork
         {
-            get { return this._allowAssociationToShareableServiceNetwork.GetValueOrDefault(); }
+            get { return this._allowAssociationToShareableServiceNetwork; }
             set { this._allowAssociationToShareableServiceNetwork = value; }
         }
 

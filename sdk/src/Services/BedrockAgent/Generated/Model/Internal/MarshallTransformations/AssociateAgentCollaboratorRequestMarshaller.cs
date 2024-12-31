@@ -67,55 +67,58 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                 throw new AmazonBedrockAgentException("Request object does not have required field AgentVersion set");
             request.AddPathResource("{agentVersion}", StringUtils.FromString(publicRequest.AgentVersion));
             request.ResourcePath = "/agents/{agentId}/agentversions/{agentVersion}/agentcollaborators/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAgentDescriptor())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("agentDescriptor");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAgentDescriptor())
+                    {
+                        context.Writer.WritePropertyName("agentDescriptor");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = AgentDescriptorMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AgentDescriptor, context);
+                        var marshaller = AgentDescriptorMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AgentDescriptor, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetClientToken())
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetCollaborationInstruction())
+                    {
+                        context.Writer.WritePropertyName("collaborationInstruction");
+                        context.Writer.Write(publicRequest.CollaborationInstruction);
+                    }
+
+                    if(publicRequest.IsSetCollaboratorName())
+                    {
+                        context.Writer.WritePropertyName("collaboratorName");
+                        context.Writer.Write(publicRequest.CollaboratorName);
+                    }
+
+                    if(publicRequest.IsSetRelayConversationHistory())
+                    {
+                        context.Writer.WritePropertyName("relayConversationHistory");
+                        context.Writer.Write(publicRequest.RelayConversationHistory);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetClientToken())
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetCollaborationInstruction())
-                {
-                    context.Writer.WritePropertyName("collaborationInstruction");
-                    context.Writer.Write(publicRequest.CollaborationInstruction);
-                }
-
-                if(publicRequest.IsSetCollaboratorName())
-                {
-                    context.Writer.WritePropertyName("collaboratorName");
-                    context.Writer.Write(publicRequest.CollaboratorName);
-                }
-
-                if(publicRequest.IsSetRelayConversationHistory())
-                {
-                    context.Writer.WritePropertyName("relayConversationHistory");
-                    context.Writer.Write(publicRequest.RelayConversationHistory);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

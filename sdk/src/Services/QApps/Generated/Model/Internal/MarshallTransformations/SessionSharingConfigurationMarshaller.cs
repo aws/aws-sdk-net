@@ -51,19 +51,19 @@ namespace Amazon.QApps.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAcceptResponses())
             {
                 context.Writer.WritePropertyName("acceptResponses");
-                context.Writer.Write(requestObject.AcceptResponses);
+                context.Writer.Write(requestObject.AcceptResponses.Value);
             }
 
             if(requestObject.IsSetEnabled())
             {
                 context.Writer.WritePropertyName("enabled");
-                context.Writer.Write(requestObject.Enabled);
+                context.Writer.Write(requestObject.Enabled.Value);
             }
 
             if(requestObject.IsSetRevealCards())
             {
                 context.Writer.WritePropertyName("revealCards");
-                context.Writer.Write(requestObject.RevealCards);
+                context.Writer.Write(requestObject.RevealCards.Value);
             }
 
         }

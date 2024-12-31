@@ -46,9 +46,9 @@ namespace Amazon.MemoryDB.Model
         /// The maximum number of results to return.
         /// </para>
         /// </summary>
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -100,9 +100,9 @@ namespace Amazon.MemoryDB.Model
         /// Details about the multi-Region cluster.
         /// </para>
         /// </summary>
-        public bool ShowClusterDetails
+        public bool? ShowClusterDetails
         {
-            get { return this._showClusterDetails.GetValueOrDefault(); }
+            get { return this._showClusterDetails; }
             set { this._showClusterDetails = value; }
         }
 

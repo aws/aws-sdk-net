@@ -68,9 +68,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long FirstEventTime
+        public long? FirstEventTime
         {
-            get { return this._firstEventTime.GetValueOrDefault(); }
+            get { return this._firstEventTime; }
             set { this._firstEventTime = value; }
         }
 
@@ -87,9 +87,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long LastEventTime
+        public long? LastEventTime
         {
-            get { return this._lastEventTime.GetValueOrDefault(); }
+            get { return this._lastEventTime; }
             set { this._lastEventTime = value; }
         }
 
@@ -108,9 +108,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long LastScanTime
+        public long? LastScanTime
         {
-            get { return this._lastScanTime.GetValueOrDefault(); }
+            get { return this._lastScanTime; }
             set { this._lastScanTime = value; }
         }
 

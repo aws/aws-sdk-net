@@ -67,67 +67,70 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
             request.ResourcePath = "/command-executions";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCommandArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("commandArn");
-                    context.Writer.Write(publicRequest.CommandArn);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCommandArn())
+                    {
+                        context.Writer.WritePropertyName("commandArn");
+                        context.Writer.Write(publicRequest.CommandArn);
+                    }
+
+                    if(publicRequest.IsSetCompletedTimeFilter())
+                    {
+                        context.Writer.WritePropertyName("completedTimeFilter");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TimeFilterMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.CompletedTimeFilter, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetNamespace())
+                    {
+                        context.Writer.WritePropertyName("namespace");
+                        context.Writer.Write(publicRequest.Namespace);
+                    }
+
+                    if(publicRequest.IsSetSortOrder())
+                    {
+                        context.Writer.WritePropertyName("sortOrder");
+                        context.Writer.Write(publicRequest.SortOrder);
+                    }
+
+                    if(publicRequest.IsSetStartedTimeFilter())
+                    {
+                        context.Writer.WritePropertyName("startedTimeFilter");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TimeFilterMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.StartedTimeFilter, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetStatus())
+                    {
+                        context.Writer.WritePropertyName("status");
+                        context.Writer.Write(publicRequest.Status);
+                    }
+
+                    if(publicRequest.IsSetTargetArn())
+                    {
+                        context.Writer.WritePropertyName("targetArn");
+                        context.Writer.Write(publicRequest.TargetArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetCompletedTimeFilter())
-                {
-                    context.Writer.WritePropertyName("completedTimeFilter");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TimeFilterMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.CompletedTimeFilter, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetNamespace())
-                {
-                    context.Writer.WritePropertyName("namespace");
-                    context.Writer.Write(publicRequest.Namespace);
-                }
-
-                if(publicRequest.IsSetSortOrder())
-                {
-                    context.Writer.WritePropertyName("sortOrder");
-                    context.Writer.Write(publicRequest.SortOrder);
-                }
-
-                if(publicRequest.IsSetStartedTimeFilter())
-                {
-                    context.Writer.WritePropertyName("startedTimeFilter");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TimeFilterMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.StartedTimeFilter, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetStatus())
-                {
-                    context.Writer.WritePropertyName("status");
-                    context.Writer.Write(publicRequest.Status);
-                }
-
-                if(publicRequest.IsSetTargetArn())
-                {
-                    context.Writer.WritePropertyName("targetArn");
-                    context.Writer.Write(publicRequest.TargetArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             request.UseQueryString = true;

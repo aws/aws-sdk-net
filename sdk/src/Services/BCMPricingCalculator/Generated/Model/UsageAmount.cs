@@ -44,9 +44,9 @@ namespace Amazon.BCMPricingCalculator.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public double Amount
+        public double? Amount
         {
-            get { return this._amount.GetValueOrDefault(); }
+            get { return this._amount; }
             set { this._amount = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.BCMPricingCalculator.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime StartHour
+        public DateTime? StartHour
         {
-            get { return this._startHour.GetValueOrDefault(); }
+            get { return this._startHour; }
             set { this._startHour = value; }
         }
 

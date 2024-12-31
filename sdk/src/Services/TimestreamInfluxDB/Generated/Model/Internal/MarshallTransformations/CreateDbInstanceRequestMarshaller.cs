@@ -118,31 +118,17 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
 
-<<<<<<< HEAD
                     if(publicRequest.IsSetName())
                     {
                         context.Writer.WritePropertyName("name");
                         context.Writer.Write(publicRequest.Name);
                     }
-||||||| Commit version number update changes
-                if(publicRequest.IsSetOrganization())
-                {
-                    context.Writer.WritePropertyName("organization");
-                    context.Writer.Write(publicRequest.Organization);
-                }
-=======
-                if(publicRequest.IsSetNetworkType())
-                {
-                    context.Writer.WritePropertyName("networkType");
-                    context.Writer.Write(publicRequest.NetworkType);
-                }
 
-                if(publicRequest.IsSetOrganization())
-                {
-                    context.Writer.WritePropertyName("organization");
-                    context.Writer.Write(publicRequest.Organization);
-                }
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
+                    if(publicRequest.IsSetNetworkType())
+                    {
+                        context.Writer.WritePropertyName("networkType");
+                        context.Writer.Write(publicRequest.NetworkType);
+                    }
 
                     if(publicRequest.IsSetOrganization())
                     {

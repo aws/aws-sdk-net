@@ -68,7 +68,7 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("responseQualityDifference", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.ResponseQualityDifference = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -51,13 +51,13 @@ namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxSnapshotAgeHours())
             {
                 context.Writer.WritePropertyName("maxSnapshotAgeHours");
-                context.Writer.Write(requestObject.MaxSnapshotAgeHours);
+                context.Writer.Write(requestObject.MaxSnapshotAgeHours.Value);
             }
 
             if(requestObject.IsSetMinSnapshotsToKeep())
             {
                 context.Writer.WritePropertyName("minSnapshotsToKeep");
-                context.Writer.Write(requestObject.MinSnapshotsToKeep);
+                context.Writer.Write(requestObject.MinSnapshotsToKeep.Value);
             }
 
         }

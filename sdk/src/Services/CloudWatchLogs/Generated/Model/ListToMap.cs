@@ -55,9 +55,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// Specify <c>true</c> to flatten the list. The default is <c>false</c> 
         /// </para>
         /// </summary>
-        public bool Flatten
+        public bool? Flatten
         {
-            get { return this._flatten.GetValueOrDefault(); }
+            get { return this._flatten; }
             set { this._flatten = value; }
         }
 

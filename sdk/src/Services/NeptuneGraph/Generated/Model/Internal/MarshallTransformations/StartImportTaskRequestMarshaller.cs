@@ -101,6 +101,12 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
 
+                    if(publicRequest.IsSetParquetType())
+                    {
+                        context.Writer.WritePropertyName("parquetType");
+                        context.Writer.Write(publicRequest.ParquetType);
+                    }
+
                     if(publicRequest.IsSetRoleArn())
                     {
                         context.Writer.WritePropertyName("roleArn");
@@ -116,93 +122,7 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
                     writer.WriteObjectEnd();
                 }
 
-<<<<<<< HEAD
                 request.Content = memoryStream.ToArray();
-||||||| Commit version number update changes
-                if(publicRequest.IsSetFailOnError())
-                {
-                    context.Writer.WritePropertyName("failOnError");
-                    context.Writer.Write(publicRequest.FailOnError);
-                }
-
-                if(publicRequest.IsSetFormat())
-                {
-                    context.Writer.WritePropertyName("format");
-                    context.Writer.Write(publicRequest.Format);
-                }
-
-                if(publicRequest.IsSetImportOptions())
-                {
-                    context.Writer.WritePropertyName("importOptions");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ImportOptionsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ImportOptions, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRoleArn())
-                {
-                    context.Writer.WritePropertyName("roleArn");
-                    context.Writer.Write(publicRequest.RoleArn);
-                }
-
-                if(publicRequest.IsSetSource())
-                {
-                    context.Writer.WritePropertyName("source");
-                    context.Writer.Write(publicRequest.Source);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
-=======
-                if(publicRequest.IsSetFailOnError())
-                {
-                    context.Writer.WritePropertyName("failOnError");
-                    context.Writer.Write(publicRequest.FailOnError);
-                }
-
-                if(publicRequest.IsSetFormat())
-                {
-                    context.Writer.WritePropertyName("format");
-                    context.Writer.Write(publicRequest.Format);
-                }
-
-                if(publicRequest.IsSetImportOptions())
-                {
-                    context.Writer.WritePropertyName("importOptions");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ImportOptionsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ImportOptions, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetParquetType())
-                {
-                    context.Writer.WritePropertyName("parquetType");
-                    context.Writer.Write(publicRequest.ParquetType);
-                }
-
-                if(publicRequest.IsSetRoleArn())
-                {
-                    context.Writer.WritePropertyName("roleArn");
-                    context.Writer.Write(publicRequest.RoleArn);
-                }
-
-                if(publicRequest.IsSetSource())
-                {
-                    context.Writer.WritePropertyName("source");
-                    context.Writer.Write(publicRequest.Source);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
             }
 
 

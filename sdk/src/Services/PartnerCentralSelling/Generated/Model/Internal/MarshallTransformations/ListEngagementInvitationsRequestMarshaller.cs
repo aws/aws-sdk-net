@@ -77,36 +77,22 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.Catalog);
                     }
 
-<<<<<<< HEAD
+                    if(publicRequest.IsSetEngagementIdentifier())
+                    {
+                        context.Writer.WritePropertyName("EngagementIdentifier");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestEngagementIdentifierListValue in publicRequest.EngagementIdentifier)
+                        {
+                                context.Writer.Write(publicRequestEngagementIdentifierListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
                     if(publicRequest.IsSetMaxResults())
                     {
                         context.Writer.WritePropertyName("MaxResults");
                         context.Writer.Write(publicRequest.MaxResults.Value);
                     }
-||||||| Commit version number update changes
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
-                }
-=======
-                if(publicRequest.IsSetEngagementIdentifier())
-                {
-                    context.Writer.WritePropertyName("EngagementIdentifier");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestEngagementIdentifierListValue in publicRequest.EngagementIdentifier)
-                    {
-                            context.Writer.Write(publicRequestEngagementIdentifierListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
-                }
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
 
                     if(publicRequest.IsSetNextToken())
                     {
@@ -131,33 +117,21 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
                         context.Writer.WriteArrayEnd();
                     }
 
-<<<<<<< HEAD
+                    if(publicRequest.IsSetSenderAwsAccountId())
+                    {
+                        context.Writer.WritePropertyName("SenderAwsAccountId");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSenderAwsAccountIdListValue in publicRequest.SenderAwsAccountId)
+                        {
+                                context.Writer.Write(publicRequestSenderAwsAccountIdListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
                     if(publicRequest.IsSetSort())
                     {
                         context.Writer.WritePropertyName("Sort");
                         context.Writer.WriteObjectStart();
-||||||| Commit version number update changes
-                if(publicRequest.IsSetSort())
-                {
-                    context.Writer.WritePropertyName("Sort");
-                    context.Writer.WriteObjectStart();
-=======
-                if(publicRequest.IsSetSenderAwsAccountId())
-                {
-                    context.Writer.WritePropertyName("SenderAwsAccountId");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSenderAwsAccountIdListValue in publicRequest.SenderAwsAccountId)
-                    {
-                            context.Writer.Write(publicRequestSenderAwsAccountIdListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetSort())
-                {
-                    context.Writer.WritePropertyName("Sort");
-                    context.Writer.WriteObjectStart();
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
 
                         var marshaller = OpportunityEngagementInvitationSortMarshaller.Instance;
                         marshaller.Marshall(publicRequest.Sort, context);
@@ -165,31 +139,21 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
 
+                    if(publicRequest.IsSetStatus())
+                    {
+                        context.Writer.WritePropertyName("Status");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestStatusListValue in publicRequest.Status)
+                        {
+                                context.Writer.Write(publicRequestStatusListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
                     writer.WriteObjectEnd();
                 }
 
-<<<<<<< HEAD
                 request.Content = memoryStream.ToArray();
-||||||| Commit version number update changes
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
-=======
-                if(publicRequest.IsSetStatus())
-                {
-                    context.Writer.WritePropertyName("Status");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestStatusListValue in publicRequest.Status)
-                    {
-                            context.Writer.Write(publicRequestStatusListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
             }
 
 

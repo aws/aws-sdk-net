@@ -122,31 +122,17 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.MaxProvisionedMemory.Value);
                     }
 
-<<<<<<< HEAD
                     if(publicRequest.IsSetMinProvisionedMemory())
                     {
                         context.Writer.WritePropertyName("minProvisionedMemory");
                         context.Writer.Write(publicRequest.MinProvisionedMemory.Value);
                     }
-||||||| Commit version number update changes
-                if(publicRequest.IsSetPublicConnectivity())
-                {
-                    context.Writer.WritePropertyName("publicConnectivity");
-                    context.Writer.Write(publicRequest.PublicConnectivity);
-                }
-=======
-                if(publicRequest.IsSetParquetType())
-                {
-                    context.Writer.WritePropertyName("parquetType");
-                    context.Writer.Write(publicRequest.ParquetType);
-                }
 
-                if(publicRequest.IsSetPublicConnectivity())
-                {
-                    context.Writer.WritePropertyName("publicConnectivity");
-                    context.Writer.Write(publicRequest.PublicConnectivity);
-                }
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
+                    if(publicRequest.IsSetParquetType())
+                    {
+                        context.Writer.WritePropertyName("parquetType");
+                        context.Writer.Write(publicRequest.ParquetType);
+                    }
 
                     if(publicRequest.IsSetPublicConnectivity())
                     {

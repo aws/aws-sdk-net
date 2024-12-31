@@ -74,7 +74,7 @@ namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("lastRunTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastRunTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }

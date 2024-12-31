@@ -61,55 +61,58 @@ namespace Amazon.SSMQuickSetup.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/listConfigurations";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetConfigurationDefinitionId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ConfigurationDefinitionId");
-                    context.Writer.Write(publicRequest.ConfigurationDefinitionId);
-                }
-
-                if(publicRequest.IsSetFilters())
-                {
-                    context.Writer.WritePropertyName("Filters");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestFiltersListValue in publicRequest.Filters)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetConfigurationDefinitionId())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = FilterMarshaller.Instance;
-                        marshaller.Marshall(publicRequestFiltersListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("ConfigurationDefinitionId");
+                        context.Writer.Write(publicRequest.ConfigurationDefinitionId);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetFilters())
+                    {
+                        context.Writer.WritePropertyName("Filters");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestFiltersListValue in publicRequest.Filters)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = FilterMarshaller.Instance;
+                            marshaller.Marshall(publicRequestFiltersListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetManagerArn())
+                    {
+                        context.Writer.WritePropertyName("ManagerArn");
+                        context.Writer.Write(publicRequest.ManagerArn);
+                    }
+
+                    if(publicRequest.IsSetMaxItems())
+                    {
+                        context.Writer.WritePropertyName("MaxItems");
+                        context.Writer.Write(publicRequest.MaxItems.Value);
+                    }
+
+                    if(publicRequest.IsSetStartingToken())
+                    {
+                        context.Writer.WritePropertyName("StartingToken");
+                        context.Writer.Write(publicRequest.StartingToken);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetManagerArn())
-                {
-                    context.Writer.WritePropertyName("ManagerArn");
-                    context.Writer.Write(publicRequest.ManagerArn);
-                }
-
-                if(publicRequest.IsSetMaxItems())
-                {
-                    context.Writer.WritePropertyName("MaxItems");
-                    context.Writer.Write(publicRequest.MaxItems);
-                }
-
-                if(publicRequest.IsSetStartingToken())
-                {
-                    context.Writer.WritePropertyName("StartingToken");
-                    context.Writer.Write(publicRequest.StartingToken);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

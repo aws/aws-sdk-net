@@ -132,9 +132,9 @@ namespace Amazon.Glue.Model
         /// Indicates whether this field can be created as part of a destination write.
         /// </para>
         /// </summary>
-        public bool IsCreateable
+        public bool? IsCreateable
         {
-            get { return this._isCreateable.GetValueOrDefault(); }
+            get { return this._isCreateable; }
             set { this._isCreateable = value; }
         }
 
@@ -151,9 +151,9 @@ namespace Amazon.Glue.Model
         /// such as a created at timestamp.
         /// </para>
         /// </summary>
-        public bool IsDefaultOnCreate
+        public bool? IsDefaultOnCreate
         {
-            get { return this._isDefaultOnCreate.GetValueOrDefault(); }
+            get { return this._isDefaultOnCreate; }
             set { this._isDefaultOnCreate = value; }
         }
 
@@ -170,9 +170,9 @@ namespace Amazon.Glue.Model
         /// a SQL statement when querying data. 
         /// </para>
         /// </summary>
-        public bool IsFilterable
+        public bool? IsFilterable
         {
-            get { return this._isFilterable.GetValueOrDefault(); }
+            get { return this._isFilterable; }
             set { this._isFilterable = value; }
         }
 
@@ -188,9 +188,9 @@ namespace Amazon.Glue.Model
         /// Indicates whether this field can be nullable or not.
         /// </para>
         /// </summary>
-        public bool IsNullable
+        public bool? IsNullable
         {
-            get { return this._isNullable.GetValueOrDefault(); }
+            get { return this._isNullable; }
             set { this._isNullable = value; }
         }
 
@@ -206,9 +206,9 @@ namespace Amazon.Glue.Model
         /// Indicates whether a given field can be used in partitioning the query made to SaaS.
         /// </para>
         /// </summary>
-        public bool IsPartitionable
+        public bool? IsPartitionable
         {
-            get { return this._isPartitionable.GetValueOrDefault(); }
+            get { return this._isPartitionable; }
             set { this._isPartitionable = value; }
         }
 
@@ -224,9 +224,9 @@ namespace Amazon.Glue.Model
         /// Indicates whether this field can used as a primary key for the given entity.
         /// </para>
         /// </summary>
-        public bool IsPrimaryKey
+        public bool? IsPrimaryKey
         {
-            get { return this._isPrimaryKey.GetValueOrDefault(); }
+            get { return this._isPrimaryKey; }
             set { this._isPrimaryKey = value; }
         }
 
@@ -243,9 +243,9 @@ namespace Amazon.Glue.Model
         /// it is retrievable or not.
         /// </para>
         /// </summary>
-        public bool IsRetrievable
+        public bool? IsRetrievable
         {
-            get { return this._isRetrievable.GetValueOrDefault(); }
+            get { return this._isRetrievable; }
             set { this._isRetrievable = value; }
         }
 
@@ -261,9 +261,9 @@ namespace Amazon.Glue.Model
         /// Indicates whether this field can be updated as part of a destination write.
         /// </para>
         /// </summary>
-        public bool IsUpdateable
+        public bool? IsUpdateable
         {
-            get { return this._isUpdateable.GetValueOrDefault(); }
+            get { return this._isUpdateable; }
             set { this._isUpdateable = value; }
         }
 
@@ -279,9 +279,9 @@ namespace Amazon.Glue.Model
         /// Indicates whether this field can be upserted as part of a destination write.
         /// </para>
         /// </summary>
-        public bool IsUpsertable
+        public bool? IsUpsertable
         {
-            get { return this._isUpsertable.GetValueOrDefault(); }
+            get { return this._isUpsertable; }
             set { this._isUpsertable = value; }
         }
 

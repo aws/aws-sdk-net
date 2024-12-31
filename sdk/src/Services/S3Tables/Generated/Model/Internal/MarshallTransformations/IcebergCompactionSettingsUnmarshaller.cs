@@ -68,7 +68,7 @@ namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("targetFileSizeMB", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TargetFileSizeMB = unmarshaller.Unmarshall(context);
                     continue;
                 }

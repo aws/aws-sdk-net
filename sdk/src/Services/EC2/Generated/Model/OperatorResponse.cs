@@ -44,9 +44,9 @@ namespace Amazon.EC2.Model
         /// If <c>true</c>, the resource is managed by an service provider.
         /// </para>
         /// </summary>
-        public bool Managed
+        public bool? Managed
         {
-            get { return this._managed.GetValueOrDefault(); }
+            get { return this._managed; }
             set { this._managed = value; }
         }
 

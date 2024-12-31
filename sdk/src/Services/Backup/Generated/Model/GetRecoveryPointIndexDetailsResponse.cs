@@ -76,9 +76,9 @@ namespace Amazon.Backup.Model
         /// AM.
         /// </para>
         /// </summary>
-        public DateTime IndexCompletionDate
+        public DateTime? IndexCompletionDate
         {
-            get { return this._indexCompletionDate.GetValueOrDefault(); }
+            get { return this._indexCompletionDate; }
             set { this._indexCompletionDate = value; }
         }
 
@@ -97,9 +97,9 @@ namespace Amazon.Backup.Model
         /// AM.
         /// </para>
         /// </summary>
-        public DateTime IndexCreationDate
+        public DateTime? IndexCreationDate
         {
-            get { return this._indexCreationDate.GetValueOrDefault(); }
+            get { return this._indexCreationDate; }
             set { this._indexCreationDate = value; }
         }
 
@@ -118,9 +118,9 @@ namespace Amazon.Backup.Model
         /// AM.
         /// </para>
         /// </summary>
-        public DateTime IndexDeletionDate
+        public DateTime? IndexDeletionDate
         {
-            get { return this._indexDeletionDate.GetValueOrDefault(); }
+            get { return this._indexDeletionDate; }
             set { this._indexDeletionDate = value; }
         }
 
@@ -219,9 +219,9 @@ namespace Amazon.Backup.Model
         /// Count of items within the backup index associated with the recovery point.
         /// </para>
         /// </summary>
-        public long TotalItemsIndexed
+        public long? TotalItemsIndexed
         {
-            get { return this._totalItemsIndexed.GetValueOrDefault(); }
+            get { return this._totalItemsIndexed; }
             set { this._totalItemsIndexed = value; }
         }
 

@@ -95,9 +95,9 @@ namespace Amazon.IoTJobsDataPlane.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public long ExecutionTimeoutSeconds
+        public long? ExecutionTimeoutSeconds
         {
-            get { return this._executionTimeoutSeconds.GetValueOrDefault(); }
+            get { return this._executionTimeoutSeconds; }
             set { this._executionTimeoutSeconds = value; }
         }
 

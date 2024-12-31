@@ -45,9 +45,9 @@ namespace Amazon.BackupSearch.Model
         /// progress.
         /// </para>
         /// </summary>
-        public long ItemsMatchedCount
+        public long? ItemsMatchedCount
         {
-            get { return this._itemsMatchedCount.GetValueOrDefault(); }
+            get { return this._itemsMatchedCount; }
             set { this._itemsMatchedCount = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.BackupSearch.Model
         /// job.
         /// </para>
         /// </summary>
-        public long ItemsScannedCount
+        public long? ItemsScannedCount
         {
-            get { return this._itemsScannedCount.GetValueOrDefault(); }
+            get { return this._itemsScannedCount; }
             set { this._itemsScannedCount = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.BackupSearch.Model
         /// job.
         /// </para>
         /// </summary>
-        public int RecoveryPointsScannedCount
+        public int? RecoveryPointsScannedCount
         {
-            get { return this._recoveryPointsScannedCount.GetValueOrDefault(); }
+            get { return this._recoveryPointsScannedCount; }
             set { this._recoveryPointsScannedCount = value; }
         }
 

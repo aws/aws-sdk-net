@@ -88,9 +88,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// Resets the capacity reservation.
         /// </para>
         /// </summary>
-        public bool ResetCapacityReservation
+        public bool? ResetCapacityReservation
         {
-            get { return this._resetCapacityReservation.GetValueOrDefault(); }
+            get { return this._resetCapacityReservation; }
             set { this._resetCapacityReservation = value; }
         }
 

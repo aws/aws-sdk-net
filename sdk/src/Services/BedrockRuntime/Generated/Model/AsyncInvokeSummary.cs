@@ -69,9 +69,9 @@ namespace Amazon.BedrockRuntime.Model
         /// When the invocation ended.
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -125,9 +125,9 @@ namespace Amazon.BedrockRuntime.Model
         /// When the invocation was last modified.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedTime
+        public DateTime? LastModifiedTime
         {
-            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            get { return this._lastModifiedTime; }
             set { this._lastModifiedTime = value; }
         }
 
@@ -200,9 +200,9 @@ namespace Amazon.BedrockRuntime.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime SubmitTime
+        public DateTime? SubmitTime
         {
-            get { return this._submitTime.GetValueOrDefault(); }
+            get { return this._submitTime; }
             set { this._submitTime = value; }
         }
 

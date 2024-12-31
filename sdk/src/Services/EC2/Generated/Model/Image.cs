@@ -252,9 +252,9 @@ namespace Amazon.EC2.Model
         /// User Guide</i>.
         /// </para>
         /// </summary>
-        public bool ImageAllowed
+        public bool? ImageAllowed
         {
-            get { return this._imageAllowed.GetValueOrDefault(); }
+            get { return this._imageAllowed; }
             set { this._imageAllowed = value; }
         }
 

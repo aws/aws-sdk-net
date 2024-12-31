@@ -57,9 +57,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int AvailableInstanceCount
+        public int? AvailableInstanceCount
         {
-            get { return this._availableInstanceCount.GetValueOrDefault(); }
+            get { return this._availableInstanceCount; }
             set { this._availableInstanceCount = value; }
         }
 
@@ -94,9 +94,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=87600)]
-        public long DurationHours
+        public long? DurationHours
         {
-            get { return this._durationHours.GetValueOrDefault(); }
+            get { return this._durationHours; }
             set { this._durationHours = value; }
         }
 
@@ -114,9 +114,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=59)]
-        public long DurationMinutes
+        public long? DurationMinutes
         {
-            get { return this._durationMinutes.GetValueOrDefault(); }
+            get { return this._durationMinutes; }
             set { this._durationMinutes = value; }
         }
 
@@ -132,9 +132,9 @@ namespace Amazon.SageMaker.Model
         /// The end time of the training plan.
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -151,9 +151,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int InUseInstanceCount
+        public int? InUseInstanceCount
         {
-            get { return this._inUseInstanceCount.GetValueOrDefault(); }
+            get { return this._inUseInstanceCount; }
             set { this._inUseInstanceCount = value; }
         }
 
@@ -189,9 +189,9 @@ namespace Amazon.SageMaker.Model
         /// The start time of the training plan.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 
@@ -285,9 +285,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int TotalInstanceCount
+        public int? TotalInstanceCount
         {
-            get { return this._totalInstanceCount.GetValueOrDefault(); }
+            get { return this._totalInstanceCount; }
             set { this._totalInstanceCount = value; }
         }
 

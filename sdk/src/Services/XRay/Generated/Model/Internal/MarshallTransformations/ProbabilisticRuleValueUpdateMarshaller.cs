@@ -51,13 +51,13 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDesiredSamplingPercentage())
             {
                 context.Writer.WritePropertyName("DesiredSamplingPercentage");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.DesiredSamplingPercentage))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.DesiredSamplingPercentage.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.DesiredSamplingPercentage));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.DesiredSamplingPercentage.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.DesiredSamplingPercentage);
+                    context.Writer.Write(requestObject.DesiredSamplingPercentage.Value);
                 }
             }
 

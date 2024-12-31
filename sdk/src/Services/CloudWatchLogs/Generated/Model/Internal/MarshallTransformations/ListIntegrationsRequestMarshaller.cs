@@ -63,33 +63,36 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetIntegrationNamePrefix())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("integrationNamePrefix");
-                    context.Writer.Write(publicRequest.IntegrationNamePrefix);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetIntegrationNamePrefix())
+                    {
+                        context.Writer.WritePropertyName("integrationNamePrefix");
+                        context.Writer.Write(publicRequest.IntegrationNamePrefix);
+                    }
+
+                    if(publicRequest.IsSetIntegrationStatus())
+                    {
+                        context.Writer.WritePropertyName("integrationStatus");
+                        context.Writer.Write(publicRequest.IntegrationStatus);
+                    }
+
+                    if(publicRequest.IsSetIntegrationType())
+                    {
+                        context.Writer.WritePropertyName("integrationType");
+                        context.Writer.Write(publicRequest.IntegrationType);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetIntegrationStatus())
-                {
-                    context.Writer.WritePropertyName("integrationStatus");
-                    context.Writer.Write(publicRequest.IntegrationStatus);
-                }
-
-                if(publicRequest.IsSetIntegrationType())
-                {
-                    context.Writer.WritePropertyName("integrationType");
-                    context.Writer.Write(publicRequest.IntegrationType);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

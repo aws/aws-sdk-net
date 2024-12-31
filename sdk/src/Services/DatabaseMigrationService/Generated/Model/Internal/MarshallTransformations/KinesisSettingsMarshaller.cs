@@ -111,7 +111,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetUseLargeIntegerValue())
             {
                 context.Writer.WritePropertyName("UseLargeIntegerValue");
-                context.Writer.Write(requestObject.UseLargeIntegerValue);
+                context.Writer.Write(requestObject.UseLargeIntegerValue.Value);
             }
 
         }

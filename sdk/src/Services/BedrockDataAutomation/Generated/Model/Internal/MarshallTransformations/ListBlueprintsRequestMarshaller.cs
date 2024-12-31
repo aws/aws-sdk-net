@@ -61,56 +61,59 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/blueprints/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBlueprintArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("blueprintArn");
-                    context.Writer.Write(publicRequest.BlueprintArn);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBlueprintArn())
+                    {
+                        context.Writer.WritePropertyName("blueprintArn");
+                        context.Writer.Write(publicRequest.BlueprintArn);
+                    }
+
+                    if(publicRequest.IsSetBlueprintStageFilter())
+                    {
+                        context.Writer.WritePropertyName("blueprintStageFilter");
+                        context.Writer.Write(publicRequest.BlueprintStageFilter);
+                    }
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("maxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("nextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetProjectFilter())
+                    {
+                        context.Writer.WritePropertyName("projectFilter");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DataAutomationProjectFilterMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ProjectFilter, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetResourceOwner())
+                    {
+                        context.Writer.WritePropertyName("resourceOwner");
+                        context.Writer.Write(publicRequest.ResourceOwner);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetBlueprintStageFilter())
-                {
-                    context.Writer.WritePropertyName("blueprintStageFilter");
-                    context.Writer.Write(publicRequest.BlueprintStageFilter);
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("maxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("nextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetProjectFilter())
-                {
-                    context.Writer.WritePropertyName("projectFilter");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DataAutomationProjectFilterMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ProjectFilter, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetResourceOwner())
-                {
-                    context.Writer.WritePropertyName("resourceOwner");
-                    context.Writer.Write(publicRequest.ResourceOwner);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

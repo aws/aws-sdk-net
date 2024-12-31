@@ -52,9 +52,9 @@ namespace Amazon.Notifications.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -70,9 +70,9 @@ namespace Amazon.Notifications.Model
         /// The most recent time this NotificationHub had an ACTIVE status.
         /// </para>
         /// </summary>
-        public DateTime LastActivationTime
+        public DateTime? LastActivationTime
         {
-            get { return this._lastActivationTime.GetValueOrDefault(); }
+            get { return this._lastActivationTime; }
             set { this._lastActivationTime = value; }
         }
 

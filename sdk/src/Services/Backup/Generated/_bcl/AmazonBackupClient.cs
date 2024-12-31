@@ -3520,6 +3520,75 @@ namespace Amazon.Backup
 
         #endregion
         
+        #region  GetRecoveryPointIndexDetails
+
+
+        /// <summary>
+        /// This operation returns the metadata and details specific to the backup index associated
+        /// with the specified recovery point.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRecoveryPointIndexDetails service method.</param>
+        /// 
+        /// <returns>The response from the GetRecoveryPointIndexDetails service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetRecoveryPointIndexDetails">REST API Reference for GetRecoveryPointIndexDetails Operation</seealso>
+        public virtual GetRecoveryPointIndexDetailsResponse GetRecoveryPointIndexDetails(GetRecoveryPointIndexDetailsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRecoveryPointIndexDetailsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRecoveryPointIndexDetailsResponseUnmarshaller.Instance;
+
+            return Invoke<GetRecoveryPointIndexDetailsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// This operation returns the metadata and details specific to the backup index associated
+        /// with the specified recovery point.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRecoveryPointIndexDetails service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetRecoveryPointIndexDetails service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetRecoveryPointIndexDetails">REST API Reference for GetRecoveryPointIndexDetails Operation</seealso>
+        public virtual Task<GetRecoveryPointIndexDetailsResponse> GetRecoveryPointIndexDetailsAsync(GetRecoveryPointIndexDetailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRecoveryPointIndexDetailsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRecoveryPointIndexDetailsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetRecoveryPointIndexDetailsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetRecoveryPointRestoreMetadata
 
 
@@ -4532,6 +4601,81 @@ namespace Amazon.Backup
             options.ResponseUnmarshaller = ListFrameworksResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListFrameworksResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListIndexedRecoveryPoints
+
+
+        /// <summary>
+        /// This operation returns a list of recovery points that have an associated index, belonging
+        /// to the specified account.
+        /// 
+        ///  
+        /// <para>
+        /// Optional parameters you can include are: MaxResults; NextToken; SourceResourceArns;
+        /// CreatedBefore; CreatedAfter; and ResourceType.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListIndexedRecoveryPoints service method.</param>
+        /// 
+        /// <returns>The response from the ListIndexedRecoveryPoints service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListIndexedRecoveryPoints">REST API Reference for ListIndexedRecoveryPoints Operation</seealso>
+        public virtual ListIndexedRecoveryPointsResponse ListIndexedRecoveryPoints(ListIndexedRecoveryPointsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListIndexedRecoveryPointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListIndexedRecoveryPointsResponseUnmarshaller.Instance;
+
+            return Invoke<ListIndexedRecoveryPointsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// This operation returns a list of recovery points that have an associated index, belonging
+        /// to the specified account.
+        /// 
+        ///  
+        /// <para>
+        /// Optional parameters you can include are: MaxResults; NextToken; SourceResourceArns;
+        /// CreatedBefore; CreatedAfter; and ResourceType.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListIndexedRecoveryPoints service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListIndexedRecoveryPoints service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListIndexedRecoveryPoints">REST API Reference for ListIndexedRecoveryPoints Operation</seealso>
+        public virtual Task<ListIndexedRecoveryPointsResponse> ListIndexedRecoveryPointsAsync(ListIndexedRecoveryPointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListIndexedRecoveryPointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListIndexedRecoveryPointsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListIndexedRecoveryPointsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6576,6 +6720,91 @@ namespace Amazon.Backup
             options.ResponseUnmarshaller = UpdateGlobalSettingsResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateGlobalSettingsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateRecoveryPointIndexSettings
+
+
+        /// <summary>
+        /// This operation updates the settings of a recovery point index.
+        /// 
+        ///  
+        /// <para>
+        /// Required: BackupVaultName, RecoveryPointArn, and IAMRoleArn
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRecoveryPointIndexSettings service method.</param>
+        /// 
+        /// <returns>The response from the UpdateRecoveryPointIndexSettings service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a parameter
+        /// is of the wrong type.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateRecoveryPointIndexSettings">REST API Reference for UpdateRecoveryPointIndexSettings Operation</seealso>
+        public virtual UpdateRecoveryPointIndexSettingsResponse UpdateRecoveryPointIndexSettings(UpdateRecoveryPointIndexSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRecoveryPointIndexSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRecoveryPointIndexSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateRecoveryPointIndexSettingsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// This operation updates the settings of a recovery point index.
+        /// 
+        ///  
+        /// <para>
+        /// Required: BackupVaultName, RecoveryPointArn, and IAMRoleArn
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRecoveryPointIndexSettings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateRecoveryPointIndexSettings service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a parameter
+        /// is of the wrong type.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateRecoveryPointIndexSettings">REST API Reference for UpdateRecoveryPointIndexSettings Operation</seealso>
+        public virtual Task<UpdateRecoveryPointIndexSettingsResponse> UpdateRecoveryPointIndexSettingsAsync(UpdateRecoveryPointIndexSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRecoveryPointIndexSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRecoveryPointIndexSettingsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateRecoveryPointIndexSettingsResponse>(request, options, cancellationToken);
         }
 
         #endregion

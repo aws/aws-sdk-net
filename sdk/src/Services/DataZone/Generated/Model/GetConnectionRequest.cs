@@ -84,9 +84,9 @@ namespace Amazon.DataZone.Model
         /// Specifies whether a connection has a secret.
         /// </para>
         /// </summary>
-        public bool WithSecret
+        public bool? WithSecret
         {
-            get { return this._withSecret.GetValueOrDefault(); }
+            get { return this._withSecret; }
             set { this._withSecret = value; }
         }
 

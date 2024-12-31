@@ -68,7 +68,7 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("heritageObtainedDetails", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.HeritageObtainedDetails = unmarshaller.Unmarshall(context);
                     continue;
                 }

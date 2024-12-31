@@ -85,9 +85,9 @@ namespace Amazon.IoT.Model
         /// The timestamp, when the command was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.IoT.Model
         /// Indicates whether the command has been deprecated.
         /// </para>
         /// </summary>
-        public bool Deprecated
+        public bool? Deprecated
         {
-            get { return this._deprecated.GetValueOrDefault(); }
+            get { return this._deprecated; }
             set { this._deprecated = value; }
         }
 
@@ -140,9 +140,9 @@ namespace Amazon.IoT.Model
         /// The timestamp, when the command was last updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedAt
+        public DateTime? LastUpdatedAt
         {
-            get { return this._lastUpdatedAt.GetValueOrDefault(); }
+            get { return this._lastUpdatedAt; }
             set { this._lastUpdatedAt = value; }
         }
 
@@ -158,9 +158,9 @@ namespace Amazon.IoT.Model
         /// Indicates whether the command is pending deletion.
         /// </para>
         /// </summary>
-        public bool PendingDeletion
+        public bool? PendingDeletion
         {
-            get { return this._pendingDeletion.GetValueOrDefault(); }
+            get { return this._pendingDeletion; }
             set { this._pendingDeletion = value; }
         }
 

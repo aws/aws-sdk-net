@@ -44,9 +44,9 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int ApplyGuardrailInterval
+        public int? ApplyGuardrailInterval
         {
-            get { return this._applyGuardrailInterval.GetValueOrDefault(); }
+            get { return this._applyGuardrailInterval; }
             set { this._applyGuardrailInterval = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// by default. 
         /// </para>
         /// </summary>
-        public bool StreamFinalResponse
+        public bool? StreamFinalResponse
         {
-            get { return this._streamFinalResponse.GetValueOrDefault(); }
+            get { return this._streamFinalResponse; }
             set { this._streamFinalResponse = value; }
         }
 

@@ -106,9 +106,9 @@ namespace Amazon.SageMaker.Model
         /// Version of the cluster policy.
         /// </para>
         /// </summary>
-        public int ClusterSchedulerConfigVersion
+        public int? ClusterSchedulerConfigVersion
         {
-            get { return this._clusterSchedulerConfigVersion.GetValueOrDefault(); }
+            get { return this._clusterSchedulerConfigVersion; }
             set { this._clusterSchedulerConfigVersion = value; }
         }
 
@@ -125,9 +125,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -143,9 +143,9 @@ namespace Amazon.SageMaker.Model
         /// Last modified time of the cluster policy.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedTime
+        public DateTime? LastModifiedTime
         {
-            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            get { return this._lastModifiedTime; }
             set { this._lastModifiedTime = value; }
         }
 

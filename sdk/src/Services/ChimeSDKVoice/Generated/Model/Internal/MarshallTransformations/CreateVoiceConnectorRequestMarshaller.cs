@@ -65,7 +65,6 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
             {
                 using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-<<<<<<< HEAD
                     JsonWriter writer = new JsonWriter(streamWriter);
                     writer.Validate = false;
                     writer.WriteObjectStart();
@@ -75,45 +74,12 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
                         context.Writer.WritePropertyName("AwsRegion");
                         context.Writer.Write(publicRequest.AwsRegion);
                     }
-||||||| Commit version number update changes
-                    context.Writer.WritePropertyName("AwsRegion");
-                    context.Writer.Write(publicRequest.AwsRegion);
-                }
 
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetRequireEncryption())
-                {
-                    context.Writer.WritePropertyName("RequireEncryption");
-                    context.Writer.Write(publicRequest.RequireEncryption);
-                }
-=======
-                    context.Writer.WritePropertyName("AwsRegion");
-                    context.Writer.Write(publicRequest.AwsRegion);
-                }
-
-                if(publicRequest.IsSetIntegrationType())
-                {
-                    context.Writer.WritePropertyName("IntegrationType");
-                    context.Writer.Write(publicRequest.IntegrationType);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetRequireEncryption())
-                {
-                    context.Writer.WritePropertyName("RequireEncryption");
-                    context.Writer.Write(publicRequest.RequireEncryption);
-                }
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
+                    if(publicRequest.IsSetIntegrationType())
+                    {
+                        context.Writer.WritePropertyName("IntegrationType");
+                        context.Writer.Write(publicRequest.IntegrationType);
+                    }
 
                     if(publicRequest.IsSetName())
                     {

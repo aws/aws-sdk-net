@@ -68,7 +68,7 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("maxResponseLengthForInference", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxResponseLengthForInference = unmarshaller.Unmarshall(context);
                     continue;
                 }

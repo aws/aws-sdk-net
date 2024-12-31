@@ -50,9 +50,9 @@ namespace Amazon.BedrockRuntime.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -142,9 +142,9 @@ namespace Amazon.BedrockRuntime.Model
         /// Include invocations submitted after this time.
         /// </para>
         /// </summary>
-        public DateTime SubmitTimeAfter
+        public DateTime? SubmitTimeAfter
         {
-            get { return this._submitTimeAfter.GetValueOrDefault(); }
+            get { return this._submitTimeAfter; }
             set { this._submitTimeAfter = value; }
         }
 
@@ -160,9 +160,9 @@ namespace Amazon.BedrockRuntime.Model
         /// Include invocations submitted before this time.
         /// </para>
         /// </summary>
-        public DateTime SubmitTimeBefore
+        public DateTime? SubmitTimeBefore
         {
-            get { return this._submitTimeBefore.GetValueOrDefault(); }
+            get { return this._submitTimeBefore; }
             set { this._submitTimeBefore = value; }
         }
 

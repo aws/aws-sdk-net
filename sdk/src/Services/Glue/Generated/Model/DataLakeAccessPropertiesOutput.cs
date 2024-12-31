@@ -71,9 +71,9 @@ namespace Amazon.Glue.Model
         /// Redshift databases in the Data Catalog.
         /// </para>
         /// </summary>
-        public bool DataLakeAccess
+        public bool? DataLakeAccess
         {
-            get { return this._dataLakeAccess.GetValueOrDefault(); }
+            get { return this._dataLakeAccess; }
             set { this._dataLakeAccess = value; }
         }
 

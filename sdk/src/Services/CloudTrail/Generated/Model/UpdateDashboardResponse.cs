@@ -49,9 +49,9 @@ namespace Amazon.CloudTrail.Model
         ///  The timestamp that shows when the dashboard was created. 
         /// </para>
         /// </summary>
-        public DateTime CreatedTimestamp
+        public DateTime? CreatedTimestamp
         {
-            get { return this._createdTimestamp.GetValueOrDefault(); }
+            get { return this._createdTimestamp; }
             set { this._createdTimestamp = value; }
         }
 
@@ -122,9 +122,9 @@ namespace Amazon.CloudTrail.Model
         ///  Indicates whether termination protection is enabled for the dashboard. 
         /// </para>
         /// </summary>
-        public bool TerminationProtectionEnabled
+        public bool? TerminationProtectionEnabled
         {
-            get { return this._terminationProtectionEnabled.GetValueOrDefault(); }
+            get { return this._terminationProtectionEnabled; }
             set { this._terminationProtectionEnabled = value; }
         }
 
@@ -158,9 +158,9 @@ namespace Amazon.CloudTrail.Model
         ///  The timestamp that shows when the dashboard was updated. 
         /// </para>
         /// </summary>
-        public DateTime UpdatedTimestamp
+        public DateTime? UpdatedTimestamp
         {
-            get { return this._updatedTimestamp.GetValueOrDefault(); }
+            get { return this._updatedTimestamp; }
             set { this._updatedTimestamp = value; }
         }
 

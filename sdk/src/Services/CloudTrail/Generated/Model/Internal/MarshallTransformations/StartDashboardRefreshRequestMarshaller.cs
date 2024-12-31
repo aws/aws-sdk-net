@@ -63,35 +63,38 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDashboardId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DashboardId");
-                    context.Writer.Write(publicRequest.DashboardId);
-                }
-
-                if(publicRequest.IsSetQueryParameterValues())
-                {
-                    context.Writer.WritePropertyName("QueryParameterValues");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestQueryParameterValuesKvp in publicRequest.QueryParameterValues)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDashboardId())
                     {
-                        context.Writer.WritePropertyName(publicRequestQueryParameterValuesKvp.Key);
-                        var publicRequestQueryParameterValuesValue = publicRequestQueryParameterValuesKvp.Value;
-
-                            context.Writer.Write(publicRequestQueryParameterValuesValue);
+                        context.Writer.WritePropertyName("DashboardId");
+                        context.Writer.Write(publicRequest.DashboardId);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetQueryParameterValues())
+                    {
+                        context.Writer.WritePropertyName("QueryParameterValues");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestQueryParameterValuesKvp in publicRequest.QueryParameterValues)
+                        {
+                            context.Writer.WritePropertyName(publicRequestQueryParameterValuesKvp.Key);
+                            var publicRequestQueryParameterValuesValue = publicRequestQueryParameterValuesKvp.Value;
+
+                                context.Writer.Write(publicRequestQueryParameterValuesValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

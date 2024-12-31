@@ -81,32 +81,18 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.Description);
                     }
 
-<<<<<<< HEAD
+                    if(publicRequest.IsSetEnvironmentDeploymentDetails())
+                    {
+                        context.Writer.WritePropertyName("environmentDeploymentDetails");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = EnvironmentDeploymentDetailsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.EnvironmentDeploymentDetails, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
                     if(publicRequest.IsSetGlossaryTerms())
-||||||| Commit version number update changes
-                if(publicRequest.IsSetGlossaryTerms())
-                {
-                    context.Writer.WritePropertyName("glossaryTerms");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestGlossaryTermsListValue in publicRequest.GlossaryTerms)
-=======
-                if(publicRequest.IsSetEnvironmentDeploymentDetails())
-                {
-                    context.Writer.WritePropertyName("environmentDeploymentDetails");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = EnvironmentDeploymentDetailsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.EnvironmentDeploymentDetails, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetGlossaryTerms())
-                {
-                    context.Writer.WritePropertyName("glossaryTerms");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestGlossaryTermsListValue in publicRequest.GlossaryTerms)
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
                     {
                         context.Writer.WritePropertyName("glossaryTerms");
                         context.Writer.WriteArrayStart();

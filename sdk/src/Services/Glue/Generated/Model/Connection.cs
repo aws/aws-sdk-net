@@ -377,9 +377,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2)]
-        public int ConnectionSchemaVersion
+        public int? ConnectionSchemaVersion
         {
-            get { return this._connectionSchemaVersion.GetValueOrDefault(); }
+            get { return this._connectionSchemaVersion; }
             set { this._connectionSchemaVersion = value; }
         }
 

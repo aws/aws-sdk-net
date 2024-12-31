@@ -57,7 +57,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDataLakeAccess())
             {
                 context.Writer.WritePropertyName("DataLakeAccess");
-                context.Writer.Write(requestObject.DataLakeAccess);
+                context.Writer.Write(requestObject.DataLakeAccess.Value);
             }
 
             if(requestObject.IsSetDataTransferRole())

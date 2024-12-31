@@ -49,9 +49,9 @@ namespace Amazon.Synthetics.Model
         /// subnets.
         /// </para>
         /// </summary>
-        public bool Ipv6AllowedForDualStack
+        public bool? Ipv6AllowedForDualStack
         {
-            get { return this._ipv6AllowedForDualStack.GetValueOrDefault(); }
+            get { return this._ipv6AllowedForDualStack; }
             set { this._ipv6AllowedForDualStack = value; }
         }
 

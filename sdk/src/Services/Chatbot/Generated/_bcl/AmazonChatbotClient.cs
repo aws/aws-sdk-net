@@ -298,6 +298,67 @@ namespace Amazon.Chatbot
         #endregion
 
 
+        #region  AssociateToConfiguration
+
+
+        /// <summary>
+        /// Links a resource (for example, a custom action) to a channel configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateToConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the AssociateToConfiguration service method, as returned by Chatbot.</returns>
+        /// <exception cref="Amazon.Chatbot.Model.InternalServiceErrorException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.InvalidRequestException">
+        /// Your request input doesn't meet the constraints required by AWS Chatbot.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.UnauthorizedException">
+        /// The request was rejected because it doesn't have valid credentials for the target
+        /// resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/AssociateToConfiguration">REST API Reference for AssociateToConfiguration Operation</seealso>
+        public virtual AssociateToConfigurationResponse AssociateToConfiguration(AssociateToConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateToConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateToConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateToConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Links a resource (for example, a custom action) to a channel configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateToConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateToConfiguration service method, as returned by Chatbot.</returns>
+        /// <exception cref="Amazon.Chatbot.Model.InternalServiceErrorException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.InvalidRequestException">
+        /// Your request input doesn't meet the constraints required by AWS Chatbot.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.UnauthorizedException">
+        /// The request was rejected because it doesn't have valid credentials for the target
+        /// resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/AssociateToConfiguration">REST API Reference for AssociateToConfiguration Operation</seealso>
+        public virtual Task<AssociateToConfigurationResponse> AssociateToConfigurationAsync(AssociateToConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateToConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateToConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AssociateToConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateChimeWebhookConfiguration
 
 
@@ -365,6 +426,79 @@ namespace Amazon.Chatbot
             options.ResponseUnmarshaller = CreateChimeWebhookConfigurationResponseUnmarshaller.Instance;
             
             return InvokeAsync<CreateChimeWebhookConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateCustomAction
+
+
+        /// <summary>
+        /// Creates a custom action that can be invoked as an alias or as a button on a notification.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCustomAction service method.</param>
+        /// 
+        /// <returns>The response from the CreateCustomAction service method, as returned by Chatbot.</returns>
+        /// <exception cref="Amazon.Chatbot.Model.ConflictException">
+        /// There was an issue processing your request.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.InternalServiceErrorException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.InvalidRequestException">
+        /// Your request input doesn't meet the constraints required by AWS Chatbot.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.LimitExceededException">
+        /// You have exceeded a service limit for AWS Chatbot.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.UnauthorizedException">
+        /// The request was rejected because it doesn't have valid credentials for the target
+        /// resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/CreateCustomAction">REST API Reference for CreateCustomAction Operation</seealso>
+        public virtual CreateCustomActionResponse CreateCustomAction(CreateCustomActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCustomActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCustomActionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateCustomActionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a custom action that can be invoked as an alias or as a button on a notification.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCustomAction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateCustomAction service method, as returned by Chatbot.</returns>
+        /// <exception cref="Amazon.Chatbot.Model.ConflictException">
+        /// There was an issue processing your request.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.InternalServiceErrorException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.InvalidRequestException">
+        /// Your request input doesn't meet the constraints required by AWS Chatbot.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.LimitExceededException">
+        /// You have exceeded a service limit for AWS Chatbot.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.UnauthorizedException">
+        /// The request was rejected because it doesn't have valid credentials for the target
+        /// resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/CreateCustomAction">REST API Reference for CreateCustomAction Operation</seealso>
+        public virtual Task<CreateCustomActionResponse> CreateCustomActionAsync(CreateCustomActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCustomActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCustomActionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateCustomActionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -572,6 +706,73 @@ namespace Amazon.Chatbot
             options.ResponseUnmarshaller = DeleteChimeWebhookConfigurationResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteChimeWebhookConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteCustomAction
+
+
+        /// <summary>
+        /// Deletes a custom action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCustomAction service method.</param>
+        /// 
+        /// <returns>The response from the DeleteCustomAction service method, as returned by Chatbot.</returns>
+        /// <exception cref="Amazon.Chatbot.Model.InternalServiceErrorException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.InvalidRequestException">
+        /// Your request input doesn't meet the constraints required by AWS Chatbot.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.ResourceNotFoundException">
+        /// We were unable to find the resource for your request
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.UnauthorizedException">
+        /// The request was rejected because it doesn't have valid credentials for the target
+        /// resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/DeleteCustomAction">REST API Reference for DeleteCustomAction Operation</seealso>
+        public virtual DeleteCustomActionResponse DeleteCustomAction(DeleteCustomActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCustomActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCustomActionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteCustomActionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a custom action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCustomAction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteCustomAction service method, as returned by Chatbot.</returns>
+        /// <exception cref="Amazon.Chatbot.Model.InternalServiceErrorException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.InvalidRequestException">
+        /// Your request input doesn't meet the constraints required by AWS Chatbot.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.ResourceNotFoundException">
+        /// We were unable to find the resource for your request
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.UnauthorizedException">
+        /// The request was rejected because it doesn't have valid credentials for the target
+        /// resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/DeleteCustomAction">REST API Reference for DeleteCustomAction Operation</seealso>
+        public virtual Task<DeleteCustomActionResponse> DeleteCustomActionAsync(DeleteCustomActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCustomActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCustomActionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteCustomActionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1174,6 +1375,67 @@ namespace Amazon.Chatbot
 
         #endregion
         
+        #region  DisassociateFromConfiguration
+
+
+        /// <summary>
+        /// Unlink a resource, for example a custom action, from a channel configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateFromConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateFromConfiguration service method, as returned by Chatbot.</returns>
+        /// <exception cref="Amazon.Chatbot.Model.InternalServiceErrorException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.InvalidRequestException">
+        /// Your request input doesn't meet the constraints required by AWS Chatbot.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.UnauthorizedException">
+        /// The request was rejected because it doesn't have valid credentials for the target
+        /// resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/DisassociateFromConfiguration">REST API Reference for DisassociateFromConfiguration Operation</seealso>
+        public virtual DisassociateFromConfigurationResponse DisassociateFromConfiguration(DisassociateFromConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateFromConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateFromConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateFromConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Unlink a resource, for example a custom action, from a channel configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateFromConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateFromConfiguration service method, as returned by Chatbot.</returns>
+        /// <exception cref="Amazon.Chatbot.Model.InternalServiceErrorException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.InvalidRequestException">
+        /// Your request input doesn't meet the constraints required by AWS Chatbot.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.UnauthorizedException">
+        /// The request was rejected because it doesn't have valid credentials for the target
+        /// resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/DisassociateFromConfiguration">REST API Reference for DisassociateFromConfiguration Operation</seealso>
+        public virtual Task<DisassociateFromConfigurationResponse> DisassociateFromConfigurationAsync(DisassociateFromConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateFromConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateFromConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DisassociateFromConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetAccountPreferences
 
 
@@ -1223,6 +1485,73 @@ namespace Amazon.Chatbot
             options.ResponseUnmarshaller = GetAccountPreferencesResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetAccountPreferencesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetCustomAction
+
+
+        /// <summary>
+        /// Returns a custom action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCustomAction service method.</param>
+        /// 
+        /// <returns>The response from the GetCustomAction service method, as returned by Chatbot.</returns>
+        /// <exception cref="Amazon.Chatbot.Model.InternalServiceErrorException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.InvalidRequestException">
+        /// Your request input doesn't meet the constraints required by AWS Chatbot.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.ResourceNotFoundException">
+        /// We were unable to find the resource for your request
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.UnauthorizedException">
+        /// The request was rejected because it doesn't have valid credentials for the target
+        /// resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/GetCustomAction">REST API Reference for GetCustomAction Operation</seealso>
+        public virtual GetCustomActionResponse GetCustomAction(GetCustomActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCustomActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCustomActionResponseUnmarshaller.Instance;
+
+            return Invoke<GetCustomActionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a custom action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCustomAction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCustomAction service method, as returned by Chatbot.</returns>
+        /// <exception cref="Amazon.Chatbot.Model.InternalServiceErrorException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.InvalidRequestException">
+        /// Your request input doesn't meet the constraints required by AWS Chatbot.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.ResourceNotFoundException">
+        /// We were unable to find the resource for your request
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.UnauthorizedException">
+        /// The request was rejected because it doesn't have valid credentials for the target
+        /// resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/GetCustomAction">REST API Reference for GetCustomAction Operation</seealso>
+        public virtual Task<GetCustomActionResponse> GetCustomActionAsync(GetCustomActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCustomActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCustomActionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetCustomActionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1282,6 +1611,108 @@ namespace Amazon.Chatbot
             options.ResponseUnmarshaller = GetMicrosoftTeamsChannelConfigurationResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetMicrosoftTeamsChannelConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListAssociations
+
+
+        /// <summary>
+        /// Lists resources associated with a channel configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAssociations service method.</param>
+        /// 
+        /// <returns>The response from the ListAssociations service method, as returned by Chatbot.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/ListAssociations">REST API Reference for ListAssociations Operation</seealso>
+        public virtual ListAssociationsResponse ListAssociations(ListAssociationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAssociationsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists resources associated with a channel configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAssociations service method, as returned by Chatbot.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/ListAssociations">REST API Reference for ListAssociations Operation</seealso>
+        public virtual Task<ListAssociationsResponse> ListAssociationsAsync(ListAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAssociationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListAssociationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListCustomActions
+
+
+        /// <summary>
+        /// Lists custom actions defined in this account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCustomActions service method.</param>
+        /// 
+        /// <returns>The response from the ListCustomActions service method, as returned by Chatbot.</returns>
+        /// <exception cref="Amazon.Chatbot.Model.InternalServiceErrorException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.InvalidRequestException">
+        /// Your request input doesn't meet the constraints required by AWS Chatbot.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.UnauthorizedException">
+        /// The request was rejected because it doesn't have valid credentials for the target
+        /// resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/ListCustomActions">REST API Reference for ListCustomActions Operation</seealso>
+        public virtual ListCustomActionsResponse ListCustomActions(ListCustomActionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCustomActionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCustomActionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListCustomActionsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists custom actions defined in this account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCustomActions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCustomActions service method, as returned by Chatbot.</returns>
+        /// <exception cref="Amazon.Chatbot.Model.InternalServiceErrorException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.InvalidRequestException">
+        /// Your request input doesn't meet the constraints required by AWS Chatbot.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.UnauthorizedException">
+        /// The request was rejected because it doesn't have valid credentials for the target
+        /// resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/ListCustomActions">REST API Reference for ListCustomActions Operation</seealso>
+        public virtual Task<ListCustomActionsResponse> ListCustomActionsAsync(ListCustomActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCustomActionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCustomActionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListCustomActionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1772,6 +2203,73 @@ namespace Amazon.Chatbot
             options.ResponseUnmarshaller = UpdateChimeWebhookConfigurationResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateChimeWebhookConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateCustomAction
+
+
+        /// <summary>
+        /// Updates a custom action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCustomAction service method.</param>
+        /// 
+        /// <returns>The response from the UpdateCustomAction service method, as returned by Chatbot.</returns>
+        /// <exception cref="Amazon.Chatbot.Model.InternalServiceErrorException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.InvalidRequestException">
+        /// Your request input doesn't meet the constraints required by AWS Chatbot.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.ResourceNotFoundException">
+        /// We were unable to find the resource for your request
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.UnauthorizedException">
+        /// The request was rejected because it doesn't have valid credentials for the target
+        /// resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/UpdateCustomAction">REST API Reference for UpdateCustomAction Operation</seealso>
+        public virtual UpdateCustomActionResponse UpdateCustomAction(UpdateCustomActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateCustomActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCustomActionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateCustomActionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates a custom action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCustomAction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateCustomAction service method, as returned by Chatbot.</returns>
+        /// <exception cref="Amazon.Chatbot.Model.InternalServiceErrorException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.InvalidRequestException">
+        /// Your request input doesn't meet the constraints required by AWS Chatbot.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.ResourceNotFoundException">
+        /// We were unable to find the resource for your request
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.UnauthorizedException">
+        /// The request was rejected because it doesn't have valid credentials for the target
+        /// resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/UpdateCustomAction">REST API Reference for UpdateCustomAction Operation</seealso>
+        public virtual Task<UpdateCustomActionResponse> UpdateCustomActionAsync(UpdateCustomActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateCustomActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCustomActionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateCustomActionResponse>(request, options, cancellationToken);
         }
 
         #endregion

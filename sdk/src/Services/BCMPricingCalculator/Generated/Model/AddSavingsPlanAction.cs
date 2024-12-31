@@ -46,9 +46,9 @@ namespace Amazon.BCMPricingCalculator.Model
         /// </para>
         /// </summary>
         [AWSProperty(Max=1000000)]
-        public double Commitment
+        public double? Commitment
         {
-            get { return this._commitment.GetValueOrDefault(); }
+            get { return this._commitment; }
             set { this._commitment = value; }
         }
 

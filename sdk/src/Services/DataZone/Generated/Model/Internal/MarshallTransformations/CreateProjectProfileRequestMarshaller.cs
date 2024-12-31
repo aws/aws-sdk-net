@@ -64,55 +64,58 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 throw new AmazonDataZoneException("Request object does not have required field DomainIdentifier set");
             request.AddPathResource("{domainIdentifier}", StringUtils.FromString(publicRequest.DomainIdentifier));
             request.ResourcePath = "/v2/domains/{domainIdentifier}/project-profiles";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetDomainUnitIdentifier())
-                {
-                    context.Writer.WritePropertyName("domainUnitIdentifier");
-                    context.Writer.Write(publicRequest.DomainUnitIdentifier);
-                }
-
-                if(publicRequest.IsSetEnvironmentConfigurations())
-                {
-                    context.Writer.WritePropertyName("environmentConfigurations");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestEnvironmentConfigurationsListValue in publicRequest.EnvironmentConfigurations)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDescription())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = EnvironmentConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequestEnvironmentConfigurationsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetDomainUnitIdentifier())
+                    {
+                        context.Writer.WritePropertyName("domainUnitIdentifier");
+                        context.Writer.Write(publicRequest.DomainUnitIdentifier);
+                    }
+
+                    if(publicRequest.IsSetEnvironmentConfigurations())
+                    {
+                        context.Writer.WritePropertyName("environmentConfigurations");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestEnvironmentConfigurationsListValue in publicRequest.EnvironmentConfigurations)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = EnvironmentConfigurationMarshaller.Instance;
+                            marshaller.Marshall(publicRequestEnvironmentConfigurationsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetStatus())
+                    {
+                        context.Writer.WritePropertyName("status");
+                        context.Writer.Write(publicRequest.Status);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetStatus())
-                {
-                    context.Writer.WritePropertyName("status");
-                    context.Writer.Write(publicRequest.Status);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

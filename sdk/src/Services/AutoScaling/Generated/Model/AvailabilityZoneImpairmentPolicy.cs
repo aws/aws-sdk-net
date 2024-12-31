@@ -66,9 +66,9 @@ namespace Amazon.AutoScaling.Model
         ///  If <c>true</c>, enable zonal shift for your Auto Scaling group. 
         /// </para>
         /// </summary>
-        public bool ZonalShiftEnabled
+        public bool? ZonalShiftEnabled
         {
-            get { return this._zonalShiftEnabled.GetValueOrDefault(); }
+            get { return this._zonalShiftEnabled; }
             set { this._zonalShiftEnabled = value; }
         }
 

@@ -44,9 +44,9 @@ namespace Amazon.Bedrock.Model
         /// model.
         /// </para>
         /// </summary>
-        public int MaxResponseLengthForInference
+        public int? MaxResponseLengthForInference
         {
-            get { return this._maxResponseLengthForInference.GetValueOrDefault(); }
+            get { return this._maxResponseLengthForInference; }
             set { this._maxResponseLengthForInference = value; }
         }
 

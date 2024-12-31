@@ -61,11 +61,16 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             {
                 if(publicRequest.IsSetConsumerIdentifiers())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.ConsumerIdentifiers)
+                    if (publicRequest.ConsumerIdentifiers.Count == 0)
+                        request.Parameters.Add("ConsumerIdentifiers", "");
+                    else
                     {
-                        request.Parameters.Add("ConsumerIdentifiers" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.ConsumerIdentifiers)
+                         {
+                             request.Parameters.Add("ConsumerIdentifiers" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetNamespaceIdentifier())

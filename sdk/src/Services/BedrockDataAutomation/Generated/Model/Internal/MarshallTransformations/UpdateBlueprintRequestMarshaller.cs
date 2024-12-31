@@ -64,27 +64,30 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
                 throw new AmazonBedrockDataAutomationException("Request object does not have required field BlueprintArn set");
             request.AddPathResource("{blueprintArn}", StringUtils.FromString(publicRequest.BlueprintArn));
             request.ResourcePath = "/blueprints/{blueprintArn}/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBlueprintStage())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("blueprintStage");
-                    context.Writer.Write(publicRequest.BlueprintStage);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBlueprintStage())
+                    {
+                        context.Writer.WritePropertyName("blueprintStage");
+                        context.Writer.Write(publicRequest.BlueprintStage);
+                    }
+
+                    if(publicRequest.IsSetSchema())
+                    {
+                        context.Writer.WritePropertyName("schema");
+                        context.Writer.Write(publicRequest.Schema);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetSchema())
-                {
-                    context.Writer.WritePropertyName("schema");
-                    context.Writer.Write(publicRequest.Schema);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

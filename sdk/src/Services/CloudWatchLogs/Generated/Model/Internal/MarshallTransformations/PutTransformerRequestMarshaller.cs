@@ -63,37 +63,40 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetLogGroupIdentifier())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("logGroupIdentifier");
-                    context.Writer.Write(publicRequest.LogGroupIdentifier);
-                }
-
-                if(publicRequest.IsSetTransformerConfig())
-                {
-                    context.Writer.WritePropertyName("transformerConfig");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTransformerConfigListValue in publicRequest.TransformerConfig)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetLogGroupIdentifier())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ProcessorMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTransformerConfigListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("logGroupIdentifier");
+                        context.Writer.Write(publicRequest.LogGroupIdentifier);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetTransformerConfig())
+                    {
+                        context.Writer.WritePropertyName("transformerConfig");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTransformerConfigListValue in publicRequest.TransformerConfig)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = ProcessorMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTransformerConfigListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -64,82 +64,85 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 throw new AmazonIoTException("Request object does not have required field CommandId set");
             request.AddPathResource("{commandId}", StringUtils.FromString(publicRequest.CommandId));
             request.ResourcePath = "/commands/{commandId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetDisplayName())
-                {
-                    context.Writer.WritePropertyName("displayName");
-                    context.Writer.Write(publicRequest.DisplayName);
-                }
-
-                if(publicRequest.IsSetMandatoryParameters())
-                {
-                    context.Writer.WritePropertyName("mandatoryParameters");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestMandatoryParametersListValue in publicRequest.MandatoryParameters)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDescription())
                     {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetDisplayName())
+                    {
+                        context.Writer.WritePropertyName("displayName");
+                        context.Writer.Write(publicRequest.DisplayName);
+                    }
+
+                    if(publicRequest.IsSetMandatoryParameters())
+                    {
+                        context.Writer.WritePropertyName("mandatoryParameters");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestMandatoryParametersListValue in publicRequest.MandatoryParameters)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = CommandParameterMarshaller.Instance;
+                            marshaller.Marshall(publicRequestMandatoryParametersListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetNamespace())
+                    {
+                        context.Writer.WritePropertyName("namespace");
+                        context.Writer.Write(publicRequest.Namespace);
+                    }
+
+                    if(publicRequest.IsSetPayload())
+                    {
+                        context.Writer.WritePropertyName("payload");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = CommandParameterMarshaller.Instance;
-                        marshaller.Marshall(publicRequestMandatoryParametersListValue, context);
+                        var marshaller = CommandPayloadMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Payload, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetNamespace())
-                {
-                    context.Writer.WritePropertyName("namespace");
-                    context.Writer.Write(publicRequest.Namespace);
-                }
-
-                if(publicRequest.IsSetPayload())
-                {
-                    context.Writer.WritePropertyName("payload");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CommandPayloadMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Payload, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRoleArn())
-                {
-                    context.Writer.WritePropertyName("roleArn");
-                    context.Writer.Write(publicRequest.RoleArn);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    if(publicRequest.IsSetRoleArn())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("roleArn");
+                        context.Writer.Write(publicRequest.RoleArn);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

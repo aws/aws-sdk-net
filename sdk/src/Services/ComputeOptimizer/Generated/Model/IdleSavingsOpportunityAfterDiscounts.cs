@@ -70,9 +70,9 @@ namespace Amazon.ComputeOptimizer.Model
         /// Compute Optimizer's idle resource recommendations. This includes any applicable discounts.
         /// </para>
         /// </summary>
-        public double SavingsOpportunityPercentage
+        public double? SavingsOpportunityPercentage
         {
-            get { return this._savingsOpportunityPercentage.GetValueOrDefault(); }
+            get { return this._savingsOpportunityPercentage; }
             set { this._savingsOpportunityPercentage = value; }
         }
 

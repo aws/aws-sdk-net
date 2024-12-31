@@ -92,31 +92,17 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.DomainExecutionRole);
                     }
 
-<<<<<<< HEAD
+                    if(publicRequest.IsSetDomainVersion())
+                    {
+                        context.Writer.WritePropertyName("domainVersion");
+                        context.Writer.Write(publicRequest.DomainVersion);
+                    }
+
                     if(publicRequest.IsSetKmsKeyIdentifier())
                     {
                         context.Writer.WritePropertyName("kmsKeyIdentifier");
                         context.Writer.Write(publicRequest.KmsKeyIdentifier);
                     }
-||||||| Commit version number update changes
-                if(publicRequest.IsSetKmsKeyIdentifier())
-                {
-                    context.Writer.WritePropertyName("kmsKeyIdentifier");
-                    context.Writer.Write(publicRequest.KmsKeyIdentifier);
-                }
-=======
-                if(publicRequest.IsSetDomainVersion())
-                {
-                    context.Writer.WritePropertyName("domainVersion");
-                    context.Writer.Write(publicRequest.DomainVersion);
-                }
-
-                if(publicRequest.IsSetKmsKeyIdentifier())
-                {
-                    context.Writer.WritePropertyName("kmsKeyIdentifier");
-                    context.Writer.Write(publicRequest.KmsKeyIdentifier);
-                }
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
 
                     if(publicRequest.IsSetName())
                     {
@@ -124,28 +110,16 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.Name);
                     }
 
-<<<<<<< HEAD
+                    if(publicRequest.IsSetServiceRole())
+                    {
+                        context.Writer.WritePropertyName("serviceRole");
+                        context.Writer.Write(publicRequest.ServiceRole);
+                    }
+
                     if(publicRequest.IsSetSingleSignOn())
                     {
                         context.Writer.WritePropertyName("singleSignOn");
                         context.Writer.WriteObjectStart();
-||||||| Commit version number update changes
-                if(publicRequest.IsSetSingleSignOn())
-                {
-                    context.Writer.WritePropertyName("singleSignOn");
-                    context.Writer.WriteObjectStart();
-=======
-                if(publicRequest.IsSetServiceRole())
-                {
-                    context.Writer.WritePropertyName("serviceRole");
-                    context.Writer.Write(publicRequest.ServiceRole);
-                }
-
-                if(publicRequest.IsSetSingleSignOn())
-                {
-                    context.Writer.WritePropertyName("singleSignOn");
-                    context.Writer.WriteObjectStart();
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
 
                         var marshaller = SingleSignOnMarshaller.Instance;
                         marshaller.Marshall(publicRequest.SingleSignOn, context);

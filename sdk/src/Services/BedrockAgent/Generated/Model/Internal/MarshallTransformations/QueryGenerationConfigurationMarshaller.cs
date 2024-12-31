@@ -51,7 +51,7 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             if(requestObject.IsSetExecutionTimeoutSeconds())
             {
                 context.Writer.WritePropertyName("executionTimeoutSeconds");
-                context.Writer.Write(requestObject.ExecutionTimeoutSeconds);
+                context.Writer.Write(requestObject.ExecutionTimeoutSeconds.Value);
             }
 
             if(requestObject.IsSetGenerationContext())

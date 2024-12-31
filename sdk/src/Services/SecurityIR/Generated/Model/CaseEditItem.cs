@@ -58,9 +58,9 @@ namespace Amazon.SecurityIR.Model
         /// <summary>
         /// Gets and sets the property EventTimestamp.
         /// </summary>
-        public DateTime EventTimestamp
+        public DateTime? EventTimestamp
         {
-            get { return this._eventTimestamp.GetValueOrDefault(); }
+            get { return this._eventTimestamp; }
             set { this._eventTimestamp = value; }
         }
 

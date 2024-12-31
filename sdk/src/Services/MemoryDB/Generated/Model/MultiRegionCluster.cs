@@ -196,9 +196,9 @@ namespace Amazon.MemoryDB.Model
         /// The number of shards in the multi-Region cluster.
         /// </para>
         /// </summary>
-        public int NumberOfShards
+        public int? NumberOfShards
         {
-            get { return this._numberOfShards.GetValueOrDefault(); }
+            get { return this._numberOfShards; }
             set { this._numberOfShards = value; }
         }
 
@@ -232,9 +232,9 @@ namespace Amazon.MemoryDB.Model
         /// Indiciates if the multi-Region cluster is TLS enabled.
         /// </para>
         /// </summary>
-        public bool TLSEnabled
+        public bool? TLSEnabled
         {
-            get { return this._tlsEnabled.GetValueOrDefault(); }
+            get { return this._tlsEnabled; }
             set { this._tlsEnabled = value; }
         }
 

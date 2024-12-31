@@ -61,81 +61,84 @@ namespace Amazon.Chatbot.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/create-custom-action";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetActionName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ActionName");
-                    context.Writer.Write(publicRequest.ActionName);
-                }
-
-                if(publicRequest.IsSetAliasName())
-                {
-                    context.Writer.WritePropertyName("AliasName");
-                    context.Writer.Write(publicRequest.AliasName);
-                }
-
-                if(publicRequest.IsSetAttachments())
-                {
-                    context.Writer.WritePropertyName("Attachments");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAttachmentsListValue in publicRequest.Attachments)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetActionName())
                     {
+                        context.Writer.WritePropertyName("ActionName");
+                        context.Writer.Write(publicRequest.ActionName);
+                    }
+
+                    if(publicRequest.IsSetAliasName())
+                    {
+                        context.Writer.WritePropertyName("AliasName");
+                        context.Writer.Write(publicRequest.AliasName);
+                    }
+
+                    if(publicRequest.IsSetAttachments())
+                    {
+                        context.Writer.WritePropertyName("Attachments");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAttachmentsListValue in publicRequest.Attachments)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = CustomActionAttachmentMarshaller.Instance;
+                            marshaller.Marshall(publicRequestAttachmentsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetClientToken())
+                    {
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetDefinition())
+                    {
+                        context.Writer.WritePropertyName("Definition");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = CustomActionAttachmentMarshaller.Instance;
-                        marshaller.Marshall(publicRequestAttachmentsListValue, context);
+                        var marshaller = CustomActionDefinitionMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Definition, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetClientToken())
-                {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetDefinition())
-                {
-                    context.Writer.WritePropertyName("Definition");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CustomActionDefinitionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Definition, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    if(publicRequest.IsSetTags())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

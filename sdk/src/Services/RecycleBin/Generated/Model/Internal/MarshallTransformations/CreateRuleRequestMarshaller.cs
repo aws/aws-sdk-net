@@ -65,7 +65,6 @@ namespace Amazon.RecycleBin.Model.Internal.MarshallTransformations
             {
                 using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-<<<<<<< HEAD
                     JsonWriter writer = new JsonWriter(streamWriter);
                     writer.Validate = false;
                     writer.WriteObjectStart();
@@ -75,53 +74,22 @@ namespace Amazon.RecycleBin.Model.Internal.MarshallTransformations
                         context.Writer.WritePropertyName("Description");
                         context.Writer.Write(publicRequest.Description);
                     }
-||||||| Commit version number update changes
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
 
-                if(publicRequest.IsSetLockConfiguration())
-                {
-                    context.Writer.WritePropertyName("LockConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = LockConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.LockConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-=======
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetExcludeResourceTags())
-                {
-                    context.Writer.WritePropertyName("ExcludeResourceTags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestExcludeResourceTagsListValue in publicRequest.ExcludeResourceTags)
+                    if(publicRequest.IsSetExcludeResourceTags())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("ExcludeResourceTags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestExcludeResourceTagsListValue in publicRequest.ExcludeResourceTags)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = ResourceTagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestExcludeResourceTagsListValue, context);
+                            var marshaller = ResourceTagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestExcludeResourceTagsListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetLockConfiguration())
-                {
-                    context.Writer.WritePropertyName("LockConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = LockConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.LockConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
 
                     if(publicRequest.IsSetLockConfiguration())
                     {

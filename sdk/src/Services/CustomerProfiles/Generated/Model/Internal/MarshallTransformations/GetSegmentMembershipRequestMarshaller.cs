@@ -67,26 +67,29 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                 throw new AmazonCustomerProfilesException("Request object does not have required field SegmentDefinitionName set");
             request.AddPathResource("{SegmentDefinitionName}", StringUtils.FromString(publicRequest.SegmentDefinitionName));
             request.ResourcePath = "/domains/{DomainName}/segments/{SegmentDefinitionName}/membership";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetProfileIds())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ProfileIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestProfileIdsListValue in publicRequest.ProfileIds)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetProfileIds())
                     {
-                            context.Writer.Write(publicRequestProfileIdsListValue);
+                        context.Writer.WritePropertyName("ProfileIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestProfileIdsListValue in publicRequest.ProfileIds)
+                        {
+                                context.Writer.Write(publicRequestProfileIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

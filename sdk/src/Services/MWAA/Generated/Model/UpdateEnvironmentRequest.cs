@@ -213,16 +213,8 @@ namespace Amazon.MWAA.Model
         /// defaults to <c>1</c>.
         /// </para>
         /// </summary>
-<<<<<<< HEAD
-        [AWSProperty(Min=2)]
-        public int? MaxWebservers
-||||||| Commit version number update changes
-        [AWSProperty(Min=2)]
-        public int MaxWebservers
-=======
         [AWSProperty(Min=1)]
-        public int MaxWebservers
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
+        public int? MaxWebservers
         {
             get { return this._maxWebservers; }
             set { this._maxWebservers = value; }
@@ -274,16 +266,8 @@ namespace Amazon.MWAA.Model
         /// defaults to <c>1</c>.
         /// </para>
         /// </summary>
-<<<<<<< HEAD
-        [AWSProperty(Min=2)]
-        public int? MinWebservers
-||||||| Commit version number update changes
-        [AWSProperty(Min=2)]
-        public int MinWebservers
-=======
         [AWSProperty(Min=1)]
-        public int MinWebservers
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
+        public int? MinWebservers
         {
             get { return this._minWebservers; }
             set { this._minWebservers = value; }

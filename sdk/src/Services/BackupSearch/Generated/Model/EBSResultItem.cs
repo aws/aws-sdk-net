@@ -87,9 +87,9 @@ namespace Amazon.BackupSearch.Model
         /// in a search of Amazon EBS backup metadata.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -126,9 +126,9 @@ namespace Amazon.BackupSearch.Model
         /// in a search of Amazon EBS backup metadata.
         /// </para>
         /// </summary>
-        public long FileSize
+        public long? FileSize
         {
-            get { return this._fileSize.GetValueOrDefault(); }
+            get { return this._fileSize; }
             set { this._fileSize = value; }
         }
 
@@ -164,9 +164,9 @@ namespace Amazon.BackupSearch.Model
         /// returned in a search of Amazon EBS backup metadata.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedTime
+        public DateTime? LastModifiedTime
         {
-            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            get { return this._lastModifiedTime; }
             set { this._lastModifiedTime = value; }
         }
 

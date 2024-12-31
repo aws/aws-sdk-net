@@ -63,62 +63,65 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetEngineVersion())
+                    {
+                        context.Writer.WritePropertyName("EngineVersion");
+                        context.Writer.Write(publicRequest.EngineVersion);
+                    }
+
+                    if(publicRequest.IsSetMultiRegionClusterName())
+                    {
+                        context.Writer.WritePropertyName("MultiRegionClusterName");
+                        context.Writer.Write(publicRequest.MultiRegionClusterName);
+                    }
+
+                    if(publicRequest.IsSetMultiRegionParameterGroupName())
+                    {
+                        context.Writer.WritePropertyName("MultiRegionParameterGroupName");
+                        context.Writer.Write(publicRequest.MultiRegionParameterGroupName);
+                    }
+
+                    if(publicRequest.IsSetNodeType())
+                    {
+                        context.Writer.WritePropertyName("NodeType");
+                        context.Writer.Write(publicRequest.NodeType);
+                    }
+
+                    if(publicRequest.IsSetShardConfiguration())
+                    {
+                        context.Writer.WritePropertyName("ShardConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ShardConfigurationRequestMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ShardConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetUpdateStrategy())
+                    {
+                        context.Writer.WritePropertyName("UpdateStrategy");
+                        context.Writer.Write(publicRequest.UpdateStrategy);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetEngineVersion())
-                {
-                    context.Writer.WritePropertyName("EngineVersion");
-                    context.Writer.Write(publicRequest.EngineVersion);
-                }
-
-                if(publicRequest.IsSetMultiRegionClusterName())
-                {
-                    context.Writer.WritePropertyName("MultiRegionClusterName");
-                    context.Writer.Write(publicRequest.MultiRegionClusterName);
-                }
-
-                if(publicRequest.IsSetMultiRegionParameterGroupName())
-                {
-                    context.Writer.WritePropertyName("MultiRegionParameterGroupName");
-                    context.Writer.Write(publicRequest.MultiRegionParameterGroupName);
-                }
-
-                if(publicRequest.IsSetNodeType())
-                {
-                    context.Writer.WritePropertyName("NodeType");
-                    context.Writer.Write(publicRequest.NodeType);
-                }
-
-                if(publicRequest.IsSetShardConfiguration())
-                {
-                    context.Writer.WritePropertyName("ShardConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ShardConfigurationRequestMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ShardConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetUpdateStrategy())
-                {
-                    context.Writer.WritePropertyName("UpdateStrategy");
-                    context.Writer.Write(publicRequest.UpdateStrategy);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

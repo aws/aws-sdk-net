@@ -45,9 +45,9 @@ namespace Amazon.ConnectParticipant.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public long AttachmentSizeInBytes
+        public long? AttachmentSizeInBytes
         {
-            get { return this._attachmentSizeInBytes.GetValueOrDefault(); }
+            get { return this._attachmentSizeInBytes; }
             set { this._attachmentSizeInBytes = value; }
         }
 

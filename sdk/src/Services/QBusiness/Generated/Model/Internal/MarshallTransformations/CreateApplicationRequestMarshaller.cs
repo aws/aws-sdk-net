@@ -151,33 +151,8 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                         var marshaller = PersonalizationConfigurationMarshaller.Instance;
                         marshaller.Marshall(publicRequest.PersonalizationConfiguration, context);
 
-<<<<<<< HEAD
                         context.Writer.WriteObjectEnd();
                     }
-||||||| Commit version number update changes
-                if(publicRequest.IsSetRoleArn())
-                {
-                    context.Writer.WritePropertyName("roleArn");
-                    context.Writer.Write(publicRequest.RoleArn);
-                }
-=======
-                if(publicRequest.IsSetQuickSightConfiguration())
-                {
-                    context.Writer.WritePropertyName("quickSightConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = QuickSightConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.QuickSightConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRoleArn())
-                {
-                    context.Writer.WritePropertyName("roleArn");
-                    context.Writer.Write(publicRequest.RoleArn);
-                }
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
 
                     if(publicRequest.IsSetQAppsConfiguration())
                     {
@@ -186,6 +161,17 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
 
                         var marshaller = QAppsConfigurationMarshaller.Instance;
                         marshaller.Marshall(publicRequest.QAppsConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetQuickSightConfiguration())
+                    {
+                        context.Writer.WritePropertyName("quickSightConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = QuickSightConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.QuickSightConfiguration, context);
 
                         context.Writer.WriteObjectEnd();
                     }

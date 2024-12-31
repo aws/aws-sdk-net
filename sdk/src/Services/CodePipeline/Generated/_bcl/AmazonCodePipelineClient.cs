@@ -2627,7 +2627,9 @@ namespace Amazon.CodePipeline
 
 
         /// <summary>
-        /// Lists the rules for the condition.
+        /// Lists the rules for the condition. For more information about conditions, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/stage-conditions.html">Stage
+        /// conditions</a>. For more information about rules, see the <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/rule-reference.html">CodePipeline
+        /// rule reference</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRuleTypes service method.</param>
         /// 
@@ -2651,7 +2653,9 @@ namespace Amazon.CodePipeline
 
 
         /// <summary>
-        /// Lists the rules for the condition.
+        /// Lists the rules for the condition. For more information about conditions, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/stage-conditions.html">Stage
+        /// conditions</a>. For more information about rules, see the <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/rule-reference.html">CodePipeline
+        /// rule reference</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRuleTypes service method.</param>
         /// <param name="cancellationToken">

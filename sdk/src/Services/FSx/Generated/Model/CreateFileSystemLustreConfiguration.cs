@@ -326,9 +326,9 @@ namespace Amazon.FSx.Model
         /// (Default = <c>false</c>)
         /// </para>
         /// </summary>
-        public bool EfaEnabled
+        public bool? EfaEnabled
         {
-            get { return this._efaEnabled.GetValueOrDefault(); }
+            get { return this._efaEnabled; }
             set { this._efaEnabled = value; }
         }
 

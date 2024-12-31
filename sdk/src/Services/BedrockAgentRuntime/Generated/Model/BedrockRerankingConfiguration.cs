@@ -63,9 +63,9 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
-        public int NumberOfResults
+        public int? NumberOfResults
         {
-            get { return this._numberOfResults.GetValueOrDefault(); }
+            get { return this._numberOfResults; }
             set { this._numberOfResults = value; }
         }
 

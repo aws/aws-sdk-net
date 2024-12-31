@@ -46,9 +46,9 @@ namespace Amazon.EKS.Model
         /// load balancers in your Amazon Web Services account.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 

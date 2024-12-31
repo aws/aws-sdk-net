@@ -61,32 +61,35 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/optimize-prompt";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetInput())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("input");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetInput())
+                    {
+                        context.Writer.WritePropertyName("input");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = InputPromptMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Input, context);
+                        var marshaller = InputPromptMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Input, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTargetModelId())
+                    {
+                        context.Writer.WritePropertyName("targetModelId");
+                        context.Writer.Write(publicRequest.TargetModelId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTargetModelId())
-                {
-                    context.Writer.WritePropertyName("targetModelId");
-                    context.Writer.Write(publicRequest.TargetModelId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

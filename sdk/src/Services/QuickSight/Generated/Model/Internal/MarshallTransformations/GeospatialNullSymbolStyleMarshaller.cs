@@ -63,13 +63,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStrokeWidth())
             {
                 context.Writer.WritePropertyName("StrokeWidth");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.StrokeWidth))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.StrokeWidth.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.StrokeWidth));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.StrokeWidth.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.StrokeWidth);
+                    context.Writer.Write(requestObject.StrokeWidth.Value);
                 }
             }
 

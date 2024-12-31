@@ -61,81 +61,84 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/list-metrics";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetConditions())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("conditions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestConditionsListValue in publicRequest.Conditions)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetConditions())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("conditions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestConditionsListValue in publicRequest.Conditions)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = ConditionMarshaller.Instance;
-                        marshaller.Marshall(publicRequestConditionsListValue, context);
+                            var marshaller = ConditionMarshaller.Instance;
+                            marshaller.Marshall(publicRequestConditionsListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetDataSource())
-                {
-                    context.Writer.WritePropertyName("dataSource");
-                    context.Writer.Write(publicRequest.DataSource);
-                }
-
-                if(publicRequest.IsSetFields())
-                {
-                    context.Writer.WritePropertyName("fields");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestFieldsListValue in publicRequest.Fields)
+                    if(publicRequest.IsSetDataSource())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = FieldMarshaller.Instance;
-                        marshaller.Marshall(publicRequestFieldsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("dataSource");
+                        context.Writer.Write(publicRequest.DataSource);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("maxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("nextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetSorts())
-                {
-                    context.Writer.WritePropertyName("sorts");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSortsListValue in publicRequest.Sorts)
+                    if(publicRequest.IsSetFields())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("fields");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestFieldsListValue in publicRequest.Fields)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = SortMarshaller.Instance;
-                        marshaller.Marshall(publicRequestSortsListValue, context);
+                            var marshaller = FieldMarshaller.Instance;
+                            marshaller.Marshall(publicRequestFieldsListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("maxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("nextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetSorts())
+                    {
+                        context.Writer.WritePropertyName("sorts");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSortsListValue in publicRequest.Sorts)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = SortMarshaller.Instance;
+                            marshaller.Marshall(publicRequestSortsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

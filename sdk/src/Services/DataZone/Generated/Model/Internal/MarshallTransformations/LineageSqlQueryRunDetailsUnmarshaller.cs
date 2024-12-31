@@ -74,25 +74,25 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("numQueriesFailed", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NumQueriesFailed = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("queryEndTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.QueryEndTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("queryStartTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.QueryStartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("totalQueriesProcessed", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalQueriesProcessed = unmarshaller.Unmarshall(context);
                     continue;
                 }

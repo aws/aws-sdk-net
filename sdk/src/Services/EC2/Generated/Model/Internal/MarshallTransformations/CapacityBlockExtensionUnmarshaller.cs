@@ -69,13 +69,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("capacityBlockExtensionDurationHours", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.CapacityBlockExtensionDurationHours = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("capacityBlockExtensionEndDate", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.CapacityBlockExtensionEndDate = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -87,13 +87,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("capacityBlockExtensionPurchaseDate", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.CapacityBlockExtensionPurchaseDate = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("capacityBlockExtensionStartDate", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.CapacityBlockExtensionStartDate = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -117,7 +117,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("instanceCount", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.InstanceCount = unmarshaller.Unmarshall(context);
                         continue;
                     }

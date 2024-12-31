@@ -64,7 +64,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {   
                 xmlWriter.WriteStartElement("CreateAnycastIpListRequest", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
                 if(publicRequest.IsSetIpCount())
-                    xmlWriter.WriteElementString("IpCount", StringUtils.FromInt(publicRequest.IpCount));
+                    xmlWriter.WriteElementString("IpCount", StringUtils.FromInt(publicRequest.IpCount.Value));
 
                 if(publicRequest.IsSetName())
                     xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequest.Name));
@@ -82,11 +82,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         {
                             xmlWriter.WriteStartElement("Tag");
                             if(publicRequestTagsItemsValue.IsSetKey())
-                                xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestTagsItemsValue.Key));                 
-
+                                xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestTagsItemsValue.Key));
                             if(publicRequestTagsItemsValue.IsSetValue())
-                                xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestTagsItemsValue.Value));                 
-
+                                xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestTagsItemsValue.Value));
                             xmlWriter.WriteEndElement();
                         }
                         }            

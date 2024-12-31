@@ -174,14 +174,19 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         {
                             if(publicRequest.InstanceRequirements.BaselinePerformanceFactors.Cpu.IsSetReferences())
                             {
-                                int publicRequestInstanceRequirementsBaselinePerformanceFactorsCpulistValueIndex = 1;
-                                foreach(var publicRequestInstanceRequirementsBaselinePerformanceFactorsCpulistValue in publicRequest.InstanceRequirements.BaselinePerformanceFactors.Cpu.References)
+                                if (publicRequest.InstanceRequirements.BaselinePerformanceFactors.Cpu.References.Count == 0)
+                                    request.Parameters.Add("InstanceRequirements" + "." + "BaselinePerformanceFactors" + "." + "Cpu" + "." + "Reference", "");
+                                else
                                 {
-                                    if(publicRequestInstanceRequirementsBaselinePerformanceFactorsCpulistValue.IsSetInstanceFamily())
-                                    {
-                                        request.Parameters.Add("InstanceRequirements" + "." + "BaselinePerformanceFactors" + "." + "Cpu" + "." + "Reference" + "." + publicRequestInstanceRequirementsBaselinePerformanceFactorsCpulistValueIndex + "." + "InstanceFamily", StringUtils.FromString(publicRequestInstanceRequirementsBaselinePerformanceFactorsCpulistValue.InstanceFamily));
-                                    }
-                                    publicRequestInstanceRequirementsBaselinePerformanceFactorsCpulistValueIndex++;
+                                     int publicRequestInstanceRequirementsBaselinePerformanceFactorsCpulistValueIndex = 1;
+                                     foreach(var publicRequestInstanceRequirementsBaselinePerformanceFactorsCpulistValue in publicRequest.InstanceRequirements.BaselinePerformanceFactors.Cpu.References)
+                                     {
+                                        if(publicRequestInstanceRequirementsBaselinePerformanceFactorsCpulistValue.IsSetInstanceFamily())
+                                        {
+                                            request.Parameters.Add("InstanceRequirements" + "." + "BaselinePerformanceFactors" + "." + "Cpu" + "." + "Reference" + "." + publicRequestInstanceRequirementsBaselinePerformanceFactorsCpulistValueIndex + "." + "InstanceFamily", StringUtils.FromString(publicRequestInstanceRequirementsBaselinePerformanceFactorsCpulistValue.InstanceFamily));
+                                        }
+                                         publicRequestInstanceRequirementsBaselinePerformanceFactorsCpulistValueIndex++;
+                                     }
                                 }
                             }
                         }

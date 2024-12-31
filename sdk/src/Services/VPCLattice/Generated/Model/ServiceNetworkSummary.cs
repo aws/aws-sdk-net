@@ -142,9 +142,9 @@ namespace Amazon.VPCLattice.Model
         /// The number of resource configurations associated with a service network.
         /// </para>
         /// </summary>
-        public long NumberOfAssociatedResourceConfigurations
+        public long? NumberOfAssociatedResourceConfigurations
         {
-            get { return this._numberOfAssociatedResourceConfigurations.GetValueOrDefault(); }
+            get { return this._numberOfAssociatedResourceConfigurations; }
             set { this._numberOfAssociatedResourceConfigurations = value; }
         }
 

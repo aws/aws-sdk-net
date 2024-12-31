@@ -61,140 +61,143 @@ namespace Amazon.SecurityIR.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/v1/create-case";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetEngagementType())
-                {
-                    context.Writer.WritePropertyName("engagementType");
-                    context.Writer.Write(publicRequest.EngagementType);
-                }
-
-                if(publicRequest.IsSetImpactedAccounts())
-                {
-                    context.Writer.WritePropertyName("impactedAccounts");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestImpactedAccountsListValue in publicRequest.ImpactedAccounts)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientToken())
                     {
-                            context.Writer.Write(publicRequestImpactedAccountsListValue);
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetImpactedAwsRegions())
-                {
-                    context.Writer.WritePropertyName("impactedAwsRegions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestImpactedAwsRegionsListValue in publicRequest.ImpactedAwsRegions)
+                    else if(!(publicRequest.IsSetClientToken()))
                     {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetEngagementType())
+                    {
+                        context.Writer.WritePropertyName("engagementType");
+                        context.Writer.Write(publicRequest.EngagementType);
+                    }
+
+                    if(publicRequest.IsSetImpactedAccounts())
+                    {
+                        context.Writer.WritePropertyName("impactedAccounts");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestImpactedAccountsListValue in publicRequest.ImpactedAccounts)
+                        {
+                                context.Writer.Write(publicRequestImpactedAccountsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetImpactedAwsRegions())
+                    {
+                        context.Writer.WritePropertyName("impactedAwsRegions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestImpactedAwsRegionsListValue in publicRequest.ImpactedAwsRegions)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = ImpactedAwsRegionMarshaller.Instance;
+                            marshaller.Marshall(publicRequestImpactedAwsRegionsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetImpactedServices())
+                    {
+                        context.Writer.WritePropertyName("impactedServices");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestImpactedServicesListValue in publicRequest.ImpactedServices)
+                        {
+                                context.Writer.Write(publicRequestImpactedServicesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetReportedIncidentStartDate())
+                    {
+                        context.Writer.WritePropertyName("reportedIncidentStartDate");
+                        context.Writer.Write(publicRequest.ReportedIncidentStartDate.Value);
+                    }
+
+                    if(publicRequest.IsSetResolverType())
+                    {
+                        context.Writer.WritePropertyName("resolverType");
+                        context.Writer.Write(publicRequest.ResolverType);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
                         context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
 
-                        var marshaller = ImpactedAwsRegionMarshaller.Instance;
-                        marshaller.Marshall(publicRequestImpactedAwsRegionsListValue, context);
-
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetImpactedServices())
-                {
-                    context.Writer.WritePropertyName("impactedServices");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestImpactedServicesListValue in publicRequest.ImpactedServices)
+                    if(publicRequest.IsSetThreatActorIpAddresses())
                     {
-                            context.Writer.Write(publicRequestImpactedServicesListValue);
+                        context.Writer.WritePropertyName("threatActorIpAddresses");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestThreatActorIpAddressesListValue in publicRequest.ThreatActorIpAddresses)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = ThreatActorIpMarshaller.Instance;
+                            marshaller.Marshall(publicRequestThreatActorIpAddressesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetReportedIncidentStartDate())
-                {
-                    context.Writer.WritePropertyName("reportedIncidentStartDate");
-                    context.Writer.Write(publicRequest.ReportedIncidentStartDate);
-                }
-
-                if(publicRequest.IsSetResolverType())
-                {
-                    context.Writer.WritePropertyName("resolverType");
-                    context.Writer.Write(publicRequest.ResolverType);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    if(publicRequest.IsSetTitle())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("title");
+                        context.Writer.Write(publicRequest.Title);
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetThreatActorIpAddresses())
-                {
-                    context.Writer.WritePropertyName("threatActorIpAddresses");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestThreatActorIpAddressesListValue in publicRequest.ThreatActorIpAddresses)
+                    if(publicRequest.IsSetWatchers())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("watchers");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestWatchersListValue in publicRequest.Watchers)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = ThreatActorIpMarshaller.Instance;
-                        marshaller.Marshall(publicRequestThreatActorIpAddressesListValue, context);
+                            var marshaller = WatcherMarshaller.Instance;
+                            marshaller.Marshall(publicRequestWatchersListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTitle())
-                {
-                    context.Writer.WritePropertyName("title");
-                    context.Writer.Write(publicRequest.Title);
-                }
-
-                if(publicRequest.IsSetWatchers())
-                {
-                    context.Writer.WritePropertyName("watchers");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestWatchersListValue in publicRequest.Watchers)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = WatcherMarshaller.Instance;
-                        marshaller.Marshall(publicRequestWatchersListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -64,9 +64,9 @@ namespace Amazon.Connect.Model
         /// <c>False</c>.
         /// </para>
         /// </summary>
-        public bool IncludeRawMessage
+        public bool? IncludeRawMessage
         {
-            get { return this._includeRawMessage.GetValueOrDefault(); }
+            get { return this._includeRawMessage; }
             set { this._includeRawMessage = value; }
         }
 

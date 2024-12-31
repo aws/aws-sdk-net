@@ -176,9 +176,9 @@ namespace Amazon.SecurityIR.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime ReportedIncidentStartDate
+        public DateTime? ReportedIncidentStartDate
         {
-            get { return this._reportedIncidentStartDate.GetValueOrDefault(); }
+            get { return this._reportedIncidentStartDate; }
             set { this._reportedIncidentStartDate = value; }
         }
 

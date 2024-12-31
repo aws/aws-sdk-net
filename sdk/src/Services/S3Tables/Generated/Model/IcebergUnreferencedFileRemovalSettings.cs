@@ -45,9 +45,9 @@ namespace Amazon.S3Tables.Model
         /// </c></pre>
         /// </summary>
         [AWSProperty(Min=1, Max=2147483647)]
-        public int NonCurrentDays
+        public int? NonCurrentDays
         {
-            get { return this._nonCurrentDays.GetValueOrDefault(); }
+            get { return this._nonCurrentDays; }
             set { this._nonCurrentDays = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.S3Tables.Model
         /// <pre><c> &lt;/p&gt; </c></pre>
         /// </summary>
         [AWSProperty(Min=1, Max=2147483647)]
-        public int UnreferencedDays
+        public int? UnreferencedDays
         {
-            get { return this._unreferencedDays.GetValueOrDefault(); }
+            get { return this._unreferencedDays; }
             set { this._unreferencedDays = value; }
         }
 

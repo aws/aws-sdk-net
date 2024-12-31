@@ -148,9 +148,9 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/trace-events.html">Using
         /// trace</a>. <pre><c> &lt;/p&gt; </c></pre>
         /// </summary>
-        public bool EnableTrace
+        public bool? EnableTrace
         {
-            get { return this._enableTrace.GetValueOrDefault(); }
+            get { return this._enableTrace; }
             set { this._enableTrace = value; }
         }
 
@@ -166,9 +166,9 @@ namespace Amazon.BedrockAgentRuntime.Model
         ///  Specifies whether to end the session with the inline agent or not. 
         /// </para>
         /// </summary>
-        public bool EndSession
+        public bool? EndSession
         {
-            get { return this._endSession.GetValueOrDefault(); }
+            get { return this._endSession; }
             set { this._endSession = value; }
         }
 
@@ -233,9 +233,9 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=60, Max=3600)]
-        public int IdleSessionTTLInSeconds
+        public int? IdleSessionTTLInSeconds
         {
-            get { return this._idleSessionTTLInSeconds.GetValueOrDefault(); }
+            get { return this._idleSessionTTLInSeconds; }
             set { this._idleSessionTTLInSeconds = value; }
         }
 

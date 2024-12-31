@@ -51,19 +51,19 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBooleanValue())
             {
                 context.Writer.WritePropertyName("booleanValue");
-                context.Writer.Write(requestObject.BooleanValue);
+                context.Writer.Write(requestObject.BooleanValue.Value);
             }
 
             if(requestObject.IsSetNumberValue())
             {
                 context.Writer.WritePropertyName("numberValue");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.NumberValue))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.NumberValue.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.NumberValue));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.NumberValue.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.NumberValue);
+                    context.Writer.Write(requestObject.NumberValue.Value);
                 }
             }
 

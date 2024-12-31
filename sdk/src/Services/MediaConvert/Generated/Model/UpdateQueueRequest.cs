@@ -48,9 +48,9 @@ namespace Amazon.MediaConvert.Model
         /// concurrent jobs, per account. For reserved queues, update your reservation plan instead
         /// in order to increase your yearly commitment.
         /// </summary>
-        public int ConcurrentJobs
+        public int? ConcurrentJobs
         {
-            get { return this._concurrentJobs.GetValueOrDefault(); }
+            get { return this._concurrentJobs; }
             set { this._concurrentJobs = value; }
         }
 

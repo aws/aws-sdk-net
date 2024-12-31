@@ -44,9 +44,9 @@ namespace Amazon.MediaPackageV2.Model
         /// setting is valid only when <c>InputType</c> is <c>CMAF</c>.
         /// </para>
         /// </summary>
-        public bool PublishMQCS
+        public bool? PublishMQCS
         {
-            get { return this._publishMQCS.GetValueOrDefault(); }
+            get { return this._publishMQCS; }
             set { this._publishMQCS = value; }
         }
 

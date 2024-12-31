@@ -72,7 +72,7 @@ namespace Amazon.Invoicing.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("LastModified", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastModified = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -90,7 +90,7 @@ namespace Amazon.Invoicing.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("TaxInheritanceDisabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.TaxInheritanceDisabled = unmarshaller.Unmarshall(context);
                     continue;
                 }

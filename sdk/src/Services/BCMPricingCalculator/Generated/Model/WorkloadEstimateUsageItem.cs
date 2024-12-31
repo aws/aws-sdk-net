@@ -53,9 +53,9 @@ namespace Amazon.BCMPricingCalculator.Model
         ///  The estimated cost for this usage item. 
         /// </para>
         /// </summary>
-        public double Cost
+        public double? Cost
         {
-            get { return this._cost.GetValueOrDefault(); }
+            get { return this._cost; }
             set { this._cost = value; }
         }
 

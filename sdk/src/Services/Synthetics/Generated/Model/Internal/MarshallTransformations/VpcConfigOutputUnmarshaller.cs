@@ -68,7 +68,7 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Ipv6AllowedForDualStack", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Ipv6AllowedForDualStack = unmarshaller.Unmarshall(context);
                     continue;
                 }

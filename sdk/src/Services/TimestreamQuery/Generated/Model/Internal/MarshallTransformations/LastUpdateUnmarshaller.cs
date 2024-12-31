@@ -80,7 +80,7 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("TargetQueryTCU", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TargetQueryTCU = unmarshaller.Unmarshall(context);
                     continue;
                 }

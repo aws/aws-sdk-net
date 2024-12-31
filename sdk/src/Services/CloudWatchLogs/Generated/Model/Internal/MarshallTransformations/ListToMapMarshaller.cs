@@ -51,7 +51,7 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFlatten())
             {
                 context.Writer.WritePropertyName("flatten");
-                context.Writer.Write(requestObject.Flatten);
+                context.Writer.Write(requestObject.Flatten.Value);
             }
 
             if(requestObject.IsSetFlattenedElement())

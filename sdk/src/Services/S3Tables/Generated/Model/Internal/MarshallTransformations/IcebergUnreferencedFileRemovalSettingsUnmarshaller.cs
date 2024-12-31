@@ -68,13 +68,13 @@ namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("nonCurrentDays", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NonCurrentDays = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("unreferencedDays", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.UnreferencedDays = unmarshaller.Unmarshall(context);
                     continue;
                 }

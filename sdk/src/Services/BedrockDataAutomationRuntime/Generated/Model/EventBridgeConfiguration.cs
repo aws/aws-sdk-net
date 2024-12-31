@@ -43,9 +43,9 @@ namespace Amazon.BedrockDataAutomationRuntime.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool EventBridgeEnabled
+        public bool? EventBridgeEnabled
         {
-            get { return this._eventBridgeEnabled.GetValueOrDefault(); }
+            get { return this._eventBridgeEnabled; }
             set { this._eventBridgeEnabled = value; }
         }
 

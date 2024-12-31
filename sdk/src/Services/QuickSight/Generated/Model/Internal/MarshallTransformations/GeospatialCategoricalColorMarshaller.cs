@@ -67,13 +67,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDefaultOpacity())
             {
                 context.Writer.WritePropertyName("DefaultOpacity");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.DefaultOpacity))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.DefaultOpacity.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.DefaultOpacity));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.DefaultOpacity.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.DefaultOpacity);
+                    context.Writer.Write(requestObject.DefaultOpacity.Value);
                 }
             }
 

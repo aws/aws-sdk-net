@@ -68,13 +68,13 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("MaximumPollers", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaximumPollers = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MinimumPollers", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MinimumPollers = unmarshaller.Unmarshall(context);
                     continue;
                 }

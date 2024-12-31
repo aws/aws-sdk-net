@@ -89,26 +89,16 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
                         context.Writer.Write(publicRequest.Name);
                     }
 
+                    if(publicRequest.IsSetWave())
+                    {
+                        context.Writer.WritePropertyName("wave");
+                        context.Writer.Write(publicRequest.Wave);
+                    }
+
                     writer.WriteObjectEnd();
                 }
 
-<<<<<<< HEAD
                 request.Content = memoryStream.ToArray();
-||||||| Commit version number update changes
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
-=======
-                if(publicRequest.IsSetWave())
-                {
-                    context.Writer.WritePropertyName("wave");
-                    context.Writer.Write(publicRequest.Wave);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
             }
 
 

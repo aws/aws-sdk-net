@@ -51,7 +51,7 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAscending())
             {
                 context.Writer.WritePropertyName("ascending");
-                context.Writer.Write(requestObject.Ascending);
+                context.Writer.Write(requestObject.Ascending.Value);
             }
 
             if(requestObject.IsSetField())

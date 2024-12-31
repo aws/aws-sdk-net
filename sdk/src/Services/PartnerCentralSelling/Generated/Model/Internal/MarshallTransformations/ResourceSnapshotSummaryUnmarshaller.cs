@@ -98,7 +98,7 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Revision", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Revision = unmarshaller.Unmarshall(context);
                     continue;
                 }

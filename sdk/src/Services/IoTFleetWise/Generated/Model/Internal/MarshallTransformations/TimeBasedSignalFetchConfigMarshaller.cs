@@ -51,7 +51,7 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             if(requestObject.IsSetExecutionFrequencyMs())
             {
                 context.Writer.WritePropertyName("executionFrequencyMs");
-                context.Writer.Write(requestObject.ExecutionFrequencyMs);
+                context.Writer.Write(requestObject.ExecutionFrequencyMs.Value);
             }
 
         }

@@ -80,7 +80,7 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRetentionDays())
             {
                 context.Writer.WritePropertyName("retentionDays");
-                context.Writer.Write(requestObject.RetentionDays);
+                context.Writer.Write(requestObject.RetentionDays.Value);
             }
 
         }

@@ -153,7 +153,7 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             if(requestObject.IsSetValidateCredentials())
             {
                 context.Writer.WritePropertyName("validateCredentials");
-                context.Writer.Write(requestObject.ValidateCredentials);
+                context.Writer.Write(requestObject.ValidateCredentials.Value);
             }
 
             if(requestObject.IsSetValidateForComputeEnvironments())

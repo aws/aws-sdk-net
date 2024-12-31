@@ -54,7 +54,7 @@ namespace Amazon.QApps.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("appVersion", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.AppVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -66,7 +66,7 @@ namespace Amazon.QApps.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("latestPublishedAppVersion", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.LatestPublishedAppVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -96,7 +96,7 @@ namespace Amazon.QApps.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("userIsHost", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.UserIsHost = unmarshaller.Unmarshall(context);
                     continue;
                 }

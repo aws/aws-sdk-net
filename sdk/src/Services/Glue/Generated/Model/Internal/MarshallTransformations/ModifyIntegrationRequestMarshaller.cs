@@ -63,39 +63,42 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDataFilter())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DataFilter");
-                    context.Writer.Write(publicRequest.DataFilter);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDataFilter())
+                    {
+                        context.Writer.WritePropertyName("DataFilter");
+                        context.Writer.Write(publicRequest.DataFilter);
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetIntegrationIdentifier())
+                    {
+                        context.Writer.WritePropertyName("IntegrationIdentifier");
+                        context.Writer.Write(publicRequest.IntegrationIdentifier);
+                    }
+
+                    if(publicRequest.IsSetIntegrationName())
+                    {
+                        context.Writer.WritePropertyName("IntegrationName");
+                        context.Writer.Write(publicRequest.IntegrationName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetIntegrationIdentifier())
-                {
-                    context.Writer.WritePropertyName("IntegrationIdentifier");
-                    context.Writer.Write(publicRequest.IntegrationIdentifier);
-                }
-
-                if(publicRequest.IsSetIntegrationName())
-                {
-                    context.Writer.WritePropertyName("IntegrationName");
-                    context.Writer.Write(publicRequest.IntegrationName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

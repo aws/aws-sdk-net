@@ -51,7 +51,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetValueInteger())
             {
                 context.Writer.WritePropertyName("ValueInteger");
-                context.Writer.Write(requestObject.ValueInteger);
+                context.Writer.Write(requestObject.ValueInteger.Value);
             }
 
             if(requestObject.IsSetValueMap())

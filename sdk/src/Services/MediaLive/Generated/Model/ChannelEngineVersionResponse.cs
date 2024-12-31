@@ -40,9 +40,9 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property ExpirationDate. The UTC time when the version expires.
         /// </summary>
-        public DateTime ExpirationDate
+        public DateTime? ExpirationDate
         {
-            get { return this._expirationDate.GetValueOrDefault(); }
+            get { return this._expirationDate; }
             set { this._expirationDate = value; }
         }
 

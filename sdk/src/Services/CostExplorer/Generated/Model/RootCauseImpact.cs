@@ -43,9 +43,9 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public double Contribution
+        public double? Contribution
         {
-            get { return this._contribution.GetValueOrDefault(); }
+            get { return this._contribution; }
             set { this._contribution = value; }
         }
 

@@ -51,7 +51,7 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPublishMQCS())
             {
                 context.Writer.WritePropertyName("PublishMQCS");
-                context.Writer.Write(requestObject.PublishMQCS);
+                context.Writer.Write(requestObject.PublishMQCS.Value);
             }
 
         }

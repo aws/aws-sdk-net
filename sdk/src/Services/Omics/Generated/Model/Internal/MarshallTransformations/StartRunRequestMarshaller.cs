@@ -63,38 +63,24 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
             request.ResourcePath = "/run";
             using (MemoryStream memoryStream = new MemoryStream())
             {
-<<<<<<< HEAD
                 using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-||||||| Commit version number update changes
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetLogLevel())
-=======
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCacheBehavior())
-                {
-                    context.Writer.WritePropertyName("cacheBehavior");
-                    context.Writer.Write(publicRequest.CacheBehavior);
-                }
-
-                if(publicRequest.IsSetCacheId())
-                {
-                    context.Writer.WritePropertyName("cacheId");
-                    context.Writer.Write(publicRequest.CacheId);
-                }
-
-                if(publicRequest.IsSetLogLevel())
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
                 {
                     JsonWriter writer = new JsonWriter(streamWriter);
                     writer.Validate = false;
                     writer.WriteObjectStart();
                     var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCacheBehavior())
+                    {
+                        context.Writer.WritePropertyName("cacheBehavior");
+                        context.Writer.Write(publicRequest.CacheBehavior);
+                    }
+
+                    if(publicRequest.IsSetCacheId())
+                    {
+                        context.Writer.WritePropertyName("cacheId");
+                        context.Writer.Write(publicRequest.CacheId);
+                    }
+
                     if(publicRequest.IsSetLogLevel())
                     {
                         context.Writer.WritePropertyName("logLevel");

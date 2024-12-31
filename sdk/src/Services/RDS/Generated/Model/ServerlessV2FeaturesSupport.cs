@@ -49,9 +49,9 @@ namespace Amazon.RDS.Model
         /// cluster might be <c>256</c> or <c>128</c>. 
         /// </para>
         /// </summary>
-        public double MaxCapacity
+        public double? MaxCapacity
         {
-            get { return this._maxCapacity.GetValueOrDefault(); }
+            get { return this._maxCapacity; }
             set { this._maxCapacity = value; }
         }
 
@@ -68,9 +68,9 @@ namespace Amazon.RDS.Model
         /// feature of Aurora Serverless v2.
         /// </para>
         /// </summary>
-        public double MinCapacity
+        public double? MinCapacity
         {
-            get { return this._minCapacity.GetValueOrDefault(); }
+            get { return this._minCapacity; }
             set { this._minCapacity = value; }
         }
 

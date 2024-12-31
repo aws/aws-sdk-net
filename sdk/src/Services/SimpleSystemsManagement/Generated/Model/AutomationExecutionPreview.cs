@@ -123,9 +123,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// preview.
         /// </para>
         /// </summary>
-        public int TotalAccounts
+        public int? TotalAccounts
         {
-            get { return this._totalAccounts.GetValueOrDefault(); }
+            get { return this._totalAccounts; }
             set { this._totalAccounts = value; }
         }
 

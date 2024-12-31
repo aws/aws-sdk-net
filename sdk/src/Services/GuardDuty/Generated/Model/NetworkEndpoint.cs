@@ -157,9 +157,9 @@ namespace Amazon.GuardDuty.Model
         /// The port number associated with the network endpoint.
         /// </para>
         /// </summary>
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 

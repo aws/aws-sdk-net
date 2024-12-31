@@ -105,9 +105,9 @@ namespace Amazon.DataZone.Model
         /// The idle timeout in the Spark Amazon Web Services Glue properties. 
         /// </para>
         /// </summary>
-        public int IdleTimeout
+        public int? IdleTimeout
         {
-            get { return this._idleTimeout.GetValueOrDefault(); }
+            get { return this._idleTimeout; }
             set { this._idleTimeout = value; }
         }
 
@@ -141,9 +141,9 @@ namespace Amazon.DataZone.Model
         /// The number of workers in the Spark Amazon Web Services Glue properties. 
         /// </para>
         /// </summary>
-        public int NumberOfWorkers
+        public int? NumberOfWorkers
         {
-            get { return this._numberOfWorkers.GetValueOrDefault(); }
+            get { return this._numberOfWorkers; }
             set { this._numberOfWorkers = value; }
         }
 

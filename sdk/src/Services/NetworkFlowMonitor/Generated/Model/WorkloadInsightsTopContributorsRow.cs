@@ -195,9 +195,9 @@ namespace Amazon.NetworkFlowMonitor.Model
         /// The value for a metric.
         /// </para>
         /// </summary>
-        public long Value
+        public long? Value
         {
-            get { return this._value.GetValueOrDefault(); }
+            get { return this._value; }
             set { this._value = value; }
         }
 

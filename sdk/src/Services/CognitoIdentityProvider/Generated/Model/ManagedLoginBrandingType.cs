@@ -79,9 +79,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// like ISO 8601 or a Java <c>Date</c> object.
         /// </para>
         /// </summary>
-        public DateTime CreationDate
+        public DateTime? CreationDate
         {
-            get { return this._creationDate.GetValueOrDefault(); }
+            get { return this._creationDate; }
             set { this._creationDate = value; }
         }
 
@@ -99,9 +99,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// like ISO 8601 or a Java <c>Date</c> object.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedDate
+        public DateTime? LastModifiedDate
         {
-            get { return this._lastModifiedDate.GetValueOrDefault(); }
+            get { return this._lastModifiedDate; }
             set { this._lastModifiedDate = value; }
         }
 
@@ -161,9 +161,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// and <c>Assets</c> in the request.
         /// </para>
         /// </summary>
-        public bool UseCognitoProvidedValues
+        public bool? UseCognitoProvidedValues
         {
-            get { return this._useCognitoProvidedValues.GetValueOrDefault(); }
+            get { return this._useCognitoProvidedValues; }
             set { this._useCognitoProvidedValues = value; }
         }
 

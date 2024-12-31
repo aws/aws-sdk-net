@@ -57,7 +57,7 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIncludeChildDomainUnits())
             {
                 context.Writer.WritePropertyName("includeChildDomainUnits");
-                context.Writer.Write(requestObject.IncludeChildDomainUnits);
+                context.Writer.Write(requestObject.IncludeChildDomainUnits.Value);
             }
 
         }

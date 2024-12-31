@@ -64,21 +64,24 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
                 throw new AmazonBedrockDataAutomationException("Request object does not have required field ProjectArn set");
             request.AddPathResource("{projectArn}", StringUtils.FromString(publicRequest.ProjectArn));
             request.ResourcePath = "/data-automation-projects/{projectArn}/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetProjectStage())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("projectStage");
-                    context.Writer.Write(publicRequest.ProjectStage);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetProjectStage())
+                    {
+                        context.Writer.WritePropertyName("projectStage");
+                        context.Writer.Write(publicRequest.ProjectStage);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

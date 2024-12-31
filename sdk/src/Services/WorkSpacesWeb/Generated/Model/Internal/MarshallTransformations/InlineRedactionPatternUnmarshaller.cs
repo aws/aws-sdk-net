@@ -74,7 +74,7 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("confidenceLevel", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ConfidenceLevel = unmarshaller.Unmarshall(context);
                     continue;
                 }

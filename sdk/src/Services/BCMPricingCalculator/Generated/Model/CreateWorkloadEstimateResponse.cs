@@ -69,9 +69,9 @@ namespace Amazon.BCMPricingCalculator.Model
         ///  The timestamp when the workload estimate was created. 
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -87,9 +87,9 @@ namespace Amazon.BCMPricingCalculator.Model
         ///  The timestamp when the workload estimate will expire. 
         /// </para>
         /// </summary>
-        public DateTime ExpiresAt
+        public DateTime? ExpiresAt
         {
-            get { return this._expiresAt.GetValueOrDefault(); }
+            get { return this._expiresAt; }
             set { this._expiresAt = value; }
         }
 
@@ -161,9 +161,9 @@ namespace Amazon.BCMPricingCalculator.Model
         ///  The timestamp of the pricing rates used for the estimate. 
         /// </para>
         /// </summary>
-        public DateTime RateTimestamp
+        public DateTime? RateTimestamp
         {
-            get { return this._rateTimestamp.GetValueOrDefault(); }
+            get { return this._rateTimestamp; }
             set { this._rateTimestamp = value; }
         }
 
@@ -215,9 +215,9 @@ namespace Amazon.BCMPricingCalculator.Model
         ///  The total estimated cost for the workload. 
         /// </para>
         /// </summary>
-        public double TotalCost
+        public double? TotalCost
         {
-            get { return this._totalCost.GetValueOrDefault(); }
+            get { return this._totalCost; }
             set { this._totalCost = value; }
         }
 

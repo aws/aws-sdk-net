@@ -60,19 +60,19 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("IndexCompletionDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.IndexCompletionDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("IndexCreationDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.IndexCreationDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("IndexDeletionDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.IndexDeletionDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -102,7 +102,7 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("TotalItemsIndexed", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.TotalItemsIndexed = unmarshaller.Unmarshall(context);
                     continue;
                 }

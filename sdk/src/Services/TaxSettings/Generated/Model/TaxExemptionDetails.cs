@@ -46,9 +46,9 @@ namespace Amazon.TaxSettings.Model
         /// management account. 
         /// </para>
         /// </summary>
-        public bool HeritageObtainedDetails
+        public bool? HeritageObtainedDetails
         {
-            get { return this._heritageObtainedDetails.GetValueOrDefault(); }
+            get { return this._heritageObtainedDetails; }
             set { this._heritageObtainedDetails = value; }
         }
 

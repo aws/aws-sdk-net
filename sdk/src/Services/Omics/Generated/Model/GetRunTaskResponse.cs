@@ -56,9 +56,9 @@ namespace Amazon.Omics.Model
         /// Set to true if AWS HealthOmics found a matching entry in the run cache for this task.
         /// </para>
         /// </summary>
-        public bool CacheHit
+        public bool? CacheHit
         {
-            get { return this._cacheHit.GetValueOrDefault(); }
+            get { return this._cacheHit; }
             set { this._cacheHit = value; }
         }
 

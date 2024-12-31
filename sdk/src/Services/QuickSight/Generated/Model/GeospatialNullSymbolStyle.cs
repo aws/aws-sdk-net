@@ -81,9 +81,9 @@ namespace Amazon.QuickSight.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public double StrokeWidth
+        public double? StrokeWidth
         {
-            get { return this._strokeWidth.GetValueOrDefault(); }
+            get { return this._strokeWidth; }
             set { this._strokeWidth = value; }
         }
 

@@ -45,9 +45,9 @@ namespace Amazon.BCMPricingCalculator.Model
         ///  The new expiration date for the bill estimate. 
         /// </para>
         /// </summary>
-        public DateTime ExpiresAt
+        public DateTime? ExpiresAt
         {
-            get { return this._expiresAt.GetValueOrDefault(); }
+            get { return this._expiresAt; }
             set { this._expiresAt = value; }
         }
 

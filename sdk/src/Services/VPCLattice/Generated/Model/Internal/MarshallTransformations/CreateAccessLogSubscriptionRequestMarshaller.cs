@@ -92,27 +92,13 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.ResourceIdentifier);
                     }
 
-<<<<<<< HEAD
-                    if(publicRequest.IsSetTags())
-||||||| Commit version number update changes
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
-=======
-                if(publicRequest.IsSetServiceNetworkLogType())
-                {
-                    context.Writer.WritePropertyName("serviceNetworkLogType");
-                    context.Writer.Write(publicRequest.ServiceNetworkLogType);
-                }
+                    if(publicRequest.IsSetServiceNetworkLogType())
+                    {
+                        context.Writer.WritePropertyName("serviceNetworkLogType");
+                        context.Writer.Write(publicRequest.ServiceNetworkLogType);
+                    }
 
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
->>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
+                    if(publicRequest.IsSetTags())
                     {
                         context.Writer.WritePropertyName("tags");
                         context.Writer.WriteObjectStart();

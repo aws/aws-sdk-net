@@ -223,9 +223,9 @@ namespace Amazon.EC2.Model
         /// where the service is hosted.
         /// </para>
         /// </summary>
-        public bool RemoteAccessEnabled
+        public bool? RemoteAccessEnabled
         {
-            get { return this._remoteAccessEnabled.GetValueOrDefault(); }
+            get { return this._remoteAccessEnabled; }
             set { this._remoteAccessEnabled = value; }
         }
 

@@ -47,9 +47,9 @@ namespace Amazon.S3Tables.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2147483647)]
-        public int MaxSnapshotAgeHours
+        public int? MaxSnapshotAgeHours
         {
-            get { return this._maxSnapshotAgeHours.GetValueOrDefault(); }
+            get { return this._maxSnapshotAgeHours; }
             set { this._maxSnapshotAgeHours = value; }
         }
 
@@ -66,9 +66,9 @@ namespace Amazon.S3Tables.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2147483647)]
-        public int MinSnapshotsToKeep
+        public int? MinSnapshotsToKeep
         {
-            get { return this._minSnapshotsToKeep.GetValueOrDefault(); }
+            get { return this._minSnapshotsToKeep; }
             set { this._minSnapshotsToKeep = value; }
         }
 

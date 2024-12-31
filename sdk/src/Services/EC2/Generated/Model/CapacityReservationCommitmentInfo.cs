@@ -45,9 +45,9 @@ namespace Amazon.EC2.Model
         /// count or cancel the Capacity Reservation before this date and time.
         /// </para>
         /// </summary>
-        public DateTime CommitmentEndDate
+        public DateTime? CommitmentEndDate
         {
-            get { return this._commitmentEndDate.GetValueOrDefault(); }
+            get { return this._commitmentEndDate; }
             set { this._commitmentEndDate = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.EC2.Model
         /// Reservation.
         /// </para>
         /// </summary>
-        public int CommittedInstanceCount
+        public int? CommittedInstanceCount
         {
-            get { return this._committedInstanceCount.GetValueOrDefault(); }
+            get { return this._committedInstanceCount; }
             set { this._committedInstanceCount = value; }
         }
 
