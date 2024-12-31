@@ -70,6 +70,7 @@ namespace Amazon.DynamoDBv2.Model
         private BillingMode _billingMode;
         private bool? _deletionProtectionEnabled;
         private List<GlobalSecondaryIndexUpdate> _globalSecondaryIndexUpdates = AWSConfigs.InitializeCollections ? new List<GlobalSecondaryIndexUpdate>() : null;
+        private MultiRegionConsistency _multiRegionConsistency;
         private OnDemandThroughput _onDemandThroughput;
         private ProvisionedThroughput _provisionedThroughput;
         private List<ReplicationGroupUpdate> _replicaUpdates = AWSConfigs.InitializeCollections ? new List<ReplicationGroupUpdate>() : null;
@@ -208,6 +209,52 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetGlobalSecondaryIndexUpdates()
         {
             return this._globalSecondaryIndexUpdates != null && (this._globalSecondaryIndexUpdates.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MultiRegionConsistency. 
+        /// <para>
+        /// Specifies the consistency mode for a new global table. This parameter is only valid
+        /// when you create a global table by specifying one or more <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ReplicationGroupUpdate.html#DDB-Type-ReplicationGroupUpdate-Create">Create</a>
+        /// actions in the <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateTable.html#DDB-UpdateTable-request-ReplicaUpdates">ReplicaUpdates</a>
+        /// action list.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify one of the following consistency modes:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>EVENTUAL</c>: Configures a new global table for multi-Region eventual consistency.
+        /// This is the default consistency mode for global tables.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>STRONG</c>: Configures a new global table for multi-Region strong consistency
+        /// (preview).
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Multi-Region strong consistency (MRSC) is a new DynamoDB global tables capability
+        /// currently available in preview mode. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/PreviewFeatures.html#multi-region-strong-consistency-gt">Global
+        /// tables multi-Region strong consistency</a>.
+        /// </para>
+        ///  </note> </li> </ul> 
+        /// <para>
+        /// If you don't specify this parameter, the global table consistency mode defaults to
+        /// <c>EVENTUAL</c>.
+        /// </para>
+        /// </summary>
+        public MultiRegionConsistency MultiRegionConsistency
+        {
+            get { return this._multiRegionConsistency; }
+            set { this._multiRegionConsistency = value; }
+        }
+
+        // Check to see if MultiRegionConsistency property is set
+        internal bool IsSetMultiRegionConsistency()
+        {
+            return this._multiRegionConsistency != null;
         }
 
         /// <summary>

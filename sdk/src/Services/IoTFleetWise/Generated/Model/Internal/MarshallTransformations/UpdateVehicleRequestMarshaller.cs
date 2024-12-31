@@ -109,7 +109,46 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.VehicleName);
                     }
 
+<<<<<<< HEAD
                     writer.WriteObjectEnd();
+||||||| Commit version number update changes
+                if(publicRequest.IsSetVehicleName())
+                {
+                    context.Writer.WritePropertyName("vehicleName");
+                    context.Writer.Write(publicRequest.VehicleName);
+=======
+                if(publicRequest.IsSetStateTemplatesToAdd())
+                {
+                    context.Writer.WritePropertyName("stateTemplatesToAdd");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestStateTemplatesToAddListValue in publicRequest.StateTemplatesToAdd)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = StateTemplateAssociationMarshaller.Instance;
+                        marshaller.Marshall(publicRequestStateTemplatesToAddListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetStateTemplatesToRemove())
+                {
+                    context.Writer.WritePropertyName("stateTemplatesToRemove");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestStateTemplatesToRemoveListValue in publicRequest.StateTemplatesToRemove)
+                    {
+                            context.Writer.Write(publicRequestStateTemplatesToRemoveListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetVehicleName())
+                {
+                    context.Writer.WritePropertyName("vehicleName");
+                    context.Writer.Write(publicRequest.VehicleName);
+>>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
                 }
 
                 request.Content = memoryStream.ToArray();

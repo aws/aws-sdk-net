@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// The key value store entity was not found.
+    /// The entity was not found.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

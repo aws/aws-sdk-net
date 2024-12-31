@@ -40,6 +40,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.CloudFront.IAmazonCloudFront.CreateVpcOrigin(Amazon.CloudFront.Model.CreateVpcOriginRequest)" />
+            <member name="M:Amazon.CloudFront.AmazonCloudFrontClient.CreateVpcOrigin(Amazon.CloudFront.Model.CreateVpcOriginRequest)" />
+            <member name="T:Amazon.CloudFront.Model.CreateVpcOriginRequest" />
+            <member name="T:Amazon.CloudFront.Model.CreateVpcOriginResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following command creates a VPC origin:
+                </para>
+                <code
+                    title="To create a VPC origin"
+                    source=".\AWSSDKDocSamples\CloudFront\CloudFront.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.CloudFront.IAmazonCloudFront.DeleteKeyValueStore(Amazon.CloudFront.Model.DeleteKeyValueStoreRequest)" />
             <member name="M:Amazon.CloudFront.AmazonCloudFrontClient.DeleteKeyValueStore(Amazon.CloudFront.Model.DeleteKeyValueStoreRequest)" />
             <member name="T:Amazon.CloudFront.Model.DeleteKeyValueStoreRequest" />
@@ -52,6 +71,25 @@
                 </para>
                 <code
                     title="To delete a KeyValueStore"
+                    source=".\AWSSDKDocSamples\CloudFront\CloudFront.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudFront.IAmazonCloudFront.DeleteVpcOrigin(Amazon.CloudFront.Model.DeleteVpcOriginRequest)" />
+            <member name="M:Amazon.CloudFront.AmazonCloudFrontClient.DeleteVpcOrigin(Amazon.CloudFront.Model.DeleteVpcOriginRequest)" />
+            <member name="T:Amazon.CloudFront.Model.DeleteVpcOriginRequest" />
+            <member name="T:Amazon.CloudFront.Model.DeleteVpcOriginResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following command deletes a VPC origin:
+                </para>
+                <code
+                    title="To delete a VPC origin"
                     source=".\AWSSDKDocSamples\CloudFront\CloudFront.GeneratedSamples.cs"
                     region="example-1" />
             </example>
@@ -78,6 +116,44 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.CloudFront.IAmazonCloudFront.GetVpcOrigin(Amazon.CloudFront.Model.GetVpcOriginRequest)" />
+            <member name="M:Amazon.CloudFront.AmazonCloudFrontClient.GetVpcOrigin(Amazon.CloudFront.Model.GetVpcOriginRequest)" />
+            <member name="T:Amazon.CloudFront.Model.GetVpcOriginRequest" />
+            <member name="T:Amazon.CloudFront.Model.GetVpcOriginResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following command gets a VPC origin:
+                </para>
+                <code
+                    title="To get a VPC origin"
+                    source=".\AWSSDKDocSamples\CloudFront\CloudFront.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudFront.IAmazonCloudFront.ListDistributionsByVpcOriginId(Amazon.CloudFront.Model.ListDistributionsByVpcOriginIdRequest)" />
+            <member name="M:Amazon.CloudFront.AmazonCloudFrontClient.ListDistributionsByVpcOriginId(Amazon.CloudFront.Model.ListDistributionsByVpcOriginIdRequest)" />
+            <member name="T:Amazon.CloudFront.Model.ListDistributionsByVpcOriginIdRequest" />
+            <member name="T:Amazon.CloudFront.Model.ListDistributionsByVpcOriginIdResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following command lists distributions by VPC origin ID:
+                </para>
+                <code
+                    title="To list distributions by VPC origin ID"
+                    source=".\AWSSDKDocSamples\CloudFront\CloudFront.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.CloudFront.IAmazonCloudFront.ListKeyValueStores(Amazon.CloudFront.Model.ListKeyValueStoresRequest)" />
             <member name="M:Amazon.CloudFront.AmazonCloudFrontClient.ListKeyValueStores(Amazon.CloudFront.Model.ListKeyValueStoresRequest)" />
             <member name="T:Amazon.CloudFront.Model.ListKeyValueStoresRequest" />
@@ -90,6 +166,25 @@
                 </para>
                 <code
                     title="To get a list of KeyValueStores"
+                    source=".\AWSSDKDocSamples\CloudFront\CloudFront.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudFront.IAmazonCloudFront.ListVpcOrigins(Amazon.CloudFront.Model.ListVpcOriginsRequest)" />
+            <member name="M:Amazon.CloudFront.AmazonCloudFrontClient.ListVpcOrigins(Amazon.CloudFront.Model.ListVpcOriginsRequest)" />
+            <member name="T:Amazon.CloudFront.Model.ListVpcOriginsRequest" />
+            <member name="T:Amazon.CloudFront.Model.ListVpcOriginsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following command lists VPC origins:
+                </para>
+                <code
+                    title="To list VPC origins"
                     source=".\AWSSDKDocSamples\CloudFront\CloudFront.GeneratedSamples.cs"
                     region="example-1" />
             </example>
@@ -128,6 +223,25 @@
                 </para>
                 <code
                     title="To update a KeyValueStore"
+                    source=".\AWSSDKDocSamples\CloudFront\CloudFront.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudFront.IAmazonCloudFront.UpdateVpcOrigin(Amazon.CloudFront.Model.UpdateVpcOriginRequest)" />
+            <member name="M:Amazon.CloudFront.AmazonCloudFrontClient.UpdateVpcOrigin(Amazon.CloudFront.Model.UpdateVpcOriginRequest)" />
+            <member name="T:Amazon.CloudFront.Model.UpdateVpcOriginRequest" />
+            <member name="T:Amazon.CloudFront.Model.UpdateVpcOriginResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following command updates a VPC origin:
+                </para>
+                <code
+                    title="To update a VPC origin"
                     source=".\AWSSDKDocSamples\CloudFront\CloudFront.GeneratedSamples.cs"
                     region="example-1" />
             </example>

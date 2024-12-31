@@ -36,6 +36,7 @@ namespace Amazon.QuickSight.Model
     {
         private string _fontColor;
         private FontDecoration _fontDecoration;
+        private string _fontFamily;
         private FontSize _fontSize;
         private FontStyle _fontStyle;
         private FontWeight _fontWeight;
@@ -74,6 +75,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetFontDecoration()
         {
             return this._fontDecoration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FontFamily. 
+        /// <para>
+        /// The font family that you want to use.
+        /// </para>
+        /// </summary>
+        public string FontFamily
+        {
+            get { return this._fontFamily; }
+            set { this._fontFamily = value; }
+        }
+
+        // Check to see if FontFamily property is set
+        internal bool IsSetFontFamily()
+        {
+            return this._fontFamily != null;
         }
 
         /// <summary>

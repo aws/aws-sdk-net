@@ -32,7 +32,7 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// Container for the parameters to the CreateUserGroup operation.
     /// For Valkey engine version 7.2 onwards and Redis OSS 6.0 onwards: Creates a user group.
-    /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
+    /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Clusters.RBAC.html">Using
     /// Role Based Access Control (RBAC)</a>
     /// </summary>
     public partial class CreateUserGroupRequest : AmazonElastiCacheRequest

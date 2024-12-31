@@ -202,6 +202,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.CustomEndpoints.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("DatabaseInsightsMode", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DatabaseInsightsMode = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("DatabaseName", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

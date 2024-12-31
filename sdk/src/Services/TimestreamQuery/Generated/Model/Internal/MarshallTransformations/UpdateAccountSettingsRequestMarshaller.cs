@@ -77,6 +77,7 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.MaxQueryTCU.Value);
                     }
 
+<<<<<<< HEAD
                     if(publicRequest.IsSetQueryPricingModel())
                     {
                         context.Writer.WritePropertyName("QueryPricingModel");
@@ -84,6 +85,28 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
                     }
 
                     writer.WriteObjectEnd();
+||||||| Commit version number update changes
+                if(publicRequest.IsSetQueryPricingModel())
+                {
+                    context.Writer.WritePropertyName("QueryPricingModel");
+                    context.Writer.Write(publicRequest.QueryPricingModel);
+=======
+                if(publicRequest.IsSetQueryCompute())
+                {
+                    context.Writer.WritePropertyName("QueryCompute");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = QueryComputeRequestMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.QueryCompute, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetQueryPricingModel())
+                {
+                    context.Writer.WritePropertyName("QueryPricingModel");
+                    context.Writer.Write(publicRequest.QueryPricingModel);
+>>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
                 }
 
                 request.Content = memoryStream.ToArray();

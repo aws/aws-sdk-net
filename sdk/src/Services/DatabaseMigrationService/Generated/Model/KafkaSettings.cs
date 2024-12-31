@@ -56,6 +56,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _sslClientKeyPassword;
         private KafkaSslEndpointIdentificationAlgorithm _sslEndpointIdentificationAlgorithm;
         private string _topic;
+        private bool? _useLargeIntegerValue;
 
         /// <summary>
         /// Gets and sets the property Broker. 
@@ -453,6 +454,24 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetTopic()
         {
             return this._topic != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseLargeIntegerValue. 
+        /// <para>
+        /// Specifies using the large integer value with Kafka.
+        /// </para>
+        /// </summary>
+        public bool UseLargeIntegerValue
+        {
+            get { return this._useLargeIntegerValue.GetValueOrDefault(); }
+            set { this._useLargeIntegerValue = value; }
+        }
+
+        // Check to see if UseLargeIntegerValue property is set
+        internal bool IsSetUseLargeIntegerValue()
+        {
+            return this._useLargeIntegerValue.HasValue; 
         }
 
     }

@@ -40,7 +40,7 @@ namespace Amazon.MemoryDB.Model
         /// <summary>
         /// Gets and sets the property ACLs. 
         /// <para>
-        /// The list of ACLs
+        /// The list of ACLs.
         /// </para>
         /// </summary>
         public List<ACL> ACLs

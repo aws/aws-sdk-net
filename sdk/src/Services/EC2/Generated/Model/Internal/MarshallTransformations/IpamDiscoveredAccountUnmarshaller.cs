@@ -85,6 +85,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.LastSuccessfulDiscoveryTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("organizationalUnitId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.OrganizationalUnitId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

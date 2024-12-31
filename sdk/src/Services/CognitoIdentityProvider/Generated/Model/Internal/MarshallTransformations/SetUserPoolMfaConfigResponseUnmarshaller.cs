@@ -76,6 +76,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     response.SoftwareTokenMfaConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("WebAuthnConfiguration", targetDepth))
+                {
+                    var unmarshaller = WebAuthnConfigurationTypeUnmarshaller.Instance;
+                    response.WebAuthnConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;
@@ -102,6 +108,10 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ConcurrentModificationException"))
                 {
                     return ConcurrentModificationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("FeatureUnavailableInTierException"))
+                {
+                    return FeatureUnavailableInTierExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalErrorException"))
                 {

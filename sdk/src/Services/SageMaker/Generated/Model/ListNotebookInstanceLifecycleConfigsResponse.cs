@@ -40,8 +40,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If the response is truncated, SageMaker returns this token. To get the next set of
-        /// lifecycle configurations, use it in the next request. 
+        /// If the response is truncated, SageMaker AI returns this token. To get the next set
+        /// of lifecycle configurations, use it in the next request. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=8192)]

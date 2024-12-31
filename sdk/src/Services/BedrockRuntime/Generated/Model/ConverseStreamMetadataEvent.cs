@@ -40,6 +40,7 @@ namespace Amazon.BedrockRuntime.Model
         : IEventStreamEvent
     {
         private ConverseStreamMetrics _metrics;
+        private PerformanceConfiguration _performanceConfig;
         private ConverseStreamTrace _trace;
         private TokenUsage _usage;
 
@@ -60,6 +61,24 @@ namespace Amazon.BedrockRuntime.Model
         internal bool IsSetMetrics()
         {
             return this._metrics != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PerformanceConfig. 
+        /// <para>
+        /// Model performance configuration metadata for the conversation stream event.
+        /// </para>
+        /// </summary>
+        public PerformanceConfiguration PerformanceConfig
+        {
+            get { return this._performanceConfig; }
+            set { this._performanceConfig = value; }
+        }
+
+        // Check to see if PerformanceConfig property is set
+        internal bool IsSetPerformanceConfig()
+        {
+            return this._performanceConfig != null;
         }
 
         /// <summary>

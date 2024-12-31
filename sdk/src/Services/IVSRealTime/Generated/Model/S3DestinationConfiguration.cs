@@ -37,6 +37,7 @@ namespace Amazon.IVSRealTime.Model
         private List<string> _encoderConfigurationArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private RecordingConfiguration _recordingConfiguration;
         private string _storageConfigurationArn;
+        private List<CompositionThumbnailConfiguration> _thumbnailConfigurations = AWSConfigs.InitializeCollections ? new List<CompositionThumbnailConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property EncoderConfigurationArns. 
@@ -95,6 +96,27 @@ namespace Amazon.IVSRealTime.Model
         internal bool IsSetStorageConfigurationArn()
         {
             return this._storageConfigurationArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ThumbnailConfigurations. 
+        /// <para>
+        /// A complex type that allows you to enable/disable the recording of thumbnails for a
+        /// <a>Composition</a> and modify the interval at which thumbnails are generated for the
+        /// live session.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1)]
+        public List<CompositionThumbnailConfiguration> ThumbnailConfigurations
+        {
+            get { return this._thumbnailConfigurations; }
+            set { this._thumbnailConfigurations = value; }
+        }
+
+        // Check to see if ThumbnailConfigurations property is set
+        internal bool IsSetThumbnailConfigurations()
+        {
+            return this._thumbnailConfigurations != null && (this._thumbnailConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

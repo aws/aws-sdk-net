@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// The configuration for the file system and kernels in a SageMaker image running as
-    /// a JupyterLab app. The <c>FileSystemConfig</c> object is not supported.
+    /// The configuration for the file system and kernels in a SageMaker AI image running
+    /// as a JupyterLab app. The <c>FileSystemConfig</c> object is not supported.
     /// </summary>
     public partial class JupyterLabAppImageConfig
     {

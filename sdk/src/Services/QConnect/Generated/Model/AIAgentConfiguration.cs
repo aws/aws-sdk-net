@@ -36,6 +36,7 @@ namespace Amazon.QConnect.Model
     {
         private AnswerRecommendationAIAgentConfiguration _answerRecommendationAIAgentConfiguration;
         private ManualSearchAIAgentConfiguration _manualSearchAIAgentConfiguration;
+        private SelfServiceAIAgentConfiguration _selfServiceAIAgentConfiguration;
 
         /// <summary>
         /// Gets and sets the property AnswerRecommendationAIAgentConfiguration. 
@@ -71,6 +72,24 @@ namespace Amazon.QConnect.Model
         internal bool IsSetManualSearchAIAgentConfiguration()
         {
             return this._manualSearchAIAgentConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SelfServiceAIAgentConfiguration. 
+        /// <para>
+        /// The configuration for AI Agents of type SELF_SERVICE.
+        /// </para>
+        /// </summary>
+        public SelfServiceAIAgentConfiguration SelfServiceAIAgentConfiguration
+        {
+            get { return this._selfServiceAIAgentConfiguration; }
+            set { this._selfServiceAIAgentConfiguration = value; }
+        }
+
+        // Check to see if SelfServiceAIAgentConfiguration property is set
+        internal bool IsSetSelfServiceAIAgentConfiguration()
+        {
+            return this._selfServiceAIAgentConfiguration != null;
         }
 
     }

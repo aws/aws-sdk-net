@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TimestreamQuery.Model
 {
     /// <summary>
-    /// The request was denied due to request throttling.
+    /// The request was throttled due to excessive requests.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

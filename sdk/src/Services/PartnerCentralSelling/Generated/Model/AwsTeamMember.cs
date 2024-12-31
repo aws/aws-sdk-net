@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PartnerCentralSelling.Model
 {
     /// <summary>
-    /// Represents an Amazon Web Services team member for the engagement. This structure
-    /// includes details such as name, email, and business title.
+    /// Represents an Amazon Web Services team member for the engagement. This structure includes
+    /// details such as name, email, and business title.
     /// </summary>
     public partial class AwsTeamMember
     {
@@ -43,8 +43,8 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property BusinessTitle. 
         /// <para>
-        ///  Specifies the Amazon Web Services team member's business title and indicates their
-        /// organizational role. 
+        /// Specifies the Amazon Web Services team member's business title and indicates their
+        /// organizational role.
         /// </para>
         /// </summary>
         public AwsMemberBusinessTitle BusinessTitle
@@ -62,7 +62,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Email. 
         /// <para>
-        ///  Provides the Amazon Web Services team member's email address. 
+        /// Provides the Amazon Web Services team member's email address.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=80)]
@@ -81,7 +81,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property FirstName. 
         /// <para>
-        ///  Provides the Amazon Web Services team member's first name. 
+        /// Provides the Amazon Web Services team member's first name.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=80)]
@@ -100,7 +100,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property LastName. 
         /// <para>
-        ///  Provides the Amazon Web Services team member's last name. 
+        /// Provides the Amazon Web Services team member's last name.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=80)]

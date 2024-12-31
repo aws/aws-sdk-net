@@ -32,6 +32,12 @@ namespace Amazon.Glue.Model
     /// <summary>
     /// Container for the parameters to the GetJobRuns operation.
     /// Retrieves metadata for all runs of a given job definition.
+    /// 
+    ///  
+    /// <para>
+    ///  <c>GetJobRuns</c> returns the job runs in chronological order, with the newest jobs
+    /// returned first.
+    /// </para>
     /// </summary>
     public partial class GetJobRunsRequest : AmazonGlueRequest
     {

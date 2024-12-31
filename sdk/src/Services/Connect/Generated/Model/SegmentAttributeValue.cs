@@ -35,7 +35,45 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class SegmentAttributeValue
     {
+        private int? _valueInteger;
+        private Dictionary<string, SegmentAttributeValue> _valueMap = AWSConfigs.InitializeCollections ? new Dictionary<string, SegmentAttributeValue>() : null;
         private string _valueString;
+
+        /// <summary>
+        /// Gets and sets the property ValueInteger. 
+        /// <para>
+        /// The value of a segment attribute.
+        /// </para>
+        /// </summary>
+        public int ValueInteger
+        {
+            get { return this._valueInteger.GetValueOrDefault(); }
+            set { this._valueInteger = value; }
+        }
+
+        // Check to see if ValueInteger property is set
+        internal bool IsSetValueInteger()
+        {
+            return this._valueInteger.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ValueMap. 
+        /// <para>
+        /// The value of a segment attribute.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, SegmentAttributeValue> ValueMap
+        {
+            get { return this._valueMap; }
+            set { this._valueMap = value; }
+        }
+
+        // Check to see if ValueMap property is set
+        internal bool IsSetValueMap()
+        {
+            return this._valueMap != null && (this._valueMap.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property ValueString. 
@@ -43,7 +81,7 @@ namespace Amazon.Connect.Model
         /// The value of a segment attribute.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string ValueString
         {
             get { return this._valueString; }

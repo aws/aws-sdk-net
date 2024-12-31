@@ -84,6 +84,17 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetPerformanceConfig())
+            {
+                context.Writer.WritePropertyName("performanceConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = PerformanceConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.PerformanceConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetPromptTemplate())
             {
                 context.Writer.WritePropertyName("promptTemplate");

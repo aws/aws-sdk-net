@@ -66,7 +66,27 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             request.ResourcePath = "/v2/domains/{domainIdentifier}/environments";
             using (MemoryStream memoryStream = new MemoryStream())
             {
+<<<<<<< HEAD
                 using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+||||||| Commit version number update changes
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDescription())
+=======
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDeploymentOrder())
+                {
+                    context.Writer.WritePropertyName("deploymentOrder");
+                    context.Writer.Write(publicRequest.DeploymentOrder);
+                }
+
+                if(publicRequest.IsSetDescription())
+>>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
                 {
                     JsonWriter writer = new JsonWriter(streamWriter);
                     writer.Validate = false;
@@ -84,11 +104,31 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.EnvironmentAccountIdentifier);
                     }
 
+<<<<<<< HEAD
                     if(publicRequest.IsSetEnvironmentAccountRegion())
                     {
                         context.Writer.WritePropertyName("environmentAccountRegion");
                         context.Writer.Write(publicRequest.EnvironmentAccountRegion);
                     }
+||||||| Commit version number update changes
+                if(publicRequest.IsSetEnvironmentProfileIdentifier())
+                {
+                    context.Writer.WritePropertyName("environmentProfileIdentifier");
+                    context.Writer.Write(publicRequest.EnvironmentProfileIdentifier);
+                }
+=======
+                if(publicRequest.IsSetEnvironmentConfigurationId())
+                {
+                    context.Writer.WritePropertyName("environmentConfigurationId");
+                    context.Writer.Write(publicRequest.EnvironmentConfigurationId);
+                }
+
+                if(publicRequest.IsSetEnvironmentProfileIdentifier())
+                {
+                    context.Writer.WritePropertyName("environmentProfileIdentifier");
+                    context.Writer.Write(publicRequest.EnvironmentProfileIdentifier);
+                }
+>>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
 
                     if(publicRequest.IsSetEnvironmentBlueprintIdentifier())
                     {

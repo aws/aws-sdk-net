@@ -31,9 +31,9 @@ namespace Amazon.Bedrock.Model
 {
     /// <summary>
     /// Contains the ARN of the Amazon Bedrock model or <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference
-    /// profile</a> specified in your model evaluation job. Each Amazon Bedrock model supports
-    /// different <c>inferenceParams</c>. To learn more about supported inference parameters
-    /// for Amazon Bedrock models, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference
+    /// profile</a> specified in your evaluation job. Each Amazon Bedrock model supports different
+    /// <c>inferenceParams</c>. To learn more about supported inference parameters for Amazon
+    /// Bedrock models, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference
     /// parameters for foundation models</a>.
     /// 
     ///  
@@ -56,7 +56,7 @@ namespace Amazon.Bedrock.Model
         /// behaves during inference.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=1023)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1023)]
         public string InferenceParams
         {
             get { return this._inferenceParams; }

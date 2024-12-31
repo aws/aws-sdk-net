@@ -48,6 +48,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetIvrRecordingTrack())
+            {
+                context.Writer.WritePropertyName("IvrRecordingTrack");
+                context.Writer.Write(requestObject.IvrRecordingTrack);
+            }
+
             if(requestObject.IsSetVoiceRecordingTrack())
             {
                 context.Writer.WritePropertyName("VoiceRecordingTrack");

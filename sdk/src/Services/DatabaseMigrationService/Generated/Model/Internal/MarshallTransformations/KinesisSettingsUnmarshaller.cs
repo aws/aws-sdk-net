@@ -126,6 +126,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.StreamArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("UseLargeIntegerValue", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.UseLargeIntegerValue = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

@@ -52,6 +52,7 @@ namespace Amazon.IoTFleetWise.Model
         private Dictionary<string, string> _attributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _decoderManifestArn;
         private string _modelManifestArn;
+        private List<StateTemplateAssociation> _stateTemplates = AWSConfigs.InitializeCollections ? new List<StateTemplateAssociation>() : null;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _vehicleName;
 
@@ -86,8 +87,9 @@ namespace Amazon.IoTFleetWise.Model
         /// </para>
         ///  
         /// <para>
-        /// A campaign must include the keys (attribute names) in <c>dataExtraDimensions</c> for
-        /// them to display in Amazon Timestream.
+        /// To use attributes with Campaigns or State Templates, you must include them using the
+        /// request parameters <c>dataExtraDimensions</c> and/or <c>metadataExtraDimensions</c>
+        /// (for state templates only) when creating your campaign/state template. 
         /// </para>
         /// </summary>
         public Dictionary<string, string> Attributes
@@ -138,6 +140,26 @@ namespace Amazon.IoTFleetWise.Model
         internal bool IsSetModelManifestArn()
         {
             return this._modelManifestArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StateTemplates. 
+        /// <para>
+        /// Associate state templates with the vehicle. You can monitor the last known state of
+        /// the vehicle in near real time.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=20)]
+        public List<StateTemplateAssociation> StateTemplates
+        {
+            get { return this._stateTemplates; }
+            set { this._stateTemplates = value; }
+        }
+
+        // Check to see if StateTemplates property is set
+        internal bool IsSetStateTemplates()
+        {
+            return this._stateTemplates != null && (this._stateTemplates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

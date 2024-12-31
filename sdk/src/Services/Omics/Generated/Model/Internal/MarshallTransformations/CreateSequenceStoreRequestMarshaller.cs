@@ -75,11 +75,30 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.ClientToken);
                     }
 
+<<<<<<< HEAD
                     if(publicRequest.IsSetDescription())
                     {
                         context.Writer.WritePropertyName("description");
                         context.Writer.Write(publicRequest.Description);
                     }
+||||||| Commit version number update changes
+                if(publicRequest.IsSetDescription())
+                {
+                    context.Writer.WritePropertyName("description");
+                    context.Writer.Write(publicRequest.Description);
+                }
+=======
+                else if(!(publicRequest.IsSetClientToken()))
+                {
+                    context.Writer.WritePropertyName("clientToken");
+                    context.Writer.Write(Guid.NewGuid().ToString());
+                }
+                if(publicRequest.IsSetDescription())
+                {
+                    context.Writer.WritePropertyName("description");
+                    context.Writer.Write(publicRequest.Description);
+                }
+>>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
 
                     if(publicRequest.IsSetETagAlgorithmFamily())
                     {
@@ -99,10 +118,44 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.Name);
                     }
 
+<<<<<<< HEAD
                     if(publicRequest.IsSetSseConfig())
                     {
                         context.Writer.WritePropertyName("sseConfig");
                         context.Writer.WriteObjectStart();
+||||||| Commit version number update changes
+                if(publicRequest.IsSetSseConfig())
+                {
+                    context.Writer.WritePropertyName("sseConfig");
+                    context.Writer.WriteObjectStart();
+=======
+                if(publicRequest.IsSetPropagatedSetLevelTags())
+                {
+                    context.Writer.WritePropertyName("propagatedSetLevelTags");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestPropagatedSetLevelTagsListValue in publicRequest.PropagatedSetLevelTags)
+                    {
+                            context.Writer.Write(publicRequestPropagatedSetLevelTagsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetS3AccessConfig())
+                {
+                    context.Writer.WritePropertyName("s3AccessConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = S3AccessConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.S3AccessConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetSseConfig())
+                {
+                    context.Writer.WritePropertyName("sseConfig");
+                    context.Writer.WriteObjectStart();
+>>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
 
                         var marshaller = SseConfigMarshaller.Instance;
                         marshaller.Marshall(publicRequest.SseConfig, context);

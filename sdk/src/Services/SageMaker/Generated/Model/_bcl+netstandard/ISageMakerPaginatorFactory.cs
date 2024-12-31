@@ -82,6 +82,11 @@ namespace Amazon.SageMaker.Model
         IListClustersPaginator ListClusters(ListClustersRequest request);
 
         /// <summary>
+        /// Paginator for ListClusterSchedulerConfigs operation
+        ///</summary>
+        IListClusterSchedulerConfigsPaginator ListClusterSchedulerConfigs(ListClusterSchedulerConfigsRequest request);
+
+        /// <summary>
         /// Paginator for ListCodeRepositories operation
         ///</summary>
         IListCodeRepositoriesPaginator ListCodeRepositories(ListCodeRepositoriesRequest request);
@@ -90,6 +95,11 @@ namespace Amazon.SageMaker.Model
         /// Paginator for ListCompilationJobs operation
         ///</summary>
         IListCompilationJobsPaginator ListCompilationJobs(ListCompilationJobsRequest request);
+
+        /// <summary>
+        /// Paginator for ListComputeQuotas operation
+        ///</summary>
+        IListComputeQuotasPaginator ListComputeQuotas(ListComputeQuotasRequest request);
 
         /// <summary>
         /// Paginator for ListContexts operation
@@ -297,6 +307,11 @@ namespace Amazon.SageMaker.Model
         IListOptimizationJobsPaginator ListOptimizationJobs(ListOptimizationJobsRequest request);
 
         /// <summary>
+        /// Paginator for ListPartnerApps operation
+        ///</summary>
+        IListPartnerAppsPaginator ListPartnerApps(ListPartnerAppsRequest request);
+
+        /// <summary>
         /// Paginator for ListPipelineExecutions operation
         ///</summary>
         IListPipelineExecutionsPaginator ListPipelineExecutions(ListPipelineExecutionsRequest request);
@@ -365,6 +380,11 @@ namespace Amazon.SageMaker.Model
         /// Paginator for ListTrainingJobsForHyperParameterTuningJob operation
         ///</summary>
         IListTrainingJobsForHyperParameterTuningJobPaginator ListTrainingJobsForHyperParameterTuningJob(ListTrainingJobsForHyperParameterTuningJobRequest request);
+
+        /// <summary>
+        /// Paginator for ListTrainingPlans operation
+        ///</summary>
+        IListTrainingPlansPaginator ListTrainingPlans(ListTrainingPlansRequest request);
 
         /// <summary>
         /// Paginator for ListTransformJobs operation

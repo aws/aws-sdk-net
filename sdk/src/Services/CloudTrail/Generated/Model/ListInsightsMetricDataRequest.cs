@@ -79,7 +79,7 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property DataType. 
         /// <para>
-        /// Type of datapoints to return. Valid values are <c>NonZeroData</c> and <c>FillWithZeros</c>.
+        /// Type of data points to return. Valid values are <c>NonZeroData</c> and <c>FillWithZeros</c>.
         /// The default is <c>NonZeroData</c>.
         /// </para>
         /// </summary>
@@ -208,7 +208,7 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of datapoints to return. Valid values are integers from 1 to 21600.
+        /// The maximum number of data points to return. Valid values are integers from 1 to 21600.
         /// The default value is 21600.
         /// </para>
         /// </summary>

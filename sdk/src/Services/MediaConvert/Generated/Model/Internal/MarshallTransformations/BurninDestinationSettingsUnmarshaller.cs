@@ -168,6 +168,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.OutlineSize = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("removeRubyReserveAttributes", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RemoveRubyReserveAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("shadowColor", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

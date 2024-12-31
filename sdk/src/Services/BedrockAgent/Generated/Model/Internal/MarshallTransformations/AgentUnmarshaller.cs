@@ -72,6 +72,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                     unmarshalledObject.AgentArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("agentCollaboration", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AgentCollaboration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("agentId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -120,6 +126,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                     unmarshalledObject.CustomerEncryptionKeyArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("customOrchestration", targetDepth))
+                {
+                    var unmarshaller = CustomOrchestrationUnmarshaller.Instance;
+                    unmarshalledObject.CustomOrchestration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -160,6 +172,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = MemoryConfigurationUnmarshaller.Instance;
                     unmarshalledObject.MemoryConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("orchestrationType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OrchestrationType = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("preparedAt", targetDepth))

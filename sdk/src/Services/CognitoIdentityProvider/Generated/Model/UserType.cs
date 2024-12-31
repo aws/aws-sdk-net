@@ -31,6 +31,13 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// A user profile in a Amazon Cognito user pool.
+    /// 
+    ///  
+    /// <para>
+    /// This data type is a response parameter to <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminCreateUser.html">AdminCreateUser</a>
+    /// and <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListUsers.html">ListUsers</a>.
+    /// 
+    /// </para>
     /// </summary>
     public partial class UserType
     {
@@ -45,7 +52,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
-        /// A container with information about the user type attributes.
+        /// Names and values of a user's attributes, for example <c>email</c>.
         /// </para>
         /// </summary>
         public List<AttributeType> Attributes
@@ -63,7 +70,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// Specifies whether the user is enabled.
+        /// Indicates whether the user's account is enabled or disabled.
         /// </para>
         /// </summary>
         public bool? Enabled
@@ -81,7 +88,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property MFAOptions. 
         /// <para>
-        /// The MFA options for the user.
+        /// The user's MFA configuration.
         /// </para>
         /// </summary>
         public List<MFAOptionType> MFAOptions
@@ -99,7 +106,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserCreateDate. 
         /// <para>
-        /// The creation date of the user.
+        /// The date and time when the item was created. Amazon Cognito returns this timestamp
+        /// in UNIX epoch time format. Your SDK might render the output in a human-readable format
+        /// like ISO 8601 or a Java <c>Date</c> object.
         /// </para>
         /// </summary>
         public DateTime? UserCreateDate
@@ -137,7 +146,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Username. 
         /// <para>
-        /// The user name of the user you want to describe.
+        /// The user's username.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=128)]

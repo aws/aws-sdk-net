@@ -60,7 +60,7 @@ namespace Amazon.ElastiCache.Model
     /// and 500 shards (single primary and no replicas). Make sure there are enough available
     /// IP addresses to accommodate the increase. Common pitfalls include the subnets in the
     /// subnet group have too small a CIDR range or the subnets are shared and heavily used
-    /// by other clusters. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SubnetGroups.Creating.html">Creating
+    /// by other clusters. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/SubnetGroups.Creating.html">Creating
     /// a Subnet Group</a>. For versions below 5.0.6, the limit is 250 per cluster.
     /// </para>
     ///  
@@ -74,7 +74,7 @@ namespace Amazon.ElastiCache.Model
     /// When a Valkey or Redis OSS (cluster mode disabled) replication group has been successfully
     /// created, you can add one or more read replicas to it, up to a total of 5 read replicas.
     /// If you need to increase or decrease the number of node groups (console: shards), you
-    /// can use scaling. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Scaling.html">Scaling
+    /// can use scaling. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Scaling.html">Scaling
     /// self-designed clusters</a> in the <i>ElastiCache User Guide</i>.
     /// </para>
     ///  <note> 
@@ -284,7 +284,7 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
+        /// For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
         /// Node Types</a> 
         /// </para>
         ///  </note> 
@@ -368,7 +368,7 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
+        /// For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
         /// Node Types</a> 
         /// </para>
         ///  </note> 
@@ -499,7 +499,7 @@ namespace Amazon.ElastiCache.Model
         ///  <important> 
         /// <para>
         /// If you're going to launch your cluster in an Amazon VPC, you need to create a subnet
-        /// group before you start creating a cluster. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SubnetGroups.html">Subnets
+        /// group before you start creating a cluster. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/SubnetGroups.html">Subnets
         /// and Subnet Groups</a>.
         /// </para>
         ///  </important>
@@ -543,7 +543,7 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// Enables data tiering. Data tiering is only supported for replication groups using
         /// the r6gd node type. This parameter must be set to true when using r6gd nodes. For
-        /// more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data
+        /// more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/data-tiering.html">Data
         /// tiering</a>.
         /// </para>
         /// </summary>
@@ -587,7 +587,7 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>Important:</b> You can upgrade to a newer engine version (see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting
+        ///  <b>Important:</b> You can upgrade to a newer engine version (see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/SelectEngine.html#VersionManagement">Selecting
         /// a Cache Engine and Version</a>) in the <i>ElastiCache User Guide</i>, but you cannot
         /// downgrade to an earlier engine version. If you want to use an earlier engine version,
         /// you must delete the existing cluster or replication group and create it anew with
@@ -685,7 +685,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property MultiAZEnabled. 
         /// <para>
         /// A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more
-        /// information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing
+        /// information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/AutoFailover.html">Minimizing
         /// Downtime: Multi-AZ</a>.
         /// </para>
         /// </summary>

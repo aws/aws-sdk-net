@@ -90,6 +90,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.ChannelClass = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("channelEngineVersion", targetDepth))
+                {
+                    var unmarshaller = ChannelEngineVersionResponseUnmarshaller.Instance;
+                    unmarshalledObject.ChannelEngineVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("destinations", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<OutputDestination, OutputDestinationUnmarshaller>(OutputDestinationUnmarshaller.Instance);

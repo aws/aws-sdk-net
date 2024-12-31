@@ -30,7 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// The event risk type.
+    /// The risk evaluation by adaptive authentication, as displayed in an <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminListUserAuthEvents.html">AdminListUserAuthEvents</a>
+    /// response. Contains evaluations of compromised-credentials detection and assessed risk
+    /// level and action taken by adaptive authentication.
     /// </summary>
     public partial class EventRiskType
     {
@@ -59,7 +61,10 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property RiskDecision. 
         /// <para>
-        /// The risk decision.
+        /// The action taken by adaptive authentication. If <c>NoRisk</c>, your user pool took
+        /// no action. If <c>AccountTakeover</c>, your user pool applied the adaptive authentication
+        /// automated response that you configured. If <c>Block</c>, your user pool prevented
+        /// the attempt.
         /// </para>
         /// </summary>
         public RiskDecisionType RiskDecision
@@ -77,7 +82,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property RiskLevel. 
         /// <para>
-        /// The risk level.
+        /// The risk level that adaptive authentication assessed for the authentication event.
         /// </para>
         /// </summary>
         public RiskLevelType RiskLevel

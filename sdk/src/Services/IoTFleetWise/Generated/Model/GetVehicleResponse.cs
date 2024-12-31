@@ -40,6 +40,7 @@ namespace Amazon.IoTFleetWise.Model
         private string _decoderManifestArn;
         private DateTime? _lastModificationTime;
         private string _modelManifestArn;
+        private List<StateTemplateAssociation> _stateTemplates = AWSConfigs.InitializeCollections ? new List<StateTemplateAssociation>() : null;
         private string _vehicleName;
 
         /// <summary>
@@ -154,6 +155,25 @@ namespace Amazon.IoTFleetWise.Model
         internal bool IsSetModelManifestArn()
         {
             return this._modelManifestArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StateTemplates. 
+        /// <para>
+        /// State templates associated with the vehicle.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=20)]
+        public List<StateTemplateAssociation> StateTemplates
+        {
+            get { return this._stateTemplates; }
+            set { this._stateTemplates = value; }
+        }
+
+        // Check to see if StateTemplates property is set
+        internal bool IsSetStateTemplates()
+        {
+            return this._stateTemplates != null && (this._stateTemplates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

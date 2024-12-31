@@ -49,7 +49,7 @@ namespace Amazon.EventBridge.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// PutEvents will only process nested JSON up to 1100 levels deep.
+    /// PutEvents will only process nested JSON up to 1000 levels deep.
     /// </para>
     ///  </note>
     /// </summary>

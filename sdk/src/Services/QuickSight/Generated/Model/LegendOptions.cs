@@ -37,6 +37,7 @@ namespace Amazon.QuickSight.Model
         private string _height;
         private LegendPosition _position;
         private LabelOptions _title;
+        private FontConfiguration _valueFontConfiguration;
         private Visibility _visibility;
         private string _width;
 
@@ -110,6 +111,21 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetTitle()
         {
             return this._title != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ValueFontConfiguration.
+        /// </summary>
+        public FontConfiguration ValueFontConfiguration
+        {
+            get { return this._valueFontConfiguration; }
+            set { this._valueFontConfiguration = value; }
+        }
+
+        // Check to see if ValueFontConfiguration property is set
+        internal bool IsSetValueFontConfiguration()
+        {
+            return this._valueFontConfiguration != null;
         }
 
         /// <summary>

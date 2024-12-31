@@ -36,7 +36,9 @@ namespace Amazon.ComputeOptimizer.Model
     {
         private string _accountId;
         private string _currentdbInstanceClass;
+        private RDSCurrentInstancePerformanceRisk _currentInstancePerformanceRisk;
         private DBStorageConfiguration _currentStorageConfiguration;
+        private string _dbClusterIdentifier;
         private RDSEffectiveRecommendationPreferences _effectiveRecommendationPreferences;
         private string _engine;
         private string _engineVersion;
@@ -46,6 +48,7 @@ namespace Amazon.ComputeOptimizer.Model
         private List<RDSDBInstanceRecommendationOption> _instanceRecommendationOptions = AWSConfigs.InitializeCollections ? new List<RDSDBInstanceRecommendationOption>() : null;
         private DateTime? _lastRefreshTimestamp;
         private double? _lookbackPeriodInDays;
+        private int? _promotionTier;
         private string _resourceArn;
         private RDSStorageFinding _storageFinding;
         private List<string> _storageFindingReasonCodes = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -90,6 +93,24 @@ namespace Amazon.ComputeOptimizer.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CurrentInstancePerformanceRisk. 
+        /// <para>
+        /// The performance risk for the current DB instance.
+        /// </para>
+        /// </summary>
+        public RDSCurrentInstancePerformanceRisk CurrentInstancePerformanceRisk
+        {
+            get { return this._currentInstancePerformanceRisk; }
+            set { this._currentInstancePerformanceRisk = value; }
+        }
+
+        // Check to see if CurrentInstancePerformanceRisk property is set
+        internal bool IsSetCurrentInstancePerformanceRisk()
+        {
+            return this._currentInstancePerformanceRisk != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CurrentStorageConfiguration. 
         /// <para>
         ///  The configuration of the current RDS storage. 
@@ -105,6 +126,24 @@ namespace Amazon.ComputeOptimizer.Model
         internal bool IsSetCurrentStorageConfiguration()
         {
             return this._currentStorageConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DbClusterIdentifier. 
+        /// <para>
+        /// The identifier for DB cluster.
+        /// </para>
+        /// </summary>
+        public string DbClusterIdentifier
+        {
+            get { return this._dbClusterIdentifier; }
+            set { this._dbClusterIdentifier = value; }
+        }
+
+        // Check to see if DbClusterIdentifier property is set
+        internal bool IsSetDbClusterIdentifier()
+        {
+            return this._dbClusterIdentifier != null;
         }
 
         /// <summary>
@@ -288,6 +327,24 @@ namespace Amazon.ComputeOptimizer.Model
         internal bool IsSetLookbackPeriodInDays()
         {
             return this._lookbackPeriodInDays.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PromotionTier. 
+        /// <para>
+        /// The promotion tier for the Aurora instance.
+        /// </para>
+        /// </summary>
+        public int PromotionTier
+        {
+            get { return this._promotionTier.GetValueOrDefault(); }
+            set { this._promotionTier = value; }
+        }
+
+        // Check to see if PromotionTier property is set
+        internal bool IsSetPromotionTier()
+        {
+            return this._promotionTier.HasValue; 
         }
 
         /// <summary>

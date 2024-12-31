@@ -30,9 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// A list of key/value pairs that identify an index, FAQ, or data source. Tag keys and
-    /// values can consist of Unicode letters, digits, white space, and any of the following
-    /// symbols: _ . : / = + - @.
+    /// A key-value pair that identifies or categorizes an index, FAQ, data source, or other
+    /// resource. TA tag key and value can consist of Unicode letters, digits, white space,
+    /// and any of the following symbols: _ . : / = + - @.
     /// </summary>
     public partial class Tag
     {
@@ -43,7 +43,7 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property Key. 
         /// <para>
         /// The key for the tag. Keys are not case sensitive and must be unique for the index,
-        /// FAQ, or data source.
+        /// FAQ, data source, or other resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

@@ -65,7 +65,27 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             request.ResourcePath = "/";
             using (MemoryStream memoryStream = new MemoryStream())
             {
+<<<<<<< HEAD
                 using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+||||||| Commit version number update changes
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetCapacityProviderStrategy())
+=======
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAvailabilityZoneRebalancing())
+                {
+                    context.Writer.WritePropertyName("availabilityZoneRebalancing");
+                    context.Writer.Write(publicRequest.AvailabilityZoneRebalancing);
+                }
+
+                if(publicRequest.IsSetCapacityProviderStrategy())
+>>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
                 {
                     JsonWriter writer = new JsonWriter(streamWriter);
                     writer.Validate = false;
@@ -263,7 +283,33 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     writer.WriteObjectEnd();
                 }
 
+<<<<<<< HEAD
                 request.Content = memoryStream.ToArray();
+||||||| Commit version number update changes
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+=======
+                if(publicRequest.IsSetVpcLatticeConfigurations())
+                {
+                    context.Writer.WritePropertyName("vpcLatticeConfigurations");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestVpcLatticeConfigurationsListValue in publicRequest.VpcLatticeConfigurations)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = VpcLatticeConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequestVpcLatticeConfigurationsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+>>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
             }
 
 

@@ -45,6 +45,7 @@ namespace Amazon.TimestreamQuery.Model
     public partial class UpdateAccountSettingsRequest : AmazonTimestreamQueryRequest
     {
         private int? _maxQueryTCU;
+        private QueryComputeRequest _queryCompute;
         private QueryPricingModel _queryPricingModel;
 
         /// <summary>
@@ -53,12 +54,16 @@ namespace Amazon.TimestreamQuery.Model
         /// The maximum number of compute units the service will use at any point in time to serve
         /// your queries. To run queries, you must set a minimum capacity of 4 TCU. You can set
         /// the maximum number of TCU in multiples of 4, for example, 4, 8, 16, 32, and so on.
+        /// The maximum value supported for <c>MaxQueryTCU</c> is 1000. To request an increase
+        /// to this soft limit, contact Amazon Web Services Support. For information about the
+        /// default quota for maxQueryTCU, see Default quotas. This configuration is applicable
+        /// only for on-demand usage of Timestream Compute Units (TCUs).
         /// </para>
         ///  
         /// <para>
         /// The maximum value supported for <c>MaxQueryTCU</c> is 1000. To request an increase
         /// to this soft limit, contact Amazon Web Services Support. For information about the
-        /// default quota for maxQueryTCU, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.default">Default
+        /// default quota for <c>maxQueryTCU</c>, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.default">Default
         /// quotas</a>.
         /// </para>
         /// </summary>
@@ -72,6 +77,31 @@ namespace Amazon.TimestreamQuery.Model
         internal bool IsSetMaxQueryTCU()
         {
             return this._maxQueryTCU.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property QueryCompute. 
+        /// <para>
+        /// Modifies the query compute settings configured in your account, including the query
+        /// pricing model and provisioned Timestream Compute Units (TCUs) in your account.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This API is idempotent, meaning that making the same request multiple times will have
+        /// the same effect as making the request once.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public QueryComputeRequest QueryCompute
+        {
+            get { return this._queryCompute; }
+            set { this._queryCompute = value; }
+        }
+
+        // Check to see if QueryCompute property is set
+        internal bool IsSetQueryCompute()
+        {
+            return this._queryCompute != null;
         }
 
         /// <summary>

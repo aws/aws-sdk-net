@@ -351,6 +351,8 @@ namespace Amazon.ECS.Model
         ///  When you export logs to Amazon OpenSearch Service, you can specify options like <c>Name</c>,
         /// <c>Host</c> (OpenSearch Service endpoint without protocol), <c>Port</c>, <c>Index</c>,
         /// <c>Type</c>, <c>Aws_auth</c>, <c>Aws_region</c>, <c>Suppress_Type_Name</c>, and <c>tls</c>.
+        /// For more information, see <a href="http://aws.amazon.com/blogs/containers/under-the-hood-firelens-for-amazon-ecs-tasks/">Under
+        /// the hood: FireLens for Amazon ECS Tasks</a>.
         /// </para>
         ///  
         /// <para>

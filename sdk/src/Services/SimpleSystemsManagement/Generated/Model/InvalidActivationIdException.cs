@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// The activation ID isn't valid. Verify the you entered the correct ActivationId or
+    /// The activation ID isn't valid. Verify that you entered the correct ActivationId or
     /// ActivationCode and try again.
     /// </summary>
     #if !NETSTANDARD

@@ -30,8 +30,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
-    /// This exception is thrown when the policy on the S3 bucket or KMS key does not have
-    /// sufficient permissions for the operation.
+    /// For the <c>CreateTrail</c> <c>PutInsightSelectors</c>, <c>UpdateTrail</c>, <c>StartQuery</c>,
+    /// and <c>StartImport</c> operations, this exception is thrown when the policy on the
+    /// S3 bucket or KMS key does not have sufficient permissions for the operation.
+    /// 
+    ///  
+    /// <para>
+    /// For all other operations, this exception is thrown when the policy for the KMS key
+    /// does not have sufficient permissions for the operation.
+    /// </para>
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

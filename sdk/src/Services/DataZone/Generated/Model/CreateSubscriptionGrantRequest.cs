@@ -142,7 +142,6 @@ namespace Amazon.DataZone.Model
         /// The ID of the subscription target for which the subscription grant is created.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string SubscriptionTargetIdentifier
         {
             get { return this._subscriptionTargetIdentifier; }

@@ -66,6 +66,12 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("Impact", targetDepth))
+                {
+                    var unmarshaller = RootCauseImpactUnmarshaller.Instance;
+                    unmarshalledObject.Impact = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LinkedAccount", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -52,6 +52,12 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("DelegatedAdminResourcePolicy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.DelegatedAdminResourcePolicy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ResourceArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -34,10 +34,16 @@ namespace Amazon.CostOptimizationHub
     public partial class AmazonCostOptimizationHubConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("Cost Optimization Hub", "4.0.0.0");
 
         private static readonly AmazonCostOptimizationHubEndpointResolver EndpointResolver =
             new AmazonCostOptimizationHubEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("Cost Optimization Hub", "3.7.401.50");
+=======
+            InternalSDKUtils.BuildUserAgentString("Cost Optimization Hub", "3.7.402.15");
+>>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
 
         private string _userAgent = UserAgentString;
         ///<summary>

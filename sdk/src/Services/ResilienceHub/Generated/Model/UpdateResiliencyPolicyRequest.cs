@@ -75,8 +75,8 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property Policy. 
         /// <para>
-        /// The type of resiliency policy to be created, including the recovery time objective
-        /// (RTO) and recovery point objective (RPO) in seconds.
+        /// Resiliency policy to be created, including the recovery time objective (RTO) and recovery
+        /// point objective (RPO) in seconds.
         /// </para>
         /// </summary>
         public Dictionary<string, FailurePolicy> Policy
@@ -116,7 +116,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property PolicyDescription. 
         /// <para>
-        /// The description for the policy.
+        /// Description of the resiliency policy.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=500)]
@@ -135,7 +135,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property PolicyName. 
         /// <para>
-        /// The name of the policy
+        /// Name of the resiliency policy.
         /// </para>
         /// </summary>
         public string PolicyName

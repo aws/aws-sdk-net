@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EventBridge.Model
 {
     /// <summary>
-    /// Contains the OAuth authorization parameters to use for the connection.
+    /// The OAuth authorization parameters to use for the connection.
     /// </summary>
     public partial class UpdateConnectionOAuthClientRequestParameters
     {

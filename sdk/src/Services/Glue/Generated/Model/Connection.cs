@@ -36,7 +36,9 @@ namespace Amazon.Glue.Model
     {
         private Dictionary<string, string> _athenaProperties = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private AuthenticationConfiguration _authenticationConfiguration;
+        private List<string> _compatibleComputeEnvironments = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private Dictionary<string, string> _connectionProperties = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private int? _connectionSchemaVersion;
         private ConnectionType _connectionType;
         private DateTime? _creationTime;
         private string _description;
@@ -46,13 +48,15 @@ namespace Amazon.Glue.Model
         private List<string> _matchCriteria = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
         private PhysicalConnectionRequirements _physicalConnectionRequirements;
+        private Dictionary<string, string> _pythonProperties = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private Dictionary<string, string> _sparkProperties = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private ConnectionStatus _status;
         private string _statusReason;
 
         /// <summary>
         /// Gets and sets the property AthenaProperties. 
         /// <para>
-        /// This field is not currently used.
+        /// Connection properties specific to the Athena compute environment.
         /// </para>
         /// </summary>
         public Dictionary<string, string> AthenaProperties
@@ -86,9 +90,28 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CompatibleComputeEnvironments. 
+        /// <para>
+        /// A list of compute environments compatible with the connection.
+        /// </para>
+        /// </summary>
+        public List<string> CompatibleComputeEnvironments
+        {
+            get { return this._compatibleComputeEnvironments; }
+            set { this._compatibleComputeEnvironments = value; }
+        }
+
+        // Check to see if CompatibleComputeEnvironments property is set
+        internal bool IsSetCompatibleComputeEnvironments()
+        {
+            return this._compatibleComputeEnvironments != null && (this._compatibleComputeEnvironments.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property ConnectionProperties. 
         /// <para>
-        /// These key-value pairs define parameters for the connection:
+        /// These key-value pairs define parameters for the connection when using the version
+        /// 1 Connection schema:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -347,6 +370,26 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ConnectionSchemaVersion. 
+        /// <para>
+        /// The version of the connection schema for this connection. Version 2 supports properties
+        /// for specific compute environments.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2)]
+        public int ConnectionSchemaVersion
+        {
+            get { return this._connectionSchemaVersion.GetValueOrDefault(); }
+            set { this._connectionSchemaVersion = value; }
+        }
+
+        // Check to see if ConnectionSchemaVersion property is set
+        internal bool IsSetConnectionSchemaVersion()
+        {
+            return this._connectionSchemaVersion.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ConnectionType. 
         /// <para>
         /// The type of the connection. Currently, SFTP is not supported.
@@ -511,6 +554,42 @@ namespace Amazon.Glue.Model
         internal bool IsSetPhysicalConnectionRequirements()
         {
             return this._physicalConnectionRequirements != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PythonProperties. 
+        /// <para>
+        /// Connection properties specific to the Python compute environment.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> PythonProperties
+        {
+            get { return this._pythonProperties; }
+            set { this._pythonProperties = value; }
+        }
+
+        // Check to see if PythonProperties property is set
+        internal bool IsSetPythonProperties()
+        {
+            return this._pythonProperties != null && (this._pythonProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SparkProperties. 
+        /// <para>
+        /// Connection properties specific to the Spark compute environment.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> SparkProperties
+        {
+            get { return this._sparkProperties; }
+            set { this._sparkProperties = value; }
+        }
+
+        // Check to see if SparkProperties property is set
+        internal bool IsSetSparkProperties()
+        {
+            return this._sparkProperties != null && (this._sparkProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

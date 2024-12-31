@@ -125,6 +125,14 @@ namespace Amazon.IoTFleetWise.Model
         }
 
         /// <summary>
+        /// Paginator for ListStateTemplates operation
+        ///</summary>
+        public IListStateTemplatesPaginator ListStateTemplates(ListStateTemplatesRequest request) 
+        {
+            return new ListStateTemplatesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListVehicles operation
         ///</summary>
         public IListVehiclesPaginator ListVehicles(ListVehiclesRequest request) 

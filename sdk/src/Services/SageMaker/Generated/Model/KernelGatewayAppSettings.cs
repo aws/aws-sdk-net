@@ -41,7 +41,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property CustomImages. 
         /// <para>
-        /// A list of custom SageMaker images that are configured to run as a KernelGateway app.
+        /// A list of custom SageMaker AI images that are configured to run as a KernelGateway
+        /// app.
         /// </para>
         /// </summary>
         [AWSProperty(Max=200)]
@@ -61,13 +62,13 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property DefaultResourceSpec. 
         /// <para>
         /// The default instance type and the Amazon Resource Name (ARN) of the default SageMaker
-        /// image used by the KernelGateway app.
+        /// AI image used by the KernelGateway app.
         /// </para>
         ///  <note> 
         /// <para>
-        /// The Amazon SageMaker Studio UI does not use the default instance type value set here.
-        /// The default instance type set here is used when Apps are created using the CLI or
-        /// CloudFormation and the instance type parameter value is not passed.
+        /// The Amazon SageMaker AI Studio UI does not use the default instance type value set
+        /// here. The default instance type set here is used when Apps are created using the CLI
+        /// or CloudFormation and the instance type parameter value is not passed.
         /// </para>
         ///  </note>
         /// </summary>

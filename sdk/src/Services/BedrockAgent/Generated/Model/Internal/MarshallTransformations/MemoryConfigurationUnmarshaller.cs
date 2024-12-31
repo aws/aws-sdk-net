@@ -72,6 +72,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                     unmarshalledObject.EnabledMemoryTypes = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("sessionSummaryConfiguration", targetDepth))
+                {
+                    var unmarshaller = SessionSummaryConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.SessionSummaryConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("storageDays", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;

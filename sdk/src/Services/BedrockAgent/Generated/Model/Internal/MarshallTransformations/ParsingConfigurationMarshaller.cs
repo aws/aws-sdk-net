@@ -48,6 +48,17 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetBedrockDataAutomationConfiguration())
+            {
+                context.Writer.WritePropertyName("bedrockDataAutomationConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = BedrockDataAutomationConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.BedrockDataAutomationConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetBedrockFoundationModelConfiguration())
             {
                 context.Writer.WritePropertyName("bedrockFoundationModelConfiguration");

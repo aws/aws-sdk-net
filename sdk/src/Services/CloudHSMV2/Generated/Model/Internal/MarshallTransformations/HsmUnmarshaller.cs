@@ -90,6 +90,12 @@ namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.EniIp = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EniIpV6", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EniIpV6 = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("HsmId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -675,6 +675,60 @@ namespace Amazon.EKS
 
 
     /// <summary>
+    /// Constants used for properties of type ClusterVersionStatus.
+    /// </summary>
+    public class ClusterVersionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ExtendedSupport for ClusterVersionStatus
+        /// </summary>
+        public static readonly ClusterVersionStatus ExtendedSupport = new ClusterVersionStatus("extended-support");
+        /// <summary>
+        /// Constant StandardSupport for ClusterVersionStatus
+        /// </summary>
+        public static readonly ClusterVersionStatus StandardSupport = new ClusterVersionStatus("standard-support");
+        /// <summary>
+        /// Constant Unsupported for ClusterVersionStatus
+        /// </summary>
+        public static readonly ClusterVersionStatus Unsupported = new ClusterVersionStatus("unsupported");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ClusterVersionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ClusterVersionStatus FindValue(string value)
+        {
+            return FindValue<ClusterVersionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ClusterVersionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ConfigStatus.
     /// </summary>
     public class ConfigStatus : ConstantClass
@@ -1797,6 +1851,10 @@ namespace Amazon.EKS
         /// </summary>
         public static readonly UpdateParamType ClusterLogging = new UpdateParamType("ClusterLogging");
         /// <summary>
+        /// Constant ComputeConfig for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType ComputeConfig = new UpdateParamType("ComputeConfig");
+        /// <summary>
         /// Constant ConfigurationValues for UpdateParamType
         /// </summary>
         public static readonly UpdateParamType ConfigurationValues = new UpdateParamType("ConfigurationValues");
@@ -1820,6 +1878,10 @@ namespace Amazon.EKS
         /// Constant IdentityProviderConfig for UpdateParamType
         /// </summary>
         public static readonly UpdateParamType IdentityProviderConfig = new UpdateParamType("IdentityProviderConfig");
+        /// <summary>
+        /// Constant KubernetesNetworkConfig for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType KubernetesNetworkConfig = new UpdateParamType("KubernetesNetworkConfig");
         /// <summary>
         /// Constant LabelsToAdd for UpdateParamType
         /// </summary>
@@ -1853,6 +1915,10 @@ namespace Amazon.EKS
         /// </summary>
         public static readonly UpdateParamType MinSize = new UpdateParamType("MinSize");
         /// <summary>
+        /// Constant NodeRepairEnabled for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType NodeRepairEnabled = new UpdateParamType("NodeRepairEnabled");
+        /// <summary>
         /// Constant PlatformVersion for UpdateParamType
         /// </summary>
         public static readonly UpdateParamType PlatformVersion = new UpdateParamType("PlatformVersion");
@@ -1880,6 +1946,10 @@ namespace Amazon.EKS
         /// Constant ServiceAccountRoleArn for UpdateParamType
         /// </summary>
         public static readonly UpdateParamType ServiceAccountRoleArn = new UpdateParamType("ServiceAccountRoleArn");
+        /// <summary>
+        /// Constant StorageConfig for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType StorageConfig = new UpdateParamType("StorageConfig");
         /// <summary>
         /// Constant Subnets for UpdateParamType
         /// </summary>
@@ -2020,6 +2090,10 @@ namespace Amazon.EKS
         /// Constant AssociateIdentityProviderConfig for UpdateType
         /// </summary>
         public static readonly UpdateType AssociateIdentityProviderConfig = new UpdateType("AssociateIdentityProviderConfig");
+        /// <summary>
+        /// Constant AutoModeUpdate for UpdateType
+        /// </summary>
+        public static readonly UpdateType AutoModeUpdate = new UpdateType("AutoModeUpdate");
         /// <summary>
         /// Constant ConfigUpdate for UpdateType
         /// </summary>

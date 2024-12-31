@@ -1453,6 +1453,122 @@ namespace Amazon.IoT
 
 
     /// <summary>
+    /// Constants used for properties of type CommandExecutionStatus.
+    /// </summary>
+    public class CommandExecutionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATED for CommandExecutionStatus
+        /// </summary>
+        public static readonly CommandExecutionStatus CREATED = new CommandExecutionStatus("CREATED");
+        /// <summary>
+        /// Constant FAILED for CommandExecutionStatus
+        /// </summary>
+        public static readonly CommandExecutionStatus FAILED = new CommandExecutionStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for CommandExecutionStatus
+        /// </summary>
+        public static readonly CommandExecutionStatus IN_PROGRESS = new CommandExecutionStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant REJECTED for CommandExecutionStatus
+        /// </summary>
+        public static readonly CommandExecutionStatus REJECTED = new CommandExecutionStatus("REJECTED");
+        /// <summary>
+        /// Constant SUCCEEDED for CommandExecutionStatus
+        /// </summary>
+        public static readonly CommandExecutionStatus SUCCEEDED = new CommandExecutionStatus("SUCCEEDED");
+        /// <summary>
+        /// Constant TIMED_OUT for CommandExecutionStatus
+        /// </summary>
+        public static readonly CommandExecutionStatus TIMED_OUT = new CommandExecutionStatus("TIMED_OUT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CommandExecutionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CommandExecutionStatus FindValue(string value)
+        {
+            return FindValue<CommandExecutionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CommandExecutionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CommandNamespace.
+    /// </summary>
+    public class CommandNamespace : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWSIoT for CommandNamespace
+        /// </summary>
+        public static readonly CommandNamespace AWSIoT = new CommandNamespace("AWS-IoT");
+        /// <summary>
+        /// Constant AWSIoTFleetWise for CommandNamespace
+        /// </summary>
+        public static readonly CommandNamespace AWSIoTFleetWise = new CommandNamespace("AWS-IoT-FleetWise");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CommandNamespace(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CommandNamespace FindValue(string value)
+        {
+            return FindValue<CommandNamespace>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CommandNamespace(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ComparisonOperator.
     /// </summary>
     public class ComparisonOperator : ConstantClass
@@ -2018,6 +2134,104 @@ namespace Amazon.IoT
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DimensionValueOperator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DisconnectReasonValue.
+    /// </summary>
+    public class DisconnectReasonValue : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTH_ERROR for DisconnectReasonValue
+        /// </summary>
+        public static readonly DisconnectReasonValue AUTH_ERROR = new DisconnectReasonValue("AUTH_ERROR");
+        /// <summary>
+        /// Constant CLIENT_ERROR for DisconnectReasonValue
+        /// </summary>
+        public static readonly DisconnectReasonValue CLIENT_ERROR = new DisconnectReasonValue("CLIENT_ERROR");
+        /// <summary>
+        /// Constant CLIENT_INITIATED_DISCONNECT for DisconnectReasonValue
+        /// </summary>
+        public static readonly DisconnectReasonValue CLIENT_INITIATED_DISCONNECT = new DisconnectReasonValue("CLIENT_INITIATED_DISCONNECT");
+        /// <summary>
+        /// Constant CONNECTION_LOST for DisconnectReasonValue
+        /// </summary>
+        public static readonly DisconnectReasonValue CONNECTION_LOST = new DisconnectReasonValue("CONNECTION_LOST");
+        /// <summary>
+        /// Constant CUSTOMAUTH_TTL_EXPIRATION for DisconnectReasonValue
+        /// </summary>
+        public static readonly DisconnectReasonValue CUSTOMAUTH_TTL_EXPIRATION = new DisconnectReasonValue("CUSTOMAUTH_TTL_EXPIRATION");
+        /// <summary>
+        /// Constant DUPLICATE_CLIENTID for DisconnectReasonValue
+        /// </summary>
+        public static readonly DisconnectReasonValue DUPLICATE_CLIENTID = new DisconnectReasonValue("DUPLICATE_CLIENTID");
+        /// <summary>
+        /// Constant FORBIDDEN_ACCESS for DisconnectReasonValue
+        /// </summary>
+        public static readonly DisconnectReasonValue FORBIDDEN_ACCESS = new DisconnectReasonValue("FORBIDDEN_ACCESS");
+        /// <summary>
+        /// Constant MQTT_KEEP_ALIVE_TIMEOUT for DisconnectReasonValue
+        /// </summary>
+        public static readonly DisconnectReasonValue MQTT_KEEP_ALIVE_TIMEOUT = new DisconnectReasonValue("MQTT_KEEP_ALIVE_TIMEOUT");
+        /// <summary>
+        /// Constant NONE for DisconnectReasonValue
+        /// </summary>
+        public static readonly DisconnectReasonValue NONE = new DisconnectReasonValue("NONE");
+        /// <summary>
+        /// Constant SERVER_ERROR for DisconnectReasonValue
+        /// </summary>
+        public static readonly DisconnectReasonValue SERVER_ERROR = new DisconnectReasonValue("SERVER_ERROR");
+        /// <summary>
+        /// Constant SERVER_INITIATED_DISCONNECT for DisconnectReasonValue
+        /// </summary>
+        public static readonly DisconnectReasonValue SERVER_INITIATED_DISCONNECT = new DisconnectReasonValue("SERVER_INITIATED_DISCONNECT");
+        /// <summary>
+        /// Constant THROTTLED for DisconnectReasonValue
+        /// </summary>
+        public static readonly DisconnectReasonValue THROTTLED = new DisconnectReasonValue("THROTTLED");
+        /// <summary>
+        /// Constant UNKNOWN for DisconnectReasonValue
+        /// </summary>
+        public static readonly DisconnectReasonValue UNKNOWN = new DisconnectReasonValue("UNKNOWN");
+        /// <summary>
+        /// Constant WEBSOCKET_TTL_EXPIRATION for DisconnectReasonValue
+        /// </summary>
+        public static readonly DisconnectReasonValue WEBSOCKET_TTL_EXPIRATION = new DisconnectReasonValue("WEBSOCKET_TTL_EXPIRATION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DisconnectReasonValue(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DisconnectReasonValue FindValue(string value)
+        {
+            return FindValue<DisconnectReasonValue>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DisconnectReasonValue(string value)
         {
             return FindValue(value);
         }
@@ -3868,6 +4082,56 @@ namespace Amazon.IoT
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ServiceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SortOrder.
+    /// </summary>
+    public class SortOrder : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASCENDING for SortOrder
+        /// </summary>
+        public static readonly SortOrder ASCENDING = new SortOrder("ASCENDING");
+        /// <summary>
+        /// Constant DESCENDING for SortOrder
+        /// </summary>
+        public static readonly SortOrder DESCENDING = new SortOrder("DESCENDING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SortOrder(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SortOrder FindValue(string value)
+        {
+            return FindValue<SortOrder>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SortOrder(string value)
         {
             return FindValue(value);
         }

@@ -52,8 +52,8 @@ namespace Amazon.Connect.Model
     /// </para>
     ///  
     /// <para>
-    /// Access to this API is currently restricted to Amazon Pinpoint for supporting SMS integration.
-    /// 
+    /// Access to this API is currently restricted to Amazon Web Services End User Messaging
+    /// for supporting SMS integration. 
     /// </para>
     /// </summary>
     public partial class SendChatIntegrationEventRequest : AmazonConnectRequest
@@ -68,9 +68,9 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property DestinationId. 
         /// <para>
         /// Chat system identifier, used in part to uniquely identify chat. This is associated
-        /// with the Amazon Connect instance and flow to be used to start chats. For SMS, this
-        /// is the phone number destination of inbound SMS messages represented by an Amazon Pinpoint
-        /// phone number ARN.
+        /// with the Amazon Connect instance and flow to be used to start chats. For Server Migration
+        /// Service, this is the phone number destination of inbound Server Migration Service
+        /// messages represented by an Amazon Web Services End User Messaging phone number ARN.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -151,7 +151,7 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid value: <c>["connect:sms"]</c> 
+        /// Valid value: <c>["connect:sms", connect:"WhatsApp"]</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

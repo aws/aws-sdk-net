@@ -34,7 +34,8 @@ namespace Amazon.BedrockAgentRuntime.Model
     /// Invokes an alias of a flow to run the inputs that you specify and return the output
     /// of each node as a stream. If there's an error, the error is returned. For more information,
     /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-test.html">Test
-    /// a flow in Amazon Bedrock</a> in the Amazon Bedrock User Guide.
+    /// a flow in Amazon Bedrock</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+    /// Bedrock User Guide</a>.
     /// 
     ///  <note> 
     /// <para>
@@ -48,6 +49,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         private string _flowAliasIdentifier;
         private string _flowIdentifier;
         private List<FlowInput> _inputs = AWSConfigs.InitializeCollections ? new List<FlowInput>() : null;
+        private ModelPerformanceConfiguration _modelPerformanceConfiguration;
 
         /// <summary>
         /// Gets and sets the property EnableTrace. 
@@ -124,6 +126,24 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetInputs()
         {
             return this._inputs != null && (this._inputs.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModelPerformanceConfiguration. 
+        /// <para>
+        /// Model performance settings for the request.
+        /// </para>
+        /// </summary>
+        public ModelPerformanceConfiguration ModelPerformanceConfiguration
+        {
+            get { return this._modelPerformanceConfiguration; }
+            set { this._modelPerformanceConfiguration = value; }
+        }
+
+        // Check to see if ModelPerformanceConfiguration property is set
+        internal bool IsSetModelPerformanceConfiguration()
+        {
+            return this._modelPerformanceConfiguration != null;
         }
 
     }

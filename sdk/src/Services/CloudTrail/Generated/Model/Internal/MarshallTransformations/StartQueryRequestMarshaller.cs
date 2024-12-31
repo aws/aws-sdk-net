@@ -77,11 +77,31 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.DeliveryS3Uri);
                     }
 
+<<<<<<< HEAD
                     if(publicRequest.IsSetQueryAlias())
                     {
                         context.Writer.WritePropertyName("QueryAlias");
                         context.Writer.Write(publicRequest.QueryAlias);
                     }
+||||||| Commit version number update changes
+                if(publicRequest.IsSetQueryAlias())
+                {
+                    context.Writer.WritePropertyName("QueryAlias");
+                    context.Writer.Write(publicRequest.QueryAlias);
+                }
+=======
+                if(publicRequest.IsSetEventDataStoreOwnerAccountId())
+                {
+                    context.Writer.WritePropertyName("EventDataStoreOwnerAccountId");
+                    context.Writer.Write(publicRequest.EventDataStoreOwnerAccountId);
+                }
+
+                if(publicRequest.IsSetQueryAlias())
+                {
+                    context.Writer.WritePropertyName("QueryAlias");
+                    context.Writer.Write(publicRequest.QueryAlias);
+                }
+>>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
 
                     if(publicRequest.IsSetQueryParameters())
                     {

@@ -102,6 +102,12 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
                     unmarshalledObject.ActivityTimedOutEventDetails = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("evaluationFailedEventDetails", targetDepth))
+                {
+                    var unmarshaller = EvaluationFailedEventDetailsUnmarshaller.Instance;
+                    unmarshalledObject.EvaluationFailedEventDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("executionAbortedEventDetails", targetDepth))
                 {
                     var unmarshaller = ExecutionAbortedEventDetailsUnmarshaller.Instance;

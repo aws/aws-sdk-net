@@ -136,6 +136,18 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                     response.PortalStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("portalType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.PortalType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("portalTypeConfiguration", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, PortalTypeEntry, StringUnmarshaller, PortalTypeEntryUnmarshaller>(StringUnmarshaller.Instance, PortalTypeEntryUnmarshaller.Instance);
+                    response.PortalTypeConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("roleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

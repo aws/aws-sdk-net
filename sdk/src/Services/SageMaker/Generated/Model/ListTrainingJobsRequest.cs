@@ -77,6 +77,7 @@ namespace Amazon.SageMaker.Model
         private SortBy _sortBy;
         private SortOrder _sortOrder;
         private TrainingJobStatus _statusEquals;
+        private string _trainingPlanArnEquals;
         private WarmPoolResourceStatus _warmPoolStatusEquals;
 
         /// <summary>
@@ -263,6 +264,28 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetStatusEquals()
         {
             return this._statusEquals != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrainingPlanArnEquals. 
+        /// <para>
+        /// The Amazon Resource Name (ARN); of the training plan to filter training jobs by. For
+        /// more information about reserving GPU capacity for your SageMaker training jobs using
+        /// Amazon SageMaker Training Plan, see <c> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingPlan.html">CreateTrainingPlan</a>
+        /// </c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=50, Max=2048)]
+        public string TrainingPlanArnEquals
+        {
+            get { return this._trainingPlanArnEquals; }
+            set { this._trainingPlanArnEquals = value; }
+        }
+
+        // Check to see if TrainingPlanArnEquals property is set
+        internal bool IsSetTrainingPlanArnEquals()
+        {
+            return this._trainingPlanArnEquals != null;
         }
 
         /// <summary>

@@ -329,32 +329,9 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// This field accepts only the specified formats. Timestamps can end with <c>Z</c> or
-        /// <c>("+" / "-") time-hour [":" time-minute]</c>. The time-secfrac after seconds is
-        /// limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid
-        /// timestamp formats with examples:
+        /// For more information about the validation and formatting of timestamp fields in Security
+        /// Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <c>YYYY-MM-DDTHH:MM:SSZ</c> (for example, <c>2019-01-31T23:00:00Z</c>)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</c> (for example, <c>2019-01-31T23:00:00.123456789Z</c>)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>YYYY-MM-DDTHH:MM:SS+HH:MM</c> (for example, <c>2024-01-04T15:25:10+17:59</c>)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>YYYY-MM-DDTHH:MM:SS-HHMM</c> (for example, <c>2024-01-04T15:25:10-1759</c>)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</c> (for example, <c>2024-01-04T15:25:10.123456789+17:59</c>)
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public List<DateFilter> CreatedAt
         {
@@ -563,32 +540,9 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// This field accepts only the specified formats. Timestamps can end with <c>Z</c> or
-        /// <c>("+" / "-") time-hour [":" time-minute]</c>. The time-secfrac after seconds is
-        /// limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid
-        /// timestamp formats with examples:
+        /// For more information about the validation and formatting of timestamp fields in Security
+        /// Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <c>YYYY-MM-DDTHH:MM:SSZ</c> (for example, <c>2019-01-31T23:00:00Z</c>)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</c> (for example, <c>2019-01-31T23:00:00.123456789Z</c>)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>YYYY-MM-DDTHH:MM:SS+HH:MM</c> (for example, <c>2024-01-04T15:25:10+17:59</c>)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>YYYY-MM-DDTHH:MM:SS-HHMM</c> (for example, <c>2024-01-04T15:25:10-1759</c>)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</c> (for example, <c>2024-01-04T15:25:10.123456789+17:59</c>)
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public List<DateFilter> FirstObservedAt
         {
@@ -663,36 +617,13 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property LastObservedAt. 
         /// <para>
         /// A timestamp that indicates when the security findings provider most recently observed
-        /// the potential security issue that a finding captured.
+        /// a change in the resource that is involved in the finding.
         /// </para>
         ///  
         /// <para>
-        /// This field accepts only the specified formats. Timestamps can end with <c>Z</c> or
-        /// <c>("+" / "-") time-hour [":" time-minute]</c>. The time-secfrac after seconds is
-        /// limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid
-        /// timestamp formats with examples:
+        /// For more information about the validation and formatting of timestamp fields in Security
+        /// Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <c>YYYY-MM-DDTHH:MM:SSZ</c> (for example, <c>2019-01-31T23:00:00Z</c>)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</c> (for example, <c>2019-01-31T23:00:00.123456789Z</c>)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>YYYY-MM-DDTHH:MM:SS+HH:MM</c> (for example, <c>2024-01-04T15:25:10+17:59</c>)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>YYYY-MM-DDTHH:MM:SS-HHMM</c> (for example, <c>2024-01-04T15:25:10-1759</c>)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</c> (for example, <c>2024-01-04T15:25:10.123456789+17:59</c>)
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public List<DateFilter> LastObservedAt
         {
@@ -1038,32 +969,9 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// This field accepts only the specified formats. Timestamps can end with <c>Z</c> or
-        /// <c>("+" / "-") time-hour [":" time-minute]</c>. The time-secfrac after seconds is
-        /// limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid
-        /// timestamp formats with examples:
+        /// For more information about the validation and formatting of timestamp fields in Security
+        /// Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <c>YYYY-MM-DDTHH:MM:SSZ</c> (for example, <c>2019-01-31T23:00:00Z</c>)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</c> (for example, <c>2019-01-31T23:00:00.123456789Z</c>)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>YYYY-MM-DDTHH:MM:SS+HH:MM</c> (for example, <c>2024-01-04T15:25:10+17:59</c>)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>YYYY-MM-DDTHH:MM:SS-HHMM</c> (for example, <c>2024-01-04T15:25:10-1759</c>)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</c> (for example, <c>2024-01-04T15:25:10.123456789+17:59</c>)
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public List<DateFilter> ProcessLaunchedAt
         {
@@ -1156,32 +1064,9 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// This field accepts only the specified formats. Timestamps can end with <c>Z</c> or
-        /// <c>("+" / "-") time-hour [":" time-minute]</c>. The time-secfrac after seconds is
-        /// limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid
-        /// timestamp formats with examples:
+        /// For more information about the validation and formatting of timestamp fields in Security
+        /// Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <c>YYYY-MM-DDTHH:MM:SSZ</c> (for example, <c>2019-01-31T23:00:00Z</c>)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</c> (for example, <c>2019-01-31T23:00:00.123456789Z</c>)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>YYYY-MM-DDTHH:MM:SS+HH:MM</c> (for example, <c>2024-01-04T15:25:10+17:59</c>)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>YYYY-MM-DDTHH:MM:SS-HHMM</c> (for example, <c>2024-01-04T15:25:10-1759</c>)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</c> (for example, <c>2024-01-04T15:25:10.123456789+17:59</c>)
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public List<DateFilter> ProcessTerminatedAt
         {
@@ -1710,32 +1595,9 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// This field accepts only the specified formats. Timestamps can end with <c>Z</c> or
-        /// <c>("+" / "-") time-hour [":" time-minute]</c>. The time-secfrac after seconds is
-        /// limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid
-        /// timestamp formats with examples:
+        /// For more information about the validation and formatting of timestamp fields in Security
+        /// Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <c>YYYY-MM-DDTHH:MM:SSZ</c> (for example, <c>2019-01-31T23:00:00Z</c>)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</c> (for example, <c>2019-01-31T23:00:00.123456789Z</c>)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>YYYY-MM-DDTHH:MM:SS+HH:MM</c> (for example, <c>2024-01-04T15:25:10+17:59</c>)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>YYYY-MM-DDTHH:MM:SS-HHMM</c> (for example, <c>2024-01-04T15:25:10-1759</c>)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</c> (for example, <c>2024-01-04T15:25:10.123456789+17:59</c>)
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public List<DateFilter> ResourceContainerLaunchedAt
         {
@@ -1994,6 +1856,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// A timestamp that identifies the last observation of a threat intelligence indicator.
         /// </para>
+        ///  
+        /// <para>
+        /// For more information about the validation and formatting of timestamp fields in Security
+        /// Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.
+        /// </para>
         /// </summary>
         public List<DateFilter> ThreatIntelIndicatorLastObservedAt
         {
@@ -2124,32 +1991,9 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// This field accepts only the specified formats. Timestamps can end with <c>Z</c> or
-        /// <c>("+" / "-") time-hour [":" time-minute]</c>. The time-secfrac after seconds is
-        /// limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid
-        /// timestamp formats with examples:
+        /// For more information about the validation and formatting of timestamp fields in Security
+        /// Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <c>YYYY-MM-DDTHH:MM:SSZ</c> (for example, <c>2019-01-31T23:00:00Z</c>)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</c> (for example, <c>2019-01-31T23:00:00.123456789Z</c>)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>YYYY-MM-DDTHH:MM:SS+HH:MM</c> (for example, <c>2024-01-04T15:25:10+17:59</c>)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>YYYY-MM-DDTHH:MM:SS-HHMM</c> (for example, <c>2024-01-04T15:25:10-1759</c>)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</c> (for example, <c>2024-01-04T15:25:10.123456789+17:59</c>)
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public List<DateFilter> UpdatedAt
         {

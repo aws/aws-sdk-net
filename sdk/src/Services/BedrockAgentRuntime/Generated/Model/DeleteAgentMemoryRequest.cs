@@ -38,6 +38,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         private string _agentAliasId;
         private string _agentId;
         private string _memoryId;
+        private string _sessionId;
 
         /// <summary>
         /// Gets and sets the property AgentAliasId. 
@@ -94,6 +95,25 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetMemoryId()
         {
             return this._memoryId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SessionId. 
+        /// <para>
+        /// The unique session identifier of the memory.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=2, Max=100)]
+        public string SessionId
+        {
+            get { return this._sessionId; }
+            set { this._sessionId = value; }
+        }
+
+        // Check to see if SessionId property is set
+        internal bool IsSetSessionId()
+        {
+            return this._sessionId != null;
         }
 
     }

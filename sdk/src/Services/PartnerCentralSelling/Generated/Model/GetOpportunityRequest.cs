@@ -33,11 +33,10 @@ namespace Amazon.PartnerCentralSelling.Model
     /// Container for the parameters to the GetOpportunity operation.
     /// Fetches the <c>Opportunity</c> record from Partner Central by a given <c>Identifier</c>.
     /// 
-    /// 
     ///  
     /// <para>
-    ///  Use the <c>ListOpportunities</c> action or the event notification (from Amazon EventBridge)
-    /// to obtain this identifier. 
+    /// Use the <c>ListOpportunities</c> action or the event notification (from Amazon EventBridge)
+    /// to obtain this identifier.
     /// </para>
     /// </summary>
     public partial class GetOpportunityRequest : AmazonPartnerCentralSellingRequest
@@ -48,11 +47,11 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Catalog. 
         /// <para>
-        ///  Specifies the catalog associated with the request. This field takes a string value
+        /// Specifies the catalog associated with the request. This field takes a string value
         /// from a predefined list: <c>AWS</c> or <c>Sandbox</c>. The catalog determines which
         /// environment the opportunity is fetched from. Use <c>AWS</c> to retrieve opportunities
         /// in the Amazon Web Services catalog, and <c>Sandbox</c> to retrieve opportunities in
-        /// a secure, isolated testing environment. 
+        /// a secure, isolated testing environment.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -71,7 +70,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Identifier. 
         /// <para>
-        /// Read-only, system generated <c>Opportunity</c> unique identifier. 
+        /// Read-only, system generated <c>Opportunity</c> unique identifier.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -97,7 +97,27 @@ namespace Amazon.QApps.Model.Internal.MarshallTransformations
                         context.Writer.WriteArrayEnd();
                     }
 
+<<<<<<< HEAD
                     if(publicRequest.IsSetTags())
+||||||| Commit version number update changes
+                if(publicRequest.IsSetTags())
+                {
+                    context.Writer.WritePropertyName("tags");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+=======
+                if(publicRequest.IsSetSessionId())
+                {
+                    context.Writer.WritePropertyName("sessionId");
+                    context.Writer.Write(publicRequest.SessionId);
+                }
+
+                if(publicRequest.IsSetTags())
+                {
+                    context.Writer.WritePropertyName("tags");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+>>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
                     {
                         context.Writer.WritePropertyName("tags");
                         context.Writer.WriteObjectStart();

@@ -32,7 +32,7 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// Container for the parameters to the BatchStopUpdateAction operation.
     /// Stop the service update. For more information on service updates and stopping them,
-    /// see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/stopping-self-service-updates.html">Stopping
+    /// see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/stopping-self-service-updates.html">Stopping
     /// Service Updates</a>.
     /// </summary>
     public partial class BatchStopUpdateActionRequest : AmazonElastiCacheRequest

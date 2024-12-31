@@ -40,7 +40,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property SecretCode. 
         /// <para>
-        /// A unique generated shared secret code that is used in the TOTP algorithm to generate
+        /// A unique generated shared secret code that is used by the TOTP algorithm to generate
         /// a one-time code.
         /// </para>
         /// </summary>
@@ -60,8 +60,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Session. 
         /// <para>
-        /// The session that should be passed both ways in challenge-response calls to the service.
-        /// This allows authentication of the user as part of the MFA setup process.
+        /// The session identifier that maintains the state of authentication requests and challenge
+        /// responses. This session ID is valid for the next request in this flow, <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerifySoftwareToken.html">VerifySoftwareToken</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=20, Max=2048)]

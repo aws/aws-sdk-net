@@ -84,6 +84,10 @@ namespace Amazon.QConnect
         /// Constant MANUAL_SEARCH for AIAgentType
         /// </summary>
         public static readonly AIAgentType MANUAL_SEARCH = new AIAgentType("MANUAL_SEARCH");
+        /// <summary>
+        /// Constant SELF_SERVICE for AIAgentType
+        /// </summary>
+        public static readonly AIAgentType SELF_SERVICE = new AIAgentType("SELF_SERVICE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -234,6 +238,14 @@ namespace Amazon.QConnect
         /// Constant QUERY_REFORMULATION for AIPromptType
         /// </summary>
         public static readonly AIPromptType QUERY_REFORMULATION = new AIPromptType("QUERY_REFORMULATION");
+        /// <summary>
+        /// Constant SELF_SERVICE_ANSWER_GENERATION for AIPromptType
+        /// </summary>
+        public static readonly AIPromptType SELF_SERVICE_ANSWER_GENERATION = new AIPromptType("SELF_SERVICE_ANSWER_GENERATION");
+        /// <summary>
+        /// Constant SELF_SERVICE_PRE_PROCESSING for AIPromptType
+        /// </summary>
+        public static readonly AIPromptType SELF_SERVICE_PRE_PROCESSING = new AIPromptType("SELF_SERVICE_PRE_PROCESSING");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -479,6 +491,56 @@ namespace Amazon.QConnect
 
 
     /// <summary>
+    /// Constants used for properties of type ChannelSubtype.
+    /// </summary>
+    public class ChannelSubtype : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EMAIL for ChannelSubtype
+        /// </summary>
+        public static readonly ChannelSubtype EMAIL = new ChannelSubtype("EMAIL");
+        /// <summary>
+        /// Constant SMS for ChannelSubtype
+        /// </summary>
+        public static readonly ChannelSubtype SMS = new ChannelSubtype("SMS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ChannelSubtype(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ChannelSubtype FindValue(string value)
+        {
+            return FindValue<ChannelSubtype>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ChannelSubtype(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ChunkingStrategy.
     /// </summary>
     public class ChunkingStrategy : ConstantClass
@@ -583,6 +645,52 @@ namespace Amazon.QConnect
 
 
     /// <summary>
+    /// Constants used for properties of type ContentDisposition.
+    /// </summary>
+    public class ContentDisposition : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ATTACHMENT for ContentDisposition
+        /// </summary>
+        public static readonly ContentDisposition ATTACHMENT = new ContentDisposition("ATTACHMENT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContentDisposition(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContentDisposition FindValue(string value)
+        {
+            return FindValue<ContentDisposition>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContentDisposition(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ContentStatus.
     /// </summary>
     public class ContentStatus : ConstantClass
@@ -646,6 +754,114 @@ namespace Amazon.QConnect
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ContentStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ConversationStatus.
+    /// </summary>
+    public class ConversationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CLOSED for ConversationStatus
+        /// </summary>
+        public static readonly ConversationStatus CLOSED = new ConversationStatus("CLOSED");
+        /// <summary>
+        /// Constant PROCESSING for ConversationStatus
+        /// </summary>
+        public static readonly ConversationStatus PROCESSING = new ConversationStatus("PROCESSING");
+        /// <summary>
+        /// Constant READY for ConversationStatus
+        /// </summary>
+        public static readonly ConversationStatus READY = new ConversationStatus("READY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConversationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConversationStatus FindValue(string value)
+        {
+            return FindValue<ConversationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConversationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ConversationStatusReason.
+    /// </summary>
+    public class ConversationStatusReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for ConversationStatusReason
+        /// </summary>
+        public static readonly ConversationStatusReason FAILED = new ConversationStatusReason("FAILED");
+        /// <summary>
+        /// Constant REJECTED for ConversationStatusReason
+        /// </summary>
+        public static readonly ConversationStatusReason REJECTED = new ConversationStatusReason("REJECTED");
+        /// <summary>
+        /// Constant SUCCESS for ConversationStatusReason
+        /// </summary>
+        public static readonly ConversationStatusReason SUCCESS = new ConversationStatusReason("SUCCESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConversationStatusReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConversationStatusReason FindValue(string value)
+        {
+            return FindValue<ConversationStatusReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConversationStatusReason(string value)
         {
             return FindValue(value);
         }
@@ -784,6 +1000,488 @@ namespace Amazon.QConnect
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator FilterOperator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GuardrailContentFilterType.
+    /// </summary>
+    public class GuardrailContentFilterType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HATE for GuardrailContentFilterType
+        /// </summary>
+        public static readonly GuardrailContentFilterType HATE = new GuardrailContentFilterType("HATE");
+        /// <summary>
+        /// Constant INSULTS for GuardrailContentFilterType
+        /// </summary>
+        public static readonly GuardrailContentFilterType INSULTS = new GuardrailContentFilterType("INSULTS");
+        /// <summary>
+        /// Constant MISCONDUCT for GuardrailContentFilterType
+        /// </summary>
+        public static readonly GuardrailContentFilterType MISCONDUCT = new GuardrailContentFilterType("MISCONDUCT");
+        /// <summary>
+        /// Constant PROMPT_ATTACK for GuardrailContentFilterType
+        /// </summary>
+        public static readonly GuardrailContentFilterType PROMPT_ATTACK = new GuardrailContentFilterType("PROMPT_ATTACK");
+        /// <summary>
+        /// Constant SEXUAL for GuardrailContentFilterType
+        /// </summary>
+        public static readonly GuardrailContentFilterType SEXUAL = new GuardrailContentFilterType("SEXUAL");
+        /// <summary>
+        /// Constant VIOLENCE for GuardrailContentFilterType
+        /// </summary>
+        public static readonly GuardrailContentFilterType VIOLENCE = new GuardrailContentFilterType("VIOLENCE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GuardrailContentFilterType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GuardrailContentFilterType FindValue(string value)
+        {
+            return FindValue<GuardrailContentFilterType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GuardrailContentFilterType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GuardrailContextualGroundingFilterType.
+    /// </summary>
+    public class GuardrailContextualGroundingFilterType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GROUNDING for GuardrailContextualGroundingFilterType
+        /// </summary>
+        public static readonly GuardrailContextualGroundingFilterType GROUNDING = new GuardrailContextualGroundingFilterType("GROUNDING");
+        /// <summary>
+        /// Constant RELEVANCE for GuardrailContextualGroundingFilterType
+        /// </summary>
+        public static readonly GuardrailContextualGroundingFilterType RELEVANCE = new GuardrailContextualGroundingFilterType("RELEVANCE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GuardrailContextualGroundingFilterType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GuardrailContextualGroundingFilterType FindValue(string value)
+        {
+            return FindValue<GuardrailContextualGroundingFilterType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GuardrailContextualGroundingFilterType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GuardrailFilterStrength.
+    /// </summary>
+    public class GuardrailFilterStrength : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HIGH for GuardrailFilterStrength
+        /// </summary>
+        public static readonly GuardrailFilterStrength HIGH = new GuardrailFilterStrength("HIGH");
+        /// <summary>
+        /// Constant LOW for GuardrailFilterStrength
+        /// </summary>
+        public static readonly GuardrailFilterStrength LOW = new GuardrailFilterStrength("LOW");
+        /// <summary>
+        /// Constant MEDIUM for GuardrailFilterStrength
+        /// </summary>
+        public static readonly GuardrailFilterStrength MEDIUM = new GuardrailFilterStrength("MEDIUM");
+        /// <summary>
+        /// Constant NONE for GuardrailFilterStrength
+        /// </summary>
+        public static readonly GuardrailFilterStrength NONE = new GuardrailFilterStrength("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GuardrailFilterStrength(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GuardrailFilterStrength FindValue(string value)
+        {
+            return FindValue<GuardrailFilterStrength>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GuardrailFilterStrength(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GuardrailManagedWordsType.
+    /// </summary>
+    public class GuardrailManagedWordsType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PROFANITY for GuardrailManagedWordsType
+        /// </summary>
+        public static readonly GuardrailManagedWordsType PROFANITY = new GuardrailManagedWordsType("PROFANITY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GuardrailManagedWordsType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GuardrailManagedWordsType FindValue(string value)
+        {
+            return FindValue<GuardrailManagedWordsType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GuardrailManagedWordsType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GuardrailPiiEntityType.
+    /// </summary>
+    public class GuardrailPiiEntityType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ADDRESS for GuardrailPiiEntityType
+        /// </summary>
+        public static readonly GuardrailPiiEntityType ADDRESS = new GuardrailPiiEntityType("ADDRESS");
+        /// <summary>
+        /// Constant AGE for GuardrailPiiEntityType
+        /// </summary>
+        public static readonly GuardrailPiiEntityType AGE = new GuardrailPiiEntityType("AGE");
+        /// <summary>
+        /// Constant AWS_ACCESS_KEY for GuardrailPiiEntityType
+        /// </summary>
+        public static readonly GuardrailPiiEntityType AWS_ACCESS_KEY = new GuardrailPiiEntityType("AWS_ACCESS_KEY");
+        /// <summary>
+        /// Constant AWS_SECRET_KEY for GuardrailPiiEntityType
+        /// </summary>
+        public static readonly GuardrailPiiEntityType AWS_SECRET_KEY = new GuardrailPiiEntityType("AWS_SECRET_KEY");
+        /// <summary>
+        /// Constant CA_HEALTH_NUMBER for GuardrailPiiEntityType
+        /// </summary>
+        public static readonly GuardrailPiiEntityType CA_HEALTH_NUMBER = new GuardrailPiiEntityType("CA_HEALTH_NUMBER");
+        /// <summary>
+        /// Constant CA_SOCIAL_INSURANCE_NUMBER for GuardrailPiiEntityType
+        /// </summary>
+        public static readonly GuardrailPiiEntityType CA_SOCIAL_INSURANCE_NUMBER = new GuardrailPiiEntityType("CA_SOCIAL_INSURANCE_NUMBER");
+        /// <summary>
+        /// Constant CREDIT_DEBIT_CARD_CVV for GuardrailPiiEntityType
+        /// </summary>
+        public static readonly GuardrailPiiEntityType CREDIT_DEBIT_CARD_CVV = new GuardrailPiiEntityType("CREDIT_DEBIT_CARD_CVV");
+        /// <summary>
+        /// Constant CREDIT_DEBIT_CARD_EXPIRY for GuardrailPiiEntityType
+        /// </summary>
+        public static readonly GuardrailPiiEntityType CREDIT_DEBIT_CARD_EXPIRY = new GuardrailPiiEntityType("CREDIT_DEBIT_CARD_EXPIRY");
+        /// <summary>
+        /// Constant CREDIT_DEBIT_CARD_NUMBER for GuardrailPiiEntityType
+        /// </summary>
+        public static readonly GuardrailPiiEntityType CREDIT_DEBIT_CARD_NUMBER = new GuardrailPiiEntityType("CREDIT_DEBIT_CARD_NUMBER");
+        /// <summary>
+        /// Constant DRIVER_ID for GuardrailPiiEntityType
+        /// </summary>
+        public static readonly GuardrailPiiEntityType DRIVER_ID = new GuardrailPiiEntityType("DRIVER_ID");
+        /// <summary>
+        /// Constant EMAIL for GuardrailPiiEntityType
+        /// </summary>
+        public static readonly GuardrailPiiEntityType EMAIL = new GuardrailPiiEntityType("EMAIL");
+        /// <summary>
+        /// Constant INTERNATIONAL_BANK_ACCOUNT_NUMBER for GuardrailPiiEntityType
+        /// </summary>
+        public static readonly GuardrailPiiEntityType INTERNATIONAL_BANK_ACCOUNT_NUMBER = new GuardrailPiiEntityType("INTERNATIONAL_BANK_ACCOUNT_NUMBER");
+        /// <summary>
+        /// Constant IP_ADDRESS for GuardrailPiiEntityType
+        /// </summary>
+        public static readonly GuardrailPiiEntityType IP_ADDRESS = new GuardrailPiiEntityType("IP_ADDRESS");
+        /// <summary>
+        /// Constant LICENSE_PLATE for GuardrailPiiEntityType
+        /// </summary>
+        public static readonly GuardrailPiiEntityType LICENSE_PLATE = new GuardrailPiiEntityType("LICENSE_PLATE");
+        /// <summary>
+        /// Constant MAC_ADDRESS for GuardrailPiiEntityType
+        /// </summary>
+        public static readonly GuardrailPiiEntityType MAC_ADDRESS = new GuardrailPiiEntityType("MAC_ADDRESS");
+        /// <summary>
+        /// Constant NAME for GuardrailPiiEntityType
+        /// </summary>
+        public static readonly GuardrailPiiEntityType NAME = new GuardrailPiiEntityType("NAME");
+        /// <summary>
+        /// Constant PASSWORD for GuardrailPiiEntityType
+        /// </summary>
+        public static readonly GuardrailPiiEntityType PASSWORD = new GuardrailPiiEntityType("PASSWORD");
+        /// <summary>
+        /// Constant PHONE for GuardrailPiiEntityType
+        /// </summary>
+        public static readonly GuardrailPiiEntityType PHONE = new GuardrailPiiEntityType("PHONE");
+        /// <summary>
+        /// Constant PIN for GuardrailPiiEntityType
+        /// </summary>
+        public static readonly GuardrailPiiEntityType PIN = new GuardrailPiiEntityType("PIN");
+        /// <summary>
+        /// Constant SWIFT_CODE for GuardrailPiiEntityType
+        /// </summary>
+        public static readonly GuardrailPiiEntityType SWIFT_CODE = new GuardrailPiiEntityType("SWIFT_CODE");
+        /// <summary>
+        /// Constant UK_NATIONAL_HEALTH_SERVICE_NUMBER for GuardrailPiiEntityType
+        /// </summary>
+        public static readonly GuardrailPiiEntityType UK_NATIONAL_HEALTH_SERVICE_NUMBER = new GuardrailPiiEntityType("UK_NATIONAL_HEALTH_SERVICE_NUMBER");
+        /// <summary>
+        /// Constant UK_NATIONAL_INSURANCE_NUMBER for GuardrailPiiEntityType
+        /// </summary>
+        public static readonly GuardrailPiiEntityType UK_NATIONAL_INSURANCE_NUMBER = new GuardrailPiiEntityType("UK_NATIONAL_INSURANCE_NUMBER");
+        /// <summary>
+        /// Constant UK_UNIQUE_TAXPAYER_REFERENCE_NUMBER for GuardrailPiiEntityType
+        /// </summary>
+        public static readonly GuardrailPiiEntityType UK_UNIQUE_TAXPAYER_REFERENCE_NUMBER = new GuardrailPiiEntityType("UK_UNIQUE_TAXPAYER_REFERENCE_NUMBER");
+        /// <summary>
+        /// Constant URL for GuardrailPiiEntityType
+        /// </summary>
+        public static readonly GuardrailPiiEntityType URL = new GuardrailPiiEntityType("URL");
+        /// <summary>
+        /// Constant US_BANK_ACCOUNT_NUMBER for GuardrailPiiEntityType
+        /// </summary>
+        public static readonly GuardrailPiiEntityType US_BANK_ACCOUNT_NUMBER = new GuardrailPiiEntityType("US_BANK_ACCOUNT_NUMBER");
+        /// <summary>
+        /// Constant US_BANK_ROUTING_NUMBER for GuardrailPiiEntityType
+        /// </summary>
+        public static readonly GuardrailPiiEntityType US_BANK_ROUTING_NUMBER = new GuardrailPiiEntityType("US_BANK_ROUTING_NUMBER");
+        /// <summary>
+        /// Constant US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER for GuardrailPiiEntityType
+        /// </summary>
+        public static readonly GuardrailPiiEntityType US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER = new GuardrailPiiEntityType("US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER");
+        /// <summary>
+        /// Constant US_PASSPORT_NUMBER for GuardrailPiiEntityType
+        /// </summary>
+        public static readonly GuardrailPiiEntityType US_PASSPORT_NUMBER = new GuardrailPiiEntityType("US_PASSPORT_NUMBER");
+        /// <summary>
+        /// Constant US_SOCIAL_SECURITY_NUMBER for GuardrailPiiEntityType
+        /// </summary>
+        public static readonly GuardrailPiiEntityType US_SOCIAL_SECURITY_NUMBER = new GuardrailPiiEntityType("US_SOCIAL_SECURITY_NUMBER");
+        /// <summary>
+        /// Constant USERNAME for GuardrailPiiEntityType
+        /// </summary>
+        public static readonly GuardrailPiiEntityType USERNAME = new GuardrailPiiEntityType("USERNAME");
+        /// <summary>
+        /// Constant VEHICLE_IDENTIFICATION_NUMBER for GuardrailPiiEntityType
+        /// </summary>
+        public static readonly GuardrailPiiEntityType VEHICLE_IDENTIFICATION_NUMBER = new GuardrailPiiEntityType("VEHICLE_IDENTIFICATION_NUMBER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GuardrailPiiEntityType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GuardrailPiiEntityType FindValue(string value)
+        {
+            return FindValue<GuardrailPiiEntityType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GuardrailPiiEntityType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GuardrailSensitiveInformationAction.
+    /// </summary>
+    public class GuardrailSensitiveInformationAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ANONYMIZE for GuardrailSensitiveInformationAction
+        /// </summary>
+        public static readonly GuardrailSensitiveInformationAction ANONYMIZE = new GuardrailSensitiveInformationAction("ANONYMIZE");
+        /// <summary>
+        /// Constant BLOCK for GuardrailSensitiveInformationAction
+        /// </summary>
+        public static readonly GuardrailSensitiveInformationAction BLOCK = new GuardrailSensitiveInformationAction("BLOCK");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GuardrailSensitiveInformationAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GuardrailSensitiveInformationAction FindValue(string value)
+        {
+            return FindValue<GuardrailSensitiveInformationAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GuardrailSensitiveInformationAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GuardrailTopicType.
+    /// </summary>
+    public class GuardrailTopicType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DENY for GuardrailTopicType
+        /// </summary>
+        public static readonly GuardrailTopicType DENY = new GuardrailTopicType("DENY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GuardrailTopicType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GuardrailTopicType FindValue(string value)
+        {
+            return FindValue<GuardrailTopicType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GuardrailTopicType(string value)
         {
             return FindValue(value);
         }
@@ -1081,6 +1779,210 @@ namespace Amazon.QConnect
 
 
     /// <summary>
+    /// Constants used for properties of type MessageTemplateAttributeType.
+    /// </summary>
+    public class MessageTemplateAttributeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AGENT for MessageTemplateAttributeType
+        /// </summary>
+        public static readonly MessageTemplateAttributeType AGENT = new MessageTemplateAttributeType("AGENT");
+        /// <summary>
+        /// Constant CUSTOM for MessageTemplateAttributeType
+        /// </summary>
+        public static readonly MessageTemplateAttributeType CUSTOM = new MessageTemplateAttributeType("CUSTOM");
+        /// <summary>
+        /// Constant CUSTOMER_PROFILE for MessageTemplateAttributeType
+        /// </summary>
+        public static readonly MessageTemplateAttributeType CUSTOMER_PROFILE = new MessageTemplateAttributeType("CUSTOMER_PROFILE");
+        /// <summary>
+        /// Constant SYSTEM for MessageTemplateAttributeType
+        /// </summary>
+        public static readonly MessageTemplateAttributeType SYSTEM = new MessageTemplateAttributeType("SYSTEM");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MessageTemplateAttributeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MessageTemplateAttributeType FindValue(string value)
+        {
+            return FindValue<MessageTemplateAttributeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MessageTemplateAttributeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MessageTemplateFilterOperator.
+    /// </summary>
+    public class MessageTemplateFilterOperator : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EQUALS for MessageTemplateFilterOperator
+        /// </summary>
+        public static readonly MessageTemplateFilterOperator EQUALS = new MessageTemplateFilterOperator("EQUALS");
+        /// <summary>
+        /// Constant PREFIX for MessageTemplateFilterOperator
+        /// </summary>
+        public static readonly MessageTemplateFilterOperator PREFIX = new MessageTemplateFilterOperator("PREFIX");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MessageTemplateFilterOperator(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MessageTemplateFilterOperator FindValue(string value)
+        {
+            return FindValue<MessageTemplateFilterOperator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MessageTemplateFilterOperator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MessageTemplateQueryOperator.
+    /// </summary>
+    public class MessageTemplateQueryOperator : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONTAINS for MessageTemplateQueryOperator
+        /// </summary>
+        public static readonly MessageTemplateQueryOperator CONTAINS = new MessageTemplateQueryOperator("CONTAINS");
+        /// <summary>
+        /// Constant CONTAINS_AND_PREFIX for MessageTemplateQueryOperator
+        /// </summary>
+        public static readonly MessageTemplateQueryOperator CONTAINS_AND_PREFIX = new MessageTemplateQueryOperator("CONTAINS_AND_PREFIX");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MessageTemplateQueryOperator(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MessageTemplateQueryOperator FindValue(string value)
+        {
+            return FindValue<MessageTemplateQueryOperator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MessageTemplateQueryOperator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MessageType.
+    /// </summary>
+    public class MessageType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant TEXT for MessageType
+        /// </summary>
+        public static readonly MessageType TEXT = new MessageType("TEXT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MessageType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MessageType FindValue(string value)
+        {
+            return FindValue<MessageType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MessageType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Order.
     /// </summary>
     public class Order : ConstantClass
@@ -1220,6 +2122,60 @@ namespace Amazon.QConnect
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ParsingStrategy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Participant.
+    /// </summary>
+    public class Participant : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AGENT for Participant
+        /// </summary>
+        public static readonly Participant AGENT = new Participant("AGENT");
+        /// <summary>
+        /// Constant BOT for Participant
+        /// </summary>
+        public static readonly Participant BOT = new Participant("BOT");
+        /// <summary>
+        /// Constant CUSTOMER for Participant
+        /// </summary>
+        public static readonly Participant CUSTOMER = new Participant("CUSTOMER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Participant(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Participant FindValue(string value)
+        {
+            return FindValue<Participant>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Participant(string value)
         {
             return FindValue(value);
         }

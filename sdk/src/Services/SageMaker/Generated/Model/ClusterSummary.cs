@@ -38,6 +38,7 @@ namespace Amazon.SageMaker.Model
         private string _clusterName;
         private ClusterStatus _clusterStatus;
         private DateTime? _creationTime;
+        private List<string> _trainingPlanArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ClusterArn. 
@@ -113,6 +114,31 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetCreationTime()
         {
             return this._creationTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrainingPlanArns. 
+        /// <para>
+        /// A list of Amazon Resource Names (ARNs) of the training plans associated with this
+        /// cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about how to reserve GPU capacity for your SageMaker HyperPod
+        /// clusters using Amazon SageMaker Training Plan, see <c> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingPlan.html">CreateTrainingPlan</a>
+        /// </c>.
+        /// </para>
+        /// </summary>
+        public List<string> TrainingPlanArns
+        {
+            get { return this._trainingPlanArns; }
+            set { this._trainingPlanArns = value; }
+        }
+
+        // Check to see if TrainingPlanArns property is set
+        internal bool IsSetTrainingPlanArns()
+        {
+            return this._trainingPlanArns != null && (this._trainingPlanArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

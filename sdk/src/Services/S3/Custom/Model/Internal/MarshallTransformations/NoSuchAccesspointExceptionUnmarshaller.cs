@@ -63,10 +63,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         {
             get
             {
-                if (_instance == null)
-                {
-                    _instance = new NoSuchAccesspointExceptionUnmarshaller();
-                }
                 return _instance;
             }
         }

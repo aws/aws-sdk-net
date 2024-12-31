@@ -888,8 +888,8 @@ namespace Amazon.SSMQuickSetup.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Description: (Optional) A boolean value that determines whether instances are rebooted
-        /// after patches are installed. The default value is "<c>false</c>".
+        /// Description: (Optional) Determines whether instances are rebooted after patches are
+        /// installed. Valid values are <c>RebootIfNeeded</c> and <c>NoReboot</c>.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>

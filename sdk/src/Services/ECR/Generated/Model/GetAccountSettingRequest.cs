@@ -31,7 +31,7 @@ namespace Amazon.ECR.Model
 {
     /// <summary>
     /// Container for the parameters to the GetAccountSetting operation.
-    /// Retrieves the basic scan type version name.
+    /// Retrieves the account setting value for the specified setting name.
     /// </summary>
     public partial class GetAccountSettingRequest : AmazonECRRequest
     {
@@ -40,7 +40,8 @@ namespace Amazon.ECR.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Basic scan type version name. 
+        /// The name of the account setting, such as <c>BASIC_SCAN_TYPE_VERSION</c> or <c>REGISTRY_POLICY_SCOPE</c>.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

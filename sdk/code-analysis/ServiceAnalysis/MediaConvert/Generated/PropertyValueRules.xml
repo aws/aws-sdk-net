@@ -101,6 +101,10 @@
     <max>4</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConvert.Model.AudioDescription.AudioSourceName</property>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConvert.Model.AudioDescription.AudioType</property>
     <min>0</min>
     <max>255</max>
@@ -1068,6 +1072,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.Input.FileInput</property>
+    <max>2048</max>
     <pattern>^s3://([^\/]+\/+)+((([^\/]*)))|^https?://[^\/].*[^&amp;]$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1741,6 +1746,10 @@
     <max>48000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConvert.Model.Output.Extension</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConvert.Model.Output.NameModifier</property>
     <min>1</min>
     <max>256</max>
@@ -1748,6 +1757,10 @@
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.Output.Preset</property>
     <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.OutputGroup.Name</property>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.ProresSettings.FramerateDenominator</property>

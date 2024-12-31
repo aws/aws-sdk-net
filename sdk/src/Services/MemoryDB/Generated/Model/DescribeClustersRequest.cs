@@ -44,7 +44,7 @@ namespace Amazon.MemoryDB.Model
         /// <summary>
         /// Gets and sets the property ClusterName. 
         /// <para>
-        /// The name of the cluster
+        /// The name of the cluster.
         /// </para>
         /// </summary>
         public string ClusterName

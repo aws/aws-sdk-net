@@ -30,16 +30,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// Port mappings expose your container's network ports to the outside world. this allows
-    /// clients to access your application. It's also used for inter-container communication
-    /// within the same task.
+    /// Port mappings allow containers to access ports on the host container instance to send
+    /// or receive traffic. Port mappings are specified as part of the container definition.
     /// 
     ///  
     /// <para>
-    /// For task definitions (both the Fargate and EC2 launch type) that use the <c>awsvpc</c>
-    /// network mode, only specify the <c>containerPort</c>. The <c>hostPort</c> is always
-    /// ignored, and the container port is automatically mapped to a random high-numbered
-    /// port on the host.
+    /// If you use containers in a task with the <c>awsvpc</c> or <c>host</c> network mode,
+    /// specify the exposed ports using <c>containerPort</c>. The <c>hostPort</c> can be left
+    /// blank or it must be the same value as the <c>containerPort</c>.
     /// </para>
     ///  
     /// <para>
@@ -119,21 +117,16 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// For tasks that use the Fargate launch type or EC2 tasks that use the <c>awsvpc</c>
-        /// network mode, you use <c>containerPort</c> to specify the exposed ports.
+        /// If you use containers in a task with the <c>awsvpc</c> or <c>host</c> network mode,
+        /// specify the exposed ports using <c>containerPort</c>.
         /// </para>
         ///  
         /// <para>
-        /// For Windows containers on Fargate, you can't use port 3150 for the <c>containerPort</c>.
-        /// This is because it's reserved.
-        /// </para>
-        ///  
-        /// <para>
-        /// Suppose that you're using containers in a task with the EC2 launch type and you specify
-        /// a container port and not a host port. Then, your container automatically receives
-        /// a host port in the ephemeral port range. For more information, see <c>hostPort</c>.
-        /// Port mappings that are automatically assigned in this way don't count toward the 100
-        /// reserved ports quota of a container instance.
+        /// If you use containers in a task with the <c>bridge</c> network mode and you specify
+        /// a container port and not a host port, your container automatically receives a host
+        /// port in the ephemeral port range. For more information, see <c>hostPort</c>. Port
+        /// mappings that are automatically assigned in this way do not count toward the 100 reserved
+        /// ports limit of a container instance.
         /// </para>
         /// </summary>
         public int? ContainerPort
@@ -317,16 +310,11 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name that's used for the port mapping. This parameter only applies to Service
-        /// Connect. This parameter is the name that you use in the <c>serviceConnectConfiguration</c>
+        /// The name that's used for the port mapping. This parameter is the name that you use
+        /// in the <c>serviceConnectConfiguration</c> and the <c>vpcLatticeConfigurations</c>
         /// of a service. The name can include up to 64 characters. The characters can include
         /// lowercase letters, numbers, underscores (_), and hyphens (-). The name can't start
         /// with a hyphen.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
-        /// Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
         public string Name

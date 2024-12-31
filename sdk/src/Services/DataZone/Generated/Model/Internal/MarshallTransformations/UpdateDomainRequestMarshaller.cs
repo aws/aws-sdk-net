@@ -110,7 +110,69 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     writer.WriteObjectEnd();
                 }
 
+<<<<<<< HEAD
                 request.Content = memoryStream.ToArray();
+||||||| Commit version number update changes
+                if(publicRequest.IsSetDomainExecutionRole())
+                {
+                    context.Writer.WritePropertyName("domainExecutionRole");
+                    context.Writer.Write(publicRequest.DomainExecutionRole);
+                }
+
+                if(publicRequest.IsSetName())
+                {
+                    context.Writer.WritePropertyName("name");
+                    context.Writer.Write(publicRequest.Name);
+                }
+
+                if(publicRequest.IsSetSingleSignOn())
+                {
+                    context.Writer.WritePropertyName("singleSignOn");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SingleSignOnMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SingleSignOn, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+=======
+                if(publicRequest.IsSetDomainExecutionRole())
+                {
+                    context.Writer.WritePropertyName("domainExecutionRole");
+                    context.Writer.Write(publicRequest.DomainExecutionRole);
+                }
+
+                if(publicRequest.IsSetName())
+                {
+                    context.Writer.WritePropertyName("name");
+                    context.Writer.Write(publicRequest.Name);
+                }
+
+                if(publicRequest.IsSetServiceRole())
+                {
+                    context.Writer.WritePropertyName("serviceRole");
+                    context.Writer.Write(publicRequest.ServiceRole);
+                }
+
+                if(publicRequest.IsSetSingleSignOn())
+                {
+                    context.Writer.WritePropertyName("singleSignOn");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SingleSignOnMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SingleSignOn, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+>>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
             }
 
             request.UseQueryString = true;

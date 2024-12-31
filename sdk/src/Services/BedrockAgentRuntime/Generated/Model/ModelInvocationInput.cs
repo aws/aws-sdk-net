@@ -50,6 +50,7 @@ namespace Amazon.BedrockAgentRuntime.Model
     /// </summary>
     public partial class ModelInvocationInput
     {
+        private string _foundationModel;
         private InferenceConfiguration _inferenceConfiguration;
         private string _overrideLambda;
         private CreationMode _parserMode;
@@ -57,6 +58,25 @@ namespace Amazon.BedrockAgentRuntime.Model
         private string _text;
         private string _traceId;
         private PromptType _type;
+
+        /// <summary>
+        /// Gets and sets the property FoundationModel. 
+        /// <para>
+        /// The identifier of a foundation model.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string FoundationModel
+        {
+            get { return this._foundationModel; }
+            set { this._foundationModel = value; }
+        }
+
+        // Check to see if FoundationModel property is set
+        internal bool IsSetFoundationModel()
+        {
+            return this._foundationModel != null;
+        }
 
         /// <summary>
         /// Gets and sets the property InferenceConfiguration. 

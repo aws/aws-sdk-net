@@ -35,6 +35,7 @@ namespace Amazon.Keyspaces.Model
     public partial class GetKeyspaceResponse : AmazonWebServiceResponse
     {
         private string _keyspaceName;
+        private List<ReplicationGroupStatus> _replicationGroupStatuses = AWSConfigs.InitializeCollections ? new List<ReplicationGroupStatus>() : null;
         private List<string> _replicationRegions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private Rs _replicationStrategy;
         private string _resourceArn;
@@ -56,6 +57,26 @@ namespace Amazon.Keyspaces.Model
         internal bool IsSetKeyspaceName()
         {
             return this._keyspaceName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReplicationGroupStatuses. 
+        /// <para>
+        ///  A list of all Regions the keyspace is replicated in after the update keyspace operation
+        /// and their status. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=2, Max=6)]
+        public List<ReplicationGroupStatus> ReplicationGroupStatuses
+        {
+            get { return this._replicationGroupStatuses; }
+            set { this._replicationGroupStatuses = value; }
+        }
+
+        // Check to see if ReplicationGroupStatuses property is set
+        internal bool IsSetReplicationGroupStatuses()
+        {
+            return this._replicationGroupStatuses != null && (this._replicationGroupStatuses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

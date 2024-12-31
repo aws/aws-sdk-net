@@ -42,6 +42,7 @@ namespace Amazon.QBusiness.Model
         private string _displayName;
         private DocumentEnrichmentConfiguration _documentEnrichmentConfiguration;
         private string _indexId;
+        private MediaExtractionConfiguration _mediaExtractionConfiguration;
         private string _roleArn;
         private string _syncSchedule;
         private DataSourceVpcConfiguration _vpcConfiguration;
@@ -169,6 +170,25 @@ namespace Amazon.QBusiness.Model
         internal bool IsSetIndexId()
         {
             return this._indexId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MediaExtractionConfiguration. 
+        /// <para>
+        /// The configuration for extracting information from media in documents for your data
+        /// source.
+        /// </para>
+        /// </summary>
+        public MediaExtractionConfiguration MediaExtractionConfiguration
+        {
+            get { return this._mediaExtractionConfiguration; }
+            set { this._mediaExtractionConfiguration = value; }
+        }
+
+        // Check to see if MediaExtractionConfiguration property is set
+        internal bool IsSetMediaExtractionConfiguration()
+        {
+            return this._mediaExtractionConfiguration != null;
         }
 
         /// <summary>

@@ -37,6 +37,7 @@ namespace Amazon.BedrockRuntime.Model
         private Amazon.Runtime.Documents.Document _additionalModelResponseFields;
         private ConverseMetrics _metrics;
         private ConverseOutput _output;
+        private PerformanceConfiguration _performanceConfig;
         private StopReason _stopReason;
         private ConverseTrace _trace;
         private TokenUsage _usage;
@@ -95,6 +96,24 @@ namespace Amazon.BedrockRuntime.Model
         internal bool IsSetOutput()
         {
             return this._output != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PerformanceConfig. 
+        /// <para>
+        /// Model performance settings for the request.
+        /// </para>
+        /// </summary>
+        public PerformanceConfiguration PerformanceConfig
+        {
+            get { return this._performanceConfig; }
+            set { this._performanceConfig = value; }
+        }
+
+        // Check to see if PerformanceConfig property is set
+        internal bool IsSetPerformanceConfig()
+        {
+            return this._performanceConfig != null;
         }
 
         /// <summary>

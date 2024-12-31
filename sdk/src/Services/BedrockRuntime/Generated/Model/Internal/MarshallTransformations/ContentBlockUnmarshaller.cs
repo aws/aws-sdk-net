@@ -102,6 +102,12 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
                     unmarshalledObject.ToolUse = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("video", targetDepth))
+                {
+                    var unmarshaller = VideoBlockUnmarshaller.Instance;
+                    unmarshalledObject.Video = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

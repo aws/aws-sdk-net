@@ -62,8 +62,7 @@ namespace Amazon.ControlCatalog.Model
     ///  
     /// <para>
     /// Although the format is similar, the values for the <c>Type</c> field do not match
-    /// any Amazon Web Services CloudFormation values, and we do not use CloudFormation to
-    /// implement these controls.
+    /// any Amazon Web Services CloudFormation values.
     /// </para>
     /// </summary>
     public partial class ImplementationDetails

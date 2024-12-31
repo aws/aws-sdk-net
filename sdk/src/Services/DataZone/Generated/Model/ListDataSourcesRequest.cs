@@ -35,6 +35,7 @@ namespace Amazon.DataZone.Model
     /// </summary>
     public partial class ListDataSourcesRequest : AmazonDataZoneRequest
     {
+        private string _connectionIdentifier;
         private string _domainIdentifier;
         private string _environmentIdentifier;
         private int? _maxResults;
@@ -43,6 +44,24 @@ namespace Amazon.DataZone.Model
         private string _projectIdentifier;
         private DataSourceStatus _status;
         private string _type;
+
+        /// <summary>
+        /// Gets and sets the property ConnectionIdentifier. 
+        /// <para>
+        /// The ID of the connection.
+        /// </para>
+        /// </summary>
+        public string ConnectionIdentifier
+        {
+            get { return this._connectionIdentifier; }
+            set { this._connectionIdentifier = value; }
+        }
+
+        // Check to see if ConnectionIdentifier property is set
+        internal bool IsSetConnectionIdentifier()
+        {
+            return this._connectionIdentifier != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DomainIdentifier. 

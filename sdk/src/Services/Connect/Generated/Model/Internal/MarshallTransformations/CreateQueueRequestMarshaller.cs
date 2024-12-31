@@ -107,7 +107,32 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
 
+<<<<<<< HEAD
                     if(publicRequest.IsSetQuickConnectIds())
+||||||| Commit version number update changes
+                if(publicRequest.IsSetQuickConnectIds())
+                {
+                    context.Writer.WritePropertyName("QuickConnectIds");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestQuickConnectIdsListValue in publicRequest.QuickConnectIds)
+=======
+                if(publicRequest.IsSetOutboundEmailConfig())
+                {
+                    context.Writer.WritePropertyName("OutboundEmailConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = OutboundEmailConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.OutboundEmailConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetQuickConnectIds())
+                {
+                    context.Writer.WritePropertyName("QuickConnectIds");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestQuickConnectIdsListValue in publicRequest.QuickConnectIds)
+>>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
                     {
                         context.Writer.WritePropertyName("QuickConnectIds");
                         context.Writer.WriteArrayStart();

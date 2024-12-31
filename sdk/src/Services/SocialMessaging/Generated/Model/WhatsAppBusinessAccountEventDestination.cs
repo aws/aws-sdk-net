@@ -35,6 +35,7 @@ namespace Amazon.SocialMessaging.Model
     public partial class WhatsAppBusinessAccountEventDestination
     {
         private string _eventDestinationArn;
+        private string _roleArn;
 
         /// <summary>
         /// Gets and sets the property EventDestinationArn. 
@@ -53,6 +54,25 @@ namespace Amazon.SocialMessaging.Model
         internal bool IsSetEventDestinationArn()
         {
             return this._eventDestinationArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of an Identity and Access Management role that is able
+        /// to import phone numbers and write events.
+        /// </para>
+        /// </summary>
+        public string RoleArn
+        {
+            get { return this._roleArn; }
+            set { this._roleArn = value; }
+        }
+
+        // Check to see if RoleArn property is set
+        internal bool IsSetRoleArn()
+        {
+            return this._roleArn != null;
         }
 
     }

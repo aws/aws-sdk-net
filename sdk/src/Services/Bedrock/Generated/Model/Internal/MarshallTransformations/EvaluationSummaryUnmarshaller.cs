@@ -66,6 +66,12 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("applicationType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ApplicationType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("creationTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
@@ -76,6 +82,12 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.EvaluationTaskTypes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("evaluatorModelIdentifiers", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.EvaluatorModelIdentifiers = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("jobArn", targetDepth))
@@ -100,6 +112,12 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.ModelIdentifiers = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ragIdentifiers", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.RagIdentifiers = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("status", targetDepth))

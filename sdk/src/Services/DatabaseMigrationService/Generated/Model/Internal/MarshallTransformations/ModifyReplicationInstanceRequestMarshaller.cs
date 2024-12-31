@@ -101,11 +101,36 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.EngineVersion);
                     }
 
+<<<<<<< HEAD
                     if(publicRequest.IsSetMultiAZ())
                     {
                         context.Writer.WritePropertyName("MultiAZ");
                         context.Writer.Write(publicRequest.MultiAZ.Value);
                     }
+||||||| Commit version number update changes
+                if(publicRequest.IsSetMultiAZ())
+                {
+                    context.Writer.WritePropertyName("MultiAZ");
+                    context.Writer.Write(publicRequest.MultiAZ);
+                }
+=======
+                if(publicRequest.IsSetKerberosAuthenticationSettings())
+                {
+                    context.Writer.WritePropertyName("KerberosAuthenticationSettings");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = KerberosAuthenticationSettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.KerberosAuthenticationSettings, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetMultiAZ())
+                {
+                    context.Writer.WritePropertyName("MultiAZ");
+                    context.Writer.Write(publicRequest.MultiAZ);
+                }
+>>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
 
                     if(publicRequest.IsSetNetworkType())
                     {

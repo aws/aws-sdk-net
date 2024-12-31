@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.SimpleSystemsManagement.IAmazonSimpleSystemsManagement.GetExecutionPreview(Amazon.SimpleSystemsManagement.Model.GetExecutionPreviewRequest)" />
+            <member name="M:Amazon.SimpleSystemsManagement.AmazonSimpleSystemsManagementClient.GetExecutionPreview(Amazon.SimpleSystemsManagement.Model.GetExecutionPreviewRequest)" />
+            <member name="T:Amazon.SimpleSystemsManagement.Model.GetExecutionPreviewRequest" />
+            <member name="T:Amazon.SimpleSystemsManagement.Model.GetExecutionPreviewResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example illustrates one usage of GetExecutionPreview
+                </para>
+                <code
+                    title="GetExecutionPreview"
+                    source=".\AWSSDKDocSamples\SimpleSystemsManagement\SimpleSystemsManagement.GeneratedSamples.cs"
+                    region="getexecutionpreview-f6ae6a7e734e" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SimpleSystemsManagement.IAmazonSimpleSystemsManagement.ListNodes(Amazon.SimpleSystemsManagement.Model.ListNodesRequest)" />
+            <member name="M:Amazon.SimpleSystemsManagement.AmazonSimpleSystemsManagementClient.ListNodes(Amazon.SimpleSystemsManagement.Model.ListNodesRequest)" />
+            <member name="T:Amazon.SimpleSystemsManagement.Model.ListNodesRequest" />
+            <member name="T:Amazon.SimpleSystemsManagement.Model.ListNodesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example illustrates one usage of ListNodes
+                </para>
+                <code
+                    title="ListNodes"
+                    source=".\AWSSDKDocSamples\SimpleSystemsManagement\SimpleSystemsManagement.GeneratedSamples.cs"
+                    region="listnodes--ec13d561ee02" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SimpleSystemsManagement.IAmazonSimpleSystemsManagement.ListNodesSummary(Amazon.SimpleSystemsManagement.Model.ListNodesSummaryRequest)" />
+            <member name="M:Amazon.SimpleSystemsManagement.AmazonSimpleSystemsManagementClient.ListNodesSummary(Amazon.SimpleSystemsManagement.Model.ListNodesSummaryRequest)" />
+            <member name="T:Amazon.SimpleSystemsManagement.Model.ListNodesSummaryRequest" />
+            <member name="T:Amazon.SimpleSystemsManagement.Model.ListNodesSummaryResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example illustrates one usage of ListNodesSummary
+                </para>
+                <code
+                    title="ListNodesSummary"
+                    source=".\AWSSDKDocSamples\SimpleSystemsManagement\SimpleSystemsManagement.GeneratedSamples.cs"
+                    region="listnodessummary-9a63f9e71ee0" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SimpleSystemsManagement.IAmazonSimpleSystemsManagement.StartExecutionPreview(Amazon.SimpleSystemsManagement.Model.StartExecutionPreviewRequest)" />
+            <member name="M:Amazon.SimpleSystemsManagement.AmazonSimpleSystemsManagementClient.StartExecutionPreview(Amazon.SimpleSystemsManagement.Model.StartExecutionPreviewRequest)" />
+            <member name="T:Amazon.SimpleSystemsManagement.Model.StartExecutionPreviewRequest" />
+            <member name="T:Amazon.SimpleSystemsManagement.Model.StartExecutionPreviewResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example illustrates one usage of StartExecutionPreview
+                </para>
+                <code
+                    title="StartExecutionPreview"
+                    source=".\AWSSDKDocSamples\SimpleSystemsManagement\SimpleSystemsManagement.GeneratedSamples.cs"
+                    region="startexecutionpreview-7a6b962646a9" />
+            </example>
+        </value>
+    </doc>
+</docs>

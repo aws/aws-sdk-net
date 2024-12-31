@@ -90,6 +90,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("vpcConfiguration", targetDepth))
+                {
+                    var unmarshaller = TableOptimizerVpcConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.VpcConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

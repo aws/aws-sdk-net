@@ -58,6 +58,12 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
                     response.MaxQueryTCU = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("QueryCompute", targetDepth))
+                {
+                    var unmarshaller = QueryComputeResponseUnmarshaller.Instance;
+                    response.QueryCompute = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("QueryPricingModel", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

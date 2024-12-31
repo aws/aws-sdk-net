@@ -133,6 +133,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
 
+<<<<<<< HEAD
                     if(publicRequest.IsSetUserPoolId())
                     {
                         context.Writer.WritePropertyName("UserPoolId");
@@ -140,6 +141,23 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     }
 
                     writer.WriteObjectEnd();
+||||||| Commit version number update changes
+                if(publicRequest.IsSetUserPoolId())
+                {
+                    context.Writer.WritePropertyName("UserPoolId");
+                    context.Writer.Write(publicRequest.UserPoolId);
+=======
+                if(publicRequest.IsSetSession())
+                {
+                    context.Writer.WritePropertyName("Session");
+                    context.Writer.Write(publicRequest.Session);
+                }
+
+                if(publicRequest.IsSetUserPoolId())
+                {
+                    context.Writer.WritePropertyName("UserPoolId");
+                    context.Writer.Write(publicRequest.UserPoolId);
+>>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
                 }
 
                 request.Content = memoryStream.ToArray();

@@ -48,6 +48,28 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetKendraKnowledgeBaseConfiguration())
+            {
+                context.Writer.WritePropertyName("kendraKnowledgeBaseConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = KendraKnowledgeBaseConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.KendraKnowledgeBaseConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetSqlKnowledgeBaseConfiguration())
+            {
+                context.Writer.WritePropertyName("sqlKnowledgeBaseConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SqlKnowledgeBaseConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.SqlKnowledgeBaseConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("type");

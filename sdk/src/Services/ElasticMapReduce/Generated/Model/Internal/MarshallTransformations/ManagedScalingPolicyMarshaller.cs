@@ -59,6 +59,18 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetScalingStrategy())
+            {
+                context.Writer.WritePropertyName("ScalingStrategy");
+                context.Writer.Write(requestObject.ScalingStrategy);
+            }
+
+            if(requestObject.IsSetUtilizationPerformanceIndex())
+            {
+                context.Writer.WritePropertyName("UtilizationPerformanceIndex");
+                context.Writer.Write(requestObject.UtilizationPerformanceIndex);
+            }
+
         }
 
         /// <summary>

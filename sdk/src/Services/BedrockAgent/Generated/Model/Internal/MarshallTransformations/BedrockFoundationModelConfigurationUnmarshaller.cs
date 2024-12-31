@@ -72,6 +72,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                     unmarshalledObject.ModelArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("parsingModality", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ParsingModality = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("parsingPrompt", targetDepth))
                 {
                     var unmarshaller = ParsingPromptUnmarshaller.Instance;

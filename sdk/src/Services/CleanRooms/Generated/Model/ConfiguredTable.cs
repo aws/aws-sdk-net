@@ -201,7 +201,7 @@ namespace Amazon.CleanRooms.Model
         /// <summary>
         /// Gets and sets the property TableReference. 
         /// <para>
-        /// The Glue table that this configured table represents.
+        /// The table that this configured table represents.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

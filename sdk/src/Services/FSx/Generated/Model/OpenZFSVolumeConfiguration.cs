@@ -316,8 +316,16 @@ namespace Amazon.FSx.Model
         /// the <i>Amazon FSx for OpenZFS User Guide</i>.
         /// </para>
         /// </summary>
+<<<<<<< HEAD
         [AWSProperty(Min=4, Max=1024)]
         public int? RecordSizeKiB
+||||||| Commit version number update changes
+        [AWSProperty(Min=4, Max=1024)]
+        public int RecordSizeKiB
+=======
+        [AWSProperty(Min=4, Max=4096)]
+        public int RecordSizeKiB
+>>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
         {
             get { return this._recordSizeKiB; }
             set { this._recordSizeKiB = value; }

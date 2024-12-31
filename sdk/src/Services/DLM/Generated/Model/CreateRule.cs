@@ -58,8 +58,8 @@ namespace Amazon.DLM.Model
         /// Gets and sets the property CronExpression. 
         /// <para>
         /// The schedule, as a Cron expression. The schedule interval must be between 1 hour and
-        /// 1 year. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
-        /// expressions</a> in the <i>Amazon CloudWatch User Guide</i>.
+        /// 1 year. For more information, see the <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-cron-expressions.html">Cron
+        /// expressions reference</a> in the <i>Amazon EventBridge User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=17, Max=106)]
@@ -117,16 +117,42 @@ namespace Amazon.DLM.Model
         /// Gets and sets the property Location. 
         /// <para>
         ///  <b>[Custom snapshot policies only]</b> Specifies the destination for snapshots created
-        /// by the policy. To create snapshots in the same Region as the source resource, specify
-        /// <c>CLOUD</c>. To create snapshots on the same Outpost as the source resource, specify
-        /// <c>OUTPOST_LOCAL</c>. If you omit this parameter, <c>CLOUD</c> is used by default.
+        /// by the policy. The allowed destinations depend on the location of the targeted resources.
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// If the policy targets resources in an Amazon Web Services Region, then you must create
-        /// snapshots in the same Region as the source resource. If the policy targets resources
-        /// on an Outpost, then you can create snapshots on the same Outpost as the source resource,
-        /// or in the Region of that Outpost.
+        /// If the policy targets resources in a Region, then you must create snapshots in the
+        /// same Region as the source resource.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the policy targets resources in a Local Zone, you can create snapshots in the same
+        /// Local Zone or in its parent Region.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the policy targets resources on an Outpost, then you can create snapshots on the
+        /// same Outpost or in its parent Region.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Specify one of the following values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// To create snapshots in the same Region as the source resource, specify <c>CLOUD</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To create snapshots in the same Local Zone as the source resource, specify <c>LOCAL_ZONE</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To create snapshots on the same Outpost as the source resource, specify <c>OUTPOST_LOCAL</c>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Default: <c>CLOUD</c> 
         /// </para>
         /// </summary>
         public LocationValues Location

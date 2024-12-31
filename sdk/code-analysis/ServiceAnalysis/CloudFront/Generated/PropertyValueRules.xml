@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.CloudFront.Model.CreateAnycastIpListRequest.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9-_]{1,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudFront.Model.CreateFunctionRequest.FunctionCode</property>
     <min>1</min>
     <max>40960</max>
@@ -82,6 +88,18 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFront.Model.UpdateKeyValueStoreRequest.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9-_]{1,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFront.Model.AnycastIpList.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9-_]{1,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFront.Model.AnycastIpListSummary.Name</property>
     <min>1</min>
     <max>64</max>
     <pattern>[a-zA-Z0-9-_]{1,64}</pattern>

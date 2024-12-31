@@ -67,6 +67,12 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                         unmarshalledObject.BounceAction = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ConnectAction", targetDepth))
+                    {
+                        var unmarshaller = ConnectActionUnmarshaller.Instance;
+                        unmarshalledObject.ConnectAction = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("LambdaAction", targetDepth))
                     {
                         var unmarshaller = LambdaActionUnmarshaller.Instance;

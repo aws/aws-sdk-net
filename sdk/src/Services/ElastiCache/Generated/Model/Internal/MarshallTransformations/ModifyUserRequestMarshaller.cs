@@ -88,6 +88,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         request.Parameters.Add("AuthenticationMode" + "." + "Type", StringUtils.FromString(publicRequest.AuthenticationMode.Type));
                     }
                 }
+                if(publicRequest.IsSetEngine())
+                {
+                    request.Parameters.Add("Engine", StringUtils.FromString(publicRequest.Engine));
+                }
                 if(publicRequest.IsSetNoPasswordRequired())
                 {
                     request.Parameters.Add("NoPasswordRequired", StringUtils.FromBool(publicRequest.NoPasswordRequired));

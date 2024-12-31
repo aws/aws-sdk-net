@@ -38,6 +38,8 @@ namespace Amazon.Backup.Model
         private string _backupVaultName;
         private DateTime? _creationDate;
         private string _encryptionKeyArn;
+        private IndexStatus _indexStatus;
+        private string _indexStatusMessage;
         private bool? _isParent;
         private string _parentRecoveryPointArn;
         private string _recoveryPointArn;
@@ -121,6 +123,53 @@ namespace Amazon.Backup.Model
         internal bool IsSetEncryptionKeyArn()
         {
             return this._encryptionKeyArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IndexStatus. 
+        /// <para>
+        /// This is the current status for the backup index associated with the specified recovery
+        /// point.
+        /// </para>
+        ///  
+        /// <para>
+        /// Statuses are: <c>PENDING</c> | <c>ACTIVE</c> | <c>FAILED</c> | <c>DELETING</c> 
+        /// </para>
+        ///  
+        /// <para>
+        /// A recovery point with an index that has the status of <c>ACTIVE</c> can be included
+        /// in a search.
+        /// </para>
+        /// </summary>
+        public IndexStatus IndexStatus
+        {
+            get { return this._indexStatus; }
+            set { this._indexStatus = value; }
+        }
+
+        // Check to see if IndexStatus property is set
+        internal bool IsSetIndexStatus()
+        {
+            return this._indexStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IndexStatusMessage. 
+        /// <para>
+        /// A string in the form of a detailed message explaining the status of a backup index
+        /// associated with the recovery point.
+        /// </para>
+        /// </summary>
+        public string IndexStatusMessage
+        {
+            get { return this._indexStatusMessage; }
+            set { this._indexStatusMessage = value; }
+        }
+
+        // Check to see if IndexStatusMessage property is set
+        internal bool IsSetIndexStatusMessage()
+        {
+            return this._indexStatusMessage != null;
         }
 
         /// <summary>

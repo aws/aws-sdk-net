@@ -806,6 +806,57 @@ namespace Amazon.Glue
 
         #endregion
                 
+        #region  CreateCatalog
+
+
+
+        /// <summary>
+        /// Creates a new catalog in the Glue Data Catalog.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCatalog service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateCatalog service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.AlreadyExistsException">
+        /// A resource to be created or added already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.FederatedResourceAlreadyExistsException">
+        /// A federated resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.FederationSourceException">
+        /// A federation source failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateCatalog">REST API Reference for CreateCatalog Operation</seealso>
+        Task<CreateCatalogResponse> CreateCatalogAsync(CreateCatalogRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateClassifier
 
 
@@ -1014,6 +1065,12 @@ namespace Amazon.Glue
         /// <exception cref="Amazon.Glue.Model.FederatedResourceAlreadyExistsException">
         /// A federated resource already exists.
         /// </exception>
+        /// <exception cref="Amazon.Glue.Model.FederationSourceException">
+        /// A federation source failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.FederationSourceRetryableException">
+        /// A federation source failed, but the operation may be retried.
+        /// </exception>
         /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
         /// An encryption operation failed.
         /// </exception>
@@ -1112,6 +1169,151 @@ namespace Amazon.Glue
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateDevEndpoint">REST API Reference for CreateDevEndpoint Operation</seealso>
         Task<CreateDevEndpointResponse> CreateDevEndpointAsync(CreateDevEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateIntegration
+
+
+
+        /// <summary>
+        /// Creates a Zero-ETL integration in the caller's account between two resources with
+        /// Amazon Resource Names (ARNs): the <c>SourceArn</c> and <c>TargetArn</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIntegration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateIntegration service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConflictException">
+        /// The <c>CreatePartitions</c> API was called on a table that has indexes enabled.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.IntegrationConflictOperationException">
+        /// The requested operation conflicts with another operation.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.IntegrationQuotaExceededException">
+        /// The data processed through your integration exceeded your quota.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServerException">
+        /// An internal server error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.KMSKeyNotAccessibleException">
+        /// The KMS key specified is not accessible.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ValidationException">
+        /// A value could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateIntegration">REST API Reference for CreateIntegration Operation</seealso>
+        Task<CreateIntegrationResponse> CreateIntegrationAsync(CreateIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateIntegrationResourceProperty
+
+
+
+        /// <summary>
+        /// This API can be used for setting up the <c>ResourceProperty</c> of the Glue connection
+        /// (for the source) or Glue database ARN (for the target). These properties can include
+        /// the role to access the connection or database. To set both source and target properties
+        /// the same API needs to be invoked with the Glue connection ARN as <c>ResourceArn</c>
+        /// with <c>SourceProcessingProperties</c> and the Glue database ARN as <c>ResourceArn</c>
+        /// with <c>TargetProcessingProperties</c> respectively.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIntegrationResourceProperty service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateIntegrationResourceProperty service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConflictException">
+        /// The <c>CreatePartitions</c> API was called on a table that has indexes enabled.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServerException">
+        /// An internal server error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ValidationException">
+        /// A value could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateIntegrationResourceProperty">REST API Reference for CreateIntegrationResourceProperty Operation</seealso>
+        Task<CreateIntegrationResourcePropertyResponse> CreateIntegrationResourcePropertyAsync(CreateIntegrationResourcePropertyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateIntegrationTableProperties
+
+
+
+        /// <summary>
+        /// This API is used to provide optional override properties for the the tables that need
+        /// to be replicated. These properties can include properties for filtering and partitioning
+        /// for the source and target tables. To set both source and target properties the same
+        /// API need to be invoked with the Glue connection ARN as <c>ResourceArn</c> with <c>SourceTableConfig</c>,
+        /// and the Glue database ARN as <c>ResourceArn</c> with <c>TargetTableConfig</c> respectively.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIntegrationTableProperties service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateIntegrationTableProperties service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServerException">
+        /// An internal server error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ValidationException">
+        /// A value could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateIntegrationTableProperties">REST API Reference for CreateIntegrationTableProperties Operation</seealso>
+        Task<CreateIntegrationTablePropertiesResponse> CreateIntegrationTablePropertiesAsync(CreateIntegrationTablePropertiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1505,6 +1707,12 @@ namespace Amazon.Glue
         /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
         /// A specified entity does not exist
         /// </exception>
+        /// <exception cref="Amazon.Glue.Model.FederationSourceException">
+        /// A federation source failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.FederationSourceRetryableException">
+        /// A federation source failed, but the operation may be retried.
+        /// </exception>
         /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
         /// An encryption operation failed.
         /// </exception>
@@ -1533,8 +1741,7 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Creates a new table optimizer for a specific function. <c>compaction</c> is the only
-        /// currently supported optimizer type.
+        /// Creates a new table optimizer for a specific function.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTableOptimizer service method.</param>
         /// <param name="cancellationToken">
@@ -1574,6 +1781,13 @@ namespace Amazon.Glue
 
         /// <summary>
         /// Creates a new trigger.
+        /// 
+        ///  
+        /// <para>
+        /// Job arguments may be logged. Do not pass plaintext secrets as arguments. Retrieve
+        /// secrets from a Glue Connection, Amazon Web Services Secrets Manager or other secret
+        /// management mechanism if you intend to keep them within the Job.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTrigger service method.</param>
         /// <param name="cancellationToken">
@@ -1745,6 +1959,64 @@ namespace Amazon.Glue
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteBlueprint">REST API Reference for DeleteBlueprint Operation</seealso>
         Task<DeleteBlueprintResponse> DeleteBlueprintAsync(DeleteBlueprintRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteCatalog
+
+
+
+        /// <summary>
+        /// Removes the specified catalog from the Glue Data Catalog.
+        /// 
+        ///  
+        /// <para>
+        /// After completing this operation, you no longer have access to the databases, tables
+        /// (and all table versions and partitions that might belong to the tables) and the user-defined
+        /// functions in the deleted catalog. Glue deletes these "orphaned" resources asynchronously
+        /// in a timely manner, at the discretion of the service.
+        /// </para>
+        ///  
+        /// <para>
+        /// To ensure the immediate deletion of all related resources before calling the <c>DeleteCatalog</c>
+        /// operation, use <c>DeleteTableVersion</c> (or <c>BatchDeleteTableVersion</c>), <c>DeletePartition</c>
+        /// (or <c>BatchDeletePartition</c>), <c>DeleteTable</c> (or <c>BatchDeleteTable</c>),
+        /// <c>DeleteUserDefinedFunction</c> and <c>DeleteDatabase</c> to delete any resources
+        /// that belong to the catalog.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCatalog service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteCatalog service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.FederationSourceException">
+        /// A federation source failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteCatalog">REST API Reference for DeleteCatalog Operation</seealso>
+        Task<DeleteCatalogResponse> DeleteCatalogAsync(DeleteCatalogRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -2000,6 +2272,12 @@ namespace Amazon.Glue
         /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
         /// A specified entity does not exist
         /// </exception>
+        /// <exception cref="Amazon.Glue.Model.FederationSourceException">
+        /// A federation source failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.FederationSourceRetryableException">
+        /// A federation source failed, but the operation may be retried.
+        /// </exception>
         /// <exception cref="Amazon.Glue.Model.InternalServiceException">
         /// An internal service error occurred.
         /// </exception>
@@ -2071,6 +2349,97 @@ namespace Amazon.Glue
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteDevEndpoint">REST API Reference for DeleteDevEndpoint Operation</seealso>
         Task<DeleteDevEndpointResponse> DeleteDevEndpointAsync(DeleteDevEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteIntegration
+
+
+
+        /// <summary>
+        /// Deletes the specified Zero-ETL integration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIntegration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteIntegration service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConflictException">
+        /// The <c>CreatePartitions</c> API was called on a table that has indexes enabled.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.IntegrationConflictOperationException">
+        /// The requested operation conflicts with another operation.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.IntegrationNotFoundException">
+        /// The specified integration could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServerException">
+        /// An internal server error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidIntegrationStateException">
+        /// The integration is in an invalid state.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidStateException">
+        /// An error that indicates your data is in an invalid state.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ValidationException">
+        /// A value could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteIntegration">REST API Reference for DeleteIntegration Operation</seealso>
+        Task<DeleteIntegrationResponse> DeleteIntegrationAsync(DeleteIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteIntegrationTableProperties
+
+
+
+        /// <summary>
+        /// Deletes the table properties that have been created for the tables that need to be
+        /// replicated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIntegrationTableProperties service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteIntegrationTableProperties service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServerException">
+        /// An internal server error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ValidationException">
+        /// A value could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteIntegrationTableProperties">REST API Reference for DeleteIntegrationTableProperties Operation</seealso>
+        Task<DeleteIntegrationTablePropertiesResponse> DeleteIntegrationTablePropertiesAsync(DeleteIntegrationTablePropertiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -2455,6 +2824,12 @@ namespace Amazon.Glue
         /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
         /// A specified entity does not exist
         /// </exception>
+        /// <exception cref="Amazon.Glue.Model.FederationSourceException">
+        /// A federation source failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.FederationSourceRetryableException">
+        /// A federation source failed, but the operation may be retried.
+        /// </exception>
         /// <exception cref="Amazon.Glue.Model.InternalServiceException">
         /// An internal service error occurred.
         /// </exception>
@@ -2656,6 +3031,166 @@ namespace Amazon.Glue
 
         #endregion
                 
+        #region  DescribeConnectionType
+
+
+
+        /// <summary>
+        /// The <c>DescribeConnectionType</c> API provides full details of the supported options
+        /// for a given connection type in Glue.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConnectionType service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeConnectionType service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ValidationException">
+        /// A value could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DescribeConnectionType">REST API Reference for DescribeConnectionType Operation</seealso>
+        Task<DescribeConnectionTypeResponse> DescribeConnectionTypeAsync(DescribeConnectionTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeEntity
+
+
+
+        /// <summary>
+        /// Provides details regarding the entity used with the connection type, with a description
+        /// of the data model for each field in the selected entity.
+        /// 
+        ///  
+        /// <para>
+        ///  The response includes all the fields which make up the entity.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEntity service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeEntity service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.FederationSourceException">
+        /// A federation source failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ValidationException">
+        /// A value could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DescribeEntity">REST API Reference for DescribeEntity Operation</seealso>
+        Task<DescribeEntityResponse> DescribeEntityAsync(DescribeEntityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeInboundIntegrations
+
+
+
+        /// <summary>
+        /// Returns a list of inbound integrations for the specified integration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInboundIntegrations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeInboundIntegrations service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.IntegrationNotFoundException">
+        /// The specified integration could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServerException">
+        /// An internal server error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationNotSupportedException">
+        /// The operation is not available in the region.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.TargetResourceNotFoundException">
+        /// The target resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ValidationException">
+        /// A value could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DescribeInboundIntegrations">REST API Reference for DescribeInboundIntegrations Operation</seealso>
+        Task<DescribeInboundIntegrationsResponse> DescribeInboundIntegrationsAsync(DescribeInboundIntegrationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeIntegrations
+
+
+
+        /// <summary>
+        /// The API is used to retrieve a list of integrations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIntegrations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeIntegrations service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.IntegrationNotFoundException">
+        /// The specified integration could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServerException">
+        /// An internal server error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ValidationException">
+        /// A value could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DescribeIntegrations">REST API Reference for DescribeIntegrations Operation</seealso>
+        Task<DescribeIntegrationsResponse> DescribeIntegrationsAsync(DescribeIntegrationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetBlueprint
 
 
@@ -2743,6 +3278,48 @@ namespace Amazon.Glue
 
         #endregion
                 
+        #region  GetCatalog
+
+
+
+        /// <summary>
+        /// The name of the Catalog to retrieve. This should be all lowercase.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCatalog service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCatalog service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.FederationSourceException">
+        /// A federation source failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.FederationSourceRetryableException">
+        /// A federation source failed, but the operation may be retried.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetCatalog">REST API Reference for GetCatalog Operation</seealso>
+        Task<GetCatalogResponse> GetCatalogAsync(GetCatalogRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetCatalogImportStatus
 
 
@@ -2764,6 +3341,50 @@ namespace Amazon.Glue
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetCatalogImportStatus">REST API Reference for GetCatalogImportStatus Operation</seealso>
         Task<GetCatalogImportStatusResponse> GetCatalogImportStatusAsync(GetCatalogImportStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetCatalogs
+
+
+
+        /// <summary>
+        /// Retrieves all catalogs defined in a catalog in the Glue Data Catalog. For a Redshift-federated
+        /// catalog use case, this operation returns the list of catalogs mapped to Redshift databases
+        /// in the Redshift namespace catalog.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCatalogs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCatalogs service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.FederationSourceException">
+        /// A federation source failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.FederationSourceRetryableException">
+        /// A federation source failed, but the operation may be retried.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetCatalogs">REST API Reference for GetCatalogs Operation</seealso>
+        Task<GetCatalogsResponse> GetCatalogsAsync(GetCatalogsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -3143,6 +3764,9 @@ namespace Amazon.Glue
         /// <exception cref="Amazon.Glue.Model.FederationSourceException">
         /// A federation source failed.
         /// </exception>
+        /// <exception cref="Amazon.Glue.Model.FederationSourceRetryableException">
+        /// A federation source failed, but the operation may be retried.
+        /// </exception>
         /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
         /// An encryption operation failed.
         /// </exception>
@@ -3173,6 +3797,15 @@ namespace Amazon.Glue
         /// </param>
         /// 
         /// <returns>The response from the GetDatabases service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.FederationSourceException">
+        /// A federation source failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.FederationSourceRetryableException">
+        /// A federation source failed, but the operation may be retried.
+        /// </exception>
         /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
         /// An encryption operation failed.
         /// </exception>
@@ -3501,6 +4134,139 @@ namespace Amazon.Glue
 
         #endregion
                 
+        #region  GetEntityRecords
+
+
+
+        /// <summary>
+        /// This API is used to query preview data from a given connection type or from a native
+        /// Amazon S3 based Glue Data Catalog.
+        /// 
+        ///  
+        /// <para>
+        /// Returns records as an array of JSON blobs. Each record is formatted using Jackson
+        /// JsonNode based on the field type defined by the <c>DescribeEntity</c> API.
+        /// </para>
+        ///  
+        /// <para>
+        /// Spark connectors generate schemas according to the same data type mapping as in the
+        /// <c>DescribeEntity</c> API. Spark connectors convert data to the appropriate data types
+        /// matching the schema when returning rows.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEntityRecords service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetEntityRecords service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.FederationSourceException">
+        /// A federation source failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ValidationException">
+        /// A value could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetEntityRecords">REST API Reference for GetEntityRecords Operation</seealso>
+        Task<GetEntityRecordsResponse> GetEntityRecordsAsync(GetEntityRecordsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetIntegrationResourceProperty
+
+
+
+        /// <summary>
+        /// This API is used for fetching the <c>ResourceProperty</c> of the Glue connection (for
+        /// the source) or Glue database ARN (for the target)
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIntegrationResourceProperty service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetIntegrationResourceProperty service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServerException">
+        /// An internal server error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ValidationException">
+        /// A value could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetIntegrationResourceProperty">REST API Reference for GetIntegrationResourceProperty Operation</seealso>
+        Task<GetIntegrationResourcePropertyResponse> GetIntegrationResourcePropertyAsync(GetIntegrationResourcePropertyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetIntegrationTableProperties
+
+
+
+        /// <summary>
+        /// This API is used to retrieve optional override properties for the tables that need
+        /// to be replicated. These properties can include properties for filtering and partition
+        /// for source and target tables.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIntegrationTableProperties service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetIntegrationTableProperties service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServerException">
+        /// An internal server error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ValidationException">
+        /// A value could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetIntegrationTableProperties">REST API Reference for GetIntegrationTableProperties Operation</seealso>
+        Task<GetIntegrationTablePropertiesResponse> GetIntegrationTablePropertiesAsync(GetIntegrationTablePropertiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetJob
 
 
@@ -3590,8 +4356,8 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Retrieves the metadata for a given job run. Job run history is accessible for 90 days
-        /// for your workflow and job run.
+        /// Retrieves the metadata for a given job run. Job run history is accessible for 365
+        /// days for your workflow and job run.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetJobRun service method.</param>
         /// <param name="cancellationToken">
@@ -3622,6 +4388,12 @@ namespace Amazon.Glue
 
         /// <summary>
         /// Retrieves metadata for all runs of a given job definition.
+        /// 
+        ///  
+        /// <para>
+        ///  <c>GetJobRuns</c> returns the job runs in chronological order, with the newest jobs
+        /// returned first.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetJobRuns service method.</param>
         /// <param name="cancellationToken">
@@ -5053,6 +5825,34 @@ namespace Amazon.Glue
 
         #endregion
                 
+        #region  ListConnectionTypes
+
+
+
+        /// <summary>
+        /// The <c>ListConnectionTypes</c> API provides a discovery mechanism to learn available
+        /// connection types in Glue. The response contains a list of connection types with high-level
+        /// details of what is supported for each connection type. The connection types listed
+        /// are the set of supported options for the <c>ConnectionType</c> value in the <c>CreateConnection</c>
+        /// API.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConnectionTypes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListConnectionTypes service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListConnectionTypes">REST API Reference for ListConnectionTypes Operation</seealso>
+        Task<ListConnectionTypesResponse> ListConnectionTypesAsync(ListConnectionTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListCrawlers
 
 
@@ -5361,6 +6161,45 @@ namespace Amazon.Glue
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListDevEndpoints">REST API Reference for ListDevEndpoints Operation</seealso>
         Task<ListDevEndpointsResponse> ListDevEndpointsAsync(ListDevEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListEntities
+
+
+
+        /// <summary>
+        /// Returns the available entities supported by the connection type.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEntities service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListEntities service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.FederationSourceException">
+        /// A federation source failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ValidationException">
+        /// A value could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListEntities">REST API Reference for ListEntities Operation</seealso>
+        Task<ListEntitiesResponse> ListEntitiesAsync(ListEntitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -5731,6 +6570,57 @@ namespace Amazon.Glue
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListWorkflows">REST API Reference for ListWorkflows Operation</seealso>
         Task<ListWorkflowsResponse> ListWorkflowsAsync(ListWorkflowsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ModifyIntegration
+
+
+
+        /// <summary>
+        /// Modifies a Zero-ETL integration in the caller's account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyIntegration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyIntegration service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConflictException">
+        /// The <c>CreatePartitions</c> API was called on a table that has indexes enabled.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.IntegrationConflictOperationException">
+        /// The requested operation conflicts with another operation.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.IntegrationNotFoundException">
+        /// The specified integration could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServerException">
+        /// An internal server error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidIntegrationStateException">
+        /// The integration is in an invalid state.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidStateException">
+        /// An error that indicates your data is in an invalid state.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ValidationException">
+        /// A value could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ModifyIntegration">REST API Reference for ModifyIntegration Operation</seealso>
+        Task<ModifyIntegrationResponse> ModifyIntegrationAsync(ModifyIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -7100,6 +7990,48 @@ namespace Amazon.Glue
 
         #endregion
                 
+        #region  UpdateCatalog
+
+
+
+        /// <summary>
+        /// Updates an existing catalog's properties in the Glue Data Catalog.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCatalog service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateCatalog service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.FederationSourceException">
+        /// A federation source failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateCatalog">REST API Reference for UpdateCatalog Operation</seealso>
+        Task<UpdateCatalogResponse> UpdateCatalogAsync(UpdateCatalogRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  UpdateClassifier
 
 
@@ -7352,11 +8284,20 @@ namespace Amazon.Glue
         /// </param>
         /// 
         /// <returns>The response from the UpdateDatabase service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AlreadyExistsException">
+        /// A resource to be created or added already exists.
+        /// </exception>
         /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
         /// Two processes are trying to modify a resource simultaneously.
         /// </exception>
         /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
         /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.FederationSourceException">
+        /// A federation source failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.FederationSourceRetryableException">
+        /// A federation source failed, but the operation may be retried.
         /// </exception>
         /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
         /// An encryption operation failed.
@@ -7444,6 +8385,98 @@ namespace Amazon.Glue
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateDevEndpoint">REST API Reference for UpdateDevEndpoint Operation</seealso>
         Task<UpdateDevEndpointResponse> UpdateDevEndpointAsync(UpdateDevEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateIntegrationResourceProperty
+
+
+
+        /// <summary>
+        /// This API can be used for updating the <c>ResourceProperty</c> of the Glue connection
+        /// (for the source) or Glue database ARN (for the target). These properties can include
+        /// the role to access the connection or database. Since the same resource can be used
+        /// across multiple integrations, updating resource properties will impact all the integrations
+        /// using it.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateIntegrationResourceProperty service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateIntegrationResourceProperty service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServerException">
+        /// An internal server error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ValidationException">
+        /// A value could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateIntegrationResourceProperty">REST API Reference for UpdateIntegrationResourceProperty Operation</seealso>
+        Task<UpdateIntegrationResourcePropertyResponse> UpdateIntegrationResourcePropertyAsync(UpdateIntegrationResourcePropertyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateIntegrationTableProperties
+
+
+
+        /// <summary>
+        /// This API is used to provide optional override properties for the tables that need
+        /// to be replicated. These properties can include properties for filtering and partitioning
+        /// for the source and target tables. To set both source and target properties the same
+        /// API need to be invoked with the Glue connection ARN as <c>ResourceArn</c> with <c>SourceTableConfig</c>,
+        /// and the Glue database ARN as <c>ResourceArn</c> with <c>TargetTableConfig</c> respectively.
+        /// 
+        ///  
+        /// <para>
+        /// The override will be reflected across all the integrations using same <c>ResourceArn</c>
+        /// and source table.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateIntegrationTableProperties service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateIntegrationTableProperties service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServerException">
+        /// An internal server error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ValidationException">
+        /// A value could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateIntegrationTableProperties">REST API Reference for UpdateIntegrationTableProperties Operation</seealso>
+        Task<UpdateIntegrationTablePropertiesResponse> UpdateIntegrationTablePropertiesAsync(UpdateIntegrationTablePropertiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -7746,11 +8779,20 @@ namespace Amazon.Glue
         /// </param>
         /// 
         /// <returns>The response from the UpdateTable service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AlreadyExistsException">
+        /// A resource to be created or added already exists.
+        /// </exception>
         /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
         /// Two processes are trying to modify a resource simultaneously.
         /// </exception>
         /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
         /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.FederationSourceException">
+        /// A federation source failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.FederationSourceRetryableException">
+        /// A federation source failed, but the operation may be retried.
         /// </exception>
         /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
         /// An encryption operation failed.
@@ -7820,6 +8862,13 @@ namespace Amazon.Glue
 
         /// <summary>
         /// Updates a trigger definition.
+        /// 
+        ///  
+        /// <para>
+        /// Job arguments may be logged. Do not pass plaintext secrets as arguments. Retrieve
+        /// secrets from a Glue Connection, Amazon Web Services Secrets Manager or other secret
+        /// management mechanism if you intend to keep them within the Job.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateTrigger service method.</param>
         /// <param name="cancellationToken">

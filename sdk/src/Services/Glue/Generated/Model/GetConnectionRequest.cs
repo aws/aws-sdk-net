@@ -35,9 +35,29 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class GetConnectionRequest : AmazonGlueRequest
     {
+        private ComputeEnvironment _applyOverrideForComputeEnvironment;
         private string _catalogId;
         private bool? _hidePassword;
         private string _name;
+
+        /// <summary>
+        /// Gets and sets the property ApplyOverrideForComputeEnvironment. 
+        /// <para>
+        /// For connections that may be used in multiple services, specifies returning properties
+        /// for the specified compute environment.
+        /// </para>
+        /// </summary>
+        public ComputeEnvironment ApplyOverrideForComputeEnvironment
+        {
+            get { return this._applyOverrideForComputeEnvironment; }
+            set { this._applyOverrideForComputeEnvironment = value; }
+        }
+
+        // Check to see if ApplyOverrideForComputeEnvironment property is set
+        internal bool IsSetApplyOverrideForComputeEnvironment()
+        {
+            return this._applyOverrideForComputeEnvironment != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CatalogId. 

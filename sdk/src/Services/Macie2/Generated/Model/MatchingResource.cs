@@ -40,7 +40,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property MatchingBucket. 
         /// <para>
-        /// The details of an S3 bucket that Amazon Macie monitors and analyzes.
+        /// The details of an S3 bucket that Amazon Macie monitors and analyzes for your account.
         /// </para>
         /// </summary>
         public MatchingBucket MatchingBucket

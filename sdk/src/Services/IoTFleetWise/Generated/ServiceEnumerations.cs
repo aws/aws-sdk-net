@@ -183,6 +183,52 @@ namespace Amazon.IoTFleetWise
 
 
     /// <summary>
+    /// Constants used for properties of type DefaultForUnmappedSignalsType.
+    /// </summary>
+    public class DefaultForUnmappedSignalsType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CUSTOM_DECODING for DefaultForUnmappedSignalsType
+        /// </summary>
+        public static readonly DefaultForUnmappedSignalsType CUSTOM_DECODING = new DefaultForUnmappedSignalsType("CUSTOM_DECODING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DefaultForUnmappedSignalsType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DefaultForUnmappedSignalsType FindValue(string value)
+        {
+            return FindValue<DefaultForUnmappedSignalsType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DefaultForUnmappedSignalsType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DiagnosticsMode.
     /// </summary>
     public class DiagnosticsMode : ConstantClass
@@ -459,6 +505,10 @@ namespace Amazon.IoTFleetWise
         /// </summary>
         public static readonly NetworkInterfaceFailureReason CONFLICTING_NETWORK_INTERFACE = new NetworkInterfaceFailureReason("CONFLICTING_NETWORK_INTERFACE");
         /// <summary>
+        /// Constant CUSTOM_DECODING_SIGNAL_NETWORK_INTERFACE_INFO_IS_NULL for NetworkInterfaceFailureReason
+        /// </summary>
+        public static readonly NetworkInterfaceFailureReason CUSTOM_DECODING_SIGNAL_NETWORK_INTERFACE_INFO_IS_NULL = new NetworkInterfaceFailureReason("CUSTOM_DECODING_SIGNAL_NETWORK_INTERFACE_INFO_IS_NULL");
+        /// <summary>
         /// Constant DUPLICATE_NETWORK_INTERFACE for NetworkInterfaceFailureReason
         /// </summary>
         public static readonly NetworkInterfaceFailureReason DUPLICATE_NETWORK_INTERFACE = new NetworkInterfaceFailureReason("DUPLICATE_NETWORK_INTERFACE");
@@ -524,6 +574,10 @@ namespace Amazon.IoTFleetWise
         /// Constant CAN_INTERFACE for NetworkInterfaceType
         /// </summary>
         public static readonly NetworkInterfaceType CAN_INTERFACE = new NetworkInterfaceType("CAN_INTERFACE");
+        /// <summary>
+        /// Constant CUSTOM_DECODING_INTERFACE for NetworkInterfaceType
+        /// </summary>
+        public static readonly NetworkInterfaceType CUSTOM_DECODING_INTERFACE = new NetworkInterfaceType("CUSTOM_DECODING_INTERFACE");
         /// <summary>
         /// Constant OBD_INTERFACE for NetworkInterfaceType
         /// </summary>
@@ -947,6 +1001,10 @@ namespace Amazon.IoTFleetWise
         /// </summary>
         public static readonly SignalDecoderFailureReason CONFLICTING_SIGNAL = new SignalDecoderFailureReason("CONFLICTING_SIGNAL");
         /// <summary>
+        /// Constant CUSTOM_DECODING_SIGNAL_INFO_IS_NULL for SignalDecoderFailureReason
+        /// </summary>
+        public static readonly SignalDecoderFailureReason CUSTOM_DECODING_SIGNAL_INFO_IS_NULL = new SignalDecoderFailureReason("CUSTOM_DECODING_SIGNAL_INFO_IS_NULL");
+        /// <summary>
         /// Constant DUPLICATE_SIGNAL for SignalDecoderFailureReason
         /// </summary>
         public static readonly SignalDecoderFailureReason DUPLICATE_SIGNAL = new SignalDecoderFailureReason("DUPLICATE_SIGNAL");
@@ -1044,6 +1102,10 @@ namespace Amazon.IoTFleetWise
         /// Constant CAN_SIGNAL for SignalDecoderType
         /// </summary>
         public static readonly SignalDecoderType CAN_SIGNAL = new SignalDecoderType("CAN_SIGNAL");
+        /// <summary>
+        /// Constant CUSTOM_DECODING_SIGNAL for SignalDecoderType
+        /// </summary>
+        public static readonly SignalDecoderType CUSTOM_DECODING_SIGNAL = new SignalDecoderType("CUSTOM_DECODING_SIGNAL");
         /// <summary>
         /// Constant MESSAGE_SIGNAL for SignalDecoderType
         /// </summary>
@@ -1255,6 +1317,114 @@ namespace Amazon.IoTFleetWise
 
 
     /// <summary>
+    /// Constants used for properties of type StorageMaximumSizeUnit.
+    /// </summary>
+    public class StorageMaximumSizeUnit : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GB for StorageMaximumSizeUnit
+        /// </summary>
+        public static readonly StorageMaximumSizeUnit GB = new StorageMaximumSizeUnit("GB");
+        /// <summary>
+        /// Constant MB for StorageMaximumSizeUnit
+        /// </summary>
+        public static readonly StorageMaximumSizeUnit MB = new StorageMaximumSizeUnit("MB");
+        /// <summary>
+        /// Constant TB for StorageMaximumSizeUnit
+        /// </summary>
+        public static readonly StorageMaximumSizeUnit TB = new StorageMaximumSizeUnit("TB");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StorageMaximumSizeUnit(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StorageMaximumSizeUnit FindValue(string value)
+        {
+            return FindValue<StorageMaximumSizeUnit>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StorageMaximumSizeUnit(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StorageMinimumTimeToLiveUnit.
+    /// </summary>
+    public class StorageMinimumTimeToLiveUnit : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DAYS for StorageMinimumTimeToLiveUnit
+        /// </summary>
+        public static readonly StorageMinimumTimeToLiveUnit DAYS = new StorageMinimumTimeToLiveUnit("DAYS");
+        /// <summary>
+        /// Constant HOURS for StorageMinimumTimeToLiveUnit
+        /// </summary>
+        public static readonly StorageMinimumTimeToLiveUnit HOURS = new StorageMinimumTimeToLiveUnit("HOURS");
+        /// <summary>
+        /// Constant WEEKS for StorageMinimumTimeToLiveUnit
+        /// </summary>
+        public static readonly StorageMinimumTimeToLiveUnit WEEKS = new StorageMinimumTimeToLiveUnit("WEEKS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StorageMinimumTimeToLiveUnit(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StorageMinimumTimeToLiveUnit FindValue(string value)
+        {
+            return FindValue<StorageMinimumTimeToLiveUnit>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StorageMinimumTimeToLiveUnit(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type StructuredMessageListType.
     /// </summary>
     public class StructuredMessageListType : ConstantClass
@@ -1302,6 +1472,64 @@ namespace Amazon.IoTFleetWise
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator StructuredMessageListType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TimeUnit.
+    /// </summary>
+    public class TimeUnit : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HOUR for TimeUnit
+        /// </summary>
+        public static readonly TimeUnit HOUR = new TimeUnit("HOUR");
+        /// <summary>
+        /// Constant MILLISECOND for TimeUnit
+        /// </summary>
+        public static readonly TimeUnit MILLISECOND = new TimeUnit("MILLISECOND");
+        /// <summary>
+        /// Constant MINUTE for TimeUnit
+        /// </summary>
+        public static readonly TimeUnit MINUTE = new TimeUnit("MINUTE");
+        /// <summary>
+        /// Constant SECOND for TimeUnit
+        /// </summary>
+        public static readonly TimeUnit SECOND = new TimeUnit("SECOND");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TimeUnit(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TimeUnit FindValue(string value)
+        {
+            return FindValue<TimeUnit>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TimeUnit(string value)
         {
             return FindValue(value);
         }

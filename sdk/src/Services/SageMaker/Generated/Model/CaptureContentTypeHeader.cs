@@ -31,7 +31,7 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Configuration specifying how to treat different headers. If no headers are specified
-    /// Amazon SageMaker will by default base64 encode when capturing the data.
+    /// Amazon SageMaker AI will by default base64 encode when capturing the data.
     /// </summary>
     public partial class CaptureContentTypeHeader
     {
@@ -41,8 +41,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property CsvContentTypes. 
         /// <para>
-        /// The list of all content type headers that Amazon SageMaker will treat as CSV and capture
-        /// accordingly.
+        /// The list of all content type headers that Amazon SageMaker AI will treat as CSV and
+        /// capture accordingly.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
@@ -61,7 +61,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property JsonContentTypes. 
         /// <para>
-        /// The list of all content type headers that SageMaker will treat as JSON and capture
+        /// The list of all content type headers that SageMaker AI will treat as JSON and capture
         /// accordingly.
         /// </para>
         /// </summary>

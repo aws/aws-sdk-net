@@ -35,12 +35,31 @@ namespace Amazon.PartnerCentralSelling.Model
     /// </summary>
     public partial class SolutionBase
     {
+        private string _arn;
         private string _catalog;
         private string _category;
         private DateTime? _createdDate;
         private string _id;
         private string _name;
         private SolutionStatus _status;
+
+        /// <summary>
+        /// Gets and sets the property Arn. 
+        /// <para>
+        ///  The SolutionBase structure provides essential information about a solution. 
+        /// </para>
+        /// </summary>
+        public string Arn
+        {
+            get { return this._arn; }
+            set { this._arn = value; }
+        }
+
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
+        {
+            return this._arn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Catalog. 
@@ -65,12 +84,12 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Category. 
         /// <para>
-        ///  Specifies the solution category, which helps to categorize and organize the solutions
+        /// Specifies the solution category, which helps to categorize and organize the solutions
         /// partners offer. Valid values: <c>Software Product</c> | <c>Consulting Service</c>
         /// | <c>Hardware Product</c> | <c>Communications Product</c> | <c>Professional Service</c>
         /// | <c>Managed Service</c> | <c>Value-Added Resale Amazon Web Services Service</c> |
         /// <c>Distribution Service</c> | <c>Training Service</c> | <c>Merger and Acquisition
-        /// Advising Service</c>. 
+        /// Advising Service</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -146,10 +165,10 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        ///  Specifies the solution's current status, which indicates its state in the system.
+        /// Specifies the solution's current status, which indicates its state in the system.
         /// Valid values: <c>Active</c> | <c>Inactive</c> | <c>Draft</c>. The status helps partners
         /// and Amazon Web Services track the solution's lifecycle and availability. Filter for
-        /// <c>Active</c> solutions for association to an opportunity. 
+        /// <c>Active</c> solutions for association to an opportunity.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

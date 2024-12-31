@@ -88,6 +88,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequest.DistributionConfigWithTags.DistributionConfig.Aliases.Quantity.Value));
                             xmlWriter.WriteEndElement();
                         }
+                        if(publicRequest.DistributionConfigWithTags.DistributionConfig.IsSetAnycastIpListId())
+                            xmlWriter.WriteElementString("AnycastIpListId", StringUtils.FromString(publicRequest.DistributionConfigWithTags.DistributionConfig.AnycastIpListId));                 
+
                         if (publicRequest.DistributionConfigWithTags.DistributionConfig.CacheBehaviors != null)
                         {
                             xmlWriter.WriteStartElement("CacheBehaviors");
@@ -240,6 +243,14 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                         }
                                         if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.FunctionAssociations.IsSetQuantity())
                                             xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.FunctionAssociations.Quantity.Value));
+                                        xmlWriter.WriteEndElement();
+                                    }
+                                    if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.GrpcConfig != null)
+                                    {
+                                        xmlWriter.WriteStartElement("GrpcConfig");
+                                        if(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.GrpcConfig.IsSetEnabled())
+                                            xmlWriter.WriteElementString("Enabled", StringUtils.FromBool(publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.GrpcConfig.Enabled));                 
+
                                         xmlWriter.WriteEndElement();
                                     }
                                     if (publicRequestDistributionConfigWithTagsDistributionConfigCacheBehaviorsItemsValue.LambdaFunctionAssociations != null)
@@ -518,6 +529,14 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                     xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequest.DistributionConfigWithTags.DistributionConfig.DefaultCacheBehavior.FunctionAssociations.Quantity.Value));
                                 xmlWriter.WriteEndElement();
                             }
+                            if (publicRequest.DistributionConfigWithTags.DistributionConfig.DefaultCacheBehavior.GrpcConfig != null)
+                            {
+                                xmlWriter.WriteStartElement("GrpcConfig");
+                                if(publicRequest.DistributionConfigWithTags.DistributionConfig.DefaultCacheBehavior.GrpcConfig.IsSetEnabled())
+                                    xmlWriter.WriteElementString("Enabled", StringUtils.FromBool(publicRequest.DistributionConfigWithTags.DistributionConfig.DefaultCacheBehavior.GrpcConfig.Enabled));                 
+
+                                xmlWriter.WriteEndElement();
+                            }
                             if (publicRequest.DistributionConfigWithTags.DistributionConfig.DefaultCacheBehavior.LambdaFunctionAssociations != null)
                             {
                                 xmlWriter.WriteStartElement("LambdaFunctionAssociations");
@@ -687,6 +706,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                             xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValue.Members.Quantity.Value));
                                         xmlWriter.WriteEndElement();
                                     }
+                                    if(publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValue.IsSetSelectionCriteria())
+                                        xmlWriter.WriteElementString("SelectionCriteria", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigOriginGroupsItemsValue.SelectionCriteria));                 
+
                                     xmlWriter.WriteEndElement();
                                 }
                                 }            
@@ -793,6 +815,20 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                         xmlWriter.WriteStartElement("S3OriginConfig");
                                         if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.S3OriginConfig.IsSetOriginAccessIdentity())
                                             xmlWriter.WriteElementString("OriginAccessIdentity", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.S3OriginConfig.OriginAccessIdentity));
+                                        xmlWriter.WriteEndElement();
+                                    }
+                                    if (publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.VpcOriginConfig != null)
+                                    {
+                                        xmlWriter.WriteStartElement("VpcOriginConfig");
+                                        if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.VpcOriginConfig.IsSetOriginKeepaliveTimeout())
+                                            xmlWriter.WriteElementString("OriginKeepaliveTimeout", StringUtils.FromInt(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.VpcOriginConfig.OriginKeepaliveTimeout));                 
+
+                                        if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.VpcOriginConfig.IsSetOriginReadTimeout())
+                                            xmlWriter.WriteElementString("OriginReadTimeout", StringUtils.FromInt(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.VpcOriginConfig.OriginReadTimeout));                 
+
+                                        if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.VpcOriginConfig.IsSetVpcOriginId())
+                                            xmlWriter.WriteElementString("VpcOriginId", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.VpcOriginConfig.VpcOriginId));                 
+
                                         xmlWriter.WriteEndElement();
                                     }
                                     xmlWriter.WriteEndElement();

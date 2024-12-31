@@ -203,7 +203,44 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
 
+<<<<<<< HEAD
                     if(publicRequest.IsSetRowLevelPermissionDataSet())
+||||||| Commit version number update changes
+                if(publicRequest.IsSetName())
+                {
+                    context.Writer.WritePropertyName("Name");
+                    context.Writer.Write(publicRequest.Name);
+                }
+
+                if(publicRequest.IsSetPhysicalTableMap())
+                {
+                    context.Writer.WritePropertyName("PhysicalTableMap");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestPhysicalTableMapKvp in publicRequest.PhysicalTableMap)
+=======
+                if(publicRequest.IsSetName())
+                {
+                    context.Writer.WritePropertyName("Name");
+                    context.Writer.Write(publicRequest.Name);
+                }
+
+                if(publicRequest.IsSetPerformanceConfiguration())
+                {
+                    context.Writer.WritePropertyName("PerformanceConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = PerformanceConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.PerformanceConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetPhysicalTableMap())
+                {
+                    context.Writer.WritePropertyName("PhysicalTableMap");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestPhysicalTableMapKvp in publicRequest.PhysicalTableMap)
+>>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
                     {
                         context.Writer.WritePropertyName("RowLevelPermissionDataSet");
                         context.Writer.WriteObjectStart();

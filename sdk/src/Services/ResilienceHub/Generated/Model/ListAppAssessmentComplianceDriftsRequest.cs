@@ -31,7 +31,7 @@ namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAppAssessmentComplianceDrifts operation.
-    /// Indicates the list of compliance drifts that were detected while running an assessment.
+    /// List of compliance drifts that were detected while running an assessment.
     /// </summary>
     public partial class ListAppAssessmentComplianceDriftsRequest : AmazonResilienceHubRequest
     {
@@ -64,7 +64,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Indicates the maximum number of compliance drifts requested.
+        /// Maximum number of compliance drifts requested.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

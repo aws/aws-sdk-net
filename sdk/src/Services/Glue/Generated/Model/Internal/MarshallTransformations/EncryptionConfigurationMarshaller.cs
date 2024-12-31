@@ -59,6 +59,17 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetDataQualityEncryption())
+            {
+                context.Writer.WritePropertyName("DataQualityEncryption");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = DataQualityEncryptionMarshaller.Instance;
+                marshaller.Marshall(requestObject.DataQualityEncryption, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetJobBookmarksEncryption())
             {
                 context.Writer.WritePropertyName("JobBookmarksEncryption");

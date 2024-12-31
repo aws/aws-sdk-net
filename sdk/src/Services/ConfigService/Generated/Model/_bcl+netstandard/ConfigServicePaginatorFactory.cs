@@ -301,6 +301,14 @@ namespace Amazon.ConfigService.Model
         }
 
         /// <summary>
+        /// Paginator for ListConfigurationRecorders operation
+        ///</summary>
+        public IListConfigurationRecordersPaginator ListConfigurationRecorders(ListConfigurationRecordersRequest request) 
+        {
+            return new ListConfigurationRecordersPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListConformancePackComplianceScores operation
         ///</summary>
         public IListConformancePackComplianceScoresPaginator ListConformancePackComplianceScores(ListConformancePackComplianceScoresRequest request) 

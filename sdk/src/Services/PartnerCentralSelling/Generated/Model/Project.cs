@@ -51,7 +51,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// Gets and sets the property AdditionalComments. 
         /// <para>
         /// Captures additional comments or information for the <c>Opportunity</c> that weren't
-        /// captured in other fields. 
+        /// captured in other fields.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -70,13 +70,13 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property ApnPrograms. 
         /// <para>
-        ///  Specifies the Amazon Partner Network (APN) program that influenced the <c>Opportunity</c>.
+        /// Specifies the Amazon Partner Network (APN) program that influenced the <c>Opportunity</c>.
         /// APN programs refer to specific partner programs or initiatives that can impact the
-        /// <c>Opportunity</c>. 
+        /// <c>Opportunity</c>.
         /// </para>
         ///  
         /// <para>
-        ///  Valid values: <c>APN Immersion Days | APN Solution Space | ATO (Authority to Operate)
+        /// Valid values: <c>APN Immersion Days | APN Solution Space | ATO (Authority to Operate)
         /// | AWS Marketplace Campaign | IS Immersion Day SFID Program | ISV Workload Migration
         /// | Migration Acceleration Program | P3 | Partner Launch Initiative | Partner Opportunity
         /// Acceleration Funded | The Next Smart | VMware Cloud on AWS | Well-Architected | Windows
@@ -99,7 +99,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// Gets and sets the property CompetitorName. 
         /// <para>
         /// Name of the <c>Opportunity</c>'s competitor (if any). Use <c>Other</c> to submit a
-        /// value not in the picklist. 
+        /// value not in the picklist.
         /// </para>
         /// </summary>
         public CompetitorName CompetitorName
@@ -125,7 +125,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// on how the proposed solution meets the customer's needs and provides value. Use concise
         /// language and precise descriptions to convey the context and significance of the <c>Opportunity</c>.
         /// The content in this field helps Amazon Web Services understand the nature of the <c>Opportunity</c>
-        /// and the strategic fit of the partner's solution. 
+        /// and the strategic fit of the partner's solution.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=20, Max=2000)]
@@ -144,13 +144,13 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property CustomerUseCase. 
         /// <para>
-        ///  Specifies the proposed solution focus or type of workload for the Opportunity. This
+        /// Specifies the proposed solution focus or type of workload for the Opportunity. This
         /// field captures the primary use case or objective of the proposed solution, and provides
-        /// context and clarity to the addressed workload. 
+        /// context and clarity to the addressed workload.
         /// </para>
         ///  
         /// <para>
-        ///  Valid values: <c>AI Machine Learning and Analytics | Archiving | Big Data: Data Warehouse/Data
+        /// Valid values: <c>AI Machine Learning and Analytics | Archiving | Big Data: Data Warehouse/Data
         /// Integration/ETL/Data Lake/BI | Blockchain | Business Applications: Mainframe Modernization
         /// | Business Applications &amp; Contact Center | Business Applications &amp; SAP Production
         /// | Centralized Operations Management | Cloud Management Tools | Cloud Management Tools
@@ -181,12 +181,12 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property DeliveryModels. 
         /// <para>
-        ///  Specifies the deployment or consumption model for your solution or service in the
-        /// <c>Opportunity</c>'s context. You can select multiple options. 
+        /// Specifies the deployment or consumption model for your solution or service in the
+        /// <c>Opportunity</c>'s context. You can select multiple options.
         /// </para>
         ///  
         /// <para>
-        ///  Options' descriptions from the <c>Delivery Model</c> field are: 
+        /// Options' descriptions from the <c>Delivery Model</c> field are:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -256,7 +256,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property OtherCompetitorNames. 
         /// <para>
-        /// Only allowed when <c>CompetitorNames</c> has <c>Other</c> selected. 
+        /// Only allowed when <c>CompetitorNames</c> has <c>Other</c> selected.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=255)]
@@ -276,7 +276,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// Gets and sets the property OtherSolutionDescription. 
         /// <para>
         /// Specifies the offered solution for the customer's business problem when the <c> RelatedEntityIdentifiers.Solutions</c>
-        /// field value is <c>Other</c>. 
+        /// field value is <c>Other</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=255)]
@@ -295,7 +295,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property RelatedOpportunityIdentifier. 
         /// <para>
-        /// Specifies the current opportunity's parent opportunity identifier. 
+        /// Specifies the current opportunity's parent opportunity identifier.
         /// </para>
         /// </summary>
         public string RelatedOpportunityIdentifier
@@ -313,52 +313,51 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property SalesActivities. 
         /// <para>
-        ///  Specifies the <c>Opportunity</c>'s sales activities conducted with the end customer.
-        /// These activities help drive Amazon Web Services assignment priority. 
+        /// Specifies the <c>Opportunity</c>'s sales activities conducted with the end customer.
+        /// These activities help drive Amazon Web Services assignment priority.
         /// </para>
         ///  
         /// <para>
-        ///  Valid values: 
+        /// Valid values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  Initialized discussions with customer: Initial conversations with the customer to
-        /// understand their needs and introduce your solution. 
+        /// Initialized discussions with customer: Initial conversations with the customer to
+        /// understand their needs and introduce your solution.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Customer has shown interest in solution: After initial discussions, the customer
-        /// is interested in your solution. 
+        /// Customer has shown interest in solution: After initial discussions, the customer is
+        /// interested in your solution.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Conducted POC/demo: You conducted a proof of concept (POC) or demonstration of the
-        /// solution for the customer. 
+        /// Conducted POC/demo: You conducted a proof of concept (POC) or demonstration of the
+        /// solution for the customer.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  In evaluation/planning stage: The customer is evaluating the solution and planning
-        /// potential implementation. 
+        /// In evaluation/planning stage: The customer is evaluating the solution and planning
+        /// potential implementation.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Agreed on solution to Business Problem: Both parties agree on how the solution addresses
-        /// the customer's business problem. 
+        /// Agreed on solution to Business Problem: Both parties agree on how the solution addresses
+        /// the customer's business problem.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Completed Action Plan: A detailed action plan is complete and outlines the steps
-        /// for implementation. 
+        /// Completed Action Plan: A detailed action plan is complete and outlines the steps for
+        /// implementation.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Finalized Deployment Need: Both parties agree with and finalized the deployment needs.
-        /// 
+        /// Finalized Deployment Need: Both parties agree with and finalized the deployment needs.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  SOW Signed: Both parties signed a statement of work (SOW), and formalize the agreement
-        /// and detail the project scope and deliverables. 
+        /// SOW Signed: Both parties signed a statement of work (SOW), and formalize the agreement
+        /// and detail the project scope and deliverables.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -377,7 +376,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Title. 
         /// <para>
-        /// Specifies the <c>Opportunity</c>'s title or name. 
+        /// Specifies the <c>Opportunity</c>'s title or name.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=255)]

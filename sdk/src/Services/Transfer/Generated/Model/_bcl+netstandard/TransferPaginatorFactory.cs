@@ -125,6 +125,14 @@ namespace Amazon.Transfer.Model
         }
 
         /// <summary>
+        /// Paginator for ListWebApps operation
+        ///</summary>
+        public IListWebAppsPaginator ListWebApps(ListWebAppsRequest request) 
+        {
+            return new ListWebAppsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListWorkflows operation
         ///</summary>
         public IListWorkflowsPaginator ListWorkflows(ListWorkflowsRequest request) 

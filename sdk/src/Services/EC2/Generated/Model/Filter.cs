@@ -39,6 +39,11 @@ namespace Amazon.EC2.Model
     /// If you specify multiple filters, the filters are joined with an <c>AND</c>, and the
     /// request returns only results that match all of the specified filters.
     /// </para>
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Filtering.html#Filtering_Resources_CLI">List
+    /// and filter using the CLI and API</a> in the <i>Amazon EC2 User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class Filter
     {

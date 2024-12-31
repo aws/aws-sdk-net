@@ -41,6 +41,7 @@ namespace Amazon.EC2.Model
         private string _ipamResourceDiscoveryRegion;
         private bool? _isDefault;
         private List<IpamOperatingRegion> _operatingRegions = AWSConfigs.InitializeCollections ? new List<IpamOperatingRegion>() : null;
+        private List<IpamOrganizationalUnitExclusion> _organizationalUnitExclusions = AWSConfigs.InitializeCollections ? new List<IpamOrganizationalUnitExclusion>() : null;
         private string _ownerId;
         private IpamResourceDiscoveryState _state;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
@@ -155,6 +156,26 @@ namespace Amazon.EC2.Model
         internal bool IsSetOperatingRegions()
         {
             return this._operatingRegions != null && (this._operatingRegions.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OrganizationalUnitExclusions. 
+        /// <para>
+        /// If your IPAM is integrated with Amazon Web Services Organizations and you add an organizational
+        /// unit (OU) exclusion, IPAM will not manage the IP addresses in accounts in that OU
+        /// exclusion.
+        /// </para>
+        /// </summary>
+        public List<IpamOrganizationalUnitExclusion> OrganizationalUnitExclusions
+        {
+            get { return this._organizationalUnitExclusions; }
+            set { this._organizationalUnitExclusions = value; }
+        }
+
+        // Check to see if OrganizationalUnitExclusions property is set
+        internal bool IsSetOrganizationalUnitExclusions()
+        {
+            return this._organizationalUnitExclusions != null && (this._organizationalUnitExclusions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

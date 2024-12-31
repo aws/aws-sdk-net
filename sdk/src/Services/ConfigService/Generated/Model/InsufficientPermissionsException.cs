@@ -34,24 +34,28 @@ namespace Amazon.ConfigService.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// For PutConfigRule, the rule cannot be created because the IAM role assigned to Config
-    /// lacks permissions to perform the config:Put* action.
+    /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutConfigRule.html">PutConfigRule</a>,
+    /// the rule cannot be created because the IAM role assigned to Config lacks permissions
+    /// to perform the config:Put* action.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// For PutConfigRule, the Lambda function cannot be invoked. Check the function ARN,
-    /// and check the function's permissions.
+    /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutConfigRule.html">PutConfigRule</a>,
+    /// the Lambda function cannot be invoked. Check the function ARN, and check the function's
+    /// permissions.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// For PutOrganizationConfigRule, organization Config rule cannot be created because
-    /// you do not have permissions to call IAM <c>GetRole</c> action or create a service-linked
-    /// role.
+    /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutOrganizationConfigRule.html">PutOrganizationConfigRule</a>,
+    /// organization Config rule cannot be created because you do not have permissions to
+    /// call IAM <c>GetRole</c> action or create a service-linked role.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot
-    /// be created because you do not have the following permissions: 
+    /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutConformancePack.html">PutConformancePack</a>
+    /// and <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutOrganizationConformancePack.html">PutOrganizationConformancePack</a>,
+    /// a conformance pack cannot be created because you do not have the following permissions:
+    /// 
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -62,7 +66,13 @@ namespace Amazon.ConfigService.Model
     /// <para>
     /// You do not have permission to read Amazon S3 bucket or call SSM:GetDocument.
     /// </para>
-    ///  </li> </ul> </li> </ul>
+    ///  </li> </ul> </li> <li> 
+    /// <para>
+    /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutServiceLinkedConfigurationRecorder.html">PutServiceLinkedConfigurationRecorder</a>,
+    /// a service-linked configuration recorder cannot be created because you do not have
+    /// the following permissions: IAM <c>CreateServiceLinkedRole</c>.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -37,6 +37,7 @@ namespace Amazon.Backup.Model
         private long? _completionWindowMinutes;
         private List<CopyAction> _copyActions = AWSConfigs.InitializeCollections ? new List<CopyAction>() : null;
         private bool? _enableContinuousBackup;
+        private List<IndexAction> _indexActions = AWSConfigs.InitializeCollections ? new List<IndexAction>() : null;
         private Lifecycle _lifecycle;
         private Dictionary<string, string> _recoveryPointTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _ruleName;
@@ -100,6 +101,39 @@ namespace Amazon.Backup.Model
         internal bool IsSetEnableContinuousBackup()
         {
             return this._enableContinuousBackup.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IndexActions. 
+        /// <para>
+        /// There can up to one IndexAction in each BackupRule, as each backup can have 0 or 1
+        /// backup index associated with it.
+        /// </para>
+        ///  
+        /// <para>
+        /// Within the array is ResourceTypes. Only 1 resource type will be accepted for each
+        /// BackupRule. Valid values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>EBS</c> for Amazon Elastic Block Store
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>S3</c> for Amazon Simple Storage Service (Amazon S3)
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public List<IndexAction> IndexActions
+        {
+            get { return this._indexActions; }
+            set { this._indexActions = value; }
+        }
+
+        // Check to see if IndexActions property is set
+        internal bool IsSetIndexActions()
+        {
+            return this._indexActions != null && (this._indexActions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

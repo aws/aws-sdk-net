@@ -61,7 +61,11 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
     /// the Amazon Cognito user pools API and user pool endpoints</a>.
     /// </para>
-    ///  </note>
+    ///  </note> 
+    /// <para>
+    /// Authorize this action with a signed-in user's access token. It must include the scope
+    /// <c>aws.cognito.signin.user.admin</c>.
+    /// </para>
     /// </summary>
     public partial class AssociateSoftwareTokenRequest : AmazonCognitoIdentityProviderRequest
     {
@@ -72,7 +76,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property AccessToken. 
         /// <para>
         /// A valid access token that Amazon Cognito issued to the user whose software token you
-        /// want to generate.
+        /// want to generate. You can provide either an access token or a session ID in the request.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -91,8 +95,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Session. 
         /// <para>
-        /// The session that should be passed both ways in challenge-response calls to the service.
-        /// This allows authentication of the user as part of the MFA setup process.
+        /// The session identifier that maintains the state of authentication requests and challenge
+        /// responses. In <c>AssociateSoftwareToken</c>, this is the session ID from a successful
+        /// sign-in. You can provide either an access token or a session ID in the request.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=20, Max=2048)]

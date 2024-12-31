@@ -42,6 +42,7 @@ namespace Amazon.CloudHSMV2.Model
         private List<Hsm> _hsms = AWSConfigs.InitializeCollections ? new List<Hsm>() : null;
         private string _hsmType;
         private ClusterMode _mode;
+        private NetworkType _networkType;
         private string _preCoPassword;
         private string _securityGroup;
         private string _sourceBackupId;
@@ -194,6 +195,33 @@ namespace Amazon.CloudHSMV2.Model
         internal bool IsSetMode()
         {
             return this._mode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkType. 
+        /// <para>
+        /// The cluster's NetworkType can be set to either IPV4 (which is the default) or DUALSTACK.
+        /// When set to IPV4, communication between your application and the Hardware Security
+        /// Modules (HSMs) is restricted to the IPv4 protocol only. In contrast, the DUALSTACK
+        /// network type enables communication over both the IPv4 and IPv6 protocols. To use the
+        /// DUALSTACK option, you'll need to configure your Virtual Private Cloud (VPC) and subnets
+        /// to support both IPv4 and IPv6. This involves adding IPv6 Classless Inter-Domain Routing
+        /// (CIDR) blocks to the existing IPv4 CIDR blocks in your subnets. The choice between
+        /// IPV4 and DUALSTACK network types determines the flexibility of the network addressing
+        /// setup for your cluster. The DUALSTACK option provides more flexibility by allowing
+        /// both IPv4 and IPv6 communication.
+        /// </para>
+        /// </summary>
+        public NetworkType NetworkType
+        {
+            get { return this._networkType; }
+            set { this._networkType = value; }
+        }
+
+        // Check to see if NetworkType property is set
+        internal bool IsSetNetworkType()
+        {
+            return this._networkType != null;
         }
 
         /// <summary>

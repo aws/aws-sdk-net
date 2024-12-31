@@ -46,10 +46,10 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property ClosedLostReason. 
         /// <para>
-        ///  Specifies the reason code when an opportunity is marked as <i>Closed Lost</i>. When
+        /// Specifies the reason code when an opportunity is marked as <i>Closed Lost</i>. When
         /// you select an appropriate reason code, you communicate the context for closing the
         /// <c>Opportunity</c>, and aid in accurate reports and analysis of opportunity outcomes.
-        /// The possible values are: 
+        /// The possible values are:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -146,7 +146,6 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <para>
         /// Specifies the upcoming actions or tasks for the <c>Opportunity</c>. Use this field
         /// to communicate with Amazon Web Services about the next actions required for the <c>Opportunity</c>.
-        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=255)]
@@ -166,7 +165,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// Gets and sets the property NextStepsHistory. 
         /// <para>
         /// Captures a chronological record of the next steps or actions planned or taken for
-        /// the current opportunity, along with the timestamp. 
+        /// the current opportunity, along with the timestamp.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
@@ -204,28 +203,27 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property ReviewStatus. 
         /// <para>
-        ///  Indicates the review status of an opportunity referred by a partner. This field is
-        /// read-only and only applicable for partner referrals. The possible values are: 
+        /// Indicates the review status of an opportunity referred by a partner. This field is
+        /// read-only and only applicable for partner referrals. The possible values are:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  Pending Submission: Not submitted for validation (editable). 
+        /// Pending Submission: Not submitted for validation (editable).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Submitted: Submitted for validation, and Amazon Web Services hasn't reviewed it (read-only).
-        /// 
+        /// Submitted: Submitted for validation, and Amazon Web Services hasn't reviewed it (read-only).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  In Review: Amazon Web Services is validating (read-only). 
+        /// In Review: Amazon Web Services is validating (read-only).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Action Required: Issues that Amazon Web Services highlights need to be addressed.
+        /// Action Required: Issues that Amazon Web Services highlights need to be addressed.
         /// Partners should use the <c>UpdateOpportunity</c> API action to update the opportunity
         /// and helps to ensure that all required changes are made. Only the following fields
-        /// are editable when the <c>Lifecycle.ReviewStatus</c> is <c>Action Required</c>: 
+        /// are editable when the <c>Lifecycle.ReviewStatus</c> is <c>Action Required</c>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -273,18 +271,17 @@ namespace Amazon.PartnerCentralSelling.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  After updates, the opportunity re-enters the validation phase. This process repeats
+        /// After updates, the opportunity re-enters the validation phase. This process repeats
         /// until all issues are resolved, and the opportunity's <c>Lifecycle.ReviewStatus</c>
-        /// is set to <c>Approved</c> or <c>Rejected</c>. 
+        /// is set to <c>Approved</c> or <c>Rejected</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Approved: Validated and converted into the Amazon Web Services seller's pipeline
-        /// (editable). 
+        /// Approved: Validated and converted into the Amazon Web Services seller's pipeline (editable).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Rejected: Disqualified (read-only). 
+        /// Rejected: Disqualified (read-only).
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -303,10 +300,9 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property ReviewStatusReason. 
         /// <para>
-        ///  Indicates the reason a decision was made during the opportunity review process. This
+        /// Indicates the reason a decision was made during the opportunity review process. This
         /// field combines the reasons for both disqualified and action required statuses, and
         /// provide clarity for why an opportunity was disqualified or requires further action.
-        /// 
         /// </para>
         /// </summary>
         public string ReviewStatusReason
@@ -324,10 +320,10 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Stage. 
         /// <para>
-        ///  Specifies the current stage of the <c>Opportunity</c>'s lifecycle as it maps to Amazon
+        /// Specifies the current stage of the <c>Opportunity</c>'s lifecycle as it maps to Amazon
         /// Web Services stages from the current stage in the partner CRM. This field provides
         /// a translated value of the stage, and offers insight into the <c>Opportunity</c>'s
-        /// progression in the sales cycle, according to Amazon Web Services definitions. 
+        /// progression in the sales cycle, according to Amazon Web Services definitions.
         /// </para>
         ///  <note> 
         /// <para>
@@ -337,42 +333,40 @@ namespace Amazon.PartnerCentralSelling.Model
         /// </para>
         ///  </note> 
         /// <para>
-        ///  The descriptions of each sales stage are: 
+        /// The descriptions of each sales stage are:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  Prospect: Amazon Web Services identifies the opportunity. It can be active (Comes
+        /// Prospect: Amazon Web Services identifies the opportunity. It can be active (Comes
         /// directly from the end customer through a lead) or latent (Your account team believes
-        /// it exists based on research, account plans, sales plays). 
+        /// it exists based on research, account plans, sales plays).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Qualified: Your account team engaged with the customer to discuss viability and requirements.
+        /// Qualified: Your account team engaged with the customer to discuss viability and requirements.
         /// The customer agreed that the opportunity is real, of interest, and may solve business/technical
-        /// needs. 
+        /// needs.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Technical Validation: All parties understand the implementation plan. 
+        /// Technical Validation: All parties understand the implementation plan.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Business Validation: Pricing was proposed, and all parties agree to the steps to
-        /// close. 
+        /// Business Validation: Pricing was proposed, and all parties agree to the steps to close.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Committed: The customer signed the contract, but Amazon Web Services hasn't started
-        /// billing. 
+        /// Committed: The customer signed the contract, but Amazon Web Services hasn't started
+        /// billing.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Launched: The workload is complete, and Amazon Web Services has started billing.
-        /// 
+        /// Launched: The workload is complete, and Amazon Web Services has started billing.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Closed Lost: The opportunity is lost, and there are no steps to move forward. 
+        /// Closed Lost: The opportunity is lost, and there are no steps to move forward.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -391,14 +385,14 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property TargetCloseDate. 
         /// <para>
-        ///  Specifies the date when Amazon Web Services expects to start significant billing,
+        /// Specifies the date when Amazon Web Services expects to start significant billing,
         /// when the project finishes, and when it moves into production. This field informs the
         /// Amazon Web Services seller about when the opportunity launches and starts to incur
-        /// Amazon Web Services usage. 
+        /// Amazon Web Services usage.
         /// </para>
         ///  
         /// <para>
-        ///  Ensure the <c>Target Close Date</c> isn't in the past. 
+        /// Ensure the <c>Target Close Date</c> isn't in the past.
         /// </para>
         /// </summary>
         public string TargetCloseDate

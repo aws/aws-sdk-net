@@ -42,6 +42,7 @@ namespace Amazon.SageMaker.Model
         private ClusterInstanceType _instanceType;
         private DateTime? _launchTime;
         private ClusterLifeCycleConfig _lifeCycleConfig;
+        private VpcConfig _overrideVpcConfig;
         private ClusterInstancePlacement _placement;
         private string _privateDnsHostname;
         private string _privatePrimaryIp;
@@ -174,6 +175,21 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetLifeCycleConfig()
         {
             return this._lifeCycleConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OverrideVpcConfig.
+        /// </summary>
+        public VpcConfig OverrideVpcConfig
+        {
+            get { return this._overrideVpcConfig; }
+            set { this._overrideVpcConfig = value; }
+        }
+
+        // Check to see if OverrideVpcConfig property is set
+        internal bool IsSetOverrideVpcConfig()
+        {
+            return this._overrideVpcConfig != null;
         }
 
         /// <summary>

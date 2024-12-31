@@ -48,6 +48,12 @@ namespace Amazon.QApps.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetActionIdentifier())
+            {
+                context.Writer.WritePropertyName("actionIdentifier");
+                context.Writer.Write(requestObject.ActionIdentifier);
+            }
+
             if(requestObject.IsSetId())
             {
                 context.Writer.WritePropertyName("id");

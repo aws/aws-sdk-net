@@ -65,6 +65,17 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetSupplementalDataStorageConfiguration())
+            {
+                context.Writer.WritePropertyName("supplementalDataStorageConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SupplementalDataStorageConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.SupplementalDataStorageConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

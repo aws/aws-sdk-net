@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EventBridge.Model
 {
     /// <summary>
-    /// Contains additional parameters for the connection.
+    /// Any additional parameters for the connection.
     /// </summary>
     public partial class ConnectionHttpParameters
     {
@@ -41,7 +41,7 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property BodyParameters. 
         /// <para>
-        /// Contains additional body string parameters for the connection.
+        /// Any additional body string parameters for the connection.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -60,7 +60,7 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property HeaderParameters. 
         /// <para>
-        /// Contains additional header parameters for the connection.
+        /// Any additional header parameters for the connection.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -79,7 +79,7 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property QueryStringParameters. 
         /// <para>
-        /// Contains additional query string parameters for the connection.
+        /// Any additional query string parameters for the connection.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]

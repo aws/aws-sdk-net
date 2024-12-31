@@ -86,6 +86,10 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                 {
                     return MaxNumberOfConfigurationRecordersExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("UnmodifiableEntityException"))
+                {
+                    return UnmodifiableEntityExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
                 {
                     return ValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

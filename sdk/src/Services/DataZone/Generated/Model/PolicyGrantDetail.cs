@@ -38,10 +38,12 @@ namespace Amazon.DataZone.Model
         private CreateAssetTypePolicyGrantDetail _createAssetType;
         private CreateDomainUnitPolicyGrantDetail _createDomainUnit;
         private Unit _createEnvironment;
+        private Unit _createEnvironmentFromBlueprint;
         private CreateEnvironmentProfilePolicyGrantDetail _createEnvironmentProfile;
         private CreateFormTypePolicyGrantDetail _createFormType;
         private CreateGlossaryPolicyGrantDetail _createGlossary;
         private CreateProjectPolicyGrantDetail _createProject;
+        private CreateProjectFromProjectProfilePolicyGrantDetail _createProjectFromProjectProfile;
         private Unit _delegateCreateEnvironmentProfile;
         private OverrideDomainUnitOwnersPolicyGrantDetail _overrideDomainUnitOwners;
         private OverrideProjectOwnersPolicyGrantDetail _overrideProjectOwners;
@@ -119,6 +121,21 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CreateEnvironmentFromBlueprint.
+        /// </summary>
+        public Unit CreateEnvironmentFromBlueprint
+        {
+            get { return this._createEnvironmentFromBlueprint; }
+            set { this._createEnvironmentFromBlueprint = value; }
+        }
+
+        // Check to see if CreateEnvironmentFromBlueprint property is set
+        internal bool IsSetCreateEnvironmentFromBlueprint()
+        {
+            return this._createEnvironmentFromBlueprint != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CreateEnvironmentProfile. 
         /// <para>
         /// Specifies that this is a create environment profile policy.
@@ -188,6 +205,24 @@ namespace Amazon.DataZone.Model
         internal bool IsSetCreateProject()
         {
             return this._createProject != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreateProjectFromProjectProfile. 
+        /// <para>
+        /// Specifies whether to create a project from project profile.
+        /// </para>
+        /// </summary>
+        public CreateProjectFromProjectProfilePolicyGrantDetail CreateProjectFromProjectProfile
+        {
+            get { return this._createProjectFromProjectProfile; }
+            set { this._createProjectFromProjectProfile = value; }
+        }
+
+        // Check to see if CreateProjectFromProjectProfile property is set
+        internal bool IsSetCreateProjectFromProjectProfile()
+        {
+            return this._createProjectFromProjectProfile != null;
         }
 
         /// <summary>

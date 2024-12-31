@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Details about an Amazon SageMaker app.
+    /// Details about an Amazon SageMaker AI app.
     /// </summary>
     public partial class AppDetails
     {

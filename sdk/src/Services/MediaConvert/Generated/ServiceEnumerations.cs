@@ -19855,6 +19855,56 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type RemoveRubyReserveAttributes.
+    /// </summary>
+    public class RemoveRubyReserveAttributes : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for RemoveRubyReserveAttributes
+        /// </summary>
+        public static readonly RemoveRubyReserveAttributes DISABLED = new RemoveRubyReserveAttributes("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for RemoveRubyReserveAttributes
+        /// </summary>
+        public static readonly RemoveRubyReserveAttributes ENABLED = new RemoveRubyReserveAttributes("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RemoveRubyReserveAttributes(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RemoveRubyReserveAttributes FindValue(string value)
+        {
+            return FindValue<RemoveRubyReserveAttributes>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RemoveRubyReserveAttributes(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RenewalType.
     /// </summary>
     public class RenewalType : ConstantClass
@@ -20862,6 +20912,56 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TimecodeSource(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TimecodeTrack.
+    /// </summary>
+    public class TimecodeTrack : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for TimecodeTrack
+        /// </summary>
+        public static readonly TimecodeTrack DISABLED = new TimecodeTrack("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for TimecodeTrack
+        /// </summary>
+        public static readonly TimecodeTrack ENABLED = new TimecodeTrack("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TimecodeTrack(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TimecodeTrack FindValue(string value)
+        {
+            return FindValue<TimecodeTrack>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TimecodeTrack(string value)
         {
             return FindValue(value);
         }

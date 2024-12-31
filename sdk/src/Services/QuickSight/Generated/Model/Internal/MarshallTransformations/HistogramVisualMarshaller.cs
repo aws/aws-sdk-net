@@ -97,6 +97,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetVisualContentAltText())
+            {
+                context.Writer.WritePropertyName("VisualContentAltText");
+                context.Writer.Write(requestObject.VisualContentAltText);
+            }
+
             if(requestObject.IsSetVisualId())
             {
                 context.Writer.WritePropertyName("VisualId");

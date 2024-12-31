@@ -87,11 +87,41 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                         context.Writer.WriteArrayEnd();
                     }
 
+<<<<<<< HEAD
                     if(publicRequest.IsSetCpu())
                     {
                         context.Writer.WritePropertyName("cpu");
                         context.Writer.Write(publicRequest.Cpu);
                     }
+||||||| Commit version number update changes
+                if(publicRequest.IsSetCpu())
+                {
+                    context.Writer.WritePropertyName("cpu");
+                    context.Writer.Write(publicRequest.Cpu);
+                }
+
+                if(publicRequest.IsSetEphemeralStorage())
+                {
+                    context.Writer.WritePropertyName("ephemeralStorage");
+                    context.Writer.WriteObjectStart();
+=======
+                if(publicRequest.IsSetCpu())
+                {
+                    context.Writer.WritePropertyName("cpu");
+                    context.Writer.Write(publicRequest.Cpu);
+                }
+
+                if(publicRequest.IsSetEnableFaultInjection())
+                {
+                    context.Writer.WritePropertyName("enableFaultInjection");
+                    context.Writer.Write(publicRequest.EnableFaultInjection);
+                }
+
+                if(publicRequest.IsSetEphemeralStorage())
+                {
+                    context.Writer.WritePropertyName("ephemeralStorage");
+                    context.Writer.WriteObjectStart();
+>>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
 
                     if(publicRequest.IsSetEphemeralStorage())
                     {

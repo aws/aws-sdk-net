@@ -1,0 +1,115 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the backup-2018-11-15.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.Backup.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+#pragma warning disable CS0612,CS0618
+namespace Amazon.Backup.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// UpdateRecoveryPointIndexSettings Request Marshaller
+    /// </summary>       
+    public class UpdateRecoveryPointIndexSettingsRequestMarshaller : IMarshaller<IRequest, UpdateRecoveryPointIndexSettingsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    {
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="input"></param>
+        /// <returns></returns>
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((UpdateRecoveryPointIndexSettingsRequest)input);
+        }
+
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="publicRequest"></param>
+        /// <returns></returns>
+        public IRequest Marshall(UpdateRecoveryPointIndexSettingsRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Backup");
+            request.Headers["Content-Type"] = "application/json";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-15";
+            request.HttpMethod = "POST";
+
+            if (!publicRequest.IsSetBackupVaultName())
+                throw new AmazonBackupException("Request object does not have required field BackupVaultName set");
+            request.AddPathResource("{backupVaultName}", StringUtils.FromString(publicRequest.BackupVaultName));
+            if (!publicRequest.IsSetRecoveryPointArn())
+                throw new AmazonBackupException("Request object does not have required field RecoveryPointArn set");
+            request.AddPathResource("{recoveryPointArn}", StringUtils.FromString(publicRequest.RecoveryPointArn));
+            request.ResourcePath = "/backup-vaults/{backupVaultName}/recovery-points/{recoveryPointArn}/index";
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            {
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetIamRoleArn())
+                {
+                    context.Writer.WritePropertyName("IamRoleArn");
+                    context.Writer.Write(publicRequest.IamRoleArn);
+                }
+
+                if(publicRequest.IsSetIndex())
+                {
+                    context.Writer.WritePropertyName("Index");
+                    context.Writer.Write(publicRequest.Index);
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+            }
+
+
+            return request;
+        }
+        private static UpdateRecoveryPointIndexSettingsRequestMarshaller _instance = new UpdateRecoveryPointIndexSettingsRequestMarshaller();        
+
+        internal static UpdateRecoveryPointIndexSettingsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateRecoveryPointIndexSettingsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
+    }
+}

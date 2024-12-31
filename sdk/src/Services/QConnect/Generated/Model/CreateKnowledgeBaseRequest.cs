@@ -81,7 +81,7 @@ namespace Amazon.QConnect.Model
         /// <para>
         /// A unique, case-sensitive identifier that you provide to ensure the idempotency of
         /// the request. If not provided, the Amazon Web Services SDK populates this field. For
-        /// more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+        /// more information about idempotency, see <a href="http://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
         /// retries safe with idempotent APIs</a>.
         /// </para>
         /// </summary>
@@ -208,8 +208,8 @@ namespace Amazon.QConnect.Model
         /// <summary>
         /// Gets and sets the property SourceConfiguration. 
         /// <para>
-        /// The source of the knowledge base content. Only set this argument for EXTERNAL knowledge
-        /// bases.
+        /// The source of the knowledge base content. Only set this argument for EXTERNAL or Managed
+        /// knowledge bases.
         /// </para>
         /// </summary>
         public SourceConfiguration SourceConfiguration

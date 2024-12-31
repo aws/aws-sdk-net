@@ -81,9 +81,12 @@ namespace Amazon.EKS.Model
     {
         private UpdateAccessConfigRequest _accessConfig;
         private string _clientRequestToken;
+        private ComputeConfigRequest _computeConfig;
+        private KubernetesNetworkConfigRequest _kubernetesNetworkConfig;
         private Logging _logging;
         private string _name;
         private VpcConfigRequest _resourcesVpcConfig;
+        private StorageConfigRequest _storageConfig;
         private UpgradePolicyRequest _upgradePolicy;
         private ZonalShiftConfigRequest _zonalShiftConfig;
 
@@ -122,6 +125,40 @@ namespace Amazon.EKS.Model
         internal bool IsSetClientRequestToken()
         {
             return this._clientRequestToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ComputeConfig. 
+        /// <para>
+        /// Update the configuration of the compute capability of your EKS Auto Mode cluster.
+        /// For example, enable the capability.
+        /// </para>
+        /// </summary>
+        public ComputeConfigRequest ComputeConfig
+        {
+            get { return this._computeConfig; }
+            set { this._computeConfig = value; }
+        }
+
+        // Check to see if ComputeConfig property is set
+        internal bool IsSetComputeConfig()
+        {
+            return this._computeConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KubernetesNetworkConfig.
+        /// </summary>
+        public KubernetesNetworkConfigRequest KubernetesNetworkConfig
+        {
+            get { return this._kubernetesNetworkConfig; }
+            set { this._kubernetesNetworkConfig = value; }
+        }
+
+        // Check to see if KubernetesNetworkConfig property is set
+        internal bool IsSetKubernetesNetworkConfig()
+        {
+            return this._kubernetesNetworkConfig != null;
         }
 
         /// <summary>
@@ -184,6 +221,25 @@ namespace Amazon.EKS.Model
         internal bool IsSetResourcesVpcConfig()
         {
             return this._resourcesVpcConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageConfig. 
+        /// <para>
+        /// Update the configuration of the block storage capability of your EKS Auto Mode cluster.
+        /// For example, enable the capability.
+        /// </para>
+        /// </summary>
+        public StorageConfigRequest StorageConfig
+        {
+            get { return this._storageConfig; }
+            set { this._storageConfig = value; }
+        }
+
+        // Check to see if StorageConfig property is set
+        internal bool IsSetStorageConfig()
+        {
+            return this._storageConfig != null;
         }
 
         /// <summary>

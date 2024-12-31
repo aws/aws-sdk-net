@@ -170,6 +170,11 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>network-info.bandwidth-weightings</c> - For instances that support bandwidth weighting
+        /// to boost performance (<c>default</c>, <c>vpc-1</c>, <c>ebs-1</c>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>network-info.efa-info.maximum-efa-interfaces</c> - The maximum number of Elastic
         /// Fabric Adapters (EFAs) per instance.
         /// </para>

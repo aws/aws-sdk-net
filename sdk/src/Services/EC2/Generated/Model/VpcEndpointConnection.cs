@@ -44,6 +44,7 @@ namespace Amazon.EC2.Model
         private string _vpcEndpointConnectionId;
         private string _vpcEndpointId;
         private string _vpcEndpointOwner;
+        private string _vpcEndpointRegion;
         private State _vpcEndpointState;
 
         /// <summary>
@@ -224,6 +225,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetVpcEndpointOwner()
         {
             return this._vpcEndpointOwner != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcEndpointRegion. 
+        /// <para>
+        /// The Region of the endpoint.
+        /// </para>
+        /// </summary>
+        public string VpcEndpointRegion
+        {
+            get { return this._vpcEndpointRegion; }
+            set { this._vpcEndpointRegion = value; }
+        }
+
+        // Check to see if VpcEndpointRegion property is set
+        internal bool IsSetVpcEndpointRegion()
+        {
+            return this._vpcEndpointRegion != null;
         }
 
         /// <summary>

@@ -39,7 +39,7 @@ namespace Amazon.MemoryDB.Model
         /// <summary>
         /// Gets and sets the property SubnetGroup. 
         /// <para>
-        /// The newly-created subnet group
+        /// The newly-created subnet group.
         /// </para>
         /// </summary>
         public SubnetGroup SubnetGroup

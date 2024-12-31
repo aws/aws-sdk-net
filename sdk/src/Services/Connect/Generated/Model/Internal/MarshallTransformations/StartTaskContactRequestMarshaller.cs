@@ -161,6 +161,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.ScheduledTime.Value);
                     }
 
+<<<<<<< HEAD
                     if(publicRequest.IsSetTaskTemplateId())
                     {
                         context.Writer.WritePropertyName("TaskTemplateId");
@@ -168,6 +169,36 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     }
 
                     writer.WriteObjectEnd();
+||||||| Commit version number update changes
+                if(publicRequest.IsSetTaskTemplateId())
+                {
+                    context.Writer.WritePropertyName("TaskTemplateId");
+                    context.Writer.Write(publicRequest.TaskTemplateId);
+=======
+                if(publicRequest.IsSetSegmentAttributes())
+                {
+                    context.Writer.WritePropertyName("SegmentAttributes");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestSegmentAttributesKvp in publicRequest.SegmentAttributes)
+                    {
+                        context.Writer.WritePropertyName(publicRequestSegmentAttributesKvp.Key);
+                        var publicRequestSegmentAttributesValue = publicRequestSegmentAttributesKvp.Value;
+
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SegmentAttributeValueMarshaller.Instance;
+                        marshaller.Marshall(publicRequestSegmentAttributesValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetTaskTemplateId())
+                {
+                    context.Writer.WritePropertyName("TaskTemplateId");
+                    context.Writer.Write(publicRequest.TaskTemplateId);
+>>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
                 }
 
                 request.Content = memoryStream.ToArray();

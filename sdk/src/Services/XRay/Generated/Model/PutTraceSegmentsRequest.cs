@@ -31,15 +31,13 @@ namespace Amazon.XRay.Model
 {
     /// <summary>
     /// Container for the parameters to the PutTraceSegments operation.
-    /// Uploads segment documents to Amazon Web Services X-Ray. The <a href="https://docs.aws.amazon.com/xray/index.html">X-Ray
-    /// SDK</a> generates segment documents and sends them to the X-Ray daemon, which uploads
-    /// them in batches. A segment document can be a completed segment, an in-progress segment,
-    /// or an array of subsegments.
+    /// Uploads segment documents to Amazon Web Services X-Ray. A segment document can be
+    /// a completed segment, an in-progress segment, or an array of subsegments.
     /// 
     ///  
     /// <para>
     /// Segments must include the following fields. For the full segment document schema,
-    /// see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html">Amazon
+    /// see <a href="https://docs.aws.amazon.com/xray/latest/devguide/aws-xray-interface-api.html#xray-api-segmentdocuments.html">Amazon
     /// Web Services X-Ray Segment Documents</a> in the <i>Amazon Web Services X-Ray Developer
     /// Guide</i>.
     /// </para>
@@ -83,7 +81,8 @@ namespace Amazon.XRay.Model
     ///  </li> </ul> 
     /// <para>
     /// A <c>trace_id</c> consists of three numbers separated by hyphens. For example, 1-58406520-a006649127e371903a2de979.
-    /// This includes:
+    /// For trace IDs created by an X-Ray SDK, or by Amazon Web Services services integrated
+    /// with X-Ray, a trace ID includes:
     /// </para>
     ///  
     /// <para>
@@ -103,7 +102,16 @@ namespace Amazon.XRay.Model
     /// <para>
     /// A 96-bit identifier for the trace, globally unique, in 24 hexadecimal digits.
     /// </para>
-    ///  </li> </ul>
+    ///  </li> </ul> <note> 
+    /// <para>
+    /// Trace IDs created via OpenTelemetry have a different format based on the <a href="https://www.w3.org/TR/trace-context/">W3C
+    /// Trace Context specification</a>. A W3C trace ID must be formatted in the X-Ray trace
+    /// ID format when sending to X-Ray. For example, a W3C trace ID <c>4efaaf4d1e8720b39541901950019ee5</c>
+    /// should be formatted as <c>1-4efaaf4d-1e8720b39541901950019ee5</c> when sending to
+    /// X-Ray. While X-Ray trace IDs include the original request timestamp in Unix epoch
+    /// time, this is not required or validated. 
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class PutTraceSegmentsRequest : AmazonXRayRequest
     {

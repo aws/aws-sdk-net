@@ -43,5 +43,13 @@ namespace Amazon.Billing.Model
         {
             return new ListBillingViewsPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListSourceViewsForBillingView operation
+        ///</summary>
+        public IListSourceViewsForBillingViewPaginator ListSourceViewsForBillingView(ListSourceViewsForBillingViewRequest request) 
+        {
+            return new ListSourceViewsForBillingViewPaginator(this.client, request);
+        }
     }
 }

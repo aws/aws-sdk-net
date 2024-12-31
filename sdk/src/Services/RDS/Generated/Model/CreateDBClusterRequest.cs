@@ -66,6 +66,7 @@ namespace Amazon.RDS.Model
         private string _characterSetName;
         private ClusterScalabilityType _clusterScalabilityType;
         private bool? _copyTagsToSnapshot;
+        private DatabaseInsightsMode _databaseInsightsMode;
         private string _databaseName;
         private string _dbClusterIdentifier;
         private string _dbClusterInstanceClass;
@@ -148,7 +149,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid for Cluster Type: Multi-AZ DB clusters only
+        /// Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB cluster
         /// </para>
         /// </summary>
         public bool? AutoMinorVersionUpgrade
@@ -370,6 +371,34 @@ namespace Amazon.RDS.Model
         internal bool IsSetCopyTagsToSnapshot()
         {
             return this._copyTagsToSnapshot.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DatabaseInsightsMode. 
+        /// <para>
+        /// The mode of Database Insights to enable for the DB cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you set this value to <c>advanced</c>, you must also set the <c>PerformanceInsightsEnabled</c>
+        /// parameter to <c>true</c> and the <c>PerformanceInsightsRetentionPeriod</c> parameter
+        /// to 465.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid for Cluster Type: Aurora DB clusters only
+        /// </para>
+        /// </summary>
+        public DatabaseInsightsMode DatabaseInsightsMode
+        {
+            get { return this._databaseInsightsMode; }
+            set { this._databaseInsightsMode = value; }
+        }
+
+        // Check to see if DatabaseInsightsMode property is set
+        internal bool IsSetDatabaseInsightsMode()
+        {
+            return this._databaseInsightsMode != null;
         }
 
         /// <summary>
@@ -866,7 +895,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid for Cluster Type: Multi-AZ DB clusters only
+        /// Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters
         /// </para>
         /// </summary>
         public bool? EnablePerformanceInsights
@@ -1416,7 +1445,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid for Cluster Type: Multi-AZ DB clusters only
+        /// Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters
         /// </para>
         ///  
         /// <para>
@@ -1454,7 +1483,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid for Cluster Type: Multi-AZ DB clusters only
+        /// Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters
         /// </para>
         /// </summary>
         public string MonitoringRoleArn
@@ -1548,7 +1577,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid for Cluster Type: Multi-AZ DB clusters only
+        /// Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters
         /// </para>
         /// </summary>
         public string PerformanceInsightsKMSKeyId
@@ -1570,7 +1599,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid for Cluster Type: Multi-AZ DB clusters only
+        /// Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters
         /// </para>
         ///  
         /// <para>

@@ -42,6 +42,7 @@ namespace Amazon.EC2.Model
         private string _description;
         private CreateVerifiedAccessTrustProviderDeviceOptions _deviceOptions;
         private DeviceTrustProviderType _deviceTrustProviderType;
+        private CreateVerifiedAccessNativeApplicationOidcOptions _nativeApplicationOidcOptions;
         private CreateVerifiedAccessTrustProviderOidcOptions _oidcOptions;
         private string _policyReferenceName;
         private VerifiedAccessSseSpecificationRequest _sseSpecification;
@@ -123,6 +124,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetDeviceTrustProviderType()
         {
             return this._deviceTrustProviderType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NativeApplicationOidcOptions. 
+        /// <para>
+        /// The OpenID Connect (OIDC) options.
+        /// </para>
+        /// </summary>
+        public CreateVerifiedAccessNativeApplicationOidcOptions NativeApplicationOidcOptions
+        {
+            get { return this._nativeApplicationOidcOptions; }
+            set { this._nativeApplicationOidcOptions = value; }
+        }
+
+        // Check to see if NativeApplicationOidcOptions property is set
+        internal bool IsSetNativeApplicationOidcOptions()
+        {
+            return this._nativeApplicationOidcOptions != null;
         }
 
         /// <summary>

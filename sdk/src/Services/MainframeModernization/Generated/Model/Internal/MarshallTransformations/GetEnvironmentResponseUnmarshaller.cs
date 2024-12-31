@@ -124,6 +124,12 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
                     response.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("networkType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.NetworkType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("pendingMaintenance", targetDepth))
                 {
                     var unmarshaller = PendingMaintenanceUnmarshaller.Instance;

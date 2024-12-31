@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.Chatbot.IAmazonChatbot.AssociateToConfiguration(Amazon.Chatbot.Model.AssociateToConfigurationRequest)" />
+            <member name="M:Amazon.Chatbot.AmazonChatbotClient.AssociateToConfiguration(Amazon.Chatbot.Model.AssociateToConfigurationRequest)" />
+            <member name="T:Amazon.Chatbot.Model.AssociateToConfigurationRequest" />
+            <member name="T:Amazon.Chatbot.Model.AssociateToConfigurationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Associate a custom action to a channel configuration, allowing it to be used in that channel
+                </para>
+                <code
+                    title="Associate a custom action to a configuration"
+                    source=".\AWSSDKDocSamples\Chatbot\Chatbot.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Chatbot.IAmazonChatbot.CreateCustomAction(Amazon.Chatbot.Model.CreateCustomActionRequest)" />
+            <member name="M:Amazon.Chatbot.AmazonChatbotClient.CreateCustomAction(Amazon.Chatbot.Model.CreateCustomActionRequest)" />
+            <member name="T:Amazon.Chatbot.Model.CreateCustomActionRequest" />
+            <member name="T:Amazon.Chatbot.Model.CreateCustomActionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Creates an alias that invokes a Lambda function from chat channels. You can use this alias by entering 'run invoke', after which you're prompted for the function name.
+                </para>
+                <code
+                    title="Create an alias that invokes a Lambda function"
+                    source=".\AWSSDKDocSamples\Chatbot\Chatbot.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Chatbot.IAmazonChatbot.CreateCustomAction(Amazon.Chatbot.Model.CreateCustomActionRequest)" />
+            <member name="M:Amazon.Chatbot.AmazonChatbotClient.CreateCustomAction(Amazon.Chatbot.Model.CreateCustomActionRequest)" />
+            <member name="T:Amazon.Chatbot.Model.CreateCustomActionRequest" />
+            <member name="T:Amazon.Chatbot.Model.CreateCustomActionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Creates a button on all Cloudwatch notifications that lists alarms in the ‘ALARM’ state.
+                </para>
+                <code
+                    title="Create a custom action to list alarms"
+                    source=".\AWSSDKDocSamples\Chatbot\Chatbot.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Chatbot.IAmazonChatbot.DeleteCustomAction(Amazon.Chatbot.Model.DeleteCustomActionRequest)" />
+            <member name="M:Amazon.Chatbot.AmazonChatbotClient.DeleteCustomAction(Amazon.Chatbot.Model.DeleteCustomActionRequest)" />
+            <member name="T:Amazon.Chatbot.Model.DeleteCustomActionRequest" />
+            <member name="T:Amazon.Chatbot.Model.DeleteCustomActionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Delete a custom action"
+                    source=".\AWSSDKDocSamples\Chatbot\Chatbot.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Chatbot.IAmazonChatbot.DisassociateFromConfiguration(Amazon.Chatbot.Model.DisassociateFromConfigurationRequest)" />
+            <member name="M:Amazon.Chatbot.AmazonChatbotClient.DisassociateFromConfiguration(Amazon.Chatbot.Model.DisassociateFromConfigurationRequest)" />
+            <member name="T:Amazon.Chatbot.Model.DisassociateFromConfigurationRequest" />
+            <member name="T:Amazon.Chatbot.Model.DisassociateFromConfigurationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Disassociate a custom action from a configuration"
+                    source=".\AWSSDKDocSamples\Chatbot\Chatbot.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Chatbot.IAmazonChatbot.GetCustomAction(Amazon.Chatbot.Model.GetCustomActionRequest)" />
+            <member name="M:Amazon.Chatbot.AmazonChatbotClient.GetCustomAction(Amazon.Chatbot.Model.GetCustomActionRequest)" />
+            <member name="T:Amazon.Chatbot.Model.GetCustomActionRequest" />
+            <member name="T:Amazon.Chatbot.Model.GetCustomActionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Get a custom action"
+                    source=".\AWSSDKDocSamples\Chatbot\Chatbot.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Chatbot.IAmazonChatbot.ListAssociations(Amazon.Chatbot.Model.ListAssociationsRequest)" />
+            <member name="M:Amazon.Chatbot.AmazonChatbotClient.ListAssociations(Amazon.Chatbot.Model.ListAssociationsRequest)" />
+            <member name="T:Amazon.Chatbot.Model.ListAssociationsRequest" />
+            <member name="T:Amazon.Chatbot.Model.ListAssociationsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="List custom actions associated with a configuration"
+                    source=".\AWSSDKDocSamples\Chatbot\Chatbot.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Chatbot.IAmazonChatbot.ListCustomActions(Amazon.Chatbot.Model.ListCustomActionsRequest)" />
+            <member name="M:Amazon.Chatbot.AmazonChatbotClient.ListCustomActions(Amazon.Chatbot.Model.ListCustomActionsRequest)" />
+            <member name="T:Amazon.Chatbot.Model.ListCustomActionsRequest" />
+            <member name="T:Amazon.Chatbot.Model.ListCustomActionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="List custom actions"
+                    source=".\AWSSDKDocSamples\Chatbot\Chatbot.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Chatbot.IAmazonChatbot.UpdateCustomAction(Amazon.Chatbot.Model.UpdateCustomActionRequest)" />
+            <member name="M:Amazon.Chatbot.AmazonChatbotClient.UpdateCustomAction(Amazon.Chatbot.Model.UpdateCustomActionRequest)" />
+            <member name="T:Amazon.Chatbot.Model.UpdateCustomActionRequest" />
+            <member name="T:Amazon.Chatbot.Model.UpdateCustomActionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Updates the command text of a custom action without altering the existing alias name or attachment criteria
+                </para>
+                <code
+                    title="Update the command definition of an existing action"
+                    source=".\AWSSDKDocSamples\Chatbot\Chatbot.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+</docs>

@@ -64,7 +64,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserPoolId. 
         /// <para>
-        /// The user pool ID for the user pool.
+        /// The ID of the user pool.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=55)]

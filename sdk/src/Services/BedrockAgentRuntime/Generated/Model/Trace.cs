@@ -37,11 +37,33 @@ namespace Amazon.BedrockAgentRuntime.Model
     /// </summary>
     public partial class Trace
     {
+        private CustomOrchestrationTrace _customOrchestrationTrace;
         private FailureTrace _failureTrace;
         private GuardrailTrace _guardrailTrace;
         private OrchestrationTrace _orchestrationTrace;
         private PostProcessingTrace _postProcessingTrace;
         private PreProcessingTrace _preProcessingTrace;
+        private RoutingClassifierTrace _routingClassifierTrace;
+
+        /// <summary>
+        /// Gets and sets the property CustomOrchestrationTrace. 
+        /// <para>
+        ///  Details about the custom orchestration step in which the agent determines the order
+        /// in which actions are executed. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public CustomOrchestrationTrace CustomOrchestrationTrace
+        {
+            get { return this._customOrchestrationTrace; }
+            set { this._customOrchestrationTrace = value; }
+        }
+
+        // Check to see if CustomOrchestrationTrace property is set
+        internal bool IsSetCustomOrchestrationTrace()
+        {
+            return this._customOrchestrationTrace != null;
+        }
 
         /// <summary>
         /// Gets and sets the property FailureTrace. 
@@ -138,6 +160,25 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetPreProcessingTrace()
         {
             return this._preProcessingTrace != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RoutingClassifierTrace. 
+        /// <para>
+        /// A routing classifier's trace.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public RoutingClassifierTrace RoutingClassifierTrace
+        {
+            get { return this._routingClassifierTrace; }
+            set { this._routingClassifierTrace = value; }
+        }
+
+        // Check to see if RoutingClassifierTrace property is set
+        internal bool IsSetRoutingClassifierTrace()
+        {
+            return this._routingClassifierTrace != null;
         }
 
     }

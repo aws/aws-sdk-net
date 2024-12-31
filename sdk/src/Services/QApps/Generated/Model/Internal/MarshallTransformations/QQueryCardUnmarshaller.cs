@@ -84,6 +84,12 @@ namespace Amazon.QApps.Model.Internal.MarshallTransformations
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("memoryReferences", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.MemoryReferences = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("outputSource", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

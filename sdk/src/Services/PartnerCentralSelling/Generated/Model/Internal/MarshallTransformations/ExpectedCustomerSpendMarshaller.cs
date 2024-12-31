@@ -60,6 +60,12 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.CurrencyCode);
             }
 
+            if(requestObject.IsSetEstimationUrl())
+            {
+                context.Writer.WritePropertyName("EstimationUrl");
+                context.Writer.Write(requestObject.EstimationUrl);
+            }
+
             if(requestObject.IsSetFrequency())
             {
                 context.Writer.WritePropertyName("Frequency");

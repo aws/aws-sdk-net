@@ -64,6 +64,8 @@ namespace Amazon.EC2.Model
         private InstanceMetadataOptionsResponse _metadataOptions;
         private Monitoring _monitoring;
         private List<InstanceNetworkInterface> _networkInterfaces = AWSConfigs.InitializeCollections ? new List<InstanceNetworkInterface>() : null;
+        private InstanceNetworkPerformanceOptions _networkPerformanceOptions;
+        private OperatorResponse _operator;
         private string _outpostArn;
         private Placement _placement;
         private PlatformValues _platform;
@@ -659,6 +661,42 @@ namespace Amazon.EC2.Model
         internal bool IsSetNetworkInterfaces()
         {
             return this._networkInterfaces != null && (this._networkInterfaces.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkPerformanceOptions. 
+        /// <para>
+        /// Contains settings for the network performance options for your instance.
+        /// </para>
+        /// </summary>
+        public InstanceNetworkPerformanceOptions NetworkPerformanceOptions
+        {
+            get { return this._networkPerformanceOptions; }
+            set { this._networkPerformanceOptions = value; }
+        }
+
+        // Check to see if NetworkPerformanceOptions property is set
+        internal bool IsSetNetworkPerformanceOptions()
+        {
+            return this._networkPerformanceOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Operator. 
+        /// <para>
+        /// The service provider that manages the instance.
+        /// </para>
+        /// </summary>
+        public OperatorResponse Operator
+        {
+            get { return this._operator; }
+            set { this._operator = value; }
+        }
+
+        // Check to see if Operator property is set
+        internal bool IsSetOperator()
+        {
+            return this._operator != null;
         }
 
         /// <summary>

@@ -30,7 +30,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// The type of the configuration to override the risk decision.
+    /// Exceptions to the risk evaluation configuration, including always-allow and always-block
+    /// IP address ranges. 
+    /// 
+    ///  
+    /// <para>
+    /// This data type is a request parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetRiskConfiguration.html">SetRiskConfiguration</a>
+    /// and a response parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeRiskConfiguration.html">DescribeRiskConfiguration</a>.
+    /// </para>
     /// </summary>
     public partial class RiskExceptionConfigurationType
     {
@@ -40,9 +47,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property BlockedIPRangeList. 
         /// <para>
-        /// Overrides the risk decision to always block the pre-authentication requests. The IP
-        /// range is in CIDR notation, a compact representation of an IP address and its routing
-        /// prefix.
+        /// An always-block IP address list. Overrides the risk decision and always blocks authentication
+        /// requests. This parameter is displayed and set in CIDR notation.
         /// </para>
         /// </summary>
         [AWSProperty(Max=200)]
@@ -61,8 +67,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property SkippedIPRangeList. 
         /// <para>
-        /// Risk detection isn't performed on the IP addresses in this range list. The IP range
-        /// is in CIDR notation.
+        /// An always-allow IP address list. Risk detection isn't performed on the IP addresses
+        /// in this range list. This parameter is displayed and set in CIDR notation.
         /// </para>
         /// </summary>
         [AWSProperty(Max=200)]

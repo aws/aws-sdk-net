@@ -397,4 +397,54 @@ namespace Amazon.MemoryDB
         }
     }
 
+
+    /// <summary>
+    /// Constants used for properties of type UpdateStrategy.
+    /// </summary>
+    public class UpdateStrategy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Coordinated for UpdateStrategy
+        /// </summary>
+        public static readonly UpdateStrategy Coordinated = new UpdateStrategy("coordinated");
+        /// <summary>
+        /// Constant Uncoordinated for UpdateStrategy
+        /// </summary>
+        public static readonly UpdateStrategy Uncoordinated = new UpdateStrategy("uncoordinated");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UpdateStrategy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UpdateStrategy FindValue(string value)
+        {
+            return FindValue<UpdateStrategy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UpdateStrategy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
 }

@@ -78,6 +78,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     unmarshalledObject.RedshiftRunConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("sageMakerRunConfiguration", targetDepth))
+                {
+                    var unmarshaller = SageMakerRunConfigurationOutputUnmarshaller.Instance;
+                    unmarshalledObject.SageMakerRunConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

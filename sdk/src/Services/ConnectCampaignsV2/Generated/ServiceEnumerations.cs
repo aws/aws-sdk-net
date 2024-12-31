@@ -837,4 +837,66 @@ namespace Amazon.ConnectCampaignsV2
         }
     }
 
+
+    /// <summary>
+    /// Constants used for properties of type ProfileOutboundRequestFailureCode.
+    /// </summary>
+    public class ProfileOutboundRequestFailureCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Conflict for ProfileOutboundRequestFailureCode
+        /// </summary>
+        public static readonly ProfileOutboundRequestFailureCode Conflict = new ProfileOutboundRequestFailureCode("Conflict");
+        /// <summary>
+        /// Constant InvalidInput for ProfileOutboundRequestFailureCode
+        /// </summary>
+        public static readonly ProfileOutboundRequestFailureCode InvalidInput = new ProfileOutboundRequestFailureCode("InvalidInput");
+        /// <summary>
+        /// Constant RequestThrottled for ProfileOutboundRequestFailureCode
+        /// </summary>
+        public static readonly ProfileOutboundRequestFailureCode RequestThrottled = new ProfileOutboundRequestFailureCode("RequestThrottled");
+        /// <summary>
+        /// Constant ResourceNotFound for ProfileOutboundRequestFailureCode
+        /// </summary>
+        public static readonly ProfileOutboundRequestFailureCode ResourceNotFound = new ProfileOutboundRequestFailureCode("ResourceNotFound");
+        /// <summary>
+        /// Constant UnknownError for ProfileOutboundRequestFailureCode
+        /// </summary>
+        public static readonly ProfileOutboundRequestFailureCode UnknownError = new ProfileOutboundRequestFailureCode("UnknownError");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ProfileOutboundRequestFailureCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ProfileOutboundRequestFailureCode FindValue(string value)
+        {
+            return FindValue<ProfileOutboundRequestFailureCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ProfileOutboundRequestFailureCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
 }

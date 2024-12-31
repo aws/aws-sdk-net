@@ -76,6 +76,22 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.EnableContinuousBackup.Value);
             }
 
+            if(requestObject.IsSetIndexActions())
+            {
+                context.Writer.WritePropertyName("IndexActions");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectIndexActionsListValue in requestObject.IndexActions)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = IndexActionMarshaller.Instance;
+                    marshaller.Marshall(requestObjectIndexActionsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetLifecycle())
             {
                 context.Writer.WritePropertyName("Lifecycle");

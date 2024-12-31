@@ -40,6 +40,8 @@ namespace Amazon.Omics.Model
         private ETagAlgorithmFamily _eTagAlgorithmFamily;
         private string _fallbackLocation;
         private string _name;
+        private List<string> _propagatedSetLevelTags = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private S3AccessConfig _s3AccessConfig;
         private SseConfig _sseConfig;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
@@ -135,6 +137,44 @@ namespace Amazon.Omics.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PropagatedSetLevelTags. 
+        /// <para>
+        /// The tags keys to propagate to the S3 objects associated with read sets in the sequence
+        /// store.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public List<string> PropagatedSetLevelTags
+        {
+            get { return this._propagatedSetLevelTags; }
+            set { this._propagatedSetLevelTags = value; }
+        }
+
+        // Check to see if PropagatedSetLevelTags property is set
+        internal bool IsSetPropagatedSetLevelTags()
+        {
+            return this._propagatedSetLevelTags != null && (this._propagatedSetLevelTags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3AccessConfig. 
+        /// <para>
+        /// S3 access configuration parameters
+        /// </para>
+        /// </summary>
+        public S3AccessConfig S3AccessConfig
+        {
+            get { return this._s3AccessConfig; }
+            set { this._s3AccessConfig = value; }
+        }
+
+        // Check to see if S3AccessConfig property is set
+        internal bool IsSetS3AccessConfig()
+        {
+            return this._s3AccessConfig != null;
         }
 
         /// <summary>

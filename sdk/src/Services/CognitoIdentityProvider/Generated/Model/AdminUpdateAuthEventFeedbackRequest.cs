@@ -33,7 +33,11 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// Container for the parameters to the AdminUpdateAuthEventFeedback operation.
     /// Provides feedback for an authentication event indicating if it was from a valid user.
     /// This feedback is used for improving the risk evaluation decision for the user pool
-    /// as part of Amazon Cognito advanced security.
+    /// as part of Amazon Cognito threat protection. To train the threat-protection model
+    /// to recognize trusted and untrusted sign-in characteristics, configure threat protection
+    /// in audit-only mode and provide a mechanism for users or administrators to submit feedback.
+    /// Your feedback can tell Amazon Cognito that a risk rating was assigned at a level you
+    /// don't agree with.
     /// 
     ///  <note> 
     /// <para>
@@ -67,7 +71,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property EventId. 
         /// <para>
-        /// The authentication event ID.
+        /// The authentication event ID. To query authentication events for a user, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminListUserAuthEvents.html">AdminListUserAuthEvents</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]
@@ -131,7 +135,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserPoolId. 
         /// <para>
-        /// The user pool ID.
+        /// The ID of the user pool where you want to submit authentication-event feedback.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=55)]

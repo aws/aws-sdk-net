@@ -47,6 +47,14 @@ namespace Amazon.EC2.Model
     /// terminated, specifying the ID of the image will eventually return an error indicating
     /// that the AMI ID cannot be found.
     /// </para>
+    ///  
+    /// <para>
+    /// When Allowed AMIs is set to <c>enabled</c>, only allowed images are returned in the
+    /// results, with the <c>imageAllowed</c> field set to <c>true</c> for each image. In
+    /// <c>audit-mode</c>, the <c>imageAllowed</c> field is set to <c>true</c> for images
+    /// that meet the account's Allowed AMIs criteria, and <c>false</c> for images that don't
+    /// meet the criteria. For more information, see <a>EnableAllowedImagesSettings</a>.
+    /// </para>
     ///  <important> 
     /// <para>
     /// We strongly recommend using only paginated requests. Unpaginated requests are susceptible
@@ -169,6 +177,11 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>image-allowed</c> - A Boolean that indicates whether the image meets the criteria
+        /// specified for Allowed AMIs.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>image-id</c> - The ID of the image.
         /// </para>
         ///  </li> <li> 
@@ -227,6 +240,14 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>root-device-type</c> - The type of the root device volume (<c>ebs</c> | <c>instance-store</c>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>source-image-id</c> - The ID of the source AMI from which the AMI was created.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>source-image-region</c> - The Region of the source AMI.
         /// </para>
         ///  </li> <li> 
         /// <para>

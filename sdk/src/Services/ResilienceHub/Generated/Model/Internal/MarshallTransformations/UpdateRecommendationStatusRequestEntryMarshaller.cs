@@ -48,6 +48,12 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAppComponentId())
+            {
+                context.Writer.WritePropertyName("appComponentId");
+                context.Writer.Write(requestObject.AppComponentId);
+            }
+
             if(requestObject.IsSetEntryId())
             {
                 context.Writer.WritePropertyName("entryId");

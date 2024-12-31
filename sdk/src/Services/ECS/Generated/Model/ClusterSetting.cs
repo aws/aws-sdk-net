@@ -31,7 +31,26 @@ namespace Amazon.ECS.Model
 {
     /// <summary>
     /// The settings to use when creating a cluster. This parameter is used to turn on CloudWatch
-    /// Container Insights for a cluster.
+    /// Container Insights with enhanced observability or CloudWatch Container Insights for
+    /// a cluster.
+    /// 
+    ///  
+    /// <para>
+    /// Container Insights with enhanced observability provides all the Container Insights
+    /// metrics, plus additional task and container metrics. This version supports enhanced
+    /// observability for Amazon ECS clusters using the Amazon EC2 and Fargate launch types.
+    /// After you configure Container Insights with enhanced observability on Amazon ECS,
+    /// Container Insights auto-collects detailed infrastructure telemetry from the cluster
+    /// level down to the container level in your environment and displays these critical
+    /// performance data in curated dashboards removing the heavy lifting in observability
+    /// set-up. 
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cloudwatch-container-insights.html">Monitor
+    /// Amazon ECS containers using Container Insights with enhanced observability</a> in
+    /// the <i>Amazon Elastic Container Service Developer Guide</i>.
+    /// </para>
     /// </summary>
     public partial class ClusterSetting
     {
@@ -59,15 +78,22 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The value to set for the cluster setting. The supported values are <c>enabled</c>
-        /// and <c>disabled</c>. 
+        /// The value to set for the cluster setting. The supported values are <c>enhanced</c>,
+        /// <c>enabled</c>, and <c>disabled</c>. 
         /// </para>
         ///  
         /// <para>
-        /// If you set <c>name</c> to <c>containerInsights</c> and <c>value</c> to <c>enabled</c>,
-        /// CloudWatch Container Insights will be on for the cluster, otherwise it will be off
-        /// unless the <c>containerInsights</c> account setting is turned on. If a cluster value
-        /// is specified, it will override the <c>containerInsights</c> value set with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAccountSetting.html">PutAccountSetting</a>
+        /// To use Container Insights with enhanced observability, set the <c>containerInsights</c>
+        /// account setting to <c>enhanced</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use Container Insights, set the <c>containerInsights</c> account setting to <c>enabled</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If a cluster value is specified, it will override the <c>containerInsights</c> value
+        /// set with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAccountSetting.html">PutAccountSetting</a>
         /// or <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAccountSettingDefault.html">PutAccountSettingDefault</a>.
         /// </para>
         /// </summary>

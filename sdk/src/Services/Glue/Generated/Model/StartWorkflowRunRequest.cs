@@ -62,6 +62,12 @@ namespace Amazon.Glue.Model
         /// <para>
         /// The workflow run properties for the new workflow run.
         /// </para>
+        ///  
+        /// <para>
+        /// Run properties may be logged. Do not pass plaintext secrets as properties. Retrieve
+        /// secrets from a Glue Connection, Amazon Web Services Secrets Manager or other secret
+        /// management mechanism if you intend to use them within the workflow run.
+        /// </para>
         /// </summary>
         public Dictionary<string, string> RunProperties
         {

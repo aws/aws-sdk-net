@@ -35,6 +35,7 @@ namespace Amazon.TaxSettings.Model
     public partial class GetTaxRegistrationDocumentResponse : AmazonWebServiceResponse
     {
         private string _destinationFilePath;
+        private string _presigneds3Url;
 
         /// <summary>
         /// Gets and sets the property DestinationFilePath. 
@@ -53,6 +54,25 @@ namespace Amazon.TaxSettings.Model
         internal bool IsSetDestinationFilePath()
         {
             return this._destinationFilePath != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PresignedS3Url. 
+        /// <para>
+        /// The Amazon S3 presigned URL of the tax registration document. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=200)]
+        public string PresignedS3Url
+        {
+            get { return this._presigneds3Url; }
+            set { this._presigneds3Url = value; }
+        }
+
+        // Check to see if PresignedS3Url property is set
+        internal bool IsSetPresignedS3Url()
+        {
+            return this._presigneds3Url != null;
         }
 
     }

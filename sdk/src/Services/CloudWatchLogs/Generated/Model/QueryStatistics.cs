@@ -33,10 +33,22 @@ namespace Amazon.CloudWatchLogs.Model
     /// Contains the number of log events scanned by the query, the number of log events that
     /// matched the query criteria, and the total number of bytes in the log events that were
     /// scanned.
+    /// 
+    ///  
+    /// <para>
+    /// If the query involved log groups that have field index policies, the estimated number
+    /// of skipped log events and the total bytes of those skipped log events are included.
+    /// Using field indexes to skip log events in queries reduces scan volume and improves
+    /// performance. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs-Field-Indexing.html">Create
+    /// field indexes to improve query performance and reduce scan volume</a>.
+    /// </para>
     /// </summary>
     public partial class QueryStatistics
     {
         private double? _bytesScanned;
+        private double? _estimatedBytesSkipped;
+        private double? _estimatedRecordsSkipped;
+        private double? _logGroupsScanned;
         private double? _recordsMatched;
         private double? _recordsScanned;
 
@@ -56,6 +68,66 @@ namespace Amazon.CloudWatchLogs.Model
         internal bool IsSetBytesScanned()
         {
             return this._bytesScanned.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EstimatedBytesSkipped. 
+        /// <para>
+        /// An estimate of the number of bytes in the log events that were skipped when processing
+        /// this query, because the query contained an indexed field. Skipping these entries lowers
+        /// query costs and improves the query performance time. For more information about field
+        /// indexes, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutIndexPolicy.html">PutIndexPolicy</a>.
+        /// </para>
+        /// </summary>
+        public double EstimatedBytesSkipped
+        {
+            get { return this._estimatedBytesSkipped.GetValueOrDefault(); }
+            set { this._estimatedBytesSkipped = value; }
+        }
+
+        // Check to see if EstimatedBytesSkipped property is set
+        internal bool IsSetEstimatedBytesSkipped()
+        {
+            return this._estimatedBytesSkipped.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EstimatedRecordsSkipped. 
+        /// <para>
+        /// An estimate of the number of log events that were skipped when processing this query,
+        /// because the query contained an indexed field. Skipping these entries lowers query
+        /// costs and improves the query performance time. For more information about field indexes,
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutIndexPolicy.html">PutIndexPolicy</a>.
+        /// </para>
+        /// </summary>
+        public double EstimatedRecordsSkipped
+        {
+            get { return this._estimatedRecordsSkipped.GetValueOrDefault(); }
+            set { this._estimatedRecordsSkipped = value; }
+        }
+
+        // Check to see if EstimatedRecordsSkipped property is set
+        internal bool IsSetEstimatedRecordsSkipped()
+        {
+            return this._estimatedRecordsSkipped.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LogGroupsScanned. 
+        /// <para>
+        /// The number of log groups that were scanned by this query.
+        /// </para>
+        /// </summary>
+        public double LogGroupsScanned
+        {
+            get { return this._logGroupsScanned.GetValueOrDefault(); }
+            set { this._logGroupsScanned = value; }
+        }
+
+        // Check to see if LogGroupsScanned property is set
+        internal bool IsSetLogGroupsScanned()
+        {
+            return this._logGroupsScanned.HasValue; 
         }
 
         /// <summary>

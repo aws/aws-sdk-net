@@ -100,6 +100,12 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
                     response.NumberOfAssociatedVPCs = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("sharingConfig", targetDepth))
+                {
+                    var unmarshaller = SharingConfigUnmarshaller.Instance;
+                    response.SharingConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

@@ -288,8 +288,8 @@ namespace Amazon.Transfer.Model
         /// Required when <c>IdentityProviderType</c> is set to <c>AWS_DIRECTORY_SERVICE</c>,
         /// <c>Amazon Web Services_LAMBDA</c> or <c>API_GATEWAY</c>. Accepts an array containing
         /// all of the information required to use a directory in <c>AWS_DIRECTORY_SERVICE</c>
-        /// or invoke a customer-supplied authentication API, including the API Gateway URL. Not
-        /// required when <c>IdentityProviderType</c> is set to <c>SERVICE_MANAGED</c>.
+        /// or invoke a customer-supplied authentication API, including the API Gateway URL. Cannot
+        /// be specified when <c>IdentityProviderType</c> is set to <c>SERVICE_MANAGED</c>.
         /// </para>
         /// </summary>
         public IdentityProviderDetails IdentityProviderDetails

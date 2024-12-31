@@ -46,6 +46,8 @@ namespace Amazon.BedrockAgentRuntime.Model
         private string _agentAliasId;
         private string _agentId;
         private string _agentVersion;
+        private List<Caller> _callerChain = AWSConfigs.InitializeCollections ? new List<Caller>() : null;
+        private string _collaboratorName;
         private string _sessionId;
         private Trace _trace;
 
@@ -104,6 +106,43 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetAgentVersion()
         {
             return this._agentVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CallerChain. 
+        /// <para>
+        /// The part's caller chain.
+        /// </para>
+        /// </summary>
+        public List<Caller> CallerChain
+        {
+            get { return this._callerChain; }
+            set { this._callerChain = value; }
+        }
+
+        // Check to see if CallerChain property is set
+        internal bool IsSetCallerChain()
+        {
+            return this._callerChain != null && (this._callerChain.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CollaboratorName. 
+        /// <para>
+        /// The part's collaborator name.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public string CollaboratorName
+        {
+            get { return this._collaboratorName; }
+            set { this._collaboratorName = value; }
+        }
+
+        // Check to see if CollaboratorName property is set
+        internal bool IsSetCollaboratorName()
+        {
+            return this._collaboratorName != null;
         }
 
         /// <summary>

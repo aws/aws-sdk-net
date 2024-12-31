@@ -36,6 +36,7 @@ namespace Amazon.AWSHealth.Model
     {
         private string _awsAccountId;
         private string _entityArn;
+        private Dictionary<string, string> _entityMetadata = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _entityUrl;
         private string _entityValue;
         private string _eventArn;
@@ -81,6 +82,24 @@ namespace Amazon.AWSHealth.Model
         internal bool IsSetEntityArn()
         {
             return this._entityArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EntityMetadata. 
+        /// <para>
+        /// Additional metadata about the affected entity.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> EntityMetadata
+        {
+            get { return this._entityMetadata; }
+            set { this._entityMetadata = value; }
+        }
+
+        // Check to see if EntityMetadata property is set
+        internal bool IsSetEntityMetadata()
+        {
+            return this._entityMetadata != null && (this._entityMetadata.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

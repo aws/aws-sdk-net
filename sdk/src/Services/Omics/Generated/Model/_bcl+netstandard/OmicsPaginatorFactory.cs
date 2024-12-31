@@ -133,6 +133,14 @@ namespace Amazon.Omics.Model
         }
 
         /// <summary>
+        /// Paginator for ListRunCaches operation
+        ///</summary>
+        public IListRunCachesPaginator ListRunCaches(ListRunCachesRequest request) 
+        {
+            return new ListRunCachesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListRunGroups operation
         ///</summary>
         public IListRunGroupsPaginator ListRunGroups(ListRunGroupsRequest request) 

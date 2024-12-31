@@ -138,6 +138,12 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                     unmarshalledObject.NodegroupName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("nodeRepairConfig", targetDepth))
+                {
+                    var unmarshaller = NodeRepairConfigUnmarshaller.Instance;
+                    unmarshalledObject.NodeRepairConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("nodeRole", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

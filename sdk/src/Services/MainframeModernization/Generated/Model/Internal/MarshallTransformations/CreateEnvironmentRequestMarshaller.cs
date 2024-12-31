@@ -115,11 +115,31 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.InstanceType);
                     }
 
+<<<<<<< HEAD
                     if(publicRequest.IsSetKmsKeyId())
                     {
                         context.Writer.WritePropertyName("kmsKeyId");
                         context.Writer.Write(publicRequest.KmsKeyId);
                     }
+||||||| Commit version number update changes
+                if(publicRequest.IsSetPreferredMaintenanceWindow())
+                {
+                    context.Writer.WritePropertyName("preferredMaintenanceWindow");
+                    context.Writer.Write(publicRequest.PreferredMaintenanceWindow);
+                }
+=======
+                if(publicRequest.IsSetNetworkType())
+                {
+                    context.Writer.WritePropertyName("networkType");
+                    context.Writer.Write(publicRequest.NetworkType);
+                }
+
+                if(publicRequest.IsSetPreferredMaintenanceWindow())
+                {
+                    context.Writer.WritePropertyName("preferredMaintenanceWindow");
+                    context.Writer.Write(publicRequest.PreferredMaintenanceWindow);
+                }
+>>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
 
                     if(publicRequest.IsSetName())
                     {

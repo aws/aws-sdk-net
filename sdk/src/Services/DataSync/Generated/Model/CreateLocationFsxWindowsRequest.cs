@@ -54,8 +54,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        /// Specifies the name of the Microsoft Active Directory domain that the FSx for Windows
-        /// File Server file system belongs to.
+        /// Specifies the name of the Windows domain that the FSx for Windows File Server file
+        /// system belongs to.
         /// </para>
         ///  
         /// <para>

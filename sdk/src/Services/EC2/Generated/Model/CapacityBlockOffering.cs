@@ -36,6 +36,7 @@ namespace Amazon.EC2.Model
     {
         private string _availabilityZone;
         private int? _capacityBlockDurationHours;
+        private int? _capacityBlockDurationMinutes;
         private string _capacityBlockOfferingId;
         private string _currencyCode;
         private DateTime? _endDate;
@@ -66,7 +67,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property CapacityBlockDurationHours. 
         /// <para>
-        /// The amount of time of the Capacity Block reservation in hours.
+        /// The number of hours (in addition to <c>capacityBlockDurationMinutes</c>) for the duration
+        /// of the Capacity Block reservation. For example, if a Capacity Block starts at <b>04:55</b>
+        /// and ends at <b>11:30</b>, the hours field would be <b>6</b>.
         /// </para>
         /// </summary>
         public int? CapacityBlockDurationHours
@@ -79,6 +82,26 @@ namespace Amazon.EC2.Model
         internal bool IsSetCapacityBlockDurationHours()
         {
             return this._capacityBlockDurationHours.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CapacityBlockDurationMinutes. 
+        /// <para>
+        /// The number of minutes (in addition to <c>capacityBlockDurationHours</c>) for the duration
+        /// of the Capacity Block reservation. For example, if a Capacity Block starts at <b>08:55</b>
+        /// and ends at <b>11:30</b>, the minutes field would be <b>35</b>.
+        /// </para>
+        /// </summary>
+        public int CapacityBlockDurationMinutes
+        {
+            get { return this._capacityBlockDurationMinutes.GetValueOrDefault(); }
+            set { this._capacityBlockDurationMinutes = value; }
+        }
+
+        // Check to see if CapacityBlockDurationMinutes property is set
+        internal bool IsSetCapacityBlockDurationMinutes()
+        {
+            return this._capacityBlockDurationMinutes.HasValue; 
         }
 
         /// <summary>

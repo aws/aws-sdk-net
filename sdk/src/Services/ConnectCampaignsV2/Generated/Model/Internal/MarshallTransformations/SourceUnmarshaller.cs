@@ -72,6 +72,12 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.CustomerProfilesSegmentArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("eventTrigger", targetDepth))
+                {
+                    var unmarshaller = EventTriggerUnmarshaller.Instance;
+                    unmarshalledObject.EventTrigger = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

@@ -40,7 +40,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Devices. 
         /// <para>
-        /// The devices in the list of devices response.
+        /// An array of devices and their information. Each entry that's returned includes device
+        /// information, last-accessed and created dates, and the device key.
         /// </para>
         /// </summary>
         public List<DeviceType> Devices

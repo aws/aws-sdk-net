@@ -34,7 +34,26 @@ namespace Amazon.BedrockRuntime.Model
     /// </summary>
     public partial class GuardrailCoverage
     {
+        private GuardrailImageCoverage _images;
         private GuardrailTextCharactersCoverage _textCharacters;
+
+        /// <summary>
+        /// Gets and sets the property Images. 
+        /// <para>
+        /// The guardrail coverage for images (the number of images that guardrails guarded).
+        /// </para>
+        /// </summary>
+        public GuardrailImageCoverage Images
+        {
+            get { return this._images; }
+            set { this._images = value; }
+        }
+
+        // Check to see if Images property is set
+        internal bool IsSetImages()
+        {
+            return this._images != null;
+        }
 
         /// <summary>
         /// Gets and sets the property TextCharacters. 

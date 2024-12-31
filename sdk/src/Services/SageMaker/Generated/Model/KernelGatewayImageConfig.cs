@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// The configuration for the file system and kernels in a SageMaker image running as
-    /// a KernelGateway app.
+    /// The configuration for the file system and kernels in a SageMaker AI image running
+    /// as a KernelGateway app.
     /// </summary>
     public partial class KernelGatewayImageConfig
     {
@@ -41,7 +41,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property FileSystemConfig. 
         /// <para>
-        /// The Amazon Elastic File System storage configuration for a SageMaker image.
+        /// The Amazon Elastic File System storage configuration for a SageMaker AI image.
         /// </para>
         /// </summary>
         public FileSystemConfig FileSystemConfig

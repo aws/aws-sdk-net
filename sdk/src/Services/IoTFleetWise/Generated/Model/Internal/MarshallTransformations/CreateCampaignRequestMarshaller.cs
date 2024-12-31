@@ -87,6 +87,42 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
                         context.Writer.WritePropertyName("compression");
                         context.Writer.Write(publicRequest.Compression);
                     }
+<<<<<<< HEAD
+||||||| Commit version number update changes
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetDescription())
+                {
+                    context.Writer.WritePropertyName("description");
+                    context.Writer.Write(publicRequest.Description);
+                }
+=======
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetDataPartitions())
+                {
+                    context.Writer.WritePropertyName("dataPartitions");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestDataPartitionsListValue in publicRequest.DataPartitions)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DataPartitionMarshaller.Instance;
+                        marshaller.Marshall(publicRequestDataPartitionsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetDescription())
+                {
+                    context.Writer.WritePropertyName("description");
+                    context.Writer.Write(publicRequest.Description);
+                }
+>>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
 
                     if(publicRequest.IsSetDataDestinationConfigs())
                     {
@@ -157,6 +193,7 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.SignalCatalogArn);
                     }
 
+<<<<<<< HEAD
                     if(publicRequest.IsSetSignalsToCollect())
                     {
                         context.Writer.WritePropertyName("signalsToCollect");
@@ -172,6 +209,35 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
                         }
                         context.Writer.WriteArrayEnd();
                     }
+||||||| Commit version number update changes
+                if(publicRequest.IsSetSpoolingMode())
+                {
+                    context.Writer.WritePropertyName("spoolingMode");
+                    context.Writer.Write(publicRequest.SpoolingMode);
+                }
+=======
+                if(publicRequest.IsSetSignalsToFetch())
+                {
+                    context.Writer.WritePropertyName("signalsToFetch");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestSignalsToFetchListValue in publicRequest.SignalsToFetch)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SignalFetchInformationMarshaller.Instance;
+                        marshaller.Marshall(publicRequestSignalsToFetchListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetSpoolingMode())
+                {
+                    context.Writer.WritePropertyName("spoolingMode");
+                    context.Writer.Write(publicRequest.SpoolingMode);
+                }
+>>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
 
                     if(publicRequest.IsSetSpoolingMode())
                     {

@@ -90,6 +90,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     unmarshalledObject.Domain = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ManagedLoginVersion", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.ManagedLoginVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("S3Bucket", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -31,7 +31,8 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the AdminDeleteUserAttributes operation.
-    /// Deletes the user attributes in a user pool as an administrator. Works on any user.
+    /// Deletes attribute values from a user. This operation doesn't affect tokens for existing
+    /// user sessions. The next ID token that the user receives will no longer have this attribute.
     /// 
     ///  <note> 
     /// <para>
@@ -110,7 +111,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserPoolId. 
         /// <para>
-        /// The user pool ID for the user pool where you want to delete user attributes.
+        /// The ID of the user pool where you want to delete user attributes.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=55)]

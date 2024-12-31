@@ -148,7 +148,7 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property BucketStatisticsBySensitivity. 
         /// <para>
         /// The aggregated sensitive data discovery statistics for the buckets. If automated sensitive
-        /// data discovery is currently disabled for your account, the value for each statistic
+        /// data discovery is currently disabled for your account, the value for most statistics
         /// is 0.
         /// </para>
         /// </summary>

@@ -59,6 +59,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetEngine())
+                {
+                    request.Parameters.Add("Engine", StringUtils.FromString(publicRequest.Engine));
+                }
                 if(publicRequest.IsSetUserGroupId())
                 {
                     request.Parameters.Add("UserGroupId", StringUtils.FromString(publicRequest.UserGroupId));

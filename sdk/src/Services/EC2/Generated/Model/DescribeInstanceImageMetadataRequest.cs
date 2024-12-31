@@ -32,7 +32,8 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the DescribeInstanceImageMetadata operation.
     /// Describes the AMI that was used to launch an instance, even if the AMI is deprecated,
-    /// deregistered, or made private (no longer public or shared with your account).
+    /// deregistered, made private (no longer public or shared with your account), or not
+    /// allowed.
     /// 
     ///  
     /// <para>
@@ -88,6 +89,11 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>image-allowed</c> - A Boolean that indicates whether the image meets the criteria
+        /// specified for Allowed AMIs.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>instance-state-name</c> - The state of the instance (<c>pending</c> | <c>running</c>
         /// | <c>shutting-down</c> | <c>terminated</c> | <c>stopping</c> | <c>stopped</c>).
         /// </para>
@@ -100,7 +106,19 @@ namespace Amazon.EC2.Model
         ///  <c>launch-time</c> - The time when the instance was launched, in the ISO 8601 format
         /// in the UTC time zone (YYYY-MM-DDThh:mm:ss.sssZ), for example, <c>2023-09-29T11:04:43.305Z</c>.
         /// You can use a wildcard (<c>*</c>), for example, <c>2023-09-29T*</c>, which matches
-        /// an entire day. 
+        /// an entire day.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>owner-alias</c> - The owner alias (<c>amazon</c> | <c>aws-marketplace</c> | <c>aws-backup-vault</c>).
+        /// The valid aliases are defined in an Amazon-maintained list. This is not the Amazon
+        /// Web Services account alias that can be set using the IAM console. We recommend that
+        /// you use the <c>Owner</c> request parameter instead of this filter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>owner-id</c> - The Amazon Web Services account ID of the owner. We recommend that
+        /// you use the <c>Owner</c> request parameter instead of this filter.
         /// </para>
         ///  </li> <li> 
         /// <para>

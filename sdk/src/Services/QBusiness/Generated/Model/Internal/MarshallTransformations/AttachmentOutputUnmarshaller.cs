@@ -66,6 +66,18 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("attachmentId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AttachmentId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("conversationId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ConversationId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("error", targetDepth))
                 {
                     var unmarshaller = ErrorDetailUnmarshaller.Instance;

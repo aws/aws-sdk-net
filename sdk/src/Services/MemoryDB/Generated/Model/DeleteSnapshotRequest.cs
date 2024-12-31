@@ -42,7 +42,7 @@ namespace Amazon.MemoryDB.Model
         /// <summary>
         /// Gets and sets the property SnapshotName. 
         /// <para>
-        /// The name of the snapshot to delete
+        /// The name of the snapshot to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

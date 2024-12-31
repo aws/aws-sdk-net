@@ -30,5 +30,10 @@ namespace Amazon.SSMQuickSetup.Model
         /// Paginator for ListConfigurationManagers operation
         ///</summary>
         IListConfigurationManagersPaginator ListConfigurationManagers(ListConfigurationManagersRequest request);
+
+        /// <summary>
+        /// Paginator for ListConfigurations operation
+        ///</summary>
+        IListConfigurationsPaginator ListConfigurations(ListConfigurationsRequest request);
     }
 }

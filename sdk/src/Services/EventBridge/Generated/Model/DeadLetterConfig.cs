@@ -35,8 +35,8 @@ namespace Amazon.EventBridge.Model
     /// 
     ///  
     /// <para>
-    /// For more information, see <a href="eventbridge/latest/userguide/eb-rule-dlq.html">Event
-    /// retry policy and using dead-letter queues</a> in the <i>EventBridge User Guide</i>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-rule-event-delivery.html#eb-rule-dlq">Using
+    /// dead-letter queues to process undelivered events</a> in the <i>EventBridge User Guide</i>.
     /// </para>
     /// </summary>
     public partial class DeadLetterConfig

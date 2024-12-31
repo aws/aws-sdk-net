@@ -37,8 +37,8 @@ namespace Amazon.XRay.Model
     /// 
     ///  
     /// <para>
-    /// For the full segment document schema, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html">Amazon
-    /// Web Services X-Ray Segment Documents</a> in the <i>Amazon Web Services X-Ray Developer
+    /// For the full segment document schema, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/aws-xray-interface-api.html#xray-api-segmentdocuments">Amazon
+    /// Web Services X-Ray segment documents</a> in the <i>Amazon Web Services X-Ray Developer
     /// Guide</i>.
     /// </para>
     /// </summary>

@@ -103,11 +103,36 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.Description);
                     }
 
+<<<<<<< HEAD
                     if(publicRequest.IsSetDisplayName())
                     {
                         context.Writer.WritePropertyName("DisplayName");
                         context.Writer.Write(publicRequest.DisplayName);
                     }
+||||||| Commit version number update changes
+                if(publicRequest.IsSetStatistic())
+                {
+                    context.Writer.WritePropertyName("Statistic");
+                    context.Writer.Write(publicRequest.Statistic);
+                }
+=======
+                if(publicRequest.IsSetFilter())
+                {
+                    context.Writer.WritePropertyName("Filter");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = FilterMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Filter, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetStatistic())
+                {
+                    context.Writer.WritePropertyName("Statistic");
+                    context.Writer.Write(publicRequest.Statistic);
+                }
+>>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
 
                     if(publicRequest.IsSetStatistic())
                     {

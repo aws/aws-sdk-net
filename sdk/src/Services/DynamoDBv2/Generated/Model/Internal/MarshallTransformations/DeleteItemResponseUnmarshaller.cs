@@ -109,6 +109,10 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                 {
                     return ProvisionedThroughputExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ReplicatedWriteConflictException"))
+                {
+                    return ReplicatedWriteConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("RequestLimitExceeded"))
                 {
                     return RequestLimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

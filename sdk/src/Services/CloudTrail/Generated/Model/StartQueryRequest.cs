@@ -46,6 +46,7 @@ namespace Amazon.CloudTrail.Model
     public partial class StartQueryRequest : AmazonCloudTrailRequest
     {
         private string _deliveryS3Uri;
+        private string _eventDataStoreOwnerAccountId;
         private string _queryAlias;
         private List<string> _queryParameters = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _queryStatement;
@@ -67,6 +68,25 @@ namespace Amazon.CloudTrail.Model
         internal bool IsSetDeliveryS3Uri()
         {
             return this._deliveryS3Uri != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EventDataStoreOwnerAccountId. 
+        /// <para>
+        ///  The account ID of the event data store owner. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=16)]
+        public string EventDataStoreOwnerAccountId
+        {
+            get { return this._eventDataStoreOwnerAccountId; }
+            set { this._eventDataStoreOwnerAccountId = value; }
+        }
+
+        // Check to see if EventDataStoreOwnerAccountId property is set
+        internal bool IsSetEventDataStoreOwnerAccountId()
+        {
+            return this._eventDataStoreOwnerAccountId != null;
         }
 
         /// <summary>

@@ -141,6 +141,22 @@ namespace Amazon.IoT.Model
         }
 
         /// <summary>
+        /// Paginator for ListCommandExecutions operation
+        ///</summary>
+        public IListCommandExecutionsPaginator ListCommandExecutions(ListCommandExecutionsRequest request) 
+        {
+            return new ListCommandExecutionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListCommands operation
+        ///</summary>
+        public IListCommandsPaginator ListCommands(ListCommandsRequest request) 
+        {
+            return new ListCommandsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListCustomMetrics operation
         ///</summary>
         public IListCustomMetricsPaginator ListCustomMetrics(ListCustomMetricsRequest request) 

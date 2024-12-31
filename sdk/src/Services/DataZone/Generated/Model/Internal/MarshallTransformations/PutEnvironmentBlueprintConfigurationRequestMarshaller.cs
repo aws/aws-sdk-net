@@ -86,11 +86,31 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                         context.Writer.WriteArrayEnd();
                     }
 
+<<<<<<< HEAD
                     if(publicRequest.IsSetManageAccessRoleArn())
                     {
                         context.Writer.WritePropertyName("manageAccessRoleArn");
                         context.Writer.Write(publicRequest.ManageAccessRoleArn);
                     }
+||||||| Commit version number update changes
+                if(publicRequest.IsSetManageAccessRoleArn())
+                {
+                    context.Writer.WritePropertyName("manageAccessRoleArn");
+                    context.Writer.Write(publicRequest.ManageAccessRoleArn);
+                }
+=======
+                if(publicRequest.IsSetEnvironmentRolePermissionBoundary())
+                {
+                    context.Writer.WritePropertyName("environmentRolePermissionBoundary");
+                    context.Writer.Write(publicRequest.EnvironmentRolePermissionBoundary);
+                }
+
+                if(publicRequest.IsSetManageAccessRoleArn())
+                {
+                    context.Writer.WritePropertyName("manageAccessRoleArn");
+                    context.Writer.Write(publicRequest.ManageAccessRoleArn);
+                }
+>>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
 
                     if(publicRequest.IsSetProvisioningConfigurations())
                     {

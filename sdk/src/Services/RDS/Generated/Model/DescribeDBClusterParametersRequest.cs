@@ -83,7 +83,12 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// This parameter isn't currently supported.
+        /// A filter that specifies one or more DB cluster parameters to describe.
+        /// </para>
+        ///  
+        /// <para>
+        /// The only supported filter is <c>parameter-name</c>. The results list only includes
+        /// information about the DB cluster parameters with these names.
         /// </para>
         /// </summary>
         public List<Filter> Filters
@@ -157,15 +162,15 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>customer</c> 
+        ///  <c>engine-default</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>engine</c> 
+        ///  <c>system</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>service</c> 
+        ///  <c>user</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

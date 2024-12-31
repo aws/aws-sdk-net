@@ -88,6 +88,9 @@ namespace Amazon.S3.Util
             AmzHeaderChecksumAlgorithm      = "x-amz-checksum-algorithm",
             AmzHeaderSdkChecksumAlgorithm   = "x-amz-sdk-checksum-algorithm",
             AmzHeaderChecksumMode           = "x-amz-checksum-mode",
+            AmzHeaderIfMatchInitiatedTime   = "x-amz-if-match-initiated-time",
+            AmzHeaderIfMatchLastModifiedTime= "x-amz-if-match-last-modified-time",
+            AmzHeaderIfMatchSize            = "x-amz-if-match-size",
             AmzOptionalObjectAttributes     = "x-amz-optional-object-attributes";
         internal static string
             AmzHeaderRestoreOutputPath      = "x-amz-restore-output-path";

@@ -43,6 +43,8 @@ namespace Amazon.IoTSiteWise.Model
         private string _portalId;
         private Image _portalLogoImage;
         private string _portalName;
+        private PortalType _portalType;
+        private Dictionary<string, PortalTypeEntry> _portalTypeConfiguration = AWSConfigs.InitializeCollections ? new Dictionary<string, PortalTypeEntry>() : null;
         private string _roleArn;
 
         /// <summary>
@@ -92,7 +94,7 @@ namespace Amazon.IoTSiteWise.Model
         /// The email address that sends alarm notifications.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=255)]
+        [AWSProperty(Sensitive=true, Min=1, Max=255)]
         public string NotificationSenderEmail
         {
             get { return this._notificationSenderEmail; }
@@ -111,7 +113,7 @@ namespace Amazon.IoTSiteWise.Model
         /// The Amazon Web Services administrator's contact email address.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=255)]
         public string PortalContactEmail
         {
             get { return this._portalContactEmail; }
@@ -194,6 +196,45 @@ namespace Amazon.IoTSiteWise.Model
         internal bool IsSetPortalName()
         {
             return this._portalName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PortalType. 
+        /// <para>
+        /// Define the type of portal. The value for IoT SiteWise Monitor (Classic) is <c>SITEWISE_PORTAL_V1</c>.
+        /// The value for IoT SiteWise Monitor (AI-aware) is <c>SITEWISE_PORTAL_V2</c>.
+        /// </para>
+        /// </summary>
+        public PortalType PortalType
+        {
+            get { return this._portalType; }
+            set { this._portalType = value; }
+        }
+
+        // Check to see if PortalType property is set
+        internal bool IsSetPortalType()
+        {
+            return this._portalType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PortalTypeConfiguration. 
+        /// <para>
+        /// The configuration entry associated with the specific portal type. The value for IoT
+        /// SiteWise Monitor (Classic) is <c>SITEWISE_PORTAL_V1</c>. The value for IoT SiteWise
+        /// Monitor (AI-aware) is <c>SITEWISE_PORTAL_V2</c>.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, PortalTypeEntry> PortalTypeConfiguration
+        {
+            get { return this._portalTypeConfiguration; }
+            set { this._portalTypeConfiguration = value; }
+        }
+
+        // Check to see if PortalTypeConfiguration property is set
+        internal bool IsSetPortalTypeConfiguration()
+        {
+            return this._portalTypeConfiguration != null && (this._portalTypeConfiguration.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

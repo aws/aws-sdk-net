@@ -34,14 +34,53 @@ namespace Amazon.CloudTrail.Model
     /// </summary>
     public partial class GetResourcePolicyResponse : AmazonWebServiceResponse
     {
+        private string _delegatedAdminResourcePolicy;
         private string _resourceArn;
         private string _resourcePolicy;
 
         /// <summary>
+        /// Gets and sets the property DelegatedAdminResourcePolicy. 
+        /// <para>
+        ///  The default resource-based policy that is automatically generated for the delegated
+        /// administrator of an Organizations organization. This policy will be evaluated in tandem
+        /// with any policy you submit for the resource. For more information about this policy,
+        /// see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-organizations.html#cloudtrail-lake-organizations-eds-rbp">Default
+        /// resource policy for delegated administrators</a>. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=8192)]
+        public string DelegatedAdminResourcePolicy
+        {
+            get { return this._delegatedAdminResourcePolicy; }
+            set { this._delegatedAdminResourcePolicy = value; }
+        }
+
+        // Check to see if DelegatedAdminResourcePolicy property is set
+        internal bool IsSetDelegatedAdminResourcePolicy()
+        {
+            return this._delegatedAdminResourcePolicy != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of the CloudTrail channel attached to resource-based
-        /// policy. 
+        ///  The Amazon Resource Name (ARN) of the CloudTrail event data store, dashboard, or
+        /// channel attached to resource-based policy. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Example event data store ARN format: <c>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// Example dashboard ARN format: <c>arn:aws:cloudtrail:us-east-1:123456789012:dashboard/exampleDash</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// Example channel ARN format: <c>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</c>
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=256)]
@@ -61,7 +100,7 @@ namespace Amazon.CloudTrail.Model
         /// Gets and sets the property ResourcePolicy. 
         /// <para>
         ///  A JSON-formatted string that contains the resource-based policy attached to the CloudTrail
-        /// channel. 
+        /// event data store, dashboard, or channel. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=8192)]

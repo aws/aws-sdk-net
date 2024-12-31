@@ -76,6 +76,12 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
                     response.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("sharingConfig", targetDepth))
+                {
+                    var unmarshaller = SharingConfigUnmarshaller.Instance;
+                    response.SharingConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

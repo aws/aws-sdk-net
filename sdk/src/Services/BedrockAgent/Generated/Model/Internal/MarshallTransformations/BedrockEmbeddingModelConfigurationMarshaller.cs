@@ -54,6 +54,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Dimensions.Value);
             }
 
+            if(requestObject.IsSetEmbeddingDataType())
+            {
+                context.Writer.WritePropertyName("embeddingDataType");
+                context.Writer.Write(requestObject.EmbeddingDataType);
+            }
+
         }
 
         /// <summary>

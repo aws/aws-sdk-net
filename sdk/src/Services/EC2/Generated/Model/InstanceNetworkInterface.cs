@@ -45,6 +45,7 @@ namespace Amazon.EC2.Model
         private List<InstanceIpv6Prefix> _ipv6Prefixes = AWSConfigs.InitializeCollections ? new List<InstanceIpv6Prefix>() : null;
         private string _macAddress;
         private string _networkInterfaceId;
+        private OperatorResponse _operator;
         private string _ownerId;
         private string _privateDnsName;
         private string _privateIpAddress;
@@ -257,6 +258,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetNetworkInterfaceId()
         {
             return this._networkInterfaceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Operator. 
+        /// <para>
+        /// The service provider that manages the network interface.
+        /// </para>
+        /// </summary>
+        public OperatorResponse Operator
+        {
+            get { return this._operator; }
+            set { this._operator = value; }
+        }
+
+        // Check to see if Operator property is set
+        internal bool IsSetOperator()
+        {
+            return this._operator != null;
         }
 
         /// <summary>

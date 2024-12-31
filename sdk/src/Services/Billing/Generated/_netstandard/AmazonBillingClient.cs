@@ -279,6 +279,209 @@ namespace Amazon.Billing
         #endregion
 
 
+        #region  CreateBillingView
+
+        internal virtual CreateBillingViewResponse CreateBillingView(CreateBillingViewRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateBillingViewRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateBillingViewResponseUnmarshaller.Instance;
+
+            return Invoke<CreateBillingViewResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a billing view with the specified billing view attributes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateBillingView service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateBillingView service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ServiceQuotaExceededException">
+        /// You've reached the limit of resources you can create, or exceeded the size of an
+        /// individual resource.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/CreateBillingView">REST API Reference for CreateBillingView Operation</seealso>
+        public virtual Task<CreateBillingViewResponse> CreateBillingViewAsync(CreateBillingViewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateBillingViewRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateBillingViewResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateBillingViewResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteBillingView
+
+        internal virtual DeleteBillingViewResponse DeleteBillingView(DeleteBillingViewRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBillingViewRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBillingViewResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteBillingViewResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the specified billing view.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBillingView service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteBillingView service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/DeleteBillingView">REST API Reference for DeleteBillingView Operation</seealso>
+        public virtual Task<DeleteBillingViewResponse> DeleteBillingViewAsync(DeleteBillingViewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBillingViewRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBillingViewResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteBillingViewResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetBillingView
+
+        internal virtual GetBillingViewResponse GetBillingView(GetBillingViewRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBillingViewRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBillingViewResponseUnmarshaller.Instance;
+
+            return Invoke<GetBillingViewResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns the metadata associated to the specified billing view ARN.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBillingView service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetBillingView service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/GetBillingView">REST API Reference for GetBillingView Operation</seealso>
+        public virtual Task<GetBillingViewResponse> GetBillingViewAsync(GetBillingViewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBillingViewRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBillingViewResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetBillingViewResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetResourcePolicy
+
+        internal virtual GetResourcePolicyResponse GetResourcePolicy(GetResourcePolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetResourcePolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns the resource-based policy document attached to the resource in <c>JSON</c>
+        /// format.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetResourcePolicy service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
+        public virtual Task<GetResourcePolicyResponse> GetResourcePolicyAsync(GetResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetResourcePolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListBillingViews
 
         internal virtual ListBillingViewsResponse ListBillingViews(ListBillingViewsRequest request)
@@ -329,6 +532,261 @@ namespace Amazon.Billing
             options.ResponseUnmarshaller = ListBillingViewsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListBillingViewsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListSourceViewsForBillingView
+
+        internal virtual ListSourceViewsForBillingViewResponse ListSourceViewsForBillingView(ListSourceViewsForBillingViewRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSourceViewsForBillingViewRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSourceViewsForBillingViewResponseUnmarshaller.Instance;
+
+            return Invoke<ListSourceViewsForBillingViewResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the source views (managed Amazon Web Services billing views) associated with
+        /// the billing view.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSourceViewsForBillingView service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSourceViewsForBillingView service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/ListSourceViewsForBillingView">REST API Reference for ListSourceViewsForBillingView Operation</seealso>
+        public virtual Task<ListSourceViewsForBillingViewResponse> ListSourceViewsForBillingViewAsync(ListSourceViewsForBillingViewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSourceViewsForBillingViewRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSourceViewsForBillingViewResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListSourceViewsForBillingViewResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListTagsForResource
+
+        internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return Invoke<ListTagsForResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists tags associated with the billing view resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  TagResource
+
+        internal virtual TagResourceResponse TagResource(TagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<TagResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// An API operation for adding one or more tags (key-value pairs) to a resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UntagResource
+
+        internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<UntagResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Removes one or more tags from a resource. Specify only tag keys in your request.
+        /// Don't specify the value.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateBillingView
+
+        internal virtual UpdateBillingViewResponse UpdateBillingView(UpdateBillingViewRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateBillingViewRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateBillingViewResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateBillingViewResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// An API to update the attributes of the billing view.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateBillingView service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateBillingView service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ServiceQuotaExceededException">
+        /// You've reached the limit of resources you can create, or exceeded the size of an
+        /// individual resource.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/UpdateBillingView">REST API Reference for UpdateBillingView Operation</seealso>
+        public virtual Task<UpdateBillingViewResponse> UpdateBillingViewAsync(UpdateBillingViewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateBillingViewRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateBillingViewResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateBillingViewResponse>(request, options, cancellationToken);
         }
 
         #endregion

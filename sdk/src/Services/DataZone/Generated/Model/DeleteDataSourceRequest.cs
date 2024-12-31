@@ -47,6 +47,7 @@ namespace Amazon.DataZone.Model
         /// the request.
         /// </para>
         /// </summary>
+        [Obsolete("This field is no longer required for idempotency.")]
         public string ClientToken
         {
             get { return this._clientToken; }

@@ -66,6 +66,18 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ValueInteger", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.ValueInteger = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ValueMap", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, SegmentAttributeValue, StringUnmarshaller, SegmentAttributeValueUnmarshaller>(StringUnmarshaller.Instance, SegmentAttributeValueUnmarshaller.Instance);
+                    unmarshalledObject.ValueMap = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ValueString", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

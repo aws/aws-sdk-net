@@ -150,6 +150,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.OutlineSize.Value);
             }
 
+            if(requestObject.IsSetRemoveRubyReserveAttributes())
+            {
+                context.Writer.WritePropertyName("removeRubyReserveAttributes");
+                context.Writer.Write(requestObject.RemoveRubyReserveAttributes);
+            }
+
             if(requestObject.IsSetShadowColor())
             {
                 context.Writer.WritePropertyName("shadowColor");

@@ -37,6 +37,14 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeEntity operation
+        ///</summary>
+        public IDescribeEntityPaginator DescribeEntity(DescribeEntityRequest request) 
+        {
+            return new DescribeEntityPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for GetBlueprintRuns operation
         ///</summary>
         public IGetBlueprintRunsPaginator GetBlueprintRuns(GetBlueprintRunsRequest request) 
@@ -229,6 +237,14 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
+        /// Paginator for ListConnectionTypes operation
+        ///</summary>
+        public IListConnectionTypesPaginator ListConnectionTypes(ListConnectionTypesRequest request) 
+        {
+            return new ListConnectionTypesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListCrawlers operation
         ///</summary>
         public IListCrawlersPaginator ListCrawlers(ListCrawlersRequest request) 
@@ -282,6 +298,14 @@ namespace Amazon.Glue.Model
         public IListDevEndpointsPaginator ListDevEndpoints(ListDevEndpointsRequest request) 
         {
             return new ListDevEndpointsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListEntities operation
+        ///</summary>
+        public IListEntitiesPaginator ListEntities(ListEntitiesRequest request) 
+        {
+            return new ListEntitiesPaginator(this.client, request);
         }
 
         /// <summary>

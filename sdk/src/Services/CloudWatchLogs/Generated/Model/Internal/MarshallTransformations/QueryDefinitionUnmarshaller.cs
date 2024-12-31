@@ -90,6 +90,12 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                     unmarshalledObject.QueryDefinitionId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("queryLanguage", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.QueryLanguage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("queryString", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

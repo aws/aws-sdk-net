@@ -547,6 +547,114 @@ namespace Amazon.Backup
 
 
     /// <summary>
+    /// Constants used for properties of type Index.
+    /// </summary>
+    public class Index : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for Index
+        /// </summary>
+        public static readonly Index DISABLED = new Index("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for Index
+        /// </summary>
+        public static readonly Index ENABLED = new Index("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Index(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Index FindValue(string value)
+        {
+            return FindValue<Index>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Index(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type IndexStatus.
+    /// </summary>
+    public class IndexStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for IndexStatus
+        /// </summary>
+        public static readonly IndexStatus ACTIVE = new IndexStatus("ACTIVE");
+        /// <summary>
+        /// Constant DELETING for IndexStatus
+        /// </summary>
+        public static readonly IndexStatus DELETING = new IndexStatus("DELETING");
+        /// <summary>
+        /// Constant FAILED for IndexStatus
+        /// </summary>
+        public static readonly IndexStatus FAILED = new IndexStatus("FAILED");
+        /// <summary>
+        /// Constant PENDING for IndexStatus
+        /// </summary>
+        public static readonly IndexStatus PENDING = new IndexStatus("PENDING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IndexStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IndexStatus FindValue(string value)
+        {
+            return FindValue<IndexStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IndexStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type LegalHoldStatus.
     /// </summary>
     public class LegalHoldStatus : ConstantClass

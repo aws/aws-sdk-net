@@ -59,7 +59,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SageMakerImageVersionAliases. 
         /// <para>
-        /// A list of SageMaker image version aliases.
+        /// A list of SageMaker AI image version aliases.
         /// </para>
         /// </summary>
         public List<string> SageMakerImageVersionAliases

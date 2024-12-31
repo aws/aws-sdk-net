@@ -112,6 +112,12 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                     response.IndexId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("mediaExtractionConfiguration", targetDepth))
+                {
+                    var unmarshaller = MediaExtractionConfigurationUnmarshaller.Instance;
+                    response.MediaExtractionConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("roleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

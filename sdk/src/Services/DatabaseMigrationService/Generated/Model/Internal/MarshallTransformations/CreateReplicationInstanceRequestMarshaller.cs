@@ -89,11 +89,36 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.AvailabilityZone);
                     }
 
+<<<<<<< HEAD
                     if(publicRequest.IsSetDnsNameServers())
                     {
                         context.Writer.WritePropertyName("DnsNameServers");
                         context.Writer.Write(publicRequest.DnsNameServers);
                     }
+||||||| Commit version number update changes
+                if(publicRequest.IsSetKmsKeyId())
+                {
+                    context.Writer.WritePropertyName("KmsKeyId");
+                    context.Writer.Write(publicRequest.KmsKeyId);
+                }
+=======
+                if(publicRequest.IsSetKerberosAuthenticationSettings())
+                {
+                    context.Writer.WritePropertyName("KerberosAuthenticationSettings");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = KerberosAuthenticationSettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.KerberosAuthenticationSettings, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetKmsKeyId())
+                {
+                    context.Writer.WritePropertyName("KmsKeyId");
+                    context.Writer.Write(publicRequest.KmsKeyId);
+                }
+>>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
 
                     if(publicRequest.IsSetEngineVersion())
                     {

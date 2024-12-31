@@ -54,6 +54,12 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ActionGroup);
             }
 
+            if(requestObject.IsSetAgentId())
+            {
+                context.Writer.WritePropertyName("agentId");
+                context.Writer.Write(requestObject.AgentId);
+            }
+
             if(requestObject.IsSetApiPath())
             {
                 context.Writer.WritePropertyName("apiPath");

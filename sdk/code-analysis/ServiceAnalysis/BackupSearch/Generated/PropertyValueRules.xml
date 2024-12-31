@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-16"?>
+<property-value-rules>
+  <property-value-rule>
+    <property>Amazon.BackupSearch.Model.ListSearchJobBackupsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BackupSearch.Model.ListSearchJobResultsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BackupSearch.Model.ListSearchJobsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BackupSearch.Model.ListSearchResultExportJobsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BackupSearch.Model.StartSearchJobRequest.Name</property>
+    <min>0</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BackupSearch.Model.StartSearchResultExportJobRequest.RoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:(?:aws|aws-cn|aws-us-gov):iam::[a-z0-9-]+:role/(.+)</pattern>
+  </property-value-rule>
+</property-value-rules>

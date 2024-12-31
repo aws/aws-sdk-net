@@ -2747,6 +2747,10 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Redshift.Model.ProvisionedIdentifier.ClusterIdentifier</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Redshift.Model.Recommendation.ClusterIdentifier</property>
     <max>2147483647</max>
   </property-value-rule>
@@ -2926,6 +2930,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.SecondaryClusterInfo.AvailabilityZone</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.ServerlessIdentifier.NamespaceIdentifier</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.ServerlessIdentifier.WorkgroupIdentifier</property>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>

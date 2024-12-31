@@ -34,6 +34,7 @@ namespace Amazon.QApps.Model
     /// </summary>
     public partial class QPluginCard
     {
+        private string _actionIdentifier;
         private List<string> _dependencies = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _id;
         private string _pluginId;
@@ -41,6 +42,25 @@ namespace Amazon.QApps.Model
         private string _prompt;
         private string _title;
         private CardType _type;
+
+        /// <summary>
+        /// Gets and sets the property ActionIdentifier. 
+        /// <para>
+        /// The action identifier of the action to be performed by the plugin card.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string ActionIdentifier
+        {
+            get { return this._actionIdentifier; }
+            set { this._actionIdentifier = value; }
+        }
+
+        // Check to see if ActionIdentifier property is set
+        internal bool IsSetActionIdentifier()
+        {
+            return this._actionIdentifier != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Dependencies. 
@@ -124,7 +144,7 @@ namespace Amazon.QApps.Model
         /// The prompt or instructions displayed for the plugin card.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=7000)]
+        [AWSProperty(Required=true, Min=0, Max=50000)]
         public string Prompt
         {
             get { return this._prompt; }

@@ -45,6 +45,14 @@ namespace Amazon.TaxSettings.Model
         }
 
         /// <summary>
+        /// Paginator for ListTaxExemptions operation
+        ///</summary>
+        public IListTaxExemptionsPaginator ListTaxExemptions(ListTaxExemptionsRequest request) 
+        {
+            return new ListTaxExemptionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListTaxRegistrations operation
         ///</summary>
         public IListTaxRegistrationsPaginator ListTaxRegistrations(ListTaxRegistrationsRequest request) 

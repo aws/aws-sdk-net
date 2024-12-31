@@ -125,6 +125,30 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 
                         context.Writer.WriteObjectEnd();
                     }
+<<<<<<< HEAD
+||||||| Commit version number update changes
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetOnDemandThroughput())
+                {
+                    context.Writer.WritePropertyName("OnDemandThroughput");
+                    context.Writer.WriteObjectStart();
+=======
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetMultiRegionConsistency())
+                {
+                    context.Writer.WritePropertyName("MultiRegionConsistency");
+                    context.Writer.Write(publicRequest.MultiRegionConsistency);
+                }
+
+                if(publicRequest.IsSetOnDemandThroughput())
+                {
+                    context.Writer.WritePropertyName("OnDemandThroughput");
+                    context.Writer.WriteObjectStart();
+>>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
 
                     if(publicRequest.IsSetProvisionedThroughput())
                     {

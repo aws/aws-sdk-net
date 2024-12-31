@@ -94,6 +94,17 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetReadCacheConfiguration())
+            {
+                context.Writer.WritePropertyName("ReadCacheConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = OpenZFSReadCacheConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.ReadCacheConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetRemoveRouteTableIds())
             {
                 context.Writer.WritePropertyName("RemoveRouteTableIds");

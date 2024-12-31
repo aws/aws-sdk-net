@@ -44,7 +44,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The run's ARN.
+        /// Unique resource identifier for the run.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

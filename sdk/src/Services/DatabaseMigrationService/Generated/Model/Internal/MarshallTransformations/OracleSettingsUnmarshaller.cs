@@ -120,6 +120,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.AsmUser = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AuthenticationMethod", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AuthenticationMethod = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CharLengthSemantics", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

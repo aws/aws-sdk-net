@@ -31,9 +31,21 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the AdminResetUserPassword operation.
-    /// Resets the specified user's password in a user pool as an administrator. Works on
-    /// any user.
+    /// Resets the specified user's password in a user pool. This operation doesn't change
+    /// the user's password, but sends a password-reset code. This operation is the administrative
+    /// authentication API equivalent to <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ForgotPassword.html">ForgotPassword</a>.
     /// 
+    ///  
+    /// <para>
+    /// This operation deactivates a user's password, requiring them to change it. If a user
+    /// tries to sign in after the API request, Amazon Cognito responds with a <c>PasswordResetRequiredException</c>
+    /// error. Your app must then complete the forgot-password flow by prompting the user
+    /// for their code and a new password, then submitting those values in a <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ConfirmForgotPassword.html">ConfirmForgotPassword</a>
+    /// request. In addition, if the user pool has phone verification selected and a verified
+    /// phone number exists for the user, or if email verification is selected and a verified
+    /// email exists for the user, calling this API will also result in sending a message
+    /// to the end user with the code to change their password.
+    /// </para>
     ///  
     /// <para>
     /// To use this API operation, your user pool must have self-service account recovery
@@ -53,7 +65,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     ///  
     /// <para>
     /// If you have never used SMS text messages with Amazon Cognito or any other Amazon Web
-    /// Servicesservice, Amazon Simple Notification Service might place your account in the
+    /// Services service, Amazon Simple Notification Service might place your account in the
     /// SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
     /// mode</a> </i>, you can send messages only to verified phone numbers. After you test
     /// your app while in the sandbox environment, you can move out of the sandbox and into
@@ -61,17 +73,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// SMS message settings for Amazon Cognito user pools</a> in the <i>Amazon Cognito Developer
     /// Guide</i>.
     /// </para>
-    ///  </note> 
-    /// <para>
-    /// Deactivates a user's password, requiring them to change it. If a user tries to sign
-    /// in after the API is called, Amazon Cognito responds with a <c>PasswordResetRequiredException</c>
-    /// error. Your app must then perform the actions that reset your user's password: the
-    /// forgot-password flow. In addition, if the user pool has phone verification selected
-    /// and a verified phone number exists for the user, or if email verification is selected
-    /// and a verified email exists for the user, calling this API will also result in sending
-    /// a message to the end user with the code to change their password.
-    /// </para>
-    ///  <note> 
+    ///  </note> <note> 
     /// <para>
     /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
     /// for this API operation. For this operation, you must use IAM credentials to authorize
@@ -107,14 +109,14 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  
         /// <para>
-        /// You create custom workflows by assigning Lambda functions to user pool triggers. When
-        /// you use the AdminResetUserPassword API action, Amazon Cognito invokes the function
-        /// that is assigned to the <i>custom message</i> trigger. When Amazon Cognito invokes
-        /// this function, it passes a JSON payload, which the function receives as input. This
-        /// payload contains a <c>clientMetadata</c> attribute, which provides the data that you
-        /// assigned to the ClientMetadata parameter in your AdminResetUserPassword request. In
-        /// your function code in Lambda, you can process the <c>clientMetadata</c> value to enhance
-        /// your workflow for your specific needs. 
+        /// You create custom workflows by assigning Lambda functions to user pool triggers. The
+        /// <c>AdminResetUserPassword</c> API operation invokes the function that is assigned
+        /// to the <i>custom message</i> trigger. When Amazon Cognito invokes this function, it
+        /// passes a JSON payload, which the function receives as input. This payload contains
+        /// a <c>clientMetadata</c> attribute, which provides the data that you assigned to the
+        /// ClientMetadata parameter in your AdminResetUserPassword request. In your function
+        /// code in Lambda, you can process the <c>clientMetadata</c> value to enhance your workflow
+        /// for your specific needs. 
         /// </para>
         ///  
         /// <para>
@@ -124,22 +126,23 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the
-        /// following:
+        /// When you use the <c>ClientMetadata</c> parameter, note that Amazon Cognito won't do
+        /// the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Store the ClientMetadata value. This data is available only to Lambda triggers that
-        /// are assigned to a user pool to support custom workflows. If your user pool configuration
-        /// doesn't include triggers, the ClientMetadata parameter serves no purpose.
+        /// Store the <c>ClientMetadata</c> value. This data is available only to Lambda triggers
+        /// that are assigned to a user pool to support custom workflows. If your user pool configuration
+        /// doesn't include triggers, the <c>ClientMetadata</c> parameter serves no purpose.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Validate the ClientMetadata value.
+        /// Validate the <c>ClientMetadata</c> value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.
+        /// Encrypt the <c>ClientMetadata</c> value. Don't send sensitive information in this
+        /// parameter.
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>
@@ -180,7 +183,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserPoolId. 
         /// <para>
-        /// The user pool ID for the user pool where you want to reset the user's password.
+        /// The ID of the user pool where you want to reset the user's password.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=55)]

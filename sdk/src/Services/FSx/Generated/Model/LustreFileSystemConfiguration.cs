@@ -41,6 +41,7 @@ namespace Amazon.FSx.Model
         private DataRepositoryConfiguration _dataRepositoryConfiguration;
         private LustreDeploymentType _deploymentType;
         private DriveCacheType _driveCacheType;
+        private bool? _efaEnabled;
         private LustreLogConfiguration _logConfiguration;
         private FileSystemLustreMetadataConfiguration _metadataConfiguration;
         private string _mountName;
@@ -213,6 +214,25 @@ namespace Amazon.FSx.Model
         internal bool IsSetDriveCacheType()
         {
             return this._driveCacheType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EfaEnabled. 
+        /// <para>
+        /// Specifies whether Elastic Fabric Adapter (EFA) and GPUDirect Storage (GDS) support
+        /// is enabled for the Amazon FSx for Lustre file system.
+        /// </para>
+        /// </summary>
+        public bool EfaEnabled
+        {
+            get { return this._efaEnabled.GetValueOrDefault(); }
+            set { this._efaEnabled = value; }
+        }
+
+        // Check to see if EfaEnabled property is set
+        internal bool IsSetEfaEnabled()
+        {
+            return this._efaEnabled.HasValue; 
         }
 
         /// <summary>

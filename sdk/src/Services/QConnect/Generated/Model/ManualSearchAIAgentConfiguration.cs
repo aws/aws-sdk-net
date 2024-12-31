@@ -34,8 +34,29 @@ namespace Amazon.QConnect.Model
     /// </summary>
     public partial class ManualSearchAIAgentConfiguration
     {
+        private string _answerGenerationAIGuardrailId;
         private string _answerGenerationAIPromptId;
         private List<AssociationConfiguration> _associationConfigurations = AWSConfigs.InitializeCollections ? new List<AssociationConfiguration>() : null;
+        private string _locale;
+
+        /// <summary>
+        /// Gets and sets the property AnswerGenerationAIGuardrailId. 
+        /// <para>
+        /// The AI Guardrail identifier for the Answer Generation guardrail used by the MANUAL_SEARCH
+        /// AI Agent.
+        /// </para>
+        /// </summary>
+        public string AnswerGenerationAIGuardrailId
+        {
+            get { return this._answerGenerationAIGuardrailId; }
+            set { this._answerGenerationAIGuardrailId = value; }
+        }
+
+        // Check to see if AnswerGenerationAIGuardrailId property is set
+        internal bool IsSetAnswerGenerationAIGuardrailId()
+        {
+            return this._answerGenerationAIGuardrailId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AnswerGenerationAIPromptId. 
@@ -72,6 +93,26 @@ namespace Amazon.QConnect.Model
         internal bool IsSetAssociationConfigurations()
         {
             return this._associationConfigurations != null && (this._associationConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Locale. 
+        /// <para>
+        /// The locale to which specifies the language and region settings that determine the
+        /// response language for <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_amazon-q-connect_QueryAssistant.html">QueryAssistant</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=4096)]
+        public string Locale
+        {
+            get { return this._locale; }
+            set { this._locale = value; }
+        }
+
+        // Check to see if Locale property is set
+        internal bool IsSetLocale()
+        {
+            return this._locale != null;
         }
 
     }

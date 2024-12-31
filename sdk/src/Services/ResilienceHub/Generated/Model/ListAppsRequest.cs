@@ -103,8 +103,8 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property FromLastAssessmentTime. 
         /// <para>
-        /// Indicates the lower limit of the range that is used to filter applications based on
-        /// their last assessment times.
+        /// Lower limit of the range that is used to filter applications based on their last assessment
+        /// times.
         /// </para>
         /// </summary>
         public DateTime? FromLastAssessmentTime
@@ -199,8 +199,8 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property ToLastAssessmentTime. 
         /// <para>
-        /// Indicates the upper limit of the range that is used to filter the applications based
-        /// on their last assessment times.
+        /// Upper limit of the range that is used to filter the applications based on their last
+        /// assessment times.
         /// </para>
         /// </summary>
         public DateTime? ToLastAssessmentTime

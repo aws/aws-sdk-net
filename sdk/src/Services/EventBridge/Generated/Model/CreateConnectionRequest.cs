@@ -33,12 +33,19 @@ namespace Amazon.EventBridge.Model
     /// Container for the parameters to the CreateConnection operation.
     /// Creates a connection. A connection defines the authorization type and credentials
     /// to use for authorization with an API destination HTTP endpoint.
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-target-connection.html">Connections
+    /// for endpoint targets</a> in the <i>Amazon EventBridge User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class CreateConnectionRequest : AmazonEventBridgeRequest
     {
         private ConnectionAuthorizationType _authorizationType;
         private CreateConnectionAuthRequestParameters _authParameters;
         private string _description;
+        private ConnectivityResourceParameters _invocationConnectivityParameters;
         private string _name;
 
         /// <summary>
@@ -68,8 +75,12 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property AuthParameters. 
         /// <para>
-        /// A <c>CreateConnectionAuthRequestParameters</c> object that contains the authorization
-        /// parameters to use to authorize with the endpoint. 
+        /// The authorization parameters to use to authorize with the endpoint. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You must include only authorization parameters for the <c>AuthorizationType</c> you
+        /// specify.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -102,6 +113,30 @@ namespace Amazon.EventBridge.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InvocationConnectivityParameters. 
+        /// <para>
+        /// For connections to private resource endpoints, the parameters to use for invoking
+        /// the resource endpoint.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-target-connection-private.html">Connecting
+        /// to private resources</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.
+        /// </para>
+        /// </summary>
+        public ConnectivityResourceParameters InvocationConnectivityParameters
+        {
+            get { return this._invocationConnectivityParameters; }
+            set { this._invocationConnectivityParameters = value; }
+        }
+
+        // Check to see if InvocationConnectivityParameters property is set
+        internal bool IsSetInvocationConnectivityParameters()
+        {
+            return this._invocationConnectivityParameters != null;
         }
 
         /// <summary>

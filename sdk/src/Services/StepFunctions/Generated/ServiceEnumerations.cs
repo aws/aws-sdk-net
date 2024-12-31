@@ -283,6 +283,10 @@ namespace Amazon.StepFunctions
         /// </summary>
         public static readonly HistoryEventType ChoiceStateExited = new HistoryEventType("ChoiceStateExited");
         /// <summary>
+        /// Constant EvaluationFailed for HistoryEventType
+        /// </summary>
+        public static readonly HistoryEventType EvaluationFailed = new HistoryEventType("EvaluationFailed");
+        /// <summary>
         /// Constant ExecutionAborted for HistoryEventType
         /// </summary>
         public static readonly HistoryEventType ExecutionAborted = new HistoryEventType("ExecutionAborted");

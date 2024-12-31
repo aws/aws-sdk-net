@@ -35,6 +35,7 @@ namespace Amazon.ConnectCampaignsV2.Model
     public partial class Source
     {
         private string _customerProfilesSegmentArn;
+        private EventTrigger _eventTrigger;
 
         /// <summary>
         /// Gets and sets the property CustomerProfilesSegmentArn.
@@ -50,6 +51,21 @@ namespace Amazon.ConnectCampaignsV2.Model
         internal bool IsSetCustomerProfilesSegmentArn()
         {
             return this._customerProfilesSegmentArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EventTrigger.
+        /// </summary>
+        public EventTrigger EventTrigger
+        {
+            get { return this._eventTrigger; }
+            set { this._eventTrigger = value; }
+        }
+
+        // Check to see if EventTrigger property is set
+        internal bool IsSetEventTrigger()
+        {
+            return this._eventTrigger != null;
         }
 
     }

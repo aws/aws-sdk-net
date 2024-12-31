@@ -66,6 +66,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AdditionalEmailRecipients", targetDepth))
+                {
+                    var unmarshaller = AdditionalEmailRecipientsUnmarshaller.Instance;
+                    unmarshalledObject.AdditionalEmailRecipients = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AgentInfo", targetDepth))
                 {
                     var unmarshaller = AgentInfoUnmarshaller.Instance;
@@ -102,10 +108,28 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.ConnectedToSystemTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ContactAssociationId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ContactAssociationId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Customer", targetDepth))
                 {
                     var unmarshaller = CustomerUnmarshaller.Instance;
                     unmarshalledObject.Customer = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CustomerEndpoint", targetDepth))
+                {
+                    var unmarshaller = EndpointInfoUnmarshaller.Instance;
+                    unmarshalledObject.CustomerEndpoint = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CustomerId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CustomerId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CustomerVoiceActivity", targetDepth))
@@ -232,6 +256,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, SegmentAttributeValue, StringUnmarshaller, SegmentAttributeValueUnmarshaller>(StringUnmarshaller.Instance, SegmentAttributeValueUnmarshaller.Instance);
                     unmarshalledObject.SegmentAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SystemEndpoint", targetDepth))
+                {
+                    var unmarshaller = EndpointInfoUnmarshaller.Instance;
+                    unmarshalledObject.SystemEndpoint = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Tags", targetDepth))

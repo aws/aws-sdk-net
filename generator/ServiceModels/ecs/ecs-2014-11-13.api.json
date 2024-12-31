@@ -1059,6 +1059,13 @@
         "managedDraining":{"shape":"ManagedDraining"}
       }
     },
+    "AvailabilityZoneRebalancing":{
+      "type":"string",
+      "enum":[
+        "ENABLED",
+        "DISABLED"
+      ]
+    },
     "AwsVpcConfiguration":{
       "type":"structure",
       "required":["subnets"],
@@ -1341,6 +1348,7 @@
         "dependsOn":{"shape":"ContainerDependencies"},
         "startTimeout":{"shape":"BoxedInteger"},
         "stopTimeout":{"shape":"BoxedInteger"},
+        "versionConsistency":{"shape":"VersionConsistency"},
         "hostname":{"shape":"String"},
         "user":{"shape":"String"},
         "workingDirectory":{"shape":"String"},
@@ -1538,6 +1546,7 @@
         "cluster":{"shape":"String"},
         "serviceName":{"shape":"String"},
         "taskDefinition":{"shape":"String"},
+        "availabilityZoneRebalancing":{"shape":"AvailabilityZoneRebalancing"},
         "loadBalancers":{"shape":"LoadBalancers"},
         "serviceRegistries":{"shape":"ServiceRegistries"},
         "desiredCount":{"shape":"BoxedInteger"},
@@ -1558,7 +1567,8 @@
         "propagateTags":{"shape":"PropagateTags"},
         "enableExecuteCommand":{"shape":"Boolean"},
         "serviceConnectConfiguration":{"shape":"ServiceConnectConfiguration"},
-        "volumeConfigurations":{"shape":"ServiceVolumeConfigurations"}
+        "volumeConfigurations":{"shape":"ServiceVolumeConfigurations"},
+        "vpcLatticeConfigurations":{"shape":"VpcLatticeConfigurations"}
       }
     },
     "CreateServiceResponse":{
@@ -1728,7 +1738,8 @@
         "serviceConnectConfiguration":{"shape":"ServiceConnectConfiguration"},
         "serviceConnectResources":{"shape":"ServiceConnectServiceResourceList"},
         "volumeConfigurations":{"shape":"ServiceVolumeConfigurations"},
-        "fargateEphemeralStorage":{"shape":"DeploymentEphemeralStorage"}
+        "fargateEphemeralStorage":{"shape":"DeploymentEphemeralStorage"},
+        "vpcLatticeConfigurations":{"shape":"VpcLatticeConfigurations"}
       }
     },
     "DeploymentAlarms":{
@@ -3043,7 +3054,8 @@
         "proxyConfiguration":{"shape":"ProxyConfiguration"},
         "inferenceAccelerators":{"shape":"InferenceAccelerators"},
         "ephemeralStorage":{"shape":"EphemeralStorage"},
-        "runtimePlatform":{"shape":"RuntimePlatform"}
+        "runtimePlatform":{"shape":"RuntimePlatform"},
+        "enableFaultInjection":{"shape":"BoxedBoolean"}
       }
     },
     "RegisterTaskDefinitionResponse":{
@@ -3252,7 +3264,8 @@
         "createdBy":{"shape":"String"},
         "enableECSManagedTags":{"shape":"Boolean"},
         "propagateTags":{"shape":"PropagateTags"},
-        "enableExecuteCommand":{"shape":"Boolean"}
+        "enableExecuteCommand":{"shape":"Boolean"},
+        "availabilityZoneRebalancing":{"shape":"AvailabilityZoneRebalancing"}
       }
     },
     "ServiceConnectClientAlias":{
@@ -3484,7 +3497,8 @@
         "serviceConnectConfiguration":{"shape":"ServiceConnectConfiguration"},
         "volumeConfigurations":{"shape":"ServiceVolumeConfigurations"},
         "fargateEphemeralStorage":{"shape":"DeploymentEphemeralStorage"},
-        "createdAt":{"shape":"Timestamp"}
+        "createdAt":{"shape":"Timestamp"},
+        "vpcLatticeConfigurations":{"shape":"VpcLatticeConfigurations"}
       }
     },
     "ServiceRevisionSummary":{
@@ -3828,7 +3842,8 @@
         "registeredAt":{"shape":"Timestamp"},
         "deregisteredAt":{"shape":"Timestamp"},
         "registeredBy":{"shape":"String"},
-        "ephemeralStorage":{"shape":"EphemeralStorage"}
+        "ephemeralStorage":{"shape":"EphemeralStorage"},
+        "enableFaultInjection":{"shape":"BoxedBoolean"}
       }
     },
     "TaskDefinitionFamilyStatus":{
@@ -4217,6 +4232,7 @@
         "taskDefinition":{"shape":"String"},
         "capacityProviderStrategy":{"shape":"CapacityProviderStrategy"},
         "deploymentConfiguration":{"shape":"DeploymentConfiguration"},
+        "availabilityZoneRebalancing":{"shape":"AvailabilityZoneRebalancing"},
         "networkConfiguration":{"shape":"NetworkConfiguration"},
         "placementConstraints":{"shape":"PlacementConstraints"},
         "placementStrategy":{"shape":"PlacementStrategies"},
@@ -4229,7 +4245,8 @@
         "propagateTags":{"shape":"PropagateTags"},
         "serviceRegistries":{"shape":"ServiceRegistries"},
         "serviceConnectConfiguration":{"shape":"ServiceConnectConfiguration"},
-        "volumeConfigurations":{"shape":"ServiceVolumeConfigurations"}
+        "volumeConfigurations":{"shape":"ServiceVolumeConfigurations"},
+        "vpcLatticeConfigurations":{"shape":"VpcLatticeConfigurations"}
       }
     },
     "UpdateServiceResponse":{
@@ -4280,6 +4297,13 @@
         "taskSet":{"shape":"TaskSet"}
       }
     },
+    "VersionConsistency":{
+      "type":"string",
+      "enum":[
+        "enabled",
+        "disabled"
+      ]
+    },
     "VersionInfo":{
       "type":"structure",
       "members":{
@@ -4313,6 +4337,23 @@
     "VolumeList":{
       "type":"list",
       "member":{"shape":"Volume"}
+    },
+    "VpcLatticeConfiguration":{
+      "type":"structure",
+      "required":[
+        "roleArn",
+        "targetGroupArn",
+        "portName"
+      ],
+      "members":{
+        "roleArn":{"shape":"IAMRoleArn"},
+        "targetGroupArn":{"shape":"String"},
+        "portName":{"shape":"String"}
+      }
+    },
+    "VpcLatticeConfigurations":{
+      "type":"list",
+      "member":{"shape":"VpcLatticeConfiguration"}
     }
   }
 }

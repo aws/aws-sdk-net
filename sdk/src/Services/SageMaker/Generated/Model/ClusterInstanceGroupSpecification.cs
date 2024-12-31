@@ -41,7 +41,9 @@ namespace Amazon.SageMaker.Model
         private ClusterInstanceType _instanceType;
         private ClusterLifeCycleConfig _lifeCycleConfig;
         private List<string> _onStartDeepHealthChecks = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private VpcConfig _overrideVpcConfig;
         private int? _threadsPerCore;
+        private string _trainingPlanArn;
 
         /// <summary>
         /// Gets and sets the property ExecutionRole. 
@@ -69,8 +71,16 @@ namespace Amazon.SageMaker.Model
         /// cluster.
         /// </para>
         /// </summary>
+<<<<<<< HEAD
         [AWSProperty(Required=true, Min=0)]
         public int? InstanceCount
+||||||| Commit version number update changes
+        [AWSProperty(Required=true, Min=0)]
+        public int InstanceCount
+=======
+        [AWSProperty(Required=true, Min=0, Max=6758)]
+        public int InstanceCount
+>>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
         {
             get { return this._instanceCount; }
             set { this._instanceCount = value; }
@@ -180,6 +190,21 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OverrideVpcConfig.
+        /// </summary>
+        public VpcConfig OverrideVpcConfig
+        {
+            get { return this._overrideVpcConfig; }
+            set { this._overrideVpcConfig = value; }
+        }
+
+        // Check to see if OverrideVpcConfig property is set
+        internal bool IsSetOverrideVpcConfig()
+        {
+            return this._overrideVpcConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ThreadsPerCore. 
         /// <para>
         /// Specifies the value for <b>Threads per core</b>. For instance types that support multithreading,
@@ -201,6 +226,32 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetThreadsPerCore()
         {
             return this._threadsPerCore.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrainingPlanArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN); of the training plan to use for this cluster instance
+        /// group.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about how to reserve GPU capacity for your SageMaker HyperPod
+        /// clusters using Amazon SageMaker Training Plan, see <c> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingPlan.html">CreateTrainingPlan</a>
+        /// </c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=50, Max=2048)]
+        public string TrainingPlanArn
+        {
+            get { return this._trainingPlanArn; }
+            set { this._trainingPlanArn = value; }
+        }
+
+        // Check to see if TrainingPlanArn property is set
+        internal bool IsSetTrainingPlanArn()
+        {
+            return this._trainingPlanArn != null;
         }
 
     }

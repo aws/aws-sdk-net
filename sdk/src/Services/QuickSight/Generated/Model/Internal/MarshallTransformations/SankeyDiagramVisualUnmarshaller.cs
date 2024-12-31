@@ -90,6 +90,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.Title = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("VisualContentAltText", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VisualContentAltText = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("VisualId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

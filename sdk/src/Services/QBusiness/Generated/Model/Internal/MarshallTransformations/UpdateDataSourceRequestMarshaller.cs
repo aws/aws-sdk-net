@@ -133,7 +133,120 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                     writer.WriteObjectEnd();
                 }
 
+<<<<<<< HEAD
                 request.Content = memoryStream.ToArray();
+||||||| Commit version number update changes
+                if(publicRequest.IsSetDescription())
+                {
+                    context.Writer.WritePropertyName("description");
+                    context.Writer.Write(publicRequest.Description);
+                }
+
+                if(publicRequest.IsSetDisplayName())
+                {
+                    context.Writer.WritePropertyName("displayName");
+                    context.Writer.Write(publicRequest.DisplayName);
+                }
+
+                if(publicRequest.IsSetDocumentEnrichmentConfiguration())
+                {
+                    context.Writer.WritePropertyName("documentEnrichmentConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DocumentEnrichmentConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DocumentEnrichmentConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetRoleArn())
+                {
+                    context.Writer.WritePropertyName("roleArn");
+                    context.Writer.Write(publicRequest.RoleArn);
+                }
+
+                if(publicRequest.IsSetSyncSchedule())
+                {
+                    context.Writer.WritePropertyName("syncSchedule");
+                    context.Writer.Write(publicRequest.SyncSchedule);
+                }
+
+                if(publicRequest.IsSetVpcConfiguration())
+                {
+                    context.Writer.WritePropertyName("vpcConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DataSourceVpcConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.VpcConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+=======
+                if(publicRequest.IsSetDescription())
+                {
+                    context.Writer.WritePropertyName("description");
+                    context.Writer.Write(publicRequest.Description);
+                }
+
+                if(publicRequest.IsSetDisplayName())
+                {
+                    context.Writer.WritePropertyName("displayName");
+                    context.Writer.Write(publicRequest.DisplayName);
+                }
+
+                if(publicRequest.IsSetDocumentEnrichmentConfiguration())
+                {
+                    context.Writer.WritePropertyName("documentEnrichmentConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DocumentEnrichmentConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DocumentEnrichmentConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetMediaExtractionConfiguration())
+                {
+                    context.Writer.WritePropertyName("mediaExtractionConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = MediaExtractionConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.MediaExtractionConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetRoleArn())
+                {
+                    context.Writer.WritePropertyName("roleArn");
+                    context.Writer.Write(publicRequest.RoleArn);
+                }
+
+                if(publicRequest.IsSetSyncSchedule())
+                {
+                    context.Writer.WritePropertyName("syncSchedule");
+                    context.Writer.Write(publicRequest.SyncSchedule);
+                }
+
+                if(publicRequest.IsSetVpcConfiguration())
+                {
+                    context.Writer.WritePropertyName("vpcConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DataSourceVpcConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.VpcConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+>>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
             }
 
 

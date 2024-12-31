@@ -38,6 +38,7 @@ namespace Amazon.VPCLattice.Model
         private AuthType _authType;
         private string _id;
         private string _name;
+        private SharingConfig _sharingConfig;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -82,7 +83,7 @@ namespace Amazon.VPCLattice.Model
         /// The ID of the service network.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=32, Max=32)]
+        [AWSProperty(Min=20, Max=20)]
         public string Id
         {
             get { return this._id; }
@@ -112,6 +113,24 @@ namespace Amazon.VPCLattice.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SharingConfig. 
+        /// <para>
+        /// Specifies if the service network is enabled for sharing.
+        /// </para>
+        /// </summary>
+        public SharingConfig SharingConfig
+        {
+            get { return this._sharingConfig; }
+            set { this._sharingConfig = value; }
+        }
+
+        // Check to see if SharingConfig property is set
+        internal bool IsSetSharingConfig()
+        {
+            return this._sharingConfig != null;
         }
 
     }

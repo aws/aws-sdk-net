@@ -44,7 +44,6 @@ namespace Amazon.PartnerCentralSelling.Model
         /// Gets and sets the property Address. 
         /// <para>
         /// Specifies the end <c>Customer</c>'s address details associated with the <c>Opportunity</c>.
-        /// 
         /// </para>
         /// </summary>
         public AddressSummary Address
@@ -63,7 +62,6 @@ namespace Amazon.PartnerCentralSelling.Model
         /// Gets and sets the property CompanyName. 
         /// <para>
         /// Specifies the end <c>Customer</c>'s company name associated with the <c>Opportunity</c>.
-        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=0, Max=120)]
@@ -83,16 +81,15 @@ namespace Amazon.PartnerCentralSelling.Model
         /// Gets and sets the property Industry. 
         /// <para>
         /// Specifies which industry the end <c>Customer</c> belongs to associated with the <c>Opportunity</c>.
-        /// It refers to the category or sector that the customer's business operates in. 
+        /// It refers to the category or sector that the customer's business operates in.
         /// </para>
         ///  
         /// <para>
-        /// To submit a value outside the picklist, use <c>Other</c>. 
+        /// To submit a value outside the picklist, use <c>Other</c>.
         /// </para>
         ///  
         /// <para>
         /// Conditionally mandatory if <c>Other</c> is selected for Industry Vertical in LOVs.
-        /// 
         /// </para>
         /// </summary>
         public Industry Industry
@@ -113,7 +110,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// Specifies the end <c>Customer</c>'s industry associated with the <c> Opportunity</c>,
         /// when the selected value in the <c>Industry</c> field is <c>Other</c>. This field is
         /// relevant when the customer's industry doesn't fall under the predefined picklist values
-        /// and requires a custom description. 
+        /// and requires a custom description.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=255)]
@@ -134,7 +131,6 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <para>
         /// Specifies the end customer's company website URL associated with the <c>Opportunity</c>.
         /// This value is crucial to map the customer within the Amazon Web Services CRM system.
-        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=4, Max=255)]

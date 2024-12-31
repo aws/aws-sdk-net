@@ -35,6 +35,7 @@ namespace Amazon.CloudWatchLogs.Model
     public partial class DescribeAccountPoliciesResponse : AmazonWebServiceResponse
     {
         private List<AccountPolicy> _accountPolicies = AWSConfigs.InitializeCollections ? new List<AccountPolicy>() : null;
+        private string _nextToken;
 
         /// <summary>
         /// Gets and sets the property AccountPolicies. 
@@ -53,6 +54,26 @@ namespace Amazon.CloudWatchLogs.Model
         internal bool IsSetAccountPolicies()
         {
             return this._accountPolicies != null && (this._accountPolicies.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token to use when requesting the next set of items. The token expires after 24
+        /// hours.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
         }
 
     }

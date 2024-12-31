@@ -34,14 +34,14 @@ namespace Amazon.PartnerCentralSelling.Model
     /// Enables you to reassign an existing <c>Opportunity</c> to another user within your
     /// Partner Central account. The specified user receives the opportunity, and it appears
     /// on their Partner Central dashboard, allowing them to take necessary actions or proceed
-    /// with the opportunity. 
+    /// with the opportunity.
     /// 
     ///  
     /// <para>
-    ///  This is useful for distributing opportunities to the appropriate team members or
-    /// departments within your organization, ensuring that each opportunity is handled by
-    /// the right person. By default, the opportunity owner is the one who creates it. Currently,
-    /// there's no API to enumerate the list of available users. 
+    /// This is useful for distributing opportunities to the appropriate team members or departments
+    /// within your organization, ensuring that each opportunity is handled by the right person.
+    /// By default, the opportunity owner is the one who creates it. Currently, there's no
+    /// API to enumerate the list of available users.
     /// </para>
     /// </summary>
     public partial class AssignOpportunityRequest : AmazonPartnerCentralSellingRequest
@@ -75,11 +75,11 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Catalog. 
         /// <para>
-        ///  Specifies the catalog associated with the request. This field takes a string value
+        /// Specifies the catalog associated with the request. This field takes a string value
         /// from a predefined list: <c>AWS</c> or <c>Sandbox</c>. The catalog determines which
         /// environment the opportunity is assigned in. Use <c>AWS</c> to assign real opportunities
         /// in the Amazon Web Services catalog, and <c>Sandbox</c> for testing in secure, isolated
-        /// environments. 
+        /// environments.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -98,9 +98,8 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Identifier. 
         /// <para>
-        ///  Requires the <c>Opportunity</c>'s unique identifier when you want to assign it to
+        /// Requires the <c>Opportunity</c>'s unique identifier when you want to assign it to
         /// another user. Provide the correct identifier so the intended opportunity is reassigned.
-        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

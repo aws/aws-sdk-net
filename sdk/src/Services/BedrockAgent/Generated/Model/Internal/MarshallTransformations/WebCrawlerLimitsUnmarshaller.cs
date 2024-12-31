@@ -66,6 +66,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("maxPages", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MaxPages = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("rateLimit", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;

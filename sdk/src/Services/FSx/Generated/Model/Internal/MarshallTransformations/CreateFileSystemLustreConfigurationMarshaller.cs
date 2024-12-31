@@ -90,6 +90,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.DriveCacheType);
             }
 
+            if(requestObject.IsSetEfaEnabled())
+            {
+                context.Writer.WritePropertyName("EfaEnabled");
+                context.Writer.Write(requestObject.EfaEnabled);
+            }
+
             if(requestObject.IsSetExportPath())
             {
                 context.Writer.WritePropertyName("ExportPath");

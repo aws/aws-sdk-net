@@ -45,7 +45,6 @@ namespace Amazon.PartnerCentralSelling.Model
         /// Gets and sets the property BusinessTitle. 
         /// <para>
         /// The sender-provided contact's title (job title or role) associated with the <c>EngagementInvitation</c>.
-        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=80)]
@@ -65,7 +64,6 @@ namespace Amazon.PartnerCentralSelling.Model
         /// Gets and sets the property Email. 
         /// <para>
         /// The sender-provided contact's email address associated with the <c>EngagementInvitation</c>.
-        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=0, Max=80)]
@@ -85,7 +83,6 @@ namespace Amazon.PartnerCentralSelling.Model
         /// Gets and sets the property FirstName. 
         /// <para>
         /// The sender-provided contact's last name associated with the <c>EngagementInvitation</c>.
-        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=80)]
@@ -105,7 +102,6 @@ namespace Amazon.PartnerCentralSelling.Model
         /// Gets and sets the property LastName. 
         /// <para>
         /// The sender-provided contact's first name associated with the <c>EngagementInvitation</c>.
-        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=80)]
@@ -125,7 +121,6 @@ namespace Amazon.PartnerCentralSelling.Model
         /// Gets and sets the property Phone. 
         /// <para>
         /// The sender-provided contact's phone number associated with the <c>EngagementInvitation</c>.
-        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=40)]

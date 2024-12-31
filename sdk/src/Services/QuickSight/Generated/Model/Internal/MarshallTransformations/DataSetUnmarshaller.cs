@@ -150,6 +150,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.OutputColumns = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PerformanceConfiguration", targetDepth))
+                {
+                    var unmarshaller = PerformanceConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.PerformanceConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("PhysicalTableMap", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, PhysicalTable, StringUnmarshaller, PhysicalTableUnmarshaller>(StringUnmarshaller.Instance, PhysicalTableUnmarshaller.Instance);

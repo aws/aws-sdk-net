@@ -86,7 +86,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property ContactFlowStatus. 
         /// <para>
-        /// The status of the contact flow.
+        /// The status of the flow.
         /// </para>
         /// </summary>
         public ContactFlowStatus ContactFlowStatus

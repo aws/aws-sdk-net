@@ -1412,7 +1412,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <para>
         /// You can configure Systems Manager Inventory to use the <c>SyncToDestination</c> type
         /// to synchronize Inventory data from multiple Amazon Web Services Regions to a single
-        /// Amazon Simple Storage Service (Amazon S3) bucket. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/inventory-create-resource-data-sync.html">Creatinga
+        /// Amazon Simple Storage Service (Amazon S3) bucket. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/inventory-create-resource-data-sync.html">Creating
         /// a resource data sync for Inventory</a> in the <i>Amazon Web Services Systems Manager
         /// User Guide</i>.
         /// </para>
@@ -1504,7 +1504,7 @@ namespace Amazon.SimpleSystemsManagement
         /// and the ActivationCode don't match.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidActivationIdException">
-        /// The activation ID isn't valid. Verify the you entered the correct ActivationId or
+        /// The activation ID isn't valid. Verify that you entered the correct ActivationId or
         /// ActivationCode and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.TooManyUpdatesException">
@@ -2435,7 +2435,7 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterException">
-        /// The filter name isn't valid. Verify the you entered the correct name and try again.
+        /// The filter name isn't valid. Verify that you entered the correct name and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token isn't valid.
@@ -3309,7 +3309,7 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterException">
-        /// The filter name isn't valid. Verify the you entered the correct name and try again.
+        /// The filter name isn't valid. Verify that you entered the correct name and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
@@ -3417,7 +3417,7 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterException">
-        /// The filter name isn't valid. Verify the you entered the correct name and try again.
+        /// The filter name isn't valid. Verify that you entered the correct name and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token isn't valid.
@@ -3461,7 +3461,7 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidActivationIdException">
-        /// The activation ID isn't valid. Verify the you entered the correct ActivationId or
+        /// The activation ID isn't valid. Verify that you entered the correct ActivationId or
         /// ActivationCode and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
@@ -4748,6 +4748,47 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  GetExecutionPreview
+
+        internal virtual GetExecutionPreviewResponse GetExecutionPreview(GetExecutionPreviewRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetExecutionPreviewRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetExecutionPreviewResponseUnmarshaller.Instance;
+
+            return Invoke<GetExecutionPreviewResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Initiates the process of retrieving an existing preview that shows the effects that
+        /// running a specified Automation runbook would have on the targeted resources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetExecutionPreview service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetExecutionPreview service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceNotFoundException">
+        /// The specified parameter to be shared could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetExecutionPreview">REST API Reference for GetExecutionPreview Operation</seealso>
+        public virtual Task<GetExecutionPreviewResponse> GetExecutionPreviewAsync(GetExecutionPreviewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetExecutionPreviewRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetExecutionPreviewResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetExecutionPreviewResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetInventory
 
         internal virtual GetInventoryResponse GetInventory(GetInventoryRequest request)
@@ -4775,11 +4816,11 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidAggregatorException">
-        /// The specified aggregator isn't valid for inventory groups. Verify that the aggregator
-        /// uses a valid inventory type such as <c>AWS:Application</c> or <c>AWS:InstanceInformation</c>.
+        /// The specified aggregator isn't valid for the group type. Verify that the aggregator
+        /// you provided is supported.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterException">
-        /// The filter name isn't valid. Verify the you entered the correct name and try again.
+        /// The filter name isn't valid. Verify that you entered the correct name and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInventoryGroupException">
         /// The specified inventory group isn't valid.
@@ -5232,11 +5273,11 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidAggregatorException">
-        /// The specified aggregator isn't valid for inventory groups. Verify that the aggregator
-        /// uses a valid inventory type such as <c>AWS:Application</c> or <c>AWS:InstanceInformation</c>.
+        /// The specified aggregator isn't valid for the group type. Verify that the aggregator
+        /// you provided is supported.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterException">
-        /// The filter name isn't valid. Verify the you entered the correct name and try again.
+        /// The filter name isn't valid. Verify that you entered the correct name and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token isn't valid.
@@ -6252,7 +6293,7 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterException">
-        /// The filter name isn't valid. Verify the you entered the correct name and try again.
+        /// The filter name isn't valid. Verify that you entered the correct name and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token isn't valid.
@@ -6304,7 +6345,7 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterException">
-        /// The filter name isn't valid. Verify the you entered the correct name and try again.
+        /// The filter name isn't valid. Verify that you entered the correct name and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token isn't valid.
@@ -6511,7 +6552,7 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterException">
-        /// The filter name isn't valid. Verify the you entered the correct name and try again.
+        /// The filter name isn't valid. Verify that you entered the correct name and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
@@ -6551,6 +6592,111 @@ namespace Amazon.SimpleSystemsManagement
             options.ResponseUnmarshaller = ListInventoryEntriesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListInventoryEntriesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListNodes
+
+        internal virtual ListNodesResponse ListNodes(ListNodesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListNodesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNodesResponseUnmarshaller.Instance;
+
+            return Invoke<ListNodesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Takes in filters and returns a list of managed nodes matching the filter criteria.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNodes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListNodes service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterException">
+        /// The filter name isn't valid. Verify that you entered the correct name and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
+        /// The specified token isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceDataSyncNotFoundException">
+        /// The specified sync name wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedOperationException">
+        /// This operation is not supported for the current account. You must first enable the
+        /// Systems Manager integrated experience in your account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListNodes">REST API Reference for ListNodes Operation</seealso>
+        public virtual Task<ListNodesResponse> ListNodesAsync(ListNodesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListNodesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNodesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListNodesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListNodesSummary
+
+        internal virtual ListNodesSummaryResponse ListNodesSummary(ListNodesSummaryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListNodesSummaryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNodesSummaryResponseUnmarshaller.Instance;
+
+            return Invoke<ListNodesSummaryResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Generates a summary of managed instance/node metadata based on the filters and aggregators
+        /// you specify. Results are grouped by the input aggregator you specify.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNodesSummary service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListNodesSummary service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidAggregatorException">
+        /// The specified aggregator isn't valid for the group type. Verify that the aggregator
+        /// you provided is supported.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterException">
+        /// The filter name isn't valid. Verify that you entered the correct name and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
+        /// The specified token isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceDataSyncNotFoundException">
+        /// The specified sync name wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedOperationException">
+        /// This operation is not supported for the current account. You must first enable the
+        /// Systems Manager integrated experience in your account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListNodesSummary">REST API Reference for ListNodesSummary Operation</seealso>
+        public virtual Task<ListNodesSummaryResponse> ListNodesSummaryAsync(ListNodesSummaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListNodesSummaryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNodesSummaryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListNodesSummaryResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6715,7 +6861,7 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterException">
-        /// The filter name isn't valid. Verify the you entered the correct name and try again.
+        /// The filter name isn't valid. Verify that you entered the correct name and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token isn't valid.
@@ -8152,6 +8298,48 @@ namespace Amazon.SimpleSystemsManagement
             options.ResponseUnmarshaller = StartChangeRequestExecutionResponseUnmarshaller.Instance;
 
             return InvokeAsync<StartChangeRequestExecutionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartExecutionPreview
+
+        internal virtual StartExecutionPreviewResponse StartExecutionPreview(StartExecutionPreviewRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartExecutionPreviewRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartExecutionPreviewResponseUnmarshaller.Instance;
+
+            return Invoke<StartExecutionPreviewResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Initiates the process of creating a preview showing the effects that running a specified
+        /// Automation runbook would have on the targeted resources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartExecutionPreview service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartExecutionPreview service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ValidationException">
+        /// The request isn't valid. Verify that you entered valid contents for the command and
+        /// try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartExecutionPreview">REST API Reference for StartExecutionPreview Operation</seealso>
+        public virtual Task<StartExecutionPreviewResponse> StartExecutionPreviewAsync(StartExecutionPreviewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartExecutionPreviewRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartExecutionPreviewResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartExecutionPreviewResponse>(request, options, cancellationToken);
         }
 
         #endregion

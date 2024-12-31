@@ -82,11 +82,47 @@ namespace Amazon.Billing.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
 
+<<<<<<< HEAD
                     if(publicRequest.IsSetMaxResults())
                     {
                         context.Writer.WritePropertyName("maxResults");
                         context.Writer.Write(publicRequest.MaxResults.Value);
                     }
+||||||| Commit version number update changes
+                if(publicRequest.IsSetMaxResults())
+                {
+                    context.Writer.WritePropertyName("maxResults");
+                    context.Writer.Write(publicRequest.MaxResults);
+                }
+=======
+                if(publicRequest.IsSetArns())
+                {
+                    context.Writer.WritePropertyName("arns");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestArnsListValue in publicRequest.Arns)
+                    {
+                            context.Writer.Write(publicRequestArnsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetBillingViewTypes())
+                {
+                    context.Writer.WritePropertyName("billingViewTypes");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestBillingViewTypesListValue in publicRequest.BillingViewTypes)
+                    {
+                            context.Writer.Write(publicRequestBillingViewTypesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetMaxResults())
+                {
+                    context.Writer.WritePropertyName("maxResults");
+                    context.Writer.Write(publicRequest.MaxResults);
+                }
+>>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
 
                     if(publicRequest.IsSetNextToken())
                     {
@@ -97,7 +133,23 @@ namespace Amazon.Billing.Model.Internal.MarshallTransformations
                     writer.WriteObjectEnd();
                 }
 
+<<<<<<< HEAD
                 request.Content = memoryStream.ToArray();
+||||||| Commit version number update changes
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+=======
+                if(publicRequest.IsSetOwnerAccountId())
+                {
+                    context.Writer.WritePropertyName("ownerAccountId");
+                    context.Writer.Write(publicRequest.OwnerAccountId);
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+>>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
             }
 
 

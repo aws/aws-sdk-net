@@ -34,6 +34,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class Vpc
     {
+        private BlockPublicAccessStates _blockPublicAccessStates;
         private string _cidrBlock;
         private List<VpcCidrBlockAssociation> _cidrBlockAssociationSet = AWSConfigs.InitializeCollections ? new List<VpcCidrBlockAssociation>() : null;
         private string _dhcpOptionsId;
@@ -44,6 +45,24 @@ namespace Amazon.EC2.Model
         private VpcState _state;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _vpcId;
+
+        /// <summary>
+        /// Gets and sets the property BlockPublicAccessStates. 
+        /// <para>
+        /// The state of VPC Block Public Access (BPA).
+        /// </para>
+        /// </summary>
+        public BlockPublicAccessStates BlockPublicAccessStates
+        {
+            get { return this._blockPublicAccessStates; }
+            set { this._blockPublicAccessStates = value; }
+        }
+
+        // Check to see if BlockPublicAccessStates property is set
+        internal bool IsSetBlockPublicAccessStates()
+        {
+            return this._blockPublicAccessStates != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CidrBlock. 

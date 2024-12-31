@@ -46,6 +46,7 @@ namespace Amazon.MemoryDB.Model
         private string _engineVersion;
         private string _kmsKeyId;
         private string _maintenanceWindow;
+        private string _multiRegionClusterName;
         private string _name;
         private string _nodeType;
         private int? _numberOfShards;
@@ -196,7 +197,7 @@ namespace Amazon.MemoryDB.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        ///  The Redis OSS or Valkey engine used by the cluster.
+        /// The name of the engine used by the cluster.
         /// </para>
         /// </summary>
         public string Engine
@@ -214,7 +215,7 @@ namespace Amazon.MemoryDB.Model
         /// <summary>
         /// Gets and sets the property EnginePatchVersion. 
         /// <para>
-        /// The engine patch version used by the cluster
+        /// The Redis OSS engine patch version used by the cluster
         /// </para>
         /// </summary>
         public string EnginePatchVersion
@@ -232,7 +233,7 @@ namespace Amazon.MemoryDB.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        /// The Redis engine version used by the cluster
+        /// The Redis OSS engine version used by the cluster
         /// </para>
         /// </summary>
         public string EngineVersion
@@ -283,6 +284,24 @@ namespace Amazon.MemoryDB.Model
         internal bool IsSetMaintenanceWindow()
         {
             return this._maintenanceWindow != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MultiRegionClusterName. 
+        /// <para>
+        /// The name of the multi-Region cluster that this cluster belongs to.
+        /// </para>
+        /// </summary>
+        public string MultiRegionClusterName
+        {
+            get { return this._multiRegionClusterName; }
+            set { this._multiRegionClusterName = value; }
+        }
+
+        // Check to see if MultiRegionClusterName property is set
+        internal bool IsSetMultiRegionClusterName()
+        {
+            return this._multiRegionClusterName != null;
         }
 
         /// <summary>

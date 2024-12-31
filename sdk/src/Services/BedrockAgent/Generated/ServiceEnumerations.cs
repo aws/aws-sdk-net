@@ -187,6 +187,60 @@ namespace Amazon.BedrockAgent
 
 
     /// <summary>
+    /// Constants used for properties of type AgentCollaboration.
+    /// </summary>
+    public class AgentCollaboration : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for AgentCollaboration
+        /// </summary>
+        public static readonly AgentCollaboration DISABLED = new AgentCollaboration("DISABLED");
+        /// <summary>
+        /// Constant SUPERVISOR for AgentCollaboration
+        /// </summary>
+        public static readonly AgentCollaboration SUPERVISOR = new AgentCollaboration("SUPERVISOR");
+        /// <summary>
+        /// Constant SUPERVISOR_ROUTER for AgentCollaboration
+        /// </summary>
+        public static readonly AgentCollaboration SUPERVISOR_ROUTER = new AgentCollaboration("SUPERVISOR_ROUTER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AgentCollaboration(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AgentCollaboration FindValue(string value)
+        {
+            return FindValue<AgentCollaboration>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AgentCollaboration(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AgentStatus.
     /// </summary>
     public class AgentStatus : ConstantClass
@@ -415,6 +469,56 @@ namespace Amazon.BedrockAgent
 
 
     /// <summary>
+    /// Constants used for properties of type ContentDataSourceType.
+    /// </summary>
+    public class ContentDataSourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CUSTOM for ContentDataSourceType
+        /// </summary>
+        public static readonly ContentDataSourceType CUSTOM = new ContentDataSourceType("CUSTOM");
+        /// <summary>
+        /// Constant S3 for ContentDataSourceType
+        /// </summary>
+        public static readonly ContentDataSourceType S3 = new ContentDataSourceType("S3");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContentDataSourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContentDataSourceType FindValue(string value)
+        {
+            return FindValue<ContentDataSourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContentDataSourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ConversationRole.
     /// </summary>
     public class ConversationRole : ConstantClass
@@ -607,6 +711,56 @@ namespace Amazon.BedrockAgent
 
 
     /// <summary>
+    /// Constants used for properties of type CustomSourceType.
+    /// </summary>
+    public class CustomSourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IN_LINE for CustomSourceType
+        /// </summary>
+        public static readonly CustomSourceType IN_LINE = new CustomSourceType("IN_LINE");
+        /// <summary>
+        /// Constant S3_LOCATION for CustomSourceType
+        /// </summary>
+        public static readonly CustomSourceType S3_LOCATION = new CustomSourceType("S3_LOCATION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CustomSourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CustomSourceType FindValue(string value)
+        {
+            return FindValue<CustomSourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CustomSourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DataDeletionPolicy.
     /// </summary>
     public class DataDeletionPolicy : ConstantClass
@@ -721,6 +875,14 @@ namespace Amazon.BedrockAgent
         /// </summary>
         public static readonly DataSourceType CONFLUENCE = new DataSourceType("CONFLUENCE");
         /// <summary>
+        /// Constant CUSTOM for DataSourceType
+        /// </summary>
+        public static readonly DataSourceType CUSTOM = new DataSourceType("CUSTOM");
+        /// <summary>
+        /// Constant REDSHIFT_METADATA for DataSourceType
+        /// </summary>
+        public static readonly DataSourceType REDSHIFT_METADATA = new DataSourceType("REDSHIFT_METADATA");
+        /// <summary>
         /// Constant S3 for DataSourceType
         /// </summary>
         public static readonly DataSourceType S3 = new DataSourceType("S3");
@@ -766,6 +928,146 @@ namespace Amazon.BedrockAgent
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DataSourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DocumentStatus.
+    /// </summary>
+    public class DocumentStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DELETE_IN_PROGRESS for DocumentStatus
+        /// </summary>
+        public static readonly DocumentStatus DELETE_IN_PROGRESS = new DocumentStatus("DELETE_IN_PROGRESS");
+        /// <summary>
+        /// Constant DELETING for DocumentStatus
+        /// </summary>
+        public static readonly DocumentStatus DELETING = new DocumentStatus("DELETING");
+        /// <summary>
+        /// Constant FAILED for DocumentStatus
+        /// </summary>
+        public static readonly DocumentStatus FAILED = new DocumentStatus("FAILED");
+        /// <summary>
+        /// Constant IGNORED for DocumentStatus
+        /// </summary>
+        public static readonly DocumentStatus IGNORED = new DocumentStatus("IGNORED");
+        /// <summary>
+        /// Constant IN_PROGRESS for DocumentStatus
+        /// </summary>
+        public static readonly DocumentStatus IN_PROGRESS = new DocumentStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant INDEXED for DocumentStatus
+        /// </summary>
+        public static readonly DocumentStatus INDEXED = new DocumentStatus("INDEXED");
+        /// <summary>
+        /// Constant METADATA_PARTIALLY_INDEXED for DocumentStatus
+        /// </summary>
+        public static readonly DocumentStatus METADATA_PARTIALLY_INDEXED = new DocumentStatus("METADATA_PARTIALLY_INDEXED");
+        /// <summary>
+        /// Constant METADATA_UPDATE_FAILED for DocumentStatus
+        /// </summary>
+        public static readonly DocumentStatus METADATA_UPDATE_FAILED = new DocumentStatus("METADATA_UPDATE_FAILED");
+        /// <summary>
+        /// Constant NOT_FOUND for DocumentStatus
+        /// </summary>
+        public static readonly DocumentStatus NOT_FOUND = new DocumentStatus("NOT_FOUND");
+        /// <summary>
+        /// Constant PARTIALLY_INDEXED for DocumentStatus
+        /// </summary>
+        public static readonly DocumentStatus PARTIALLY_INDEXED = new DocumentStatus("PARTIALLY_INDEXED");
+        /// <summary>
+        /// Constant PENDING for DocumentStatus
+        /// </summary>
+        public static readonly DocumentStatus PENDING = new DocumentStatus("PENDING");
+        /// <summary>
+        /// Constant STARTING for DocumentStatus
+        /// </summary>
+        public static readonly DocumentStatus STARTING = new DocumentStatus("STARTING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DocumentStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DocumentStatus FindValue(string value)
+        {
+            return FindValue<DocumentStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DocumentStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EmbeddingDataType.
+    /// </summary>
+    public class EmbeddingDataType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BINARY for EmbeddingDataType
+        /// </summary>
+        public static readonly EmbeddingDataType BINARY = new EmbeddingDataType("BINARY");
+        /// <summary>
+        /// Constant FLOAT32 for EmbeddingDataType
+        /// </summary>
+        public static readonly EmbeddingDataType FLOAT32 = new EmbeddingDataType("FLOAT32");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EmbeddingDataType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EmbeddingDataType FindValue(string value)
+        {
+            return FindValue<EmbeddingDataType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EmbeddingDataType(string value)
         {
             return FindValue(value);
         }
@@ -1225,6 +1527,56 @@ namespace Amazon.BedrockAgent
 
 
     /// <summary>
+    /// Constants used for properties of type IncludeExclude.
+    /// </summary>
+    public class IncludeExclude : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EXCLUDE for IncludeExclude
+        /// </summary>
+        public static readonly IncludeExclude EXCLUDE = new IncludeExclude("EXCLUDE");
+        /// <summary>
+        /// Constant INCLUDE for IncludeExclude
+        /// </summary>
+        public static readonly IncludeExclude INCLUDE = new IncludeExclude("INCLUDE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IncludeExclude(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IncludeExclude FindValue(string value)
+        {
+            return FindValue<IncludeExclude>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IncludeExclude(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type IngestionJobFilterAttribute.
     /// </summary>
     public class IngestionJobFilterAttribute : ConstantClass
@@ -1433,6 +1785,56 @@ namespace Amazon.BedrockAgent
 
 
     /// <summary>
+    /// Constants used for properties of type InlineContentType.
+    /// </summary>
+    public class InlineContentType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BYTE for InlineContentType
+        /// </summary>
+        public static readonly InlineContentType BYTE = new InlineContentType("BYTE");
+        /// <summary>
+        /// Constant TEXT for InlineContentType
+        /// </summary>
+        public static readonly InlineContentType TEXT = new InlineContentType("TEXT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InlineContentType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InlineContentType FindValue(string value)
+        {
+            return FindValue<InlineContentType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InlineContentType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type KnowledgeBaseState.
     /// </summary>
     public class KnowledgeBaseState : ConstantClass
@@ -1617,6 +2019,14 @@ namespace Amazon.BedrockAgent
     {
 
         /// <summary>
+        /// Constant KENDRA for KnowledgeBaseType
+        /// </summary>
+        public static readonly KnowledgeBaseType KENDRA = new KnowledgeBaseType("KENDRA");
+        /// <summary>
+        /// Constant SQL for KnowledgeBaseType
+        /// </summary>
+        public static readonly KnowledgeBaseType SQL = new KnowledgeBaseType("SQL");
+        /// <summary>
         /// Constant VECTOR for KnowledgeBaseType
         /// </summary>
         public static readonly KnowledgeBaseType VECTOR = new KnowledgeBaseType("VECTOR");
@@ -1703,11 +2113,219 @@ namespace Amazon.BedrockAgent
 
 
     /// <summary>
+    /// Constants used for properties of type MetadataSourceType.
+    /// </summary>
+    public class MetadataSourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IN_LINE_ATTRIBUTE for MetadataSourceType
+        /// </summary>
+        public static readonly MetadataSourceType IN_LINE_ATTRIBUTE = new MetadataSourceType("IN_LINE_ATTRIBUTE");
+        /// <summary>
+        /// Constant S3_LOCATION for MetadataSourceType
+        /// </summary>
+        public static readonly MetadataSourceType S3_LOCATION = new MetadataSourceType("S3_LOCATION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MetadataSourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MetadataSourceType FindValue(string value)
+        {
+            return FindValue<MetadataSourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MetadataSourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MetadataValueType.
+    /// </summary>
+    public class MetadataValueType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BOOLEAN for MetadataValueType
+        /// </summary>
+        public static readonly MetadataValueType BOOLEAN = new MetadataValueType("BOOLEAN");
+        /// <summary>
+        /// Constant NUMBER for MetadataValueType
+        /// </summary>
+        public static readonly MetadataValueType NUMBER = new MetadataValueType("NUMBER");
+        /// <summary>
+        /// Constant STRING for MetadataValueType
+        /// </summary>
+        public static readonly MetadataValueType STRING = new MetadataValueType("STRING");
+        /// <summary>
+        /// Constant STRING_LIST for MetadataValueType
+        /// </summary>
+        public static readonly MetadataValueType STRING_LIST = new MetadataValueType("STRING_LIST");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MetadataValueType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MetadataValueType FindValue(string value)
+        {
+            return FindValue<MetadataValueType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MetadataValueType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OrchestrationType.
+    /// </summary>
+    public class OrchestrationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CUSTOM_ORCHESTRATION for OrchestrationType
+        /// </summary>
+        public static readonly OrchestrationType CUSTOM_ORCHESTRATION = new OrchestrationType("CUSTOM_ORCHESTRATION");
+        /// <summary>
+        /// Constant DEFAULT for OrchestrationType
+        /// </summary>
+        public static readonly OrchestrationType DEFAULT = new OrchestrationType("DEFAULT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OrchestrationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OrchestrationType FindValue(string value)
+        {
+            return FindValue<OrchestrationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OrchestrationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ParsingModality.
+    /// </summary>
+    public class ParsingModality : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MULTIMODAL for ParsingModality
+        /// </summary>
+        public static readonly ParsingModality MULTIMODAL = new ParsingModality("MULTIMODAL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ParsingModality(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ParsingModality FindValue(string value)
+        {
+            return FindValue<ParsingModality>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ParsingModality(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ParsingStrategy.
     /// </summary>
     public class ParsingStrategy : ConstantClass
     {
 
+        /// <summary>
+        /// Constant BEDROCK_DATA_AUTOMATION for ParsingStrategy
+        /// </summary>
+        public static readonly ParsingStrategy BEDROCK_DATA_AUTOMATION = new ParsingStrategy("BEDROCK_DATA_AUTOMATION");
         /// <summary>
         /// Constant BEDROCK_FOUNDATION_MODEL for ParsingStrategy
         /// </summary>
@@ -1859,6 +2477,10 @@ namespace Amazon.BedrockAgent
         /// </summary>
         public static readonly PromptType KNOWLEDGE_BASE_RESPONSE_GENERATION = new PromptType("KNOWLEDGE_BASE_RESPONSE_GENERATION");
         /// <summary>
+        /// Constant MEMORY_SUMMARIZATION for PromptType
+        /// </summary>
+        public static readonly PromptType MEMORY_SUMMARIZATION = new PromptType("MEMORY_SUMMARIZATION");
+        /// <summary>
         /// Constant ORCHESTRATION for PromptType
         /// </summary>
         public static readonly PromptType ORCHESTRATION = new PromptType("ORCHESTRATION");
@@ -1900,6 +2522,306 @@ namespace Amazon.BedrockAgent
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PromptType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type QueryEngineType.
+    /// </summary>
+    public class QueryEngineType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant REDSHIFT for QueryEngineType
+        /// </summary>
+        public static readonly QueryEngineType REDSHIFT = new QueryEngineType("REDSHIFT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public QueryEngineType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static QueryEngineType FindValue(string value)
+        {
+            return FindValue<QueryEngineType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator QueryEngineType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RedshiftProvisionedAuthType.
+    /// </summary>
+    public class RedshiftProvisionedAuthType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IAM for RedshiftProvisionedAuthType
+        /// </summary>
+        public static readonly RedshiftProvisionedAuthType IAM = new RedshiftProvisionedAuthType("IAM");
+        /// <summary>
+        /// Constant USERNAME for RedshiftProvisionedAuthType
+        /// </summary>
+        public static readonly RedshiftProvisionedAuthType USERNAME = new RedshiftProvisionedAuthType("USERNAME");
+        /// <summary>
+        /// Constant USERNAME_PASSWORD for RedshiftProvisionedAuthType
+        /// </summary>
+        public static readonly RedshiftProvisionedAuthType USERNAME_PASSWORD = new RedshiftProvisionedAuthType("USERNAME_PASSWORD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RedshiftProvisionedAuthType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RedshiftProvisionedAuthType FindValue(string value)
+        {
+            return FindValue<RedshiftProvisionedAuthType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RedshiftProvisionedAuthType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RedshiftQueryEngineStorageType.
+    /// </summary>
+    public class RedshiftQueryEngineStorageType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWS_DATA_CATALOG for RedshiftQueryEngineStorageType
+        /// </summary>
+        public static readonly RedshiftQueryEngineStorageType AWS_DATA_CATALOG = new RedshiftQueryEngineStorageType("AWS_DATA_CATALOG");
+        /// <summary>
+        /// Constant REDSHIFT for RedshiftQueryEngineStorageType
+        /// </summary>
+        public static readonly RedshiftQueryEngineStorageType REDSHIFT = new RedshiftQueryEngineStorageType("REDSHIFT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RedshiftQueryEngineStorageType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RedshiftQueryEngineStorageType FindValue(string value)
+        {
+            return FindValue<RedshiftQueryEngineStorageType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RedshiftQueryEngineStorageType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RedshiftQueryEngineType.
+    /// </summary>
+    public class RedshiftQueryEngineType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PROVISIONED for RedshiftQueryEngineType
+        /// </summary>
+        public static readonly RedshiftQueryEngineType PROVISIONED = new RedshiftQueryEngineType("PROVISIONED");
+        /// <summary>
+        /// Constant SERVERLESS for RedshiftQueryEngineType
+        /// </summary>
+        public static readonly RedshiftQueryEngineType SERVERLESS = new RedshiftQueryEngineType("SERVERLESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RedshiftQueryEngineType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RedshiftQueryEngineType FindValue(string value)
+        {
+            return FindValue<RedshiftQueryEngineType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RedshiftQueryEngineType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RedshiftServerlessAuthType.
+    /// </summary>
+    public class RedshiftServerlessAuthType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IAM for RedshiftServerlessAuthType
+        /// </summary>
+        public static readonly RedshiftServerlessAuthType IAM = new RedshiftServerlessAuthType("IAM");
+        /// <summary>
+        /// Constant USERNAME_PASSWORD for RedshiftServerlessAuthType
+        /// </summary>
+        public static readonly RedshiftServerlessAuthType USERNAME_PASSWORD = new RedshiftServerlessAuthType("USERNAME_PASSWORD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RedshiftServerlessAuthType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RedshiftServerlessAuthType FindValue(string value)
+        {
+            return FindValue<RedshiftServerlessAuthType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RedshiftServerlessAuthType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RelayConversationHistory.
+    /// </summary>
+    public class RelayConversationHistory : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for RelayConversationHistory
+        /// </summary>
+        public static readonly RelayConversationHistory DISABLED = new RelayConversationHistory("DISABLED");
+        /// <summary>
+        /// Constant TO_COLLABORATOR for RelayConversationHistory
+        /// </summary>
+        public static readonly RelayConversationHistory TO_COLLABORATOR = new RelayConversationHistory("TO_COLLABORATOR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RelayConversationHistory(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RelayConversationHistory FindValue(string value)
+        {
+            return FindValue<RelayConversationHistory>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RelayConversationHistory(string value)
         {
             return FindValue(value);
         }
@@ -2012,6 +2934,10 @@ namespace Amazon.BedrockAgent
         /// Constant OAUTH2_CLIENT_CREDENTIALS for SharePointAuthType
         /// </summary>
         public static readonly SharePointAuthType OAUTH2_CLIENT_CREDENTIALS = new SharePointAuthType("OAUTH2_CLIENT_CREDENTIALS");
+        /// <summary>
+        /// Constant OAUTH2_SHAREPOINT_APP_ONLY_CLIENT_CREDENTIALS for SharePointAuthType
+        /// </summary>
+        public static readonly SharePointAuthType OAUTH2_SHAREPOINT_APP_ONLY_CLIENT_CREDENTIALS = new SharePointAuthType("OAUTH2_SHAREPOINT_APP_ONLY_CLIENT_CREDENTIALS");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -2184,6 +3110,52 @@ namespace Amazon.BedrockAgent
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator StepType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SupplementalDataStorageLocationType.
+    /// </summary>
+    public class SupplementalDataStorageLocationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant S3 for SupplementalDataStorageLocationType
+        /// </summary>
+        public static readonly SupplementalDataStorageLocationType S3 = new SupplementalDataStorageLocationType("S3");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SupplementalDataStorageLocationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SupplementalDataStorageLocationType FindValue(string value)
+        {
+            return FindValue<SupplementalDataStorageLocationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SupplementalDataStorageLocationType(string value)
         {
             return FindValue(value);
         }

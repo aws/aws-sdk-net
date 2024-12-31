@@ -66,7 +66,32 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             request.ResourcePath = "/domains/{DomainName}/integrations";
             using (MemoryStream memoryStream = new MemoryStream())
             {
+<<<<<<< HEAD
                 using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+||||||| Commit version number update changes
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetFlowDefinition())
+=======
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetEventTriggerNames())
+                {
+                    context.Writer.WritePropertyName("EventTriggerNames");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestEventTriggerNamesListValue in publicRequest.EventTriggerNames)
+                    {
+                            context.Writer.Write(publicRequestEventTriggerNamesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetFlowDefinition())
+>>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
                 {
                     JsonWriter writer = new JsonWriter(streamWriter);
                     writer.Validate = false;

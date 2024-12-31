@@ -78,10 +78,22 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
                     unmarshalledObject.CurrentDBInstanceClass = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("currentInstancePerformanceRisk", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CurrentInstancePerformanceRisk = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("currentStorageConfiguration", targetDepth))
                 {
                     var unmarshaller = DBStorageConfigurationUnmarshaller.Instance;
                     unmarshalledObject.CurrentStorageConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("dbClusterIdentifier", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DbClusterIdentifier = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("effectiveRecommendationPreferences", targetDepth))
@@ -136,6 +148,12 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.LookbackPeriodInDays = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("promotionTier", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.PromotionTier = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("resourceArn", targetDepth))

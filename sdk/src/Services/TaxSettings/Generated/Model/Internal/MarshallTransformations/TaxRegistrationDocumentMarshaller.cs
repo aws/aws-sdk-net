@@ -48,6 +48,17 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetFile())
+            {
+                context.Writer.WritePropertyName("file");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = TaxRegistrationDocFileMarshaller.Instance;
+                marshaller.Marshall(requestObject.File, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetS3Location())
             {
                 context.Writer.WritePropertyName("s3Location");

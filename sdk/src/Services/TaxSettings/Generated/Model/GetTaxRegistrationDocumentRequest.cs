@@ -44,7 +44,6 @@ namespace Amazon.TaxSettings.Model
         /// The Amazon S3 bucket that you specify to download your tax documents to.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public DestinationS3Location DestinationS3Location
         {
             get { return this._destinations3Location; }

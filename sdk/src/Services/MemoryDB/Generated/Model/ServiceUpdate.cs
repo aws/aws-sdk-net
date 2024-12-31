@@ -101,7 +101,7 @@ namespace Amazon.MemoryDB.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// The MemoryDB engine to which the update applies. The values are either Redis or Valkey.
+        /// The name of the engine for which a service update is available.
         /// </para>
         /// </summary>
         public string Engine

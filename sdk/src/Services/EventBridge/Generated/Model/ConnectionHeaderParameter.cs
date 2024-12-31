@@ -42,7 +42,7 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property IsValueSecret. 
         /// <para>
-        /// Specified whether the value is a secret.
+        /// Specifies whether the value is a secret.
         /// </para>
         /// </summary>
         public bool? IsValueSecret

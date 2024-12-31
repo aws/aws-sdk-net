@@ -40,9 +40,8 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  A pagination token used to retrieve the next set of results in subsequent calls.
-        /// This token is included in the response only if there are additional result pages available.
-        /// 
+        /// A pagination token used to retrieve the next set of results in subsequent calls. This
+        /// token is included in the response only if there are additional result pages available.
         /// </para>
         /// </summary>
         public string NextToken
@@ -60,8 +59,8 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property OpportunitySummaries. 
         /// <para>
-        ///  An array that contains minimal details for opportunities that match the request criteria.
-        /// This summary view provides a quick overview of relevant opportunities. 
+        /// An array that contains minimal details for opportunities that match the request criteria.
+        /// This summary view provides a quick overview of relevant opportunities.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

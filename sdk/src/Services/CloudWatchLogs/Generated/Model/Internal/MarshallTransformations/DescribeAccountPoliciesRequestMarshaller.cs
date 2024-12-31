@@ -82,11 +82,31 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                         context.Writer.WriteArrayEnd();
                     }
 
+<<<<<<< HEAD
                     if(publicRequest.IsSetPolicyName())
                     {
                         context.Writer.WritePropertyName("policyName");
                         context.Writer.Write(publicRequest.PolicyName);
                     }
+||||||| Commit version number update changes
+                if(publicRequest.IsSetPolicyName())
+                {
+                    context.Writer.WritePropertyName("policyName");
+                    context.Writer.Write(publicRequest.PolicyName);
+                }
+=======
+                if(publicRequest.IsSetNextToken())
+                {
+                    context.Writer.WritePropertyName("nextToken");
+                    context.Writer.Write(publicRequest.NextToken);
+                }
+
+                if(publicRequest.IsSetPolicyName())
+                {
+                    context.Writer.WritePropertyName("policyName");
+                    context.Writer.Write(publicRequest.PolicyName);
+                }
+>>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
 
                     if(publicRequest.IsSetPolicyType())
                     {

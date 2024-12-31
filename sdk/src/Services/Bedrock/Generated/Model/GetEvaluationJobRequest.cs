@@ -31,9 +31,7 @@ namespace Amazon.Bedrock.Model
 {
     /// <summary>
     /// Container for the parameters to the GetEvaluationJob operation.
-    /// Retrieves the properties associated with a model evaluation job, including the status
-    /// of the job. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation.html">Model
-    /// evaluation</a>.
+    /// Gets information about an evaluation job, such as the status of the job.
     /// </summary>
     public partial class GetEvaluationJobRequest : AmazonBedrockRequest
     {
@@ -42,7 +40,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property JobIdentifier. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the model evaluation job.
+        /// The Amazon Resource Name (ARN) of the evaluation job you want get information on.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=0, Max=1011)]

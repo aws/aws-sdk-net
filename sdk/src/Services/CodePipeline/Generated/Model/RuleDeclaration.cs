@@ -32,10 +32,14 @@ namespace Amazon.CodePipeline.Model
     /// <summary>
     /// Represents information about the rule to be created for an associated condition. An
     /// example would be creating a new rule for an entry condition, such as a rule that checks
-    /// for a test result before allowing the run to enter the deployment stage.
+    /// for a test result before allowing the run to enter the deployment stage. For more
+    /// information about conditions, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/stage-conditions.html">Stage
+    /// conditions</a>. For more information about rules, see the <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/rule-reference.html">CodePipeline
+    /// rule reference</a>.
     /// </summary>
     public partial class RuleDeclaration
     {
+        private List<string> _commands = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private Dictionary<string, string> _configuration = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private List<InputArtifact> _inputArtifacts = AWSConfigs.InitializeCollections ? new List<InputArtifact>() : null;
         private string _name;
@@ -43,6 +47,32 @@ namespace Amazon.CodePipeline.Model
         private string _roleArn;
         private RuleTypeId _ruleTypeId;
         private int? _timeoutInMinutes;
+
+        /// <summary>
+        /// Gets and sets the property Commands. 
+        /// <para>
+        /// The shell commands to run with your commands rule in CodePipeline. All commands are
+        /// supported except multi-line formats. While CodeBuild logs and permissions are used,
+        /// you do not need to create any resources in CodeBuild.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Using compute time for this action will incur separate charges in CodeBuild.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public List<string> Commands
+        {
+            get { return this._commands; }
+            set { this._commands = value; }
+        }
+
+        // Check to see if Commands property is set
+        internal bool IsSetCommands()
+        {
+            return this._commands != null && (this._commands.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property Configuration. 
@@ -85,7 +115,7 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the rule that is created for the condition, such as CheckAllResults.
+        /// The name of the rule that is created for the condition, such as <c>VariableCheck</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

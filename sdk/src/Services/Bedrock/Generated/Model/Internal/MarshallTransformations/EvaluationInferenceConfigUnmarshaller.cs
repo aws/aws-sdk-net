@@ -72,6 +72,12 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                     unmarshalledObject.Models = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ragConfigs", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<RAGConfig, RAGConfigUnmarshaller>(RAGConfigUnmarshaller.Instance);
+                    unmarshalledObject.RagConfigs = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

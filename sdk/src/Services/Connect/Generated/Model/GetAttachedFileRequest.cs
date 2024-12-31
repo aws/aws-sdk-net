@@ -45,8 +45,9 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property AssociatedResourceArn. 
         /// <para>
-        /// The resource to which the attached file is (being) uploaded to. <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Cases</a>
-        /// are the only current supported resource.
+        /// The resource to which the attached file is (being) uploaded to. The supported resources
+        /// are <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cases.html">Cases</a>
+        /// and <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-email-channel.html">Email</a>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -89,7 +90,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The unique identifier of the Connect instance.
+        /// The unique identifier of the Amazon Connect instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

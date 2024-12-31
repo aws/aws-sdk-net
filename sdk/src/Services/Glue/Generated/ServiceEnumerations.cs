@@ -191,6 +191,10 @@ namespace Amazon.Glue
         /// </summary>
         public static readonly AuthenticationType CUSTOM = new AuthenticationType("CUSTOM");
         /// <summary>
+        /// Constant IAM for AuthenticationType
+        /// </summary>
+        public static readonly AuthenticationType IAM = new AuthenticationType("IAM");
+        /// <summary>
         /// Constant OAUTH2 for AuthenticationType
         /// </summary>
         public static readonly AuthenticationType OAUTH2 = new AuthenticationType("OAUTH2");
@@ -881,6 +885,60 @@ namespace Amazon.Glue
 
 
     /// <summary>
+    /// Constants used for properties of type ComputeEnvironment.
+    /// </summary>
+    public class ComputeEnvironment : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ATHENA for ComputeEnvironment
+        /// </summary>
+        public static readonly ComputeEnvironment ATHENA = new ComputeEnvironment("ATHENA");
+        /// <summary>
+        /// Constant PYTHON for ComputeEnvironment
+        /// </summary>
+        public static readonly ComputeEnvironment PYTHON = new ComputeEnvironment("PYTHON");
+        /// <summary>
+        /// Constant SPARK for ComputeEnvironment
+        /// </summary>
+        public static readonly ComputeEnvironment SPARK = new ComputeEnvironment("SPARK");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ComputeEnvironment(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ComputeEnvironment FindValue(string value)
+        {
+            return FindValue<ComputeEnvironment>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ComputeEnvironment(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ConnectionPropertyKey.
     /// </summary>
     public class ConnectionPropertyKey : ConstantClass
@@ -942,6 +1000,14 @@ namespace Amazon.Glue
         /// Constant ENCRYPTED_PASSWORD for ConnectionPropertyKey
         /// </summary>
         public static readonly ConnectionPropertyKey ENCRYPTED_PASSWORD = new ConnectionPropertyKey("ENCRYPTED_PASSWORD");
+        /// <summary>
+        /// Constant ENDPOINT for ConnectionPropertyKey
+        /// </summary>
+        public static readonly ConnectionPropertyKey ENDPOINT = new ConnectionPropertyKey("ENDPOINT");
+        /// <summary>
+        /// Constant ENDPOINT_TYPE for ConnectionPropertyKey
+        /// </summary>
+        public static readonly ConnectionPropertyKey ENDPOINT_TYPE = new ConnectionPropertyKey("ENDPOINT_TYPE");
         /// <summary>
         /// Constant HOST for ConnectionPropertyKey
         /// </summary>
@@ -1175,13 +1241,49 @@ namespace Amazon.Glue
         /// </summary>
         public static readonly ConnectionType CUSTOM = new ConnectionType("CUSTOM");
         /// <summary>
+        /// Constant FACEBOOKADS for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType FACEBOOKADS = new ConnectionType("FACEBOOKADS");
+        /// <summary>
+        /// Constant GOOGLEADS for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType GOOGLEADS = new ConnectionType("GOOGLEADS");
+        /// <summary>
+        /// Constant GOOGLEANALYTICS4 for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType GOOGLEANALYTICS4 = new ConnectionType("GOOGLEANALYTICS4");
+        /// <summary>
+        /// Constant GOOGLESHEETS for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType GOOGLESHEETS = new ConnectionType("GOOGLESHEETS");
+        /// <summary>
+        /// Constant HUBSPOT for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType HUBSPOT = new ConnectionType("HUBSPOT");
+        /// <summary>
+        /// Constant INSTAGRAMADS for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType INSTAGRAMADS = new ConnectionType("INSTAGRAMADS");
+        /// <summary>
+        /// Constant INTERCOM for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType INTERCOM = new ConnectionType("INTERCOM");
+        /// <summary>
         /// Constant JDBC for ConnectionType
         /// </summary>
         public static readonly ConnectionType JDBC = new ConnectionType("JDBC");
         /// <summary>
+        /// Constant JIRACLOUD for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType JIRACLOUD = new ConnectionType("JIRACLOUD");
+        /// <summary>
         /// Constant KAFKA for ConnectionType
         /// </summary>
         public static readonly ConnectionType KAFKA = new ConnectionType("KAFKA");
+        /// <summary>
+        /// Constant MARKETO for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType MARKETO = new ConnectionType("MARKETO");
         /// <summary>
         /// Constant MARKETPLACE for ConnectionType
         /// </summary>
@@ -1191,6 +1293,10 @@ namespace Amazon.Glue
         /// </summary>
         public static readonly ConnectionType MONGODB = new ConnectionType("MONGODB");
         /// <summary>
+        /// Constant NETSUITEERP for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType NETSUITEERP = new ConnectionType("NETSUITEERP");
+        /// <summary>
         /// Constant NETWORK for ConnectionType
         /// </summary>
         public static readonly ConnectionType NETWORK = new ConnectionType("NETWORK");
@@ -1199,9 +1305,37 @@ namespace Amazon.Glue
         /// </summary>
         public static readonly ConnectionType SALESFORCE = new ConnectionType("SALESFORCE");
         /// <summary>
+        /// Constant SALESFORCEMARKETINGCLOUD for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType SALESFORCEMARKETINGCLOUD = new ConnectionType("SALESFORCEMARKETINGCLOUD");
+        /// <summary>
+        /// Constant SALESFORCEPARDOT for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType SALESFORCEPARDOT = new ConnectionType("SALESFORCEPARDOT");
+        /// <summary>
+        /// Constant SAPODATA for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType SAPODATA = new ConnectionType("SAPODATA");
+        /// <summary>
+        /// Constant SERVICENOW for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType SERVICENOW = new ConnectionType("SERVICENOW");
+        /// <summary>
         /// Constant SFTP for ConnectionType
         /// </summary>
         public static readonly ConnectionType SFTP = new ConnectionType("SFTP");
+        /// <summary>
+        /// Constant SLACK for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType SLACK = new ConnectionType("SLACK");
+        /// <summary>
+        /// Constant SNAPCHATADS for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType SNAPCHATADS = new ConnectionType("SNAPCHATADS");
+        /// <summary>
+        /// Constant STRIPE for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType STRIPE = new ConnectionType("STRIPE");
         /// <summary>
         /// Constant VIEW_VALIDATION_ATHENA for ConnectionType
         /// </summary>
@@ -1210,6 +1344,14 @@ namespace Amazon.Glue
         /// Constant VIEW_VALIDATION_REDSHIFT for ConnectionType
         /// </summary>
         public static readonly ConnectionType VIEW_VALIDATION_REDSHIFT = new ConnectionType("VIEW_VALIDATION_REDSHIFT");
+        /// <summary>
+        /// Constant ZENDESK for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType ZENDESK = new ConnectionType("ZENDESK");
+        /// <summary>
+        /// Constant ZOHOCRM for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType ZOHOCRM = new ConnectionType("ZOHOCRM");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1683,6 +1825,106 @@ namespace Amazon.Glue
 
 
     /// <summary>
+    /// Constants used for properties of type DataOperation.
+    /// </summary>
+    public class DataOperation : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant READ for DataOperation
+        /// </summary>
+        public static readonly DataOperation READ = new DataOperation("READ");
+        /// <summary>
+        /// Constant WRITE for DataOperation
+        /// </summary>
+        public static readonly DataOperation WRITE = new DataOperation("WRITE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataOperation(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataOperation FindValue(string value)
+        {
+            return FindValue<DataOperation>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataOperation(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DataQualityEncryptionMode.
+    /// </summary>
+    public class DataQualityEncryptionMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for DataQualityEncryptionMode
+        /// </summary>
+        public static readonly DataQualityEncryptionMode DISABLED = new DataQualityEncryptionMode("DISABLED");
+        /// <summary>
+        /// Constant SSEKMS for DataQualityEncryptionMode
+        /// </summary>
+        public static readonly DataQualityEncryptionMode SSEKMS = new DataQualityEncryptionMode("SSE-KMS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataQualityEncryptionMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataQualityEncryptionMode FindValue(string value)
+        {
+            return FindValue<DataQualityEncryptionMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataQualityEncryptionMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DataQualityModelStatus.
     /// </summary>
     public class DataQualityModelStatus : ConstantClass
@@ -2145,6 +2387,56 @@ namespace Amazon.Glue
 
 
     /// <summary>
+    /// Constants used for properties of type ExecutionStatus.
+    /// </summary>
+    public class ExecutionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for ExecutionStatus
+        /// </summary>
+        public static readonly ExecutionStatus FAILED = new ExecutionStatus("FAILED");
+        /// <summary>
+        /// Constant STARTED for ExecutionStatus
+        /// </summary>
+        public static readonly ExecutionStatus STARTED = new ExecutionStatus("STARTED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExecutionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExecutionStatus FindValue(string value)
+        {
+            return FindValue<ExecutionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExecutionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ExistCondition.
     /// </summary>
     public class ExistCondition : ConstantClass
@@ -2274,6 +2566,190 @@ namespace Amazon.Glue
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator FederationSourceErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FieldDataType.
+    /// </summary>
+    public class FieldDataType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ARRAY for FieldDataType
+        /// </summary>
+        public static readonly FieldDataType ARRAY = new FieldDataType("ARRAY");
+        /// <summary>
+        /// Constant BIGINT for FieldDataType
+        /// </summary>
+        public static readonly FieldDataType BIGINT = new FieldDataType("BIGINT");
+        /// <summary>
+        /// Constant BOOLEAN for FieldDataType
+        /// </summary>
+        public static readonly FieldDataType BOOLEAN = new FieldDataType("BOOLEAN");
+        /// <summary>
+        /// Constant BYTE for FieldDataType
+        /// </summary>
+        public static readonly FieldDataType BYTE = new FieldDataType("BYTE");
+        /// <summary>
+        /// Constant DATE for FieldDataType
+        /// </summary>
+        public static readonly FieldDataType DATE = new FieldDataType("DATE");
+        /// <summary>
+        /// Constant DECIMAL for FieldDataType
+        /// </summary>
+        public static readonly FieldDataType DECIMAL = new FieldDataType("DECIMAL");
+        /// <summary>
+        /// Constant DOUBLE for FieldDataType
+        /// </summary>
+        public static readonly FieldDataType DOUBLE = new FieldDataType("DOUBLE");
+        /// <summary>
+        /// Constant FLOAT for FieldDataType
+        /// </summary>
+        public static readonly FieldDataType FLOAT = new FieldDataType("FLOAT");
+        /// <summary>
+        /// Constant INT for FieldDataType
+        /// </summary>
+        public static readonly FieldDataType INT = new FieldDataType("INT");
+        /// <summary>
+        /// Constant LONG for FieldDataType
+        /// </summary>
+        public static readonly FieldDataType LONG = new FieldDataType("LONG");
+        /// <summary>
+        /// Constant MAP for FieldDataType
+        /// </summary>
+        public static readonly FieldDataType MAP = new FieldDataType("MAP");
+        /// <summary>
+        /// Constant SHORT for FieldDataType
+        /// </summary>
+        public static readonly FieldDataType SHORT = new FieldDataType("SHORT");
+        /// <summary>
+        /// Constant SMALLINT for FieldDataType
+        /// </summary>
+        public static readonly FieldDataType SMALLINT = new FieldDataType("SMALLINT");
+        /// <summary>
+        /// Constant STRING for FieldDataType
+        /// </summary>
+        public static readonly FieldDataType STRING = new FieldDataType("STRING");
+        /// <summary>
+        /// Constant STRUCT for FieldDataType
+        /// </summary>
+        public static readonly FieldDataType STRUCT = new FieldDataType("STRUCT");
+        /// <summary>
+        /// Constant TIMESTAMP for FieldDataType
+        /// </summary>
+        public static readonly FieldDataType TIMESTAMP = new FieldDataType("TIMESTAMP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FieldDataType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FieldDataType FindValue(string value)
+        {
+            return FindValue<FieldDataType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FieldDataType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FieldFilterOperator.
+    /// </summary>
+    public class FieldFilterOperator : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BETWEEN for FieldFilterOperator
+        /// </summary>
+        public static readonly FieldFilterOperator BETWEEN = new FieldFilterOperator("BETWEEN");
+        /// <summary>
+        /// Constant CONTAINS for FieldFilterOperator
+        /// </summary>
+        public static readonly FieldFilterOperator CONTAINS = new FieldFilterOperator("CONTAINS");
+        /// <summary>
+        /// Constant EQUAL_TO for FieldFilterOperator
+        /// </summary>
+        public static readonly FieldFilterOperator EQUAL_TO = new FieldFilterOperator("EQUAL_TO");
+        /// <summary>
+        /// Constant GREATER_THAN for FieldFilterOperator
+        /// </summary>
+        public static readonly FieldFilterOperator GREATER_THAN = new FieldFilterOperator("GREATER_THAN");
+        /// <summary>
+        /// Constant GREATER_THAN_OR_EQUAL_TO for FieldFilterOperator
+        /// </summary>
+        public static readonly FieldFilterOperator GREATER_THAN_OR_EQUAL_TO = new FieldFilterOperator("GREATER_THAN_OR_EQUAL_TO");
+        /// <summary>
+        /// Constant LESS_THAN for FieldFilterOperator
+        /// </summary>
+        public static readonly FieldFilterOperator LESS_THAN = new FieldFilterOperator("LESS_THAN");
+        /// <summary>
+        /// Constant LESS_THAN_OR_EQUAL_TO for FieldFilterOperator
+        /// </summary>
+        public static readonly FieldFilterOperator LESS_THAN_OR_EQUAL_TO = new FieldFilterOperator("LESS_THAN_OR_EQUAL_TO");
+        /// <summary>
+        /// Constant NOT_EQUAL_TO for FieldFilterOperator
+        /// </summary>
+        public static readonly FieldFilterOperator NOT_EQUAL_TO = new FieldFilterOperator("NOT_EQUAL_TO");
+        /// <summary>
+        /// Constant ORDER_BY for FieldFilterOperator
+        /// </summary>
+        public static readonly FieldFilterOperator ORDER_BY = new FieldFilterOperator("ORDER_BY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FieldFilterOperator(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FieldFilterOperator FindValue(string value)
+        {
+            return FindValue<FieldFilterOperator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FieldFilterOperator(string value)
         {
             return FindValue(value);
         }
@@ -2762,6 +3238,76 @@ namespace Amazon.Glue
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator InclusionAnnotationValue(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type IntegrationStatus.
+    /// </summary>
+    public class IntegrationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for IntegrationStatus
+        /// </summary>
+        public static readonly IntegrationStatus ACTIVE = new IntegrationStatus("ACTIVE");
+        /// <summary>
+        /// Constant CREATING for IntegrationStatus
+        /// </summary>
+        public static readonly IntegrationStatus CREATING = new IntegrationStatus("CREATING");
+        /// <summary>
+        /// Constant DELETING for IntegrationStatus
+        /// </summary>
+        public static readonly IntegrationStatus DELETING = new IntegrationStatus("DELETING");
+        /// <summary>
+        /// Constant FAILED for IntegrationStatus
+        /// </summary>
+        public static readonly IntegrationStatus FAILED = new IntegrationStatus("FAILED");
+        /// <summary>
+        /// Constant MODIFYING for IntegrationStatus
+        /// </summary>
+        public static readonly IntegrationStatus MODIFYING = new IntegrationStatus("MODIFYING");
+        /// <summary>
+        /// Constant NEEDS_ATTENTION for IntegrationStatus
+        /// </summary>
+        public static readonly IntegrationStatus NEEDS_ATTENTION = new IntegrationStatus("NEEDS_ATTENTION");
+        /// <summary>
+        /// Constant SYNCING for IntegrationStatus
+        /// </summary>
+        public static readonly IntegrationStatus SYNCING = new IntegrationStatus("SYNCING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IntegrationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IntegrationStatus FindValue(string value)
+        {
+            return FindValue<IntegrationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IntegrationStatus(string value)
         {
             return FindValue(value);
         }
@@ -4173,6 +4719,68 @@ namespace Amazon.Glue
 
 
     /// <summary>
+    /// Constants used for properties of type PropertyType.
+    /// </summary>
+    public class PropertyType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant READ_ONLY for PropertyType
+        /// </summary>
+        public static readonly PropertyType READ_ONLY = new PropertyType("READ_ONLY");
+        /// <summary>
+        /// Constant SECRET for PropertyType
+        /// </summary>
+        public static readonly PropertyType SECRET = new PropertyType("SECRET");
+        /// <summary>
+        /// Constant SECRET_OR_USER_INPUT for PropertyType
+        /// </summary>
+        public static readonly PropertyType SECRET_OR_USER_INPUT = new PropertyType("SECRET_OR_USER_INPUT");
+        /// <summary>
+        /// Constant UNUSED for PropertyType
+        /// </summary>
+        public static readonly PropertyType UNUSED = new PropertyType("UNUSED");
+        /// <summary>
+        /// Constant USER_INPUT for PropertyType
+        /// </summary>
+        public static readonly PropertyType USER_INPUT = new PropertyType("USER_INPUT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PropertyType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PropertyType FindValue(string value)
+        {
+            return FindValue<PropertyType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PropertyType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type QuoteChar.
     /// </summary>
     public class QuoteChar : ConstantClass
@@ -4663,6 +5271,56 @@ namespace Amazon.Glue
 
 
     /// <summary>
+    /// Constants used for properties of type ScheduleType.
+    /// </summary>
+    public class ScheduleType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTO for ScheduleType
+        /// </summary>
+        public static readonly ScheduleType AUTO = new ScheduleType("AUTO");
+        /// <summary>
+        /// Constant CRON for ScheduleType
+        /// </summary>
+        public static readonly ScheduleType CRON = new ScheduleType("CRON");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ScheduleType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ScheduleType FindValue(string value)
+        {
+            return FindValue<ScheduleType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ScheduleType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SchemaDiffType.
     /// </summary>
     public class SchemaDiffType : ConstantClass
@@ -4942,6 +5600,56 @@ namespace Amazon.Glue
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SessionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SettingSource.
+    /// </summary>
+    public class SettingSource : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CATALOG for SettingSource
+        /// </summary>
+        public static readonly SettingSource CATALOG = new SettingSource("CATALOG");
+        /// <summary>
+        /// Constant TABLE for SettingSource
+        /// </summary>
+        public static readonly SettingSource TABLE = new SettingSource("TABLE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SettingSource(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SettingSource FindValue(string value)
+        {
+            return FindValue<SettingSource>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SettingSource(string value)
         {
             return FindValue(value);
         }
@@ -6090,6 +6798,60 @@ namespace Amazon.Glue
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator UnionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type UnnestSpec.
+    /// </summary>
+    public class UnnestSpec : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FULL for UnnestSpec
+        /// </summary>
+        public static readonly UnnestSpec FULL = new UnnestSpec("FULL");
+        /// <summary>
+        /// Constant NOUNNEST for UnnestSpec
+        /// </summary>
+        public static readonly UnnestSpec NOUNNEST = new UnnestSpec("NOUNNEST");
+        /// <summary>
+        /// Constant TOPLEVEL for UnnestSpec
+        /// </summary>
+        public static readonly UnnestSpec TOPLEVEL = new UnnestSpec("TOPLEVEL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UnnestSpec(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UnnestSpec FindValue(string value)
+        {
+            return FindValue<UnnestSpec>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UnnestSpec(string value)
         {
             return FindValue(value);
         }

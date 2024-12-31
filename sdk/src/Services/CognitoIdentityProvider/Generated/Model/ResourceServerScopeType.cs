@@ -30,7 +30,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// A resource server scope.
+    /// One custom scope associated with a user pool resource server. This data type is a
+    /// member of <c>ResourceServerScopeType</c>. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-define-resource-servers.html">
+    /// Scopes, M2M, and API authorization with resource servers</a>. 
+    /// 
+    ///  
+    /// <para>
+    /// This data type is a request parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateResourceServer.html">CreateResourceServer</a>
+    /// and a response parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeResourceServer.html">DescribeResourceServer</a>.
+    /// 
+    /// </para>
     /// </summary>
     public partial class ResourceServerScopeType
     {
@@ -40,7 +49,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ScopeDescription. 
         /// <para>
-        /// A description of the scope.
+        /// A friendly description of a custom scope.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -59,7 +68,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ScopeName. 
         /// <para>
-        /// The name of the scope.
+        /// The name of the scope. Amazon Cognito renders custom scopes in the format <c>resourceServerIdentifier/ScopeName</c>.
+        /// For example, if this parameter is <c>exampleScope</c> in the resource server with
+        /// the identifier <c>exampleResourceServer</c>, you request and receive the scope <c>exampleResourceServer/exampleScope</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

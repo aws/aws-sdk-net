@@ -239,9 +239,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The certificate can be either <c>ACTIVE</c>, <c>PENDING_ROTATION</c>, or <c>INACTIVE</c>.
-        /// <c>PENDING_ROTATION</c> means that this certificate will replace the current certificate
-        /// when it expires.
+        /// Currently, the only available status is <c>ACTIVE</c>: all other values are reserved
+        /// for future use.
         /// </para>
         /// </summary>
         public CertificateStatusType Status

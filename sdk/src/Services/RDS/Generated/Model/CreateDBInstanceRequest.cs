@@ -62,6 +62,7 @@ namespace Amazon.RDS.Model
         private string _characterSetName;
         private bool? _copyTagsToSnapshot;
         private string _customIamInstanceProfile;
+        private DatabaseInsightsMode _databaseInsightsMode;
         private string _dbClusterIdentifier;
         private string _dbInstanceClass;
         private string _dbInstanceIdentifier;
@@ -589,6 +590,33 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DatabaseInsightsMode. 
+        /// <para>
+        /// The mode of Database Insights to enable for the DB instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting only applies to Amazon Aurora DB instances.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Currently, this value is inherited from the DB cluster and can't be changed.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public DatabaseInsightsMode DatabaseInsightsMode
+        {
+            get { return this._databaseInsightsMode; }
+            set { this._databaseInsightsMode = value; }
+        }
+
+        // Check to see if DatabaseInsightsMode property is set
+        internal bool IsSetDatabaseInsightsMode()
+        {
+            return this._databaseInsightsMode != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DBClusterIdentifier. 
         /// <para>
         /// The identifier of the DB cluster that this DB instance will belong to.
@@ -691,6 +719,11 @@ namespace Amazon.RDS.Model
         ///  <ul> <li> 
         /// <para>
         /// Must contain 1 to 64 alphanumeric characters.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must begin with a letter. Subsequent characters can be letters, underscores, or digits
+        /// (0-9).
         /// </para>
         ///  </li> <li> 
         /// <para>

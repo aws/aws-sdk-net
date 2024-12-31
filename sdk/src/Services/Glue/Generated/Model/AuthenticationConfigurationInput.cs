@@ -35,6 +35,9 @@ namespace Amazon.Glue.Model
     public partial class AuthenticationConfigurationInput
     {
         private AuthenticationType _authenticationType;
+        private BasicAuthenticationCredentials _basicAuthenticationCredentials;
+        private Dictionary<string, string> _customAuthenticationCredentials = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private string _kmsKeyArn;
         private OAuth2PropertiesInput _oAuth2Properties;
         private string _secretArn;
 
@@ -54,6 +57,62 @@ namespace Amazon.Glue.Model
         internal bool IsSetAuthenticationType()
         {
             return this._authenticationType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BasicAuthenticationCredentials. 
+        /// <para>
+        /// The credentials used when the authentication type is basic authentication.
+        /// </para>
+        /// </summary>
+        public BasicAuthenticationCredentials BasicAuthenticationCredentials
+        {
+            get { return this._basicAuthenticationCredentials; }
+            set { this._basicAuthenticationCredentials = value; }
+        }
+
+        // Check to see if BasicAuthenticationCredentials property is set
+        internal bool IsSetBasicAuthenticationCredentials()
+        {
+            return this._basicAuthenticationCredentials != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomAuthenticationCredentials. 
+        /// <para>
+        /// The credentials used when the authentication type is custom authentication.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public Dictionary<string, string> CustomAuthenticationCredentials
+        {
+            get { return this._customAuthenticationCredentials; }
+            set { this._customAuthenticationCredentials = value; }
+        }
+
+        // Check to see if CustomAuthenticationCredentials property is set
+        internal bool IsSetCustomAuthenticationCredentials()
+        {
+            return this._customAuthenticationCredentials != null && (this._customAuthenticationCredentials.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyArn. 
+        /// <para>
+        /// The ARN of the KMS key used to encrypt the connection. Only taken an as input in the
+        /// request and stored in the Secret Manager.
+        /// </para>
+        /// </summary>
+        public string KmsKeyArn
+        {
+            get { return this._kmsKeyArn; }
+            set { this._kmsKeyArn = value; }
+        }
+
+        // Check to see if KmsKeyArn property is set
+        internal bool IsSetKmsKeyArn()
+        {
+            return this._kmsKeyArn != null;
         }
 
         /// <summary>

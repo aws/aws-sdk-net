@@ -46,12 +46,18 @@ namespace Amazon.Lambda.Model
     /// </para>
     ///  
     /// <para>
-    /// To send an invocation record to a queue, topic, function, or event bus, specify a
-    /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#invocation-async-destinations">destination</a>.
+    /// To send an invocation record to a queue, topic, S3 bucket, function, or event bus,
+    /// specify a <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#invocation-async-destinations">destination</a>.
     /// You can configure separate destinations for successful invocations (on-success) and
     /// events that fail all processing attempts (on-failure). You can configure destinations
     /// in addition to or instead of a dead-letter queue.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// S3 buckets are supported only for on-failure destinations. To retain records of successful
+    /// invocations, use another destination type.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class PutFunctionEventInvokeConfigRequest : AmazonLambdaRequest
     {
@@ -80,13 +86,22 @@ namespace Amazon.Lambda.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <b>Bucket</b> - The ARN of an Amazon S3 bucket.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <b>Topic</b> - The ARN of a standard SNS topic.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// S3 buckets are supported only for on-failure destinations. To retain records of successful
+        /// invocations, use another destination type.
+        /// </para>
+        ///  </note>
         /// </summary>
         public DestinationConfig DestinationConfig
         {

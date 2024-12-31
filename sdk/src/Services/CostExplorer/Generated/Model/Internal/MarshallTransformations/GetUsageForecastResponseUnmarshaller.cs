@@ -95,6 +95,10 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                 {
                     return LimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
+                {
+                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("UnresolvableUsageUnitException"))
                 {
                     return UnresolvableUsageUnitExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

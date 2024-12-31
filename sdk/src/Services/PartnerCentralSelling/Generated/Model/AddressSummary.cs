@@ -42,7 +42,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property City. 
         /// <para>
-        /// Specifies the end <c>Customer</c>'s city associated with the <c>Opportunity</c>. 
+        /// Specifies the end <c>Customer</c>'s city associated with the <c>Opportunity</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=255)]
@@ -62,7 +62,6 @@ namespace Amazon.PartnerCentralSelling.Model
         /// Gets and sets the property CountryCode. 
         /// <para>
         /// Specifies the end <c>Customer</c>'s country associated with the <c>Opportunity</c>.
-        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -82,7 +81,6 @@ namespace Amazon.PartnerCentralSelling.Model
         /// Gets and sets the property PostalCode. 
         /// <para>
         /// Specifies the end <c>Customer</c>'s postal code associated with the <c>Opportunity</c>.
-        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=20)]
@@ -102,7 +100,6 @@ namespace Amazon.PartnerCentralSelling.Model
         /// Gets and sets the property StateOrRegion. 
         /// <para>
         /// Specifies the end <c>Customer</c>'s state or region associated with the <c>Opportunity</c>.
-        /// 
         /// </para>
         ///  
         /// <para>

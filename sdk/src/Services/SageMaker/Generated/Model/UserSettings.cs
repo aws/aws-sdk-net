@@ -137,7 +137,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property CustomFileSystemConfigs. 
         /// <para>
         /// The settings for assigning a custom file system to a user profile. Permitted users
-        /// can access this file system in Amazon SageMaker Studio.
+        /// can access this file system in Amazon SageMaker AI Studio.
         /// </para>
         ///  
         /// <para>
@@ -348,8 +348,8 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        /// Amazon SageMaker adds a security group to allow NFS traffic from Amazon SageMaker
-        /// Studio. Therefore, the number of security groups that you can specify is one less
+        /// Amazon SageMaker AI adds a security group to allow NFS traffic from Amazon SageMaker
+        /// AI Studio. Therefore, the number of security groups that you can specify is one less
         /// than the maximum number shown.
         /// </para>
         ///  
@@ -374,7 +374,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SharingSettings. 
         /// <para>
-        /// Specifies options for sharing Amazon SageMaker Studio notebooks.
+        /// Specifies options for sharing Amazon SageMaker AI Studio notebooks.
         /// </para>
         /// </summary>
         public SharingSettings SharingSettings

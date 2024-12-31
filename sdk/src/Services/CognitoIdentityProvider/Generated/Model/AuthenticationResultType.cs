@@ -30,7 +30,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// The authentication result.
+    /// The object that your application receives after authentication. Contains tokens and
+    /// information for device authentication.
+    /// 
+    ///  
+    /// <para>
+    /// This data type is a response parameter of authentication operations like <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a>,
+    /// <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a>,
+    /// <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RespondToAuthChallenge.html">RespondToAuthChallenge</a>,
+    /// and <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminRespondToAuthChallenge.html">AdminRespondToAuthChallenge</a>.
+    /// </para>
     /// </summary>
     public partial class AuthenticationResultType
     {
@@ -44,7 +53,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AccessToken. 
         /// <para>
-        /// A valid access token that Amazon Cognito issued to the user who you want to authenticate.
+        /// Your user's access token.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -81,7 +90,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property IdToken. 
         /// <para>
-        /// The ID token.
+        /// Your user's ID token.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -118,7 +127,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property RefreshToken. 
         /// <para>
-        /// The refresh token.
+        /// Your user's refresh token.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -137,7 +146,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property TokenType. 
         /// <para>
-        /// The token type.
+        /// The intended use of the token, for example <c>Bearer</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=131072)]

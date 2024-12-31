@@ -59,6 +59,17 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetSessionSummaryConfiguration())
+            {
+                context.Writer.WritePropertyName("sessionSummaryConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SessionSummaryConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.SessionSummaryConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetStorageDays())
             {
                 context.Writer.WritePropertyName("storageDays");

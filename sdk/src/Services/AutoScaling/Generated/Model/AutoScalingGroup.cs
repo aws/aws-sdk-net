@@ -37,8 +37,10 @@ namespace Amazon.AutoScaling.Model
         private string _autoScalingGroupARN;
         private string _autoScalingGroupName;
         private AvailabilityZoneDistribution _availabilityZoneDistribution;
+        private AvailabilityZoneImpairmentPolicy _availabilityZoneImpairmentPolicy;
         private List<string> _availabilityZones = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _capacityRebalance;
+        private CapacityReservationSpecification _capacityReservationSpecification;
         private string _context;
         private DateTime? _createdTime;
         private int? _defaultCooldown;
@@ -128,6 +130,24 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AvailabilityZoneImpairmentPolicy. 
+        /// <para>
+        ///  The Availability Zone impairment policy. 
+        /// </para>
+        /// </summary>
+        public AvailabilityZoneImpairmentPolicy AvailabilityZoneImpairmentPolicy
+        {
+            get { return this._availabilityZoneImpairmentPolicy; }
+            set { this._availabilityZoneImpairmentPolicy = value; }
+        }
+
+        // Check to see if AvailabilityZoneImpairmentPolicy property is set
+        internal bool IsSetAvailabilityZoneImpairmentPolicy()
+        {
+            return this._availabilityZoneImpairmentPolicy != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property AvailabilityZones. 
         /// <para>
         /// One or more Availability Zones for the group.
@@ -162,6 +182,24 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetCapacityRebalance()
         {
             return this._capacityRebalance.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CapacityReservationSpecification. 
+        /// <para>
+        ///  The capacity reservation specification. 
+        /// </para>
+        /// </summary>
+        public CapacityReservationSpecification CapacityReservationSpecification
+        {
+            get { return this._capacityReservationSpecification; }
+            set { this._capacityReservationSpecification = value; }
+        }
+
+        // Check to see if CapacityReservationSpecification property is set
+        internal bool IsSetCapacityReservationSpecification()
+        {
+            return this._capacityReservationSpecification != null;
         }
 
         /// <summary>

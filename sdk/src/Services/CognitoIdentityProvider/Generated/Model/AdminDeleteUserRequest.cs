@@ -31,7 +31,7 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the AdminDeleteUser operation.
-    /// Deletes a user as an administrator. Works on any user.
+    /// Deletes a user profile in your user pool.
     /// 
     ///  <note> 
     /// <para>
@@ -85,7 +85,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserPoolId. 
         /// <para>
-        /// The user pool ID for the user pool where you want to delete the user.
+        /// The ID of the user pool where you want to delete the user.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=55)]

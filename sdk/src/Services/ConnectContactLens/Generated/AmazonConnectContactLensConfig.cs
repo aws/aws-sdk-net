@@ -34,10 +34,16 @@ namespace Amazon.ConnectContactLens
     public partial class AmazonConnectContactLensConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("Connect Contact Lens", "4.0.0.0");
 
         private static readonly AmazonConnectContactLensEndpointResolver EndpointResolver =
             new AmazonConnectContactLensEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("Connect Contact Lens", "3.7.400.53");
+=======
+            InternalSDKUtils.BuildUserAgentString("Connect Contact Lens", "3.7.400.70");
+>>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
 
         private string _userAgent = UserAgentString;
         ///<summary>

@@ -36,6 +36,7 @@ namespace Amazon.EC2.Model
     public partial class ModifyVerifiedAccessEndpointEniOptions
     {
         private int? _port;
+        private List<ModifyVerifiedAccessEndpointPortRange> _portRanges = AWSConfigs.InitializeCollections ? new List<ModifyVerifiedAccessEndpointPortRange>() : null;
         private VerifiedAccessEndpointProtocol _protocol;
 
         /// <summary>
@@ -55,6 +56,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetPort()
         {
             return this._port.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PortRanges. 
+        /// <para>
+        /// The port ranges.
+        /// </para>
+        /// </summary>
+        public List<ModifyVerifiedAccessEndpointPortRange> PortRanges
+        {
+            get { return this._portRanges; }
+            set { this._portRanges = value; }
+        }
+
+        // Check to see if PortRanges property is set
+        internal bool IsSetPortRanges()
+        {
+            return this._portRanges != null && (this._portRanges.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

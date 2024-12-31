@@ -63,7 +63,37 @@ namespace Amazon.RecycleBin.Model.Internal.MarshallTransformations
             request.ResourcePath = "/list-rules";
             using (MemoryStream memoryStream = new MemoryStream())
             {
+<<<<<<< HEAD
                 using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+||||||| Commit version number update changes
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetLockState())
+=======
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetExcludeResourceTags())
+                {
+                    context.Writer.WritePropertyName("ExcludeResourceTags");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestExcludeResourceTagsListValue in publicRequest.ExcludeResourceTags)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ResourceTagMarshaller.Instance;
+                        marshaller.Marshall(publicRequestExcludeResourceTagsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetLockState())
+>>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
                 {
                     JsonWriter writer = new JsonWriter(streamWriter);
                     writer.Validate = false;

@@ -69,11 +69,27 @@ namespace Amazon.MigrationHub.Model
         }
 
         /// <summary>
+        /// Paginator for ListMigrationTaskUpdates operation
+        ///</summary>
+        public IListMigrationTaskUpdatesPaginator ListMigrationTaskUpdates(ListMigrationTaskUpdatesRequest request) 
+        {
+            return new ListMigrationTaskUpdatesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListProgressUpdateStreams operation
         ///</summary>
         public IListProgressUpdateStreamsPaginator ListProgressUpdateStreams(ListProgressUpdateStreamsRequest request) 
         {
             return new ListProgressUpdateStreamsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListSourceResources operation
+        ///</summary>
+        public IListSourceResourcesPaginator ListSourceResources(ListSourceResourcesRequest request) 
+        {
+            return new ListSourceResourcesPaginator(this.client, request);
         }
     }
 }

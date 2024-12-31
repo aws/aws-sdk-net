@@ -817,6 +817,11 @@
     <max>10280</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.ManagedScalingPolicy.UtilizationPerformanceIndex</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.NotebookExecution.Arn</property>
     <min>0</min>
     <max>256</max>

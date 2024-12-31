@@ -96,6 +96,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.OperatingRegions.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("organizationalUnitExclusionSet/item", targetDepth))
+                    {
+                        var unmarshaller = IpamOrganizationalUnitExclusionUnmarshaller.Instance;
+                        if (unmarshalledObject.OrganizationalUnitExclusions == null)
+                        {
+                            unmarshalledObject.OrganizationalUnitExclusions = new List<IpamOrganizationalUnitExclusion>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.OrganizationalUnitExclusions.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("ownerId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

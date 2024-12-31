@@ -36,6 +36,7 @@ namespace Amazon.DataZone.Model
     {
         private List<FormOutput> _assetFormsOutput = AWSConfigs.InitializeCollections ? new List<FormOutput>() : null;
         private DataSourceConfigurationOutput _configuration;
+        private string _connectionId;
         private DateTime? _createdAt;
         private string _description;
         private string _domainId;
@@ -92,6 +93,24 @@ namespace Amazon.DataZone.Model
         internal bool IsSetConfiguration()
         {
             return this._configuration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConnectionId. 
+        /// <para>
+        /// The ID of the connection.
+        /// </para>
+        /// </summary>
+        public string ConnectionId
+        {
+            get { return this._connectionId; }
+            set { this._connectionId = value; }
+        }
+
+        // Check to see if ConnectionId property is set
+        internal bool IsSetConnectionId()
+        {
+            return this._connectionId != null;
         }
 
         /// <summary>
@@ -174,7 +193,6 @@ namespace Amazon.DataZone.Model
         /// The ID of the environment where this data source creates and publishes assets,
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string EnvironmentId
         {
             get { return this._environmentId; }

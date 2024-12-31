@@ -168,10 +168,22 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     unmarshalledObject.MaximumRetryAttempts = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MetricsConfig", targetDepth))
+                {
+                    var unmarshaller = EventSourceMappingMetricsConfigUnmarshaller.Instance;
+                    unmarshalledObject.MetricsConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ParallelizationFactor", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ParallelizationFactor = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ProvisionedPollerConfig", targetDepth))
+                {
+                    var unmarshaller = ProvisionedPollerConfigUnmarshaller.Instance;
+                    unmarshalledObject.ProvisionedPollerConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Queues", targetDepth))

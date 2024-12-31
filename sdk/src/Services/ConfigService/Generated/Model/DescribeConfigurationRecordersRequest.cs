@@ -31,25 +31,48 @@ namespace Amazon.ConfigService.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeConfigurationRecorders operation.
-    /// Returns the details for the specified configuration recorders. If the configuration
-    /// recorder is not specified, this action returns the details for all configuration recorders
-    /// associated with the account.
+    /// Returns details for the configuration recorder you specify.
     /// 
+    ///  
+    /// <para>
+    /// If a configuration recorder is not specified, this operation returns details for the
+    /// customer managed configuration recorder configured for the account, if applicable.
+    /// </para>
     ///  <note> 
     /// <para>
-    /// You can specify only one configuration recorder for each Amazon Web Services Region
-    /// for each account.
+    /// When making a request to this operation, you can only specify one configuration recorder.
     /// </para>
     ///  </note>
     /// </summary>
     public partial class DescribeConfigurationRecordersRequest : AmazonConfigServiceRequest
     {
+        private string _arn;
         private List<string> _configurationRecorderNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private string _servicePrincipal;
+
+        /// <summary>
+        /// Gets and sets the property Arn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the configuration recorder that you want to specify.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
+        public string Arn
+        {
+            get { return this._arn; }
+            set { this._arn = value; }
+        }
+
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
+        {
+            return this._arn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ConfigurationRecorderNames. 
         /// <para>
-        /// A list of configuration recorder names.
+        /// A list of names of the configuration recorders that you want to specify.
         /// </para>
         /// </summary>
         public List<string> ConfigurationRecorderNames
@@ -62,6 +85,26 @@ namespace Amazon.ConfigService.Model
         internal bool IsSetConfigurationRecorderNames()
         {
             return this._configurationRecorderNames != null && (this._configurationRecorderNames.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServicePrincipal. 
+        /// <para>
+        /// For service-linked configuration recorders, you can use the service principal of the
+        /// linked Amazon Web Services service to specify the configuration recorder.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string ServicePrincipal
+        {
+            get { return this._servicePrincipal; }
+            set { this._servicePrincipal = value; }
+        }
+
+        // Check to see if ServicePrincipal property is set
+        internal bool IsSetServicePrincipal()
+        {
+            return this._servicePrincipal != null;
         }
 
     }

@@ -107,10 +107,28 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.IdempotencyToken);
                     }
 
+<<<<<<< HEAD
                     if(publicRequest.IsSetLifecycle())
                     {
                         context.Writer.WritePropertyName("Lifecycle");
                         context.Writer.WriteObjectStart();
+||||||| Commit version number update changes
+                if(publicRequest.IsSetLifecycle())
+                {
+                    context.Writer.WritePropertyName("Lifecycle");
+                    context.Writer.WriteObjectStart();
+=======
+                if(publicRequest.IsSetIndex())
+                {
+                    context.Writer.WritePropertyName("Index");
+                    context.Writer.Write(publicRequest.Index);
+                }
+
+                if(publicRequest.IsSetLifecycle())
+                {
+                    context.Writer.WritePropertyName("Lifecycle");
+                    context.Writer.WriteObjectStart();
+>>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
 
                         var marshaller = LifecycleMarshaller.Instance;
                         marshaller.Marshall(publicRequest.Lifecycle, context);

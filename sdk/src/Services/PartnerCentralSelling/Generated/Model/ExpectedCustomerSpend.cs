@@ -38,6 +38,7 @@ namespace Amazon.PartnerCentralSelling.Model
     {
         private string _amount;
         private ExpectedCustomerSpendCurrencyCodeEnum _currencyCode;
+        private string _estimationUrl;
         private PaymentFrequency _frequency;
         private string _targetCompany;
 
@@ -79,6 +80,25 @@ namespace Amazon.PartnerCentralSelling.Model
         internal bool IsSetCurrencyCode()
         {
             return this._currencyCode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EstimationUrl. 
+        /// <para>
+        ///  A URL providing additional information or context about the spend estimation. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=4, Max=255)]
+        public string EstimationUrl
+        {
+            get { return this._estimationUrl; }
+            set { this._estimationUrl = value; }
+        }
+
+        // Check to see if EstimationUrl property is set
+        internal bool IsSetEstimationUrl()
+        {
+            return this._estimationUrl != null;
         }
 
         /// <summary>

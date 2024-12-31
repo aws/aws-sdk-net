@@ -39,7 +39,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Group. 
         /// <para>
-        /// The group object for the group.
+        /// The response object for a created group.
         /// </para>
         /// </summary>
         public GroupType Group

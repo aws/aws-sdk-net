@@ -36,6 +36,7 @@ namespace Amazon.BedrockRuntime.Model
     public partial class ConverseStreamTrace
     {
         private GuardrailTraceAssessment _guardrail;
+        private PromptRouterTrace _promptRouter;
 
         /// <summary>
         /// Gets and sets the property Guardrail. 
@@ -53,6 +54,24 @@ namespace Amazon.BedrockRuntime.Model
         internal bool IsSetGuardrail()
         {
             return this._guardrail != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PromptRouter. 
+        /// <para>
+        /// The request's prompt router.
+        /// </para>
+        /// </summary>
+        public PromptRouterTrace PromptRouter
+        {
+            get { return this._promptRouter; }
+            set { this._promptRouter = value; }
+        }
+
+        // Check to see if PromptRouter property is set
+        internal bool IsSetPromptRouter()
+        {
+            return this._promptRouter != null;
         }
 
     }

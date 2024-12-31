@@ -34,10 +34,16 @@ namespace Amazon.MigrationHubStrategyRecommendations
     public partial class AmazonMigrationHubStrategyRecommendationsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("MigrationHubStrategy", "4.0.0.0");
 
         private static readonly AmazonMigrationHubStrategyRecommendationsEndpointResolver EndpointResolver =
             new AmazonMigrationHubStrategyRecommendationsEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("MigrationHubStrategy", "3.7.400.53");
+=======
+            InternalSDKUtils.BuildUserAgentString("MigrationHubStrategy", "3.7.400.70");
+>>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
 
         private string _userAgent = UserAgentString;
         ///<summary>

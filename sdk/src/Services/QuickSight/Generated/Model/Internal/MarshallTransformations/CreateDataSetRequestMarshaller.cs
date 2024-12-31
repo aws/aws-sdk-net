@@ -233,7 +233,32 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
 
+<<<<<<< HEAD
                     if(publicRequest.IsSetRowLevelPermissionDataSet())
+||||||| Commit version number update changes
+                if(publicRequest.IsSetPermissions())
+                {
+                    context.Writer.WritePropertyName("Permissions");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestPermissionsListValue in publicRequest.Permissions)
+=======
+                if(publicRequest.IsSetPerformanceConfiguration())
+                {
+                    context.Writer.WritePropertyName("PerformanceConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = PerformanceConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.PerformanceConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetPermissions())
+                {
+                    context.Writer.WritePropertyName("Permissions");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestPermissionsListValue in publicRequest.Permissions)
+>>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
                     {
                         context.Writer.WritePropertyName("RowLevelPermissionDataSet");
                         context.Writer.WriteObjectStart();

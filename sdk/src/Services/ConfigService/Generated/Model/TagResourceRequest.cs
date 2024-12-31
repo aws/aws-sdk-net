@@ -31,10 +31,11 @@ namespace Amazon.ConfigService.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// Associates the specified tags to a resource with the specified resourceArn. If existing
-    /// tags on a resource are not specified in the request parameters, they are not changed.
-    /// If existing tags are specified, however, then their values will be updated. When a
-    /// resource is deleted, the tags associated with that resource are deleted as well.
+    /// Associates the specified tags to a resource with the specified <c>ResourceArn</c>.
+    /// If existing tags on a resource are not specified in the request parameters, they are
+    /// not changed. If existing tags are specified, however, then their values will be updated.
+    /// When a resource is deleted, the tags associated with that resource are deleted as
+    /// well.
     /// </summary>
     public partial class TagResourceRequest : AmazonConfigServiceRequest
     {
@@ -45,9 +46,41 @@ namespace Amazon.ConfigService.Model
         /// Gets and sets the property ResourceArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) that identifies the resource for which to list the
-        /// tags. Currently, the supported resources are <c>ConfigRule</c>, <c>ConfigurationAggregator</c>
-        /// and <c>AggregatorAuthorization</c>.
+        /// tags. The following resources are supported:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>ConfigurationRecorder</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ConfigRule</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>OrganizationConfigRule</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ConformancePack</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>OrganizationConformancePack</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ConfigurationAggregator</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AggregationAuthorization</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>StoredQuery</c> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1000)]
         public string ResourceArn

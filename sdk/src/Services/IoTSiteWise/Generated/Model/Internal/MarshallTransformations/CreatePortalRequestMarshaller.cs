@@ -126,11 +126,50 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
 
+<<<<<<< HEAD
                     if(publicRequest.IsSetPortalName())
                     {
                         context.Writer.WritePropertyName("portalName");
                         context.Writer.Write(publicRequest.PortalName);
                     }
+||||||| Commit version number update changes
+                if(publicRequest.IsSetRoleArn())
+                {
+                    context.Writer.WritePropertyName("roleArn");
+                    context.Writer.Write(publicRequest.RoleArn);
+                }
+=======
+                if(publicRequest.IsSetPortalType())
+                {
+                    context.Writer.WritePropertyName("portalType");
+                    context.Writer.Write(publicRequest.PortalType);
+                }
+
+                if(publicRequest.IsSetPortalTypeConfiguration())
+                {
+                    context.Writer.WritePropertyName("portalTypeConfiguration");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestPortalTypeConfigurationKvp in publicRequest.PortalTypeConfiguration)
+                    {
+                        context.Writer.WritePropertyName(publicRequestPortalTypeConfigurationKvp.Key);
+                        var publicRequestPortalTypeConfigurationValue = publicRequestPortalTypeConfigurationKvp.Value;
+
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = PortalTypeEntryMarshaller.Instance;
+                        marshaller.Marshall(publicRequestPortalTypeConfigurationValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetRoleArn())
+                {
+                    context.Writer.WritePropertyName("roleArn");
+                    context.Writer.Write(publicRequest.RoleArn);
+                }
+>>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
 
                     if(publicRequest.IsSetRoleArn())
                     {

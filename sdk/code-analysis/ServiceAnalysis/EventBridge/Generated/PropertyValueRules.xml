@@ -1289,6 +1289,12 @@
     <pattern>[^\x00-\x09\x0B\x0C\x0E-\x1F\x7F]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EventBridge.Model.ConnectivityResourceConfigurationArn.ResourceConfigurationArn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^(?:^arn:[a-z0-9\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:resourceconfiguration/rcfg-[0-9a-z]{17}$|^$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EventBridge.Model.CreateConnectionApiKeyAuthRequestParameters.ApiKeyName</property>
     <min>1</min>
     <max>512</max>
@@ -1334,6 +1340,18 @@
     <property>Amazon.EventBridge.Model.DeadLetterConfig.Arn</property>
     <min>1</min>
     <max>1600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridge.Model.DescribeConnectionResourceParameters.ResourceAssociationArn</property>
+    <min>17</min>
+    <max>2048</max>
+    <pattern>^arn:[a-z0-9\\-]+:vpc-lattice:[a-zA-Z0-9\\-]+:\\d{12}:servicenetworkresourceassociation/snra-[0-9a-z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridge.Model.DescribeConnectionResourceParameters.ResourceConfigurationArn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^(?:^arn:[a-z0-9\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:resourceconfiguration/rcfg-[0-9a-z]{17}$|^$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EventBridge.Model.EcsParameters.ReferenceId</property>

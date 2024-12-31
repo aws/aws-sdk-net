@@ -42,6 +42,7 @@ namespace Amazon.MainframeModernization.Model
         private string _environmentId;
         private string _instanceType;
         private string _name;
+        private NetworkType _networkType;
         private EnvironmentLifecycle _status;
 
         /// <summary>
@@ -175,6 +176,24 @@ namespace Amazon.MainframeModernization.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkType. 
+        /// <para>
+        /// The network type supported by the runtime environment.
+        /// </para>
+        /// </summary>
+        public NetworkType NetworkType
+        {
+            get { return this._networkType; }
+            set { this._networkType = value; }
+        }
+
+        // Check to see if NetworkType property is set
+        internal bool IsSetNetworkType()
+        {
+            return this._networkType != null;
         }
 
         /// <summary>

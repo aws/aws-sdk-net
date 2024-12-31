@@ -48,6 +48,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAuthenticationMethod())
+            {
+                context.Writer.WritePropertyName("AuthenticationMethod");
+                context.Writer.Write(requestObject.AuthenticationMethod);
+            }
+
             if(requestObject.IsSetBcpPacketSize())
             {
                 context.Writer.WritePropertyName("BcpPacketSize");

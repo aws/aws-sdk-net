@@ -38,6 +38,7 @@ namespace Amazon.SocialMessaging.Model
         private string _accountName;
         private RegistrationStatus _registrationStatus;
         private List<WhatsAppPhoneNumberDetail> _unregisteredWhatsAppPhoneNumbers = AWSConfigs.InitializeCollections ? new List<WhatsAppPhoneNumberDetail>() : null;
+        private string _wabaId;
 
         /// <summary>
         /// Gets and sets the property AccountName. 
@@ -92,6 +93,25 @@ namespace Amazon.SocialMessaging.Model
         internal bool IsSetUnregisteredWhatsAppPhoneNumbers()
         {
             return this._unregisteredWhatsAppPhoneNumbers != null && (this._unregisteredWhatsAppPhoneNumbers.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property WabaId. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the WhatsApp Business Account ID.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public string WabaId
+        {
+            get { return this._wabaId; }
+            set { this._wabaId = value; }
+        }
+
+        // Check to see if WabaId property is set
+        internal bool IsSetWabaId()
+        {
+            return this._wabaId != null;
         }
 
     }

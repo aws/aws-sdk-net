@@ -35,7 +35,26 @@ namespace Amazon.EKS.Model
     /// </summary>
     public partial class InsightCategorySpecificSummary
     {
+        private List<AddonCompatibilityDetail> _addonCompatibilityDetails = AWSConfigs.InitializeCollections ? new List<AddonCompatibilityDetail>() : null;
         private List<DeprecationDetail> _deprecationDetails = AWSConfigs.InitializeCollections ? new List<DeprecationDetail>() : null;
+
+        /// <summary>
+        /// Gets and sets the property AddonCompatibilityDetails. 
+        /// <para>
+        /// A list of AddonCompatibilityDetail objects for Amazon EKS add-ons.
+        /// </para>
+        /// </summary>
+        public List<AddonCompatibilityDetail> AddonCompatibilityDetails
+        {
+            get { return this._addonCompatibilityDetails; }
+            set { this._addonCompatibilityDetails = value; }
+        }
+
+        // Check to see if AddonCompatibilityDetails property is set
+        internal bool IsSetAddonCompatibilityDetails()
+        {
+            return this._addonCompatibilityDetails != null && (this._addonCompatibilityDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property DeprecationDetails. 

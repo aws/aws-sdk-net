@@ -48,6 +48,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAbsolute())
+            {
+                context.Writer.WritePropertyName("Absolute");
+                context.Writer.Write(requestObject.Absolute);
+            }
+
             if(requestObject.IsSetRelative())
             {
                 context.Writer.WritePropertyName("Relative");

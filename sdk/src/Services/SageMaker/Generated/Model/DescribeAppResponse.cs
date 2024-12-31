@@ -130,7 +130,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// After an application has been shut down for 24 hours, SageMaker deletes all metadata
+        /// After an application has been shut down for 24 hours, SageMaker AI deletes all metadata
         /// for the application. To be considered an update and retain application metadata, applications
         /// must be restarted within 24 hours after the previous application has been shut down.
         /// After this time window, creation of an application is considered a new application
@@ -210,7 +210,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property LastUserActivityTimestamp. 
         /// <para>
         /// The timestamp of the last user's activity. <c>LastUserActivityTimestamp</c> is also
-        /// updated when SageMaker performs health checks without user activity. As a result,
+        /// updated when SageMaker AI performs health checks without user activity. As a result,
         /// this value is set to the same value as <c>LastHealthCheckTimestamp</c>.
         /// </para>
         /// </summary>
@@ -229,7 +229,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ResourceSpec. 
         /// <para>
-        /// The instance type and the Amazon Resource Name (ARN) of the SageMaker image created
+        /// The instance type and the Amazon Resource Name (ARN) of the SageMaker AI image created
         /// on the instance.
         /// </para>
         /// </summary>

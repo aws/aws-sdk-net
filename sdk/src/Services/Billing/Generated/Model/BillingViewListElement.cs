@@ -36,6 +36,7 @@ namespace Amazon.Billing.Model
     {
         private string _arn;
         private BillingViewType _billingViewType;
+        private string _description;
         private string _name;
         private string _ownerAccountId;
 
@@ -77,12 +78,31 @@ namespace Amazon.Billing.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        ///  The description of the billing view. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=0, Max=1024)]
+        public string Description
+        {
+            get { return this._description; }
+            set { this._description = value; }
+        }
+
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
+        {
+            return this._description != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         ///  A list of names of the Billing view. 
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true)]
+        [AWSProperty(Sensitive=true, Min=1, Max=128)]
         public string Name
         {
             get { return this._name; }

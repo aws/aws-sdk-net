@@ -127,7 +127,14 @@ namespace Amazon.SimpleNotificationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>FifoTopic</c> – When this is set to <c>true</c>, a FIFO topic is created.
+        ///  <c>ArchivePolicy</c> – The policy that sets the retention period for messages stored
+        /// in the message archive of an Amazon SNS FIFO topic.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>BeginningArchiveTime</c> – The earliest starting point at which a message in the
+        /// topic’s archive can be replayed from. This point in time is based on the configured
+        /// message retention period set by the topic’s message archiving policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -151,7 +158,11 @@ namespace Amazon.SimpleNotificationService.Model
         /// (Optional) To override the generated value, you can specify a value for the <c>MessageDeduplicationId</c>
         /// parameter for the <c>Publish</c> action.
         /// </para>
-        ///  </li> </ul> </li> </ul>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <c>FifoTopic</c> – When this is set to <c>true</c>, a FIFO topic is created.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public Dictionary<string, string> Attributes
         {

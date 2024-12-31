@@ -118,6 +118,12 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
                     response.UpdateDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("variableReferences", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, List<string>, StringUnmarshaller, ListUnmarshaller<string, StringUnmarshaller>>(StringUnmarshaller.Instance, new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance));
+                    response.VariableReferences = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

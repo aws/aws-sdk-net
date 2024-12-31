@@ -51,8 +51,8 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>PublicInternetOnly</c> - Non-EFS traffic is through a VPC managed by Amazon SageMaker,
-        /// which allows direct internet access.
+        ///  <c>PublicInternetOnly</c> - Non-EFS traffic is through a VPC managed by Amazon SageMaker
+        /// AI, which allows direct internet access.
         /// </para>
         ///  </li> <li> 
         /// <para>

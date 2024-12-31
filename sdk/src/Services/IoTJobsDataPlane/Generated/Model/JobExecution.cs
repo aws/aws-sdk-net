@@ -50,7 +50,8 @@ namespace Amazon.IoTJobsDataPlane.Model
         /// Gets and sets the property ApproximateSecondsBeforeTimedOut. 
         /// <para>
         /// The estimated number of seconds that remain before the job execution status will be
-        /// changed to <c>TIMED_OUT</c>.
+        /// changed to <c>TIMED_OUT</c>. The actual job execution timeout can occur up to 60 seconds
+        /// later than the estimated duration.
         /// </para>
         /// </summary>
         public long? ApproximateSecondsBeforeTimedOut
@@ -125,8 +126,7 @@ namespace Amazon.IoTJobsDataPlane.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedAt. 
         /// <para>
-        /// The time, in milliseconds since the epoch, when the job execution was last updated.
-        /// 
+        /// The time, in seconds since the epoch, when the job execution was last updated. 
         /// </para>
         /// </summary>
         public long? LastUpdatedAt
@@ -144,7 +144,7 @@ namespace Amazon.IoTJobsDataPlane.Model
         /// <summary>
         /// Gets and sets the property QueuedAt. 
         /// <para>
-        /// The time, in milliseconds since the epoch, when the job execution was enqueued.
+        /// The time, in seconds since the epoch, when the job execution was enqueued.
         /// </para>
         /// </summary>
         public long? QueuedAt
@@ -162,7 +162,7 @@ namespace Amazon.IoTJobsDataPlane.Model
         /// <summary>
         /// Gets and sets the property StartedAt. 
         /// <para>
-        /// The time, in milliseconds since the epoch, when the job execution was started.
+        /// The time, in seconds since the epoch, when the job execution was started.
         /// </para>
         /// </summary>
         public long? StartedAt
@@ -181,7 +181,7 @@ namespace Amazon.IoTJobsDataPlane.Model
         /// Gets and sets the property Status. 
         /// <para>
         /// The status of the job execution. Can be one of: "QUEUED", "IN_PROGRESS", "FAILED",
-        /// "SUCCESS", "CANCELED", "REJECTED", or "REMOVED".
+        /// "SUCCESS", "CANCELED", "TIMED_OUT", "REJECTED", or "REMOVED".
         /// </para>
         /// </summary>
         public JobExecutionStatus Status
@@ -200,6 +200,10 @@ namespace Amazon.IoTJobsDataPlane.Model
         /// Gets and sets the property StatusDetails. 
         /// <para>
         /// A collection of name/value pairs that describe the status of the job execution.
+        /// </para>
+        ///  
+        /// <para>
+        /// The maximum length of the value in the name/value pair is 1,024 characters.
         /// </para>
         /// </summary>
         public Dictionary<string, string> StatusDetails

@@ -30,8 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DLM.Model
 {
     /// <summary>
-    /// <b>[Custom policies only]</b> Detailed information about a snapshot, AMI, or event-based
-    /// lifecycle policy.
+    /// Information about a lifecycle policy.
     /// </summary>
     public partial class LifecyclePolicy
     {
@@ -86,15 +85,15 @@ namespace Amazon.DLM.Model
         /// <summary>
         /// Gets and sets the property DefaultPolicy. 
         /// <para>
-        ///  <b>[Default policies only]</b> The type of default policy. Values include:
+        /// Indicates whether the policy is a default lifecycle policy or a custom lifecycle policy.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>VOLUME</c> - Default policy for EBS snapshots
+        ///  <c>true</c> - the policy is a default policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>INSTANCE</c> - Default policy for EBS-backed AMIs
+        ///  <c>false</c> - the policy is a custom policy.
         /// </para>
         ///  </li> </ul>
         /// </summary>

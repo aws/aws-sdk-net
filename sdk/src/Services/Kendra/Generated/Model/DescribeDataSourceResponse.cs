@@ -234,8 +234,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the role with permission to access the data source
-        /// and required resources.
+        /// The Amazon Resource Name (ARN) of the IAM role with permission to access the data
+        /// source and required resources.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1284)]

@@ -73,8 +73,14 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property RejectedEntityInfo. 
         /// <para>
-        /// Reserved for internal use.
+        /// Information about why the entity is rejected when calling <c>PutLogEvents</c>. Only
+        /// returned when the entity is rejected.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// When the entity is rejected, the events may still be accepted.
+        /// </para>
+        ///  </note>
         /// </summary>
         public RejectedEntityInfo RejectedEntityInfo
         {

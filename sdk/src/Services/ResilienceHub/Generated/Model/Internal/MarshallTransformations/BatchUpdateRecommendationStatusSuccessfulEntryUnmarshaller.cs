@@ -66,6 +66,12 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("appComponentId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AppComponentId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("entryId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -38,10 +38,12 @@ namespace Amazon.PartnerCentralSelling.Model
     {
         private string _arn;
         private string _catalog;
+        private string _engagementId;
         private string _engagementTitle;
         private DateTime? _expirationDate;
         private string _id;
         private DateTime? _invitationDate;
+        private ParticipantType _participantType;
         private EngagementInvitationPayloadType _payloadType;
         private Receiver _receiver;
         private string _senderAwsAccountId;
@@ -86,6 +88,25 @@ namespace Amazon.PartnerCentralSelling.Model
         internal bool IsSetCatalog()
         {
             return this._catalog != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EngagementId. 
+        /// <para>
+        ///  The identifier of the Engagement associated with this invitation. This links the
+        /// invitation to its parent Engagement. 
+        /// </para>
+        /// </summary>
+        public string EngagementId
+        {
+            get { return this._engagementId; }
+            set { this._engagementId = value; }
+        }
+
+        // Check to see if EngagementId property is set
+        internal bool IsSetEngagementId()
+        {
+            return this._engagementId != null;
         }
 
         /// <summary>
@@ -166,6 +187,24 @@ namespace Amazon.PartnerCentralSelling.Model
         internal bool IsSetInvitationDate()
         {
             return this._invitationDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParticipantType. 
+        /// <para>
+        /// Identifies the role of the caller in the engagement invitation.
+        /// </para>
+        /// </summary>
+        public ParticipantType ParticipantType
+        {
+            get { return this._participantType; }
+            set { this._participantType = value; }
+        }
+
+        // Check to see if ParticipantType property is set
+        internal bool IsSetParticipantType()
+        {
+            return this._participantType != null;
         }
 
         /// <summary>

@@ -36,6 +36,8 @@ namespace Amazon.Connect.Model
     {
         private List<ContactFlowModuleSearchCriteria> _andConditions = AWSConfigs.InitializeCollections ? new List<ContactFlowModuleSearchCriteria>() : null;
         private List<ContactFlowModuleSearchCriteria> _orConditions = AWSConfigs.InitializeCollections ? new List<ContactFlowModuleSearchCriteria>() : null;
+        private ContactFlowModuleState _stateCondition;
+        private ContactFlowModuleStatus _statusCondition;
         private StringCondition _stringCondition;
 
         /// <summary>
@@ -72,6 +74,42 @@ namespace Amazon.Connect.Model
         internal bool IsSetOrConditions()
         {
             return this._orConditions != null && (this._orConditions.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StateCondition. 
+        /// <para>
+        /// The state of the flow.
+        /// </para>
+        /// </summary>
+        public ContactFlowModuleState StateCondition
+        {
+            get { return this._stateCondition; }
+            set { this._stateCondition = value; }
+        }
+
+        // Check to see if StateCondition property is set
+        internal bool IsSetStateCondition()
+        {
+            return this._stateCondition != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatusCondition. 
+        /// <para>
+        /// The status of the flow.
+        /// </para>
+        /// </summary>
+        public ContactFlowModuleStatus StatusCondition
+        {
+            get { return this._statusCondition; }
+            set { this._statusCondition = value; }
+        }
+
+        // Check to see if StatusCondition property is set
+        internal bool IsSetStatusCondition()
+        {
+            return this._statusCondition != null;
         }
 
         /// <summary>

@@ -30,7 +30,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// The password policy type.
+    /// The password policy settings for a user pool, including complexity, history, and length
+    /// requirements.
+    /// 
+    ///  
+    /// <para>
+    /// This data type is a request and response parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html">CreateUserPool</a>
+    /// and <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPool.html">UpdateUserPool</a>,
+    /// and a response parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPool.html">DescribeUserPool</a>.
+    /// </para>
     /// </summary>
     public partial class PasswordPolicyType
     {
@@ -93,8 +101,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property RequireLowercase. 
         /// <para>
-        /// In the password policy that you have set, refers to whether you have required users
-        /// to use at least one lowercase letter in their password.
+        /// The requirement in a password policy that users must include at least one lowercase
+        /// letter in their password.
         /// </para>
         /// </summary>
         public bool? RequireLowercase
@@ -112,8 +120,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property RequireNumbers. 
         /// <para>
-        /// In the password policy that you have set, refers to whether you have required users
-        /// to use at least one number in their password.
+        /// The requirement in a password policy that users must include at least one number in
+        /// their password.
         /// </para>
         /// </summary>
         public bool? RequireNumbers
@@ -131,8 +139,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property RequireSymbols. 
         /// <para>
-        /// In the password policy that you have set, refers to whether you have required users
-        /// to use at least one symbol in their password.
+        /// The requirement in a password policy that users must include at least one symbol in
+        /// their password.
         /// </para>
         /// </summary>
         public bool? RequireSymbols
@@ -150,8 +158,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property RequireUppercase. 
         /// <para>
-        /// In the password policy that you have set, refers to whether you have required users
-        /// to use at least one uppercase letter in their password.
+        /// The requirement in a password policy that users must include at least one uppercase
+        /// letter in their password.
         /// </para>
         /// </summary>
         public bool? RequireUppercase

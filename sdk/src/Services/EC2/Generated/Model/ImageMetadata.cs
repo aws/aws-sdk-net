@@ -36,6 +36,7 @@ namespace Amazon.EC2.Model
     {
         private string _creationDate;
         private string _deprecationTime;
+        private bool? _imageAllowed;
         private string _imageId;
         private string _imageOwnerAlias;
         private bool? _isPublic;
@@ -77,6 +78,32 @@ namespace Amazon.EC2.Model
         internal bool IsSetDeprecationTime()
         {
             return this._deprecationTime != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImageAllowed. 
+        /// <para>
+        /// If <c>true</c>, the AMI satisfies the criteria for Allowed AMIs and can be discovered
+        /// and used in the account. If <c>false</c>, the AMI can't be discovered or used in the
+        /// account.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-allowed-amis.html">Control
+        /// the discovery and use of AMIs in Amazon EC2 with Allowed AMIs</a> in <i>Amazon EC2
+        /// User Guide</i>.
+        /// </para>
+        /// </summary>
+        public bool ImageAllowed
+        {
+            get { return this._imageAllowed.GetValueOrDefault(); }
+            set { this._imageAllowed = value; }
+        }
+
+        // Check to see if ImageAllowed property is set
+        internal bool IsSetImageAllowed()
+        {
+            return this._imageAllowed.HasValue; 
         }
 
         /// <summary>

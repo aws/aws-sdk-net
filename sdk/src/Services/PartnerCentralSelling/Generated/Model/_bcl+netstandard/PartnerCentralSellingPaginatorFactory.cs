@@ -37,6 +37,22 @@ namespace Amazon.PartnerCentralSelling.Model
         }
 
         /// <summary>
+        /// Paginator for ListEngagementByAcceptingInvitationTasks operation
+        ///</summary>
+        public IListEngagementByAcceptingInvitationTasksPaginator ListEngagementByAcceptingInvitationTasks(ListEngagementByAcceptingInvitationTasksRequest request) 
+        {
+            return new ListEngagementByAcceptingInvitationTasksPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListEngagementFromOpportunityTasks operation
+        ///</summary>
+        public IListEngagementFromOpportunityTasksPaginator ListEngagementFromOpportunityTasks(ListEngagementFromOpportunityTasksRequest request) 
+        {
+            return new ListEngagementFromOpportunityTasksPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListEngagementInvitations operation
         ///</summary>
         public IListEngagementInvitationsPaginator ListEngagementInvitations(ListEngagementInvitationsRequest request) 
@@ -45,11 +61,51 @@ namespace Amazon.PartnerCentralSelling.Model
         }
 
         /// <summary>
+        /// Paginator for ListEngagementMembers operation
+        ///</summary>
+        public IListEngagementMembersPaginator ListEngagementMembers(ListEngagementMembersRequest request) 
+        {
+            return new ListEngagementMembersPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListEngagementResourceAssociations operation
+        ///</summary>
+        public IListEngagementResourceAssociationsPaginator ListEngagementResourceAssociations(ListEngagementResourceAssociationsRequest request) 
+        {
+            return new ListEngagementResourceAssociationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListEngagements operation
+        ///</summary>
+        public IListEngagementsPaginator ListEngagements(ListEngagementsRequest request) 
+        {
+            return new ListEngagementsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListOpportunities operation
         ///</summary>
         public IListOpportunitiesPaginator ListOpportunities(ListOpportunitiesRequest request) 
         {
             return new ListOpportunitiesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListResourceSnapshotJobs operation
+        ///</summary>
+        public IListResourceSnapshotJobsPaginator ListResourceSnapshotJobs(ListResourceSnapshotJobsRequest request) 
+        {
+            return new ListResourceSnapshotJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListResourceSnapshots operation
+        ///</summary>
+        public IListResourceSnapshotsPaginator ListResourceSnapshots(ListResourceSnapshotsRequest request) 
+        {
+            return new ListResourceSnapshotsPaginator(this.client, request);
         }
 
         /// <summary>

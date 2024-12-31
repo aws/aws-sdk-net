@@ -34,10 +34,16 @@ namespace Amazon.ResourceExplorer2
     public partial class AmazonResourceExplorer2Config : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("Resource Explorer 2", "4.0.0.0");
 
         private static readonly AmazonResourceExplorer2EndpointResolver EndpointResolver =
             new AmazonResourceExplorer2EndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("Resource Explorer 2", "3.7.402.7");
+=======
+            InternalSDKUtils.BuildUserAgentString("Resource Explorer 2", "3.7.402.24");
+>>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
 
         private string _userAgent = UserAgentString;
         ///<summary>

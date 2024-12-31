@@ -40,6 +40,7 @@ namespace Amazon.QBusiness.Model
         private ContentType _contentType;
         private DocumentEnrichmentConfiguration _documentEnrichmentConfiguration;
         private string _id;
+        private MediaExtractionConfiguration _mediaExtractionConfiguration;
         private string _title;
 
         /// <summary>
@@ -158,6 +159,24 @@ namespace Amazon.QBusiness.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MediaExtractionConfiguration. 
+        /// <para>
+        /// The configuration for extracting information from media in the document.
+        /// </para>
+        /// </summary>
+        public MediaExtractionConfiguration MediaExtractionConfiguration
+        {
+            get { return this._mediaExtractionConfiguration; }
+            set { this._mediaExtractionConfiguration = value; }
+        }
+
+        // Check to see if MediaExtractionConfiguration property is set
+        internal bool IsSetMediaExtractionConfiguration()
+        {
+            return this._mediaExtractionConfiguration != null;
         }
 
         /// <summary>

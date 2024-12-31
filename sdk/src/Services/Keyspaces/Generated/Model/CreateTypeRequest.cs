@@ -36,6 +36,11 @@ namespace Amazon.Keyspaces.Model
     /// 
     ///  
     /// <para>
+    /// To configure the required permissions, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/configure-udt-permissions.html#udt-permissions-create">Permissions
+    /// to create a UDT</a> in the <i>Amazon Keyspaces Developer Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/udts.html">User-defined
     /// types (UDTs)</a> in the <i>Amazon Keyspaces Developer Guide</i>. 
     /// </para>

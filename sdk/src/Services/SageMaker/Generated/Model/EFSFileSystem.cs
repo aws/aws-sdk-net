@@ -31,8 +31,8 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// A file system, created by you in Amazon EFS, that you assign to a user profile or
-    /// space for an Amazon SageMaker Domain. Permitted users can access this file system
-    /// in Amazon SageMaker Studio.
+    /// space for an Amazon SageMaker AI Domain. Permitted users can access this file system
+    /// in Amazon SageMaker AI Studio.
     /// </summary>
     public partial class EFSFileSystem
     {

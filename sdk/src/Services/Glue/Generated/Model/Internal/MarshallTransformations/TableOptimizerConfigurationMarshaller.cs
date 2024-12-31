@@ -82,6 +82,17 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.RoleArn);
             }
 
+            if(requestObject.IsSetVpcConfiguration())
+            {
+                context.Writer.WritePropertyName("vpcConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = TableOptimizerVpcConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.VpcConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

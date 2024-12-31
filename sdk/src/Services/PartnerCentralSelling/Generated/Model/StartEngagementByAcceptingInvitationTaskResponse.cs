@@ -38,6 +38,7 @@ namespace Amazon.PartnerCentralSelling.Model
         private string _message;
         private string _opportunityId;
         private ReasonCode _reasonCode;
+        private string _resourceSnapshotJobId;
         private DateTime? _startTime;
         private string _taskArn;
         private string _taskId;
@@ -116,6 +117,24 @@ namespace Amazon.PartnerCentralSelling.Model
         internal bool IsSetReasonCode()
         {
             return this._reasonCode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceSnapshotJobId. 
+        /// <para>
+        ///  The identifier of the resource snapshot job created as part of this task. 
+        /// </para>
+        /// </summary>
+        public string ResourceSnapshotJobId
+        {
+            get { return this._resourceSnapshotJobId; }
+            set { this._resourceSnapshotJobId = value; }
+        }
+
+        // Check to see if ResourceSnapshotJobId property is set
+        internal bool IsSetResourceSnapshotJobId()
+        {
+            return this._resourceSnapshotJobId != null;
         }
 
         /// <summary>

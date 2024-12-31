@@ -90,6 +90,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreateEnvironment = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("createEnvironmentFromBlueprint", targetDepth))
+                {
+                    var unmarshaller = UnitUnmarshaller.Instance;
+                    unmarshalledObject.CreateEnvironmentFromBlueprint = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("createEnvironmentProfile", targetDepth))
                 {
                     var unmarshaller = CreateEnvironmentProfilePolicyGrantDetailUnmarshaller.Instance;
@@ -112,6 +118,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = CreateProjectPolicyGrantDetailUnmarshaller.Instance;
                     unmarshalledObject.CreateProject = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("createProjectFromProjectProfile", targetDepth))
+                {
+                    var unmarshaller = CreateProjectFromProjectProfilePolicyGrantDetailUnmarshaller.Instance;
+                    unmarshalledObject.CreateProjectFromProjectProfile = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("delegateCreateEnvironmentProfile", targetDepth))

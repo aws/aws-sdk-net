@@ -31,8 +31,7 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the AdminConfirmSignUp operation.
-    /// This IAM-authenticated API operation confirms user sign-up as an administrator. Unlike
-    /// <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ConfirmSignUp.html">ConfirmSignUp</a>,
+    /// Confirms user sign-up as an administrator. Unlike <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ConfirmSignUp.html">ConfirmSignUp</a>,
     /// your IAM credentials authorize user account confirmation. No confirmation code is
     /// required.
     /// 
@@ -63,7 +62,11 @@ namespace Amazon.CognitoIdentityProvider.Model
     ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
     /// the Amazon Cognito user pools API and user pool endpoints</a> 
     /// </para>
-    ///  </li> </ul> </note>
+    ///  </li> </ul> </note> 
+    /// <para>
+    /// To configure your user pool to require administrative confirmation of users, set <c>AllowAdminCreateUserOnly</c>
+    /// to <c>true</c> in a <c>CreateUserPool</c> or <c>UpdateUserPool</c> request.
+    /// </para>
     /// </summary>
     public partial class AdminConfirmSignUpRequest : AmazonCognitoIdentityProviderRequest
     {
@@ -95,22 +98,23 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the
-        /// following:
+        /// When you use the <c>ClientMetadata</c> parameter, note that Amazon Cognito won't do
+        /// the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Store the ClientMetadata value. This data is available only to Lambda triggers that
-        /// are assigned to a user pool to support custom workflows. If your user pool configuration
-        /// doesn't include triggers, the ClientMetadata parameter serves no purpose.
+        /// Store the <c>ClientMetadata</c> value. This data is available only to Lambda triggers
+        /// that are assigned to a user pool to support custom workflows. If your user pool configuration
+        /// doesn't include triggers, the <c>ClientMetadata</c> parameter serves no purpose.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Validate the ClientMetadata value.
+        /// Validate the <c>ClientMetadata</c> value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.
+        /// Encrypt the <c>ClientMetadata</c> value. Don't send sensitive information in this
+        /// parameter.
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>
@@ -151,7 +155,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserPoolId. 
         /// <para>
-        /// The user pool ID for which you want to confirm user registration.
+        /// The ID of the user pool where you want to confirm a user's sign-up request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=55)]

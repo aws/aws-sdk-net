@@ -40,6 +40,7 @@ namespace Amazon.DataZone.Model
         private string _domainExecutionRole;
         private string _identifier;
         private string _name;
+        private string _serviceRole;
         private SingleSignOn _singleSignOn;
 
         /// <summary>
@@ -132,6 +133,24 @@ namespace Amazon.DataZone.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceRole. 
+        /// <para>
+        /// The service role of the domain.
+        /// </para>
+        /// </summary>
+        public string ServiceRole
+        {
+            get { return this._serviceRole; }
+            set { this._serviceRole = value; }
+        }
+
+        // Check to see if ServiceRole property is set
+        internal bool IsSetServiceRole()
+        {
+            return this._serviceRole != null;
         }
 
         /// <summary>

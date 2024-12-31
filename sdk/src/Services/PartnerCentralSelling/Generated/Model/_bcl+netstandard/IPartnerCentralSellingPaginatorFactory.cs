@@ -27,14 +27,49 @@ namespace Amazon.PartnerCentralSelling.Model
     {
 
         /// <summary>
+        /// Paginator for ListEngagementByAcceptingInvitationTasks operation
+        ///</summary>
+        IListEngagementByAcceptingInvitationTasksPaginator ListEngagementByAcceptingInvitationTasks(ListEngagementByAcceptingInvitationTasksRequest request);
+
+        /// <summary>
+        /// Paginator for ListEngagementFromOpportunityTasks operation
+        ///</summary>
+        IListEngagementFromOpportunityTasksPaginator ListEngagementFromOpportunityTasks(ListEngagementFromOpportunityTasksRequest request);
+
+        /// <summary>
         /// Paginator for ListEngagementInvitations operation
         ///</summary>
         IListEngagementInvitationsPaginator ListEngagementInvitations(ListEngagementInvitationsRequest request);
 
         /// <summary>
+        /// Paginator for ListEngagementMembers operation
+        ///</summary>
+        IListEngagementMembersPaginator ListEngagementMembers(ListEngagementMembersRequest request);
+
+        /// <summary>
+        /// Paginator for ListEngagementResourceAssociations operation
+        ///</summary>
+        IListEngagementResourceAssociationsPaginator ListEngagementResourceAssociations(ListEngagementResourceAssociationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListEngagements operation
+        ///</summary>
+        IListEngagementsPaginator ListEngagements(ListEngagementsRequest request);
+
+        /// <summary>
         /// Paginator for ListOpportunities operation
         ///</summary>
         IListOpportunitiesPaginator ListOpportunities(ListOpportunitiesRequest request);
+
+        /// <summary>
+        /// Paginator for ListResourceSnapshotJobs operation
+        ///</summary>
+        IListResourceSnapshotJobsPaginator ListResourceSnapshotJobs(ListResourceSnapshotJobsRequest request);
+
+        /// <summary>
+        /// Paginator for ListResourceSnapshots operation
+        ///</summary>
+        IListResourceSnapshotsPaginator ListResourceSnapshots(ListResourceSnapshotsRequest request);
 
         /// <summary>
         /// Paginator for ListSolutions operation

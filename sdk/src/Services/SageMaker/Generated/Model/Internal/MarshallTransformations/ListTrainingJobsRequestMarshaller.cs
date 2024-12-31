@@ -140,7 +140,143 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     writer.WriteObjectEnd();
                 }
 
+<<<<<<< HEAD
                 request.Content = memoryStream.ToArray();
+||||||| Commit version number update changes
+                if(publicRequest.IsSetCreationTimeBefore())
+                {
+                    context.Writer.WritePropertyName("CreationTimeBefore");
+                    context.Writer.Write(publicRequest.CreationTimeBefore);
+                }
+
+                if(publicRequest.IsSetLastModifiedTimeAfter())
+                {
+                    context.Writer.WritePropertyName("LastModifiedTimeAfter");
+                    context.Writer.Write(publicRequest.LastModifiedTimeAfter);
+                }
+
+                if(publicRequest.IsSetLastModifiedTimeBefore())
+                {
+                    context.Writer.WritePropertyName("LastModifiedTimeBefore");
+                    context.Writer.Write(publicRequest.LastModifiedTimeBefore);
+                }
+
+                if(publicRequest.IsSetMaxResults())
+                {
+                    context.Writer.WritePropertyName("MaxResults");
+                    context.Writer.Write(publicRequest.MaxResults);
+                }
+
+                if(publicRequest.IsSetNameContains())
+                {
+                    context.Writer.WritePropertyName("NameContains");
+                    context.Writer.Write(publicRequest.NameContains);
+                }
+
+                if(publicRequest.IsSetNextToken())
+                {
+                    context.Writer.WritePropertyName("NextToken");
+                    context.Writer.Write(publicRequest.NextToken);
+                }
+
+                if(publicRequest.IsSetSortBy())
+                {
+                    context.Writer.WritePropertyName("SortBy");
+                    context.Writer.Write(publicRequest.SortBy);
+                }
+
+                if(publicRequest.IsSetSortOrder())
+                {
+                    context.Writer.WritePropertyName("SortOrder");
+                    context.Writer.Write(publicRequest.SortOrder);
+                }
+
+                if(publicRequest.IsSetStatusEquals())
+                {
+                    context.Writer.WritePropertyName("StatusEquals");
+                    context.Writer.Write(publicRequest.StatusEquals);
+                }
+
+                if(publicRequest.IsSetWarmPoolStatusEquals())
+                {
+                    context.Writer.WritePropertyName("WarmPoolStatusEquals");
+                    context.Writer.Write(publicRequest.WarmPoolStatusEquals);
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+=======
+                if(publicRequest.IsSetCreationTimeBefore())
+                {
+                    context.Writer.WritePropertyName("CreationTimeBefore");
+                    context.Writer.Write(publicRequest.CreationTimeBefore);
+                }
+
+                if(publicRequest.IsSetLastModifiedTimeAfter())
+                {
+                    context.Writer.WritePropertyName("LastModifiedTimeAfter");
+                    context.Writer.Write(publicRequest.LastModifiedTimeAfter);
+                }
+
+                if(publicRequest.IsSetLastModifiedTimeBefore())
+                {
+                    context.Writer.WritePropertyName("LastModifiedTimeBefore");
+                    context.Writer.Write(publicRequest.LastModifiedTimeBefore);
+                }
+
+                if(publicRequest.IsSetMaxResults())
+                {
+                    context.Writer.WritePropertyName("MaxResults");
+                    context.Writer.Write(publicRequest.MaxResults);
+                }
+
+                if(publicRequest.IsSetNameContains())
+                {
+                    context.Writer.WritePropertyName("NameContains");
+                    context.Writer.Write(publicRequest.NameContains);
+                }
+
+                if(publicRequest.IsSetNextToken())
+                {
+                    context.Writer.WritePropertyName("NextToken");
+                    context.Writer.Write(publicRequest.NextToken);
+                }
+
+                if(publicRequest.IsSetSortBy())
+                {
+                    context.Writer.WritePropertyName("SortBy");
+                    context.Writer.Write(publicRequest.SortBy);
+                }
+
+                if(publicRequest.IsSetSortOrder())
+                {
+                    context.Writer.WritePropertyName("SortOrder");
+                    context.Writer.Write(publicRequest.SortOrder);
+                }
+
+                if(publicRequest.IsSetStatusEquals())
+                {
+                    context.Writer.WritePropertyName("StatusEquals");
+                    context.Writer.Write(publicRequest.StatusEquals);
+                }
+
+                if(publicRequest.IsSetTrainingPlanArnEquals())
+                {
+                    context.Writer.WritePropertyName("TrainingPlanArnEquals");
+                    context.Writer.Write(publicRequest.TrainingPlanArnEquals);
+                }
+
+                if(publicRequest.IsSetWarmPoolStatusEquals())
+                {
+                    context.Writer.WritePropertyName("WarmPoolStatusEquals");
+                    context.Writer.Write(publicRequest.WarmPoolStatusEquals);
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+>>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
             }
 
 

@@ -191,6 +191,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetLayerMapVisual())
+            {
+                context.Writer.WritePropertyName("LayerMapVisual");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = LayerMapVisualMarshaller.Instance;
+                marshaller.Marshall(requestObject.LayerMapVisual, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetLineChartVisual())
             {
                 context.Writer.WritePropertyName("LineChartVisual");
@@ -220,6 +231,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
                 var marshaller = PivotTableVisualMarshaller.Instance;
                 marshaller.Marshall(requestObject.PivotTableVisual, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetPluginVisual())
+            {
+                context.Writer.WritePropertyName("PluginVisual");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = PluginVisualMarshaller.Instance;
+                marshaller.Marshall(requestObject.PluginVisual, context);
 
                 context.Writer.WriteObjectEnd();
             }

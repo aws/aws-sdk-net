@@ -32,6 +32,12 @@ namespace Amazon.ECS.Model
     /// <summary>
     /// Container for the parameters to the DescribeClusters operation.
     /// Describes one or more of your clusters.
+    /// 
+    ///  
+    /// <para>
+    ///  For CLI examples, see <a href="https://github.com/aws/aws-cli/blob/develop/awscli/examples/ecs/describe-clusters.rst">describe-clusters.rst</a>
+    /// on GitHub.
+    /// </para>
     /// </summary>
     public partial class DescribeClustersRequest : AmazonECSRequest
     {

@@ -34,7 +34,26 @@ namespace Amazon.TaxSettings.Model
     /// </summary>
     public partial class TaxRegistrationDocument
     {
+        private TaxRegistrationDocFile _file;
         private SourceS3Location _s3Location;
+
+        /// <summary>
+        /// Gets and sets the property File. 
+        /// <para>
+        /// The tax registration document. 
+        /// </para>
+        /// </summary>
+        public TaxRegistrationDocFile File
+        {
+            get { return this._file; }
+            set { this._file = value; }
+        }
+
+        // Check to see if File property is set
+        internal bool IsSetFile()
+        {
+            return this._file != null;
+        }
 
         /// <summary>
         /// Gets and sets the property S3Location. 
@@ -42,7 +61,6 @@ namespace Amazon.TaxSettings.Model
         /// The Amazon S3 location where your tax registration document is stored.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public SourceS3Location S3Location
         {
             get { return this._s3Location; }

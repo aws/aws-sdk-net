@@ -126,7 +126,120 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
                     writer.WriteObjectEnd();
                 }
 
+<<<<<<< HEAD
                 request.Content = memoryStream.ToArray();
+||||||| Commit version number update changes
+                if(publicRequest.IsSetPolicyType())
+                {
+                    context.Writer.WritePropertyName("PolicyType");
+                    context.Writer.Write(publicRequest.PolicyType);
+                }
+
+                if(publicRequest.IsSetResourceId())
+                {
+                    context.Writer.WritePropertyName("ResourceId");
+                    context.Writer.Write(publicRequest.ResourceId);
+                }
+
+                if(publicRequest.IsSetScalableDimension())
+                {
+                    context.Writer.WritePropertyName("ScalableDimension");
+                    context.Writer.Write(publicRequest.ScalableDimension);
+                }
+
+                if(publicRequest.IsSetServiceNamespace())
+                {
+                    context.Writer.WritePropertyName("ServiceNamespace");
+                    context.Writer.Write(publicRequest.ServiceNamespace);
+                }
+
+                if(publicRequest.IsSetStepScalingPolicyConfiguration())
+                {
+                    context.Writer.WritePropertyName("StepScalingPolicyConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = StepScalingPolicyConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.StepScalingPolicyConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetTargetTrackingScalingPolicyConfiguration())
+                {
+                    context.Writer.WritePropertyName("TargetTrackingScalingPolicyConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TargetTrackingScalingPolicyConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.TargetTrackingScalingPolicyConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+=======
+                if(publicRequest.IsSetPolicyType())
+                {
+                    context.Writer.WritePropertyName("PolicyType");
+                    context.Writer.Write(publicRequest.PolicyType);
+                }
+
+                if(publicRequest.IsSetPredictiveScalingPolicyConfiguration())
+                {
+                    context.Writer.WritePropertyName("PredictiveScalingPolicyConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = PredictiveScalingPolicyConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.PredictiveScalingPolicyConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetResourceId())
+                {
+                    context.Writer.WritePropertyName("ResourceId");
+                    context.Writer.Write(publicRequest.ResourceId);
+                }
+
+                if(publicRequest.IsSetScalableDimension())
+                {
+                    context.Writer.WritePropertyName("ScalableDimension");
+                    context.Writer.Write(publicRequest.ScalableDimension);
+                }
+
+                if(publicRequest.IsSetServiceNamespace())
+                {
+                    context.Writer.WritePropertyName("ServiceNamespace");
+                    context.Writer.Write(publicRequest.ServiceNamespace);
+                }
+
+                if(publicRequest.IsSetStepScalingPolicyConfiguration())
+                {
+                    context.Writer.WritePropertyName("StepScalingPolicyConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = StepScalingPolicyConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.StepScalingPolicyConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetTargetTrackingScalingPolicyConfiguration())
+                {
+                    context.Writer.WritePropertyName("TargetTrackingScalingPolicyConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TargetTrackingScalingPolicyConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.TargetTrackingScalingPolicyConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+>>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
             }
 
 

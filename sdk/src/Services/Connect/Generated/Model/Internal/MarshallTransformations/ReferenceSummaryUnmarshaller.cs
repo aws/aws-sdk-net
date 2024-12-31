@@ -84,6 +84,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.Email = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EmailMessage", targetDepth))
+                {
+                    var unmarshaller = EmailMessageReferenceUnmarshaller.Instance;
+                    unmarshalledObject.EmailMessage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Number", targetDepth))
                 {
                     var unmarshaller = NumberReferenceUnmarshaller.Instance;

@@ -82,6 +82,12 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
                     response.Platform = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("runtime", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Runtime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

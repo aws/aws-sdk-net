@@ -34,10 +34,31 @@ namespace Amazon.QConnect.Model
     /// </summary>
     public partial class AnswerRecommendationAIAgentConfiguration
     {
+        private string _answerGenerationAIGuardrailId;
         private string _answerGenerationAIPromptId;
         private List<AssociationConfiguration> _associationConfigurations = AWSConfigs.InitializeCollections ? new List<AssociationConfiguration>() : null;
         private string _intentLabelingGenerationAIPromptId;
+        private string _locale;
         private string _queryReformulationAIPromptId;
+
+        /// <summary>
+        /// Gets and sets the property AnswerGenerationAIGuardrailId. 
+        /// <para>
+        /// The AI Guardrail identifier for the Answer Generation Guardrail used by the <c>ANSWER_RECOMMENDATION</c>
+        /// AI Agent.
+        /// </para>
+        /// </summary>
+        public string AnswerGenerationAIGuardrailId
+        {
+            get { return this._answerGenerationAIGuardrailId; }
+            set { this._answerGenerationAIGuardrailId = value; }
+        }
+
+        // Check to see if AnswerGenerationAIGuardrailId property is set
+        internal bool IsSetAnswerGenerationAIGuardrailId()
+        {
+            return this._answerGenerationAIGuardrailId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AnswerGenerationAIPromptId. 
@@ -93,6 +114,33 @@ namespace Amazon.QConnect.Model
         internal bool IsSetIntentLabelingGenerationAIPromptId()
         {
             return this._intentLabelingGenerationAIPromptId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Locale. 
+        /// <para>
+        /// The locale to which specifies the language and region settings that determine the
+        /// response language for <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_amazon-q-connect_QueryAssistant.html">QueryAssistant</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Changing this locale to anything other than <c>en_US</c> will turn off recommendations
+        /// triggered by contact transcripts for agent assistance, as this feature is not supported
+        /// in multiple languages.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min=1, Max=4096)]
+        public string Locale
+        {
+            get { return this._locale; }
+            set { this._locale = value; }
+        }
+
+        // Check to see if Locale property is set
+        internal bool IsSetLocale()
+        {
+            return this._locale != null;
         }
 
         /// <summary>

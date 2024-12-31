@@ -41,12 +41,31 @@ namespace Amazon.BedrockAgentRuntime.Model
     /// </summary>
     public partial class SessionState
     {
+        private ConversationHistory _conversationHistory;
         private List<InputFile> _files = AWSConfigs.InitializeCollections ? new List<InputFile>() : null;
         private string _invocationId;
         private List<KnowledgeBaseConfiguration> _knowledgeBaseConfigurations = AWSConfigs.InitializeCollections ? new List<KnowledgeBaseConfiguration>() : null;
         private Dictionary<string, string> _promptSessionAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private List<InvocationResultMember> _returnControlInvocationResults = AWSConfigs.InitializeCollections ? new List<InvocationResultMember>() : null;
         private Dictionary<string, string> _sessionAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property ConversationHistory. 
+        /// <para>
+        /// The state's conversation history.
+        /// </para>
+        /// </summary>
+        public ConversationHistory ConversationHistory
+        {
+            get { return this._conversationHistory; }
+            set { this._conversationHistory = value; }
+        }
+
+        // Check to see if ConversationHistory property is set
+        internal bool IsSetConversationHistory()
+        {
+            return this._conversationHistory != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Files. 

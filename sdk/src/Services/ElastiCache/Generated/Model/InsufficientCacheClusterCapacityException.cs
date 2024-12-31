@@ -31,7 +31,7 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// The requested cache node type is not available in the specified Availability Zone.
-    /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY">InsufficientCacheClusterCapacity</a>
+    /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY">InsufficientCacheClusterCapacity</a>
     /// in the ElastiCache User Guide.
     /// </summary>
     #if !NETSTANDARD

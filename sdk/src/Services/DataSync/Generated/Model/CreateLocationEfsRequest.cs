@@ -168,8 +168,8 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property Subdirectory. 
         /// <para>
         /// Specifies a mount path for your Amazon EFS file system. This is where DataSync reads
-        /// or writes data (depending on if this is a source or destination location) on your
-        /// file system.
+        /// or writes data on your file system (depending on if this is a source or destination
+        /// location).
         /// </para>
         ///  
         /// <para>

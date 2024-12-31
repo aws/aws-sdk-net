@@ -65,6 +65,9 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetPosition())
                 request.Parameters.Add("position", StringUtils.FromString(publicRequest.Position));
+            
+            if (publicRequest.IsSetResourceOwner())
+                request.Parameters.Add("resourceOwner", StringUtils.FromString(publicRequest.ResourceOwner));
             request.ResourcePath = "/domainnames";
             request.UseQueryString = true;
 

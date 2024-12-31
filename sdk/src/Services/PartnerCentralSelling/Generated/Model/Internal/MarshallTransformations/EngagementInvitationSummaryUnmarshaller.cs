@@ -78,6 +78,12 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
                     unmarshalledObject.Catalog = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EngagementId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EngagementId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("EngagementTitle", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -100,6 +106,12 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.InvitationDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ParticipantType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ParticipantType = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("PayloadType", targetDepth))

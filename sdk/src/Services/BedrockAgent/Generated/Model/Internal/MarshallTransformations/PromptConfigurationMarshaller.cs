@@ -54,6 +54,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.BasePromptTemplate);
             }
 
+            if(requestObject.IsSetFoundationModel())
+            {
+                context.Writer.WritePropertyName("foundationModel");
+                context.Writer.Write(requestObject.FoundationModel);
+            }
+
             if(requestObject.IsSetInferenceConfiguration())
             {
                 context.Writer.WritePropertyName("inferenceConfiguration");

@@ -31,10 +31,11 @@ namespace Amazon.ConfigService.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAggregateComplianceByConformancePacks operation.
-    /// Returns a list of the conformance packs and their associated compliance status with
-    /// the count of compliant and noncompliant Config rules within each conformance pack.
-    /// Also returns the total rule count which includes compliant rules, noncompliant rules,
-    /// and rules that cannot be evaluated due to insufficient data.
+    /// Returns a list of the existing and deleted conformance packs and their associated
+    /// compliance status with the count of compliant and noncompliant Config rules within
+    /// each conformance pack. Also returns the total rule count which includes compliant
+    /// rules, noncompliant rules, and rules that cannot be evaluated due to insufficient
+    /// data.
     /// 
     ///  <note> 
     /// <para>

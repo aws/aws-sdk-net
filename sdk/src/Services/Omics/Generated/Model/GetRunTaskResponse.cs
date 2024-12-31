@@ -34,6 +34,8 @@ namespace Amazon.Omics.Model
     /// </summary>
     public partial class GetRunTaskResponse : AmazonWebServiceResponse
     {
+        private bool? _cacheHit;
+        private string _caches3Uri;
         private int? _cpus;
         private DateTime? _creationTime;
         private string _failureReason;
@@ -47,6 +49,42 @@ namespace Amazon.Omics.Model
         private string _statusMessage;
         private DateTime? _stopTime;
         private string _taskId;
+
+        /// <summary>
+        /// Gets and sets the property CacheHit. 
+        /// <para>
+        /// Set to true if AWS HealthOmics found a matching entry in the run cache for this task.
+        /// </para>
+        /// </summary>
+        public bool CacheHit
+        {
+            get { return this._cacheHit.GetValueOrDefault(); }
+            set { this._cacheHit = value; }
+        }
+
+        // Check to see if CacheHit property is set
+        internal bool IsSetCacheHit()
+        {
+            return this._cacheHit.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CacheS3Uri. 
+        /// <para>
+        /// The S3 URI of the cache location.
+        /// </para>
+        /// </summary>
+        public string CacheS3Uri
+        {
+            get { return this._caches3Uri; }
+            set { this._caches3Uri = value; }
+        }
+
+        // Check to see if CacheS3Uri property is set
+        internal bool IsSetCacheS3Uri()
+        {
+            return this._caches3Uri != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Cpus. 

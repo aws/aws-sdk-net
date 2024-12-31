@@ -116,11 +116,31 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.Description);
                     }
 
+<<<<<<< HEAD
                     if(publicRequest.IsSetEnableSetting())
                     {
                         context.Writer.WritePropertyName("enableSetting");
                         context.Writer.Write(publicRequest.EnableSetting);
                     }
+||||||| Commit version number update changes
+                if(publicRequest.IsSetDescription())
+                {
+                    context.Writer.WritePropertyName("description");
+                    context.Writer.Write(publicRequest.Description);
+                }
+=======
+                if(publicRequest.IsSetConnectionIdentifier())
+                {
+                    context.Writer.WritePropertyName("connectionIdentifier");
+                    context.Writer.Write(publicRequest.ConnectionIdentifier);
+                }
+
+                if(publicRequest.IsSetDescription())
+                {
+                    context.Writer.WritePropertyName("description");
+                    context.Writer.Write(publicRequest.Description);
+                }
+>>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
 
                     if(publicRequest.IsSetEnvironmentIdentifier())
                     {

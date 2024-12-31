@@ -34,15 +34,36 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class InferenceComponentSpecificationSummary
     {
+        private string _baseInferenceComponentName;
         private InferenceComponentComputeResourceRequirements _computeResourceRequirements;
         private InferenceComponentContainerSpecificationSummary _container;
         private string _modelName;
         private InferenceComponentStartupParameters _startupParameters;
 
         /// <summary>
+        /// Gets and sets the property BaseInferenceComponentName. 
+        /// <para>
+        /// The name of the base inference component that contains this inference component.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=63)]
+        public string BaseInferenceComponentName
+        {
+            get { return this._baseInferenceComponentName; }
+            set { this._baseInferenceComponentName = value; }
+        }
+
+        // Check to see if BaseInferenceComponentName property is set
+        internal bool IsSetBaseInferenceComponentName()
+        {
+            return this._baseInferenceComponentName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ComputeResourceRequirements. 
         /// <para>
-        /// The compute resources allocated to run the model assigned to the inference component.
+        /// The compute resources allocated to run the model, plus any adapter models, that you
+        /// assign to the inference component.
         /// </para>
         /// </summary>
         public InferenceComponentComputeResourceRequirements ComputeResourceRequirements
@@ -79,7 +100,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ModelName. 
         /// <para>
-        /// The name of the SageMaker model object that is deployed with the inference component.
+        /// The name of the SageMaker AI model object that is deployed with the inference component.
         /// </para>
         /// </summary>
         [AWSProperty(Max=63)]

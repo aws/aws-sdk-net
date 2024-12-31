@@ -60,6 +60,9 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             request.HttpMethod = "GET";
 
             
+            if (publicRequest.IsSetApplicationTypeEquals())
+                request.Parameters.Add("applicationTypeEquals", StringUtils.FromString(publicRequest.ApplicationTypeEquals));
+            
             if (publicRequest.IsSetCreationTimeAfter())
                 request.Parameters.Add("creationTimeAfter", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.CreationTimeAfter));
             

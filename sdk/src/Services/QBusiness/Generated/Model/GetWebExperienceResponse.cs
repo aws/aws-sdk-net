@@ -36,7 +36,9 @@ namespace Amazon.QBusiness.Model
     {
         private string _applicationId;
         private WebExperienceAuthConfiguration _authenticationConfiguration;
+        private BrowserExtensionConfiguration _browserExtensionConfiguration;
         private DateTime? _createdAt;
+        private CustomizationConfiguration _customizationConfiguration;
         private string _defaultEndpoint;
         private ErrorDetail _error;
         private IdentityProviderConfiguration _identityProviderConfiguration;
@@ -90,6 +92,24 @@ namespace Amazon.QBusiness.Model
         }
 
         /// <summary>
+        /// Gets and sets the property BrowserExtensionConfiguration. 
+        /// <para>
+        /// The browser extension configuration for an Amazon Q Business web experience.
+        /// </para>
+        /// </summary>
+        public BrowserExtensionConfiguration BrowserExtensionConfiguration
+        {
+            get { return this._browserExtensionConfiguration; }
+            set { this._browserExtensionConfiguration = value; }
+        }
+
+        // Check to see if BrowserExtensionConfiguration property is set
+        internal bool IsSetBrowserExtensionConfiguration()
+        {
+            return this._browserExtensionConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
         /// The Unix timestamp when the Amazon Q Business web experience was last created.
@@ -105,6 +125,25 @@ namespace Amazon.QBusiness.Model
         internal bool IsSetCreatedAt()
         {
             return this._createdAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomizationConfiguration. 
+        /// <para>
+        /// Gets the custom logo, favicon, font, and color used in the Amazon Q web experience.
+        /// 
+        /// </para>
+        /// </summary>
+        public CustomizationConfiguration CustomizationConfiguration
+        {
+            get { return this._customizationConfiguration; }
+            set { this._customizationConfiguration = value; }
+        }
+
+        // Check to see if CustomizationConfiguration property is set
+        internal bool IsSetCustomizationConfiguration()
+        {
+            return this._customizationConfiguration != null;
         }
 
         /// <summary>

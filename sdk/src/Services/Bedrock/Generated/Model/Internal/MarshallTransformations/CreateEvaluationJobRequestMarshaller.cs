@@ -63,7 +63,27 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             request.ResourcePath = "/evaluation-jobs";
             using (MemoryStream memoryStream = new MemoryStream())
             {
+<<<<<<< HEAD
                 using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+||||||| Commit version number update changes
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetClientRequestToken())
+=======
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetApplicationType())
+                {
+                    context.Writer.WritePropertyName("applicationType");
+                    context.Writer.Write(publicRequest.ApplicationType);
+                }
+
+                if(publicRequest.IsSetClientRequestToken())
+>>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
                 {
                     JsonWriter writer = new JsonWriter(streamWriter);
                     writer.Validate = false;

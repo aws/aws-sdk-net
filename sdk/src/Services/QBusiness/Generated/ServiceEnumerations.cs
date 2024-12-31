@@ -251,9 +251,9 @@ namespace Amazon.QBusiness
         /// </summary>
         public static readonly AttachmentStatus FAILED = new AttachmentStatus("FAILED");
         /// <summary>
-        /// Constant SUCCEEDED for AttachmentStatus
+        /// Constant SUCCESS for AttachmentStatus
         /// </summary>
-        public static readonly AttachmentStatus SUCCEEDED = new AttachmentStatus("SUCCEEDED");
+        public static readonly AttachmentStatus SUCCESS = new AttachmentStatus("SUCCESS");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -438,6 +438,56 @@ namespace Amazon.QBusiness
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator AutoSubscriptionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type BrowserExtension.
+    /// </summary>
+    public class BrowserExtension : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CHROME for BrowserExtension
+        /// </summary>
+        public static readonly BrowserExtension CHROME = new BrowserExtension("CHROME");
+        /// <summary>
+        /// Constant FIREFOX for BrowserExtension
+        /// </summary>
+        public static readonly BrowserExtension FIREFOX = new BrowserExtension("FIREFOX");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BrowserExtension(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BrowserExtension FindValue(string value)
+        {
+            return FindValue<BrowserExtension>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BrowserExtension(string value)
         {
             return FindValue(value);
         }
@@ -1180,6 +1230,10 @@ namespace Amazon.QBusiness
         /// Constant AWS_IAM_IDP_SAML for IdentityType
         /// </summary>
         public static readonly IdentityType AWS_IAM_IDP_SAML = new IdentityType("AWS_IAM_IDP_SAML");
+        /// <summary>
+        /// Constant AWS_QUICKSIGHT_IDP for IdentityType
+        /// </summary>
+        public static readonly IdentityType AWS_QUICKSIGHT_IDP = new IdentityType("AWS_QUICKSIGHT_IDP");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1210,6 +1264,56 @@ namespace Amazon.QBusiness
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator IdentityType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ImageExtractionStatus.
+    /// </summary>
+    public class ImageExtractionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for ImageExtractionStatus
+        /// </summary>
+        public static readonly ImageExtractionStatus DISABLED = new ImageExtractionStatus("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for ImageExtractionStatus
+        /// </summary>
+        public static readonly ImageExtractionStatus ENABLED = new ImageExtractionStatus("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ImageExtractionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImageExtractionStatus FindValue(string value)
+        {
+            return FindValue<ImageExtractionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImageExtractionStatus(string value)
         {
             return FindValue(value);
         }
@@ -1845,25 +1949,73 @@ namespace Amazon.QBusiness
     {
 
         /// <summary>
+        /// Constant ASANA for PluginType
+        /// </summary>
+        public static readonly PluginType ASANA = new PluginType("ASANA");
+        /// <summary>
+        /// Constant ATLASSIAN_CONFLUENCE for PluginType
+        /// </summary>
+        public static readonly PluginType ATLASSIAN_CONFLUENCE = new PluginType("ATLASSIAN_CONFLUENCE");
+        /// <summary>
         /// Constant CUSTOM for PluginType
         /// </summary>
         public static readonly PluginType CUSTOM = new PluginType("CUSTOM");
+        /// <summary>
+        /// Constant GOOGLE_CALENDAR for PluginType
+        /// </summary>
+        public static readonly PluginType GOOGLE_CALENDAR = new PluginType("GOOGLE_CALENDAR");
         /// <summary>
         /// Constant JIRA for PluginType
         /// </summary>
         public static readonly PluginType JIRA = new PluginType("JIRA");
         /// <summary>
+        /// Constant JIRA_CLOUD for PluginType
+        /// </summary>
+        public static readonly PluginType JIRA_CLOUD = new PluginType("JIRA_CLOUD");
+        /// <summary>
+        /// Constant MICROSOFT_EXCHANGE for PluginType
+        /// </summary>
+        public static readonly PluginType MICROSOFT_EXCHANGE = new PluginType("MICROSOFT_EXCHANGE");
+        /// <summary>
+        /// Constant MICROSOFT_TEAMS for PluginType
+        /// </summary>
+        public static readonly PluginType MICROSOFT_TEAMS = new PluginType("MICROSOFT_TEAMS");
+        /// <summary>
+        /// Constant PAGERDUTY_ADVANCE for PluginType
+        /// </summary>
+        public static readonly PluginType PAGERDUTY_ADVANCE = new PluginType("PAGERDUTY_ADVANCE");
+        /// <summary>
+        /// Constant QUICKSIGHT for PluginType
+        /// </summary>
+        public static readonly PluginType QUICKSIGHT = new PluginType("QUICKSIGHT");
+        /// <summary>
         /// Constant SALESFORCE for PluginType
         /// </summary>
         public static readonly PluginType SALESFORCE = new PluginType("SALESFORCE");
+        /// <summary>
+        /// Constant SALESFORCE_CRM for PluginType
+        /// </summary>
+        public static readonly PluginType SALESFORCE_CRM = new PluginType("SALESFORCE_CRM");
         /// <summary>
         /// Constant SERVICE_NOW for PluginType
         /// </summary>
         public static readonly PluginType SERVICE_NOW = new PluginType("SERVICE_NOW");
         /// <summary>
+        /// Constant SERVICENOW_NOW_PLATFORM for PluginType
+        /// </summary>
+        public static readonly PluginType SERVICENOW_NOW_PLATFORM = new PluginType("SERVICENOW_NOW_PLATFORM");
+        /// <summary>
+        /// Constant SMARTSHEET for PluginType
+        /// </summary>
+        public static readonly PluginType SMARTSHEET = new PluginType("SMARTSHEET");
+        /// <summary>
         /// Constant ZENDESK for PluginType
         /// </summary>
         public static readonly PluginType ZENDESK = new PluginType("ZENDESK");
+        /// <summary>
+        /// Constant ZENDESK_SUITE for PluginType
+        /// </summary>
+        public static readonly PluginType ZENDESK_SUITE = new PluginType("ZENDESK_SUITE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1894,6 +2046,68 @@ namespace Amazon.QBusiness
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PluginType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PluginTypeCategory.
+    /// </summary>
+    public class PluginTypeCategory : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Communication for PluginTypeCategory
+        /// </summary>
+        public static readonly PluginTypeCategory Communication = new PluginTypeCategory("Communication");
+        /// <summary>
+        /// Constant CustomerRelationshipManagementCRM for PluginTypeCategory
+        /// </summary>
+        public static readonly PluginTypeCategory CustomerRelationshipManagementCRM = new PluginTypeCategory("Customer relationship management (CRM)");
+        /// <summary>
+        /// Constant Productivity for PluginTypeCategory
+        /// </summary>
+        public static readonly PluginTypeCategory Productivity = new PluginTypeCategory("Productivity");
+        /// <summary>
+        /// Constant ProjectManagement for PluginTypeCategory
+        /// </summary>
+        public static readonly PluginTypeCategory ProjectManagement = new PluginTypeCategory("Project management");
+        /// <summary>
+        /// Constant TicketingAndIncidentManagement for PluginTypeCategory
+        /// </summary>
+        public static readonly PluginTypeCategory TicketingAndIncidentManagement = new PluginTypeCategory("Ticketing and incident management");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PluginTypeCategory(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PluginTypeCategory FindValue(string value)
+        {
+            return FindValue<PluginTypeCategory>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PluginTypeCategory(string value)
         {
             return FindValue(value);
         }
@@ -2198,6 +2412,68 @@ namespace Amazon.QBusiness
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RuleType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ScoreConfidence.
+    /// </summary>
+    public class ScoreConfidence : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HIGH for ScoreConfidence
+        /// </summary>
+        public static readonly ScoreConfidence HIGH = new ScoreConfidence("HIGH");
+        /// <summary>
+        /// Constant LOW for ScoreConfidence
+        /// </summary>
+        public static readonly ScoreConfidence LOW = new ScoreConfidence("LOW");
+        /// <summary>
+        /// Constant MEDIUM for ScoreConfidence
+        /// </summary>
+        public static readonly ScoreConfidence MEDIUM = new ScoreConfidence("MEDIUM");
+        /// <summary>
+        /// Constant NOT_AVAILABLE for ScoreConfidence
+        /// </summary>
+        public static readonly ScoreConfidence NOT_AVAILABLE = new ScoreConfidence("NOT_AVAILABLE");
+        /// <summary>
+        /// Constant VERY_HIGH for ScoreConfidence
+        /// </summary>
+        public static readonly ScoreConfidence VERY_HIGH = new ScoreConfidence("VERY_HIGH");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ScoreConfidence(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ScoreConfidence FindValue(string value)
+        {
+            return FindValue<ScoreConfidence>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ScoreConfidence(string value)
         {
             return FindValue(value);
         }

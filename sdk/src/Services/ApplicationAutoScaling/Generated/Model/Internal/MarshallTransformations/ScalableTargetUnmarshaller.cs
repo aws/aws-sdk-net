@@ -84,6 +84,12 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
                     unmarshalledObject.MinCapacity = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PredictedCapacity", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.PredictedCapacity = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ResourceId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

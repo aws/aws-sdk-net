@@ -48,7 +48,7 @@ namespace Amazon.SageMaker.Model
     /// You can restrict access to this API and to the URL that it returns to a list of IP
     /// addresses, Amazon VPCs or Amazon VPC Endpoints that you specify. For more information,
     /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-interface-endpoint.html">Connect
-    /// to Amazon SageMaker Studio Through an Interface VPC Endpoint</a> .
+    /// to Amazon SageMaker AI Studio Through an Interface VPC Endpoint</a> .
     /// </para>
     ///  <note> <ul> <li> 
     /// <para>

@@ -38,11 +38,14 @@ namespace Amazon.PartnerCentralSelling.Model
     public partial class ListEngagementInvitationsRequest : AmazonPartnerCentralSellingRequest
     {
         private string _catalog;
+        private List<string> _engagementIdentifier = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxResults;
         private string _nextToken;
         private ParticipantType _participantType;
         private List<string> _payloadType = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _senderAwsAccountId = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private OpportunityEngagementInvitationSort _sort;
+        private List<string> _status = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Catalog. 
@@ -62,6 +65,29 @@ namespace Amazon.PartnerCentralSelling.Model
         internal bool IsSetCatalog()
         {
             return this._catalog != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EngagementIdentifier. 
+        /// <para>
+        ///  Retrieves a list of engagement invitation summaries based on specified filters. The
+        /// ListEngagementInvitations operation allows you to view all invitations that you have
+        /// sent or received. You must specify the ParticipantType to filter invitations where
+        /// you are either the SENDER or the RECEIVER. Invitations will automatically expire if
+        /// not accepted within 15 days. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<string> EngagementIdentifier
+        {
+            get { return this._engagementIdentifier; }
+            set { this._engagementIdentifier = value; }
+        }
+
+        // Check to see if EngagementIdentifier property is set
+        internal bool IsSetEngagementIdentifier()
+        {
+            return this._engagementIdentifier != null && (this._engagementIdentifier.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -144,6 +170,25 @@ namespace Amazon.PartnerCentralSelling.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SenderAwsAccountId. 
+        /// <para>
+        ///  List of sender AWS account IDs to filter the invitations. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<string> SenderAwsAccountId
+        {
+            get { return this._senderAwsAccountId; }
+            set { this._senderAwsAccountId = value; }
+        }
+
+        // Check to see if SenderAwsAccountId property is set
+        internal bool IsSetSenderAwsAccountId()
+        {
+            return this._senderAwsAccountId != null && (this._senderAwsAccountId.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property Sort. 
         /// <para>
         /// Specifies the sorting options for listing engagement invitations. Invitations can
@@ -161,6 +206,25 @@ namespace Amazon.PartnerCentralSelling.Model
         internal bool IsSetSort()
         {
             return this._sort != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        ///  Status values to filter the invitations. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<string> Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null && (this._status.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

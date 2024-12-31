@@ -31,8 +31,8 @@ namespace Amazon.VPCLattice.Model
 {
     /// <summary>
     /// Container for the parameters to the GetRule operation.
-    /// Retrieves information about listener rules. You can also retrieve information about
-    /// the default listener rule. For more information, see <a href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/listeners.html#listener-rules">Listener
+    /// Retrieves information about the specified listener rules. You can also retrieve information
+    /// about the default listener rule. For more information, see <a href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/listeners.html#listener-rules">Listener
     /// rules</a> in the <i>Amazon VPC Lattice User Guide</i>.
     /// </summary>
     public partial class GetRuleRequest : AmazonVPCLatticeRequest
@@ -44,7 +44,7 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property ListenerIdentifier. 
         /// <para>
-        /// The ID or Amazon Resource Name (ARN) of the listener.
+        /// The ID or ARN of the listener.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]
@@ -63,7 +63,7 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property RuleIdentifier. 
         /// <para>
-        /// The ID or Amazon Resource Name (ARN) of the listener rule.
+        /// The ID or ARN of the listener rule.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]
@@ -82,7 +82,7 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property ServiceIdentifier. 
         /// <para>
-        /// The ID or Amazon Resource Name (ARN) of the service.
+        /// The ID or ARN of the service.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=17, Max=2048)]

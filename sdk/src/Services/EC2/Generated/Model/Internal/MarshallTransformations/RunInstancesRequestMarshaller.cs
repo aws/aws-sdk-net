@@ -595,6 +595,20 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                          }
                     }
                 }
+                if(publicRequest.IsSetNetworkPerformanceOptions())
+                {
+                    if(publicRequest.NetworkPerformanceOptions.IsSetBandwidthWeighting())
+                    {
+                        request.Parameters.Add("NetworkPerformanceOptions" + "." + "BandwidthWeighting", StringUtils.FromString(publicRequest.NetworkPerformanceOptions.BandwidthWeighting));
+                    }
+                }
+                if(publicRequest.IsSetOperator())
+                {
+                    if(publicRequest.Operator.IsSetPrincipal())
+                    {
+                        request.Parameters.Add("Operator" + "." + "Principal", StringUtils.FromString(publicRequest.Operator.Principal));
+                    }
+                }
                 if(publicRequest.IsSetPlacement())
                 {
                     if(publicRequest.Placement.IsSetAffinity())

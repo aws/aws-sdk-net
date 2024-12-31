@@ -86,7 +86,7 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property AwsService. 
         /// <para>
         /// If the action was performed by an Amazon Web Services account that belongs to an Amazon
-        /// Web Service, the name of the service.
+        /// Web Services service, the name of the service.
         /// </para>
         /// </summary>
         public AwsService AwsService

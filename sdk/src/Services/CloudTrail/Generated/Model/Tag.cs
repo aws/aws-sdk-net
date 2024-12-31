@@ -31,7 +31,7 @@ namespace Amazon.CloudTrail.Model
 {
     /// <summary>
     /// A custom key-value pair associated with a resource such as a CloudTrail trail, event
-    /// data store, or channel.
+    /// data store, dashboard, or channel.
     /// </summary>
     public partial class Tag
     {

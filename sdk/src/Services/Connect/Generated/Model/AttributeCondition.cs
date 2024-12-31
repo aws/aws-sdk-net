@@ -38,6 +38,7 @@ namespace Amazon.Connect.Model
         private MatchCriteria _matchCriteria;
         private string _name;
         private float? _proficiencyLevel;
+        private Range _range;
         private string _value;
 
         /// <summary>
@@ -113,6 +114,24 @@ namespace Amazon.Connect.Model
         internal bool IsSetProficiencyLevel()
         {
             return this._proficiencyLevel.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Range. 
+        /// <para>
+        /// An Object to define the minimum and maximum proficiency levels.
+        /// </para>
+        /// </summary>
+        public Range Range
+        {
+            get { return this._range; }
+            set { this._range = value; }
+        }
+
+        // Check to see if Range property is set
+        internal bool IsSetRange()
+        {
+            return this._range != null;
         }
 
         /// <summary>

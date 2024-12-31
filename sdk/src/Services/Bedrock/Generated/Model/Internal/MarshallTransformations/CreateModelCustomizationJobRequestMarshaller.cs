@@ -81,6 +81,7 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.ClientRequestToken);
                     }
 
+<<<<<<< HEAD
                     else if(!(publicRequest.IsSetClientRequestToken()))
                     {
                         context.Writer.WritePropertyName("clientRequestToken");
@@ -91,6 +92,40 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                         context.Writer.WritePropertyName("customizationType");
                         context.Writer.Write(publicRequest.CustomizationType);
                     }
+||||||| Commit version number update changes
+                else if(!(publicRequest.IsSetClientRequestToken()))
+                {
+                    context.Writer.WritePropertyName("clientRequestToken");
+                    context.Writer.Write(Guid.NewGuid().ToString());
+                }
+                if(publicRequest.IsSetCustomizationType())
+                {
+                    context.Writer.WritePropertyName("customizationType");
+                    context.Writer.Write(publicRequest.CustomizationType);
+                }
+=======
+                else if(!(publicRequest.IsSetClientRequestToken()))
+                {
+                    context.Writer.WritePropertyName("clientRequestToken");
+                    context.Writer.Write(Guid.NewGuid().ToString());
+                }
+                if(publicRequest.IsSetCustomizationConfig())
+                {
+                    context.Writer.WritePropertyName("customizationConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CustomizationConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CustomizationConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetCustomizationType())
+                {
+                    context.Writer.WritePropertyName("customizationType");
+                    context.Writer.Write(publicRequest.CustomizationType);
+                }
+>>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
 
                     if(publicRequest.IsSetCustomModelKmsKeyId())
                     {

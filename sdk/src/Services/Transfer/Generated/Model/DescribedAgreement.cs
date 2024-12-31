@@ -39,8 +39,10 @@ namespace Amazon.Transfer.Model
         private string _arn;
         private string _baseDirectory;
         private string _description;
+        private EnforceMessageSigningType _enforceMessageSigning;
         private string _localProfileId;
         private string _partnerProfileId;
+        private PreserveFilenameType _preserveFilename;
         private string _serverId;
         private AgreementStatusType _status;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
@@ -179,6 +181,35 @@ namespace Amazon.Transfer.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EnforceMessageSigning. 
+        /// <para>
+        ///  Determines whether or not unsigned messages from your trading partners will be accepted.
+        /// 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>ENABLED</c>: Transfer Family rejects unsigned messages from your trading partner.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DISABLED</c> (default value): Transfer Family accepts unsigned messages from your
+        /// trading partner.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public EnforceMessageSigningType EnforceMessageSigning
+        {
+            get { return this._enforceMessageSigning; }
+            set { this._enforceMessageSigning = value; }
+        }
+
+        // Check to see if EnforceMessageSigning property is set
+        internal bool IsSetEnforceMessageSigning()
+        {
+            return this._enforceMessageSigning != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LocalProfileId. 
         /// <para>
         /// A unique identifier for the AS2 local profile.
@@ -214,6 +245,37 @@ namespace Amazon.Transfer.Model
         internal bool IsSetPartnerProfileId()
         {
             return this._partnerProfileId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PreserveFilename. 
+        /// <para>
+        ///  Determines whether or not Transfer Family appends a unique string of characters to
+        /// the end of the AS2 message payload filename when saving it. 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>ENABLED</c>: the filename provided by your trading parter is preserved when the
+        /// file is saved.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DISABLED</c> (default value): when Transfer Family saves the file, the filename
+        /// is adjusted, as described in <a href="https://docs.aws.amazon.com/transfer/latest/userguide/send-as2-messages.html#file-names-as2">File
+        /// names and locations</a>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public PreserveFilenameType PreserveFilename
+        {
+            get { return this._preserveFilename; }
+            set { this._preserveFilename = value; }
+        }
+
+        // Check to see if PreserveFilename property is set
+        internal bool IsSetPreserveFilename()
+        {
+            return this._preserveFilename != null;
         }
 
         /// <summary>

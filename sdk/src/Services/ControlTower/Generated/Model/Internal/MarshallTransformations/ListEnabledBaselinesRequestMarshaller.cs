@@ -80,11 +80,31 @@ namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
 
+<<<<<<< HEAD
                     if(publicRequest.IsSetMaxResults())
                     {
                         context.Writer.WritePropertyName("maxResults");
                         context.Writer.Write(publicRequest.MaxResults.Value);
                     }
+||||||| Commit version number update changes
+                if(publicRequest.IsSetMaxResults())
+                {
+                    context.Writer.WritePropertyName("maxResults");
+                    context.Writer.Write(publicRequest.MaxResults);
+                }
+=======
+                if(publicRequest.IsSetIncludeChildren())
+                {
+                    context.Writer.WritePropertyName("includeChildren");
+                    context.Writer.Write(publicRequest.IncludeChildren);
+                }
+
+                if(publicRequest.IsSetMaxResults())
+                {
+                    context.Writer.WritePropertyName("maxResults");
+                    context.Writer.Write(publicRequest.MaxResults);
+                }
+>>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
 
                     if(publicRequest.IsSetNextToken())
                     {

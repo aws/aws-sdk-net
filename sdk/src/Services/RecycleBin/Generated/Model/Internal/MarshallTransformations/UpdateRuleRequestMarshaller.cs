@@ -68,11 +68,49 @@ namespace Amazon.RecycleBin.Model.Internal.MarshallTransformations
             {
                 using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
+<<<<<<< HEAD
                     JsonWriter writer = new JsonWriter(streamWriter);
                     writer.Validate = false;
                     writer.WriteObjectStart();
                     var context = new JsonMarshallerContext(request, writer);
                     if(publicRequest.IsSetDescription())
+||||||| Commit version number update changes
+                    context.Writer.WritePropertyName("Description");
+                    context.Writer.Write(publicRequest.Description);
+                }
+
+                if(publicRequest.IsSetResourceTags())
+                {
+                    context.Writer.WritePropertyName("ResourceTags");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestResourceTagsListValue in publicRequest.ResourceTags)
+=======
+                    context.Writer.WritePropertyName("Description");
+                    context.Writer.Write(publicRequest.Description);
+                }
+
+                if(publicRequest.IsSetExcludeResourceTags())
+                {
+                    context.Writer.WritePropertyName("ExcludeResourceTags");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestExcludeResourceTagsListValue in publicRequest.ExcludeResourceTags)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ResourceTagMarshaller.Instance;
+                        marshaller.Marshall(publicRequestExcludeResourceTagsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetResourceTags())
+                {
+                    context.Writer.WritePropertyName("ResourceTags");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestResourceTagsListValue in publicRequest.ResourceTags)
+>>>>>>> c3a8d89d4faad2febb0084a04c0e4ae66981ad63
                     {
                         context.Writer.WritePropertyName("Description");
                         context.Writer.Write(publicRequest.Description);

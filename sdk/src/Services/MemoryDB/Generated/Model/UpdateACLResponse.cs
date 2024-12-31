@@ -39,7 +39,7 @@ namespace Amazon.MemoryDB.Model
         /// <summary>
         /// Gets and sets the property ACL. 
         /// <para>
-        /// The updated Access Control List
+        /// The updated Access Control List.
         /// </para>
         /// </summary>
         public ACL ACL

@@ -102,6 +102,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     unmarshalledObject.ErrorMessage = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("lineageSummary", targetDepth))
+                {
+                    var unmarshaller = LineageInfoUnmarshaller.Instance;
+                    unmarshalledObject.LineageSummary = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("projectId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

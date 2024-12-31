@@ -71,6 +71,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetValueFontConfiguration())
+            {
+                context.Writer.WritePropertyName("ValueFontConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = FontConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.ValueFontConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetVisibility())
             {
                 context.Writer.WritePropertyName("Visibility");

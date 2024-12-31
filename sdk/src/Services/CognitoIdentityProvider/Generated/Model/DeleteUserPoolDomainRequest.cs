@@ -31,7 +31,9 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteUserPoolDomain operation.
-    /// Deletes a domain for a user pool.
+    /// Given a user pool ID and domain identifier, deletes a user pool domain. After you
+    /// delete a user pool domain, your managed login pages and authorization server are no
+    /// longer available.
     /// </summary>
     public partial class DeleteUserPoolDomainRequest : AmazonCognitoIdentityProviderRequest
     {
@@ -41,9 +43,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        /// The domain string. For custom domains, this is the fully-qualified domain name, such
-        /// as <c>auth.example.com</c>. For Amazon Cognito prefix domains, this is the prefix
-        /// alone, such as <c>auth</c>.
+        /// The domain that you want to delete. For custom domains, this is the fully-qualified
+        /// domain name, such as <c>auth.example.com</c>. For Amazon Cognito prefix domains, this
+        /// is the prefix alone, such as <c>auth</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=63)]
@@ -62,7 +64,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserPoolId. 
         /// <para>
-        /// The user pool ID.
+        /// The ID of the user pool where you want to delete the domain.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=55)]

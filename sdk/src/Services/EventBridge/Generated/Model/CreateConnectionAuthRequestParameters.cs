@@ -30,20 +30,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EventBridge.Model
 {
     /// <summary>
-    /// Contains the authorization parameters for the connection.
+    /// The authorization parameters for the connection.
+    /// 
+    ///  
+    /// <para>
+    /// You must include only authorization parameters for the <c>AuthorizationType</c> you
+    /// specify.
+    /// </para>
     /// </summary>
     public partial class CreateConnectionAuthRequestParameters
     {
         private CreateConnectionApiKeyAuthRequestParameters _apiKeyAuthParameters;
         private CreateConnectionBasicAuthRequestParameters _basicAuthParameters;
+        private ConnectivityResourceParameters _connectivityParameters;
         private ConnectionHttpParameters _invocationHttpParameters;
         private CreateConnectionOAuthRequestParameters _oAuthParameters;
 
         /// <summary>
         /// Gets and sets the property ApiKeyAuthParameters. 
         /// <para>
-        /// A <c>CreateConnectionApiKeyAuthRequestParameters</c> object that contains the API
-        /// key authorization parameters to use for the connection.
+        /// The API key authorization parameters to use for the connection.
         /// </para>
         /// </summary>
         public CreateConnectionApiKeyAuthRequestParameters ApiKeyAuthParameters
@@ -61,8 +67,7 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property BasicAuthParameters. 
         /// <para>
-        /// A <c>CreateConnectionBasicAuthRequestParameters</c> object that contains the Basic
-        /// authorization parameters to use for the connection.
+        /// The Basic authorization parameters to use for the connection.
         /// </para>
         /// </summary>
         public CreateConnectionBasicAuthRequestParameters BasicAuthParameters
@@ -78,12 +83,35 @@ namespace Amazon.EventBridge.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ConnectivityParameters. 
+        /// <para>
+        /// If you specify a private OAuth endpoint, the parameters for EventBridge to use when
+        /// authenticating against the endpoint.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-target-connection-auth.html">Authorization
+        /// methods for connections</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.
+        /// </para>
+        /// </summary>
+        public ConnectivityResourceParameters ConnectivityParameters
+        {
+            get { return this._connectivityParameters; }
+            set { this._connectivityParameters = value; }
+        }
+
+        // Check to see if ConnectivityParameters property is set
+        internal bool IsSetConnectivityParameters()
+        {
+            return this._connectivityParameters != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property InvocationHttpParameters. 
         /// <para>
-        /// A <c>ConnectionHttpParameters</c> object that contains the API key authorization parameters
-        /// to use for the connection. Note that if you include additional parameters for the
-        /// target of a rule via <c>HttpParameters</c>, including query strings, the parameters
-        /// added for the connection take precedence.
+        /// The API key authorization parameters to use for the connection. Note that if you include
+        /// additional parameters for the target of a rule via <c>HttpParameters</c>, including
+        /// query strings, the parameters added for the connection take precedence.
         /// </para>
         /// </summary>
         public ConnectionHttpParameters InvocationHttpParameters
@@ -101,8 +129,7 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property OAuthParameters. 
         /// <para>
-        /// A <c>CreateConnectionOAuthRequestParameters</c> object that contains the OAuth authorization
-        /// parameters to use for the connection.
+        /// The OAuth authorization parameters to use for the connection.
         /// </para>
         /// </summary>
         public CreateConnectionOAuthRequestParameters OAuthParameters

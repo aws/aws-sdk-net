@@ -30,7 +30,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.CheckDomainAvailabilityRequest.IdnLangCode</property>
-    <max>3</max>
+    <pattern>|[A-Za-z]{2,3}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.CheckDomainTransferabilityRequest.AuthCode</property>
@@ -189,7 +189,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.RegisterDomainRequest.IdnLangCode</property>
-    <max>3</max>
+    <pattern>|[A-Za-z]{2,3}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.RegisterDomainResponse.OperationId</property>
@@ -255,7 +255,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.TransferDomainRequest.IdnLangCode</property>
-    <max>3</max>
+    <pattern>|[A-Za-z]{2,3}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.TransferDomainResponse.OperationId</property>
@@ -325,9 +325,17 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53Domains.Model.BillingRecord.Price</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53Domains.Model.Consent.Currency</property>
     <min>3</min>
     <max>3</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53Domains.Model.Consent.MaxPrice</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.ContactDetail.AddressLine1</property>
@@ -415,6 +423,10 @@
     <property>Amazon.Route53Domains.Model.PriceWithCurrency.Currency</property>
     <min>3</min>
     <max>3</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53Domains.Model.PriceWithCurrency.Price</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.Tag.Key</property>

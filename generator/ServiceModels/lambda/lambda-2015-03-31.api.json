@@ -1551,7 +1551,9 @@
         "SelfManagedKafkaEventSourceConfig":{"shape":"SelfManagedKafkaEventSourceConfig"},
         "ScalingConfig":{"shape":"ScalingConfig"},
         "DocumentDBEventSourceConfig":{"shape":"DocumentDBEventSourceConfig"},
-        "KMSKeyArn":{"shape":"KMSKeyArn"}
+        "KMSKeyArn":{"shape":"KMSKeyArn"},
+        "MetricsConfig":{"shape":"EventSourceMappingMetricsConfig"},
+        "ProvisionedPollerConfig":{"shape":"ProvisionedPollerConfig"}
       }
     },
     "CreateFunctionRequest":{
@@ -2002,7 +2004,25 @@
         "DocumentDBEventSourceConfig":{"shape":"DocumentDBEventSourceConfig"},
         "KMSKeyArn":{"shape":"KMSKeyArn"},
         "FilterCriteriaError":{"shape":"FilterCriteriaError"},
-        "EventSourceMappingArn":{"shape":"EventSourceMappingArn"}
+        "EventSourceMappingArn":{"shape":"EventSourceMappingArn"},
+        "MetricsConfig":{"shape":"EventSourceMappingMetricsConfig"},
+        "ProvisionedPollerConfig":{"shape":"ProvisionedPollerConfig"}
+      }
+    },
+    "EventSourceMappingMetric":{
+      "type":"string",
+      "enum":["EventCount"]
+    },
+    "EventSourceMappingMetricList":{
+      "type":"list",
+      "member":{"shape":"EventSourceMappingMetric"},
+      "max":1,
+      "min":0
+    },
+    "EventSourceMappingMetricsConfig":{
+      "type":"structure",
+      "members":{
+        "Metrics":{"shape":"EventSourceMappingMetricList"}
       }
     },
     "EventSourceMappingsList":{
@@ -3477,6 +3497,11 @@
       "max":21600,
       "min":60
     },
+    "MaximumNumberOfPollers":{
+      "type":"integer",
+      "max":2000,
+      "min":1
+    },
     "MaximumRecordAgeInSeconds":{
       "type":"integer",
       "max":604800,
@@ -3501,6 +3526,11 @@
       "type":"string",
       "max":6,
       "pattern":".*"
+    },
+    "MinimumNumberOfPollers":{
+      "type":"integer",
+      "max":200,
+      "min":1
     },
     "NameSpacedFunctionArn":{
       "type":"string",
@@ -3628,6 +3658,13 @@
         "READY",
         "FAILED"
       ]
+    },
+    "ProvisionedPollerConfig":{
+      "type":"structure",
+      "members":{
+        "MinimumPollers":{"shape":"MinimumNumberOfPollers"},
+        "MaximumPollers":{"shape":"MaximumNumberOfPollers"}
+      }
     },
     "PublishLayerVersionRequest":{
       "type":"structure",
@@ -4020,7 +4057,8 @@
         "provided.al2023",
         "python3.12",
         "java21",
-        "python3.13"
+        "python3.13",
+        "nodejs22.x"
       ]
     },
     "RuntimeVersionArn":{
@@ -4495,7 +4533,9 @@
         "FunctionResponseTypes":{"shape":"FunctionResponseTypeList"},
         "ScalingConfig":{"shape":"ScalingConfig"},
         "DocumentDBEventSourceConfig":{"shape":"DocumentDBEventSourceConfig"},
-        "KMSKeyArn":{"shape":"KMSKeyArn"}
+        "KMSKeyArn":{"shape":"KMSKeyArn"},
+        "MetricsConfig":{"shape":"EventSourceMappingMetricsConfig"},
+        "ProvisionedPollerConfig":{"shape":"ProvisionedPollerConfig"}
       }
     },
     "UpdateFunctionCodeRequest":{

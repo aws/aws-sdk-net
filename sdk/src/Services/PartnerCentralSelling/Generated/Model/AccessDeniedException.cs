@@ -32,11 +32,10 @@ namespace Amazon.PartnerCentralSelling.Model
     /// <summary>
     /// This error occurs when you don't have permission to perform the requested action.
     /// 
-    /// 
     ///  
     /// <para>
     /// You don’t have access to this action or resource. Review IAM policies or contact your
-    /// AWS administrator for assistance. 
+    /// AWS administrator for assistance.
     /// </para>
     /// </summary>
     #if !NETSTANDARD

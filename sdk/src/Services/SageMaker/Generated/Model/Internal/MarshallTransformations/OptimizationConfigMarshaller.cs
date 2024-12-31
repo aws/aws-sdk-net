@@ -70,6 +70,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetModelShardingConfig())
+            {
+                context.Writer.WritePropertyName("ModelShardingConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ModelShardingConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.ModelShardingConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>
