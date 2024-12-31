@@ -157,6 +157,12 @@ namespace Amazon.S3.Internal
                 result.Bucket = request.DestinationBucket;
                 return result;
             }
+            if (requestContext.RequestName == "CreateBucketMetadataTableConfigurationRequest") {
+                result.UseS3ExpressControlEndpoint = true;
+                var request = (CreateBucketMetadataTableConfigurationRequest)requestContext.OriginalRequest;
+                result.Bucket = request.BucketName;
+                return result;
+            }
             if (requestContext.RequestName == "CreateSessionRequest") {
                 result.DisableS3ExpressSessionAuth = true;
                 var request = (CreateSessionRequest)requestContext.OriginalRequest;
@@ -190,6 +196,12 @@ namespace Amazon.S3.Internal
             if (requestContext.RequestName == "DeleteBucketInventoryConfigurationRequest") {
                 result.UseS3ExpressControlEndpoint = true;
                 var request = (DeleteBucketInventoryConfigurationRequest)requestContext.OriginalRequest;
+                result.Bucket = request.BucketName;
+                return result;
+            }
+            if (requestContext.RequestName == "DeleteBucketMetadataTableConfigurationRequest") {
+                result.UseS3ExpressControlEndpoint = true;
+                var request = (DeleteBucketMetadataTableConfigurationRequest)requestContext.OriginalRequest;
                 result.Bucket = request.BucketName;
                 return result;
             }
@@ -308,6 +320,12 @@ namespace Amazon.S3.Internal
             if (requestContext.RequestName == "GetBucketLoggingRequest") {
                 result.UseS3ExpressControlEndpoint = true;
                 var request = (GetBucketLoggingRequest)requestContext.OriginalRequest;
+                result.Bucket = request.BucketName;
+                return result;
+            }
+            if (requestContext.RequestName == "GetBucketMetadataTableConfigurationRequest") {
+                result.UseS3ExpressControlEndpoint = true;
+                var request = (GetBucketMetadataTableConfigurationRequest)requestContext.OriginalRequest;
                 result.Bucket = request.BucketName;
                 return result;
             }

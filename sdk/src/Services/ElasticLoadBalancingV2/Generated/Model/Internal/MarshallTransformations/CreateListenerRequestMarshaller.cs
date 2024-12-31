@@ -310,6 +310,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetMutualAuthentication())
                 {
+                    if(publicRequest.MutualAuthentication.IsSetAdvertiseTrustStoreCaNames())
+                    {
+                        request.Parameters.Add("MutualAuthentication" + "." + "AdvertiseTrustStoreCaNames", StringUtils.FromString(publicRequest.MutualAuthentication.AdvertiseTrustStoreCaNames));
+                    }
                     if(publicRequest.MutualAuthentication.IsSetIgnoreClientCertificateExpiry())
                     {
                         request.Parameters.Add("MutualAuthentication" + "." + "IgnoreClientCertificateExpiry", StringUtils.FromBool(publicRequest.MutualAuthentication.IgnoreClientCertificateExpiry));

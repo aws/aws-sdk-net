@@ -102,6 +102,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.AsmUser);
             }
 
+            if(requestObject.IsSetAuthenticationMethod())
+            {
+                context.Writer.WritePropertyName("AuthenticationMethod");
+                context.Writer.Write(requestObject.AuthenticationMethod);
+            }
+
             if(requestObject.IsSetCharLengthSemantics())
             {
                 context.Writer.WritePropertyName("CharLengthSemantics");

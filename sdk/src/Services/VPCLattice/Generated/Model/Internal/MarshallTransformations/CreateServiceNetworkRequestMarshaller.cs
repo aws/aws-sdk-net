@@ -92,6 +92,17 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.Name);
                     }
 
+                    if(publicRequest.IsSetSharingConfig())
+                    {
+                        context.Writer.WritePropertyName("sharingConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SharingConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SharingConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
                     if(publicRequest.IsSetTags())
                     {
                         context.Writer.WritePropertyName("tags");

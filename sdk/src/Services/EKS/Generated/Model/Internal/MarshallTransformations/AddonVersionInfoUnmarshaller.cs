@@ -84,6 +84,12 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                     unmarshalledObject.Compatibilities = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("computeTypes", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.ComputeTypes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("requiresConfiguration", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;

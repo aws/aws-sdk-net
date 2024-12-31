@@ -35,6 +35,7 @@ namespace Amazon.StepFunctions.Model
     /// </summary>
     public partial class InspectionData
     {
+        private string _afterArguments;
         private string _afterInputPath;
         private string _afterParameters;
         private string _afterResultPath;
@@ -43,12 +44,35 @@ namespace Amazon.StepFunctions.Model
         private InspectionDataRequest _request;
         private InspectionDataResponse _response;
         private string _result;
+        private string _variables;
+
+        /// <summary>
+        /// Gets and sets the property AfterArguments. 
+        /// <para>
+        /// The input after Step Functions applies an Arguments filter. This event will only be
+        /// present when QueryLanguage for the state machine or individual states is set to JSONata.
+        /// For more info, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/data-transform.html">Transforming
+        /// data with Step Functions</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Max=262144)]
+        public string AfterArguments
+        {
+            get { return this._afterArguments; }
+            set { this._afterArguments = value; }
+        }
+
+        // Check to see if AfterArguments property is set
+        internal bool IsSetAfterArguments()
+        {
+            return this._afterArguments != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AfterInputPath. 
         /// <para>
         /// The input after Step Functions applies the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-inputpath-params.html#input-output-inputpath">InputPath</a>
-        /// filter.
+        /// filter. Not populated when QueryLanguage is JSONata.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Max=262144)]
@@ -68,7 +92,7 @@ namespace Amazon.StepFunctions.Model
         /// Gets and sets the property AfterParameters. 
         /// <para>
         /// The effective input after Step Functions applies the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-inputpath-params.html#input-output-parameters">Parameters</a>
-        /// filter.
+        /// filter. Not populated when QueryLanguage is JSONata.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Max=262144)]
@@ -89,7 +113,7 @@ namespace Amazon.StepFunctions.Model
         /// <para>
         /// The effective result combined with the raw state input after Step Functions applies
         /// the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-resultpath.html">ResultPath</a>
-        /// filter.
+        /// filter. Not populated when QueryLanguage is JSONata.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Max=262144)]
@@ -109,7 +133,7 @@ namespace Amazon.StepFunctions.Model
         /// Gets and sets the property AfterResultSelector. 
         /// <para>
         /// The effective result after Step Functions applies the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-inputpath-params.html#input-output-resultselector">ResultSelector</a>
-        /// filter.
+        /// filter. Not populated when QueryLanguage is JSONata.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Max=262144)]
@@ -197,6 +221,27 @@ namespace Amazon.StepFunctions.Model
         internal bool IsSetResult()
         {
             return this._result != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Variables. 
+        /// <para>
+        /// JSON string that contains the set of workflow variables after execution of the state.
+        /// The set will include variables assigned in the state and variables set up as test
+        /// state input.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Max=262144)]
+        public string Variables
+        {
+            get { return this._variables; }
+            set { this._variables = value; }
+        }
+
+        // Check to see if Variables property is set
+        internal bool IsSetVariables()
+        {
+            return this._variables != null;
         }
 
     }

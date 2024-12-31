@@ -128,6 +128,12 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.MinProvisionedMemory.Value);
                     }
 
+                    if(publicRequest.IsSetParquetType())
+                    {
+                        context.Writer.WritePropertyName("parquetType");
+                        context.Writer.Write(publicRequest.ParquetType);
+                    }
+
                     if(publicRequest.IsSetPublicConnectivity())
                     {
                         context.Writer.WritePropertyName("publicConnectivity");

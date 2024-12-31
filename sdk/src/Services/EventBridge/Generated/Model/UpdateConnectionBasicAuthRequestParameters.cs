@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EventBridge.Model
 {
     /// <summary>
-    /// Contains the Basic authorization parameters for the connection.
+    /// The Basic authorization parameters for the connection.
     /// </summary>
     public partial class UpdateConnectionBasicAuthRequestParameters
     {

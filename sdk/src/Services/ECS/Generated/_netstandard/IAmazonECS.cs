@@ -138,11 +138,12 @@ namespace Amazon.ECS
         /// 
         ///  <note> 
         /// <para>
-        /// When you call the <a>CreateCluster</a> API operation, Amazon ECS attempts to create
-        /// the Amazon ECS service-linked role for your account. This is so that it can manage
-        /// required resources in other Amazon Web Services services on your behalf. However,
-        /// if the user that makes the call doesn't have permissions to create the service-linked
-        /// role, it isn't created. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+        /// When you call the <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateCluster.html">CreateCluster</a>
+        /// API operation, Amazon ECS attempts to create the Amazon ECS service-linked role for
+        /// your account. This is so that it can manage required resources in other Amazon Web
+        /// Services services on your behalf. However, if the user that makes the call doesn't
+        /// have permissions to create the service-linked role, it isn't created. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
         /// service-linked roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service
         /// Developer Guide</i>.
         /// </para>
@@ -194,7 +195,7 @@ namespace Amazon.ECS
         /// Runs and maintains your desired number of tasks from a specified task definition.
         /// If the number of tasks running in a service drops below the <c>desiredCount</c>, Amazon
         /// ECS runs another copy of the task in the specified cluster. To update an existing
-        /// service, see the <a>UpdateService</a> action.
+        /// service, use <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateService.html">UpdateService</a>.
         /// 
         ///  <note> 
         /// <para>
@@ -537,7 +538,7 @@ namespace Amazon.ECS
         ///  <note> 
         /// <para>
         /// The <c>FARGATE</c> and <c>FARGATE_SPOT</c> capacity providers are reserved and can't
-        /// be deleted. You can disassociate them from a cluster using either <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutCapacityProviderProviders.html">PutCapacityProviderProviders</a>
+        /// be deleted. You can disassociate them from a cluster using either <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutClusterCapacityProviders.html">PutClusterCapacityProviders</a>
         /// or by deleting the cluster.
         /// </para>
         ///  </note> 
@@ -549,7 +550,7 @@ namespace Amazon.ECS
         /// that any tasks using the Amazon EC2 instance capacity provided by the capacity provider
         /// are transitioned to use the capacity from the remaining capacity providers. Only capacity
         /// providers that aren't associated with a cluster can be deleted. To remove a capacity
-        /// provider from a cluster, you can either use <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutCapacityProviderProviders.html">PutCapacityProviderProviders</a>
+        /// provider from a cluster, you can either use <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutClusterCapacityProviders.html">PutClusterCapacityProviders</a>
         /// or delete the cluster.
         /// </para>
         /// </summary>
@@ -1065,6 +1066,12 @@ namespace Amazon.ECS
 
         /// <summary>
         /// Describes one or more of your clusters.
+        /// 
+        ///  
+        /// <para>
+        ///  For CLI examples, see <a href="https://github.com/aws/aws-cli/blob/develop/awscli/examples/ecs/describe-clusters.rst">describe-clusters.rst</a>
+        /// on GitHub.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeClusters service method.</param>
         /// <param name="cancellationToken">

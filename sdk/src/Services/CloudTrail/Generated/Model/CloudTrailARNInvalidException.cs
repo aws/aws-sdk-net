@@ -44,6 +44,11 @@ namespace Amazon.CloudTrail.Model
     /// </para>
     ///  
     /// <para>
+    /// The following is the format of a dashboard ARN: <c>arn:aws:cloudtrail:us-east-1:123456789012:dashboard/exampleDash</c>
+    /// 
+    /// </para>
+    ///  
+    /// <para>
     /// The following is the format of a channel ARN: <c>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</c>
     /// 
     /// </para>

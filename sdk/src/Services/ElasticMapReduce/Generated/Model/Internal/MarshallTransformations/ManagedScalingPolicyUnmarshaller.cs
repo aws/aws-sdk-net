@@ -72,6 +72,18 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     unmarshalledObject.ComputeLimits = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ScalingStrategy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ScalingStrategy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("UtilizationPerformanceIndex", targetDepth))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.UtilizationPerformanceIndex = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

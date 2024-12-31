@@ -639,6 +639,10 @@ namespace Amazon.Organizations
         /// </summary>
         public static readonly EffectivePolicyType CHATBOT_POLICY = new EffectivePolicyType("CHATBOT_POLICY");
         /// <summary>
+        /// Constant DECLARATIVE_POLICY_EC2 for EffectivePolicyType
+        /// </summary>
+        public static readonly EffectivePolicyType DECLARATIVE_POLICY_EC2 = new EffectivePolicyType("DECLARATIVE_POLICY_EC2");
+        /// <summary>
         /// Constant TAG_POLICY for EffectivePolicyType
         /// </summary>
         public static readonly EffectivePolicyType TAG_POLICY = new EffectivePolicyType("TAG_POLICY");
@@ -1284,6 +1288,10 @@ namespace Amazon.Organizations
         /// Constant CHATBOT_POLICY for PolicyType
         /// </summary>
         public static readonly PolicyType CHATBOT_POLICY = new PolicyType("CHATBOT_POLICY");
+        /// <summary>
+        /// Constant DECLARATIVE_POLICY_EC2 for PolicyType
+        /// </summary>
+        public static readonly PolicyType DECLARATIVE_POLICY_EC2 = new PolicyType("DECLARATIVE_POLICY_EC2");
         /// <summary>
         /// Constant RESOURCE_CONTROL_POLICY for PolicyType
         /// </summary>

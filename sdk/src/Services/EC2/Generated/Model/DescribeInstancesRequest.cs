@@ -489,6 +489,17 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>network-interface.operator.managed</c> - A Boolean that indicates whether the
+        /// instance has a managed network interface.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>network-interface.operator.principal</c> - The principal that manages the network
+        /// interface. Only valid for instances with managed network interfaces, where <c>managed</c>
+        /// is <c>true</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>network-interface.outpost-arn</c> - The ARN of the Outpost.
         /// </para>
         ///  </li> <li> 
@@ -543,6 +554,20 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>network-interface.vpc-id</c> - The ID of the VPC for the network interface.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>network-performance-options.bandwidth-weighting</c> - Where the performance boost
+        /// is applied, if applicable. Valid values: <c>default</c>, <c>vpc-1</c>, <c>ebs-1</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>operator.managed</c> - A Boolean that indicates whether this is a managed instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>operator.principal</c> - The principal that manages the instance. Only valid for
+        /// managed instances, where <c>managed</c> is <c>true</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>

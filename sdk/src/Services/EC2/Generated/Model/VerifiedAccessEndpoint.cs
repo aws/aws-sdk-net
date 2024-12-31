@@ -39,6 +39,7 @@ namespace Amazon.EC2.Model
     {
         private string _applicationDomain;
         private VerifiedAccessEndpointAttachmentType _attachmentType;
+        private VerifiedAccessEndpointCidrOptions _cidrOptions;
         private string _creationTime;
         private string _deletionTime;
         private string _description;
@@ -49,6 +50,7 @@ namespace Amazon.EC2.Model
         private string _lastUpdatedTime;
         private VerifiedAccessEndpointLoadBalancerOptions _loadBalancerOptions;
         private VerifiedAccessEndpointEniOptions _networkInterfaceOptions;
+        private VerifiedAccessEndpointRdsOptions _rdsOptions;
         private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private VerifiedAccessSseSpecificationResponse _sseSpecification;
         private VerifiedAccessEndpointStatus _status;
@@ -92,6 +94,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetAttachmentType()
         {
             return this._attachmentType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CidrOptions. 
+        /// <para>
+        /// The options for a CIDR endpoint.
+        /// </para>
+        /// </summary>
+        public VerifiedAccessEndpointCidrOptions CidrOptions
+        {
+            get { return this._cidrOptions; }
+            set { this._cidrOptions = value; }
+        }
+
+        // Check to see if CidrOptions property is set
+        internal bool IsSetCidrOptions()
+        {
+            return this._cidrOptions != null;
         }
 
         /// <summary>
@@ -275,6 +295,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetNetworkInterfaceOptions()
         {
             return this._networkInterfaceOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RdsOptions. 
+        /// <para>
+        /// The options for an RDS endpoint.
+        /// </para>
+        /// </summary>
+        public VerifiedAccessEndpointRdsOptions RdsOptions
+        {
+            get { return this._rdsOptions; }
+            set { this._rdsOptions = value; }
+        }
+
+        // Check to see if RdsOptions property is set
+        internal bool IsSetRdsOptions()
+        {
+            return this._rdsOptions != null;
         }
 
         /// <summary>

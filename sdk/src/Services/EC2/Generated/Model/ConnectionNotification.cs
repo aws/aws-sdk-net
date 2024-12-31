@@ -40,6 +40,7 @@ namespace Amazon.EC2.Model
         private ConnectionNotificationState _connectionNotificationState;
         private ConnectionNotificationType _connectionNotificationType;
         private string _serviceId;
+        private string _serviceRegion;
         private string _vpcEndpointId;
 
         /// <summary>
@@ -149,6 +150,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetServiceId()
         {
             return this._serviceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceRegion. 
+        /// <para>
+        /// The Region for the endpoint service.
+        /// </para>
+        /// </summary>
+        public string ServiceRegion
+        {
+            get { return this._serviceRegion; }
+            set { this._serviceRegion = value; }
+        }
+
+        // Check to see if ServiceRegion property is set
+        internal bool IsSetServiceRegion()
+        {
+            return this._serviceRegion != null;
         }
 
         /// <summary>

@@ -110,6 +110,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
 
+                    if(publicRequest.IsSetConnectionIdentifier())
+                    {
+                        context.Writer.WritePropertyName("connectionIdentifier");
+                        context.Writer.Write(publicRequest.ConnectionIdentifier);
+                    }
+
                     if(publicRequest.IsSetDescription())
                     {
                         context.Writer.WritePropertyName("description");

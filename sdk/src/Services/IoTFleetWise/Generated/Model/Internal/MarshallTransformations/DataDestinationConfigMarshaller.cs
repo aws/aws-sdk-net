@@ -48,6 +48,17 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetMqttTopicConfig())
+            {
+                context.Writer.WritePropertyName("mqttTopicConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = MqttTopicConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.MqttTopicConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetS3Config())
             {
                 context.Writer.WritePropertyName("s3Config");

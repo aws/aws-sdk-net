@@ -2629,6 +2629,52 @@ namespace Amazon.PartnerCentralSelling
 
 
     /// <summary>
+    /// Constants used for properties of type EngagementContextType.
+    /// </summary>
+    public class EngagementContextType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CustomerProject for EngagementContextType
+        /// </summary>
+        public static readonly EngagementContextType CustomerProject = new EngagementContextType("CustomerProject");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EngagementContextType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EngagementContextType FindValue(string value)
+        {
+            return FindValue<EngagementContextType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EngagementContextType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EngagementInvitationPayloadType.
     /// </summary>
     public class EngagementInvitationPayloadType : ConstantClass
@@ -2722,6 +2768,52 @@ namespace Amazon.PartnerCentralSelling
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator EngagementScore(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EngagementSortName.
+    /// </summary>
+    public class EngagementSortName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CreatedDate for EngagementSortName
+        /// </summary>
+        public static readonly EngagementSortName CreatedDate = new EngagementSortName("CreatedDate");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EngagementSortName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EngagementSortName FindValue(string value)
+        {
+            return FindValue<EngagementSortName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EngagementSortName(string value)
         {
             return FindValue(value);
         }
@@ -3717,6 +3809,52 @@ namespace Amazon.PartnerCentralSelling
 
 
     /// <summary>
+    /// Constants used for properties of type ListTasksSortName.
+    /// </summary>
+    public class ListTasksSortName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant StartTime for ListTasksSortName
+        /// </summary>
+        public static readonly ListTasksSortName StartTime = new ListTasksSortName("StartTime");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ListTasksSortName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ListTasksSortName FindValue(string value)
+        {
+            return FindValue<ListTasksSortName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ListTasksSortName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type MarketingSource.
     /// </summary>
     public class MarketingSource : ConstantClass
@@ -4030,6 +4168,10 @@ namespace Amazon.PartnerCentralSelling
         /// Constant RECEIVER for ParticipantType
         /// </summary>
         public static readonly ParticipantType RECEIVER = new ParticipantType("RECEIVER");
+        /// <summary>
+        /// Constant SENDER for ParticipantType
+        /// </summary>
+        public static readonly ParticipantType SENDER = new ParticipantType("SENDER");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -4197,6 +4339,10 @@ namespace Amazon.PartnerCentralSelling
         /// </summary>
         public static readonly ReasonCode EngagementAccessDenied = new ReasonCode("EngagementAccessDenied");
         /// <summary>
+        /// Constant EngagementConflict for ReasonCode
+        /// </summary>
+        public static readonly ReasonCode EngagementConflict = new ReasonCode("EngagementConflict");
+        /// <summary>
         /// Constant EngagementInvitationConflict for ReasonCode
         /// </summary>
         public static readonly ReasonCode EngagementInvitationConflict = new ReasonCode("EngagementInvitationConflict");
@@ -4212,6 +4358,10 @@ namespace Amazon.PartnerCentralSelling
         /// Constant InvitationAccessDenied for ReasonCode
         /// </summary>
         public static readonly ReasonCode InvitationAccessDenied = new ReasonCode("InvitationAccessDenied");
+        /// <summary>
+        /// Constant InvitationValidationFailed for ReasonCode
+        /// </summary>
+        public static readonly ReasonCode InvitationValidationFailed = new ReasonCode("InvitationValidationFailed");
         /// <summary>
         /// Constant OpportunityAccessDenied for ReasonCode
         /// </summary>
@@ -4229,13 +4379,37 @@ namespace Amazon.PartnerCentralSelling
         /// </summary>
         public static readonly ReasonCode OpportunityValidationFailed = new ReasonCode("OpportunityValidationFailed");
         /// <summary>
+        /// Constant RequestThrottled for ReasonCode
+        /// </summary>
+        public static readonly ReasonCode RequestThrottled = new ReasonCode("RequestThrottled");
+        /// <summary>
         /// Constant ResourceSnapshotAccessDenied for ReasonCode
         /// </summary>
         public static readonly ReasonCode ResourceSnapshotAccessDenied = new ReasonCode("ResourceSnapshotAccessDenied");
         /// <summary>
+        /// Constant ResourceSnapshotConflict for ReasonCode
+        /// </summary>
+        public static readonly ReasonCode ResourceSnapshotConflict = new ReasonCode("ResourceSnapshotConflict");
+        /// <summary>
         /// Constant ResourceSnapshotJobAccessDenied for ReasonCode
         /// </summary>
         public static readonly ReasonCode ResourceSnapshotJobAccessDenied = new ReasonCode("ResourceSnapshotJobAccessDenied");
+        /// <summary>
+        /// Constant ResourceSnapshotJobConflict for ReasonCode
+        /// </summary>
+        public static readonly ReasonCode ResourceSnapshotJobConflict = new ReasonCode("ResourceSnapshotJobConflict");
+        /// <summary>
+        /// Constant ResourceSnapshotJobValidationFailed for ReasonCode
+        /// </summary>
+        public static readonly ReasonCode ResourceSnapshotJobValidationFailed = new ReasonCode("ResourceSnapshotJobValidationFailed");
+        /// <summary>
+        /// Constant ResourceSnapshotValidationFailed for ReasonCode
+        /// </summary>
+        public static readonly ReasonCode ResourceSnapshotValidationFailed = new ReasonCode("ResourceSnapshotValidationFailed");
+        /// <summary>
+        /// Constant ServiceQuotaExceeded for ReasonCode
+        /// </summary>
+        public static readonly ReasonCode ServiceQuotaExceeded = new ReasonCode("ServiceQuotaExceeded");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -4398,6 +4572,102 @@ namespace Amazon.PartnerCentralSelling
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RelatedEntityType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResourceSnapshotJobStatus.
+    /// </summary>
+    public class ResourceSnapshotJobStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Running for ResourceSnapshotJobStatus
+        /// </summary>
+        public static readonly ResourceSnapshotJobStatus Running = new ResourceSnapshotJobStatus("Running");
+        /// <summary>
+        /// Constant Stopped for ResourceSnapshotJobStatus
+        /// </summary>
+        public static readonly ResourceSnapshotJobStatus Stopped = new ResourceSnapshotJobStatus("Stopped");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourceSnapshotJobStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceSnapshotJobStatus FindValue(string value)
+        {
+            return FindValue<ResourceSnapshotJobStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceSnapshotJobStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResourceType.
+    /// </summary>
+    public class ResourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Opportunity for ResourceType
+        /// </summary>
+        public static readonly ResourceType Opportunity = new ResourceType("Opportunity");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceType FindValue(string value)
+        {
+            return FindValue<ResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceType(string value)
         {
             return FindValue(value);
         }
@@ -4758,6 +5028,52 @@ namespace Amazon.PartnerCentralSelling
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SolutionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SortBy.
+    /// </summary>
+    public class SortBy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CreatedDate for SortBy
+        /// </summary>
+        public static readonly SortBy CreatedDate = new SortBy("CreatedDate");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SortBy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SortBy FindValue(string value)
+        {
+            return FindValue<SortBy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SortBy(string value)
         {
             return FindValue(value);
         }

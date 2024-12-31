@@ -104,6 +104,17 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                                         request.Parameters.Add("Rule" + "." + "Actions" + "." + "member" + "." + publicRequestRulelistValueIndex + "." + "BounceAction" + "." + "TopicArn", StringUtils.FromString(publicRequestRulelistValue.BounceAction.TopicArn));
                                     }
                                 }
+                                if(publicRequestRulelistValue.IsSetConnectAction())
+                                {
+                                    if(publicRequestRulelistValue.ConnectAction.IsSetIAMRoleARN())
+                                    {
+                                        request.Parameters.Add("Rule" + "." + "Actions" + "." + "member" + "." + publicRequestRulelistValueIndex + "." + "ConnectAction" + "." + "IAMRoleARN", StringUtils.FromString(publicRequestRulelistValue.ConnectAction.IAMRoleARN));
+                                    }
+                                    if(publicRequestRulelistValue.ConnectAction.IsSetInstanceARN())
+                                    {
+                                        request.Parameters.Add("Rule" + "." + "Actions" + "." + "member" + "." + publicRequestRulelistValueIndex + "." + "ConnectAction" + "." + "InstanceARN", StringUtils.FromString(publicRequestRulelistValue.ConnectAction.InstanceARN));
+                                    }
+                                }
                                 if(publicRequestRulelistValue.IsSetLambdaAction())
                                 {
                                     if(publicRequestRulelistValue.LambdaAction.IsSetFunctionArn())

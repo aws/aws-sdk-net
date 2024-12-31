@@ -237,6 +237,52 @@ namespace Amazon.Lambda
 
 
     /// <summary>
+    /// Constants used for properties of type EventSourceMappingMetric.
+    /// </summary>
+    public class EventSourceMappingMetric : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EventCount for EventSourceMappingMetric
+        /// </summary>
+        public static readonly EventSourceMappingMetric EventCount = new EventSourceMappingMetric("EventCount");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EventSourceMappingMetric(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EventSourceMappingMetric FindValue(string value)
+        {
+            return FindValue<EventSourceMappingMetric>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EventSourceMappingMetric(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EventSourcePosition.
     /// </summary>
     public class EventSourcePosition : ConstantClass
@@ -1152,6 +1198,10 @@ namespace Amazon.Lambda
         /// Constant Nodejs20X for Runtime
         /// </summary>
         public static readonly Runtime Nodejs20X = new Runtime("nodejs20.x");
+        /// <summary>
+        /// Constant Nodejs22X for Runtime
+        /// </summary>
+        public static readonly Runtime Nodejs22X = new Runtime("nodejs22.x");
         /// <summary>
         /// Constant Nodejs43 for Runtime
         /// </summary>

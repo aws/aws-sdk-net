@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// Indicates one of the following errors:
+    /// One of the following errors:
     /// 
     ///  <ul> <li> 
     /// <para>

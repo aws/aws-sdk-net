@@ -59,6 +59,17 @@ namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetParentIdentifiers())
+            {
+                context.Writer.WritePropertyName("parentIdentifiers");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectParentIdentifiersListValue in requestObject.ParentIdentifiers)
+                {
+                        context.Writer.Write(requestObjectParentIdentifiersListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetTargetIdentifiers())
             {
                 context.Writer.WritePropertyName("targetIdentifiers");

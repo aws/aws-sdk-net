@@ -30,28 +30,71 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// Records configuration changes to your specified resource types. For more information
-    /// about the configuration recorder, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/stop-start-recorder.html">
-    /// <b>Managing the Configuration Recorder</b> </a> in the <i>Config Developer Guide</i>.
+    /// Records configuration changes to the resource types in scope.
+    /// 
+    ///  
+    /// <para>
+    /// For more information about the configuration recorder, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/stop-start-recorder.html">
+    /// <b>Working with the Configuration Recorder</b> </a> in the <i>Config Developer Guide</i>.
+    /// </para>
     /// </summary>
     public partial class ConfigurationRecorder
     {
+        private string _arn;
         private string _name;
         private RecordingGroup _recordingGroup;
         private RecordingMode _recordingMode;
+        private RecordingScope _recordingScope;
         private string _rolearn;
+        private string _servicePrincipal;
+
+        /// <summary>
+        /// Gets and sets the property Arn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the specified configuration recorder.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
+        public string Arn
+        {
+            get { return this._arn; }
+            set { this._arn = value; }
+        }
+
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
+        {
+            return this._arn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the configuration recorder. Config automatically assigns the name of "default"
-        /// when creating the configuration recorder.
+        /// The name of the configuration recorder.
+        /// </para>
+        ///  
+        /// <para>
+        /// For customer managed configuration recorders, Config automatically assigns the name
+        /// of "default" when creating a configuration recorder if you do not specify a name at
+        /// creation time.
+        /// </para>
+        ///  
+        /// <para>
+        /// For service-linked configuration recorders, Config automatically assigns a name that
+        /// has the prefix "<c>AWS</c>" to a new service-linked configuration recorder.
         /// </para>
         ///  <note> 
         /// <para>
-        /// You cannot change the name of the configuration recorder after it has been created.
-        /// To change the configuration recorder name, you must delete it and create a new configuration
-        /// recorder with a new name. 
+        ///  <b>Changing the name of a configuration recorder</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To change the name of the customer managed configuration recorder, you must delete
+        /// it and create a new customer managed configuration recorder with a new name.
+        /// </para>
+        ///  
+        /// <para>
+        /// You cannot change the name of a service-linked configuration recorder.
         /// </para>
         ///  </note>
         /// </summary>
@@ -71,7 +114,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property RecordingGroup. 
         /// <para>
-        /// Specifies which resource types Config records for configuration changes.
+        /// Specifies which resource types are in scope for the configuration recorder to record.
         /// </para>
         ///  <note> 
         /// <para>
@@ -79,7 +122,7 @@ namespace Amazon.ConfigService.Model
         /// </para>
         ///  
         /// <para>
-        /// You may notice increased activity in your account during your initial month recording
+        /// You might notice increased activity in your account during your initial month recording
         /// with Config when compared to subsequent months. During the initial bootstrapping process,
         /// Config runs evaluations on all the resources in your account that you have selected
         /// for Config to record.
@@ -90,10 +133,14 @@ namespace Amazon.ConfigService.Model
         /// as it records configuration changes associated with creating and deleting these temporary
         /// resources. An <i>ephemeral workload</i> is a temporary use of computing resources
         /// that are loaded and run when needed. Examples include Amazon Elastic Compute Cloud
-        /// (Amazon EC2) Spot Instances, Amazon EMR jobs, and Auto Scaling. If you want to avoid
-        /// the increased activity from running ephemeral workloads, you can run these types of
-        /// workloads in a separate account with Config turned off to avoid increased configuration
-        /// recording and rule evaluations.
+        /// (Amazon EC2) Spot Instances, Amazon EMR jobs, and Auto Scaling.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you want to avoid the increased activity from running ephemeral workloads, you
+        /// can set up the configuration recorder to exclude these resource types from being recorded,
+        /// or run these types of workloads in a separate account with Config turned off to avoid
+        /// increased configuration recording and rule evaluations.
         /// </para>
         ///  </note>
         /// </summary>
@@ -112,8 +159,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property RecordingMode. 
         /// <para>
-        /// Specifies the default recording frequency that Config uses to record configuration
-        /// changes. Config supports <i>Continuous recording</i> and <i>Daily recording</i>.
+        /// Specifies the default recording frequency for the configuration recorder. Config supports
+        /// <i>Continuous recording</i> and <i>Daily recording</i>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -127,6 +174,10 @@ namespace Amazon.ConfigService.Model
         /// from the previous CI recorded. 
         /// </para>
         ///  </li> </ul> <note> 
+        /// <para>
+        ///  <b>Some resource types require continuous recording</b> 
+        /// </para>
+        ///  
         /// <para>
         /// Firewall Manager depends on continuous recording to monitor your resources. If you
         /// are using Firewall Manager, it is recommended that you set the recording frequency
@@ -150,37 +201,82 @@ namespace Amazon.ConfigService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RecordingScope. 
+        /// <para>
+        /// Specifies whether the <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_ConfigurationItem.html">ConfigurationItems</a>
+        /// in scope for the specified configuration recorder are recorded for free (<c>INTERNAL</c>)
+        /// or if it impacts the costs to your bill (<c>PAID</c>).
+        /// </para>
+        /// </summary>
+        public RecordingScope RecordingScope
+        {
+            get { return this._recordingScope; }
+            set { this._recordingScope = value; }
+        }
+
+        // Check to see if RecordingScope property is set
+        internal bool IsSetRecordingScope()
+        {
+            return this._recordingScope != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RoleARN. 
         /// <para>
-        /// Amazon Resource Name (ARN) of the IAM role assumed by Config and used by the configuration
-        /// recorder.
+        /// The Amazon Resource Name (ARN) of the IAM role assumed by Config and used by the specified
+        /// configuration recorder.
         /// </para>
         ///  <note> 
+        /// <para>
+        ///  <b>The server will reject a request without a defined <c>roleARN</c> for the configuration
+        /// recorder</b> 
+        /// </para>
+        ///  
         /// <para>
         /// While the API model does not require this field, the server will reject a request
         /// without a defined <c>roleARN</c> for the configuration recorder.
         /// </para>
-        ///  </note> <note> 
+        ///  
         /// <para>
-        ///  <b>Pre-existing Config role</b> 
+        ///  <b>Policies and compliance results</b> 
         /// </para>
         ///  
         /// <para>
-        /// If you have used an Amazon Web Services service that uses Config, such as Security
-        /// Hub or Control Tower, and an Config role has already been created, make sure that
-        /// the IAM role that you use when setting up Config keeps the same minimum permissions
-        /// as the already created Config role. You must do this so that the other Amazon Web
-        /// Services service continues to run as expected. 
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM
+        /// policies</a> and <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies.html">other
+        /// policies managed in Organizations</a> can impact whether Config has permissions to
+        /// record configuration changes for your resources. Additionally, rules directly evaluate
+        /// the configuration of a resource and rules don't take into account these policies when
+        /// running evaluations. Make sure that the policies in effect align with how you intend
+        /// to use Config.
         /// </para>
         ///  
         /// <para>
-        /// For example, if Control Tower has an IAM role that allows Config to read Amazon Simple
-        /// Storage Service (Amazon S3) objects, make sure that the same permissions are granted
-        /// within the IAM role you use when setting up Config. Otherwise, it may interfere with
-        /// how Control Tower operates. For more information about IAM roles for Config, see <a
-        /// href="https://docs.aws.amazon.com/config/latest/developerguide/security-iam.html">
-        /// <b>Identity and Access Management for Config</b> </a> in the <i>Config Developer Guide</i>.
-        /// 
+        ///  <b>Keep Minimum Permisions When Reusing an IAM role</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you use an Amazon Web Services service that uses Config, such as Security Hub or
+        /// Control Tower, and an IAM role has already been created, make sure that the IAM role
+        /// that you use when setting up Config keeps the same minimum permissions as the pre-existing
+        /// IAM role. You must do this to ensure that the other Amazon Web Services service continues
+        /// to run as expected. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, if Control Tower has an IAM role that allows Config to read S3 objects,
+        /// make sure that the same permissions are granted to the IAM role you use when setting
+        /// up Config. Otherwise, it may interfere with how Control Tower operates.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>The service-linked IAM role for Config must be used for service-linked configuration
+        /// recorders</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// For service-linked configuration recorders, you must use the service-linked IAM role
+        /// for Config: <a href="https://docs.aws.amazon.com/config/latest/developerguide/using-service-linked-roles.html">AWSServiceRoleForConfig</a>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -194,6 +290,26 @@ namespace Amazon.ConfigService.Model
         internal bool IsSetRoleARN()
         {
             return this._rolearn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServicePrincipal. 
+        /// <para>
+        /// For service-linked configuration recorders, specifies the linked Amazon Web Services
+        /// service for the configuration recorder.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string ServicePrincipal
+        {
+            get { return this._servicePrincipal; }
+            set { this._servicePrincipal = value; }
+        }
+
+        // Check to see if ServicePrincipal property is set
+        internal bool IsSetServicePrincipal()
+        {
+            return this._servicePrincipal != null;
         }
 
     }

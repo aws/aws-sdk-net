@@ -88,6 +88,12 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
                     response.ModelManifestArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("stateTemplates", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<StateTemplateAssociation, StateTemplateAssociationUnmarshaller>(StateTemplateAssociationUnmarshaller.Instance);
+                    response.StateTemplates = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("vehicleName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

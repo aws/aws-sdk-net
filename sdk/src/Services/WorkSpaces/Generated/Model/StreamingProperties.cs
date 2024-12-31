@@ -34,9 +34,28 @@ namespace Amazon.WorkSpaces.Model
     /// </summary>
     public partial class StreamingProperties
     {
+        private GlobalAcceleratorForDirectory _globalAccelerator;
         private List<StorageConnector> _storageConnectors = AWSConfigs.InitializeCollections ? new List<StorageConnector>() : null;
         private StreamingExperiencePreferredProtocolEnum _streamingExperiencePreferredProtocol;
         private List<UserSetting> _userSettings = AWSConfigs.InitializeCollections ? new List<UserSetting>() : null;
+
+        /// <summary>
+        /// Gets and sets the property GlobalAccelerator. 
+        /// <para>
+        /// Indicates the Global Accelerator properties.
+        /// </para>
+        /// </summary>
+        public GlobalAcceleratorForDirectory GlobalAccelerator
+        {
+            get { return this._globalAccelerator; }
+            set { this._globalAccelerator = value; }
+        }
+
+        // Check to see if GlobalAccelerator property is set
+        internal bool IsSetGlobalAccelerator()
+        {
+            return this._globalAccelerator != null;
+        }
 
         /// <summary>
         /// Gets and sets the property StorageConnectors. 

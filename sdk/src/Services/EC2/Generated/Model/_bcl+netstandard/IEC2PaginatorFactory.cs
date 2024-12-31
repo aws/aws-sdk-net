@@ -47,6 +47,16 @@ namespace Amazon.EC2.Model
         IDescribeByoipCidrsPaginator DescribeByoipCidrs(DescribeByoipCidrsRequest request);
 
         /// <summary>
+        /// Paginator for DescribeCapacityBlockExtensionHistory operation
+        ///</summary>
+        IDescribeCapacityBlockExtensionHistoryPaginator DescribeCapacityBlockExtensionHistory(DescribeCapacityBlockExtensionHistoryRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeCapacityBlockExtensionOfferings operation
+        ///</summary>
+        IDescribeCapacityBlockExtensionOfferingsPaginator DescribeCapacityBlockExtensionOfferings(DescribeCapacityBlockExtensionOfferingsRequest request);
+
+        /// <summary>
         /// Paginator for DescribeCapacityBlockOfferings operation
         ///</summary>
         IDescribeCapacityBlockOfferingsPaginator DescribeCapacityBlockOfferings(DescribeCapacityBlockOfferingsRequest request);

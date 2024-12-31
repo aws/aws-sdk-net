@@ -32,6 +32,12 @@ namespace Amazon.ConnectParticipant.Model
     /// <summary>
     /// Container for the parameters to the DescribeView operation.
     /// Retrieves the view for the specified view token.
+    /// 
+    ///  
+    /// <para>
+    /// For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
+    /// Connect Chat security best practices</a>.
+    /// </para>
     /// </summary>
     public partial class DescribeViewRequest : AmazonConnectParticipantRequest
     {

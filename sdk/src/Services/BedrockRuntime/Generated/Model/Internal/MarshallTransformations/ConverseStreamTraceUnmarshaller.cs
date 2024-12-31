@@ -72,6 +72,12 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
                     unmarshalledObject.Guardrail = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("promptRouter", targetDepth))
+                {
+                    var unmarshaller = PromptRouterTraceUnmarshaller.Instance;
+                    unmarshalledObject.PromptRouter = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

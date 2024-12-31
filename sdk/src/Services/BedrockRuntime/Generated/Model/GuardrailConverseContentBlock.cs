@@ -36,7 +36,27 @@ namespace Amazon.BedrockRuntime.Model
     /// </summary>
     public partial class GuardrailConverseContentBlock
     {
+        private GuardrailConverseImageBlock _image;
         private GuardrailConverseTextBlock _text;
+
+        /// <summary>
+        /// Gets and sets the property Image. 
+        /// <para>
+        /// Image within converse content block to be evaluated by the guardrail.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public GuardrailConverseImageBlock Image
+        {
+            get { return this._image; }
+            set { this._image = value; }
+        }
+
+        // Check to see if Image property is set
+        internal bool IsSetImage()
+        {
+            return this._image != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Text. 

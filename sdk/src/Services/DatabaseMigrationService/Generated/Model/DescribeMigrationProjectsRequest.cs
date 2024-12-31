@@ -44,6 +44,23 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// Filters applied to the migration projects described in the form of key-value pairs.
         /// </para>
+        ///  
+        /// <para>
+        /// Valid filter names and values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// instance-profile-identifier, instance profile arn or name
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// data-provider-identifier, data provider arn or name
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// migration-project-identifier, migration project arn or name
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public List<Filter> Filters
         {

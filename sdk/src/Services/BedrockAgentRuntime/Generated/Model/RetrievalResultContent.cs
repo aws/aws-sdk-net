@@ -30,7 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Contains the cited text from the data source.
+    /// Contains information about a chunk of text from a data source in the knowledge base.
+    /// If the result is from a structured data source, the cell in the database and the type
+    /// of the value is also identified.
     /// 
     ///  
     /// <para>
@@ -55,7 +57,49 @@ namespace Amazon.BedrockAgentRuntime.Model
     /// </summary>
     public partial class RetrievalResultContent
     {
+        private string _byteContent;
+        private List<RetrievalResultContentColumn> _row = AWSConfigs.InitializeCollections ? new List<RetrievalResultContentColumn>() : null;
         private string _text;
+        private RetrievalResultContentType _type;
+
+        /// <summary>
+        /// Gets and sets the property ByteContent. 
+        /// <para>
+        /// A data URI with base64-encoded content from the data source. The URI is in the following
+        /// format: returned in the following format: <c>data:image/jpeg;base64,${base64-encoded
+        /// string}</c>.
+        /// </para>
+        /// </summary>
+        public string ByteContent
+        {
+            get { return this._byteContent; }
+            set { this._byteContent = value; }
+        }
+
+        // Check to see if ByteContent property is set
+        internal bool IsSetByteContent()
+        {
+            return this._byteContent != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Row. 
+        /// <para>
+        /// Specifies information about the rows with the cells to return in retrieval.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public List<RetrievalResultContentColumn> Row
+        {
+            get { return this._row; }
+            set { this._row = value; }
+        }
+
+        // Check to see if Row property is set
+        internal bool IsSetRow()
+        {
+            return this._row != null && (this._row.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property Text. 
@@ -63,7 +107,6 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// The cited text from the data source.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string Text
         {
             get { return this._text; }
@@ -74,6 +117,24 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetText()
         {
             return this._text != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type of content in the retrieval result.
+        /// </para>
+        /// </summary>
+        public RetrievalResultContentType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
     }

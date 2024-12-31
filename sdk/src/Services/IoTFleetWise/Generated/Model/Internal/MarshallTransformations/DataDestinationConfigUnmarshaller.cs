@@ -66,6 +66,12 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("mqttTopicConfig", targetDepth))
+                {
+                    var unmarshaller = MqttTopicConfigUnmarshaller.Instance;
+                    unmarshalledObject.MqttTopicConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("s3Config", targetDepth))
                 {
                     var unmarshaller = S3ConfigUnmarshaller.Instance;

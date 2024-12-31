@@ -37,6 +37,7 @@ namespace Amazon.CleanRoomsML.Model
     {
         private S3ConfigMap _dataSource;
         private string _roleArn;
+        private ComputeConfiguration _sqlComputeConfiguration;
         private ProtectedQuerySQLParameters _sqlParameters;
 
         /// <summary>
@@ -88,6 +89,21 @@ namespace Amazon.CleanRoomsML.Model
         internal bool IsSetRoleArn()
         {
             return this._roleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SqlComputeConfiguration.
+        /// </summary>
+        public ComputeConfiguration SqlComputeConfiguration
+        {
+            get { return this._sqlComputeConfiguration; }
+            set { this._sqlComputeConfiguration = value; }
+        }
+
+        // Check to see if SqlComputeConfiguration property is set
+        internal bool IsSetSqlComputeConfiguration()
+        {
+            return this._sqlComputeConfiguration != null;
         }
 
         /// <summary>

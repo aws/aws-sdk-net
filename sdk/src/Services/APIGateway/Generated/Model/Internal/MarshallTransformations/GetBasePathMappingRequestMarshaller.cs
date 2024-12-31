@@ -65,7 +65,11 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetDomainName())
                 throw new AmazonAPIGatewayException("Request object does not have required field DomainName set");
             request.AddPathResource("{domain_name}", StringUtils.FromString(publicRequest.DomainName));
+            
+            if (publicRequest.IsSetDomainNameId())
+                request.Parameters.Add("domainNameId", StringUtils.FromString(publicRequest.DomainNameId));
             request.ResourcePath = "/domainnames/{domain_name}/basepathmappings/{base_path}";
+            request.UseQueryString = true;
 
             return request;
         }

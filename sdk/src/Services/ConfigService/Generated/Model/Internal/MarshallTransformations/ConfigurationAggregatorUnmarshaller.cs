@@ -72,6 +72,12 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                     unmarshalledObject.AccountAggregationSources = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AggregatorFilters", targetDepth))
+                {
+                    var unmarshaller = AggregatorFiltersUnmarshaller.Instance;
+                    unmarshalledObject.AggregatorFilters = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ConfigurationAggregatorArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

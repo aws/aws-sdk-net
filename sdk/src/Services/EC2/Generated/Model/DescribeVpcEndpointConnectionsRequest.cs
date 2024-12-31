@@ -60,6 +60,11 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>vpc-endpoint-region</c> - The Region of the endpoint or <c>cross-region</c> to
+        /// find endpoints for other Regions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>vpc-endpoint-state</c> - The state of the endpoint (<c>pendingAcceptance</c> |
         /// <c>pending</c> | <c>available</c> | <c>deleting</c> | <c>deleted</c> | <c>rejected</c>
         /// | <c>failed</c>).

@@ -75,6 +75,110 @@ namespace Amazon.CostExplorer
 
 
     /// <summary>
+    /// Constants used for properties of type AnalysisStatus.
+    /// </summary>
+    public class AnalysisStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for AnalysisStatus
+        /// </summary>
+        public static readonly AnalysisStatus FAILED = new AnalysisStatus("FAILED");
+        /// <summary>
+        /// Constant PROCESSING for AnalysisStatus
+        /// </summary>
+        public static readonly AnalysisStatus PROCESSING = new AnalysisStatus("PROCESSING");
+        /// <summary>
+        /// Constant SUCCEEDED for AnalysisStatus
+        /// </summary>
+        public static readonly AnalysisStatus SUCCEEDED = new AnalysisStatus("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AnalysisStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AnalysisStatus FindValue(string value)
+        {
+            return FindValue<AnalysisStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AnalysisStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AnalysisType.
+    /// </summary>
+    public class AnalysisType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CUSTOM_COMMITMENT for AnalysisType
+        /// </summary>
+        public static readonly AnalysisType CUSTOM_COMMITMENT = new AnalysisType("CUSTOM_COMMITMENT");
+        /// <summary>
+        /// Constant MAX_SAVINGS for AnalysisType
+        /// </summary>
+        public static readonly AnalysisType MAX_SAVINGS = new AnalysisType("MAX_SAVINGS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AnalysisType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AnalysisType FindValue(string value)
+        {
+            return FindValue<AnalysisType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AnalysisType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AnomalyFeedbackType.
     /// </summary>
     public class AnomalyFeedbackType : ConstantClass
@@ -954,6 +1058,68 @@ namespace Amazon.CostExplorer
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Dimension(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ErrorCode.
+    /// </summary>
+    public class ErrorCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INTERNAL_FAILURE for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode INTERNAL_FAILURE = new ErrorCode("INTERNAL_FAILURE");
+        /// <summary>
+        /// Constant INVALID_ACCOUNT_ID for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode INVALID_ACCOUNT_ID = new ErrorCode("INVALID_ACCOUNT_ID");
+        /// <summary>
+        /// Constant INVALID_SAVINGS_PLANS_TO_ADD for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode INVALID_SAVINGS_PLANS_TO_ADD = new ErrorCode("INVALID_SAVINGS_PLANS_TO_ADD");
+        /// <summary>
+        /// Constant INVALID_SAVINGS_PLANS_TO_EXCLUDE for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode INVALID_SAVINGS_PLANS_TO_EXCLUDE = new ErrorCode("INVALID_SAVINGS_PLANS_TO_EXCLUDE");
+        /// <summary>
+        /// Constant NO_USAGE_FOUND for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode NO_USAGE_FOUND = new ErrorCode("NO_USAGE_FOUND");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ErrorCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ErrorCode FindValue(string value)
+        {
+            return FindValue<ErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ErrorCode(string value)
         {
             return FindValue(value);
         }

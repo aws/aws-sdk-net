@@ -77,6 +77,12 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.EventDataStore);
                     }
 
+                    if(publicRequest.IsSetEventDataStoreOwnerAccountId())
+                    {
+                        context.Writer.WritePropertyName("EventDataStoreOwnerAccountId");
+                        context.Writer.Write(publicRequest.EventDataStoreOwnerAccountId);
+                    }
+
                     if(publicRequest.IsSetQueryAlias())
                     {
                         context.Writer.WritePropertyName("QueryAlias");
@@ -87,6 +93,12 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                     {
                         context.Writer.WritePropertyName("QueryId");
                         context.Writer.Write(publicRequest.QueryId);
+                    }
+
+                    if(publicRequest.IsSetRefreshId())
+                    {
+                        context.Writer.WritePropertyName("RefreshId");
+                        context.Writer.Write(publicRequest.RefreshId);
                     }
 
                     writer.WriteObjectEnd();

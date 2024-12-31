@@ -184,6 +184,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.Name);
                     }
 
+                    if(publicRequest.IsSetPerformanceConfiguration())
+                    {
+                        context.Writer.WritePropertyName("PerformanceConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = PerformanceConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.PerformanceConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
                     if(publicRequest.IsSetPhysicalTableMap())
                     {
                         context.Writer.WritePropertyName("PhysicalTableMap");

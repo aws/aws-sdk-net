@@ -31,12 +31,12 @@ namespace Amazon.PartnerCentralSelling.Model
 {
     /// <summary>
     /// The input fails to satisfy the constraints specified by the service or business validation
-    /// rules. 
+    /// rules.
     /// 
     ///  
     /// <para>
     /// Suggested action: Review the error message, including the failed fields and reasons,
-    /// to correct the request payload. 
+    /// to correct the request payload.
     /// </para>
     /// </summary>
     #if !NETSTANDARD
@@ -133,7 +133,6 @@ namespace Amazon.PartnerCentralSelling.Model
         /// Gets and sets the property ErrorList. 
         /// <para>
         /// A list of issues that were discovered in the submitted request or the resource state.
-        /// 
         /// </para>
         /// </summary>
         public List<ValidationExceptionError> ErrorList
@@ -151,7 +150,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Reason. 
         /// <para>
-        ///  The primary reason for this validation exception to occur. 
+        /// The primary reason for this validation exception to occur.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -160,7 +159,7 @@ namespace Amazon.PartnerCentralSelling.Model
         ///  
         /// <para>
         /// Fix: Verify your request payload includes all required fields, uses correct data types
-        /// and string formats. 
+        /// and string formats.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -170,7 +169,7 @@ namespace Amazon.PartnerCentralSelling.Model
         ///  
         /// <para>
         /// Fix: Check that your change aligns with the business rules defined by AWS Partner
-        /// Central. 
+        /// Central.
         /// </para>
         ///  </li> </ul>
         /// </summary>

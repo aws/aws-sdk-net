@@ -71,6 +71,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     writer.Validate = false;
                     writer.WriteObjectStart();
                     var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetApplyOverrideForComputeEnvironment())
+                    {
+                        context.Writer.WritePropertyName("ApplyOverrideForComputeEnvironment");
+                        context.Writer.Write(publicRequest.ApplyOverrideForComputeEnvironment);
+                    }
+
                     if(publicRequest.IsSetCatalogId())
                     {
                         context.Writer.WritePropertyName("CatalogId");

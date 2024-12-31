@@ -70,6 +70,17 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetSageMakerRunConfiguration())
+            {
+                context.Writer.WritePropertyName("sageMakerRunConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SageMakerRunConfigurationInputMarshaller.Instance;
+                marshaller.Marshall(requestObject.SageMakerRunConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.XRay.Model.CancelTraceRetrievalRequest.RetrievalToken</property>
+    <min>0</min>
+    <max>1020</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.XRay.Model.CreateGroupRequest.GroupName</property>
     <min>1</min>
     <max>32</max>
@@ -103,6 +108,11 @@
     <max>2000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.XRay.Model.GetRetrievedTracesGraphRequest.RetrievalToken</property>
+    <min>0</min>
+    <max>1020</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.XRay.Model.GetServiceGraphRequest.GroupARN</property>
     <min>1</min>
     <max>400</max>
@@ -138,6 +148,11 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.XRay.Model.ListRetrievedTracesRequest.RetrievalToken</property>
+    <min>0</min>
+    <max>1020</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.XRay.Model.ListTagsForResourceRequest.ResourceARN</property>
     <min>1</min>
     <max>1011</max>
@@ -166,6 +181,11 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.XRay.Model.StartTraceRetrievalResponse.RetrievalToken</property>
+    <min>0</min>
+    <max>1020</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.XRay.Model.TagResourceRequest.ResourceARN</property>
     <min>1</min>
     <max>1011</max>
@@ -182,6 +202,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.XRay.Model.UpdateGroupRequest.GroupName</property>
+    <min>1</min>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.XRay.Model.IndexingRule.Name</property>
     <min>1</min>
     <max>32</max>
   </property-value-rule>
@@ -223,6 +248,11 @@
     <min>1</min>
     <max>128</max>
     <pattern>[\w+=,.@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.XRay.Model.RetrievedTrace.Id</property>
+    <min>1</min>
+    <max>35</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.XRay.Model.SamplingRule.FixedRate</property>
@@ -325,6 +355,15 @@
   <property-value-rule>
     <property>Amazon.XRay.Model.Segment.Document</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.XRay.Model.Span.Document</property>
+    <max>204800</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.XRay.Model.Span.Id</property>
+    <min>1</min>
+    <max>16</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.XRay.Model.Tag.Key</property>

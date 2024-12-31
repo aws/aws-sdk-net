@@ -43,7 +43,7 @@ namespace Amazon.Glue.Model
         /// The name of the field on which to sort.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=1, Max=1024)]
         public string FieldName
         {
             get { return this._fieldName; }

@@ -128,6 +128,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     return DBInstanceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("DBInstanceNotReady"))
+                {
+                    return DBInstanceNotReadyExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
             }
             return new AmazonRDSException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }

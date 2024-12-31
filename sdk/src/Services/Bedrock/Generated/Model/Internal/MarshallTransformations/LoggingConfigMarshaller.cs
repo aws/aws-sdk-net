@@ -88,6 +88,12 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.TextDataDeliveryEnabled.Value);
             }
 
+            if(requestObject.IsSetVideoDataDeliveryEnabled())
+            {
+                context.Writer.WritePropertyName("videoDataDeliveryEnabled");
+                context.Writer.Write(requestObject.VideoDataDeliveryEnabled.Value);
+            }
+
         }
 
         /// <summary>

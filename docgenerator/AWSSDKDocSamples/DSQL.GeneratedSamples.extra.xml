@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.DSQL.IAmazonDSQL.CreateCluster(Amazon.DSQL.Model.CreateClusterRequest)" />
+            <member name="M:Amazon.DSQL.AmazonDSQLClient.CreateCluster(Amazon.DSQL.Model.CreateClusterRequest)" />
+            <member name="T:Amazon.DSQL.Model.CreateClusterRequest" />
+            <member name="T:Amazon.DSQL.Model.CreateClusterResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Create Cluster"
+                    source=".\AWSSDKDocSamples\DSQL\DSQL.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DSQL.IAmazonDSQL.CreateMultiRegionClusters(Amazon.DSQL.Model.CreateMultiRegionClustersRequest)" />
+            <member name="M:Amazon.DSQL.AmazonDSQLClient.CreateMultiRegionClusters(Amazon.DSQL.Model.CreateMultiRegionClustersRequest)" />
+            <member name="T:Amazon.DSQL.Model.CreateMultiRegionClustersRequest" />
+            <member name="T:Amazon.DSQL.Model.CreateMultiRegionClustersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Create Multi Region Clusters"
+                    source=".\AWSSDKDocSamples\DSQL\DSQL.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DSQL.IAmazonDSQL.DeleteCluster(Amazon.DSQL.Model.DeleteClusterRequest)" />
+            <member name="M:Amazon.DSQL.AmazonDSQLClient.DeleteCluster(Amazon.DSQL.Model.DeleteClusterRequest)" />
+            <member name="T:Amazon.DSQL.Model.DeleteClusterRequest" />
+            <member name="T:Amazon.DSQL.Model.DeleteClusterResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Delete Cluster"
+                    source=".\AWSSDKDocSamples\DSQL\DSQL.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DSQL.IAmazonDSQL.DeleteMultiRegionClusters(Amazon.DSQL.Model.DeleteMultiRegionClustersRequest)" />
+            <member name="M:Amazon.DSQL.AmazonDSQLClient.DeleteMultiRegionClusters(Amazon.DSQL.Model.DeleteMultiRegionClustersRequest)" />
+            <member name="T:Amazon.DSQL.Model.DeleteMultiRegionClustersRequest" />
+            <member name="T:Amazon.DSQL.Model.DeleteMultiRegionClustersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Delete Multi Region Clusters"
+                    source=".\AWSSDKDocSamples\DSQL\DSQL.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DSQL.IAmazonDSQL.GetCluster(Amazon.DSQL.Model.GetClusterRequest)" />
+            <member name="M:Amazon.DSQL.AmazonDSQLClient.GetCluster(Amazon.DSQL.Model.GetClusterRequest)" />
+            <member name="T:Amazon.DSQL.Model.GetClusterRequest" />
+            <member name="T:Amazon.DSQL.Model.GetClusterResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Get Cluster"
+                    source=".\AWSSDKDocSamples\DSQL\DSQL.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DSQL.IAmazonDSQL.ListClusters(Amazon.DSQL.Model.ListClustersRequest)" />
+            <member name="M:Amazon.DSQL.AmazonDSQLClient.ListClusters(Amazon.DSQL.Model.ListClustersRequest)" />
+            <member name="T:Amazon.DSQL.Model.ListClustersRequest" />
+            <member name="T:Amazon.DSQL.Model.ListClustersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="List Clusters"
+                    source=".\AWSSDKDocSamples\DSQL\DSQL.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DSQL.IAmazonDSQL.ListTagsForResource(Amazon.DSQL.Model.ListTagsForResourceRequest)" />
+            <member name="M:Amazon.DSQL.AmazonDSQLClient.ListTagsForResource(Amazon.DSQL.Model.ListTagsForResourceRequest)" />
+            <member name="T:Amazon.DSQL.Model.ListTagsForResourceRequest" />
+            <member name="T:Amazon.DSQL.Model.ListTagsForResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="List Tags For Resource"
+                    source=".\AWSSDKDocSamples\DSQL\DSQL.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DSQL.IAmazonDSQL.TagResource(Amazon.DSQL.Model.TagResourceRequest)" />
+            <member name="M:Amazon.DSQL.AmazonDSQLClient.TagResource(Amazon.DSQL.Model.TagResourceRequest)" />
+            <member name="T:Amazon.DSQL.Model.TagResourceRequest" />
+            <member name="T:Amazon.DSQL.Model.TagResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Tag Resource"
+                    source=".\AWSSDKDocSamples\DSQL\DSQL.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DSQL.IAmazonDSQL.UntagResource(Amazon.DSQL.Model.UntagResourceRequest)" />
+            <member name="M:Amazon.DSQL.AmazonDSQLClient.UntagResource(Amazon.DSQL.Model.UntagResourceRequest)" />
+            <member name="T:Amazon.DSQL.Model.UntagResourceRequest" />
+            <member name="T:Amazon.DSQL.Model.UntagResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Untag Resource"
+                    source=".\AWSSDKDocSamples\DSQL\DSQL.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DSQL.IAmazonDSQL.UpdateCluster(Amazon.DSQL.Model.UpdateClusterRequest)" />
+            <member name="M:Amazon.DSQL.AmazonDSQLClient.UpdateCluster(Amazon.DSQL.Model.UpdateClusterRequest)" />
+            <member name="T:Amazon.DSQL.Model.UpdateClusterRequest" />
+            <member name="T:Amazon.DSQL.Model.UpdateClusterResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Update Cluster"
+                    source=".\AWSSDKDocSamples\DSQL\DSQL.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+</docs>

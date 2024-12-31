@@ -72,6 +72,12 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                     unmarshalledObject.MulticastIp = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("multicastSourceSettings", targetDepth))
+                {
+                    var unmarshaller = MulticastSourceSettingsUnmarshaller.Instance;
+                    unmarshalledObject.MulticastSourceSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

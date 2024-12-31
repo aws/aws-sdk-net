@@ -49,6 +49,7 @@ namespace Amazon.QBusiness.Model
         private IdentityType _identityType;
         private PersonalizationConfiguration _personalizationConfiguration;
         private QAppsConfiguration _qAppsConfiguration;
+        private QuickSightConfiguration _quickSightConfiguration;
         private string _roleArn;
         private ApplicationStatus _status;
         private DateTime? _updatedAt;
@@ -334,6 +335,24 @@ namespace Amazon.QBusiness.Model
         internal bool IsSetQAppsConfiguration()
         {
             return this._qAppsConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property QuickSightConfiguration. 
+        /// <para>
+        /// The Amazon QuickSight authentication configuration for the Amazon Q Business application.
+        /// </para>
+        /// </summary>
+        public QuickSightConfiguration QuickSightConfiguration
+        {
+            get { return this._quickSightConfiguration; }
+            set { this._quickSightConfiguration = value; }
+        }
+
+        // Check to see if QuickSightConfiguration property is set
+        internal bool IsSetQuickSightConfiguration()
+        {
+            return this._quickSightConfiguration != null;
         }
 
         /// <summary>

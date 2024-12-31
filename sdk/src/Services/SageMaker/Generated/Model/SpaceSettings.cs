@@ -47,6 +47,12 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// The type of app created within the space.
         /// </para>
+        ///  
+        /// <para>
+        /// If using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateSpace.html">
+        /// UpdateSpace</a> API, you can't change the app type of your space by specifying a different
+        /// value for this field.
+        /// </para>
         /// </summary>
         public AppType AppType
         {
@@ -82,7 +88,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property CustomFileSystems. 
         /// <para>
         /// A file system, created by you, that you assign to a space for an Amazon SageMaker
-        /// Domain. Permitted users can access this file system in Amazon SageMaker Studio.
+        /// AI Domain. Permitted users can access this file system in Amazon SageMaker AI Studio.
         /// </para>
         /// </summary>
         [AWSProperty(Max=5)]

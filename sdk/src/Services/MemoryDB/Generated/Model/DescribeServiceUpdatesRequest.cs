@@ -31,7 +31,7 @@ namespace Amazon.MemoryDB.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeServiceUpdates operation.
-    /// Returns details of the service updates
+    /// Returns details of the service updates.
     /// </summary>
     public partial class DescribeServiceUpdatesRequest : AmazonMemoryDBRequest
     {
@@ -44,7 +44,7 @@ namespace Amazon.MemoryDB.Model
         /// <summary>
         /// Gets and sets the property ClusterNames. 
         /// <para>
-        /// The list of cluster names to identify service updates to apply
+        /// The list of cluster names to identify service updates to apply.
         /// </para>
         /// </summary>
         [AWSProperty(Max=20)]
@@ -123,7 +123,7 @@ namespace Amazon.MemoryDB.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status(es) of the service updates to filter on
+        /// The status(es) of the service updates to filter on.
         /// </para>
         /// </summary>
         [AWSProperty(Max=4)]

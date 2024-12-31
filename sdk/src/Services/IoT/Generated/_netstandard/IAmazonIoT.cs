@@ -215,7 +215,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>The response from the AssociateSbomWithPackageVersion service method, as returned by IoT.</returns>
         /// <exception cref="Amazon.IoT.Model.ConflictException">
-        /// A resource with the same name already exists.
+        /// The request conflicts with the current state of the resource.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.InternalServerException">
         /// Internal error from the service that indicates an unexpected error or that the service
@@ -225,7 +225,7 @@ namespace Amazon.IoT
         /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.ServiceQuotaExceededException">
-        /// A limit has been exceeded.
+        /// Service quota has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.ThrottlingException">
         /// The rate exceeds the limit.
@@ -1422,6 +1422,41 @@ namespace Amazon.IoT
 
         #endregion
                 
+        #region  CreateCommand
+
+
+
+        /// <summary>
+        /// Creates a command. A command contains reusable configurations that can be applied
+        /// before they are sent to the devices.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCommand service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateCommand service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceQuotaExceededException">
+        /// Service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ValidationException">
+        /// The request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateCommand">REST API Reference for CreateCommand Operation</seealso>
+        Task<CreateCommandResponse> CreateCommandAsync(CreateCommandRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateCustomMetric
 
 
@@ -1716,7 +1751,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>The response from the CreateJobTemplate service method, as returned by IoT.</returns>
         /// <exception cref="Amazon.IoT.Model.ConflictException">
-        /// A resource with the same name already exists.
+        /// The request conflicts with the current state of the resource.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.InternalFailureException">
         /// An unexpected error has occurred.
@@ -1977,14 +2012,14 @@ namespace Amazon.IoT
         /// 
         /// <returns>The response from the CreatePackage service method, as returned by IoT.</returns>
         /// <exception cref="Amazon.IoT.Model.ConflictException">
-        /// A resource with the same name already exists.
+        /// The request conflicts with the current state of the resource.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.InternalServerException">
         /// Internal error from the service that indicates an unexpected error or that the service
         /// is unavailable.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.ServiceQuotaExceededException">
-        /// A limit has been exceeded.
+        /// Service quota has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.ThrottlingException">
         /// The rate exceeds the limit.
@@ -2018,14 +2053,14 @@ namespace Amazon.IoT
         /// 
         /// <returns>The response from the CreatePackageVersion service method, as returned by IoT.</returns>
         /// <exception cref="Amazon.IoT.Model.ConflictException">
-        /// A resource with the same name already exists.
+        /// The request conflicts with the current state of the resource.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.InternalServerException">
         /// Internal error from the service that indicates an unexpected error or that the service
         /// is unavailable.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.ServiceQuotaExceededException">
-        /// A limit has been exceeded.
+        /// Service quota has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.ThrottlingException">
         /// The rate exceeds the limit.
@@ -3184,6 +3219,74 @@ namespace Amazon.IoT
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteCertificateProvider">REST API Reference for DeleteCertificateProvider Operation</seealso>
         Task<DeleteCertificateProviderResponse> DeleteCertificateProviderAsync(DeleteCertificateProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteCommand
+
+
+
+        /// <summary>
+        /// Delete a command resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCommand service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteCommand service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ValidationException">
+        /// The request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteCommand">REST API Reference for DeleteCommand Operation</seealso>
+        Task<DeleteCommandResponse> DeleteCommandAsync(DeleteCommandRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteCommandExecution
+
+
+
+        /// <summary>
+        /// Delete a command execution.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Only command executions that enter a terminal state can be deleted from your account.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCommandExecution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteCommandExecution service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ValidationException">
+        /// The request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteCommandExecution">REST API Reference for DeleteCommandExecution Operation</seealso>
+        Task<DeleteCommandExecutionResponse> DeleteCommandExecutionAsync(DeleteCommandExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -6242,7 +6345,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>The response from the DisassociateSbomFromPackageVersion service method, as returned by IoT.</returns>
         /// <exception cref="Amazon.IoT.Model.ConflictException">
-        /// A resource with the same name already exists.
+        /// The request conflicts with the current state of the resource.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.InternalServerException">
         /// Internal error from the service that indicates an unexpected error or that the service
@@ -6437,6 +6540,68 @@ namespace Amazon.IoT
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetCardinality">REST API Reference for GetCardinality Operation</seealso>
         Task<GetCardinalityResponse> GetCardinalityAsync(GetCardinalityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetCommand
+
+
+
+        /// <summary>
+        /// Gets information about the specified command.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCommand service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCommand service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ValidationException">
+        /// The request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetCommand">REST API Reference for GetCommand Operation</seealso>
+        Task<GetCommandResponse> GetCommandAsync(GetCommandRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetCommandExecution
+
+
+
+        /// <summary>
+        /// Gets information about the specific command execution on a single device.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCommandExecution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCommandExecution service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ValidationException">
+        /// The request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetCommandExecution">REST API Reference for GetCommandExecution Operation</seealso>
+        Task<GetCommandExecutionResponse> GetCommandExecutionAsync(GetCommandExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -7058,6 +7223,45 @@ namespace Amazon.IoT
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetStatistics">REST API Reference for GetStatistics Operation</seealso>
         Task<GetStatisticsResponse> GetStatisticsAsync(GetStatisticsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetThingConnectivityData
+
+
+
+        /// <summary>
+        /// Retrieves the live connectivity status per device.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetThingConnectivityData service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetThingConnectivityData service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.IndexNotReadyException">
+        /// The index is not ready.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetThingConnectivityData">REST API Reference for GetThingConnectivityData Operation</seealso>
+        Task<GetThingConnectivityDataResponse> GetThingConnectivityDataAsync(GetThingConnectivityDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -7718,6 +7922,85 @@ namespace Amazon.IoT
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListCertificatesByCA">REST API Reference for ListCertificatesByCA Operation</seealso>
         Task<ListCertificatesByCAResponse> ListCertificatesByCAAsync(ListCertificatesByCARequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListCommandExecutions
+
+
+
+        /// <summary>
+        /// List all command executions.
+        /// 
+        ///  <important> <ul> <li> 
+        /// <para>
+        /// You must provide only the <c>startedTimeFilter</c> or the <c>completedTimeFilter</c>
+        /// information. If you provide both time filters, the API will generate an error. You
+        /// can use this information to retrieve a list of command executions within a specific
+        /// timeframe.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You must provide only the <c>commandArn</c> or the <c>thingArn</c> information depending
+        /// on whether you want to list executions for a specific command or an IoT thing. If
+        /// you provide both fields, the API will generate an error.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information about considerations for using this API, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-remote-command-execution-start-monitor.html#iot-remote-command-execution-list-cli">List
+        /// command executions in your account (CLI)</a>.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCommandExecutions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCommandExecutions service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ValidationException">
+        /// The request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListCommandExecutions">REST API Reference for ListCommandExecutions Operation</seealso>
+        Task<ListCommandExecutionsResponse> ListCommandExecutionsAsync(ListCommandExecutionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListCommands
+
+
+
+        /// <summary>
+        /// List all commands in your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCommands service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCommands service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ValidationException">
+        /// The request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListCommands">REST API Reference for ListCommands Operation</seealso>
+        Task<ListCommandsResponse> ListCommandsAsync(ListCommandsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -11487,6 +11770,40 @@ namespace Amazon.IoT
 
         #endregion
                 
+        #region  UpdateCommand
+
+
+
+        /// <summary>
+        /// Update information about a command or mark a command for deprecation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCommand service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateCommand service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ValidationException">
+        /// The request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateCommand">REST API Reference for UpdateCommand Operation</seealso>
+        Task<UpdateCommandResponse> UpdateCommandAsync(UpdateCommandRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  UpdateCustomMetric
 
 
@@ -11869,7 +12186,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>The response from the UpdatePackage service method, as returned by IoT.</returns>
         /// <exception cref="Amazon.IoT.Model.ConflictException">
-        /// A resource with the same name already exists.
+        /// The request conflicts with the current state of the resource.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.InternalServerException">
         /// Internal error from the service that indicates an unexpected error or that the service
@@ -11910,7 +12227,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>The response from the UpdatePackageConfiguration service method, as returned by IoT.</returns>
         /// <exception cref="Amazon.IoT.Model.ConflictException">
-        /// A resource with the same name already exists.
+        /// The request conflicts with the current state of the resource.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.InternalServerException">
         /// Internal error from the service that indicates an unexpected error or that the service
@@ -11948,7 +12265,7 @@ namespace Amazon.IoT
         /// 
         /// <returns>The response from the UpdatePackageVersion service method, as returned by IoT.</returns>
         /// <exception cref="Amazon.IoT.Model.ConflictException">
-        /// A resource with the same name already exists.
+        /// The request conflicts with the current state of the resource.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.InternalServerException">
         /// Internal error from the service that indicates an unexpected error or that the service

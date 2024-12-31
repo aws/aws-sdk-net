@@ -31,8 +31,8 @@ namespace Amazon.Bedrock.Model
 {
     /// <summary>
     /// Container for the parameters to the GetModelInvocationJob operation.
-    /// Gets details about a batch inference job. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-manage.html#batch-inference-view">View
-    /// details about a batch inference job</a>
+    /// Gets details about a batch inference job. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-monitor">Monitor
+    /// batch inference jobs</a>
     /// </summary>
     public partial class GetModelInvocationJobRequest : AmazonBedrockRequest
     {

@@ -77,6 +77,17 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.Catalog);
                     }
 
+                    if(publicRequest.IsSetEngagementIdentifier())
+                    {
+                        context.Writer.WritePropertyName("EngagementIdentifier");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestEngagementIdentifierListValue in publicRequest.EngagementIdentifier)
+                        {
+                                context.Writer.Write(publicRequestEngagementIdentifierListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
                     if(publicRequest.IsSetMaxResults())
                     {
                         context.Writer.WritePropertyName("MaxResults");
@@ -106,6 +117,17 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
                         context.Writer.WriteArrayEnd();
                     }
 
+                    if(publicRequest.IsSetSenderAwsAccountId())
+                    {
+                        context.Writer.WritePropertyName("SenderAwsAccountId");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSenderAwsAccountIdListValue in publicRequest.SenderAwsAccountId)
+                        {
+                                context.Writer.Write(publicRequestSenderAwsAccountIdListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
                     if(publicRequest.IsSetSort())
                     {
                         context.Writer.WritePropertyName("Sort");
@@ -115,6 +137,17 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
                         marshaller.Marshall(publicRequest.Sort, context);
 
                         context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetStatus())
+                    {
+                        context.Writer.WritePropertyName("Status");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestStatusListValue in publicRequest.Status)
+                        {
+                                context.Writer.Write(publicRequestStatusListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
 
                     writer.WriteObjectEnd();

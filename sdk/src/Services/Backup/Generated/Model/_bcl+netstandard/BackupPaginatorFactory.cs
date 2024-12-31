@@ -117,6 +117,14 @@ namespace Amazon.Backup.Model
         }
 
         /// <summary>
+        /// Paginator for ListIndexedRecoveryPoints operation
+        ///</summary>
+        public IListIndexedRecoveryPointsPaginator ListIndexedRecoveryPoints(ListIndexedRecoveryPointsRequest request) 
+        {
+            return new ListIndexedRecoveryPointsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListLegalHolds operation
         ///</summary>
         public IListLegalHoldsPaginator ListLegalHolds(ListLegalHoldsRequest request) 

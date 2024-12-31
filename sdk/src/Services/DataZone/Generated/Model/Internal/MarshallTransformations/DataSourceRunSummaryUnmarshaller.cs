@@ -90,6 +90,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("lineageSummary", targetDepth))
+                {
+                    var unmarshaller = DataSourceRunLineageSummaryUnmarshaller.Instance;
+                    unmarshalledObject.LineageSummary = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("projectId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

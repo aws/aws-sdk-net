@@ -66,6 +66,12 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("accessLogLocation", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AccessLogLocation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("s3AccessPointArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

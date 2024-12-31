@@ -82,6 +82,7 @@ namespace Amazon.AutoScaling.Model
         private List<string> _allowedInstanceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private BareMetal _bareMetal;
         private BaselineEbsBandwidthMbpsRequest _baselineEbsBandwidthMbps;
+        private BaselinePerformanceFactorsRequest _baselinePerformanceFactors;
         private BurstablePerformance _burstablePerformance;
         private List<string> _cpuManufacturers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _excludedInstanceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -356,6 +357,24 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetBaselineEbsBandwidthMbps()
         {
             return this._baselineEbsBandwidthMbps != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BaselinePerformanceFactors. 
+        /// <para>
+        ///  The baseline performance factors for the instance requirements. 
+        /// </para>
+        /// </summary>
+        public BaselinePerformanceFactorsRequest BaselinePerformanceFactors
+        {
+            get { return this._baselinePerformanceFactors; }
+            set { this._baselinePerformanceFactors = value; }
+        }
+
+        // Check to see if BaselinePerformanceFactors property is set
+        internal bool IsSetBaselinePerformanceFactors()
+        {
+            return this._baselinePerformanceFactors != null;
         }
 
         /// <summary>

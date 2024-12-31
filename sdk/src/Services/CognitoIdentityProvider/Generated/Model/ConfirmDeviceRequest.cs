@@ -32,8 +32,10 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the ConfirmDevice operation.
-    /// Confirms tracking of the device. This API call is the call that begins device tracking.
-    /// For more information about device authentication, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
+    /// Confirms a device that a user wants to remember. A remembered device is a "Remember
+    /// me on this device" option for user pools that perform authentication with the device
+    /// key of a trusted device in the back end, instead of a user-provided MFA code. For
+    /// more information about device authentication, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
     /// with user devices in your user pool</a>.
     /// 
     ///  
@@ -81,7 +83,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property DeviceKey. 
         /// <para>
-        /// The device key.
+        /// The unique identifier, or device key, of the device that you want to update the status
+        /// for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=55)]
@@ -100,7 +103,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property DeviceName. 
         /// <para>
-        /// The device name.
+        /// A friendly name for the device, for example <c>MyMobilePhone</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

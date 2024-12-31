@@ -72,6 +72,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                     unmarshalledObject.BasePromptTemplate = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("foundationModel", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FoundationModel = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("inferenceConfiguration", targetDepth))
                 {
                     var unmarshaller = InferenceConfigurationUnmarshaller.Instance;

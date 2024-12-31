@@ -487,6 +487,49 @@ namespace Amazon.DataZone
 
         #endregion
                 
+        #region  CreateConnection
+
+
+
+        /// <summary>
+        /// Creates a new connection. In Amazon DataZone, a connection enables you to connect
+        /// your resources (domains, projects, and environments) to external resources and services.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConnection service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateConnection service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ServiceQuotaExceededException">
+        /// The request has exceeded the specified service quota.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateConnection">REST API Reference for CreateConnection Operation</seealso>
+        Task<CreateConnectionResponse> CreateConnectionAsync(CreateConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateDataProduct
 
 
@@ -1089,6 +1132,96 @@ namespace Amazon.DataZone
 
         #endregion
                 
+        #region  CreateProjectProfile
+
+
+
+        /// <summary>
+        /// Creates a project profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateProjectProfile service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateProjectProfile service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ServiceQuotaExceededException">
+        /// The request has exceeded the specified service quota.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateProjectProfile">REST API Reference for CreateProjectProfile Operation</seealso>
+        Task<CreateProjectProfileResponse> CreateProjectProfileAsync(CreateProjectProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateRule
+
+
+
+        /// <summary>
+        /// Creates a rule in Amazon DataZone. A rule is a formal agreement that enforces specific
+        /// requirements across user workflows (e.g., publishing assets to the catalog, requesting
+        /// subscriptions, creating projects) within the Amazon DataZone data portal. These rules
+        /// help maintain consistency, ensure compliance, and uphold governance standards in data
+        /// management processes. For instance, a metadata enforcement rule can specify the required
+        /// information for creating a subscription request or publishing a data asset to the
+        /// catalog, ensuring alignment with organizational standards.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateRule service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ServiceQuotaExceededException">
+        /// The request has exceeded the specified service quota.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateRule">REST API Reference for CreateRule Operation</seealso>
+        Task<CreateRuleResponse> CreateRuleAsync(CreateRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateSubscriptionGrant
 
 
@@ -1356,6 +1489,43 @@ namespace Amazon.DataZone
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteAssetType">REST API Reference for DeleteAssetType Operation</seealso>
         Task<DeleteAssetTypeResponse> DeleteAssetTypeAsync(DeleteAssetTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteConnection
+
+
+
+        /// <summary>
+        /// Deletes and connection. In Amazon DataZone, a connection enables you to connect your
+        /// resources (domains, projects, and environments) to external resources and services.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConnection service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteConnection service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteConnection">REST API Reference for DeleteConnection Operation</seealso>
+        Task<DeleteConnectionResponse> DeleteConnectionAsync(DeleteConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1894,6 +2064,87 @@ namespace Amazon.DataZone
 
         #endregion
                 
+        #region  DeleteProjectProfile
+
+
+
+        /// <summary>
+        /// Deletes a project profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProjectProfile service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteProjectProfile service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteProjectProfile">REST API Reference for DeleteProjectProfile Operation</seealso>
+        Task<DeleteProjectProfileResponse> DeleteProjectProfileAsync(DeleteProjectProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteRule
+
+
+
+        /// <summary>
+        /// Deletes a rule in Amazon DataZone. A rule is a formal agreement that enforces specific
+        /// requirements across user workflows (e.g., publishing assets to the catalog, requesting
+        /// subscriptions, creating projects) within the Amazon DataZone data portal. These rules
+        /// help maintain consistency, ensure compliance, and uphold governance standards in data
+        /// management processes. For instance, a metadata enforcement rule can specify the required
+        /// information for creating a subscription request or publishing a data asset to the
+        /// catalog, ensuring alignment with organizational standards.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteRule service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteRule">REST API Reference for DeleteRule Operation</seealso>
+        Task<DeleteRuleResponse> DeleteRuleAsync(DeleteRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteSubscriptionGrant
 
 
@@ -2191,6 +2442,43 @@ namespace Amazon.DataZone
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetAssetType">REST API Reference for GetAssetType Operation</seealso>
         Task<GetAssetTypeResponse> GetAssetTypeAsync(GetAssetTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetConnection
+
+
+
+        /// <summary>
+        /// Gets a connection. In Amazon DataZone, a connection enables you to connect your resources
+        /// (domains, projects, and environments) to external resources and services.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConnection service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetConnection service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetConnection">REST API Reference for GetConnection Operation</seealso>
+        Task<GetConnectionResponse> GetConnectionAsync(GetConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -2788,6 +3076,78 @@ namespace Amazon.DataZone
 
         #endregion
                 
+        #region  GetJobRun
+
+
+
+        /// <summary>
+        /// The details of the job run.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetJobRun service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetJobRun service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetJobRun">REST API Reference for GetJobRun Operation</seealso>
+        Task<GetJobRunResponse> GetJobRunAsync(GetJobRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetLineageEvent
+
+
+
+        /// <summary>
+        /// Describes the lineage event.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLineageEvent service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetLineageEvent service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetLineageEvent">REST API Reference for GetLineageEvent Operation</seealso>
+        Task<GetLineageEventResponse> GetLineageEventAsync(GetLineageEventRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetLineageNode
 
 
@@ -2930,6 +3290,84 @@ namespace Amazon.DataZone
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetProject">REST API Reference for GetProject Operation</seealso>
         Task<GetProjectResponse> GetProjectAsync(GetProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetProjectProfile
+
+
+
+        /// <summary>
+        /// The details of the project profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetProjectProfile service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetProjectProfile service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetProjectProfile">REST API Reference for GetProjectProfile Operation</seealso>
+        Task<GetProjectProfileResponse> GetProjectProfileAsync(GetProjectProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetRule
+
+
+
+        /// <summary>
+        /// Gets the details of a rule in Amazon DataZone. A rule is a formal agreement that enforces
+        /// specific requirements across user workflows (e.g., publishing assets to the catalog,
+        /// requesting subscriptions, creating projects) within the Amazon DataZone data portal.
+        /// These rules help maintain consistency, ensure compliance, and uphold governance standards
+        /// in data management processes. For instance, a metadata enforcement rule can specify
+        /// the required information for creating a subscription request or publishing a data
+        /// asset to the catalog, ensuring alignment with organizational standards.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetRule service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetRule">REST API Reference for GetRule Operation</seealso>
+        Task<GetRuleResponse> GetRuleAsync(GetRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -3218,6 +3656,40 @@ namespace Amazon.DataZone
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListAssetRevisions">REST API Reference for ListAssetRevisions Operation</seealso>
         Task<ListAssetRevisionsResponse> ListAssetRevisionsAsync(ListAssetRevisionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListConnections
+
+
+
+        /// <summary>
+        /// Lists connections. In Amazon DataZone, a connection enables you to connect your resources
+        /// (domains, projects, and environments) to external resources and services.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConnections service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListConnections service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListConnections">REST API Reference for ListConnections Operation</seealso>
+        Task<ListConnectionsResponse> ListConnectionsAsync(ListConnectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -3662,6 +4134,75 @@ namespace Amazon.DataZone
 
         #endregion
                 
+        #region  ListJobRuns
+
+
+
+        /// <summary>
+        /// Lists job runs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListJobRuns service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListJobRuns service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListJobRuns">REST API Reference for ListJobRuns Operation</seealso>
+        Task<ListJobRunsResponse> ListJobRunsAsync(ListJobRunsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListLineageEvents
+
+
+
+        /// <summary>
+        /// Lists lineage events.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLineageEvents service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListLineageEvents service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListLineageEvents">REST API Reference for ListLineageEvents Operation</seealso>
+        Task<ListLineageEventsResponse> ListLineageEventsAsync(ListLineageEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListLineageNodeHistory
 
 
@@ -3839,6 +4380,39 @@ namespace Amazon.DataZone
 
         #endregion
                 
+        #region  ListProjectProfiles
+
+
+
+        /// <summary>
+        /// Lists project profiles.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListProjectProfiles service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListProjectProfiles service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListProjectProfiles">REST API Reference for ListProjectProfiles Operation</seealso>
+        Task<ListProjectProfilesResponse> ListProjectProfilesAsync(ListProjectProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListProjects
 
 
@@ -3869,6 +4443,48 @@ namespace Amazon.DataZone
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListProjects">REST API Reference for ListProjects Operation</seealso>
         Task<ListProjectsResponse> ListProjectsAsync(ListProjectsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListRules
+
+
+
+        /// <summary>
+        /// Lists existing rules. In Amazon DataZone, a rule is a formal agreement that enforces
+        /// specific requirements across user workflows (e.g., publishing assets to the catalog,
+        /// requesting subscriptions, creating projects) within the Amazon DataZone data portal.
+        /// These rules help maintain consistency, ensure compliance, and uphold governance standards
+        /// in data management processes. For instance, a metadata enforcement rule can specify
+        /// the required information for creating a subscription request or publishing a data
+        /// asset to the catalog, ensuring alignment with organizational standards.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRules service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRules service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListRules">REST API Reference for ListRules Operation</seealso>
+        Task<ListRulesResponse> ListRulesAsync(ListRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -4761,6 +5377,49 @@ namespace Amazon.DataZone
 
         #endregion
                 
+        #region  UpdateConnection
+
+
+
+        /// <summary>
+        /// Updates a connection. In Amazon DataZone, a connection enables you to connect your
+        /// resources (domains, projects, and environments) to external resources and services.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConnection service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateConnection service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ServiceQuotaExceededException">
+        /// The request has exceeded the specified service quota.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/UpdateConnection">REST API Reference for UpdateConnection Operation</seealso>
+        Task<UpdateConnectionResponse> UpdateConnectionAsync(UpdateConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  UpdateDataSource
 
 
@@ -5157,6 +5816,96 @@ namespace Amazon.DataZone
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
         Task<UpdateProjectResponse> UpdateProjectAsync(UpdateProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateProjectProfile
+
+
+
+        /// <summary>
+        /// Updates a project profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProjectProfile service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateProjectProfile service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ServiceQuotaExceededException">
+        /// The request has exceeded the specified service quota.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/UpdateProjectProfile">REST API Reference for UpdateProjectProfile Operation</seealso>
+        Task<UpdateProjectProfileResponse> UpdateProjectProfileAsync(UpdateProjectProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateRule
+
+
+
+        /// <summary>
+        /// Updates a rule. In Amazon DataZone, a rule is a formal agreement that enforces specific
+        /// requirements across user workflows (e.g., publishing assets to the catalog, requesting
+        /// subscriptions, creating projects) within the Amazon DataZone data portal. These rules
+        /// help maintain consistency, ensure compliance, and uphold governance standards in data
+        /// management processes. For instance, a metadata enforcement rule can specify the required
+        /// information for creating a subscription request or publishing a data asset to the
+        /// catalog, ensuring alignment with organizational standards.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateRule service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ServiceQuotaExceededException">
+        /// The request has exceeded the specified service quota.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/UpdateRule">REST API Reference for UpdateRule Operation</seealso>
+        Task<UpdateRuleResponse> UpdateRuleAsync(UpdateRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

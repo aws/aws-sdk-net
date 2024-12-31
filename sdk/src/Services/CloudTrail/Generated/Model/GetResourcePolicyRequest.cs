@@ -32,7 +32,7 @@ namespace Amazon.CloudTrail.Model
     /// <summary>
     /// Container for the parameters to the GetResourcePolicy operation.
     /// Retrieves the JSON text of the resource-based policy document attached to the CloudTrail
-    /// channel.
+    /// event data store, dashboard, or channel.
     /// </summary>
     public partial class GetResourcePolicyRequest : AmazonCloudTrailRequest
     {
@@ -41,8 +41,22 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of the CloudTrail channel attached to the resource-based
-        /// policy. The following is the format of a resource ARN: <c>arn:aws:cloudtrail:us-east-2:123456789012:channel/MyChannel</c>.
+        ///  The Amazon Resource Name (ARN) of the CloudTrail event data store, dashboard, or
+        /// channel attached to the resource-based policy.
+        /// </para>
+        ///  
+        /// <para>
+        /// Example event data store ARN format: <c>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// Example dashboard ARN format: <c>arn:aws:cloudtrail:us-east-1:123456789012:dashboard/exampleDash</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// Example channel ARN format: <c>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</c>
         /// 
         /// </para>
         /// </summary>

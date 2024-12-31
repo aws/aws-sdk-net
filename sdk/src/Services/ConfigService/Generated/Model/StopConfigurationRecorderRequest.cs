@@ -31,8 +31,9 @@ namespace Amazon.ConfigService.Model
 {
     /// <summary>
     /// Container for the parameters to the StopConfigurationRecorder operation.
-    /// Stops recording configurations of the Amazon Web Services resources you have selected
-    /// to record in your Amazon Web Services account.
+    /// Stops the customer managed configuration recorder. The customer managed configuration
+    /// recorder will stop recording configuration changes for the resource types you have
+    /// specified.
     /// </summary>
     public partial class StopConfigurationRecorderRequest : AmazonConfigServiceRequest
     {
@@ -41,8 +42,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ConfigurationRecorderName. 
         /// <para>
-        /// The name of the recorder object that records each configuration change made to the
-        /// resources.
+        /// The name of the customer managed configuration recorder that you want to stop.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

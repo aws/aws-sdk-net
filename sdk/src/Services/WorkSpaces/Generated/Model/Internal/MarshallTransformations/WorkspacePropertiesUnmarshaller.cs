@@ -72,6 +72,12 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                     unmarshalledObject.ComputeTypeName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("GlobalAccelerator", targetDepth))
+                {
+                    var unmarshaller = GlobalAcceleratorForWorkSpaceUnmarshaller.Instance;
+                    unmarshalledObject.GlobalAccelerator = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("OperatingSystemName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

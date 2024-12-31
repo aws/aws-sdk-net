@@ -81,6 +81,22 @@ namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.ApplicationType);
                     }
 
+                    if(publicRequest.IsSetComponentsInfo())
+                    {
+                        context.Writer.WritePropertyName("ComponentsInfo");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestComponentsInfoListValue in publicRequest.ComponentsInfo)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = ComponentInfoMarshaller.Instance;
+                            marshaller.Marshall(publicRequestComponentsInfoListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
                     if(publicRequest.IsSetCredentials())
                     {
                         context.Writer.WritePropertyName("Credentials");

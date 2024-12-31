@@ -34,7 +34,37 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class GetSnapshotBlockPublicAccessStateResponse : AmazonWebServiceResponse
     {
+        private ManagedBy _managedBy;
         private SnapshotBlockPublicAccessState _state;
+
+        /// <summary>
+        /// Gets and sets the property ManagedBy. 
+        /// <para>
+        /// The entity that manages the state for block public access for snapshots. Possible
+        /// values include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>account</c> - The state is managed by the account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>declarative-policy</c> - The state is managed by a declarative policy and can't
+        /// be modified by the account.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public ManagedBy ManagedBy
+        {
+            get { return this._managedBy; }
+            set { this._managedBy = value; }
+        }
+
+        // Check to see if ManagedBy property is set
+        internal bool IsSetManagedBy()
+        {
+            return this._managedBy != null;
+        }
 
         /// <summary>
         /// Gets and sets the property State. 

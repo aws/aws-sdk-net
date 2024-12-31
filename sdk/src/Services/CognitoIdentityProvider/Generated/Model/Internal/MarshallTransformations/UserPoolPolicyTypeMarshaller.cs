@@ -59,6 +59,17 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetSignInPolicy())
+            {
+                context.Writer.WritePropertyName("SignInPolicy");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SignInPolicyTypeMarshaller.Instance;
+                marshaller.Marshall(requestObject.SignInPolicy, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

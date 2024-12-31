@@ -168,6 +168,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Topic);
             }
 
+            if(requestObject.IsSetUseLargeIntegerValue())
+            {
+                context.Writer.WritePropertyName("UseLargeIntegerValue");
+                context.Writer.Write(requestObject.UseLargeIntegerValue.Value);
+            }
+
         }
 
         /// <summary>

@@ -45,6 +45,22 @@ namespace Amazon.BedrockRuntime
     public partial class AmazonBedrockRuntimeClient : AmazonServiceClient, IAmazonBedrockRuntime
     {
         private static IServiceMetadata serviceMetadata = new AmazonBedrockRuntimeMetadata();
+        private IBedrockRuntimePaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IBedrockRuntimePaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new BedrockRuntimePaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>
@@ -254,18 +270,29 @@ namespace Amazon.BedrockRuntime
 
         /// <summary>
         /// The action to apply a guardrail.
+        /// 
+        ///  
+        /// <para>
+        /// For troubleshooting some of the common errors you might encounter when using the <c>ApplyGuardrail</c>
+        /// API, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html">Troubleshooting
+        /// Amazon Bedrock API Error Codes</a> in the Amazon Bedrock User Guide
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ApplyGuardrail service method.</param>
         /// 
         /// <returns>The response from the ApplyGuardrail service method, as returned by BedrockRuntime.</returns>
         /// <exception cref="Amazon.BedrockRuntime.Model.AccessDeniedException">
-        /// The request is denied because of missing access permissions.
+        /// The request is denied because you do not have sufficient permissions to perform the
+        /// requested action. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-access-denied">AccessDeniedException</a>
+        /// in the Amazon Bedrock User Guide
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.InternalServerException">
-        /// An internal server error occurred. Retry your request.
+        /// An internal server error occurred. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-internal-failure">InternalFailure</a>
+        /// in the Amazon Bedrock User Guide
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ResourceNotFoundException">
-        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// The specified resource ARN was not found. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-resource-not-found">ResourceNotFound</a>
+        /// in the Amazon Bedrock User Guide
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ServiceQuotaExceededException">
         /// Your request exceeds the service quota for your account. You can view your quotas
@@ -273,12 +300,14 @@ namespace Amazon.BedrockRuntime
         /// service quotas</a>. You can resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ThrottlingException">
-        /// Your request was throttled because of service-wide limitations. Resubmit your request
-        /// later or in a different region. You can also purchase <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned
-        /// Throughput</a> to increase the rate or number of tokens you can process.
+        /// Your request was denied due to exceeding the account quotas for <i>Amazon Bedrock</i>.
+        /// For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-throttling-exception">ThrottlingException</a>
+        /// in the Amazon Bedrock User Guide
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ValidationException">
-        /// Input validation failed. Check your request parameters and retry the request.
+        /// The input fails to satisfy the constraints specified by <i>Amazon Bedrock</i>. For
+        /// troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-validation-error">ValidationError</a>
+        /// in the Amazon Bedrock User Guide
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/ApplyGuardrail">REST API Reference for ApplyGuardrail Operation</seealso>
         public virtual ApplyGuardrailResponse ApplyGuardrail(ApplyGuardrailRequest request)
@@ -293,6 +322,13 @@ namespace Amazon.BedrockRuntime
 
         /// <summary>
         /// The action to apply a guardrail.
+        /// 
+        ///  
+        /// <para>
+        /// For troubleshooting some of the common errors you might encounter when using the <c>ApplyGuardrail</c>
+        /// API, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html">Troubleshooting
+        /// Amazon Bedrock API Error Codes</a> in the Amazon Bedrock User Guide
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ApplyGuardrail service method.</param>
         /// <param name="cancellationToken">
@@ -301,13 +337,17 @@ namespace Amazon.BedrockRuntime
         /// 
         /// <returns>The response from the ApplyGuardrail service method, as returned by BedrockRuntime.</returns>
         /// <exception cref="Amazon.BedrockRuntime.Model.AccessDeniedException">
-        /// The request is denied because of missing access permissions.
+        /// The request is denied because you do not have sufficient permissions to perform the
+        /// requested action. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-access-denied">AccessDeniedException</a>
+        /// in the Amazon Bedrock User Guide
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.InternalServerException">
-        /// An internal server error occurred. Retry your request.
+        /// An internal server error occurred. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-internal-failure">InternalFailure</a>
+        /// in the Amazon Bedrock User Guide
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ResourceNotFoundException">
-        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// The specified resource ARN was not found. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-resource-not-found">ResourceNotFound</a>
+        /// in the Amazon Bedrock User Guide
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ServiceQuotaExceededException">
         /// Your request exceeds the service quota for your account. You can view your quotas
@@ -315,12 +355,14 @@ namespace Amazon.BedrockRuntime
         /// service quotas</a>. You can resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ThrottlingException">
-        /// Your request was throttled because of service-wide limitations. Resubmit your request
-        /// later or in a different region. You can also purchase <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned
-        /// Throughput</a> to increase the rate or number of tokens you can process.
+        /// Your request was denied due to exceeding the account quotas for <i>Amazon Bedrock</i>.
+        /// For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-throttling-exception">ThrottlingException</a>
+        /// in the Amazon Bedrock User Guide
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ValidationException">
-        /// Input validation failed. Check your request parameters and retry the request.
+        /// The input fails to satisfy the constraints specified by <i>Amazon Bedrock</i>. For
+        /// troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-validation-error">ValidationError</a>
+        /// in the Amazon Bedrock User Guide
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/ApplyGuardrail">REST API Reference for ApplyGuardrail Operation</seealso>
         public virtual Task<ApplyGuardrailResponse> ApplyGuardrailAsync(ApplyGuardrailRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -381,15 +423,34 @@ namespace Amazon.BedrockRuntime
         /// <para>
         /// This operation requires permission for the <c>bedrock:InvokeModel</c> action. 
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// To deny all inference access to resources that you specify in the modelId field, you
+        /// need to deny access to the <c>bedrock:InvokeModel</c> and <c>bedrock:InvokeModelWithResponseStream</c>
+        /// actions. Doing this also denies access to the resource through the base inference
+        /// actions (<a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_InvokeModel.html">InvokeModel</a>
+        /// and <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_InvokeModelWithResponseStream.html">InvokeModelWithResponseStream</a>).
+        /// For more information see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-deny-inference">Deny
+        /// access for inference on specific models</a>. 
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// For troubleshooting some of the common errors you might encounter when using the <c>Converse</c>
+        /// API, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html">Troubleshooting
+        /// Amazon Bedrock API Error Codes</a> in the Amazon Bedrock User Guide
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the Converse service method.</param>
         /// 
         /// <returns>The response from the Converse service method, as returned by BedrockRuntime.</returns>
         /// <exception cref="Amazon.BedrockRuntime.Model.AccessDeniedException">
-        /// The request is denied because of missing access permissions.
+        /// The request is denied because you do not have sufficient permissions to perform the
+        /// requested action. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-access-denied">AccessDeniedException</a>
+        /// in the Amazon Bedrock User Guide
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.InternalServerException">
-        /// An internal server error occurred. Retry your request.
+        /// An internal server error occurred. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-internal-failure">InternalFailure</a>
+        /// in the Amazon Bedrock User Guide
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ModelErrorException">
         /// The request failed due to an error while processing the model.
@@ -404,18 +465,22 @@ namespace Amazon.BedrockRuntime
         /// The request took too long to process. Processing time exceeded the model timeout length.
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ResourceNotFoundException">
-        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// The specified resource ARN was not found. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-resource-not-found">ResourceNotFound</a>
+        /// in the Amazon Bedrock User Guide
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ServiceUnavailableException">
-        /// The service isn't currently available. Try again later.
+        /// The service isn't currently available. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-service-unavailable">ServiceUnavailable</a>
+        /// in the Amazon Bedrock User Guide
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ThrottlingException">
-        /// Your request was throttled because of service-wide limitations. Resubmit your request
-        /// later or in a different region. You can also purchase <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned
-        /// Throughput</a> to increase the rate or number of tokens you can process.
+        /// Your request was denied due to exceeding the account quotas for <i>Amazon Bedrock</i>.
+        /// For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-throttling-exception">ThrottlingException</a>
+        /// in the Amazon Bedrock User Guide
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ValidationException">
-        /// Input validation failed. Check your request parameters and retry the request.
+        /// The input fails to satisfy the constraints specified by <i>Amazon Bedrock</i>. For
+        /// troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-validation-error">ValidationError</a>
+        /// in the Amazon Bedrock User Guide
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/Converse">REST API Reference for Converse Operation</seealso>
         public virtual ConverseResponse Converse(ConverseRequest request)
@@ -472,6 +537,22 @@ namespace Amazon.BedrockRuntime
         /// <para>
         /// This operation requires permission for the <c>bedrock:InvokeModel</c> action. 
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// To deny all inference access to resources that you specify in the modelId field, you
+        /// need to deny access to the <c>bedrock:InvokeModel</c> and <c>bedrock:InvokeModelWithResponseStream</c>
+        /// actions. Doing this also denies access to the resource through the base inference
+        /// actions (<a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_InvokeModel.html">InvokeModel</a>
+        /// and <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_InvokeModelWithResponseStream.html">InvokeModelWithResponseStream</a>).
+        /// For more information see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-deny-inference">Deny
+        /// access for inference on specific models</a>. 
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// For troubleshooting some of the common errors you might encounter when using the <c>Converse</c>
+        /// API, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html">Troubleshooting
+        /// Amazon Bedrock API Error Codes</a> in the Amazon Bedrock User Guide
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the Converse service method.</param>
         /// <param name="cancellationToken">
@@ -480,10 +561,13 @@ namespace Amazon.BedrockRuntime
         /// 
         /// <returns>The response from the Converse service method, as returned by BedrockRuntime.</returns>
         /// <exception cref="Amazon.BedrockRuntime.Model.AccessDeniedException">
-        /// The request is denied because of missing access permissions.
+        /// The request is denied because you do not have sufficient permissions to perform the
+        /// requested action. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-access-denied">AccessDeniedException</a>
+        /// in the Amazon Bedrock User Guide
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.InternalServerException">
-        /// An internal server error occurred. Retry your request.
+        /// An internal server error occurred. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-internal-failure">InternalFailure</a>
+        /// in the Amazon Bedrock User Guide
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ModelErrorException">
         /// The request failed due to an error while processing the model.
@@ -498,18 +582,22 @@ namespace Amazon.BedrockRuntime
         /// The request took too long to process. Processing time exceeded the model timeout length.
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ResourceNotFoundException">
-        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// The specified resource ARN was not found. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-resource-not-found">ResourceNotFound</a>
+        /// in the Amazon Bedrock User Guide
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ServiceUnavailableException">
-        /// The service isn't currently available. Try again later.
+        /// The service isn't currently available. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-service-unavailable">ServiceUnavailable</a>
+        /// in the Amazon Bedrock User Guide
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ThrottlingException">
-        /// Your request was throttled because of service-wide limitations. Resubmit your request
-        /// later or in a different region. You can also purchase <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned
-        /// Throughput</a> to increase the rate or number of tokens you can process.
+        /// Your request was denied due to exceeding the account quotas for <i>Amazon Bedrock</i>.
+        /// For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-throttling-exception">ThrottlingException</a>
+        /// in the Amazon Bedrock User Guide
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ValidationException">
-        /// Input validation failed. Check your request parameters and retry the request.
+        /// The input fails to satisfy the constraints specified by <i>Amazon Bedrock</i>. For
+        /// troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-validation-error">ValidationError</a>
+        /// in the Amazon Bedrock User Guide
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/Converse">REST API Reference for Converse Operation</seealso>
         public virtual Task<ConverseResponse> ConverseAsync(ConverseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -581,15 +669,34 @@ namespace Amazon.BedrockRuntime
         /// This operation requires permission for the <c>bedrock:InvokeModelWithResponseStream</c>
         /// action.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// To deny all inference access to resources that you specify in the modelId field, you
+        /// need to deny access to the <c>bedrock:InvokeModel</c> and <c>bedrock:InvokeModelWithResponseStream</c>
+        /// actions. Doing this also denies access to the resource through the base inference
+        /// actions (<a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_InvokeModel.html">InvokeModel</a>
+        /// and <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_InvokeModelWithResponseStream.html">InvokeModelWithResponseStream</a>).
+        /// For more information see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-deny-inference">Deny
+        /// access for inference on specific models</a>. 
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// For troubleshooting some of the common errors you might encounter when using the <c>ConverseStream</c>
+        /// API, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html">Troubleshooting
+        /// Amazon Bedrock API Error Codes</a> in the Amazon Bedrock User Guide
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ConverseStream service method.</param>
         /// 
         /// <returns>The response from the ConverseStream service method, as returned by BedrockRuntime.</returns>
         /// <exception cref="Amazon.BedrockRuntime.Model.AccessDeniedException">
-        /// The request is denied because of missing access permissions.
+        /// The request is denied because you do not have sufficient permissions to perform the
+        /// requested action. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-access-denied">AccessDeniedException</a>
+        /// in the Amazon Bedrock User Guide
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.InternalServerException">
-        /// An internal server error occurred. Retry your request.
+        /// An internal server error occurred. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-internal-failure">InternalFailure</a>
+        /// in the Amazon Bedrock User Guide
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ModelErrorException">
         /// The request failed due to an error while processing the model.
@@ -604,18 +711,22 @@ namespace Amazon.BedrockRuntime
         /// The request took too long to process. Processing time exceeded the model timeout length.
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ResourceNotFoundException">
-        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// The specified resource ARN was not found. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-resource-not-found">ResourceNotFound</a>
+        /// in the Amazon Bedrock User Guide
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ServiceUnavailableException">
-        /// The service isn't currently available. Try again later.
+        /// The service isn't currently available. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-service-unavailable">ServiceUnavailable</a>
+        /// in the Amazon Bedrock User Guide
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ThrottlingException">
-        /// Your request was throttled because of service-wide limitations. Resubmit your request
-        /// later or in a different region. You can also purchase <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned
-        /// Throughput</a> to increase the rate or number of tokens you can process.
+        /// Your request was denied due to exceeding the account quotas for <i>Amazon Bedrock</i>.
+        /// For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-throttling-exception">ThrottlingException</a>
+        /// in the Amazon Bedrock User Guide
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ValidationException">
-        /// Input validation failed. Check your request parameters and retry the request.
+        /// The input fails to satisfy the constraints specified by <i>Amazon Bedrock</i>. For
+        /// troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-validation-error">ValidationError</a>
+        /// in the Amazon Bedrock User Guide
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/ConverseStream">REST API Reference for ConverseStream Operation</seealso>
         public virtual ConverseStreamResponse ConverseStream(ConverseStreamRequest request)
@@ -683,6 +794,22 @@ namespace Amazon.BedrockRuntime
         /// This operation requires permission for the <c>bedrock:InvokeModelWithResponseStream</c>
         /// action.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// To deny all inference access to resources that you specify in the modelId field, you
+        /// need to deny access to the <c>bedrock:InvokeModel</c> and <c>bedrock:InvokeModelWithResponseStream</c>
+        /// actions. Doing this also denies access to the resource through the base inference
+        /// actions (<a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_InvokeModel.html">InvokeModel</a>
+        /// and <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_InvokeModelWithResponseStream.html">InvokeModelWithResponseStream</a>).
+        /// For more information see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-deny-inference">Deny
+        /// access for inference on specific models</a>. 
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// For troubleshooting some of the common errors you might encounter when using the <c>ConverseStream</c>
+        /// API, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html">Troubleshooting
+        /// Amazon Bedrock API Error Codes</a> in the Amazon Bedrock User Guide
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ConverseStream service method.</param>
         /// <param name="cancellationToken">
@@ -691,10 +818,13 @@ namespace Amazon.BedrockRuntime
         /// 
         /// <returns>The response from the ConverseStream service method, as returned by BedrockRuntime.</returns>
         /// <exception cref="Amazon.BedrockRuntime.Model.AccessDeniedException">
-        /// The request is denied because of missing access permissions.
+        /// The request is denied because you do not have sufficient permissions to perform the
+        /// requested action. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-access-denied">AccessDeniedException</a>
+        /// in the Amazon Bedrock User Guide
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.InternalServerException">
-        /// An internal server error occurred. Retry your request.
+        /// An internal server error occurred. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-internal-failure">InternalFailure</a>
+        /// in the Amazon Bedrock User Guide
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ModelErrorException">
         /// The request failed due to an error while processing the model.
@@ -709,18 +839,22 @@ namespace Amazon.BedrockRuntime
         /// The request took too long to process. Processing time exceeded the model timeout length.
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ResourceNotFoundException">
-        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// The specified resource ARN was not found. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-resource-not-found">ResourceNotFound</a>
+        /// in the Amazon Bedrock User Guide
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ServiceUnavailableException">
-        /// The service isn't currently available. Try again later.
+        /// The service isn't currently available. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-service-unavailable">ServiceUnavailable</a>
+        /// in the Amazon Bedrock User Guide
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ThrottlingException">
-        /// Your request was throttled because of service-wide limitations. Resubmit your request
-        /// later or in a different region. You can also purchase <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned
-        /// Throughput</a> to increase the rate or number of tokens you can process.
+        /// Your request was denied due to exceeding the account quotas for <i>Amazon Bedrock</i>.
+        /// For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-throttling-exception">ThrottlingException</a>
+        /// in the Amazon Bedrock User Guide
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ValidationException">
-        /// Input validation failed. Check your request parameters and retry the request.
+        /// The input fails to satisfy the constraints specified by <i>Amazon Bedrock</i>. For
+        /// troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-validation-error">ValidationError</a>
+        /// in the Amazon Bedrock User Guide
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/ConverseStream">REST API Reference for ConverseStream Operation</seealso>
         public virtual Task<ConverseStreamResponse> ConverseStreamAsync(ConverseStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -730,6 +864,85 @@ namespace Amazon.BedrockRuntime
             options.ResponseUnmarshaller = ConverseStreamResponseUnmarshaller.Instance;
             
             return InvokeAsync<ConverseStreamResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetAsyncInvoke
+
+
+        /// <summary>
+        /// Retrieve information about an asynchronous invocation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAsyncInvoke service method.</param>
+        /// 
+        /// <returns>The response from the GetAsyncInvoke service method, as returned by BedrockRuntime.</returns>
+        /// <exception cref="Amazon.BedrockRuntime.Model.AccessDeniedException">
+        /// The request is denied because you do not have sufficient permissions to perform the
+        /// requested action. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-access-denied">AccessDeniedException</a>
+        /// in the Amazon Bedrock User Guide
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.InternalServerException">
+        /// An internal server error occurred. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-internal-failure">InternalFailure</a>
+        /// in the Amazon Bedrock User Guide
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ThrottlingException">
+        /// Your request was denied due to exceeding the account quotas for <i>Amazon Bedrock</i>.
+        /// For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-throttling-exception">ThrottlingException</a>
+        /// in the Amazon Bedrock User Guide
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by <i>Amazon Bedrock</i>. For
+        /// troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-validation-error">ValidationError</a>
+        /// in the Amazon Bedrock User Guide
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/GetAsyncInvoke">REST API Reference for GetAsyncInvoke Operation</seealso>
+        public virtual GetAsyncInvokeResponse GetAsyncInvoke(GetAsyncInvokeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAsyncInvokeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAsyncInvokeResponseUnmarshaller.Instance;
+
+            return Invoke<GetAsyncInvokeResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieve information about an asynchronous invocation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAsyncInvoke service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAsyncInvoke service method, as returned by BedrockRuntime.</returns>
+        /// <exception cref="Amazon.BedrockRuntime.Model.AccessDeniedException">
+        /// The request is denied because you do not have sufficient permissions to perform the
+        /// requested action. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-access-denied">AccessDeniedException</a>
+        /// in the Amazon Bedrock User Guide
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.InternalServerException">
+        /// An internal server error occurred. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-internal-failure">InternalFailure</a>
+        /// in the Amazon Bedrock User Guide
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ThrottlingException">
+        /// Your request was denied due to exceeding the account quotas for <i>Amazon Bedrock</i>.
+        /// For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-throttling-exception">ThrottlingException</a>
+        /// in the Amazon Bedrock User Guide
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by <i>Amazon Bedrock</i>. For
+        /// troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-validation-error">ValidationError</a>
+        /// in the Amazon Bedrock User Guide
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/GetAsyncInvoke">REST API Reference for GetAsyncInvoke Operation</seealso>
+        public virtual Task<GetAsyncInvokeResponse> GetAsyncInvokeAsync(GetAsyncInvokeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAsyncInvokeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAsyncInvokeResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetAsyncInvokeResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -751,15 +964,34 @@ namespace Amazon.BedrockRuntime
         /// <para>
         /// This operation requires permission for the <c>bedrock:InvokeModel</c> action.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// To deny all inference access to resources that you specify in the modelId field, you
+        /// need to deny access to the <c>bedrock:InvokeModel</c> and <c>bedrock:InvokeModelWithResponseStream</c>
+        /// actions. Doing this also denies access to the resource through the Converse API actions
+        /// (<a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_Converse.html">Converse</a>
+        /// and <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_ConverseStream.html">ConverseStream</a>).
+        /// For more information see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-deny-inference">Deny
+        /// access for inference on specific models</a>. 
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// For troubleshooting some of the common errors you might encounter when using the <c>InvokeModel</c>
+        /// API, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html">Troubleshooting
+        /// Amazon Bedrock API Error Codes</a> in the Amazon Bedrock User Guide
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the InvokeModel service method.</param>
         /// 
         /// <returns>The response from the InvokeModel service method, as returned by BedrockRuntime.</returns>
         /// <exception cref="Amazon.BedrockRuntime.Model.AccessDeniedException">
-        /// The request is denied because of missing access permissions.
+        /// The request is denied because you do not have sufficient permissions to perform the
+        /// requested action. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-access-denied">AccessDeniedException</a>
+        /// in the Amazon Bedrock User Guide
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.InternalServerException">
-        /// An internal server error occurred. Retry your request.
+        /// An internal server error occurred. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-internal-failure">InternalFailure</a>
+        /// in the Amazon Bedrock User Guide
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ModelErrorException">
         /// The request failed due to an error while processing the model.
@@ -774,7 +1006,8 @@ namespace Amazon.BedrockRuntime
         /// The request took too long to process. Processing time exceeded the model timeout length.
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ResourceNotFoundException">
-        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// The specified resource ARN was not found. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-resource-not-found">ResourceNotFound</a>
+        /// in the Amazon Bedrock User Guide
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ServiceQuotaExceededException">
         /// Your request exceeds the service quota for your account. You can view your quotas
@@ -782,15 +1015,18 @@ namespace Amazon.BedrockRuntime
         /// service quotas</a>. You can resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ServiceUnavailableException">
-        /// The service isn't currently available. Try again later.
+        /// The service isn't currently available. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-service-unavailable">ServiceUnavailable</a>
+        /// in the Amazon Bedrock User Guide
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ThrottlingException">
-        /// Your request was throttled because of service-wide limitations. Resubmit your request
-        /// later or in a different region. You can also purchase <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned
-        /// Throughput</a> to increase the rate or number of tokens you can process.
+        /// Your request was denied due to exceeding the account quotas for <i>Amazon Bedrock</i>.
+        /// For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-throttling-exception">ThrottlingException</a>
+        /// in the Amazon Bedrock User Guide
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ValidationException">
-        /// Input validation failed. Check your request parameters and retry the request.
+        /// The input fails to satisfy the constraints specified by <i>Amazon Bedrock</i>. For
+        /// troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-validation-error">ValidationError</a>
+        /// in the Amazon Bedrock User Guide
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/InvokeModel">REST API Reference for InvokeModel Operation</seealso>
         public virtual InvokeModelResponse InvokeModel(InvokeModelRequest request)
@@ -817,6 +1053,22 @@ namespace Amazon.BedrockRuntime
         /// <para>
         /// This operation requires permission for the <c>bedrock:InvokeModel</c> action.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// To deny all inference access to resources that you specify in the modelId field, you
+        /// need to deny access to the <c>bedrock:InvokeModel</c> and <c>bedrock:InvokeModelWithResponseStream</c>
+        /// actions. Doing this also denies access to the resource through the Converse API actions
+        /// (<a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_Converse.html">Converse</a>
+        /// and <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_ConverseStream.html">ConverseStream</a>).
+        /// For more information see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-deny-inference">Deny
+        /// access for inference on specific models</a>. 
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// For troubleshooting some of the common errors you might encounter when using the <c>InvokeModel</c>
+        /// API, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html">Troubleshooting
+        /// Amazon Bedrock API Error Codes</a> in the Amazon Bedrock User Guide
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the InvokeModel service method.</param>
         /// <param name="cancellationToken">
@@ -825,10 +1077,13 @@ namespace Amazon.BedrockRuntime
         /// 
         /// <returns>The response from the InvokeModel service method, as returned by BedrockRuntime.</returns>
         /// <exception cref="Amazon.BedrockRuntime.Model.AccessDeniedException">
-        /// The request is denied because of missing access permissions.
+        /// The request is denied because you do not have sufficient permissions to perform the
+        /// requested action. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-access-denied">AccessDeniedException</a>
+        /// in the Amazon Bedrock User Guide
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.InternalServerException">
-        /// An internal server error occurred. Retry your request.
+        /// An internal server error occurred. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-internal-failure">InternalFailure</a>
+        /// in the Amazon Bedrock User Guide
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ModelErrorException">
         /// The request failed due to an error while processing the model.
@@ -843,7 +1098,8 @@ namespace Amazon.BedrockRuntime
         /// The request took too long to process. Processing time exceeded the model timeout length.
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ResourceNotFoundException">
-        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// The specified resource ARN was not found. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-resource-not-found">ResourceNotFound</a>
+        /// in the Amazon Bedrock User Guide
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ServiceQuotaExceededException">
         /// Your request exceeds the service quota for your account. You can view your quotas
@@ -851,15 +1107,18 @@ namespace Amazon.BedrockRuntime
         /// service quotas</a>. You can resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ServiceUnavailableException">
-        /// The service isn't currently available. Try again later.
+        /// The service isn't currently available. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-service-unavailable">ServiceUnavailable</a>
+        /// in the Amazon Bedrock User Guide
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ThrottlingException">
-        /// Your request was throttled because of service-wide limitations. Resubmit your request
-        /// later or in a different region. You can also purchase <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned
-        /// Throughput</a> to increase the rate or number of tokens you can process.
+        /// Your request was denied due to exceeding the account quotas for <i>Amazon Bedrock</i>.
+        /// For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-throttling-exception">ThrottlingException</a>
+        /// in the Amazon Bedrock User Guide
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ValidationException">
-        /// Input validation failed. Check your request parameters and retry the request.
+        /// The input fails to satisfy the constraints specified by <i>Amazon Bedrock</i>. For
+        /// troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-validation-error">ValidationError</a>
+        /// in the Amazon Bedrock User Guide
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/InvokeModel">REST API Reference for InvokeModel Operation</seealso>
         public virtual Task<InvokeModelResponse> InvokeModelAsync(InvokeModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -899,15 +1158,34 @@ namespace Amazon.BedrockRuntime
         /// This operation requires permissions to perform the <c>bedrock:InvokeModelWithResponseStream</c>
         /// action. 
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// To deny all inference access to resources that you specify in the modelId field, you
+        /// need to deny access to the <c>bedrock:InvokeModel</c> and <c>bedrock:InvokeModelWithResponseStream</c>
+        /// actions. Doing this also denies access to the resource through the Converse API actions
+        /// (<a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_Converse.html">Converse</a>
+        /// and <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_ConverseStream.html">ConverseStream</a>).
+        /// For more information see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-deny-inference">Deny
+        /// access for inference on specific models</a>. 
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// For troubleshooting some of the common errors you might encounter when using the <c>InvokeModelWithResponseStream</c>
+        /// API, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html">Troubleshooting
+        /// Amazon Bedrock API Error Codes</a> in the Amazon Bedrock User Guide
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the InvokeModelWithResponseStream service method.</param>
         /// 
         /// <returns>The response from the InvokeModelWithResponseStream service method, as returned by BedrockRuntime.</returns>
         /// <exception cref="Amazon.BedrockRuntime.Model.AccessDeniedException">
-        /// The request is denied because of missing access permissions.
+        /// The request is denied because you do not have sufficient permissions to perform the
+        /// requested action. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-access-denied">AccessDeniedException</a>
+        /// in the Amazon Bedrock User Guide
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.InternalServerException">
-        /// An internal server error occurred. Retry your request.
+        /// An internal server error occurred. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-internal-failure">InternalFailure</a>
+        /// in the Amazon Bedrock User Guide
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ModelErrorException">
         /// The request failed due to an error while processing the model.
@@ -925,7 +1203,8 @@ namespace Amazon.BedrockRuntime
         /// The request took too long to process. Processing time exceeded the model timeout length.
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ResourceNotFoundException">
-        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// The specified resource ARN was not found. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-resource-not-found">ResourceNotFound</a>
+        /// in the Amazon Bedrock User Guide
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ServiceQuotaExceededException">
         /// Your request exceeds the service quota for your account. You can view your quotas
@@ -933,15 +1212,18 @@ namespace Amazon.BedrockRuntime
         /// service quotas</a>. You can resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ServiceUnavailableException">
-        /// The service isn't currently available. Try again later.
+        /// The service isn't currently available. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-service-unavailable">ServiceUnavailable</a>
+        /// in the Amazon Bedrock User Guide
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ThrottlingException">
-        /// Your request was throttled because of service-wide limitations. Resubmit your request
-        /// later or in a different region. You can also purchase <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned
-        /// Throughput</a> to increase the rate or number of tokens you can process.
+        /// Your request was denied due to exceeding the account quotas for <i>Amazon Bedrock</i>.
+        /// For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-throttling-exception">ThrottlingException</a>
+        /// in the Amazon Bedrock User Guide
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ValidationException">
-        /// Input validation failed. Check your request parameters and retry the request.
+        /// The input fails to satisfy the constraints specified by <i>Amazon Bedrock</i>. For
+        /// troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-validation-error">ValidationError</a>
+        /// in the Amazon Bedrock User Guide
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/InvokeModelWithResponseStream">REST API Reference for InvokeModelWithResponseStream Operation</seealso>
         public virtual InvokeModelWithResponseStreamResponse InvokeModelWithResponseStream(InvokeModelWithResponseStreamRequest request)
@@ -977,6 +1259,22 @@ namespace Amazon.BedrockRuntime
         /// This operation requires permissions to perform the <c>bedrock:InvokeModelWithResponseStream</c>
         /// action. 
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// To deny all inference access to resources that you specify in the modelId field, you
+        /// need to deny access to the <c>bedrock:InvokeModel</c> and <c>bedrock:InvokeModelWithResponseStream</c>
+        /// actions. Doing this also denies access to the resource through the Converse API actions
+        /// (<a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_Converse.html">Converse</a>
+        /// and <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_ConverseStream.html">ConverseStream</a>).
+        /// For more information see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-deny-inference">Deny
+        /// access for inference on specific models</a>. 
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// For troubleshooting some of the common errors you might encounter when using the <c>InvokeModelWithResponseStream</c>
+        /// API, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html">Troubleshooting
+        /// Amazon Bedrock API Error Codes</a> in the Amazon Bedrock User Guide
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the InvokeModelWithResponseStream service method.</param>
         /// <param name="cancellationToken">
@@ -985,10 +1283,13 @@ namespace Amazon.BedrockRuntime
         /// 
         /// <returns>The response from the InvokeModelWithResponseStream service method, as returned by BedrockRuntime.</returns>
         /// <exception cref="Amazon.BedrockRuntime.Model.AccessDeniedException">
-        /// The request is denied because of missing access permissions.
+        /// The request is denied because you do not have sufficient permissions to perform the
+        /// requested action. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-access-denied">AccessDeniedException</a>
+        /// in the Amazon Bedrock User Guide
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.InternalServerException">
-        /// An internal server error occurred. Retry your request.
+        /// An internal server error occurred. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-internal-failure">InternalFailure</a>
+        /// in the Amazon Bedrock User Guide
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ModelErrorException">
         /// The request failed due to an error while processing the model.
@@ -1006,7 +1307,8 @@ namespace Amazon.BedrockRuntime
         /// The request took too long to process. Processing time exceeded the model timeout length.
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ResourceNotFoundException">
-        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// The specified resource ARN was not found. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-resource-not-found">ResourceNotFound</a>
+        /// in the Amazon Bedrock User Guide
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ServiceQuotaExceededException">
         /// Your request exceeds the service quota for your account. You can view your quotas
@@ -1014,15 +1316,18 @@ namespace Amazon.BedrockRuntime
         /// service quotas</a>. You can resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ServiceUnavailableException">
-        /// The service isn't currently available. Try again later.
+        /// The service isn't currently available. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-service-unavailable">ServiceUnavailable</a>
+        /// in the Amazon Bedrock User Guide
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ThrottlingException">
-        /// Your request was throttled because of service-wide limitations. Resubmit your request
-        /// later or in a different region. You can also purchase <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned
-        /// Throughput</a> to increase the rate or number of tokens you can process.
+        /// Your request was denied due to exceeding the account quotas for <i>Amazon Bedrock</i>.
+        /// For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-throttling-exception">ThrottlingException</a>
+        /// in the Amazon Bedrock User Guide
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ValidationException">
-        /// Input validation failed. Check your request parameters and retry the request.
+        /// The input fails to satisfy the constraints specified by <i>Amazon Bedrock</i>. For
+        /// troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-validation-error">ValidationError</a>
+        /// in the Amazon Bedrock User Guide
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/InvokeModelWithResponseStream">REST API Reference for InvokeModelWithResponseStream Operation</seealso>
         public virtual Task<InvokeModelWithResponseStreamResponse> InvokeModelWithResponseStreamAsync(InvokeModelWithResponseStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1032,6 +1337,228 @@ namespace Amazon.BedrockRuntime
             options.ResponseUnmarshaller = InvokeModelWithResponseStreamResponseUnmarshaller.Instance;
             
             return InvokeAsync<InvokeModelWithResponseStreamResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListAsyncInvokes
+
+
+        /// <summary>
+        /// Lists asynchronous invocations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAsyncInvokes service method.</param>
+        /// 
+        /// <returns>The response from the ListAsyncInvokes service method, as returned by BedrockRuntime.</returns>
+        /// <exception cref="Amazon.BedrockRuntime.Model.AccessDeniedException">
+        /// The request is denied because you do not have sufficient permissions to perform the
+        /// requested action. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-access-denied">AccessDeniedException</a>
+        /// in the Amazon Bedrock User Guide
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.InternalServerException">
+        /// An internal server error occurred. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-internal-failure">InternalFailure</a>
+        /// in the Amazon Bedrock User Guide
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ThrottlingException">
+        /// Your request was denied due to exceeding the account quotas for <i>Amazon Bedrock</i>.
+        /// For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-throttling-exception">ThrottlingException</a>
+        /// in the Amazon Bedrock User Guide
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by <i>Amazon Bedrock</i>. For
+        /// troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-validation-error">ValidationError</a>
+        /// in the Amazon Bedrock User Guide
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/ListAsyncInvokes">REST API Reference for ListAsyncInvokes Operation</seealso>
+        public virtual ListAsyncInvokesResponse ListAsyncInvokes(ListAsyncInvokesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAsyncInvokesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAsyncInvokesResponseUnmarshaller.Instance;
+
+            return Invoke<ListAsyncInvokesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists asynchronous invocations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAsyncInvokes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAsyncInvokes service method, as returned by BedrockRuntime.</returns>
+        /// <exception cref="Amazon.BedrockRuntime.Model.AccessDeniedException">
+        /// The request is denied because you do not have sufficient permissions to perform the
+        /// requested action. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-access-denied">AccessDeniedException</a>
+        /// in the Amazon Bedrock User Guide
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.InternalServerException">
+        /// An internal server error occurred. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-internal-failure">InternalFailure</a>
+        /// in the Amazon Bedrock User Guide
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ThrottlingException">
+        /// Your request was denied due to exceeding the account quotas for <i>Amazon Bedrock</i>.
+        /// For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-throttling-exception">ThrottlingException</a>
+        /// in the Amazon Bedrock User Guide
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by <i>Amazon Bedrock</i>. For
+        /// troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-validation-error">ValidationError</a>
+        /// in the Amazon Bedrock User Guide
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/ListAsyncInvokes">REST API Reference for ListAsyncInvokes Operation</seealso>
+        public virtual Task<ListAsyncInvokesResponse> ListAsyncInvokesAsync(ListAsyncInvokesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAsyncInvokesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAsyncInvokesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListAsyncInvokesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartAsyncInvoke
+
+
+        /// <summary>
+        /// Starts an asynchronous invocation.
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permission for the <c>bedrock:InvokeModel</c> action.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// To deny all inference access to resources that you specify in the modelId field, you
+        /// need to deny access to the <c>bedrock:InvokeModel</c> and <c>bedrock:InvokeModelWithResponseStream</c>
+        /// actions. Doing this also denies access to the resource through the Converse API actions
+        /// (<a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_Converse.html">Converse</a>
+        /// and <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_ConverseStream.html">ConverseStream</a>).
+        /// For more information see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-deny-inference">Deny
+        /// access for inference on specific models</a>. 
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartAsyncInvoke service method.</param>
+        /// 
+        /// <returns>The response from the StartAsyncInvoke service method, as returned by BedrockRuntime.</returns>
+        /// <exception cref="Amazon.BedrockRuntime.Model.AccessDeniedException">
+        /// The request is denied because you do not have sufficient permissions to perform the
+        /// requested action. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-access-denied">AccessDeniedException</a>
+        /// in the Amazon Bedrock User Guide
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.InternalServerException">
+        /// An internal server error occurred. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-internal-failure">InternalFailure</a>
+        /// in the Amazon Bedrock User Guide
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ResourceNotFoundException">
+        /// The specified resource ARN was not found. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-resource-not-found">ResourceNotFound</a>
+        /// in the Amazon Bedrock User Guide
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ServiceQuotaExceededException">
+        /// Your request exceeds the service quota for your account. You can view your quotas
+        /// at <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/gs-request-quota.html">Viewing
+        /// service quotas</a>. You can resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ServiceUnavailableException">
+        /// The service isn't currently available. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-service-unavailable">ServiceUnavailable</a>
+        /// in the Amazon Bedrock User Guide
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ThrottlingException">
+        /// Your request was denied due to exceeding the account quotas for <i>Amazon Bedrock</i>.
+        /// For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-throttling-exception">ThrottlingException</a>
+        /// in the Amazon Bedrock User Guide
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by <i>Amazon Bedrock</i>. For
+        /// troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-validation-error">ValidationError</a>
+        /// in the Amazon Bedrock User Guide
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/StartAsyncInvoke">REST API Reference for StartAsyncInvoke Operation</seealso>
+        public virtual StartAsyncInvokeResponse StartAsyncInvoke(StartAsyncInvokeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartAsyncInvokeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartAsyncInvokeResponseUnmarshaller.Instance;
+
+            return Invoke<StartAsyncInvokeResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Starts an asynchronous invocation.
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permission for the <c>bedrock:InvokeModel</c> action.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// To deny all inference access to resources that you specify in the modelId field, you
+        /// need to deny access to the <c>bedrock:InvokeModel</c> and <c>bedrock:InvokeModelWithResponseStream</c>
+        /// actions. Doing this also denies access to the resource through the Converse API actions
+        /// (<a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_Converse.html">Converse</a>
+        /// and <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_ConverseStream.html">ConverseStream</a>).
+        /// For more information see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-deny-inference">Deny
+        /// access for inference on specific models</a>. 
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartAsyncInvoke service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartAsyncInvoke service method, as returned by BedrockRuntime.</returns>
+        /// <exception cref="Amazon.BedrockRuntime.Model.AccessDeniedException">
+        /// The request is denied because you do not have sufficient permissions to perform the
+        /// requested action. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-access-denied">AccessDeniedException</a>
+        /// in the Amazon Bedrock User Guide
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.InternalServerException">
+        /// An internal server error occurred. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-internal-failure">InternalFailure</a>
+        /// in the Amazon Bedrock User Guide
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ResourceNotFoundException">
+        /// The specified resource ARN was not found. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-resource-not-found">ResourceNotFound</a>
+        /// in the Amazon Bedrock User Guide
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ServiceQuotaExceededException">
+        /// Your request exceeds the service quota for your account. You can view your quotas
+        /// at <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/gs-request-quota.html">Viewing
+        /// service quotas</a>. You can resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ServiceUnavailableException">
+        /// The service isn't currently available. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-service-unavailable">ServiceUnavailable</a>
+        /// in the Amazon Bedrock User Guide
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ThrottlingException">
+        /// Your request was denied due to exceeding the account quotas for <i>Amazon Bedrock</i>.
+        /// For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-throttling-exception">ThrottlingException</a>
+        /// in the Amazon Bedrock User Guide
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by <i>Amazon Bedrock</i>. For
+        /// troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-validation-error">ValidationError</a>
+        /// in the Amazon Bedrock User Guide
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/StartAsyncInvoke">REST API Reference for StartAsyncInvoke Operation</seealso>
+        public virtual Task<StartAsyncInvokeResponse> StartAsyncInvokeAsync(StartAsyncInvokeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartAsyncInvokeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartAsyncInvokeResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartAsyncInvokeResponse>(request, options, cancellationToken);
         }
 
         #endregion

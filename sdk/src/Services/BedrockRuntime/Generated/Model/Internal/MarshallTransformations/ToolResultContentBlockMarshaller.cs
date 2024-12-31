@@ -82,6 +82,17 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Text);
             }
 
+            if(requestObject.IsSetVideo())
+            {
+                context.Writer.WritePropertyName("video");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = VideoBlockMarshaller.Instance;
+                marshaller.Marshall(requestObject.Video, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

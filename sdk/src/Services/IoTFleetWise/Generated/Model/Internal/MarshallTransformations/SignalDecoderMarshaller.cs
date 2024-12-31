@@ -59,6 +59,17 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetCustomDecodingSignal())
+            {
+                context.Writer.WritePropertyName("customDecodingSignal");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CustomDecodingSignalMarshaller.Instance;
+                marshaller.Marshall(requestObject.CustomDecodingSignal, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetFullyQualifiedName())
             {
                 context.Writer.WritePropertyName("fullyQualifiedName");

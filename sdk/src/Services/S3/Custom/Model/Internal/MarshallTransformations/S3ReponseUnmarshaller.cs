@@ -99,6 +99,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             var errorResponse = Amazon.S3.Model.Internal.MarshallTransformations.S3ErrorResponseUnmarshaller.Instance.Unmarshall(context);
+            return ConstructS3Exception(context, errorResponse, innerException, statusCode);
+        }
+
+        protected private AmazonS3Exception ConstructS3Exception(XmlUnmarshallerContext context, S3ErrorResponse errorResponse, Exception innerException, HttpStatusCode statusCode)
+        {
             var s3Exception = new Amazon.S3.AmazonS3Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode, errorResponse.Id2, errorResponse.AmzCfId);
             s3Exception.Region = errorResponse.Region;
 

@@ -108,6 +108,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.InstanceCreateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("KerberosAuthenticationSettings", targetDepth))
+                {
+                    var unmarshaller = KerberosAuthenticationSettingsUnmarshaller.Instance;
+                    unmarshalledObject.KerberosAuthenticationSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("KmsKeyId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

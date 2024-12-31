@@ -70,6 +70,17 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetSelfServiceAIAgentConfiguration())
+            {
+                context.Writer.WritePropertyName("selfServiceAIAgentConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SelfServiceAIAgentConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.SelfServiceAIAgentConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

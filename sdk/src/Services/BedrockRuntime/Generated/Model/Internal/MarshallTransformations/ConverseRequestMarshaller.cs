@@ -127,6 +127,17 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
                         context.Writer.WriteArrayEnd();
                     }
 
+                    if(publicRequest.IsSetPerformanceConfig())
+                    {
+                        context.Writer.WritePropertyName("performanceConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = PerformanceConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.PerformanceConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
                     if(publicRequest.IsSetPromptVariables())
                     {
                         context.Writer.WritePropertyName("promptVariables");
@@ -142,6 +153,20 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
                             marshaller.Marshall(publicRequestPromptVariablesValue, context);
 
                             context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetRequestMetadata())
+                    {
+                        context.Writer.WritePropertyName("requestMetadata");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestRequestMetadataKvp in publicRequest.RequestMetadata)
+                        {
+                            context.Writer.WritePropertyName(publicRequestRequestMetadataKvp.Key);
+                            var publicRequestRequestMetadataValue = publicRequestRequestMetadataKvp.Value;
+
+                                context.Writer.Write(publicRequestRequestMetadataValue);
                         }
                         context.Writer.WriteObjectEnd();
                     }

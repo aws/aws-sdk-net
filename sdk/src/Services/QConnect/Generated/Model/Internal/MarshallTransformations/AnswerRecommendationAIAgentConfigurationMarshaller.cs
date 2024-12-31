@@ -48,6 +48,12 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAnswerGenerationAIGuardrailId())
+            {
+                context.Writer.WritePropertyName("answerGenerationAIGuardrailId");
+                context.Writer.Write(requestObject.AnswerGenerationAIGuardrailId);
+            }
+
             if(requestObject.IsSetAnswerGenerationAIPromptId())
             {
                 context.Writer.WritePropertyName("answerGenerationAIPromptId");
@@ -74,6 +80,12 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("intentLabelingGenerationAIPromptId");
                 context.Writer.Write(requestObject.IntentLabelingGenerationAIPromptId);
+            }
+
+            if(requestObject.IsSetLocale())
+            {
+                context.Writer.WritePropertyName("locale");
+                context.Writer.Write(requestObject.Locale);
             }
 
             if(requestObject.IsSetQueryReformulationAIPromptId())

@@ -59,6 +59,7 @@ namespace Amazon.RDS.Model
         private string _caCertificateIdentifier;
         private CloudwatchLogsExportConfiguration _cloudwatchLogsExportConfiguration;
         private bool? _copyTagsToSnapshot;
+        private DatabaseInsightsMode _databaseInsightsMode;
         private string _dbClusterIdentifier;
         private string _dbClusterInstanceClass;
         private string _dbClusterParameterGroupName;
@@ -185,10 +186,10 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ApplyImmediately. 
         /// <para>
-        /// Specifies whether the modifications in this request and any pending modifications
-        /// are asynchronously applied as soon as possible, regardless of the <c>PreferredMaintenanceWindow</c>
-        /// setting for the DB cluster. If this parameter is disabled, changes to the DB cluster
-        /// are applied during the next maintenance window.
+        /// Specifies whether the modifications in this request are asynchronously applied as
+        /// soon as possible, regardless of the <c>PreferredMaintenanceWindow</c> setting for
+        /// the DB cluster. If this parameter is disabled, changes to the DB cluster are applied
+        /// during the next maintenance window.
         /// </para>
         ///  
         /// <para>
@@ -225,7 +226,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid for Cluster Type: Multi-AZ DB clusters only
+        /// Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters
         /// </para>
         /// </summary>
         public bool? AutoMinorVersionUpgrade
@@ -432,6 +433,39 @@ namespace Amazon.RDS.Model
         internal bool IsSetCopyTagsToSnapshot()
         {
             return this._copyTagsToSnapshot.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DatabaseInsightsMode. 
+        /// <para>
+        /// Specifies the mode of Database Insights to enable for the DB cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you change the value from <c>standard</c> to <c>advanced</c>, you must set the
+        /// <c>PerformanceInsightsEnabled</c> parameter to <c>true</c> and the <c>PerformanceInsightsRetentionPeriod</c>
+        /// parameter to 465.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you change the value from <c>advanced</c> to <c>standard</c>, you must set the
+        /// <c>PerformanceInsightsEnabled</c> parameter to <c>false</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid for Cluster Type: Aurora DB clusters only
+        /// </para>
+        /// </summary>
+        public DatabaseInsightsMode DatabaseInsightsMode
+        {
+            get { return this._databaseInsightsMode; }
+            set { this._databaseInsightsMode = value; }
+        }
+
+        // Check to see if DatabaseInsightsMode property is set
+        internal bool IsSetDatabaseInsightsMode()
+        {
+            return this._databaseInsightsMode != null;
         }
 
         /// <summary>
@@ -693,8 +727,8 @@ namespace Amazon.RDS.Model
         ///  <note> 
         /// <para>
         /// This parameter applies only to Aurora Serverless v1 DB clusters. To enable or disable
-        /// the HTTP endpoint for an Aurora PostgreSQL Serverless v2 or provisioned DB cluster,
-        /// use the <c>EnableHttpEndpoint</c> and <c>DisableHttpEndpoint</c> operations.
+        /// the HTTP endpoint for an Aurora Serverless v2 or provisioned DB cluster, use the <c>EnableHttpEndpoint</c>
+        /// and <c>DisableHttpEndpoint</c> operations.
         /// </para>
         ///  </note> 
         /// <para>
@@ -1291,7 +1325,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid for Cluster Type: Multi-AZ DB clusters only
+        /// Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters
         /// </para>
         /// </summary>
         public string PerformanceInsightsKMSKeyId
@@ -1313,7 +1347,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid for Cluster Type: Multi-AZ DB clusters only
+        /// Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters
         /// </para>
         ///  
         /// <para>

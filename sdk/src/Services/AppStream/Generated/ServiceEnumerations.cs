@@ -1529,6 +1529,10 @@ namespace Amazon.AppStream
         /// </summary>
         public static readonly PlatformType RHEL8 = new PlatformType("RHEL8");
         /// <summary>
+        /// Constant ROCKY_LINUX8 for PlatformType
+        /// </summary>
+        public static readonly PlatformType ROCKY_LINUX8 = new PlatformType("ROCKY_LINUX8");
+        /// <summary>
         /// Constant WINDOWS for PlatformType
         /// </summary>
         public static readonly PlatformType WINDOWS = new PlatformType("WINDOWS");

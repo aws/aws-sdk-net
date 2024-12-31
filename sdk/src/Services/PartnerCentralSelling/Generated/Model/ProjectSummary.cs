@@ -40,12 +40,12 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property DeliveryModels. 
         /// <para>
-        ///  Specifies your solution or service's deployment or consumption model in the <c>Opportunity</c>'s
-        /// context. You can select multiple options. 
+        /// Specifies your solution or service's deployment or consumption model in the <c>Opportunity</c>'s
+        /// context. You can select multiple options.
         /// </para>
         ///  
         /// <para>
-        ///  Options' descriptions from the <c>Delivery Model</c> field are: 
+        /// Options' descriptions from the <c>Delivery Model</c> field are:
         /// </para>
         ///  <ul> <li> 
         /// <para>

@@ -31,7 +31,7 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the SetUserPoolMfaConfig operation.
-    /// Sets the user pool multi-factor authentication (MFA) configuration.
+    /// Sets the user pool multi-factor authentication (MFA) and passkey configuration.
     /// 
     ///  <note> 
     /// <para>
@@ -46,7 +46,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     ///  
     /// <para>
     /// If you have never used SMS text messages with Amazon Cognito or any other Amazon Web
-    /// Servicesservice, Amazon Simple Notification Service might place your account in the
+    /// Services service, Amazon Simple Notification Service might place your account in the
     /// SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
     /// mode</a> </i>, you can send messages only to verified phone numbers. After you test
     /// your app while in the sandbox environment, you can move out of the sandbox and into
@@ -63,6 +63,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         private SmsMfaConfigType _smsMfaConfiguration;
         private SoftwareTokenMfaConfigType _softwareTokenMfaConfiguration;
         private string _userPoolId;
+        private WebAuthnConfigurationType _webAuthnConfiguration;
 
         /// <summary>
         /// Gets and sets the property EmailMfaConfiguration. 
@@ -173,6 +174,26 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetUserPoolId()
         {
             return this._userPoolId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WebAuthnConfiguration. 
+        /// <para>
+        /// The configuration of your user pool for passkey, or webauthN, authentication and registration.
+        /// You can set this configuration independent of the MFA configuration options in this
+        /// operation.
+        /// </para>
+        /// </summary>
+        public WebAuthnConfigurationType WebAuthnConfiguration
+        {
+            get { return this._webAuthnConfiguration; }
+            set { this._webAuthnConfiguration = value; }
+        }
+
+        // Check to see if WebAuthnConfiguration property is set
+        internal bool IsSetWebAuthnConfiguration()
+        {
+            return this._webAuthnConfiguration != null;
         }
 
     }

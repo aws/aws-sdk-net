@@ -1215,6 +1215,14 @@ namespace Amazon.MediaPackageV2
         /// </summary>
         public static readonly ValidationExceptionType ONLY_CMAF_INPUT_TYPE_ALLOW_FORCE_ENDPOINT_ERROR_CONFIGURATION = new ValidationExceptionType("ONLY_CMAF_INPUT_TYPE_ALLOW_FORCE_ENDPOINT_ERROR_CONFIGURATION");
         /// <summary>
+        /// Constant ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_INPUT_SWITCHING for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_INPUT_SWITCHING = new ValidationExceptionType("ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_INPUT_SWITCHING");
+        /// <summary>
+        /// Constant ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_OUTPUT_CONFIGURATION for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_OUTPUT_CONFIGURATION = new ValidationExceptionType("ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_OUTPUT_CONFIGURATION");
+        /// <summary>
         /// Constant PERIOD_TRIGGERS_NONE_SPECIFIED_WITH_ADDITIONAL_VALUES for ValidationExceptionType
         /// </summary>
         public static readonly ValidationExceptionType PERIOD_TRIGGERS_NONE_SPECIFIED_WITH_ADDITIONAL_VALUES = new ValidationExceptionType("PERIOD_TRIGGERS_NONE_SPECIFIED_WITH_ADDITIONAL_VALUES");

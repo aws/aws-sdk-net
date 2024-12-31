@@ -55,9 +55,9 @@ namespace Amazon.RDS.Util
         /// <summary>
         /// Generate a token for IAM authentication to an RDS database.
         /// <remarks>
-        /// Token generation additionally requires a RegionEndpoint and AWSCredentials.
-        /// They will be loaded from the application's default configuration,
-        /// and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// The AWS region and credentials for creating the auth token will be searched for
+        /// using the SDK's standard environment search pattern. This includes using
+        /// default profile configuration and AWS Compute environment settings.
         /// </remarks>
         /// </summary>
         /// <param name="hostname">Hostname of the RDS database.</param>
@@ -73,9 +73,9 @@ namespace Amazon.RDS.Util
         /// <summary>
         /// Generate a token for IAM authentication to an RDS database.
         /// <remarks>
-        /// Token generation additionally requires AWSCredentials.
-        /// They will be loaded from the application's default configuration,
-        /// and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// The AWS credentials for creating the auth token will be searched for
+        /// using the SDK's standard environment search pattern. This includes using
+        /// default profile configuration and AWS Compute environment settings.
         /// </remarks>
         /// </summary>
         /// <param name="region">The region of the RDS database.</param>
@@ -92,9 +92,9 @@ namespace Amazon.RDS.Util
         /// <summary>
         /// Generate a token for IAM authentication to an RDS database.
         /// <remarks>
-        /// Token generation additionally requires a RegionEndpoint.
-        /// It will be loaded from the application's default configuration,
-        /// and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// The AWS region for creating the auth token will be searched for
+        /// using the SDK's standard environment search pattern. This includes using
+        /// default profile configuration and AWS Compute environment settings.
         /// </remarks>
         /// </summary>
         /// <param name="credentials">The credentials for the token.</param>

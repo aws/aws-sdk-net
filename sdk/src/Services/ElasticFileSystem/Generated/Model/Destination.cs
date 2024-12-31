@@ -36,8 +36,11 @@ namespace Amazon.ElasticFileSystem.Model
     {
         private string _fileSystemId;
         private DateTime? _lastReplicatedTimestamp;
+        private string _ownerId;
         private string _region;
+        private string _roleArn;
         private ReplicationStatus _status;
+        private string _statusMessage;
 
         /// <summary>
         /// Gets and sets the property FileSystemId. 
@@ -80,6 +83,25 @@ namespace Amazon.ElasticFileSystem.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OwnerId. 
+        /// <para>
+        /// ID of the Amazon Web Services account in which the destination file system resides.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=14)]
+        public string OwnerId
+        {
+            get { return this._ownerId; }
+            set { this._ownerId = value; }
+        }
+
+        // Check to see if OwnerId property is set
+        internal bool IsSetOwnerId()
+        {
+            return this._ownerId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
         /// The Amazon Web Services Region in which the destination file system is located.
@@ -99,28 +121,33 @@ namespace Amazon.ElasticFileSystem.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RoleArn. 
+        /// <para>
+        /// Amazon Resource Name (ARN) of the IAM role in the source account that allows Amazon
+        /// EFS to perform replication on its behalf. This is optional for same-account replication
+        /// and required for cross-account replication.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2048)]
+        public string RoleArn
+        {
+            get { return this._roleArn; }
+            set { this._roleArn = value; }
+        }
+
+        // Check to see if RoleArn property is set
+        internal bool IsSetRoleArn()
+        {
+            return this._roleArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Describes the status of the destination EFS file system.
+        /// Describes the status of the replication configuration. For more information about
+        /// replication status, see <a href="https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#restoring-backup-efsmonitoring-replication-status.html">Viewing
+        /// replication details</a> in the <i>Amazon EFS User Guide</i>. 
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// The <c>Paused</c> state occurs as a result of opting out of the source or destination
-        /// Region after the replication configuration was created. To resume replication for
-        /// the file system, you need to again opt in to the Amazon Web Services Region. For more
-        /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable">Managing
-        /// Amazon Web Services Regions</a> in the <i>Amazon Web Services General Reference Guide</i>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// The <c>Error</c> state occurs when either the source or the destination file system
-        /// (or both) is in a failed state and is unrecoverable. For more information, see <a
-        /// href="https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#restoring-backup-efsmonitoring-replication-status.html">Monitoring
-        /// replication status</a> in the <i>Amazon EFS User Guide</i>. You must delete the replication
-        /// configuration, and then restore the most recent backup of the failed file system (either
-        /// the source or the destination) to a new file system.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public ReplicationStatus Status
@@ -133,6 +160,27 @@ namespace Amazon.ElasticFileSystem.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatusMessage. 
+        /// <para>
+        /// Message that provides details about the <c>PAUSED</c> or <c>ERRROR</c> state of the
+        /// replication destination configuration. For more information about replication status
+        /// messages, see <a href="https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#restoring-backup-efsmonitoring-replication-status.html">Viewing
+        /// replication details</a> in the <i>Amazon EFS User Guide</i>. 
+        /// </para>
+        /// </summary>
+        public string StatusMessage
+        {
+            get { return this._statusMessage; }
+            set { this._statusMessage = value; }
+        }
+
+        // Check to see if StatusMessage property is set
+        internal bool IsSetStatusMessage()
+        {
+            return this._statusMessage != null;
         }
 
     }

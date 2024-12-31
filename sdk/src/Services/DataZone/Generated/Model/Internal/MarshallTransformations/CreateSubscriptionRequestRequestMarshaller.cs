@@ -83,6 +83,22 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                         context.Writer.WritePropertyName("clientToken");
                         context.Writer.Write(Guid.NewGuid().ToString());
                     }
+                    if(publicRequest.IsSetMetadataForms())
+                    {
+                        context.Writer.WritePropertyName("metadataForms");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestMetadataFormsListValue in publicRequest.MetadataForms)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = FormInputMarshaller.Instance;
+                            marshaller.Marshall(publicRequestMetadataFormsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
                     if(publicRequest.IsSetRequestReason())
                     {
                         context.Writer.WritePropertyName("requestReason");

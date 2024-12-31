@@ -89,7 +89,7 @@ namespace Amazon.CleanRoomsML.Model
         /// <summary>
         /// Gets and sets the property DataSource. 
         /// <para>
-        /// Defines he data source that is used for the trained model inference job.
+        /// Defines the data source that is used for the trained model inference job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -56,6 +56,20 @@ namespace Amazon.Kendra.Model
     /// <para>
     /// If you provide both, an exception is thrown.
     /// </para>
+    ///  <important> 
+    /// <para>
+    /// If you're using an Amazon Kendra Gen AI Enterprise Edition index, you can use <c>UserId</c>,
+    /// <c>Groups</c>, and <c>DataSourceGroups</c> to filter content. If you set the <c>UserId</c>
+    /// to a particular user ID, it also includes all public documents.
+    /// </para>
+    ///  
+    /// <para>
+    /// Amazon Kendra Gen AI Enterprise Edition indices don't support token based document
+    /// filtering. If you're using an Amazon Kendra Gen AI Enterprise Edition index, Amazon
+    /// Kendra returns a <c>ValidationException</c> error if the <c>Token</c> field has a
+    /// non-null value.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class UserContext
     {

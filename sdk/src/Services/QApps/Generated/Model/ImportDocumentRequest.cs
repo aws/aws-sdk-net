@@ -68,7 +68,7 @@ namespace Amazon.QApps.Model
         /// <summary>
         /// Gets and sets the property CardId. 
         /// <para>
-        /// The unique identifier of the card the file is associated with, if applicable.
+        /// The unique identifier of the card the file is associated with.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -144,7 +144,7 @@ namespace Amazon.QApps.Model
         /// <summary>
         /// Gets and sets the property Scope. 
         /// <para>
-        /// Whether the file is associated with an Q App definition or a specific Q App session.
+        /// Whether the file is associated with a Q App definition or a specific Q App session.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

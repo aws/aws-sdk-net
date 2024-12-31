@@ -30,18 +30,27 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Bedrock.Model
 {
     /// <summary>
-    /// Used to define the models you want used in your model evaluation job. Automated model
-    /// evaluation jobs support only a single model. In a human-based model evaluation job,
-    /// your annotator can compare the responses for up to two different models.
+    /// The configuration details of the inference model for an evaluation job.
+    /// 
+    ///  
+    /// <para>
+    /// For automated model evaluation jobs, only a single model is supported.
+    /// </para>
+    ///  
+    /// <para>
+    /// For human-based model evaluation jobs, your annotator can compare the responses for
+    /// up to two different models.
+    /// </para>
     /// </summary>
     public partial class EvaluationInferenceConfig
     {
         private List<EvaluationModelConfig> _models = AWSConfigs.InitializeCollections ? new List<EvaluationModelConfig>() : null;
+        private List<RAGConfig> _ragConfigs = AWSConfigs.InitializeCollections ? new List<RAGConfig>() : null;
 
         /// <summary>
         /// Gets and sets the property Models. 
         /// <para>
-        /// Used to specify the models.
+        /// Specifies the inference models.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2)]
@@ -55,6 +64,27 @@ namespace Amazon.Bedrock.Model
         internal bool IsSetModels()
         {
             return this._models != null && (this._models.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RagConfigs. 
+        /// <para>
+        /// Contains the configuration details of the inference for a knowledge base evaluation
+        /// job, including either the retrieval only configuration or the retrieval with response
+        /// generation configuration.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<RAGConfig> RagConfigs
+        {
+            get { return this._ragConfigs; }
+            set { this._ragConfigs = value; }
+        }
+
+        // Check to see if RagConfigs property is set
+        internal bool IsSetRagConfigs()
+        {
+            return this._ragConfigs != null && (this._ragConfigs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

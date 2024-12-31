@@ -54,6 +54,7 @@ namespace Amazon.MediaConvert.Model
         private string _hexFontColor;
         private BurninSubtitleOutlineColor _outlineColor;
         private int? _outlineSize;
+        private RemoveRubyReserveAttributes _removeRubyReserveAttributes;
         private BurninSubtitleShadowColor _shadowColor;
         private int? _shadowOpacity;
         private int? _shadowXOffset;
@@ -371,6 +372,25 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetOutlineSize()
         {
             return this._outlineSize.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RemoveRubyReserveAttributes. Optionally remove any tts:rubyReserve
+        /// attributes present in your input, that do   not have a tts:ruby attribute in the same
+        /// element, from your output. Use if your vertical Japanese output captions have alignment
+        /// issues. To remove ruby reserve attributes when present: Choose Enabled. To not remove
+        /// any ruby reserve attributes: Keep the default value, Disabled.
+        /// </summary>
+        public RemoveRubyReserveAttributes RemoveRubyReserveAttributes
+        {
+            get { return this._removeRubyReserveAttributes; }
+            set { this._removeRubyReserveAttributes = value; }
+        }
+
+        // Check to see if RemoveRubyReserveAttributes property is set
+        internal bool IsSetRemoveRubyReserveAttributes()
+        {
+            return this._removeRubyReserveAttributes != null;
         }
 
         /// <summary>

@@ -92,6 +92,16 @@ namespace Amazon.IoT.Model
         IListCertificatesByCAPaginator ListCertificatesByCA(ListCertificatesByCARequest request);
 
         /// <summary>
+        /// Paginator for ListCommandExecutions operation
+        ///</summary>
+        IListCommandExecutionsPaginator ListCommandExecutions(ListCommandExecutionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListCommands operation
+        ///</summary>
+        IListCommandsPaginator ListCommands(ListCommandsRequest request);
+
+        /// <summary>
         /// Paginator for ListCustomMetrics operation
         ///</summary>
         IListCustomMetricsPaginator ListCustomMetrics(ListCustomMetricsRequest request);

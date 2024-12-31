@@ -30,17 +30,24 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// An origin group includes two origins (a primary origin and a second origin to failover
+    /// An origin group includes two origins (a primary origin and a secondary origin to failover
     /// to) and a failover criteria that you specify. You create an origin group to support
     /// origin failover in CloudFront. When you create or update a distribution, you can specify
     /// the origin group instead of a single origin, and CloudFront will failover from the
-    /// primary origin to the second origin under the failover conditions that you've chosen.
+    /// primary origin to the secondary origin under the failover conditions that you've chosen.
+    /// 
+    ///  
+    /// <para>
+    /// Optionally, you can choose selection criteria for your origin group to specify how
+    /// your origins are selected when your distribution routes viewer requests.
+    /// </para>
     /// </summary>
     public partial class OriginGroup
     {
         private OriginGroupFailoverCriteria _failoverCriteria;
         private string _id;
         private OriginGroupMembers _members;
+        private OriginGroupSelectionCriteria _selectionCriteria;
 
         /// <summary>
         /// Gets and sets the property FailoverCriteria. 
@@ -98,6 +105,25 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetMembers()
         {
             return this._members != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SelectionCriteria. 
+        /// <para>
+        /// The selection criteria for the origin group. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/high_availability_origin_failover.html#concept_origin_groups.creating">Create
+        /// an origin group</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public OriginGroupSelectionCriteria SelectionCriteria
+        {
+            get { return this._selectionCriteria; }
+            set { this._selectionCriteria = value; }
+        }
+
+        // Check to see if SelectionCriteria property is set
+        internal bool IsSetSelectionCriteria()
+        {
+            return this._selectionCriteria != null;
         }
 
     }

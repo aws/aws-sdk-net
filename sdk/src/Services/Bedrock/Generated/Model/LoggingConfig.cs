@@ -39,6 +39,7 @@ namespace Amazon.Bedrock.Model
         private bool? _imageDataDeliveryEnabled;
         private S3Config _s3Config;
         private bool? _textDataDeliveryEnabled;
+        private bool? _videoDataDeliveryEnabled;
 
         /// <summary>
         /// Gets and sets the property CloudWatchConfig. 
@@ -128,6 +129,24 @@ namespace Amazon.Bedrock.Model
         internal bool IsSetTextDataDeliveryEnabled()
         {
             return this._textDataDeliveryEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VideoDataDeliveryEnabled. 
+        /// <para>
+        /// Set to include video data in the log delivery.
+        /// </para>
+        /// </summary>
+        public bool? VideoDataDeliveryEnabled
+        {
+            get { return this._videoDataDeliveryEnabled; }
+            set { this._videoDataDeliveryEnabled = value; }
+        }
+
+        // Check to see if VideoDataDeliveryEnabled property is set
+        internal bool IsSetVideoDataDeliveryEnabled()
+        {
+            return this._videoDataDeliveryEnabled.HasValue; 
         }
 
     }

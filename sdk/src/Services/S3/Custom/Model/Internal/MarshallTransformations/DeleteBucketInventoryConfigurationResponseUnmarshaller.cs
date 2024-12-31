@@ -36,7 +36,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         {
             DeleteBucketInventoryConfigurationResponse response = new DeleteBucketInventoryConfigurationResponse();
 
-
             return response;
         }
 

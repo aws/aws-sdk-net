@@ -101,6 +101,12 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
 
+                    if(publicRequest.IsSetParquetType())
+                    {
+                        context.Writer.WritePropertyName("parquetType");
+                        context.Writer.Write(publicRequest.ParquetType);
+                    }
+
                     if(publicRequest.IsSetRoleArn())
                     {
                         context.Writer.WritePropertyName("roleArn");

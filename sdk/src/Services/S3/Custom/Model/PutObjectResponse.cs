@@ -41,6 +41,7 @@ namespace Amazon.S3.Model
         private string _checksumCRC32C;
         private string _checksumSHA1;
         private string _checksumSHA256;
+        private long? _size;
 
         /// <summary>
         /// Gets and sets the Expiration property.
@@ -334,6 +335,24 @@ namespace Amazon.S3.Model
         internal bool IsSetChecksumSHA256()
         {
             return this._checksumSHA256 != null;
+        }
+
+        /// <summary>
+        /// <para>
+        /// The size of the object in bytes.This will only be present if you append to an object.
+        /// </para>
+        /// <note><para>This functionality is only supported for objects in the S3; Express One Zone storage class in directory buckets.</para></note>
+        /// </summary>
+        public long Size
+        {
+            get { return this._size.GetValueOrDefault(); }
+            set { this._size = value; }
+        }
+
+        // Check to see if Size property is set
+        internal bool IsSetSize()
+        {
+            return this._size.HasValue;
         }
     }
 }

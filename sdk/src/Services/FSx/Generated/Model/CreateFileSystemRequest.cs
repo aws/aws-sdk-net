@@ -341,7 +341,7 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=2147483647)]
+        [AWSProperty(Min=0, Max=2147483647)]
         public int? StorageCapacity
         {
             get { return this._storageCapacity; }
@@ -357,8 +357,8 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property StorageType. 
         /// <para>
-        /// Sets the storage type for the file system that you're creating. Valid values are <c>SSD</c>
-        /// and <c>HDD</c>.
+        /// Sets the storage class for the file system that you're creating. Valid values are
+        /// <c>SSD</c>, <c>HDD</c>, and <c>INTELLIGENT_TIERING</c>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -371,12 +371,19 @@ namespace Amazon.FSx.Model
         /// and <c>MULTI_AZ_1</c> Windows file system deployment types, and on <c>PERSISTENT_1</c>
         /// Lustre file system deployment types.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Set to <c>INTELLIGENT_TIERING</c> to use fully elastic, intelligently-tiered storage.
+        /// Intelligent-Tiering is only available for OpenZFS file systems with the Multi-AZ deployment
+        /// type.
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// Default value is <c>SSD</c>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-costs.html#storage-type-options">
-        /// Storage type options</a> in the <i>FSx for Windows File Server User Guide</i> and
-        /// <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/what-is.html#storage-options">Multiple
-        /// storage options</a> in the <i>FSx for Lustre User Guide</i>. 
+        /// Storage type options</a> in the <i>FSx for Windows File Server User Guide</i>, <a
+        /// href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/what-is.html#storage-options">Multiple
+        /// storage options</a> in the <i>FSx for Lustre User Guide</i>, and <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance-intelligent-tiering">Working
+        /// with Intelligent-Tiering</a> in the <i>Amazon FSx for OpenZFS User Guide</i>. 
         /// </para>
         /// </summary>
         public StorageType StorageType

@@ -64,6 +64,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     response.ContactFlowId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FlowContentSha256", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.FlowContentSha256 = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

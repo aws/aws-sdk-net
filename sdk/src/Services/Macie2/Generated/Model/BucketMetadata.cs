@@ -38,11 +38,11 @@ namespace Amazon.Macie2.Model
     /// 
     ///  
     /// <para>
-    /// If an error occurs when Macie attempts to retrieve and process metadata from Amazon
+    /// If an error or issue prevents Macie from retrieving and processing metadata from Amazon
     /// S3 for the bucket or the bucket's objects, the value for the versioning property is
-    /// false and the value for most other properties is null. Key exceptions are accountId,
-    /// bucketArn, bucketCreatedAt, bucketName, lastUpdated, and region. To identify the cause
-    /// of the error, refer to the errorCode and errorMessage values.
+    /// false and the value for most other properties is null or UNKNOWN. Key exceptions are
+    /// accountId, bucketArn, bucketCreatedAt, bucketName, lastUpdated, and region. To identify
+    /// the cause, refer to the errorCode and errorMessage values.
     /// </para>
     /// </summary>
     public partial class BucketMetadata
@@ -260,11 +260,22 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property ErrorCode. 
         /// <para>
-        /// The error code for an error that prevented Amazon Macie from retrieving and processing
-        /// information about the bucket and the bucket's objects. If this value is ACCESS_DENIED,
-        /// Macie doesn't have permission to retrieve the information. For example, the bucket
-        /// has a restrictive bucket policy and Amazon S3 denied the request. If this value is
-        /// null, Macie was able to retrieve and process the information.
+        /// The code for an error or issue that prevented Amazon Macie from retrieving and processing
+        /// information about the bucket and the bucket's objects. Possible values are:
+        /// </para>
+        ///  <ul><li>
+        /// <para>
+        /// ACCESS_DENIED - Macie doesn't have permission to retrieve the information. For example,
+        /// the bucket has a restrictive bucket policy and Amazon S3 denied the request.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// BUCKET_COUNT_EXCEEDS_QUOTA - Retrieving and processing the information would exceed
+        /// the quota for the number of buckets that Macie monitors for an account (10,000).
+        /// </para>
+        /// </li></ul> 
+        /// <para>
+        /// If this value is null, Macie was able to retrieve and process the information.
         /// </para>
         /// </summary>
         public BucketMetadataErrorCode ErrorCode
@@ -282,9 +293,9 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property ErrorMessage. 
         /// <para>
-        /// A brief description of the error (errorCode) that prevented Amazon Macie from retrieving
-        /// and processing information about the bucket and the bucket's objects. This value is
-        /// null if Macie was able to retrieve and process the information.
+        /// A brief description of the error or issue (errorCode) that prevented Amazon Macie
+        /// from retrieving and processing information about the bucket and the bucket's objects.
+        /// This value is null if Macie was able to retrieve and process the information.
         /// </para>
         /// </summary>
         public string ErrorMessage
@@ -323,7 +334,7 @@ namespace Amazon.Macie2.Model
         /// <para>
         /// The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently
         /// analyzed objects in the bucket while performing automated sensitive data discovery.
-        /// This value is null if automated sensitive data discovery is disabled for your account.
+        /// This value is null if this analysis hasn't occurred.
         /// </para>
         /// </summary>
         public DateTime? LastAutomatedDiscoveryTime
@@ -459,10 +470,10 @@ namespace Amazon.Macie2.Model
         /// </para>
         /// 
         /// <para>
-        /// If automated sensitive data discovery has never been enabled for your account or it’s
-        /// been disabled for your organization or your standalone account for more than 30 days,
-        /// possible values are: 1, the bucket is empty; or, 50, the bucket stores objects but
-        /// it’s been excluded from recent analyses.
+        /// If automated sensitive data discovery has never been enabled for your account or it's
+        /// been disabled for your organization or standalone account for more than 30 days, possible
+        /// values are: 1, the bucket is empty; or, 50, the bucket stores objects but it's been
+        /// excluded from recent analyses.
         /// </para>
         /// </summary>
         public int? SensitivityScore

@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// The search criteria based on user-defned contact attribute key and values to search
+    /// The search criteria based on user-defined contact attribute key and values to search
     /// on.
     /// </summary>
     public partial class SearchableContactAttributesCriteria
@@ -44,7 +44,7 @@ namespace Amazon.Connect.Model
         /// The key containing a searchable user-defined contact attribute.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=100)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=100)]
         public string Key
         {
             get { return this._key; }

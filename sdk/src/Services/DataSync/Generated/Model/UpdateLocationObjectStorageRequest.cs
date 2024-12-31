@@ -31,7 +31,14 @@ namespace Amazon.DataSync.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateLocationObjectStorage operation.
-    /// Updates some parameters of an existing DataSync location for an object storage system.
+    /// Modifies the following configuration parameters of the object storage transfer location
+    /// that you're using with DataSync.
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-object-location.html">Configuring
+    /// DataSync transfers with an object storage system</a>.
+    /// </para>
     /// </summary>
     public partial class UpdateLocationObjectStorageRequest : AmazonDataSyncRequest
     {

@@ -89,6 +89,10 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
                 {
                     return HomeRegionNotSetExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterException"))
+                {
+                    return InvalidParameterExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterValueException"))
                 {
                     return InvalidParameterValueExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

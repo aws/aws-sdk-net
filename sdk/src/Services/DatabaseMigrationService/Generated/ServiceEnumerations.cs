@@ -1213,6 +1213,56 @@ namespace Amazon.DatabaseMigrationService
 
 
     /// <summary>
+    /// Constants used for properties of type OracleAuthenticationMethod.
+    /// </summary>
+    public class OracleAuthenticationMethod : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Kerberos for OracleAuthenticationMethod
+        /// </summary>
+        public static readonly OracleAuthenticationMethod Kerberos = new OracleAuthenticationMethod("kerberos");
+        /// <summary>
+        /// Constant Password for OracleAuthenticationMethod
+        /// </summary>
+        public static readonly OracleAuthenticationMethod Password = new OracleAuthenticationMethod("password");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OracleAuthenticationMethod(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OracleAuthenticationMethod FindValue(string value)
+        {
+            return FindValue<OracleAuthenticationMethod>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OracleAuthenticationMethod(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type OriginTypeValue.
     /// </summary>
     public class OriginTypeValue : ConstantClass
@@ -1718,6 +1768,56 @@ namespace Amazon.DatabaseMigrationService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SqlServerAuthenticationMethod.
+    /// </summary>
+    public class SqlServerAuthenticationMethod : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Kerberos for SqlServerAuthenticationMethod
+        /// </summary>
+        public static readonly SqlServerAuthenticationMethod Kerberos = new SqlServerAuthenticationMethod("kerberos");
+        /// <summary>
+        /// Constant Password for SqlServerAuthenticationMethod
+        /// </summary>
+        public static readonly SqlServerAuthenticationMethod Password = new SqlServerAuthenticationMethod("password");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SqlServerAuthenticationMethod(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SqlServerAuthenticationMethod FindValue(string value)
+        {
+            return FindValue<SqlServerAuthenticationMethod>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SqlServerAuthenticationMethod(string value)
         {
             return FindValue(value);
         }

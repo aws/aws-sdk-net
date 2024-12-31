@@ -73,6 +73,11 @@ namespace Amazon.Organizations.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_declarative.html">DECLARATIVE_POLICY_EC2</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
         /// 
         /// </para>

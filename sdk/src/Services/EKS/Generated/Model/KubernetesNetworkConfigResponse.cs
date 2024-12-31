@@ -35,9 +35,29 @@ namespace Amazon.EKS.Model
     /// </summary>
     public partial class KubernetesNetworkConfigResponse
     {
+        private ElasticLoadBalancing _elasticLoadBalancing;
         private IpFamily _ipFamily;
         private string _serviceIpv4Cidr;
         private string _serviceIpv6Cidr;
+
+        /// <summary>
+        /// Gets and sets the property ElasticLoadBalancing. 
+        /// <para>
+        /// Indicates the current configuration of the load balancing capability on your EKS Auto
+        /// Mode cluster. For example, if the capability is enabled or disabled.
+        /// </para>
+        /// </summary>
+        public ElasticLoadBalancing ElasticLoadBalancing
+        {
+            get { return this._elasticLoadBalancing; }
+            set { this._elasticLoadBalancing = value; }
+        }
+
+        // Check to see if ElasticLoadBalancing property is set
+        internal bool IsSetElasticLoadBalancing()
+        {
+            return this._elasticLoadBalancing != null;
+        }
 
         /// <summary>
         /// Gets and sets the property IpFamily. 

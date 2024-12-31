@@ -31,12 +31,12 @@ namespace Amazon.PartnerCentralSelling.Model
 {
     /// <summary>
     /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
-    /// ID and type might be incorrect. 
+    /// ID and type might be incorrect.
     /// 
     ///  
     /// <para>
     /// Suggested action: This is usually a transient error. Retry after the provided retry
-    /// delay or a short interval. If the problem persists, contact AWS support. 
+    /// delay or a short interval. If the problem persists, contact AWS support.
     /// </para>
     /// </summary>
     #if !NETSTANDARD

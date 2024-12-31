@@ -132,6 +132,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                     unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SizeInBytes", targetDepth))
+                {
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
+                    unmarshalledObject.SizeInBytes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SourceBackupId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

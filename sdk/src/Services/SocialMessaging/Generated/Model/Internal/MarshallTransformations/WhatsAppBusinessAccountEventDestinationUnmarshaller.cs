@@ -72,6 +72,12 @@ namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
                     unmarshalledObject.EventDestinationArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("roleArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

@@ -38,6 +38,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         private UserPoolMfaType _mfaConfiguration;
         private SmsMfaConfigType _smsMfaConfiguration;
         private SoftwareTokenMfaConfigType _softwareTokenMfaConfiguration;
+        private WebAuthnConfigurationType _webAuthnConfiguration;
 
         /// <summary>
         /// Gets and sets the property EmailMfaConfiguration. 
@@ -127,6 +128,25 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetSoftwareTokenMfaConfiguration()
         {
             return this._softwareTokenMfaConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WebAuthnConfiguration. 
+        /// <para>
+        /// Shows user pool configuration for MFA with passkeys from biometric devices and security
+        /// keys.
+        /// </para>
+        /// </summary>
+        public WebAuthnConfigurationType WebAuthnConfiguration
+        {
+            get { return this._webAuthnConfiguration; }
+            set { this._webAuthnConfiguration = value; }
+        }
+
+        // Check to see if WebAuthnConfiguration property is set
+        internal bool IsSetWebAuthnConfiguration()
+        {
+            return this._webAuthnConfiguration != null;
         }
 
     }

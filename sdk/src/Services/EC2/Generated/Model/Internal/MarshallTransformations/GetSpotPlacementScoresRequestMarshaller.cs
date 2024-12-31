@@ -170,6 +170,29 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                 request.Parameters.Add("InstanceRequirementsWithMetadata" + "." + "InstanceRequirements" + "." + "BaselineEbsBandwidthMbps" + "." + "Min", StringUtils.FromInt(publicRequest.InstanceRequirementsWithMetadata.InstanceRequirements.BaselineEbsBandwidthMbps.Min));
                             }
                         }
+                        if(publicRequest.InstanceRequirementsWithMetadata.InstanceRequirements.IsSetBaselinePerformanceFactors())
+                        {
+                            if(publicRequest.InstanceRequirementsWithMetadata.InstanceRequirements.BaselinePerformanceFactors.IsSetCpu())
+                            {
+                                if(publicRequest.InstanceRequirementsWithMetadata.InstanceRequirements.BaselinePerformanceFactors.Cpu.IsSetReferences())
+                                {
+                                    if (publicRequest.InstanceRequirementsWithMetadata.InstanceRequirements.BaselinePerformanceFactors.Cpu.References.Count == 0)
+                                        request.Parameters.Add("InstanceRequirementsWithMetadata" + "." + "InstanceRequirements" + "." + "BaselinePerformanceFactors" + "." + "Cpu" + "." + "Reference", "");
+                                    else
+                                    {
+                                         int publicRequestInstanceRequirementsWithMetadataInstanceRequirementsBaselinePerformanceFactorsCpulistValueIndex = 1;
+                                         foreach(var publicRequestInstanceRequirementsWithMetadataInstanceRequirementsBaselinePerformanceFactorsCpulistValue in publicRequest.InstanceRequirementsWithMetadata.InstanceRequirements.BaselinePerformanceFactors.Cpu.References)
+                                         {
+                                            if(publicRequestInstanceRequirementsWithMetadataInstanceRequirementsBaselinePerformanceFactorsCpulistValue.IsSetInstanceFamily())
+                                            {
+                                                request.Parameters.Add("InstanceRequirementsWithMetadata" + "." + "InstanceRequirements" + "." + "BaselinePerformanceFactors" + "." + "Cpu" + "." + "Reference" + "." + publicRequestInstanceRequirementsWithMetadataInstanceRequirementsBaselinePerformanceFactorsCpulistValueIndex + "." + "InstanceFamily", StringUtils.FromString(publicRequestInstanceRequirementsWithMetadataInstanceRequirementsBaselinePerformanceFactorsCpulistValue.InstanceFamily));
+                                            }
+                                             publicRequestInstanceRequirementsWithMetadataInstanceRequirementsBaselinePerformanceFactorsCpulistValueIndex++;
+                                         }
+                                    }
+                                }
+                            }
+                        }
                         if(publicRequest.InstanceRequirementsWithMetadata.InstanceRequirements.IsSetBurstablePerformance())
                         {
                             request.Parameters.Add("InstanceRequirementsWithMetadata" + "." + "InstanceRequirements" + "." + "BurstablePerformance", StringUtils.FromString(publicRequest.InstanceRequirementsWithMetadata.InstanceRequirements.BurstablePerformance));

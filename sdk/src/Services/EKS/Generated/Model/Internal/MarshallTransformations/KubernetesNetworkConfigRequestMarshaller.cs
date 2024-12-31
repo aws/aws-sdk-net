@@ -48,6 +48,17 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetElasticLoadBalancing())
+            {
+                context.Writer.WritePropertyName("elasticLoadBalancing");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ElasticLoadBalancingMarshaller.Instance;
+                marshaller.Marshall(requestObject.ElasticLoadBalancing, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetIpFamily())
             {
                 context.Writer.WritePropertyName("ipFamily");

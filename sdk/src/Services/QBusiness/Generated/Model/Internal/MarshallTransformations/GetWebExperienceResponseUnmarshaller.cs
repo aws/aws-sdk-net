@@ -64,10 +64,22 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                     response.AuthenticationConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("browserExtensionConfiguration", targetDepth))
+                {
+                    var unmarshaller = BrowserExtensionConfigurationUnmarshaller.Instance;
+                    response.BrowserExtensionConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("createdAt", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreatedAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("customizationConfiguration", targetDepth))
+                {
+                    var unmarshaller = CustomizationConfigurationUnmarshaller.Instance;
+                    response.CustomizationConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("defaultEndpoint", targetDepth))

@@ -30,10 +30,7 @@
         <VerifySignedSdkArtifacts-DependsOnTargets Condition="'$(VerifySignedSdkArtifacts-DependsOnTargets)'==''">sign-sdk-artifacts</VerifySignedSdkArtifacts-DependsOnTargets>
         <run-tests-mstest-DependsOnTargets Condition="'$(run-tests-mstest-DependsOnTargets)'==''">build-test-wrapper;build-test-project</run-tests-mstest-DependsOnTargets>
         <run-tests-xunit-DependsOnTargets Condition="'$(run-tests-xunit-DependsOnTargets)'==''">build-test-wrapper;build-test-project</run-tests-xunit-DependsOnTargets>
-        <package-netcore-extensions-DependsOnTargets Condition="'$(package-netcore-extensions-DependsOnTargets)'==''">build-extensions</package-netcore-extensions-DependsOnTargets>
-        <package-crt-extensions-DependsOnTargets Condition="'$(package-crt-extensions-DependsOnTargets)'==''">build-extensions</package-crt-extensions-DependsOnTargets>
-        <package-cloudfront-extensions-DependsOnTargets Condition="'$(package-cloudfront-extensions-DependsOnTargets)'==''">build-extensions</package-cloudfront-extensions-DependsOnTargets>
-        <package-ec2-extensions-DependsOnTargets Condition="'$(package-ec2-extensions-DependsOnTargets)'==''">build-extensions</package-ec2-extensions-DependsOnTargets>
+        <package-extensions-DependsOnTargets Condition="'$(package-extensions-DependsOnTargets)'==''">build-extensions</package-extensions-DependsOnTargets>
         <keyscan-DependsOnTargets Condition="'$(keyscan-DependsOnTargets)'==''">build-tools</keyscan-DependsOnTargets>
         <copy-license-and-notice-DependsOnTargets Condition="'$(copy-license-and-notice-DependsOnTargets)'==''">copy-dependencies</copy-license-and-notice-DependsOnTargets>
         <copy-service-models-DependsOnTargets Condition="'$(copy-service-models-DependsOnTargets)'==''">copy-license-and-notice</copy-service-models-DependsOnTargets>
@@ -472,7 +469,7 @@
               Command="$(powershell) -ExecutionPolicy Unrestricted -NoProfile -File create-nuget-packages.ps1 -PackageList &quot;$(ServiceList)&quot;"/>
     </Target>
 
-    <Target Name="package-extensions" DependsOnTargets="init;package-netcore-extensions;package-crt-extensions"/>
+    <Target Name="package-extensions" DependsOnTargets="package-netcore-extensions;package-crt-extensions;package-cloudfront-extensions;package-ec2-extensions;package-meai-extensions" />
 
     <Target Name="build-extensions" >
         <!-- depends: restore-nuget;run-generator -->
@@ -487,24 +484,29 @@
         <Exec Command="dotnet test -c $(Configuration) --no-build CrtIntegrationTests.csproj" WorkingDirectory="../extensions/test/CrtIntegrationTests"/>
     </Target>
 
-    <Target Name="package-netcore-extensions" DependsOnTargets="$(package-netcore-extensions-DependsOnTargets)">
+    <Target Name="package-netcore-extensions" DependsOnTargets="$(package-extensions-DependsOnTargets)">
         <MakeDir Directories="../Deployment/nuget" />
         <Exec Command="..\..\..\sdk\.nuget\NuGet.exe pack ./AWSSDK.Extensions.NETCore.Setup.nuspec -BasePath . -OutputDirectory ../../../Deployment/nuget" WorkingDirectory="../extensions/src/AWSSDK.Extensions.NETCore.Setup" />
     </Target>
 
-    <Target Name="package-crt-extensions" DependsOnTargets="$(package-crt-extensions-DependsOnTargets)">
+    <Target Name="package-crt-extensions" DependsOnTargets="$(package-extensions-DependsOnTargets)">
         <MakeDir Directories="../Deployment/nuget" />
         <Exec Command="..\..\..\sdk\.nuget\NuGet.exe pack ./AWSSDK.Extensions.CrtIntegration.nuspec -BasePath . -OutputDirectory ../../../Deployment/nuget" WorkingDirectory="../extensions/src/AWSSDK.Extensions.CrtIntegration" />
     </Target>
 
-    <Target Name="package-cloudfront-extensions" DependsOnTargets="$(package-cloudfront-extensions-DependsOnTargets)">
+    <Target Name="package-cloudfront-extensions" DependsOnTargets="$(package-extensions-DependsOnTargets)">
         <MakeDir Directories="../Deployment/nuget" />
         <Exec Command="..\..\..\sdk\.nuget\NuGet.exe pack ./AWSSDK.Extensions.CloudFront.Signers.nuspec -BasePath . -OutputDirectory ../../../Deployment/nuget" WorkingDirectory="../extensions/src/AWSSDK.Extensions.CloudFront.Signers" />
     </Target>
 
-    <Target Name="package-ec2-extensions" DependsOnTargets="$(package-ec2-extensions-DependsOnTargets)">
+    <Target Name="package-ec2-extensions" DependsOnTargets="$(package-extensions-DependsOnTargets)">
         <MakeDir Directories="../Deployment/nuget" />
         <Exec Command="..\..\..\sdk\.nuget\NuGet.exe pack ./AWSSDK.Extensions.EC2.DecryptPassword.nuspec -BasePath . -OutputDirectory ../../../Deployment/nuget" WorkingDirectory="../extensions/src/AWSSDK.Extensions.EC2.DecryptPassword" />
+    </Target>
+
+    <Target Name="package-meai-extensions" DependsOnTargets="$(package-extensions-DependsOnTargets)">
+        <MakeDir Directories="../Deployment/nuget" />
+        <Exec Command="..\..\..\sdk\.nuget\NuGet.exe pack ./AWSSDK.Extensions.Bedrock.MEAI.nuspec -BasePath . -OutputDirectory ../../../Deployment/nuget" WorkingDirectory="../extensions/src/AWSSDK.Extensions.Bedrock.MEAI" />
     </Target>
 
     <Target Name="copy-assemblies" DependsOnTargets="nuget-pack;build-extensions">

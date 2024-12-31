@@ -39,6 +39,7 @@ namespace Amazon.EC2.Model
         private string _instanceId;
         private InstanceType _instanceType;
         private DateTime? _launchTime;
+        private OperatorResponse _operator;
         private string _ownerId;
         private InstanceState _state;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
@@ -132,6 +133,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetLaunchTime()
         {
             return this._launchTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Operator. 
+        /// <para>
+        /// The entity that manages the instance.
+        /// </para>
+        /// </summary>
+        public OperatorResponse Operator
+        {
+            get { return this._operator; }
+            set { this._operator = value; }
+        }
+
+        // Check to see if Operator property is set
+        internal bool IsSetOperator()
+        {
+            return this._operator != null;
         }
 
         /// <summary>

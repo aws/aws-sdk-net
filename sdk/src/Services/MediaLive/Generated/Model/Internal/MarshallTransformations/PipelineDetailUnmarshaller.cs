@@ -90,6 +90,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.ActiveMotionGraphicsUri = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("channelEngineVersion", targetDepth))
+                {
+                    var unmarshaller = ChannelEngineVersionResponseUnmarshaller.Instance;
+                    unmarshalledObject.ChannelEngineVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("pipelineId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

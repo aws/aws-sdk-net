@@ -72,6 +72,12 @@ namespace Amazon.QApps.Model.Internal.MarshallTransformations
                     unmarshalledObject.FileUpload = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("formInput", targetDepth))
+                {
+                    var unmarshaller = FormInputCardUnmarshaller.Instance;
+                    unmarshalledObject.FormInput = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("qPlugin", targetDepth))
                 {
                     var unmarshaller = QPluginCardUnmarshaller.Instance;

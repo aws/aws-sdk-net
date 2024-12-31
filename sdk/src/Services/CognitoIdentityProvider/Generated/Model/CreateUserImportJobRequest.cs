@@ -31,7 +31,11 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateUserImportJob operation.
-    /// Creates a user import job.
+    /// Creates a user import job. You can import users into user pools from a comma-separated
+    /// values (CSV) file without adding Amazon Cognito MAU costs to your Amazon Web Services
+    /// bill. To generate a template for your import, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetCSVHeader.html">GetCSVHeader</a>.
+    /// To learn more about CSV import, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-using-import-tool.html">Importing
+    /// users from a CSV file</a>.
     /// 
     ///  <note> 
     /// <para>
@@ -64,7 +68,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property CloudWatchLogsRoleArn. 
         /// <para>
-        /// The role ARN for the Amazon CloudWatch Logs Logging role for the user import job.
+        /// You must specify an IAM role that has permission to log import-job results to Amazon
+        /// CloudWatch Logs. This parameter is the ARN of that role.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]
@@ -83,7 +88,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property JobName. 
         /// <para>
-        /// The job name for the user import job.
+        /// A friendly name for the user import job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -102,7 +107,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserPoolId. 
         /// <para>
-        /// The user pool ID for the user pool that the users are being imported into.
+        /// The ID of the user pool that you want to import users into.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=55)]

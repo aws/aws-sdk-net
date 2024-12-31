@@ -361,7 +361,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property PlatformType. 
         /// <para>
-        /// The operating system platform type. 
+        /// The operating system platform type.
         /// </para>
         /// </summary>
         public PlatformType PlatformType

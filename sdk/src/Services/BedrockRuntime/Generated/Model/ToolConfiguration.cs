@@ -33,13 +33,6 @@ namespace Amazon.BedrockRuntime.Model
     /// Configuration information for the tools that you pass to a model. For more information,
     /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/tool-use.html">Tool
     /// use (function calling)</a> in the Amazon Bedrock User Guide.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// This field is only supported by Anthropic Claude 3, Cohere Command R, Cohere Command
-    /// R+, and Mistral Large models.
-    /// </para>
-    ///  </note>
     /// </summary>
     public partial class ToolConfiguration
     {

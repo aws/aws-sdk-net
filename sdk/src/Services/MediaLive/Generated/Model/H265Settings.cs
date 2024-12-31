@@ -41,6 +41,7 @@ namespace Amazon.MediaLive.Model
         private int? _bufSize;
         private H265ColorMetadata _colorMetadata;
         private H265ColorSpaceSettings _colorSpaceSettings;
+        private H265Deblocking _deblocking;
         private H265FilterSettings _filterSettings;
         private FixedAfd _fixedAfd;
         private H265FlickerAq _flickerAq;
@@ -186,6 +187,24 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetColorSpaceSettings()
         {
             return this._colorSpaceSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Deblocking. Enable or disable the deblocking filter for
+        /// this codec. The filter reduces blocking artifacts at block boundaries,which improves
+        /// overall video quality. If the filter is disabled, visible block edges might appear
+        /// in the output,especially at lower bitrates.
+        /// </summary>
+        public H265Deblocking Deblocking
+        {
+            get { return this._deblocking; }
+            set { this._deblocking = value; }
+        }
+
+        // Check to see if Deblocking property is set
+        internal bool IsSetDeblocking()
+        {
+            return this._deblocking != null;
         }
 
         /// <summary>

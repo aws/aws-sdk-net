@@ -43,15 +43,14 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property AwsMarketplaceOffers. 
         /// <para>
-        ///  Takes one value per opportunity. Each value is an Amazon Resource Name (ARN), in
-        /// this format: <c>"offers": ["arn:aws:aws-marketplace:us-east-1:999999999999:AWSMarketplace/Offer/offer-sampleOffer32"]</c>.
-        /// 
+        /// Takes one value per opportunity. Each value is an Amazon Resource Name (ARN), in this
+        /// format: <c>"offers": ["arn:aws:aws-marketplace:us-east-1:999999999999:AWSMarketplace/Offer/offer-sampleOffer32"]</c>.
         /// </para>
         ///  
         /// <para>
-        ///  Use the <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_ListEntities.html">ListEntities</a>
+        /// Use the <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_ListEntities.html">ListEntities</a>
         /// action in the Marketplace Catalog APIs for a list of offers in the associated Marketplace
-        /// seller account. 
+        /// seller account.
         /// </para>
         /// </summary>
         public List<string> AwsMarketplaceOffers
@@ -69,16 +68,15 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property AwsProducts. 
         /// <para>
-        ///  Enables the association of specific Amazon Web Services products with the <c>Opportunity</c>.
+        /// Enables the association of specific Amazon Web Services products with the <c>Opportunity</c>.
         /// Partners can indicate the relevant Amazon Web Services products for the <c>Opportunity</c>'s
         /// solution and align with the customer's needs. Returns multiple values separated by
         /// commas. For example, <c>"AWSProducts" : ["AmazonRedshift", "AWSAppFabric", "AWSCleanRooms"]</c>.
-        /// 
         /// </para>
         ///  
         /// <para>
-        ///  Use the file with the list of Amazon Web Services products hosted on GitHub: <a href="https://github.com/aws-samples/partner-crm-integration-samples/blob/main/resources/aws_products.json">
-        /// Amazon Web Services products</a>. 
+        /// Use the file with the list of Amazon Web Services products hosted on GitHub: <a href="https://github.com/aws-samples/partner-crm-integration-samples/blob/main/resources/aws_products.json">
+        /// Amazon Web Services products</a>.
         /// </para>
         /// </summary>
         public List<string> AwsProducts
@@ -96,22 +94,22 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Solutions. 
         /// <para>
-        ///  Enables partner solutions or offerings' association with an opportunity. To associate
+        /// Enables partner solutions or offerings' association with an opportunity. To associate
         /// a solution, provide the solution's unique identifier, which you can obtain with the
-        /// <c>ListSolutions</c> operation. 
+        /// <c>ListSolutions</c> operation.
         /// </para>
         ///  
         /// <para>
-        ///  If the specific solution identifier is not available, you can use the value <c>Other</c>
+        /// If the specific solution identifier is not available, you can use the value <c>Other</c>
         /// and provide details about the solution in the <c>otherSolutionOffered</c> field. But
         /// when the opportunity reaches the <c>Committed</c> stage or beyond, the <c>Other</c>
-        /// value cannot be used, and a valid solution identifier must be provided. 
+        /// value cannot be used, and a valid solution identifier must be provided.
         /// </para>
         ///  
         /// <para>
-        ///  By associating the relevant solutions with the opportunity, you can communicate the
+        /// By associating the relevant solutions with the opportunity, you can communicate the
         /// offerings that are being considered or implemented to address the customer's business
-        /// problem. 
+        /// problem.
         /// </para>
         /// </summary>
         public List<string> Solutions

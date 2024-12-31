@@ -54,6 +54,12 @@ namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.EventDestinationArn);
             }
 
+            if(requestObject.IsSetRoleArn())
+            {
+                context.Writer.WritePropertyName("roleArn");
+                context.Writer.Write(requestObject.RoleArn);
+            }
+
         }
 
         /// <summary>

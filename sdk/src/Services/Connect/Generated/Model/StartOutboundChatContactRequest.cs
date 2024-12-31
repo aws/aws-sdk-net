@@ -32,7 +32,7 @@ namespace Amazon.Connect.Model
     /// <summary>
     /// Container for the parameters to the StartOutboundChatContact operation.
     /// Initiates a new outbound SMS contact to a customer. Response of this API provides
-    /// the ContactId of the outbound SMS contact created.
+    /// the <c>ContactId</c> of the outbound SMS contact created.
     /// 
     ///  
     /// <para>
@@ -42,7 +42,7 @@ namespace Amazon.Connect.Model
     /// </para>
     ///  
     /// <para>
-    /// This API can be used to initiate outbound SMS contacts for an agent or it can also
+    /// This API can be used to initiate outbound SMS contacts for an agent, or it can also
     /// deflect an ongoing contact to an outbound SMS contact by using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartOutboundChatContact.html">StartOutboundChatContact</a>
     /// Flow Action.
     /// </para>

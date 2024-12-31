@@ -95,7 +95,7 @@ namespace Amazon.MWAA.Model
         ///  
         /// <para>
         /// Valid values: <c>1.10.12</c>, <c>2.0.2</c>, <c>2.2.2</c>, <c>2.4.3</c>, <c>2.5.1</c>,
-        /// <c>2.6.3</c>, <c>2.7.2</c>, <c>2.8.1</c>, <c>2.9.2</c>, and <c>2.10.1</c>.
+        /// <c>2.6.3</c>, <c>2.7.2</c>, <c>2.8.1</c>, <c>2.9.2</c>, <c>2.10.1</c>, and <c>2.10.3</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=32)]
@@ -135,9 +135,10 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property EnvironmentClass. 
         /// <para>
-        /// The environment class type. Valid values: <c>mw1.small</c>, <c>mw1.medium</c>, <c>mw1.large</c>,
-        /// <c>mw1.xlarge</c>, and <c>mw1.2xlarge</c>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon
-        /// MWAA environment class</a>.
+        /// The environment class type. Valid values: <c>mw1.micro</c>, <c>mw1.small</c>, <c>mw1.medium</c>,
+        /// <c>mw1.large</c>, <c>mw1.xlarge</c>, and <c>mw1.2xlarge</c>. For more information,
+        /// see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon
+        /// MWAA environment class</a>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -207,10 +208,12 @@ namespace Amazon.MWAA.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: Accepts between <c>2</c> and <c>5</c>. Defaults to <c>2</c>.
+        /// Valid values: For environments larger than mw1.micro, accepts values from <c>2</c>
+        /// to <c>5</c>. Defaults to <c>2</c> for all environment sizes except mw1.micro, which
+        /// defaults to <c>1</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=2)]
+        [AWSProperty(Min=1)]
         public int? MaxWebservers
         {
             get { return this._maxWebservers; }
@@ -258,10 +261,12 @@ namespace Amazon.MWAA.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: Accepts between <c>2</c> and <c>5</c>. Defaults to <c>2</c>.
+        /// Valid values: For environments larger than mw1.micro, accepts values from <c>2</c>
+        /// to <c>5</c>. Defaults to <c>2</c> for all environment sizes except mw1.micro, which
+        /// defaults to <c>1</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=2)]
+        [AWSProperty(Min=1)]
         public int? MinWebservers
         {
             get { return this._minWebservers; }

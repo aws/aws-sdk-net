@@ -37,6 +37,8 @@ namespace Amazon.ElasticMapReduce.Model
     public partial class ManagedScalingPolicy
     {
         private ComputeLimits _computeLimits;
+        private ScalingStrategy _scalingStrategy;
+        private int? _utilizationPerformanceIndex;
 
         /// <summary>
         /// Gets and sets the property ComputeLimits. 
@@ -56,6 +58,47 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetComputeLimits()
         {
             return this._computeLimits != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScalingStrategy. 
+        /// <para>
+        /// Determines whether a custom scaling utilization performance index can be set. Possible
+        /// values include <i>ADVANCED</i> or <i>DEFAULT</i>.
+        /// </para>
+        /// </summary>
+        public ScalingStrategy ScalingStrategy
+        {
+            get { return this._scalingStrategy; }
+            set { this._scalingStrategy = value; }
+        }
+
+        // Check to see if ScalingStrategy property is set
+        internal bool IsSetScalingStrategy()
+        {
+            return this._scalingStrategy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UtilizationPerformanceIndex. 
+        /// <para>
+        /// An integer value that represents an advanced scaling strategy. Setting a higher value
+        /// optimizes for performance. Setting a lower value optimizes for resource conservation.
+        /// Setting the value to 50 balances performance and resource conservation. Possible values
+        /// are 1, 25, 50, 75, and 100.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public int? UtilizationPerformanceIndex
+        {
+            get { return this._utilizationPerformanceIndex; }
+            set { this._utilizationPerformanceIndex = value; }
+        }
+
+        // Check to see if UtilizationPerformanceIndex property is set
+        internal bool IsSetUtilizationPerformanceIndex()
+        {
+            return this._utilizationPerformanceIndex.HasValue; 
         }
 
     }

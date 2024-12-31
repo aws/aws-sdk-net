@@ -81,6 +81,17 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetDeliverToQBusiness())
+            {
+                context.Writer.WritePropertyName("DeliverToQBusiness");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = DeliverToQBusinessActionMarshaller.Instance;
+                marshaller.Marshall(requestObject.DeliverToQBusiness, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetDrop())
             {
                 context.Writer.WritePropertyName("Drop");

@@ -75,6 +75,12 @@ namespace Amazon.ConnectParticipant.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.AttachmentId);
                     }
 
+                    if(publicRequest.IsSetUrlExpiryInSeconds())
+                    {
+                        context.Writer.WritePropertyName("UrlExpiryInSeconds");
+                        context.Writer.Write(publicRequest.UrlExpiryInSeconds.Value);
+                    }
+
                     writer.WriteObjectEnd();
                 }
 

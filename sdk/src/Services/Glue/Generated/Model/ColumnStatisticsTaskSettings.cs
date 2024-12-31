@@ -37,10 +37,13 @@ namespace Amazon.Glue.Model
         private string _catalogID;
         private List<string> _columnNameList = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _databaseName;
+        private ExecutionAttempt _lastExecutionAttempt;
         private string _role;
         private double? _sampleSize;
         private Schedule _schedule;
+        private ScheduleType _scheduleType;
         private string _securityConfiguration;
+        private SettingSource _settingSource;
         private string _tableName;
 
         /// <summary>
@@ -99,6 +102,24 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LastExecutionAttempt. 
+        /// <para>
+        /// The last <c>ExecutionAttempt</c> for the column statistics task run.
+        /// </para>
+        /// </summary>
+        public ExecutionAttempt LastExecutionAttempt
+        {
+            get { return this._lastExecutionAttempt; }
+            set { this._lastExecutionAttempt = value; }
+        }
+
+        // Check to see if LastExecutionAttempt property is set
+        internal bool IsSetLastExecutionAttempt()
+        {
+            return this._lastExecutionAttempt != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Role. 
         /// <para>
         /// The role used for running the column statistics.
@@ -154,6 +175,25 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ScheduleType. 
+        /// <para>
+        /// The type of schedule for a column statistics task. Possible values may be <c>CRON</c>
+        /// or <c>AUTO</c>.
+        /// </para>
+        /// </summary>
+        public ScheduleType ScheduleType
+        {
+            get { return this._scheduleType; }
+            set { this._scheduleType = value; }
+        }
+
+        // Check to see if ScheduleType property is set
+        internal bool IsSetScheduleType()
+        {
+            return this._scheduleType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SecurityConfiguration. 
         /// <para>
         /// Name of the security configuration that is used to encrypt CloudWatch logs.
@@ -170,6 +210,25 @@ namespace Amazon.Glue.Model
         internal bool IsSetSecurityConfiguration()
         {
             return this._securityConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SettingSource. 
+        /// <para>
+        /// The source of setting the column statistics task. Possible values may be <c>CATALOG</c>
+        /// or <c>TABLE</c>.
+        /// </para>
+        /// </summary>
+        public SettingSource SettingSource
+        {
+            get { return this._settingSource; }
+            set { this._settingSource = value; }
+        }
+
+        // Check to see if SettingSource property is set
+        internal bool IsSetSettingSource()
+        {
+            return this._settingSource != null;
         }
 
         /// <summary>

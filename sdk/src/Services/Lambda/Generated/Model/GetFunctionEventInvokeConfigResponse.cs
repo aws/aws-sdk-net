@@ -59,13 +59,22 @@ namespace Amazon.Lambda.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <b>Bucket</b> - The ARN of an Amazon S3 bucket.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <b>Topic</b> - The ARN of a standard SNS topic.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// S3 buckets are supported only for on-failure destinations. To retain records of successful
+        /// invocations, use another destination type.
+        /// </para>
+        ///  </note>
         /// </summary>
         public DestinationConfig DestinationConfig
         {

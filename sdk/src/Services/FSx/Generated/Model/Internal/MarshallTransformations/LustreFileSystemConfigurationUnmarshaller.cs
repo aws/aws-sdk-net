@@ -108,6 +108,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                     unmarshalledObject.DriveCacheType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EfaEnabled", targetDepth))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.EfaEnabled = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LogConfiguration", targetDepth))
                 {
                     var unmarshaller = LustreLogConfigurationUnmarshaller.Instance;

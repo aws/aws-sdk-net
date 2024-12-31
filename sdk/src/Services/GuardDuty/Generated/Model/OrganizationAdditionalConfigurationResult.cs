@@ -83,7 +83,8 @@ namespace Amazon.GuardDuty.Model
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the additional configuration that is configured for the member accounts
-        /// within the organization.
+        /// within the organization. These values are applicable to only Runtime Monitoring protection
+        /// plan.
         /// </para>
         /// </summary>
         public OrgFeatureAdditionalConfiguration Name

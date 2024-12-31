@@ -35,7 +35,28 @@ namespace Amazon.Athena.Model
     /// </summary>
     public partial class DeleteDataCatalogRequest : AmazonAthenaRequest
     {
+        private bool? _deleteCatalogOnly;
         private string _name;
+
+        /// <summary>
+        /// Gets and sets the property DeleteCatalogOnly. 
+        /// <para>
+        /// Deletes the Athena Data Catalog. You can only use this with the <c>FEDERATED</c> catalogs.
+        /// You usually perform this before registering the connector with Glue Data Catalog.
+        /// After deletion, you will have to manage the Glue Connection and Lambda function. 
+        /// </para>
+        /// </summary>
+        public bool? DeleteCatalogOnly
+        {
+            get { return this._deleteCatalogOnly; }
+            set { this._deleteCatalogOnly = value; }
+        }
+
+        // Check to see if DeleteCatalogOnly property is set
+        internal bool IsSetDeleteCatalogOnly()
+        {
+            return this._deleteCatalogOnly.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Name. 

@@ -71,6 +71,12 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                     writer.Validate = false;
                     writer.WriteObjectStart();
                     var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetApplyOnTransformedLogs())
+                    {
+                        context.Writer.WritePropertyName("applyOnTransformedLogs");
+                        context.Writer.Write(publicRequest.ApplyOnTransformedLogs.Value);
+                    }
+
                     if(publicRequest.IsSetFilterName())
                     {
                         context.Writer.WritePropertyName("filterName");

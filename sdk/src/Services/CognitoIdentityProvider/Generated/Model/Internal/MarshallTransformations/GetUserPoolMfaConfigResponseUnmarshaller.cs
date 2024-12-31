@@ -76,6 +76,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     response.SoftwareTokenMfaConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("WebAuthnConfiguration", targetDepth))
+                {
+                    var unmarshaller = WebAuthnConfigurationTypeUnmarshaller.Instance;
+                    response.WebAuthnConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

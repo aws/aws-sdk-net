@@ -72,6 +72,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     unmarshalledObject.PasswordPolicy = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SignInPolicy", targetDepth))
+                {
+                    var unmarshaller = SignInPolicyTypeUnmarshaller.Instance;
+                    unmarshalledObject.SignInPolicy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

@@ -52,6 +52,11 @@ namespace Amazon.Bedrock.Model
         IListInferenceProfilesPaginator ListInferenceProfiles(ListInferenceProfilesRequest request);
 
         /// <summary>
+        /// Paginator for ListMarketplaceModelEndpoints operation
+        ///</summary>
+        IListMarketplaceModelEndpointsPaginator ListMarketplaceModelEndpoints(ListMarketplaceModelEndpointsRequest request);
+
+        /// <summary>
         /// Paginator for ListModelCopyJobs operation
         ///</summary>
         IListModelCopyJobsPaginator ListModelCopyJobs(ListModelCopyJobsRequest request);
@@ -70,6 +75,11 @@ namespace Amazon.Bedrock.Model
         /// Paginator for ListModelInvocationJobs operation
         ///</summary>
         IListModelInvocationJobsPaginator ListModelInvocationJobs(ListModelInvocationJobsRequest request);
+
+        /// <summary>
+        /// Paginator for ListPromptRouters operation
+        ///</summary>
+        IListPromptRoutersPaginator ListPromptRouters(ListPromptRoutersRequest request);
 
         /// <summary>
         /// Paginator for ListProvisionedModelThroughputs operation

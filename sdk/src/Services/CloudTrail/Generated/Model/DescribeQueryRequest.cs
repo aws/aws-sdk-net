@@ -37,15 +37,19 @@ namespace Amazon.CloudTrail.Model
     /// 
     ///  
     /// <para>
-    /// You must specify either a <c>QueryID</c> or a <c>QueryAlias</c>. Specifying the <c>QueryAlias</c>
-    /// parameter returns information about the last query run for the alias.
+    /// You must specify either <c>QueryId</c> or <c>QueryAlias</c>. Specifying the <c>QueryAlias</c>
+    /// parameter returns information about the last query run for the alias. You can provide
+    /// <c>RefreshId</c> along with <c>QueryAlias</c> to view the query results of a dashboard
+    /// query for the specified <c>RefreshId</c>.
     /// </para>
     /// </summary>
     public partial class DescribeQueryRequest : AmazonCloudTrailRequest
     {
         private string _eventDataStore;
+        private string _eventDataStoreOwnerAccountId;
         private string _queryAlias;
         private string _queryId;
+        private string _refreshId;
 
         /// <summary>
         /// Gets and sets the property EventDataStore. 
@@ -66,6 +70,25 @@ namespace Amazon.CloudTrail.Model
         internal bool IsSetEventDataStore()
         {
             return this._eventDataStore != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EventDataStoreOwnerAccountId. 
+        /// <para>
+        ///  The account ID of the event data store owner. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=16)]
+        public string EventDataStoreOwnerAccountId
+        {
+            get { return this._eventDataStoreOwnerAccountId; }
+            set { this._eventDataStoreOwnerAccountId = value; }
+        }
+
+        // Check to see if EventDataStoreOwnerAccountId property is set
+        internal bool IsSetEventDataStoreOwnerAccountId()
+        {
+            return this._eventDataStoreOwnerAccountId != null;
         }
 
         /// <summary>
@@ -104,6 +127,25 @@ namespace Amazon.CloudTrail.Model
         internal bool IsSetQueryId()
         {
             return this._queryId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RefreshId. 
+        /// <para>
+        ///  The ID of the dashboard refresh. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=10, Max=20)]
+        public string RefreshId
+        {
+            get { return this._refreshId; }
+            set { this._refreshId = value; }
+        }
+
+        // Check to see if RefreshId property is set
+        internal bool IsSetRefreshId()
+        {
+            return this._refreshId != null;
         }
 
     }

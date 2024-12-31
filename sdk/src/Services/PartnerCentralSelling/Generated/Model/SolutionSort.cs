@@ -41,8 +41,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property SortBy. 
         /// <para>
-        ///  Specifies the attribute to sort by, such as <c>Name</c>, <c>CreatedDate</c>, or <c>Status</c>.
-        /// 
+        /// Specifies the attribute to sort by, such as <c>Name</c>, <c>CreatedDate</c>, or <c>Status</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -61,8 +60,8 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property SortOrder. 
         /// <para>
-        ///  Specifies the sorting order, either <c>Ascending</c> or <c>Descending</c>. The default
-        /// is <c>Descending</c>. 
+        /// Specifies the sorting order, either <c>Ascending</c> or <c>Descending</c>. The default
+        /// is <c>Descending</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

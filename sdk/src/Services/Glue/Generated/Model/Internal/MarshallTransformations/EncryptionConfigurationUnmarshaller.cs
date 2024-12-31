@@ -72,6 +72,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.CloudWatchEncryption = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DataQualityEncryption", targetDepth))
+                {
+                    var unmarshaller = DataQualityEncryptionUnmarshaller.Instance;
+                    unmarshalledObject.DataQualityEncryption = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("JobBookmarksEncryption", targetDepth))
                 {
                     var unmarshaller = JobBookmarksEncryptionUnmarshaller.Instance;

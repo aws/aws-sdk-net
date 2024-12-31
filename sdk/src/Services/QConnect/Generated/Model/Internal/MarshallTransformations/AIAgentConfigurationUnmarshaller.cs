@@ -78,6 +78,12 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                     unmarshalledObject.ManualSearchAIAgentConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("selfServiceAIAgentConfiguration", targetDepth))
+                {
+                    var unmarshaller = SelfServiceAIAgentConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.SelfServiceAIAgentConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

@@ -34,6 +34,7 @@ namespace Amazon.ResilienceHub.Model
     /// </summary>
     public partial class TestRecommendation
     {
+        private string _appComponentId;
         private string _appComponentName;
         private List<string> _dependsOnAlarms = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _description;
@@ -46,6 +47,24 @@ namespace Amazon.ResilienceHub.Model
         private string _referenceId;
         private TestRisk _risk;
         private TestType _type;
+
+        /// <summary>
+        /// Gets and sets the property AppComponentId. 
+        /// <para>
+        /// Indicates the identifier of the AppComponent.
+        /// </para>
+        /// </summary>
+        public string AppComponentId
+        {
+            get { return this._appComponentId; }
+            set { this._appComponentId = value; }
+        }
+
+        // Check to see if AppComponentId property is set
+        internal bool IsSetAppComponentId()
+        {
+            return this._appComponentId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AppComponentName. 

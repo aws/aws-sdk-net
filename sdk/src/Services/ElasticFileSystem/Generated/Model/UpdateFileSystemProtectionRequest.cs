@@ -89,7 +89,7 @@ namespace Amazon.ElasticFileSystem.Model
         ///  </li> </ul> 
         /// <para>
         /// If the replication configuration is deleted, the file system's replication overwrite
-        /// protection is re-enabled, the file system becomes writeable.
+        /// protection is re-enabled and the file system becomes writeable.
         /// </para>
         /// </summary>
         public ReplicationOverwriteProtection ReplicationOverwriteProtection

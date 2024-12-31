@@ -80,6 +80,18 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetStateCondition())
+            {
+                context.Writer.WritePropertyName("StateCondition");
+                context.Writer.Write(requestObject.StateCondition);
+            }
+
+            if(requestObject.IsSetStatusCondition())
+            {
+                context.Writer.WritePropertyName("StatusCondition");
+                context.Writer.Write(requestObject.StatusCondition);
+            }
+
             if(requestObject.IsSetStringCondition())
             {
                 context.Writer.WritePropertyName("StringCondition");

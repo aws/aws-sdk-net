@@ -31,7 +31,7 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateImageVersion operation.
-    /// Creates a version of the SageMaker image specified by <c>ImageName</c>. The version
+    /// Creates a version of the SageMaker AI image specified by <c>ImageName</c>. The version
     /// represents the Amazon ECR container image specified by <c>BaseImage</c>.
     /// </summary>
     public partial class CreateImageVersionRequest : AmazonSageMakerRequest
@@ -151,19 +151,20 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property JobType. 
         /// <para>
-        /// Indicates SageMaker job type compatibility.
+        /// Indicates SageMaker AI job type compatibility.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>TRAINING</c>: The image version is compatible with SageMaker training jobs.
+        ///  <c>TRAINING</c>: The image version is compatible with SageMaker AI training jobs.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>INFERENCE</c>: The image version is compatible with SageMaker inference jobs.
+        ///  <c>INFERENCE</c>: The image version is compatible with SageMaker AI inference jobs.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>NOTEBOOK_KERNEL</c>: The image version is compatible with SageMaker notebook kernels.
+        ///  <c>NOTEBOOK_KERNEL</c>: The image version is compatible with SageMaker AI notebook
+        /// kernels.
         /// </para>
         ///  </li> </ul>
         /// </summary>

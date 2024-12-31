@@ -72,9 +72,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets</b> - For directory buckets, you must make requests for this
         /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
-        /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// requests in the format <c>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </li> </ul> </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
@@ -99,7 +102,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -132,7 +135,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name to which the upload was taking place.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The bucket name to which the upload was taking place.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Key of the object for which the multipart upload was initiated.</param>
         /// <param name="uploadId">Upload ID that identifies the multipart upload.</param>
         /// 
@@ -166,9 +169,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets</b> - For directory buckets, you must make requests for this
         /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
-        /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// requests in the format <c>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </li> </ul> </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
@@ -193,7 +199,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -259,9 +265,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets</b> - For directory buckets, you must make requests for this
         /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
-        /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// requests in the format <c>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </li> </ul> </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
@@ -286,7 +295,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -319,7 +328,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name to which the upload was taking place.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The bucket name to which the upload was taking place.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Key of the object for which the multipart upload was initiated.</param>
         /// <param name="uploadId">Upload ID that identifies the multipart upload.</param>
         /// <param name="cancellationToken">
@@ -357,9 +366,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets</b> - For directory buckets, you must make requests for this
         /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
-        /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// requests in the format <c>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </li> </ul> </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
@@ -384,7 +396,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -485,9 +497,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets</b> - For directory buckets, you must make requests for this
         /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
-        /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// requests in the format <c>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
@@ -578,7 +593,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -673,9 +688,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets</b> - For directory buckets, you must make requests for this
         /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
-        /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// requests in the format <c>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
@@ -766,7 +784,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -838,9 +856,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
         /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
-        /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// requests in the format <c>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -988,7 +1009,7 @@ namespace Amazon.S3
         /// </para>
         ///  </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -1008,7 +1029,7 @@ namespace Amazon.S3
         /// </summary>
         /// <param name="sourceBucket">A property of CopyObjectRequest used to execute the CopyObject service method.</param>
         /// <param name="sourceKey">A property of CopyObjectRequest used to execute the CopyObject service method.</param>
-        /// <param name="destinationBucket">The name of the destination bucket.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="destinationBucket">The name of the destination bucket.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>. <note> Copying objects across different Amazon Web Services Regions isn't supported when the source or destination bucket is in Amazon Web Services Local Zones. The source and destination buckets must have the same parent Amazon Web Services Region. Otherwise, you get an HTTP <c>400 Bad Request</c> error with the error code <c>InvalidRequest</c>. </note>  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="destinationKey">A property of CopyObjectRequest used to execute the CopyObject service method.</param>
         /// 
         /// <returns>The response from the CopyObject service method, as returned by S3.</returns>
@@ -1040,9 +1061,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
         /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
-        /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// requests in the format <c>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1190,7 +1214,7 @@ namespace Amazon.S3
         /// </para>
         ///  </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -1211,7 +1235,7 @@ namespace Amazon.S3
         /// <param name="sourceBucket">A property of CopyObjectRequest used to execute the CopyObject service method.</param>
         /// <param name="sourceKey">A property of CopyObjectRequest used to execute the CopyObject service method.</param>
         /// <param name="sourceVersionId">A property of CopyObjectRequest used to execute the CopyObject service method.</param>
-        /// <param name="destinationBucket">The name of the destination bucket.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="destinationBucket">The name of the destination bucket.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>. <note> Copying objects across different Amazon Web Services Regions isn't supported when the source or destination bucket is in Amazon Web Services Local Zones. The source and destination buckets must have the same parent Amazon Web Services Region. Otherwise, you get an HTTP <c>400 Bad Request</c> error with the error code <c>InvalidRequest</c>. </note>  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="destinationKey">A property of CopyObjectRequest used to execute the CopyObject service method.</param>
         /// 
         /// <returns>The response from the CopyObject service method, as returned by S3.</returns>
@@ -1243,9 +1267,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
         /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
-        /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// requests in the format <c>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1393,7 +1420,7 @@ namespace Amazon.S3
         /// </para>
         ///  </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -1443,9 +1470,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
         /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
-        /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// requests in the format <c>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1593,7 +1623,7 @@ namespace Amazon.S3
         /// </para>
         ///  </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -1613,7 +1643,7 @@ namespace Amazon.S3
         /// </summary>
         /// <param name="sourceBucket">A property of CopyObjectRequest used to execute the CopyObject service method.</param>
         /// <param name="sourceKey">A property of CopyObjectRequest used to execute the CopyObject service method.</param>
-        /// <param name="destinationBucket">The name of the destination bucket.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="destinationBucket">The name of the destination bucket.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>. <note> Copying objects across different Amazon Web Services Regions isn't supported when the source or destination bucket is in Amazon Web Services Local Zones. The source and destination buckets must have the same parent Amazon Web Services Region. Otherwise, you get an HTTP <c>400 Bad Request</c> error with the error code <c>InvalidRequest</c>. </note>  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="destinationKey">A property of CopyObjectRequest used to execute the CopyObject service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -1648,9 +1678,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
         /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
-        /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// requests in the format <c>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1798,7 +1831,7 @@ namespace Amazon.S3
         /// </para>
         ///  </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -1819,7 +1852,7 @@ namespace Amazon.S3
         /// <param name="sourceBucket">A property of CopyObjectRequest used to execute the CopyObject service method.</param>
         /// <param name="sourceKey">A property of CopyObjectRequest used to execute the CopyObject service method.</param>
         /// <param name="sourceVersionId">A property of CopyObjectRequest used to execute the CopyObject service method.</param>
-        /// <param name="destinationBucket">The name of the destination bucket.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="destinationBucket">The name of the destination bucket.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>. <note> Copying objects across different Amazon Web Services Regions isn't supported when the source or destination bucket is in Amazon Web Services Local Zones. The source and destination buckets must have the same parent Amazon Web Services Region. Otherwise, you get an HTTP <c>400 Bad Request</c> error with the error code <c>InvalidRequest</c>. </note>  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="destinationKey">A property of CopyObjectRequest used to execute the CopyObject service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -1855,9 +1888,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
         /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
-        /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// requests in the format <c>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2005,7 +2041,7 @@ namespace Amazon.S3
         /// </para>
         ///  </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -2073,9 +2109,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets</b> - For directory buckets, you must make requests for this
         /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
-        /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// requests in the format <c>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </note> <dl> <dt>Authentication and authorization</dt> <dd> 
         /// <para>
@@ -2224,7 +2263,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -2264,7 +2303,7 @@ namespace Amazon.S3
         /// </summary>
         /// <param name="sourceBucket">A property of CopyPartRequest used to execute the CopyPart service method.</param>
         /// <param name="sourceKey">A property of CopyPartRequest used to execute the CopyPart service method.</param>
-        /// <param name="destinationBucket">The bucket name.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="destinationBucket">The bucket name.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>. <note> Copying objects across different Amazon Web Services Regions isn't supported when the source or destination bucket is in Amazon Web Services Local Zones. The source and destination buckets must have the same parent Amazon Web Services Region. Otherwise, you get an HTTP <c>400 Bad Request</c> error with the error code <c>InvalidRequest</c>. </note>  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="destinationKey">A property of CopyPartRequest used to execute the CopyPart service method.</param>
         /// <param name="uploadId">Upload ID identifying the multipart upload whose part is being copied.</param>
         /// <param name="partNumber">Part number of part being copied. This is a positive integer between 1 and 10,000.</param>
@@ -2309,9 +2348,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets</b> - For directory buckets, you must make requests for this
         /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
-        /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// requests in the format <c>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </note> <dl> <dt>Authentication and authorization</dt> <dd> 
         /// <para>
@@ -2460,7 +2502,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -2501,7 +2543,7 @@ namespace Amazon.S3
         /// <param name="sourceBucket">A property of CopyPartRequest used to execute the CopyPart service method.</param>
         /// <param name="sourceKey">A property of CopyPartRequest used to execute the CopyPart service method.</param>
         /// <param name="sourceVersionId">A property of CopyPartRequest used to execute the CopyPart service method.</param>
-        /// <param name="destinationBucket">The bucket name.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="destinationBucket">The bucket name.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>. <note> Copying objects across different Amazon Web Services Regions isn't supported when the source or destination bucket is in Amazon Web Services Local Zones. The source and destination buckets must have the same parent Amazon Web Services Region. Otherwise, you get an HTTP <c>400 Bad Request</c> error with the error code <c>InvalidRequest</c>. </note>  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="destinationKey">A property of CopyPartRequest used to execute the CopyPart service method.</param>
         /// <param name="uploadId">Upload ID identifying the multipart upload whose part is being copied.</param>
         /// <param name="partNumber">Part number of part being copied. This is a positive integer between 1 and 10,000.</param>
@@ -2546,9 +2588,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets</b> - For directory buckets, you must make requests for this
         /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
-        /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// requests in the format <c>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </note> <dl> <dt>Authentication and authorization</dt> <dd> 
         /// <para>
@@ -2697,7 +2742,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -2778,9 +2823,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets</b> - For directory buckets, you must make requests for this
         /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
-        /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// requests in the format <c>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </note> <dl> <dt>Authentication and authorization</dt> <dd> 
         /// <para>
@@ -2929,7 +2977,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -2969,7 +3017,7 @@ namespace Amazon.S3
         /// </summary>
         /// <param name="sourceBucket">A property of CopyPartRequest used to execute the CopyPart service method.</param>
         /// <param name="sourceKey">A property of CopyPartRequest used to execute the CopyPart service method.</param>
-        /// <param name="destinationBucket">The bucket name.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="destinationBucket">The bucket name.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>. <note> Copying objects across different Amazon Web Services Regions isn't supported when the source or destination bucket is in Amazon Web Services Local Zones. The source and destination buckets must have the same parent Amazon Web Services Region. Otherwise, you get an HTTP <c>400 Bad Request</c> error with the error code <c>InvalidRequest</c>. </note>  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="destinationKey">A property of CopyPartRequest used to execute the CopyPart service method.</param>
         /// <param name="uploadId">Upload ID identifying the multipart upload whose part is being copied.</param>
         /// <param name="partNumber">Part number of part being copied. This is a positive integer between 1 and 10,000.</param>
@@ -3017,9 +3065,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets</b> - For directory buckets, you must make requests for this
         /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
-        /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// requests in the format <c>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </note> <dl> <dt>Authentication and authorization</dt> <dd> 
         /// <para>
@@ -3168,7 +3219,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -3209,7 +3260,7 @@ namespace Amazon.S3
         /// <param name="sourceBucket">A property of CopyPartRequest used to execute the CopyPart service method.</param>
         /// <param name="sourceKey">A property of CopyPartRequest used to execute the CopyPart service method.</param>
         /// <param name="sourceVersionId">A property of CopyPartRequest used to execute the CopyPart service method.</param>
-        /// <param name="destinationBucket">The bucket name.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="destinationBucket">The bucket name.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>. <note> Copying objects across different Amazon Web Services Regions isn't supported when the source or destination bucket is in Amazon Web Services Local Zones. The source and destination buckets must have the same parent Amazon Web Services Region. Otherwise, you get an HTTP <c>400 Bad Request</c> error with the error code <c>InvalidRequest</c>. </note>  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="destinationKey">A property of CopyPartRequest used to execute the CopyPart service method.</param>
         /// <param name="uploadId">Upload ID identifying the multipart upload whose part is being copied.</param>
         /// <param name="partNumber">Part number of part being copied. This is a positive integer between 1 and 10,000.</param>
@@ -3258,9 +3309,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets</b> - For directory buckets, you must make requests for this
         /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
-        /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// requests in the format <c>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </note> <dl> <dt>Authentication and authorization</dt> <dd> 
         /// <para>
@@ -3409,7 +3463,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -3458,6 +3512,138 @@ namespace Amazon.S3
 
         #endregion
         
+        #region  CreateBucketMetadataTableConfiguration
+
+
+        /// <summary>
+        /// Creates a metadata table configuration for a general purpose bucket. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-overview.html">Accelerating
+        /// data discovery with S3 Metadata</a> in the <i>Amazon S3 User Guide</i>. 
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// To use this operation, you must have the following permissions. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-permissions.html">Setting
+        /// up permissions for configuring metadata tables</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you also want to integrate your table bucket with Amazon Web Services analytics
+        /// services so that you can query your metadata table, you need additional permissions.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-integrating-aws.html">
+        /// Integrating Amazon S3 Tables with Amazon Web Services analytics services</a> in the
+        /// <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>s3:CreateBucketMetadataTableConfiguration</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>s3tables:CreateNamespace</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>s3tables:GetTable</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>s3tables:CreateTable</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>s3tables:PutTablePolicy</c> 
+        /// </para>
+        ///  </li> </ul> </dd> </dl> 
+        /// <para>
+        /// The following operations are related to <c>CreateBucketMetadataTableConfiguration</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketMetadataTableConfiguration.html">DeleteBucketMetadataTableConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketMetadataTableConfiguration.html">GetBucketMetadataTableConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateBucketMetadataTableConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the CreateBucketMetadataTableConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CreateBucketMetadataTableConfiguration">REST API Reference for CreateBucketMetadataTableConfiguration Operation</seealso>
+        CreateBucketMetadataTableConfigurationResponse CreateBucketMetadataTableConfiguration(CreateBucketMetadataTableConfigurationRequest request);
+
+
+
+        /// <summary>
+        /// Creates a metadata table configuration for a general purpose bucket. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-overview.html">Accelerating
+        /// data discovery with S3 Metadata</a> in the <i>Amazon S3 User Guide</i>. 
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// To use this operation, you must have the following permissions. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-permissions.html">Setting
+        /// up permissions for configuring metadata tables</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you also want to integrate your table bucket with Amazon Web Services analytics
+        /// services so that you can query your metadata table, you need additional permissions.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-integrating-aws.html">
+        /// Integrating Amazon S3 Tables with Amazon Web Services analytics services</a> in the
+        /// <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>s3:CreateBucketMetadataTableConfiguration</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>s3tables:CreateNamespace</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>s3tables:GetTable</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>s3tables:CreateTable</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>s3tables:PutTablePolicy</c> 
+        /// </para>
+        ///  </li> </ul> </dd> </dl> 
+        /// <para>
+        /// The following operations are related to <c>CreateBucketMetadataTableConfiguration</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketMetadataTableConfiguration.html">DeleteBucketMetadataTableConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketMetadataTableConfiguration.html">GetBucketMetadataTableConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateBucketMetadataTableConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateBucketMetadataTableConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CreateBucketMetadataTableConfiguration">REST API Reference for CreateBucketMetadataTableConfiguration Operation</seealso>
+        Task<CreateBucketMetadataTableConfigurationResponse> CreateBucketMetadataTableConfigurationAsync(CreateBucketMetadataTableConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateSession
 
 
@@ -3498,9 +3684,12 @@ namespace Amazon.S3
         ///  <note> <ul> <li> 
         /// <para>
         /// You must make requests for this API operation to the Zonal endpoint. These endpoints
-        /// support virtual-hosted-style requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
-        /// Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// support virtual-hosted-style requests in the format <c>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
+        /// Path-style requests are not supported. For more information about endpoints in Availability
+        /// Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3602,7 +3791,7 @@ namespace Amazon.S3
         /// </para>
         ///  </note> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl>
         /// </summary>
@@ -3651,9 +3840,12 @@ namespace Amazon.S3
         ///  <note> <ul> <li> 
         /// <para>
         /// You must make requests for this API operation to the Zonal endpoint. These endpoints
-        /// support virtual-hosted-style requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
-        /// Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// support virtual-hosted-style requests in the format <c>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
+        /// Path-style requests are not supported. For more information about endpoints in Availability
+        /// Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3755,7 +3947,7 @@ namespace Amazon.S3
         /// </para>
         ///  </note> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl>
         /// </summary>
@@ -3787,10 +3979,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
         /// API operation to the Regional endpoint. These endpoints support path-style requests
-        /// in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i>
-        /// </c>. Virtual-hosted-style requests aren't supported. For more information, see <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i>
+        /// </c>. Virtual-hosted-style requests aren't supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </li> </ul> </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
@@ -3809,7 +4003,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -3827,7 +4021,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">Specifies the bucket being deleted.  <b>Directory buckets </b> - When you use this operation with a directory bucket, you must use path-style requests in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i> </c>. Virtual-hosted-style requests aren't supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must also follow the format <c> <i>bucket_base_name</i>--<i>az_id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i> </param>
+        /// <param name="bucketName">Specifies the bucket being deleted.  <b>Directory buckets </b> - When you use this operation with a directory bucket, you must use path-style requests in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i> </c>. Virtual-hosted-style requests aren't supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must also follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i> </param>
         /// 
         /// <returns>The response from the DeleteBucket service method, as returned by S3.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucket">REST API Reference for DeleteBucket Operation</seealso>
@@ -3847,10 +4041,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
         /// API operation to the Regional endpoint. These endpoints support path-style requests
-        /// in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i>
-        /// </c>. Virtual-hosted-style requests aren't supported. For more information, see <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i>
+        /// </c>. Virtual-hosted-style requests aren't supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </li> </ul> </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
@@ -3869,7 +4065,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -3908,10 +4104,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
         /// API operation to the Regional endpoint. These endpoints support path-style requests
-        /// in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i>
-        /// </c>. Virtual-hosted-style requests aren't supported. For more information, see <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i>
+        /// </c>. Virtual-hosted-style requests aren't supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </li> </ul> </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
@@ -3930,7 +4128,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -3948,7 +4146,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">Specifies the bucket being deleted.  <b>Directory buckets </b> - When you use this operation with a directory bucket, you must use path-style requests in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i> </c>. Virtual-hosted-style requests aren't supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must also follow the format <c> <i>bucket_base_name</i>--<i>az_id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i> </param>
+        /// <param name="bucketName">Specifies the bucket being deleted.  <b>Directory buckets </b> - When you use this operation with a directory bucket, you must use path-style requests in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i> </c>. Virtual-hosted-style requests aren't supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must also follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i> </param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -3972,10 +4170,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
         /// API operation to the Regional endpoint. These endpoints support path-style requests
-        /// in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i>
-        /// </c>. Virtual-hosted-style requests aren't supported. For more information, see <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i>
+        /// </c>. Virtual-hosted-style requests aren't supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </li> </ul> </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
@@ -3994,7 +4194,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -4029,7 +4229,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -4081,7 +4281,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -4175,7 +4375,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -4240,7 +4440,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -4275,7 +4475,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -4336,7 +4536,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -4403,7 +4603,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -4454,7 +4654,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -4505,13 +4705,91 @@ namespace Amazon.S3
 
         #endregion
         
+        #region  DeleteBucketMetadataTableConfiguration
+
+
+        /// <summary>
+        /// Deletes a metadata table configuration from a general purpose bucket. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-overview.html">Accelerating
+        /// data discovery with S3 Metadata</a> in the <i>Amazon S3 User Guide</i>. 
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// To use this operation, you must have the <c>s3:DeleteBucketMetadataTableConfiguration</c>
+        /// permission. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-permissions.html">Setting
+        /// up permissions for configuring metadata tables</a> in the <i>Amazon S3 User Guide</i>.
+        /// 
+        /// </para>
+        ///  </dd> </dl> 
+        /// <para>
+        /// The following operations are related to <c>DeleteBucketMetadataTableConfiguration</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucketMetadataTableConfiguration.html">CreateBucketMetadataTableConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketMetadataTableConfiguration.html">GetBucketMetadataTableConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBucketMetadataTableConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteBucketMetadataTableConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketMetadataTableConfiguration">REST API Reference for DeleteBucketMetadataTableConfiguration Operation</seealso>
+        DeleteBucketMetadataTableConfigurationResponse DeleteBucketMetadataTableConfiguration(DeleteBucketMetadataTableConfigurationRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a metadata table configuration from a general purpose bucket. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-overview.html">Accelerating
+        /// data discovery with S3 Metadata</a> in the <i>Amazon S3 User Guide</i>. 
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// To use this operation, you must have the <c>s3:DeleteBucketMetadataTableConfiguration</c>
+        /// permission. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-permissions.html">Setting
+        /// up permissions for configuring metadata tables</a> in the <i>Amazon S3 User Guide</i>.
+        /// 
+        /// </para>
+        ///  </dd> </dl> 
+        /// <para>
+        /// The following operations are related to <c>DeleteBucketMetadataTableConfiguration</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucketMetadataTableConfiguration.html">CreateBucketMetadataTableConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketMetadataTableConfiguration.html">GetBucketMetadataTableConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBucketMetadataTableConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteBucketMetadataTableConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketMetadataTableConfiguration">REST API Reference for DeleteBucketMetadataTableConfiguration Operation</seealso>
+        Task<DeleteBucketMetadataTableConfigurationResponse> DeleteBucketMetadataTableConfigurationAsync(DeleteBucketMetadataTableConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteBucketMetricsConfiguration
 
 
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -4569,7 +4847,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -4633,7 +4911,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -4672,7 +4950,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -4721,10 +4999,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
         /// API operation to the Regional endpoint. These endpoints support path-style requests
-        /// in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i>
-        /// </c>. Virtual-hosted-style requests aren't supported. For more information, see <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i>
+        /// </c>. Virtual-hosted-style requests aren't supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </note> <dl> <dt>Permissions</dt> <dd> 
         /// <para>
@@ -4769,7 +5049,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -4787,7 +5067,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name.  <b>Directory buckets </b> - When you use this operation with a directory bucket, you must use path-style requests in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i> </c>. Virtual-hosted-style requests aren't supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must also follow the format <c> <i>bucket_base_name</i>--<i>az_id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i> </param>
+        /// <param name="bucketName">The bucket name.  <b>Directory buckets </b> - When you use this operation with a directory bucket, you must use path-style requests in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i> </c>. Virtual-hosted-style requests aren't supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must also follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i> </param>
         /// 
         /// <returns>The response from the DeleteBucketPolicy service method, as returned by S3.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketPolicy">REST API Reference for DeleteBucketPolicy Operation</seealso>
@@ -4800,10 +5080,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
         /// API operation to the Regional endpoint. These endpoints support path-style requests
-        /// in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i>
-        /// </c>. Virtual-hosted-style requests aren't supported. For more information, see <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i>
+        /// </c>. Virtual-hosted-style requests aren't supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </note> <dl> <dt>Permissions</dt> <dd> 
         /// <para>
@@ -4848,7 +5130,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -4880,10 +5162,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
         /// API operation to the Regional endpoint. These endpoints support path-style requests
-        /// in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i>
-        /// </c>. Virtual-hosted-style requests aren't supported. For more information, see <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i>
+        /// </c>. Virtual-hosted-style requests aren't supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </note> <dl> <dt>Permissions</dt> <dd> 
         /// <para>
@@ -4928,7 +5212,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -4946,7 +5230,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name.  <b>Directory buckets </b> - When you use this operation with a directory bucket, you must use path-style requests in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i> </c>. Virtual-hosted-style requests aren't supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must also follow the format <c> <i>bucket_base_name</i>--<i>az_id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i> </param>
+        /// <param name="bucketName">The bucket name.  <b>Directory buckets </b> - When you use this operation with a directory bucket, you must use path-style requests in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i> </c>. Virtual-hosted-style requests aren't supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must also follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i> </param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -4963,10 +5247,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
         /// API operation to the Regional endpoint. These endpoints support path-style requests
-        /// in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i>
-        /// </c>. Virtual-hosted-style requests aren't supported. For more information, see <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i>
+        /// </c>. Virtual-hosted-style requests aren't supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </note> <dl> <dt>Permissions</dt> <dd> 
         /// <para>
@@ -5011,7 +5297,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -5046,7 +5332,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -5096,7 +5382,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -5152,7 +5438,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -5189,7 +5475,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -5227,7 +5513,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -5268,7 +5554,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -5313,7 +5599,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -5361,7 +5647,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -5410,7 +5696,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -5462,7 +5748,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -5518,7 +5804,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -5560,7 +5846,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -5603,7 +5889,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -5649,7 +5935,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -5697,29 +5983,54 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// This operation is not supported by directory buckets.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Deletes the lifecycle configuration from the specified bucket. Amazon S3 removes all
         /// the lifecycle configuration rules in the lifecycle subresource associated with the
         /// bucket. Your objects never expire, and Amazon S3 no longer automatically deletes any
         /// objects on the basis of rules contained in the deleted lifecycle configuration.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> <ul> <li> 
+        /// <para>
+        ///  <b>General purpose bucket permissions</b> - By default, all Amazon S3 resources are
+        /// private, including buckets, objects, and related subresources (for example, lifecycle
+        /// configuration and website configuration). Only the resource owner (that is, the Amazon
+        /// Web Services account that created it) can access the resource. The resource owner
+        /// can optionally grant access permissions to others by writing an access policy. For
+        /// this operation, a user must have the <c>s3:PutLifecycleConfiguration</c> permission.
         /// </para>
         ///  
         /// <para>
-        /// To use this operation, you must have permission to perform the <c>s3:PutLifecycleConfiguration</c>
-        /// action. By default, the bucket owner has this permission and the bucket owner can
-        /// grant this permission to others.
+        /// For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
+        /// Access Permissions to Your Amazon S3 Resources</a>.
+        /// </para>
+        ///  </li> </ul> <ul> <li> 
+        /// <para>
+        ///  <b>Directory bucket permissions</b> - You must have the <c>s3express:PutLifecycleConfiguration</c>
+        /// permission in an IAM identity-based policy to use this operation. Cross-account access
+        /// to this API operation isn't supported. The resource owner can optionally grant access
+        /// permissions to others by creating a role or user for them as long as they are within
+        /// the same account as the owner and resource.
         /// </para>
         ///  
         /// <para>
-        /// There is usually some time lag before lifecycle configuration deletion is fully propagated
-        /// to all the Amazon S3 systems.
+        /// For more information about directory bucket policies and permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-security-iam.html">Authorizing
+        /// Regional endpoint APIs with IAM</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
+        /// API operation to the Regional endpoint. These endpoints support path-style requests
+        /// in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i>
+        /// </c>. Virtual-hosted-style requests aren't supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  </note> </li> </ul> </dd> </dl> <dl> <dt>HTTP Host header syntax</dt> <dd> 
+        /// <para>
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
+        /// </para>
+        ///  </dd> </dl> 
         /// <para>
         /// For more information about the object expiration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#intro-lifecycle-rules-actions">Elements
         /// to Describe Lifecycle Actions</a>.
@@ -5747,29 +6058,54 @@ namespace Amazon.S3
         DeleteLifecycleConfigurationResponse DeleteLifecycleConfiguration(string bucketName);
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// This operation is not supported by directory buckets.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Deletes the lifecycle configuration from the specified bucket. Amazon S3 removes all
         /// the lifecycle configuration rules in the lifecycle subresource associated with the
         /// bucket. Your objects never expire, and Amazon S3 no longer automatically deletes any
         /// objects on the basis of rules contained in the deleted lifecycle configuration.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> <ul> <li> 
+        /// <para>
+        ///  <b>General purpose bucket permissions</b> - By default, all Amazon S3 resources are
+        /// private, including buckets, objects, and related subresources (for example, lifecycle
+        /// configuration and website configuration). Only the resource owner (that is, the Amazon
+        /// Web Services account that created it) can access the resource. The resource owner
+        /// can optionally grant access permissions to others by writing an access policy. For
+        /// this operation, a user must have the <c>s3:PutLifecycleConfiguration</c> permission.
         /// </para>
         ///  
         /// <para>
-        /// To use this operation, you must have permission to perform the <c>s3:PutLifecycleConfiguration</c>
-        /// action. By default, the bucket owner has this permission and the bucket owner can
-        /// grant this permission to others.
+        /// For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
+        /// Access Permissions to Your Amazon S3 Resources</a>.
+        /// </para>
+        ///  </li> </ul> <ul> <li> 
+        /// <para>
+        ///  <b>Directory bucket permissions</b> - You must have the <c>s3express:PutLifecycleConfiguration</c>
+        /// permission in an IAM identity-based policy to use this operation. Cross-account access
+        /// to this API operation isn't supported. The resource owner can optionally grant access
+        /// permissions to others by creating a role or user for them as long as they are within
+        /// the same account as the owner and resource.
         /// </para>
         ///  
         /// <para>
-        /// There is usually some time lag before lifecycle configuration deletion is fully propagated
-        /// to all the Amazon S3 systems.
+        /// For more information about directory bucket policies and permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-security-iam.html">Authorizing
+        /// Regional endpoint APIs with IAM</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
+        /// API operation to the Regional endpoint. These endpoints support path-style requests
+        /// in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i>
+        /// </c>. Virtual-hosted-style requests aren't supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  </note> </li> </ul> </dd> </dl> <dl> <dt>HTTP Host header syntax</dt> <dd> 
+        /// <para>
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
+        /// </para>
+        ///  </dd> </dl> 
         /// <para>
         /// For more information about the object expiration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#intro-lifecycle-rules-actions">Elements
         /// to Describe Lifecycle Actions</a>.
@@ -5798,29 +6134,54 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// This operation is not supported by directory buckets.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Deletes the lifecycle configuration from the specified bucket. Amazon S3 removes all
         /// the lifecycle configuration rules in the lifecycle subresource associated with the
         /// bucket. Your objects never expire, and Amazon S3 no longer automatically deletes any
         /// objects on the basis of rules contained in the deleted lifecycle configuration.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> <ul> <li> 
+        /// <para>
+        ///  <b>General purpose bucket permissions</b> - By default, all Amazon S3 resources are
+        /// private, including buckets, objects, and related subresources (for example, lifecycle
+        /// configuration and website configuration). Only the resource owner (that is, the Amazon
+        /// Web Services account that created it) can access the resource. The resource owner
+        /// can optionally grant access permissions to others by writing an access policy. For
+        /// this operation, a user must have the <c>s3:PutLifecycleConfiguration</c> permission.
         /// </para>
         ///  
         /// <para>
-        /// To use this operation, you must have permission to perform the <c>s3:PutLifecycleConfiguration</c>
-        /// action. By default, the bucket owner has this permission and the bucket owner can
-        /// grant this permission to others.
+        /// For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
+        /// Access Permissions to Your Amazon S3 Resources</a>.
+        /// </para>
+        ///  </li> </ul> <ul> <li> 
+        /// <para>
+        ///  <b>Directory bucket permissions</b> - You must have the <c>s3express:PutLifecycleConfiguration</c>
+        /// permission in an IAM identity-based policy to use this operation. Cross-account access
+        /// to this API operation isn't supported. The resource owner can optionally grant access
+        /// permissions to others by creating a role or user for them as long as they are within
+        /// the same account as the owner and resource.
         /// </para>
         ///  
         /// <para>
-        /// There is usually some time lag before lifecycle configuration deletion is fully propagated
-        /// to all the Amazon S3 systems.
+        /// For more information about directory bucket policies and permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-security-iam.html">Authorizing
+        /// Regional endpoint APIs with IAM</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
+        /// API operation to the Regional endpoint. These endpoints support path-style requests
+        /// in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i>
+        /// </c>. Virtual-hosted-style requests aren't supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  </note> </li> </ul> </dd> </dl> <dl> <dt>HTTP Host header syntax</dt> <dd> 
+        /// <para>
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
+        /// </para>
+        ///  </dd> </dl> 
         /// <para>
         /// For more information about the object expiration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#intro-lifecycle-rules-actions">Elements
         /// to Describe Lifecycle Actions</a>.
@@ -5852,29 +6213,54 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// This operation is not supported by directory buckets.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Deletes the lifecycle configuration from the specified bucket. Amazon S3 removes all
         /// the lifecycle configuration rules in the lifecycle subresource associated with the
         /// bucket. Your objects never expire, and Amazon S3 no longer automatically deletes any
         /// objects on the basis of rules contained in the deleted lifecycle configuration.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> <ul> <li> 
+        /// <para>
+        ///  <b>General purpose bucket permissions</b> - By default, all Amazon S3 resources are
+        /// private, including buckets, objects, and related subresources (for example, lifecycle
+        /// configuration and website configuration). Only the resource owner (that is, the Amazon
+        /// Web Services account that created it) can access the resource. The resource owner
+        /// can optionally grant access permissions to others by writing an access policy. For
+        /// this operation, a user must have the <c>s3:PutLifecycleConfiguration</c> permission.
         /// </para>
         ///  
         /// <para>
-        /// To use this operation, you must have permission to perform the <c>s3:PutLifecycleConfiguration</c>
-        /// action. By default, the bucket owner has this permission and the bucket owner can
-        /// grant this permission to others.
+        /// For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
+        /// Access Permissions to Your Amazon S3 Resources</a>.
+        /// </para>
+        ///  </li> </ul> <ul> <li> 
+        /// <para>
+        ///  <b>Directory bucket permissions</b> - You must have the <c>s3express:PutLifecycleConfiguration</c>
+        /// permission in an IAM identity-based policy to use this operation. Cross-account access
+        /// to this API operation isn't supported. The resource owner can optionally grant access
+        /// permissions to others by creating a role or user for them as long as they are within
+        /// the same account as the owner and resource.
         /// </para>
         ///  
         /// <para>
-        /// There is usually some time lag before lifecycle configuration deletion is fully propagated
-        /// to all the Amazon S3 systems.
+        /// For more information about directory bucket policies and permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-security-iam.html">Authorizing
+        /// Regional endpoint APIs with IAM</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
+        /// API operation to the Regional endpoint. These endpoints support path-style requests
+        /// in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i>
+        /// </c>. Virtual-hosted-style requests aren't supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  </note> </li> </ul> </dd> </dl> <dl> <dt>HTTP Host header syntax</dt> <dd> 
+        /// <para>
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
+        /// </para>
+        ///  </dd> </dl> 
         /// <para>
         /// For more information about the object expiration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#intro-lifecycle-rules-actions">Elements
         /// to Describe Lifecycle Actions</a>.
@@ -5910,40 +6296,82 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// Removes an object from a bucket. The behavior depends on the bucket's versioning state.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/DeletingObjects.html#DeletingObjects-best-practices">Best
-        /// practices to consider before deleting an object</a>.
+        /// Removes an object from a bucket. The behavior depends on the bucket's versioning state:
         /// 
-        ///  
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// If bucket versioning is not enabled, the operation permanently deletes the object.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If bucket versioning is enabled, the operation inserts a delete marker, which becomes
+        /// the current version of the object. To permanently delete an object in a versioned
+        /// bucket, you must include the object’s <c>versionId</c> in the request. For more information
+        /// about versioning-enabled buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/DeletingObjectVersions.html">Deleting
+        /// object versions from a versioning-enabled bucket</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If bucket versioning is suspended, the operation removes the object that has a null
+        /// <c>versionId</c>, if there is one, and inserts a delete marker that becomes the current
+        /// version of the object. If there isn't an object with a null <c>versionId</c>, and
+        /// all versions of the object have a <c>versionId</c>, Amazon S3 does not remove the
+        /// object and only inserts a delete marker. To permanently delete an object that has
+        /// a <c>versionId</c>, you must include the object’s <c>versionId</c> in the request.
+        /// For more information about versioning-suspended buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/DeletingObjectsfromVersioningSuspendedBuckets.html">Deleting
+        /// objects from versioning-suspended buckets</a>.
+        /// </para>
+        ///  </li> </ul> <note> <ul> <li> 
+        /// <para>
+        ///  <b>Directory buckets</b> - S3 Versioning isn't enabled and supported for directory
+        /// buckets. For this API operation, only the <c>null</c> value of the version ID is supported
+        /// by directory buckets. You can only specify <c>null</c> to the <c>versionId</c> query
+        /// parameter in the request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Directory buckets</b> - For directory buckets, you must make requests for this
+        /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
+        /// requests in the format <c>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  </li> </ul> </note> 
         /// <para>
         /// To remove a specific version, you must use the <c>versionId</c> query parameter. Using
         /// this query parameter permanently deletes the version. If the object deleted is a delete
-        /// marker, Amazon S3 sets the response header <c>x-amz-delete-marker</c> to true. If
-        /// the object you want to delete is in a bucket where the bucket versioning configuration
-        /// is MFA delete enabled, you must include the <c>x-amz-mfa</c> request header in the
+        /// marker, Amazon S3 sets the response header <c>x-amz-delete-marker</c> to true. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If the object you want to delete is in a bucket where the bucket versioning configuration
+        /// is MFA Delete enabled, you must include the <c>x-amz-mfa</c> request header in the
         /// DELETE <c>versionId</c> request. Requests that include <c>x-amz-mfa</c> must use HTTPS.
-        /// For more information about MFA delete and to see example requests, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMFADelete.html">Using
-        /// MFA delete</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectDELETE.html#ExampleVersionObjectDelete">Sample
-        /// request</a> in the <i>Amazon S3 User Guide</i>.
+        /// For more information about MFA Delete, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMFADelete.html">Using
+        /// MFA Delete</a> in the <i>Amazon S3 User Guide</i>. To see sample requests that use
+        /// versioning, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectDELETE.html#ExampleVersionObjectDelete">Sample
+        /// Request</a>. 
         /// </para>
-        ///  <note> <ul> <li> 
+        ///  <note> 
         /// <para>
-        /// S3 Versioning isn't enabled and supported for directory buckets. For this API operation,
-        /// only the <c>null</c> value of the version ID is supported by directory buckets. You
-        /// can only specify <c>null</c> to the <c>versionId</c> query parameter in the request.
+        ///  <b>Directory buckets</b> - MFA delete is not supported by directory buckets.
         /// </para>
-        ///  </li> <li> 
+        ///  </note> 
         /// <para>
-        /// For directory buckets, you must make requests for this API operation to the Zonal
-        /// endpoint. These endpoints support virtual-hosted-style requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// You can delete objects by explicitly calling DELETE Object or calling (<a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>)
+        /// to enable Amazon S3 to remove them for you. If you want to block users or accounts
+        /// from removing or deleting objects from your bucket, you must deny them the <c>s3:DeleteObject</c>,
+        /// <c>s3:DeleteObjectVersion</c>, and <c>s3:PutLifeCycleConfiguration</c> actions. 
         /// </para>
-        ///  </li> <li> 
+        ///  <note> 
         /// <para>
-        /// MFA delete is not supported by directory buckets.
+        ///  <b>Directory buckets</b> - S3 Lifecycle is not supported by directory buckets.
         /// </para>
-        ///  </li> </ul> </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
+        ///  </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
         ///  <b>General purpose bucket permissions</b> - The following permissions are required
         /// in your policies when your <c>DeleteObjects</c> request includes specific headers.
@@ -5953,31 +6381,30 @@ namespace Amazon.S3
         ///  <b> <c>s3:DeleteObject</c> </b> - To delete an object from a bucket, you must always
         /// have the <c>s3:DeleteObject</c> permission.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// You can also use <a>PutBucketLifecycle</a> to delete objects in Amazon S3.
-        /// </para>
-        ///  </note> </li> <li> 
+        ///  </li> <li> 
         /// <para>
         ///  <b> <c>s3:DeleteObjectVersion</c> </b> - To delete a specific version of an object
         /// from a versioning-enabled bucket, you must have the <c>s3:DeleteObjectVersion</c>
         /// permission.
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// If you want to block users or accounts from removing or deleting objects from your
-        /// bucket, you must deny them the <c>s3:DeleteObject</c>, <c>s3:DeleteObjectVersion</c>,
-        /// and <c>s3:PutLifeCycleConfiguration</c> permissions.
-        /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <b>Directory buckets permissions</b> - To grant access to this API operation on a
-        /// directory bucket, we recommend that you use the <a>CreateSession</a> API operation
-        /// for session-based authorization.
+        ///  <b>Directory bucket permissions</b> - To grant access to this API operation on a
+        /// directory bucket, we recommend that you use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
+        /// <c>CreateSession</c> </a> API operation for session-based authorization. Specifically,
+        /// you grant the <c>s3express:CreateSession</c> permission to the directory bucket in
+        /// a bucket policy or an IAM identity-based policy. Then, you make the <c>CreateSession</c>
+        /// API call on the bucket to obtain a session token. With the session token in your request
+        /// header, you can make API requests to this operation. After the session token expires,
+        /// you make another <c>CreateSession</c> API call to generate a new session token for
+        /// use. Amazon Web Services CLI or SDKs create session and refresh the session token
+        /// automatically to avoid service interruptions when a session expires. For more information
+        /// about authorization, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
+        /// <c>CreateSession</c> </a>.
         /// </para>
         ///  </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -5990,7 +6417,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name of the bucket containing the object.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The bucket name of the bucket containing the object.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Key name of the object to delete.</param>
         /// 
         /// <returns>The response from the DeleteObject service method, as returned by S3.</returns>
@@ -5998,40 +6425,82 @@ namespace Amazon.S3
         DeleteObjectResponse DeleteObject(string bucketName, string key);
 
         /// <summary>
-        /// Removes an object from a bucket. The behavior depends on the bucket's versioning state.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/DeletingObjects.html#DeletingObjects-best-practices">Best
-        /// practices to consider before deleting an object</a>.
+        /// Removes an object from a bucket. The behavior depends on the bucket's versioning state:
         /// 
-        ///  
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// If bucket versioning is not enabled, the operation permanently deletes the object.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If bucket versioning is enabled, the operation inserts a delete marker, which becomes
+        /// the current version of the object. To permanently delete an object in a versioned
+        /// bucket, you must include the object’s <c>versionId</c> in the request. For more information
+        /// about versioning-enabled buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/DeletingObjectVersions.html">Deleting
+        /// object versions from a versioning-enabled bucket</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If bucket versioning is suspended, the operation removes the object that has a null
+        /// <c>versionId</c>, if there is one, and inserts a delete marker that becomes the current
+        /// version of the object. If there isn't an object with a null <c>versionId</c>, and
+        /// all versions of the object have a <c>versionId</c>, Amazon S3 does not remove the
+        /// object and only inserts a delete marker. To permanently delete an object that has
+        /// a <c>versionId</c>, you must include the object’s <c>versionId</c> in the request.
+        /// For more information about versioning-suspended buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/DeletingObjectsfromVersioningSuspendedBuckets.html">Deleting
+        /// objects from versioning-suspended buckets</a>.
+        /// </para>
+        ///  </li> </ul> <note> <ul> <li> 
+        /// <para>
+        ///  <b>Directory buckets</b> - S3 Versioning isn't enabled and supported for directory
+        /// buckets. For this API operation, only the <c>null</c> value of the version ID is supported
+        /// by directory buckets. You can only specify <c>null</c> to the <c>versionId</c> query
+        /// parameter in the request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Directory buckets</b> - For directory buckets, you must make requests for this
+        /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
+        /// requests in the format <c>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  </li> </ul> </note> 
         /// <para>
         /// To remove a specific version, you must use the <c>versionId</c> query parameter. Using
         /// this query parameter permanently deletes the version. If the object deleted is a delete
-        /// marker, Amazon S3 sets the response header <c>x-amz-delete-marker</c> to true. If
-        /// the object you want to delete is in a bucket where the bucket versioning configuration
-        /// is MFA delete enabled, you must include the <c>x-amz-mfa</c> request header in the
+        /// marker, Amazon S3 sets the response header <c>x-amz-delete-marker</c> to true. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If the object you want to delete is in a bucket where the bucket versioning configuration
+        /// is MFA Delete enabled, you must include the <c>x-amz-mfa</c> request header in the
         /// DELETE <c>versionId</c> request. Requests that include <c>x-amz-mfa</c> must use HTTPS.
-        /// For more information about MFA delete and to see example requests, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMFADelete.html">Using
-        /// MFA delete</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectDELETE.html#ExampleVersionObjectDelete">Sample
-        /// request</a> in the <i>Amazon S3 User Guide</i>.
+        /// For more information about MFA Delete, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMFADelete.html">Using
+        /// MFA Delete</a> in the <i>Amazon S3 User Guide</i>. To see sample requests that use
+        /// versioning, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectDELETE.html#ExampleVersionObjectDelete">Sample
+        /// Request</a>. 
         /// </para>
-        ///  <note> <ul> <li> 
+        ///  <note> 
         /// <para>
-        /// S3 Versioning isn't enabled and supported for directory buckets. For this API operation,
-        /// only the <c>null</c> value of the version ID is supported by directory buckets. You
-        /// can only specify <c>null</c> to the <c>versionId</c> query parameter in the request.
+        ///  <b>Directory buckets</b> - MFA delete is not supported by directory buckets.
         /// </para>
-        ///  </li> <li> 
+        ///  </note> 
         /// <para>
-        /// For directory buckets, you must make requests for this API operation to the Zonal
-        /// endpoint. These endpoints support virtual-hosted-style requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// You can delete objects by explicitly calling DELETE Object or calling (<a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>)
+        /// to enable Amazon S3 to remove them for you. If you want to block users or accounts
+        /// from removing or deleting objects from your bucket, you must deny them the <c>s3:DeleteObject</c>,
+        /// <c>s3:DeleteObjectVersion</c>, and <c>s3:PutLifeCycleConfiguration</c> actions. 
         /// </para>
-        ///  </li> <li> 
+        ///  <note> 
         /// <para>
-        /// MFA delete is not supported by directory buckets.
+        ///  <b>Directory buckets</b> - S3 Lifecycle is not supported by directory buckets.
         /// </para>
-        ///  </li> </ul> </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
+        ///  </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
         ///  <b>General purpose bucket permissions</b> - The following permissions are required
         /// in your policies when your <c>DeleteObjects</c> request includes specific headers.
@@ -6041,31 +6510,30 @@ namespace Amazon.S3
         ///  <b> <c>s3:DeleteObject</c> </b> - To delete an object from a bucket, you must always
         /// have the <c>s3:DeleteObject</c> permission.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// You can also use <a>PutBucketLifecycle</a> to delete objects in Amazon S3.
-        /// </para>
-        ///  </note> </li> <li> 
+        ///  </li> <li> 
         /// <para>
         ///  <b> <c>s3:DeleteObjectVersion</c> </b> - To delete a specific version of an object
         /// from a versioning-enabled bucket, you must have the <c>s3:DeleteObjectVersion</c>
         /// permission.
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// If you want to block users or accounts from removing or deleting objects from your
-        /// bucket, you must deny them the <c>s3:DeleteObject</c>, <c>s3:DeleteObjectVersion</c>,
-        /// and <c>s3:PutLifeCycleConfiguration</c> permissions.
-        /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <b>Directory buckets permissions</b> - To grant access to this API operation on a
-        /// directory bucket, we recommend that you use the <a>CreateSession</a> API operation
-        /// for session-based authorization.
+        ///  <b>Directory bucket permissions</b> - To grant access to this API operation on a
+        /// directory bucket, we recommend that you use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
+        /// <c>CreateSession</c> </a> API operation for session-based authorization. Specifically,
+        /// you grant the <c>s3express:CreateSession</c> permission to the directory bucket in
+        /// a bucket policy or an IAM identity-based policy. Then, you make the <c>CreateSession</c>
+        /// API call on the bucket to obtain a session token. With the session token in your request
+        /// header, you can make API requests to this operation. After the session token expires,
+        /// you make another <c>CreateSession</c> API call to generate a new session token for
+        /// use. Amazon Web Services CLI or SDKs create session and refresh the session token
+        /// automatically to avoid service interruptions when a session expires. For more information
+        /// about authorization, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
+        /// <c>CreateSession</c> </a>.
         /// </para>
         ///  </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -6078,7 +6546,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name of the bucket containing the object.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The bucket name of the bucket containing the object.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Key name of the object to delete.</param>
         /// <param name="versionId">Version ID used to reference a specific version of the object. <note> For directory buckets in this API operation, only the <c>null</c> value of the version ID is supported. </note></param>
         /// 
@@ -6087,40 +6555,82 @@ namespace Amazon.S3
         DeleteObjectResponse DeleteObject(string bucketName, string key, string versionId);
 
         /// <summary>
-        /// Removes an object from a bucket. The behavior depends on the bucket's versioning state.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/DeletingObjects.html#DeletingObjects-best-practices">Best
-        /// practices to consider before deleting an object</a>.
+        /// Removes an object from a bucket. The behavior depends on the bucket's versioning state:
         /// 
-        ///  
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// If bucket versioning is not enabled, the operation permanently deletes the object.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If bucket versioning is enabled, the operation inserts a delete marker, which becomes
+        /// the current version of the object. To permanently delete an object in a versioned
+        /// bucket, you must include the object’s <c>versionId</c> in the request. For more information
+        /// about versioning-enabled buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/DeletingObjectVersions.html">Deleting
+        /// object versions from a versioning-enabled bucket</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If bucket versioning is suspended, the operation removes the object that has a null
+        /// <c>versionId</c>, if there is one, and inserts a delete marker that becomes the current
+        /// version of the object. If there isn't an object with a null <c>versionId</c>, and
+        /// all versions of the object have a <c>versionId</c>, Amazon S3 does not remove the
+        /// object and only inserts a delete marker. To permanently delete an object that has
+        /// a <c>versionId</c>, you must include the object’s <c>versionId</c> in the request.
+        /// For more information about versioning-suspended buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/DeletingObjectsfromVersioningSuspendedBuckets.html">Deleting
+        /// objects from versioning-suspended buckets</a>.
+        /// </para>
+        ///  </li> </ul> <note> <ul> <li> 
+        /// <para>
+        ///  <b>Directory buckets</b> - S3 Versioning isn't enabled and supported for directory
+        /// buckets. For this API operation, only the <c>null</c> value of the version ID is supported
+        /// by directory buckets. You can only specify <c>null</c> to the <c>versionId</c> query
+        /// parameter in the request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Directory buckets</b> - For directory buckets, you must make requests for this
+        /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
+        /// requests in the format <c>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  </li> </ul> </note> 
         /// <para>
         /// To remove a specific version, you must use the <c>versionId</c> query parameter. Using
         /// this query parameter permanently deletes the version. If the object deleted is a delete
-        /// marker, Amazon S3 sets the response header <c>x-amz-delete-marker</c> to true. If
-        /// the object you want to delete is in a bucket where the bucket versioning configuration
-        /// is MFA delete enabled, you must include the <c>x-amz-mfa</c> request header in the
+        /// marker, Amazon S3 sets the response header <c>x-amz-delete-marker</c> to true. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If the object you want to delete is in a bucket where the bucket versioning configuration
+        /// is MFA Delete enabled, you must include the <c>x-amz-mfa</c> request header in the
         /// DELETE <c>versionId</c> request. Requests that include <c>x-amz-mfa</c> must use HTTPS.
-        /// For more information about MFA delete and to see example requests, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMFADelete.html">Using
-        /// MFA delete</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectDELETE.html#ExampleVersionObjectDelete">Sample
-        /// request</a> in the <i>Amazon S3 User Guide</i>.
+        /// For more information about MFA Delete, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMFADelete.html">Using
+        /// MFA Delete</a> in the <i>Amazon S3 User Guide</i>. To see sample requests that use
+        /// versioning, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectDELETE.html#ExampleVersionObjectDelete">Sample
+        /// Request</a>. 
         /// </para>
-        ///  <note> <ul> <li> 
+        ///  <note> 
         /// <para>
-        /// S3 Versioning isn't enabled and supported for directory buckets. For this API operation,
-        /// only the <c>null</c> value of the version ID is supported by directory buckets. You
-        /// can only specify <c>null</c> to the <c>versionId</c> query parameter in the request.
+        ///  <b>Directory buckets</b> - MFA delete is not supported by directory buckets.
         /// </para>
-        ///  </li> <li> 
+        ///  </note> 
         /// <para>
-        /// For directory buckets, you must make requests for this API operation to the Zonal
-        /// endpoint. These endpoints support virtual-hosted-style requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// You can delete objects by explicitly calling DELETE Object or calling (<a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>)
+        /// to enable Amazon S3 to remove them for you. If you want to block users or accounts
+        /// from removing or deleting objects from your bucket, you must deny them the <c>s3:DeleteObject</c>,
+        /// <c>s3:DeleteObjectVersion</c>, and <c>s3:PutLifeCycleConfiguration</c> actions. 
         /// </para>
-        ///  </li> <li> 
+        ///  <note> 
         /// <para>
-        /// MFA delete is not supported by directory buckets.
+        ///  <b>Directory buckets</b> - S3 Lifecycle is not supported by directory buckets.
         /// </para>
-        ///  </li> </ul> </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
+        ///  </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
         ///  <b>General purpose bucket permissions</b> - The following permissions are required
         /// in your policies when your <c>DeleteObjects</c> request includes specific headers.
@@ -6130,31 +6640,30 @@ namespace Amazon.S3
         ///  <b> <c>s3:DeleteObject</c> </b> - To delete an object from a bucket, you must always
         /// have the <c>s3:DeleteObject</c> permission.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// You can also use <a>PutBucketLifecycle</a> to delete objects in Amazon S3.
-        /// </para>
-        ///  </note> </li> <li> 
+        ///  </li> <li> 
         /// <para>
         ///  <b> <c>s3:DeleteObjectVersion</c> </b> - To delete a specific version of an object
         /// from a versioning-enabled bucket, you must have the <c>s3:DeleteObjectVersion</c>
         /// permission.
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// If you want to block users or accounts from removing or deleting objects from your
-        /// bucket, you must deny them the <c>s3:DeleteObject</c>, <c>s3:DeleteObjectVersion</c>,
-        /// and <c>s3:PutLifeCycleConfiguration</c> permissions.
-        /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <b>Directory buckets permissions</b> - To grant access to this API operation on a
-        /// directory bucket, we recommend that you use the <a>CreateSession</a> API operation
-        /// for session-based authorization.
+        ///  <b>Directory bucket permissions</b> - To grant access to this API operation on a
+        /// directory bucket, we recommend that you use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
+        /// <c>CreateSession</c> </a> API operation for session-based authorization. Specifically,
+        /// you grant the <c>s3express:CreateSession</c> permission to the directory bucket in
+        /// a bucket policy or an IAM identity-based policy. Then, you make the <c>CreateSession</c>
+        /// API call on the bucket to obtain a session token. With the session token in your request
+        /// header, you can make API requests to this operation. After the session token expires,
+        /// you make another <c>CreateSession</c> API call to generate a new session token for
+        /// use. Amazon Web Services CLI or SDKs create session and refresh the session token
+        /// automatically to avoid service interruptions when a session expires. For more information
+        /// about authorization, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
+        /// <c>CreateSession</c> </a>.
         /// </para>
         ///  </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -6175,40 +6684,82 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// Removes an object from a bucket. The behavior depends on the bucket's versioning state.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/DeletingObjects.html#DeletingObjects-best-practices">Best
-        /// practices to consider before deleting an object</a>.
+        /// Removes an object from a bucket. The behavior depends on the bucket's versioning state:
         /// 
-        ///  
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// If bucket versioning is not enabled, the operation permanently deletes the object.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If bucket versioning is enabled, the operation inserts a delete marker, which becomes
+        /// the current version of the object. To permanently delete an object in a versioned
+        /// bucket, you must include the object’s <c>versionId</c> in the request. For more information
+        /// about versioning-enabled buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/DeletingObjectVersions.html">Deleting
+        /// object versions from a versioning-enabled bucket</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If bucket versioning is suspended, the operation removes the object that has a null
+        /// <c>versionId</c>, if there is one, and inserts a delete marker that becomes the current
+        /// version of the object. If there isn't an object with a null <c>versionId</c>, and
+        /// all versions of the object have a <c>versionId</c>, Amazon S3 does not remove the
+        /// object and only inserts a delete marker. To permanently delete an object that has
+        /// a <c>versionId</c>, you must include the object’s <c>versionId</c> in the request.
+        /// For more information about versioning-suspended buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/DeletingObjectsfromVersioningSuspendedBuckets.html">Deleting
+        /// objects from versioning-suspended buckets</a>.
+        /// </para>
+        ///  </li> </ul> <note> <ul> <li> 
+        /// <para>
+        ///  <b>Directory buckets</b> - S3 Versioning isn't enabled and supported for directory
+        /// buckets. For this API operation, only the <c>null</c> value of the version ID is supported
+        /// by directory buckets. You can only specify <c>null</c> to the <c>versionId</c> query
+        /// parameter in the request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Directory buckets</b> - For directory buckets, you must make requests for this
+        /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
+        /// requests in the format <c>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  </li> </ul> </note> 
         /// <para>
         /// To remove a specific version, you must use the <c>versionId</c> query parameter. Using
         /// this query parameter permanently deletes the version. If the object deleted is a delete
-        /// marker, Amazon S3 sets the response header <c>x-amz-delete-marker</c> to true. If
-        /// the object you want to delete is in a bucket where the bucket versioning configuration
-        /// is MFA delete enabled, you must include the <c>x-amz-mfa</c> request header in the
+        /// marker, Amazon S3 sets the response header <c>x-amz-delete-marker</c> to true. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If the object you want to delete is in a bucket where the bucket versioning configuration
+        /// is MFA Delete enabled, you must include the <c>x-amz-mfa</c> request header in the
         /// DELETE <c>versionId</c> request. Requests that include <c>x-amz-mfa</c> must use HTTPS.
-        /// For more information about MFA delete and to see example requests, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMFADelete.html">Using
-        /// MFA delete</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectDELETE.html#ExampleVersionObjectDelete">Sample
-        /// request</a> in the <i>Amazon S3 User Guide</i>.
+        /// For more information about MFA Delete, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMFADelete.html">Using
+        /// MFA Delete</a> in the <i>Amazon S3 User Guide</i>. To see sample requests that use
+        /// versioning, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectDELETE.html#ExampleVersionObjectDelete">Sample
+        /// Request</a>. 
         /// </para>
-        ///  <note> <ul> <li> 
+        ///  <note> 
         /// <para>
-        /// S3 Versioning isn't enabled and supported for directory buckets. For this API operation,
-        /// only the <c>null</c> value of the version ID is supported by directory buckets. You
-        /// can only specify <c>null</c> to the <c>versionId</c> query parameter in the request.
+        ///  <b>Directory buckets</b> - MFA delete is not supported by directory buckets.
         /// </para>
-        ///  </li> <li> 
+        ///  </note> 
         /// <para>
-        /// For directory buckets, you must make requests for this API operation to the Zonal
-        /// endpoint. These endpoints support virtual-hosted-style requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// You can delete objects by explicitly calling DELETE Object or calling (<a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>)
+        /// to enable Amazon S3 to remove them for you. If you want to block users or accounts
+        /// from removing or deleting objects from your bucket, you must deny them the <c>s3:DeleteObject</c>,
+        /// <c>s3:DeleteObjectVersion</c>, and <c>s3:PutLifeCycleConfiguration</c> actions. 
         /// </para>
-        ///  </li> <li> 
+        ///  <note> 
         /// <para>
-        /// MFA delete is not supported by directory buckets.
+        ///  <b>Directory buckets</b> - S3 Lifecycle is not supported by directory buckets.
         /// </para>
-        ///  </li> </ul> </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
+        ///  </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
         ///  <b>General purpose bucket permissions</b> - The following permissions are required
         /// in your policies when your <c>DeleteObjects</c> request includes specific headers.
@@ -6218,31 +6769,30 @@ namespace Amazon.S3
         ///  <b> <c>s3:DeleteObject</c> </b> - To delete an object from a bucket, you must always
         /// have the <c>s3:DeleteObject</c> permission.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// You can also use <a>PutBucketLifecycle</a> to delete objects in Amazon S3.
-        /// </para>
-        ///  </note> </li> <li> 
+        ///  </li> <li> 
         /// <para>
         ///  <b> <c>s3:DeleteObjectVersion</c> </b> - To delete a specific version of an object
         /// from a versioning-enabled bucket, you must have the <c>s3:DeleteObjectVersion</c>
         /// permission.
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// If you want to block users or accounts from removing or deleting objects from your
-        /// bucket, you must deny them the <c>s3:DeleteObject</c>, <c>s3:DeleteObjectVersion</c>,
-        /// and <c>s3:PutLifeCycleConfiguration</c> permissions.
-        /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <b>Directory buckets permissions</b> - To grant access to this API operation on a
-        /// directory bucket, we recommend that you use the <a>CreateSession</a> API operation
-        /// for session-based authorization.
+        ///  <b>Directory bucket permissions</b> - To grant access to this API operation on a
+        /// directory bucket, we recommend that you use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
+        /// <c>CreateSession</c> </a> API operation for session-based authorization. Specifically,
+        /// you grant the <c>s3express:CreateSession</c> permission to the directory bucket in
+        /// a bucket policy or an IAM identity-based policy. Then, you make the <c>CreateSession</c>
+        /// API call on the bucket to obtain a session token. With the session token in your request
+        /// header, you can make API requests to this operation. After the session token expires,
+        /// you make another <c>CreateSession</c> API call to generate a new session token for
+        /// use. Amazon Web Services CLI or SDKs create session and refresh the session token
+        /// automatically to avoid service interruptions when a session expires. For more information
+        /// about authorization, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
+        /// <c>CreateSession</c> </a>.
         /// </para>
         ///  </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -6255,7 +6805,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name of the bucket containing the object.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The bucket name of the bucket containing the object.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Key name of the object to delete.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -6266,40 +6816,82 @@ namespace Amazon.S3
         Task<DeleteObjectResponse> DeleteObjectAsync(string bucketName, string key, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Removes an object from a bucket. The behavior depends on the bucket's versioning state.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/DeletingObjects.html#DeletingObjects-best-practices">Best
-        /// practices to consider before deleting an object</a>.
+        /// Removes an object from a bucket. The behavior depends on the bucket's versioning state:
         /// 
-        ///  
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// If bucket versioning is not enabled, the operation permanently deletes the object.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If bucket versioning is enabled, the operation inserts a delete marker, which becomes
+        /// the current version of the object. To permanently delete an object in a versioned
+        /// bucket, you must include the object’s <c>versionId</c> in the request. For more information
+        /// about versioning-enabled buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/DeletingObjectVersions.html">Deleting
+        /// object versions from a versioning-enabled bucket</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If bucket versioning is suspended, the operation removes the object that has a null
+        /// <c>versionId</c>, if there is one, and inserts a delete marker that becomes the current
+        /// version of the object. If there isn't an object with a null <c>versionId</c>, and
+        /// all versions of the object have a <c>versionId</c>, Amazon S3 does not remove the
+        /// object and only inserts a delete marker. To permanently delete an object that has
+        /// a <c>versionId</c>, you must include the object’s <c>versionId</c> in the request.
+        /// For more information about versioning-suspended buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/DeletingObjectsfromVersioningSuspendedBuckets.html">Deleting
+        /// objects from versioning-suspended buckets</a>.
+        /// </para>
+        ///  </li> </ul> <note> <ul> <li> 
+        /// <para>
+        ///  <b>Directory buckets</b> - S3 Versioning isn't enabled and supported for directory
+        /// buckets. For this API operation, only the <c>null</c> value of the version ID is supported
+        /// by directory buckets. You can only specify <c>null</c> to the <c>versionId</c> query
+        /// parameter in the request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Directory buckets</b> - For directory buckets, you must make requests for this
+        /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
+        /// requests in the format <c>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  </li> </ul> </note> 
         /// <para>
         /// To remove a specific version, you must use the <c>versionId</c> query parameter. Using
         /// this query parameter permanently deletes the version. If the object deleted is a delete
-        /// marker, Amazon S3 sets the response header <c>x-amz-delete-marker</c> to true. If
-        /// the object you want to delete is in a bucket where the bucket versioning configuration
-        /// is MFA delete enabled, you must include the <c>x-amz-mfa</c> request header in the
+        /// marker, Amazon S3 sets the response header <c>x-amz-delete-marker</c> to true. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If the object you want to delete is in a bucket where the bucket versioning configuration
+        /// is MFA Delete enabled, you must include the <c>x-amz-mfa</c> request header in the
         /// DELETE <c>versionId</c> request. Requests that include <c>x-amz-mfa</c> must use HTTPS.
-        /// For more information about MFA delete and to see example requests, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMFADelete.html">Using
-        /// MFA delete</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectDELETE.html#ExampleVersionObjectDelete">Sample
-        /// request</a> in the <i>Amazon S3 User Guide</i>.
+        /// For more information about MFA Delete, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMFADelete.html">Using
+        /// MFA Delete</a> in the <i>Amazon S3 User Guide</i>. To see sample requests that use
+        /// versioning, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectDELETE.html#ExampleVersionObjectDelete">Sample
+        /// Request</a>. 
         /// </para>
-        ///  <note> <ul> <li> 
+        ///  <note> 
         /// <para>
-        /// S3 Versioning isn't enabled and supported for directory buckets. For this API operation,
-        /// only the <c>null</c> value of the version ID is supported by directory buckets. You
-        /// can only specify <c>null</c> to the <c>versionId</c> query parameter in the request.
+        ///  <b>Directory buckets</b> - MFA delete is not supported by directory buckets.
         /// </para>
-        ///  </li> <li> 
+        ///  </note> 
         /// <para>
-        /// For directory buckets, you must make requests for this API operation to the Zonal
-        /// endpoint. These endpoints support virtual-hosted-style requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// You can delete objects by explicitly calling DELETE Object or calling (<a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>)
+        /// to enable Amazon S3 to remove them for you. If you want to block users or accounts
+        /// from removing or deleting objects from your bucket, you must deny them the <c>s3:DeleteObject</c>,
+        /// <c>s3:DeleteObjectVersion</c>, and <c>s3:PutLifeCycleConfiguration</c> actions. 
         /// </para>
-        ///  </li> <li> 
+        ///  <note> 
         /// <para>
-        /// MFA delete is not supported by directory buckets.
+        ///  <b>Directory buckets</b> - S3 Lifecycle is not supported by directory buckets.
         /// </para>
-        ///  </li> </ul> </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
+        ///  </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
         ///  <b>General purpose bucket permissions</b> - The following permissions are required
         /// in your policies when your <c>DeleteObjects</c> request includes specific headers.
@@ -6309,31 +6901,30 @@ namespace Amazon.S3
         ///  <b> <c>s3:DeleteObject</c> </b> - To delete an object from a bucket, you must always
         /// have the <c>s3:DeleteObject</c> permission.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// You can also use <a>PutBucketLifecycle</a> to delete objects in Amazon S3.
-        /// </para>
-        ///  </note> </li> <li> 
+        ///  </li> <li> 
         /// <para>
         ///  <b> <c>s3:DeleteObjectVersion</c> </b> - To delete a specific version of an object
         /// from a versioning-enabled bucket, you must have the <c>s3:DeleteObjectVersion</c>
         /// permission.
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// If you want to block users or accounts from removing or deleting objects from your
-        /// bucket, you must deny them the <c>s3:DeleteObject</c>, <c>s3:DeleteObjectVersion</c>,
-        /// and <c>s3:PutLifeCycleConfiguration</c> permissions.
-        /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <b>Directory buckets permissions</b> - To grant access to this API operation on a
-        /// directory bucket, we recommend that you use the <a>CreateSession</a> API operation
-        /// for session-based authorization.
+        ///  <b>Directory bucket permissions</b> - To grant access to this API operation on a
+        /// directory bucket, we recommend that you use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
+        /// <c>CreateSession</c> </a> API operation for session-based authorization. Specifically,
+        /// you grant the <c>s3express:CreateSession</c> permission to the directory bucket in
+        /// a bucket policy or an IAM identity-based policy. Then, you make the <c>CreateSession</c>
+        /// API call on the bucket to obtain a session token. With the session token in your request
+        /// header, you can make API requests to this operation. After the session token expires,
+        /// you make another <c>CreateSession</c> API call to generate a new session token for
+        /// use. Amazon Web Services CLI or SDKs create session and refresh the session token
+        /// automatically to avoid service interruptions when a session expires. For more information
+        /// about authorization, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
+        /// <c>CreateSession</c> </a>.
         /// </para>
         ///  </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -6346,7 +6937,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name of the bucket containing the object.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The bucket name of the bucket containing the object.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Key name of the object to delete.</param>
         /// <param name="versionId">Version ID used to reference a specific version of the object. <note> For directory buckets in this API operation, only the <c>null</c> value of the version ID is supported. </note></param>
         /// <param name="cancellationToken">
@@ -6359,40 +6950,82 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// Removes an object from a bucket. The behavior depends on the bucket's versioning state.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/DeletingObjects.html#DeletingObjects-best-practices">Best
-        /// practices to consider before deleting an object</a>.
+        /// Removes an object from a bucket. The behavior depends on the bucket's versioning state:
         /// 
-        ///  
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// If bucket versioning is not enabled, the operation permanently deletes the object.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If bucket versioning is enabled, the operation inserts a delete marker, which becomes
+        /// the current version of the object. To permanently delete an object in a versioned
+        /// bucket, you must include the object’s <c>versionId</c> in the request. For more information
+        /// about versioning-enabled buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/DeletingObjectVersions.html">Deleting
+        /// object versions from a versioning-enabled bucket</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If bucket versioning is suspended, the operation removes the object that has a null
+        /// <c>versionId</c>, if there is one, and inserts a delete marker that becomes the current
+        /// version of the object. If there isn't an object with a null <c>versionId</c>, and
+        /// all versions of the object have a <c>versionId</c>, Amazon S3 does not remove the
+        /// object and only inserts a delete marker. To permanently delete an object that has
+        /// a <c>versionId</c>, you must include the object’s <c>versionId</c> in the request.
+        /// For more information about versioning-suspended buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/DeletingObjectsfromVersioningSuspendedBuckets.html">Deleting
+        /// objects from versioning-suspended buckets</a>.
+        /// </para>
+        ///  </li> </ul> <note> <ul> <li> 
+        /// <para>
+        ///  <b>Directory buckets</b> - S3 Versioning isn't enabled and supported for directory
+        /// buckets. For this API operation, only the <c>null</c> value of the version ID is supported
+        /// by directory buckets. You can only specify <c>null</c> to the <c>versionId</c> query
+        /// parameter in the request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Directory buckets</b> - For directory buckets, you must make requests for this
+        /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
+        /// requests in the format <c>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  </li> </ul> </note> 
         /// <para>
         /// To remove a specific version, you must use the <c>versionId</c> query parameter. Using
         /// this query parameter permanently deletes the version. If the object deleted is a delete
-        /// marker, Amazon S3 sets the response header <c>x-amz-delete-marker</c> to true. If
-        /// the object you want to delete is in a bucket where the bucket versioning configuration
-        /// is MFA delete enabled, you must include the <c>x-amz-mfa</c> request header in the
+        /// marker, Amazon S3 sets the response header <c>x-amz-delete-marker</c> to true. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If the object you want to delete is in a bucket where the bucket versioning configuration
+        /// is MFA Delete enabled, you must include the <c>x-amz-mfa</c> request header in the
         /// DELETE <c>versionId</c> request. Requests that include <c>x-amz-mfa</c> must use HTTPS.
-        /// For more information about MFA delete and to see example requests, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMFADelete.html">Using
-        /// MFA delete</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectDELETE.html#ExampleVersionObjectDelete">Sample
-        /// request</a> in the <i>Amazon S3 User Guide</i>.
+        /// For more information about MFA Delete, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMFADelete.html">Using
+        /// MFA Delete</a> in the <i>Amazon S3 User Guide</i>. To see sample requests that use
+        /// versioning, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectDELETE.html#ExampleVersionObjectDelete">Sample
+        /// Request</a>. 
         /// </para>
-        ///  <note> <ul> <li> 
+        ///  <note> 
         /// <para>
-        /// S3 Versioning isn't enabled and supported for directory buckets. For this API operation,
-        /// only the <c>null</c> value of the version ID is supported by directory buckets. You
-        /// can only specify <c>null</c> to the <c>versionId</c> query parameter in the request.
+        ///  <b>Directory buckets</b> - MFA delete is not supported by directory buckets.
         /// </para>
-        ///  </li> <li> 
+        ///  </note> 
         /// <para>
-        /// For directory buckets, you must make requests for this API operation to the Zonal
-        /// endpoint. These endpoints support virtual-hosted-style requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// You can delete objects by explicitly calling DELETE Object or calling (<a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>)
+        /// to enable Amazon S3 to remove them for you. If you want to block users or accounts
+        /// from removing or deleting objects from your bucket, you must deny them the <c>s3:DeleteObject</c>,
+        /// <c>s3:DeleteObjectVersion</c>, and <c>s3:PutLifeCycleConfiguration</c> actions. 
         /// </para>
-        ///  </li> <li> 
+        ///  <note> 
         /// <para>
-        /// MFA delete is not supported by directory buckets.
+        ///  <b>Directory buckets</b> - S3 Lifecycle is not supported by directory buckets.
         /// </para>
-        ///  </li> </ul> </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
+        ///  </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
         ///  <b>General purpose bucket permissions</b> - The following permissions are required
         /// in your policies when your <c>DeleteObjects</c> request includes specific headers.
@@ -6402,31 +7035,30 @@ namespace Amazon.S3
         ///  <b> <c>s3:DeleteObject</c> </b> - To delete an object from a bucket, you must always
         /// have the <c>s3:DeleteObject</c> permission.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// You can also use <a>PutBucketLifecycle</a> to delete objects in Amazon S3.
-        /// </para>
-        ///  </note> </li> <li> 
+        ///  </li> <li> 
         /// <para>
         ///  <b> <c>s3:DeleteObjectVersion</c> </b> - To delete a specific version of an object
         /// from a versioning-enabled bucket, you must have the <c>s3:DeleteObjectVersion</c>
         /// permission.
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// If you want to block users or accounts from removing or deleting objects from your
-        /// bucket, you must deny them the <c>s3:DeleteObject</c>, <c>s3:DeleteObjectVersion</c>,
-        /// and <c>s3:PutLifeCycleConfiguration</c> permissions.
-        /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <b>Directory buckets permissions</b> - To grant access to this API operation on a
-        /// directory bucket, we recommend that you use the <a>CreateSession</a> API operation
-        /// for session-based authorization.
+        ///  <b>Directory bucket permissions</b> - To grant access to this API operation on a
+        /// directory bucket, we recommend that you use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
+        /// <c>CreateSession</c> </a> API operation for session-based authorization. Specifically,
+        /// you grant the <c>s3express:CreateSession</c> permission to the directory bucket in
+        /// a bucket policy or an IAM identity-based policy. Then, you make the <c>CreateSession</c>
+        /// API call on the bucket to obtain a session token. With the session token in your request
+        /// header, you can make API requests to this operation. After the session token expires,
+        /// you make another <c>CreateSession</c> API call to generate a new session token for
+        /// use. Amazon Web Services CLI or SDKs create session and refresh the session token
+        /// automatically to avoid service interruptions when a session expires. For more information
+        /// about authorization, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
+        /// <c>CreateSession</c> </a>.
         /// </para>
         ///  </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -6477,9 +7109,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets</b> - For directory buckets, you must make requests for this
         /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
-        /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// requests in the format <c>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </li> </ul> </note> 
         /// <para>
@@ -6549,7 +7184,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -6614,9 +7249,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets</b> - For directory buckets, you must make requests for this
         /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
-        /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// requests in the format <c>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </li> </ul> </note> 
         /// <para>
@@ -6686,7 +7324,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -6736,7 +7374,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -6782,7 +7420,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -6834,7 +7472,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -6881,7 +7519,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -6934,7 +7572,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -6988,7 +7626,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -7043,7 +7681,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -7101,7 +7739,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -7163,7 +7801,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -7217,7 +7855,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -7277,7 +7915,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -7330,7 +7968,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -7426,7 +8064,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -7492,7 +8130,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -7527,7 +8165,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -7587,7 +8225,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -7653,7 +8291,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -7705,7 +8343,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -7763,7 +8401,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -7815,7 +8453,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -7868,7 +8506,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -7924,7 +8562,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -7984,7 +8622,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -8016,7 +8654,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -8049,7 +8687,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -8085,7 +8723,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -8119,13 +8757,91 @@ namespace Amazon.S3
 
         #endregion
         
+        #region  GetBucketMetadataTableConfiguration
+
+
+        /// <summary>
+        /// Retrieves the metadata table configuration for a general purpose bucket. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-overview.html">Accelerating
+        /// data discovery with S3 Metadata</a> in the <i>Amazon S3 User Guide</i>. 
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// To use this operation, you must have the <c>s3:GetBucketMetadataTableConfiguration</c>
+        /// permission. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-permissions.html">Setting
+        /// up permissions for configuring metadata tables</a> in the <i>Amazon S3 User Guide</i>.
+        /// 
+        /// </para>
+        ///  </dd> </dl> 
+        /// <para>
+        /// The following operations are related to <c>GetBucketMetadataTableConfiguration</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucketMetadataTableConfiguration.html">CreateBucketMetadataTableConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketMetadataTableConfiguration.html">DeleteBucketMetadataTableConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketMetadataTableConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetBucketMetadataTableConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketMetadataTableConfiguration">REST API Reference for GetBucketMetadataTableConfiguration Operation</seealso>
+        GetBucketMetadataTableConfigurationResponse GetBucketMetadataTableConfiguration(GetBucketMetadataTableConfigurationRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves the metadata table configuration for a general purpose bucket. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-overview.html">Accelerating
+        /// data discovery with S3 Metadata</a> in the <i>Amazon S3 User Guide</i>. 
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// To use this operation, you must have the <c>s3:GetBucketMetadataTableConfiguration</c>
+        /// permission. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-permissions.html">Setting
+        /// up permissions for configuring metadata tables</a> in the <i>Amazon S3 User Guide</i>.
+        /// 
+        /// </para>
+        ///  </dd> </dl> 
+        /// <para>
+        /// The following operations are related to <c>GetBucketMetadataTableConfiguration</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucketMetadataTableConfiguration.html">CreateBucketMetadataTableConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketMetadataTableConfiguration.html">DeleteBucketMetadataTableConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketMetadataTableConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetBucketMetadataTableConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketMetadataTableConfiguration">REST API Reference for GetBucketMetadataTableConfiguration Operation</seealso>
+        Task<GetBucketMetadataTableConfigurationResponse> GetBucketMetadataTableConfigurationAsync(GetBucketMetadataTableConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetBucketMetricsConfiguration
 
 
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -8182,7 +8898,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -8245,7 +8961,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -8304,7 +9020,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -8364,7 +9080,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -8427,7 +9143,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -8494,7 +9210,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -8533,7 +9249,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -8582,10 +9298,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
         /// API operation to the Regional endpoint. These endpoints support path-style requests
-        /// in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i>
-        /// </c>. Virtual-hosted-style requests aren't supported. For more information, see <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i>
+        /// </c>. Virtual-hosted-style requests aren't supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </note> <dl> <dt>Permissions</dt> <dd> 
         /// <para>
@@ -8640,7 +9358,7 @@ namespace Amazon.S3
         /// </para>
         ///  </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -8653,7 +9371,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name to get the bucket policy for.  <b>Directory buckets </b> - When you use this operation with a directory bucket, you must use path-style requests in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i> </c>. Virtual-hosted-style requests aren't supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must also follow the format <c> <i>bucket_base_name</i>--<i>az_id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>   <b>Access points</b> - When you use this API operation with an access point, provide the alias of the access point in place of the bucket name.  <b>Object Lambda access points</b> - When you use this API operation with an Object Lambda access point, provide the alias of the Object Lambda access point in place of the bucket name. If the Object Lambda access point alias in a request is not valid, the error code <c>InvalidAccessPointAliasError</c> is returned. For more information about <c>InvalidAccessPointAliasError</c>, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List of Error Codes</a>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note></param>
+        /// <param name="bucketName">The bucket name to get the bucket policy for.  <b>Directory buckets </b> - When you use this operation with a directory bucket, you must use path-style requests in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i> </c>. Virtual-hosted-style requests aren't supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must also follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>   <b>Access points</b> - When you use this API operation with an access point, provide the alias of the access point in place of the bucket name.  <b>Object Lambda access points</b> - When you use this API operation with an Object Lambda access point, provide the alias of the Object Lambda access point in place of the bucket name. If the Object Lambda access point alias in a request is not valid, the error code <c>InvalidAccessPointAliasError</c> is returned. For more information about <c>InvalidAccessPointAliasError</c>, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List of Error Codes</a>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note></param>
         /// 
         /// <returns>The response from the GetBucketPolicy service method, as returned by S3.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketPolicy">REST API Reference for GetBucketPolicy Operation</seealso>
@@ -8666,10 +9384,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
         /// API operation to the Regional endpoint. These endpoints support path-style requests
-        /// in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i>
-        /// </c>. Virtual-hosted-style requests aren't supported. For more information, see <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i>
+        /// </c>. Virtual-hosted-style requests aren't supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </note> <dl> <dt>Permissions</dt> <dd> 
         /// <para>
@@ -8724,7 +9444,7 @@ namespace Amazon.S3
         /// </para>
         ///  </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -8751,10 +9471,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
         /// API operation to the Regional endpoint. These endpoints support path-style requests
-        /// in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i>
-        /// </c>. Virtual-hosted-style requests aren't supported. For more information, see <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i>
+        /// </c>. Virtual-hosted-style requests aren't supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </note> <dl> <dt>Permissions</dt> <dd> 
         /// <para>
@@ -8809,7 +9531,7 @@ namespace Amazon.S3
         /// </para>
         ///  </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -8822,7 +9544,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name to get the bucket policy for.  <b>Directory buckets </b> - When you use this operation with a directory bucket, you must use path-style requests in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i> </c>. Virtual-hosted-style requests aren't supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must also follow the format <c> <i>bucket_base_name</i>--<i>az_id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>   <b>Access points</b> - When you use this API operation with an access point, provide the alias of the access point in place of the bucket name.  <b>Object Lambda access points</b> - When you use this API operation with an Object Lambda access point, provide the alias of the Object Lambda access point in place of the bucket name. If the Object Lambda access point alias in a request is not valid, the error code <c>InvalidAccessPointAliasError</c> is returned. For more information about <c>InvalidAccessPointAliasError</c>, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List of Error Codes</a>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note></param>
+        /// <param name="bucketName">The bucket name to get the bucket policy for.  <b>Directory buckets </b> - When you use this operation with a directory bucket, you must use path-style requests in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i> </c>. Virtual-hosted-style requests aren't supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must also follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>   <b>Access points</b> - When you use this API operation with an access point, provide the alias of the access point in place of the bucket name.  <b>Object Lambda access points</b> - When you use this API operation with an Object Lambda access point, provide the alias of the Object Lambda access point in place of the bucket name. If the Object Lambda access point alias in a request is not valid, the error code <c>InvalidAccessPointAliasError</c> is returned. For more information about <c>InvalidAccessPointAliasError</c>, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List of Error Codes</a>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note></param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -8839,10 +9561,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
         /// API operation to the Regional endpoint. These endpoints support path-style requests
-        /// in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i>
-        /// </c>. Virtual-hosted-style requests aren't supported. For more information, see <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i>
+        /// </c>. Virtual-hosted-style requests aren't supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </note> <dl> <dt>Permissions</dt> <dd> 
         /// <para>
@@ -8897,7 +9621,7 @@ namespace Amazon.S3
         /// </para>
         ///  </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -8927,7 +9651,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -8978,7 +9702,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -9063,7 +9787,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -9091,7 +9815,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -9120,7 +9844,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -9152,7 +9876,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -9188,7 +9912,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -9239,7 +9963,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -9296,7 +10020,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -9342,7 +10066,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -9389,7 +10113,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -9439,7 +10163,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -9493,7 +10217,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -9534,7 +10258,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -9576,7 +10300,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -9621,7 +10345,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -9670,7 +10394,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -9726,7 +10450,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -9783,7 +10507,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -9843,7 +10567,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -9905,37 +10629,68 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// This operation is not supported by directory buckets.
-        /// </para>
-        ///  </note> <note> 
-        /// <para>
-        /// Bucket lifecycle configuration now supports specifying a lifecycle rule using an object
-        /// key name prefix, one or more object tags, object size, or any combination of these.
-        /// Accordingly, this section describes the latest API. The previous version of the API
-        /// supported filtering based only on an object key name prefix, which is supported for
-        /// backward compatibility. For the related API description, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycle.html">GetBucketLifecycle</a>.
-        /// Accordingly, this section describes the latest API. The response describes the new
-        /// filter element that you can use to specify a filter to select a subset of objects
-        /// to which the rule applies. If you are using a previous version of the lifecycle configuration,
-        /// it still works. For the earlier action, 
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Returns the lifecycle configuration information set on the bucket. For information
         /// about lifecycle configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html">Object
         /// Lifecycle Management</a>.
+        /// 
+        ///  
+        /// <para>
+        /// Bucket lifecycle configuration now supports specifying a lifecycle rule using an object
+        /// key name prefix, one or more object tags, object size, or any combination of these.
+        /// Accordingly, this section describes the latest API, which is compatible with the new
+        /// functionality. The previous version of the API supported filtering based only on an
+        /// object key name prefix, which is supported for general purpose buckets for backward
+        /// compatibility. For the related API description, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycle.html">GetBucketLifecycle</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Lifecyle configurations for directory buckets only support expiring objects and cancelling
+        /// multipart uploads. Expiring of versioned objects, transitions and tag filters are
+        /// not supported.
+        /// </para>
+        ///  </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
+        /// <para>
+        ///  <b>General purpose bucket permissions</b> - By default, all Amazon S3 resources are
+        /// private, including buckets, objects, and related subresources (for example, lifecycle
+        /// configuration and website configuration). Only the resource owner (that is, the Amazon
+        /// Web Services account that created it) can access the resource. The resource owner
+        /// can optionally grant access permissions to others by writing an access policy. For
+        /// this operation, a user must have the <c>s3:GetLifecycleConfiguration</c> permission.
         /// </para>
         ///  
         /// <para>
-        /// To use this operation, you must have permission to perform the <c>s3:GetLifecycleConfiguration</c>
-        /// action. The bucket owner has this permission, by default. The bucket owner can grant
-        /// this permission to others. For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
-        /// Related to Bucket Subresource Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
+        /// For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
         /// Access Permissions to Your Amazon S3 Resources</a>.
         /// </para>
+        ///  </li> </ul> <ul> <li> 
+        /// <para>
+        ///  <b>Directory bucket permissions</b> - You must have the <c>s3express:GetLifecycleConfiguration</c>
+        /// permission in an IAM identity-based policy to use this operation. Cross-account access
+        /// to this API operation isn't supported. The resource owner can optionally grant access
+        /// permissions to others by creating a role or user for them as long as they are within
+        /// the same account as the owner and resource.
+        /// </para>
         ///  
+        /// <para>
+        /// For more information about directory bucket policies and permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-security-iam.html">Authorizing
+        /// Regional endpoint APIs with IAM</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
+        /// API operation to the Regional endpoint. These endpoints support path-style requests
+        /// in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i>
+        /// </c>. Virtual-hosted-style requests aren't supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  </note> </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
+        /// <para>
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
+        /// </para>
+        ///  </dd> </dl> 
         /// <para>
         ///  <c>GetBucketLifecycleConfiguration</c> has the following special error:
         /// </para>
@@ -9983,37 +10738,68 @@ namespace Amazon.S3
         GetLifecycleConfigurationResponse GetLifecycleConfiguration(string bucketName);
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// This operation is not supported by directory buckets.
-        /// </para>
-        ///  </note> <note> 
-        /// <para>
-        /// Bucket lifecycle configuration now supports specifying a lifecycle rule using an object
-        /// key name prefix, one or more object tags, object size, or any combination of these.
-        /// Accordingly, this section describes the latest API. The previous version of the API
-        /// supported filtering based only on an object key name prefix, which is supported for
-        /// backward compatibility. For the related API description, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycle.html">GetBucketLifecycle</a>.
-        /// Accordingly, this section describes the latest API. The response describes the new
-        /// filter element that you can use to specify a filter to select a subset of objects
-        /// to which the rule applies. If you are using a previous version of the lifecycle configuration,
-        /// it still works. For the earlier action, 
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Returns the lifecycle configuration information set on the bucket. For information
         /// about lifecycle configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html">Object
         /// Lifecycle Management</a>.
+        /// 
+        ///  
+        /// <para>
+        /// Bucket lifecycle configuration now supports specifying a lifecycle rule using an object
+        /// key name prefix, one or more object tags, object size, or any combination of these.
+        /// Accordingly, this section describes the latest API, which is compatible with the new
+        /// functionality. The previous version of the API supported filtering based only on an
+        /// object key name prefix, which is supported for general purpose buckets for backward
+        /// compatibility. For the related API description, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycle.html">GetBucketLifecycle</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Lifecyle configurations for directory buckets only support expiring objects and cancelling
+        /// multipart uploads. Expiring of versioned objects, transitions and tag filters are
+        /// not supported.
+        /// </para>
+        ///  </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
+        /// <para>
+        ///  <b>General purpose bucket permissions</b> - By default, all Amazon S3 resources are
+        /// private, including buckets, objects, and related subresources (for example, lifecycle
+        /// configuration and website configuration). Only the resource owner (that is, the Amazon
+        /// Web Services account that created it) can access the resource. The resource owner
+        /// can optionally grant access permissions to others by writing an access policy. For
+        /// this operation, a user must have the <c>s3:GetLifecycleConfiguration</c> permission.
         /// </para>
         ///  
         /// <para>
-        /// To use this operation, you must have permission to perform the <c>s3:GetLifecycleConfiguration</c>
-        /// action. The bucket owner has this permission, by default. The bucket owner can grant
-        /// this permission to others. For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
-        /// Related to Bucket Subresource Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
+        /// For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
         /// Access Permissions to Your Amazon S3 Resources</a>.
         /// </para>
+        ///  </li> </ul> <ul> <li> 
+        /// <para>
+        ///  <b>Directory bucket permissions</b> - You must have the <c>s3express:GetLifecycleConfiguration</c>
+        /// permission in an IAM identity-based policy to use this operation. Cross-account access
+        /// to this API operation isn't supported. The resource owner can optionally grant access
+        /// permissions to others by creating a role or user for them as long as they are within
+        /// the same account as the owner and resource.
+        /// </para>
         ///  
+        /// <para>
+        /// For more information about directory bucket policies and permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-security-iam.html">Authorizing
+        /// Regional endpoint APIs with IAM</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
+        /// API operation to the Regional endpoint. These endpoints support path-style requests
+        /// in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i>
+        /// </c>. Virtual-hosted-style requests aren't supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  </note> </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
+        /// <para>
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
+        /// </para>
+        ///  </dd> </dl> 
         /// <para>
         ///  <c>GetBucketLifecycleConfiguration</c> has the following special error:
         /// </para>
@@ -10062,37 +10848,68 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// This operation is not supported by directory buckets.
-        /// </para>
-        ///  </note> <note> 
-        /// <para>
-        /// Bucket lifecycle configuration now supports specifying a lifecycle rule using an object
-        /// key name prefix, one or more object tags, object size, or any combination of these.
-        /// Accordingly, this section describes the latest API. The previous version of the API
-        /// supported filtering based only on an object key name prefix, which is supported for
-        /// backward compatibility. For the related API description, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycle.html">GetBucketLifecycle</a>.
-        /// Accordingly, this section describes the latest API. The response describes the new
-        /// filter element that you can use to specify a filter to select a subset of objects
-        /// to which the rule applies. If you are using a previous version of the lifecycle configuration,
-        /// it still works. For the earlier action, 
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Returns the lifecycle configuration information set on the bucket. For information
         /// about lifecycle configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html">Object
         /// Lifecycle Management</a>.
+        /// 
+        ///  
+        /// <para>
+        /// Bucket lifecycle configuration now supports specifying a lifecycle rule using an object
+        /// key name prefix, one or more object tags, object size, or any combination of these.
+        /// Accordingly, this section describes the latest API, which is compatible with the new
+        /// functionality. The previous version of the API supported filtering based only on an
+        /// object key name prefix, which is supported for general purpose buckets for backward
+        /// compatibility. For the related API description, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycle.html">GetBucketLifecycle</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Lifecyle configurations for directory buckets only support expiring objects and cancelling
+        /// multipart uploads. Expiring of versioned objects, transitions and tag filters are
+        /// not supported.
+        /// </para>
+        ///  </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
+        /// <para>
+        ///  <b>General purpose bucket permissions</b> - By default, all Amazon S3 resources are
+        /// private, including buckets, objects, and related subresources (for example, lifecycle
+        /// configuration and website configuration). Only the resource owner (that is, the Amazon
+        /// Web Services account that created it) can access the resource. The resource owner
+        /// can optionally grant access permissions to others by writing an access policy. For
+        /// this operation, a user must have the <c>s3:GetLifecycleConfiguration</c> permission.
         /// </para>
         ///  
         /// <para>
-        /// To use this operation, you must have permission to perform the <c>s3:GetLifecycleConfiguration</c>
-        /// action. The bucket owner has this permission, by default. The bucket owner can grant
-        /// this permission to others. For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
-        /// Related to Bucket Subresource Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
+        /// For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
         /// Access Permissions to Your Amazon S3 Resources</a>.
         /// </para>
+        ///  </li> </ul> <ul> <li> 
+        /// <para>
+        ///  <b>Directory bucket permissions</b> - You must have the <c>s3express:GetLifecycleConfiguration</c>
+        /// permission in an IAM identity-based policy to use this operation. Cross-account access
+        /// to this API operation isn't supported. The resource owner can optionally grant access
+        /// permissions to others by creating a role or user for them as long as they are within
+        /// the same account as the owner and resource.
+        /// </para>
         ///  
+        /// <para>
+        /// For more information about directory bucket policies and permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-security-iam.html">Authorizing
+        /// Regional endpoint APIs with IAM</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
+        /// API operation to the Regional endpoint. These endpoints support path-style requests
+        /// in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i>
+        /// </c>. Virtual-hosted-style requests aren't supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  </note> </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
+        /// <para>
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
+        /// </para>
+        ///  </dd> </dl> 
         /// <para>
         ///  <c>GetBucketLifecycleConfiguration</c> has the following special error:
         /// </para>
@@ -10144,37 +10961,68 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// This operation is not supported by directory buckets.
-        /// </para>
-        ///  </note> <note> 
-        /// <para>
-        /// Bucket lifecycle configuration now supports specifying a lifecycle rule using an object
-        /// key name prefix, one or more object tags, object size, or any combination of these.
-        /// Accordingly, this section describes the latest API. The previous version of the API
-        /// supported filtering based only on an object key name prefix, which is supported for
-        /// backward compatibility. For the related API description, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycle.html">GetBucketLifecycle</a>.
-        /// Accordingly, this section describes the latest API. The response describes the new
-        /// filter element that you can use to specify a filter to select a subset of objects
-        /// to which the rule applies. If you are using a previous version of the lifecycle configuration,
-        /// it still works. For the earlier action, 
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Returns the lifecycle configuration information set on the bucket. For information
         /// about lifecycle configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html">Object
         /// Lifecycle Management</a>.
+        /// 
+        ///  
+        /// <para>
+        /// Bucket lifecycle configuration now supports specifying a lifecycle rule using an object
+        /// key name prefix, one or more object tags, object size, or any combination of these.
+        /// Accordingly, this section describes the latest API, which is compatible with the new
+        /// functionality. The previous version of the API supported filtering based only on an
+        /// object key name prefix, which is supported for general purpose buckets for backward
+        /// compatibility. For the related API description, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycle.html">GetBucketLifecycle</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Lifecyle configurations for directory buckets only support expiring objects and cancelling
+        /// multipart uploads. Expiring of versioned objects, transitions and tag filters are
+        /// not supported.
+        /// </para>
+        ///  </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
+        /// <para>
+        ///  <b>General purpose bucket permissions</b> - By default, all Amazon S3 resources are
+        /// private, including buckets, objects, and related subresources (for example, lifecycle
+        /// configuration and website configuration). Only the resource owner (that is, the Amazon
+        /// Web Services account that created it) can access the resource. The resource owner
+        /// can optionally grant access permissions to others by writing an access policy. For
+        /// this operation, a user must have the <c>s3:GetLifecycleConfiguration</c> permission.
         /// </para>
         ///  
         /// <para>
-        /// To use this operation, you must have permission to perform the <c>s3:GetLifecycleConfiguration</c>
-        /// action. The bucket owner has this permission, by default. The bucket owner can grant
-        /// this permission to others. For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
-        /// Related to Bucket Subresource Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
+        /// For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
         /// Access Permissions to Your Amazon S3 Resources</a>.
         /// </para>
+        ///  </li> </ul> <ul> <li> 
+        /// <para>
+        ///  <b>Directory bucket permissions</b> - You must have the <c>s3express:GetLifecycleConfiguration</c>
+        /// permission in an IAM identity-based policy to use this operation. Cross-account access
+        /// to this API operation isn't supported. The resource owner can optionally grant access
+        /// permissions to others by creating a role or user for them as long as they are within
+        /// the same account as the owner and resource.
+        /// </para>
         ///  
+        /// <para>
+        /// For more information about directory bucket policies and permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-security-iam.html">Authorizing
+        /// Regional endpoint APIs with IAM</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
+        /// API operation to the Regional endpoint. These endpoints support path-style requests
+        /// in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i>
+        /// </c>. Virtual-hosted-style requests aren't supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  </note> </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
+        /// <para>
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
+        /// </para>
+        ///  </dd> </dl> 
         /// <para>
         ///  <c>GetBucketLifecycleConfiguration</c> has the following special error:
         /// </para>
@@ -10253,9 +11101,12 @@ namespace Amazon.S3
         /// in the bucket named <c>examplebucket--use1-az5--x-s3</c>, specify the object key name
         /// as <c>/photos/2006/February/sample.jpg</c>. Also, when you make requests to this API
         /// operation, your requests are sent to the Zonal endpoint. These endpoints support virtual-hosted-style
-        /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// requests in the format <c>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  <dl> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
@@ -10405,7 +11256,7 @@ namespace Amazon.S3
         /// </para>
         ///  </note> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -10423,7 +11274,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name containing the object.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.  <b>Object Lambda access points</b> - When you use this action with an Object Lambda access point, you must direct requests to the Object Lambda access point hostname. The Object Lambda access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-object-lambda.<i>Region</i>.amazonaws.com. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The bucket name containing the object.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.  <b>Object Lambda access points</b> - When you use this action with an Object Lambda access point, you must direct requests to the Object Lambda access point hostname. The Object Lambda access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-object-lambda.<i>Region</i>.amazonaws.com. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Key of the object to get.</param>
         /// 
         /// <returns>The response from the GetObject service method, as returned by S3.</returns>
@@ -10454,9 +11305,12 @@ namespace Amazon.S3
         /// in the bucket named <c>examplebucket--use1-az5--x-s3</c>, specify the object key name
         /// as <c>/photos/2006/February/sample.jpg</c>. Also, when you make requests to this API
         /// operation, your requests are sent to the Zonal endpoint. These endpoints support virtual-hosted-style
-        /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// requests in the format <c>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  <dl> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
@@ -10606,7 +11460,7 @@ namespace Amazon.S3
         /// </para>
         ///  </note> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -10624,7 +11478,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name containing the object.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.  <b>Object Lambda access points</b> - When you use this action with an Object Lambda access point, you must direct requests to the Object Lambda access point hostname. The Object Lambda access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-object-lambda.<i>Region</i>.amazonaws.com. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The bucket name containing the object.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.  <b>Object Lambda access points</b> - When you use this action with an Object Lambda access point, you must direct requests to the Object Lambda access point hostname. The Object Lambda access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-object-lambda.<i>Region</i>.amazonaws.com. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Key of the object to get.</param>
         /// <param name="versionId">Version ID used to reference a specific version of the object. By default, the <c>GetObject</c> operation returns the current version of an object. To return a different version, use the <c>versionId</c> subresource. <note> <ul> <li> If you include a <c>versionId</c> in your request header, you must have the <c>s3:GetObjectVersion</c> permission to access a specific version of an object. The <c>s3:GetObject</c> permission is not required in this scenario. </li> <li> If you request the current version of an object without a specific <c>versionId</c> in the request header, only the <c>s3:GetObject</c> permission is required. The <c>s3:GetObjectVersion</c> permission is not required in this scenario. </li> <li>  <b>Directory buckets</b> - S3 Versioning isn't enabled and supported for directory buckets. For this API operation, only the <c>null</c> value of the version ID is supported by directory buckets. You can only specify <c>null</c> to the <c>versionId</c> query parameter in the request. </li> </ul> </note> For more information about versioning, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketVersioning.html">PutBucketVersioning</a>.</param>
         /// 
@@ -10656,9 +11510,12 @@ namespace Amazon.S3
         /// in the bucket named <c>examplebucket--use1-az5--x-s3</c>, specify the object key name
         /// as <c>/photos/2006/February/sample.jpg</c>. Also, when you make requests to this API
         /// operation, your requests are sent to the Zonal endpoint. These endpoints support virtual-hosted-style
-        /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// requests in the format <c>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  <dl> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
@@ -10808,7 +11665,7 @@ namespace Amazon.S3
         /// </para>
         ///  </note> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -10857,9 +11714,12 @@ namespace Amazon.S3
         /// in the bucket named <c>examplebucket--use1-az5--x-s3</c>, specify the object key name
         /// as <c>/photos/2006/February/sample.jpg</c>. Also, when you make requests to this API
         /// operation, your requests are sent to the Zonal endpoint. These endpoints support virtual-hosted-style
-        /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// requests in the format <c>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  <dl> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
@@ -11009,7 +11869,7 @@ namespace Amazon.S3
         /// </para>
         ///  </note> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -11027,7 +11887,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name containing the object.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.  <b>Object Lambda access points</b> - When you use this action with an Object Lambda access point, you must direct requests to the Object Lambda access point hostname. The Object Lambda access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-object-lambda.<i>Region</i>.amazonaws.com. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The bucket name containing the object.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.  <b>Object Lambda access points</b> - When you use this action with an Object Lambda access point, you must direct requests to the Object Lambda access point hostname. The Object Lambda access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-object-lambda.<i>Region</i>.amazonaws.com. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Key of the object to get.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -11061,9 +11921,12 @@ namespace Amazon.S3
         /// in the bucket named <c>examplebucket--use1-az5--x-s3</c>, specify the object key name
         /// as <c>/photos/2006/February/sample.jpg</c>. Also, when you make requests to this API
         /// operation, your requests are sent to the Zonal endpoint. These endpoints support virtual-hosted-style
-        /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// requests in the format <c>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  <dl> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
@@ -11213,7 +12076,7 @@ namespace Amazon.S3
         /// </para>
         ///  </note> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -11231,7 +12094,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name containing the object.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.  <b>Object Lambda access points</b> - When you use this action with an Object Lambda access point, you must direct requests to the Object Lambda access point hostname. The Object Lambda access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-object-lambda.<i>Region</i>.amazonaws.com. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The bucket name containing the object.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.  <b>Object Lambda access points</b> - When you use this action with an Object Lambda access point, you must direct requests to the Object Lambda access point hostname. The Object Lambda access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-object-lambda.<i>Region</i>.amazonaws.com. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Key of the object to get.</param>
         /// <param name="versionId">Version ID used to reference a specific version of the object. By default, the <c>GetObject</c> operation returns the current version of an object. To return a different version, use the <c>versionId</c> subresource. <note> <ul> <li> If you include a <c>versionId</c> in your request header, you must have the <c>s3:GetObjectVersion</c> permission to access a specific version of an object. The <c>s3:GetObject</c> permission is not required in this scenario. </li> <li> If you request the current version of an object without a specific <c>versionId</c> in the request header, only the <c>s3:GetObject</c> permission is required. The <c>s3:GetObjectVersion</c> permission is not required in this scenario. </li> <li>  <b>Directory buckets</b> - S3 Versioning isn't enabled and supported for directory buckets. For this API operation, only the <c>null</c> value of the version ID is supported by directory buckets. You can only specify <c>null</c> to the <c>versionId</c> query parameter in the request. </li> </ul> </note> For more information about versioning, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketVersioning.html">PutBucketVersioning</a>.</param>
         /// <param name="cancellationToken">
@@ -11267,9 +12130,12 @@ namespace Amazon.S3
         /// in the bucket named <c>examplebucket--use1-az5--x-s3</c>, specify the object key name
         /// as <c>/photos/2006/February/sample.jpg</c>. Also, when you make requests to this API
         /// operation, your requests are sent to the Zonal endpoint. These endpoints support virtual-hosted-style
-        /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// requests in the format <c>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  <dl> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
@@ -11419,7 +12285,7 @@ namespace Amazon.S3
         /// </para>
         ///  </note> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -11454,7 +12320,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -11518,7 +12384,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -11599,9 +12465,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets</b> - For directory buckets, you must make requests for this
         /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
-        /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// requests in the format <c>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
@@ -11748,7 +12617,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -11818,9 +12687,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets</b> - For directory buckets, you must make requests for this
         /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
-        /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// requests in the format <c>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
@@ -11967,7 +12839,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -12032,7 +12904,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -12065,7 +12937,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -12104,7 +12976,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -12135,7 +13007,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -12291,7 +13163,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> <note> <ul> <li> 
         /// <para>
-        ///  <b>Directory buckets</b> - Delete marker is not supported by directory buckets.
+        ///  <b>Directory buckets</b> - Delete marker is not supported for directory buckets.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -12302,14 +13174,17 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> </note> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  <note> 
         /// <para>
         /// For directory buckets, you must make requests for this API operation to the Zonal
-        /// endpoint. These endpoints support virtual-hosted-style requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// endpoint. These endpoints support virtual-hosted-style requests in the format <c>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </note> </dd> </dl> 
         /// <para>
@@ -12327,7 +13202,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket that contains the object.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The name of the bucket that contains the object.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">The object key.</param>
         /// 
         /// <returns>The response from the GetObjectMetadata service method, as returned by S3.</returns>
@@ -12456,7 +13331,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> <note> <ul> <li> 
         /// <para>
-        ///  <b>Directory buckets</b> - Delete marker is not supported by directory buckets.
+        ///  <b>Directory buckets</b> - Delete marker is not supported for directory buckets.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -12467,14 +13342,17 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> </note> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  <note> 
         /// <para>
         /// For directory buckets, you must make requests for this API operation to the Zonal
-        /// endpoint. These endpoints support virtual-hosted-style requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// endpoint. These endpoints support virtual-hosted-style requests in the format <c>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </note> </dd> </dl> 
         /// <para>
@@ -12492,7 +13370,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket that contains the object.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The name of the bucket that contains the object.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">The object key.</param>
         /// <param name="versionId">Version ID used to reference a specific version of the object. <note> For directory buckets in this API operation, only the <c>null</c> value of the version ID is supported. </note></param>
         /// 
@@ -12622,7 +13500,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> <note> <ul> <li> 
         /// <para>
-        ///  <b>Directory buckets</b> - Delete marker is not supported by directory buckets.
+        ///  <b>Directory buckets</b> - Delete marker is not supported for directory buckets.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -12633,14 +13511,17 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> </note> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  <note> 
         /// <para>
         /// For directory buckets, you must make requests for this API operation to the Zonal
-        /// endpoint. These endpoints support virtual-hosted-style requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// endpoint. These endpoints support virtual-hosted-style requests in the format <c>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </note> </dd> </dl> 
         /// <para>
@@ -12787,7 +13668,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> <note> <ul> <li> 
         /// <para>
-        ///  <b>Directory buckets</b> - Delete marker is not supported by directory buckets.
+        ///  <b>Directory buckets</b> - Delete marker is not supported for directory buckets.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -12798,14 +13679,17 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> </note> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  <note> 
         /// <para>
         /// For directory buckets, you must make requests for this API operation to the Zonal
-        /// endpoint. These endpoints support virtual-hosted-style requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// endpoint. These endpoints support virtual-hosted-style requests in the format <c>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </note> </dd> </dl> 
         /// <para>
@@ -12823,7 +13707,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket that contains the object.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The name of the bucket that contains the object.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">The object key.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -12955,7 +13839,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> <note> <ul> <li> 
         /// <para>
-        ///  <b>Directory buckets</b> - Delete marker is not supported by directory buckets.
+        ///  <b>Directory buckets</b> - Delete marker is not supported for directory buckets.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -12966,14 +13850,17 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> </note> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  <note> 
         /// <para>
         /// For directory buckets, you must make requests for this API operation to the Zonal
-        /// endpoint. These endpoints support virtual-hosted-style requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// endpoint. These endpoints support virtual-hosted-style requests in the format <c>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </note> </dd> </dl> 
         /// <para>
@@ -12991,7 +13878,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket that contains the object.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The name of the bucket that contains the object.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">The object key.</param>
         /// <param name="versionId">Version ID used to reference a specific version of the object. <note> For directory buckets in this API operation, only the <c>null</c> value of the version ID is supported. </note></param>
         /// <param name="cancellationToken">
@@ -13125,7 +14012,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> <note> <ul> <li> 
         /// <para>
-        ///  <b>Directory buckets</b> - Delete marker is not supported by directory buckets.
+        ///  <b>Directory buckets</b> - Delete marker is not supported for directory buckets.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -13136,14 +14023,17 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> </note> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  <note> 
         /// <para>
         /// For directory buckets, you must make requests for this API operation to the Zonal
-        /// endpoint. These endpoints support virtual-hosted-style requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// endpoint. These endpoints support virtual-hosted-style requests in the format <c>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </note> </dd> </dl> 
         /// <para>
@@ -13178,7 +14068,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -13211,7 +14101,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -13250,7 +14140,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -13307,7 +14197,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -13370,7 +14260,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -13411,7 +14301,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -13452,7 +14342,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -13497,7 +14387,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -13545,7 +14435,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -13605,7 +14495,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -13700,9 +14590,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
         /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
-        /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// requests in the format <c>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </li> </ul> </note> <dl> <dt>Request signing</dt> <dd> 
         /// <para>
@@ -13894,7 +14787,7 @@ namespace Amazon.S3
         /// </para>
         ///  </note> </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -13927,7 +14820,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket where the multipart upload is initiated and where the object is uploaded.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The name of the bucket where the multipart upload is initiated and where the object is uploaded.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Object key for which the multipart upload is to be initiated.</param>
         /// 
         /// <returns>The response from the InitiateMultipartUpload service method, as returned by S3.</returns>
@@ -13966,9 +14859,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
         /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
-        /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// requests in the format <c>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </li> </ul> </note> <dl> <dt>Request signing</dt> <dd> 
         /// <para>
@@ -14160,7 +15056,7 @@ namespace Amazon.S3
         /// </para>
         ///  </note> </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -14232,9 +15128,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
         /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
-        /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// requests in the format <c>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </li> </ul> </note> <dl> <dt>Request signing</dt> <dd> 
         /// <para>
@@ -14426,7 +15325,7 @@ namespace Amazon.S3
         /// </para>
         ///  </note> </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -14459,7 +15358,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket where the multipart upload is initiated and where the object is uploaded.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The name of the bucket where the multipart upload is initiated and where the object is uploaded.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Object key for which the multipart upload is to be initiated.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -14502,9 +15401,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
         /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
-        /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// requests in the format <c>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </li> </ul> </note> <dl> <dt>Request signing</dt> <dd> 
         /// <para>
@@ -14696,7 +15598,7 @@ namespace Amazon.S3
         /// </para>
         ///  </note> </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -14746,7 +15648,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -14808,7 +15710,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -14876,7 +15778,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -14936,7 +15838,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -15002,7 +15904,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -15064,7 +15966,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -15132,7 +16034,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -15196,7 +16098,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -15266,12 +16168,13 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
         /// Returns a list of all buckets owned by the authenticated sender of the request. To
-        /// use this operation, you must have the <c>s3:ListAllMyBuckets</c> permission. 
+        /// grant IAM permission to use this operation, you must add the <c>s3:ListAllMyBuckets</c>
+        /// policy action. 
         /// </para>
         ///  
         /// <para>
@@ -15280,12 +16183,13 @@ namespace Amazon.S3
         /// </para>
         ///  <important> 
         /// <para>
-        /// We strongly recommend using only paginated requests. Unpaginated requests are only
-        /// supported for Amazon Web Services accounts set to the default general purpose bucket
-        /// quota of 10,000. If you have an approved general purpose bucket quota above 10,000,
-        /// you must send paginated requests to list your account’s buckets. All unpaginated ListBuckets
-        /// requests will be rejected for Amazon Web Services accounts with a general purpose
-        /// bucket quota greater than 10,000. 
+        /// We strongly recommend using only paginated <c>ListBuckets</c> requests. Unpaginated
+        /// <c>ListBuckets</c> requests are only supported for Amazon Web Services accounts set
+        /// to the default general purpose bucket quota of 10,000. If you have an approved general
+        /// purpose bucket quota above 10,000, you must send paginated <c>ListBuckets</c> requests
+        /// to list your account’s buckets. All unpaginated <c>ListBuckets</c> requests will be
+        /// rejected for Amazon Web Services accounts with a general purpose bucket quota greater
+        /// than 10,000. 
         /// </para>
         ///  </important>
         /// </summary>
@@ -15298,12 +16202,13 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
         /// Returns a list of all buckets owned by the authenticated sender of the request. To
-        /// use this operation, you must have the <c>s3:ListAllMyBuckets</c> permission. 
+        /// grant IAM permission to use this operation, you must add the <c>s3:ListAllMyBuckets</c>
+        /// policy action. 
         /// </para>
         ///  
         /// <para>
@@ -15312,12 +16217,13 @@ namespace Amazon.S3
         /// </para>
         ///  <important> 
         /// <para>
-        /// We strongly recommend using only paginated requests. Unpaginated requests are only
-        /// supported for Amazon Web Services accounts set to the default general purpose bucket
-        /// quota of 10,000. If you have an approved general purpose bucket quota above 10,000,
-        /// you must send paginated requests to list your account’s buckets. All unpaginated ListBuckets
-        /// requests will be rejected for Amazon Web Services accounts with a general purpose
-        /// bucket quota greater than 10,000. 
+        /// We strongly recommend using only paginated <c>ListBuckets</c> requests. Unpaginated
+        /// <c>ListBuckets</c> requests are only supported for Amazon Web Services accounts set
+        /// to the default general purpose bucket quota of 10,000. If you have an approved general
+        /// purpose bucket quota above 10,000, you must send paginated <c>ListBuckets</c> requests
+        /// to list your account’s buckets. All unpaginated <c>ListBuckets</c> requests will be
+        /// rejected for Amazon Web Services accounts with a general purpose bucket quota greater
+        /// than 10,000. 
         /// </para>
         ///  </important>
         /// </summary>
@@ -15331,12 +16237,13 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
         /// Returns a list of all buckets owned by the authenticated sender of the request. To
-        /// use this operation, you must have the <c>s3:ListAllMyBuckets</c> permission. 
+        /// grant IAM permission to use this operation, you must add the <c>s3:ListAllMyBuckets</c>
+        /// policy action. 
         /// </para>
         ///  
         /// <para>
@@ -15345,12 +16252,13 @@ namespace Amazon.S3
         /// </para>
         ///  <important> 
         /// <para>
-        /// We strongly recommend using only paginated requests. Unpaginated requests are only
-        /// supported for Amazon Web Services accounts set to the default general purpose bucket
-        /// quota of 10,000. If you have an approved general purpose bucket quota above 10,000,
-        /// you must send paginated requests to list your account’s buckets. All unpaginated ListBuckets
-        /// requests will be rejected for Amazon Web Services accounts with a general purpose
-        /// bucket quota greater than 10,000. 
+        /// We strongly recommend using only paginated <c>ListBuckets</c> requests. Unpaginated
+        /// <c>ListBuckets</c> requests are only supported for Amazon Web Services accounts set
+        /// to the default general purpose bucket quota of 10,000. If you have an approved general
+        /// purpose bucket quota above 10,000, you must send paginated <c>ListBuckets</c> requests
+        /// to list your account’s buckets. All unpaginated <c>ListBuckets</c> requests will be
+        /// rejected for Amazon Web Services accounts with a general purpose bucket quota greater
+        /// than 10,000. 
         /// </para>
         ///  </important>
         /// </summary>
@@ -15367,12 +16275,13 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
         /// Returns a list of all buckets owned by the authenticated sender of the request. To
-        /// use this operation, you must have the <c>s3:ListAllMyBuckets</c> permission. 
+        /// grant IAM permission to use this operation, you must add the <c>s3:ListAllMyBuckets</c>
+        /// policy action. 
         /// </para>
         ///  
         /// <para>
@@ -15381,12 +16290,13 @@ namespace Amazon.S3
         /// </para>
         ///  <important> 
         /// <para>
-        /// We strongly recommend using only paginated requests. Unpaginated requests are only
-        /// supported for Amazon Web Services accounts set to the default general purpose bucket
-        /// quota of 10,000. If you have an approved general purpose bucket quota above 10,000,
-        /// you must send paginated requests to list your account’s buckets. All unpaginated ListBuckets
-        /// requests will be rejected for Amazon Web Services accounts with a general purpose
-        /// bucket quota greater than 10,000. 
+        /// We strongly recommend using only paginated <c>ListBuckets</c> requests. Unpaginated
+        /// <c>ListBuckets</c> requests are only supported for Amazon Web Services accounts set
+        /// to the default general purpose bucket quota of 10,000. If you have an approved general
+        /// purpose bucket quota above 10,000, you must send paginated <c>ListBuckets</c> requests
+        /// to list your account’s buckets. All unpaginated <c>ListBuckets</c> requests will be
+        /// rejected for Amazon Web Services accounts with a general purpose bucket quota greater
+        /// than 10,000. 
         /// </para>
         ///  </important>
         /// </summary>
@@ -15413,10 +16323,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
         /// API operation to the Regional endpoint. These endpoints support path-style requests
-        /// in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i>
-        /// </c>. Virtual-hosted-style requests aren't supported. For more information, see <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i>
+        /// </c>. Virtual-hosted-style requests aren't supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </note> <dl> <dt>Permissions</dt> <dd> 
         /// <para>
@@ -15456,10 +16368,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
         /// API operation to the Regional endpoint. These endpoints support path-style requests
-        /// in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i>
-        /// </c>. Virtual-hosted-style requests aren't supported. For more information, see <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i>
+        /// </c>. Virtual-hosted-style requests aren't supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </note> <dl> <dt>Permissions</dt> <dd> 
         /// <para>
@@ -15539,9 +16453,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets</b> - For directory buckets, you must make requests for this
         /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
-        /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// requests in the format <c>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
@@ -15589,7 +16506,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -15622,7 +16539,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket to which the multipart upload was initiated.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The name of the bucket to which the multipart upload was initiated.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// 
         /// <returns>The response from the ListMultipartUploads service method, as returned by S3.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListMultipartUploads">REST API Reference for ListMultipartUploads Operation</seealso>
@@ -15671,9 +16588,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets</b> - For directory buckets, you must make requests for this
         /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
-        /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// requests in the format <c>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
@@ -15721,7 +16641,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -15754,7 +16674,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket to which the multipart upload was initiated.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The name of the bucket to which the multipart upload was initiated.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="prefix">Lists in-progress uploads only for those keys that begin with the specified prefix. You can use prefixes to separate a bucket into different grouping of keys. (You can think of using <c>prefix</c> to make groups in the same way that you'd use a folder in a file system.) <note>  <b>Directory buckets</b> - For directory buckets, only prefixes that end in a delimiter (<c>/</c>) are supported. </note></param>
         /// 
         /// <returns>The response from the ListMultipartUploads service method, as returned by S3.</returns>
@@ -15804,9 +16724,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets</b> - For directory buckets, you must make requests for this
         /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
-        /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// requests in the format <c>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
@@ -15854,7 +16777,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -15937,9 +16860,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets</b> - For directory buckets, you must make requests for this
         /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
-        /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// requests in the format <c>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
@@ -15987,7 +16913,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -16020,7 +16946,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket to which the multipart upload was initiated.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The name of the bucket to which the multipart upload was initiated.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -16072,9 +16998,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets</b> - For directory buckets, you must make requests for this
         /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
-        /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// requests in the format <c>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
@@ -16122,7 +17051,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -16155,7 +17084,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket to which the multipart upload was initiated.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The name of the bucket to which the multipart upload was initiated.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="prefix">Lists in-progress uploads only for those keys that begin with the specified prefix. You can use prefixes to separate a bucket into different grouping of keys. (You can think of using <c>prefix</c> to make groups in the same way that you'd use a folder in a file system.) <note>  <b>Directory buckets</b> - For directory buckets, only prefixes that end in a delimiter (<c>/</c>) are supported. </note></param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -16209,9 +17138,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets</b> - For directory buckets, you must make requests for this
         /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
-        /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// requests in the format <c>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
@@ -16259,7 +17191,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -16309,7 +17241,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -16355,7 +17287,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket containing the objects.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The name of the bucket containing the objects.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// 
         /// <returns>The response from the ListObjects service method, as returned by S3.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjects">REST API Reference for ListObjects Operation</seealso>
@@ -16364,7 +17296,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -16410,7 +17342,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket containing the objects.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The name of the bucket containing the objects.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="prefix">Limits the response to keys that begin with the specified prefix.</param>
         /// 
         /// <returns>The response from the ListObjects service method, as returned by S3.</returns>
@@ -16420,7 +17352,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -16476,7 +17408,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -16522,7 +17454,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket containing the objects.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The name of the bucket containing the objects.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -16534,7 +17466,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -16580,7 +17512,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket containing the objects.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The name of the bucket containing the objects.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="prefix">Limits the response to keys that begin with the specified prefix.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -16594,7 +17526,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -16677,9 +17609,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets</b> - For directory buckets, you must make requests for this
         /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
-        /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// requests in the format <c>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </li> </ul> </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
@@ -16717,7 +17652,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> <important> 
         /// <para>
@@ -16777,9 +17712,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets</b> - For directory buckets, you must make requests for this
         /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
-        /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// requests in the format <c>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </li> </ul> </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
@@ -16817,7 +17755,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> <important> 
         /// <para>
@@ -16888,9 +17826,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets</b> - For directory buckets, you must make requests for this
         /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
-        /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// requests in the format <c>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
@@ -16922,7 +17863,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -16960,7 +17901,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket to which the parts are being uploaded.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The name of the bucket to which the parts are being uploaded.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Object key for which the multipart upload was initiated.</param>
         /// <param name="uploadId">Upload ID identifying the multipart upload whose parts are being listed.</param>
         /// 
@@ -16996,9 +17937,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets</b> - For directory buckets, you must make requests for this
         /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
-        /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// requests in the format <c>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
@@ -17030,7 +17974,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -17103,9 +18047,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets</b> - For directory buckets, you must make requests for this
         /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
-        /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// requests in the format <c>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
@@ -17137,7 +18084,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -17175,7 +18122,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket to which the parts are being uploaded.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The name of the bucket to which the parts are being uploaded.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Object key for which the multipart upload was initiated.</param>
         /// <param name="uploadId">Upload ID identifying the multipart upload whose parts are being listed.</param>
         /// <param name="cancellationToken">
@@ -17215,9 +18162,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets</b> - For directory buckets, you must make requests for this
         /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
-        /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// requests in the format <c>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
@@ -17249,7 +18199,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -17304,7 +18254,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -17361,7 +18311,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -17419,7 +18369,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -17477,7 +18427,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -17537,7 +18487,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -17599,7 +18549,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -17696,10 +18646,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
         /// API operation to the Regional endpoint. These endpoints support path-style requests
-        /// in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i>
-        /// </c>. Virtual-hosted-style requests aren't supported. For more information, see <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i>
+        /// </c>. Virtual-hosted-style requests aren't supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </li> </ul> </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
@@ -17783,7 +18735,7 @@ namespace Amazon.S3
         /// </para>
         ///  </important> </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -17801,7 +18753,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket to create.  <b>General purpose buckets</b> - For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html">Bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Directory buckets </b> - When you use this operation with a directory bucket, you must use path-style requests in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i> </c>. Virtual-hosted-style requests aren't supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must also follow the format <c> <i>bucket_base_name</i>--<i>az_id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i> </param>
+        /// <param name="bucketName">The name of the bucket to create.  <b>General purpose buckets</b> - For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html">Bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Directory buckets </b> - When you use this operation with a directory bucket, you must use path-style requests in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i> </c>. Virtual-hosted-style requests aren't supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must also follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i> </param>
         /// 
         /// <returns>The response from the PutBucket service method, as returned by S3.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CreateBucket">REST API Reference for PutBucket Operation</seealso>
@@ -17842,10 +18794,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
         /// API operation to the Regional endpoint. These endpoints support path-style requests
-        /// in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i>
-        /// </c>. Virtual-hosted-style requests aren't supported. For more information, see <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i>
+        /// </c>. Virtual-hosted-style requests aren't supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </li> </ul> </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
@@ -17929,7 +18883,7 @@ namespace Amazon.S3
         /// </para>
         ///  </important> </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -17989,10 +18943,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
         /// API operation to the Regional endpoint. These endpoints support path-style requests
-        /// in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i>
-        /// </c>. Virtual-hosted-style requests aren't supported. For more information, see <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i>
+        /// </c>. Virtual-hosted-style requests aren't supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </li> </ul> </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
@@ -18076,7 +19032,7 @@ namespace Amazon.S3
         /// </para>
         ///  </important> </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -18094,7 +19050,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket to create.  <b>General purpose buckets</b> - For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html">Bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Directory buckets </b> - When you use this operation with a directory bucket, you must use path-style requests in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i> </c>. Virtual-hosted-style requests aren't supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must also follow the format <c> <i>bucket_base_name</i>--<i>az_id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i> </param>
+        /// <param name="bucketName">The name of the bucket to create.  <b>General purpose buckets</b> - For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html">Bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Directory buckets </b> - When you use this operation with a directory bucket, you must use path-style requests in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i> </c>. Virtual-hosted-style requests aren't supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must also follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i> </param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -18139,10 +19095,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
         /// API operation to the Regional endpoint. These endpoints support path-style requests
-        /// in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i>
-        /// </c>. Virtual-hosted-style requests aren't supported. For more information, see <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i>
+        /// </c>. Virtual-hosted-style requests aren't supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </li> </ul> </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
@@ -18226,7 +19184,7 @@ namespace Amazon.S3
         /// </para>
         ///  </important> </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -18261,7 +19219,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -18337,7 +19295,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -18419,7 +19377,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -18674,7 +19632,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -18935,7 +19893,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -19043,7 +20001,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -19162,10 +20120,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
         /// API operation to the Regional endpoint. These endpoints support path-style requests
-        /// in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i>
-        /// </c>. Virtual-hosted-style requests aren't supported. For more information, see <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i>
+        /// </c>. Virtual-hosted-style requests aren't supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -19277,7 +20237,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -19311,10 +20271,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
         /// API operation to the Regional endpoint. These endpoints support path-style requests
-        /// in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i>
-        /// </c>. Virtual-hosted-style requests aren't supported. For more information, see <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i>
+        /// </c>. Virtual-hosted-style requests aren't supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -19426,7 +20388,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -19461,7 +20423,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -19555,7 +20517,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -19655,7 +20617,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -19771,7 +20733,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -19893,7 +20855,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -20014,7 +20976,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -20141,7 +21103,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -20213,7 +21175,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -20291,7 +21253,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -20387,7 +21349,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -20489,7 +21451,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -20528,7 +21490,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -20577,10 +21539,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
         /// API operation to the Regional endpoint. These endpoints support path-style requests
-        /// in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i>
-        /// </c>. Virtual-hosted-style requests aren't supported. For more information, see <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i>
+        /// </c>. Virtual-hosted-style requests aren't supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </note> <dl> <dt>Permissions</dt> <dd> 
         /// <para>
@@ -20635,7 +21599,7 @@ namespace Amazon.S3
         /// </para>
         ///  </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -20653,7 +21617,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket.  <b>Directory buckets </b> - When you use this operation with a directory bucket, you must use path-style requests in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i> </c>. Virtual-hosted-style requests aren't supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must also follow the format <c> <i>bucket_base_name</i>--<i>az_id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i> </param>
+        /// <param name="bucketName">The name of the bucket.  <b>Directory buckets </b> - When you use this operation with a directory bucket, you must use path-style requests in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i> </c>. Virtual-hosted-style requests aren't supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must also follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i> </param>
         /// <param name="policy">The bucket policy as a JSON document. For directory buckets, the only IAM action supported in the bucket policy is <c>s3express:CreateSession</c>.</param>
         /// 
         /// <returns>The response from the PutBucketPolicy service method, as returned by S3.</returns>
@@ -20667,10 +21631,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
         /// API operation to the Regional endpoint. These endpoints support path-style requests
-        /// in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i>
-        /// </c>. Virtual-hosted-style requests aren't supported. For more information, see <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i>
+        /// </c>. Virtual-hosted-style requests aren't supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </note> <dl> <dt>Permissions</dt> <dd> 
         /// <para>
@@ -20725,7 +21691,7 @@ namespace Amazon.S3
         /// </para>
         ///  </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -20743,7 +21709,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket.  <b>Directory buckets </b> - When you use this operation with a directory bucket, you must use path-style requests in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i> </c>. Virtual-hosted-style requests aren't supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must also follow the format <c> <i>bucket_base_name</i>--<i>az_id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i> </param>
+        /// <param name="bucketName">The name of the bucket.  <b>Directory buckets </b> - When you use this operation with a directory bucket, you must use path-style requests in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i> </c>. Virtual-hosted-style requests aren't supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must also follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i> </param>
         /// <param name="policy">The bucket policy as a JSON document. For directory buckets, the only IAM action supported in the bucket policy is <c>s3express:CreateSession</c>.</param>
         /// <param name="contentMD5">The MD5 hash of the request body. For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically. <note> This functionality is not supported for directory buckets. </note></param>
         /// 
@@ -20758,10 +21724,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
         /// API operation to the Regional endpoint. These endpoints support path-style requests
-        /// in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i>
-        /// </c>. Virtual-hosted-style requests aren't supported. For more information, see <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i>
+        /// </c>. Virtual-hosted-style requests aren't supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </note> <dl> <dt>Permissions</dt> <dd> 
         /// <para>
@@ -20816,7 +21784,7 @@ namespace Amazon.S3
         /// </para>
         ///  </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -20848,10 +21816,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
         /// API operation to the Regional endpoint. These endpoints support path-style requests
-        /// in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i>
-        /// </c>. Virtual-hosted-style requests aren't supported. For more information, see <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i>
+        /// </c>. Virtual-hosted-style requests aren't supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </note> <dl> <dt>Permissions</dt> <dd> 
         /// <para>
@@ -20906,7 +21876,7 @@ namespace Amazon.S3
         /// </para>
         ///  </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -20924,7 +21894,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket.  <b>Directory buckets </b> - When you use this operation with a directory bucket, you must use path-style requests in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i> </c>. Virtual-hosted-style requests aren't supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must also follow the format <c> <i>bucket_base_name</i>--<i>az_id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i> </param>
+        /// <param name="bucketName">The name of the bucket.  <b>Directory buckets </b> - When you use this operation with a directory bucket, you must use path-style requests in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i> </c>. Virtual-hosted-style requests aren't supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must also follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i> </param>
         /// <param name="policy">The bucket policy as a JSON document. For directory buckets, the only IAM action supported in the bucket policy is <c>s3express:CreateSession</c>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -20941,10 +21911,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
         /// API operation to the Regional endpoint. These endpoints support path-style requests
-        /// in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i>
-        /// </c>. Virtual-hosted-style requests aren't supported. For more information, see <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i>
+        /// </c>. Virtual-hosted-style requests aren't supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </note> <dl> <dt>Permissions</dt> <dd> 
         /// <para>
@@ -20999,7 +21971,7 @@ namespace Amazon.S3
         /// </para>
         ///  </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -21017,7 +21989,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket.  <b>Directory buckets </b> - When you use this operation with a directory bucket, you must use path-style requests in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i> </c>. Virtual-hosted-style requests aren't supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must also follow the format <c> <i>bucket_base_name</i>--<i>az_id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i> </param>
+        /// <param name="bucketName">The name of the bucket.  <b>Directory buckets </b> - When you use this operation with a directory bucket, you must use path-style requests in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i> </c>. Virtual-hosted-style requests aren't supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must also follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i> </param>
         /// <param name="policy">The bucket policy as a JSON document. For directory buckets, the only IAM action supported in the bucket policy is <c>s3express:CreateSession</c>.</param>
         /// <param name="contentMD5">The MD5 hash of the request body. For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically. <note> This functionality is not supported for directory buckets. </note></param>
         /// <param name="cancellationToken">
@@ -21036,10 +22008,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
         /// API operation to the Regional endpoint. These endpoints support path-style requests
-        /// in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i>
-        /// </c>. Virtual-hosted-style requests aren't supported. For more information, see <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i>
+        /// </c>. Virtual-hosted-style requests aren't supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </note> <dl> <dt>Permissions</dt> <dd> 
         /// <para>
@@ -21094,7 +22068,7 @@ namespace Amazon.S3
         /// </para>
         ///  </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -21129,7 +22103,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -21232,7 +22206,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -21341,7 +22315,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -21377,7 +22351,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -21413,7 +22387,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -21453,7 +22427,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -21496,7 +22470,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -21579,7 +22553,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -21662,7 +22636,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -21749,7 +22723,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -21839,12 +22813,14 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> <note> 
         /// <para>
         /// When you enable versioning on a bucket for the first time, it might take a short amount
-        /// of time for the change to be fully propagated. We recommend that you wait for 15 minutes
+        /// of time for the change to be fully propagated. While this change is propagating, you
+        /// may encounter intermittent <c>HTTP 404 NoSuchKey</c> errors for requests to objects
+        /// created or updated after enabling versioning. We recommend that you wait for 15 minutes
         /// after enabling versioning before issuing write operations (<c>PUT</c> or <c>DELETE</c>)
         /// on objects in the bucket. 
         /// </para>
@@ -21921,12 +22897,14 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> <note> 
         /// <para>
         /// When you enable versioning on a bucket for the first time, it might take a short amount
-        /// of time for the change to be fully propagated. We recommend that you wait for 15 minutes
+        /// of time for the change to be fully propagated. While this change is propagating, you
+        /// may encounter intermittent <c>HTTP 404 NoSuchKey</c> errors for requests to objects
+        /// created or updated after enabling versioning. We recommend that you wait for 15 minutes
         /// after enabling versioning before issuing write operations (<c>PUT</c> or <c>DELETE</c>)
         /// on objects in the bucket. 
         /// </para>
@@ -22009,7 +22987,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -22141,7 +23119,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -22273,7 +23251,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -22409,7 +23387,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -22548,7 +23526,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -22632,7 +23610,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -22716,7 +23694,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -22804,7 +23782,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -22893,19 +23871,22 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// This operation is not supported by directory buckets.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Creates a new lifecycle configuration for the bucket or replaces an existing lifecycle
         /// configuration. Keep in mind that this will overwrite an existing lifecycle configuration,
         /// so if you want to retain any configuration details, they must be included in the new
         /// lifecycle configuration. For information about lifecycle configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html">Managing
         /// your storage lifecycle</a>.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Bucket lifecycle configuration now supports specifying a lifecycle rule using an object
+        /// key name prefix, one or more object tags, object size, or any combination of these.
+        /// Accordingly, this section describes the latest API. The previous version of the API
+        /// supported filtering based only on an object key name prefix, which is supported for
+        /// backward compatibility. For the related API description, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>.
         /// </para>
-        ///  <dl> <dt>Rules</dt> <dd> 
+        ///  </note> <dl> <dt>Rules</dt> <dt>Permissions</dt> <dt>HTTP Host header syntax</dt>
+        /// <dd> 
         /// <para>
         /// You specify the lifecycle configuration in your request body. The lifecycle configuration
         /// is specified as XML consisting of one or more rules. An Amazon S3 Lifecycle configuration
@@ -22917,9 +23898,17 @@ namespace Amazon.S3
         /// key name prefix, one or more object tags, object size, or any combination of these.
         /// Accordingly, this section describes the latest API. The previous version of the API
         /// supported filtering based only on an object key name prefix, which is supported for
-        /// backward compatibility. For the related API description, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>.
+        /// backward compatibility for general purpose buckets. For the related API description,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>.
+        /// 
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// Lifecyle configurations for directory buckets only support expiring objects and cancelling
+        /// multipart uploads. Expiring of versioned objects,transitions and tag filters are not
+        /// supported.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// A lifecycle rule consists of the following:
         /// </para>
@@ -22946,14 +23935,14 @@ namespace Amazon.S3
         /// Lifecycle Management</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html">Lifecycle
         /// Configuration Elements</a>.
         /// </para>
-        ///  </dd> <dt>Permissions</dt> <dd> 
+        ///  </dd> <dd> <ul> <li> 
         /// <para>
-        /// By default, all Amazon S3 resources are private, including buckets, objects, and related
-        /// subresources (for example, lifecycle configuration and website configuration). Only
-        /// the resource owner (that is, the Amazon Web Services account that created it) can
-        /// access the resource. The resource owner can optionally grant access permissions to
-        /// others by writing an access policy. For this operation, a user must get the <c>s3:PutLifecycleConfiguration</c>
-        /// permission.
+        ///  <b>General purpose bucket permissions</b> - By default, all Amazon S3 resources are
+        /// private, including buckets, objects, and related subresources (for example, lifecycle
+        /// configuration and website configuration). Only the resource owner (that is, the Amazon
+        /// Web Services account that created it) can access the resource. The resource owner
+        /// can optionally grant access permissions to others by writing an access policy. For
+        /// this operation, a user must have the <c>s3:PutLifecycleConfiguration</c> permission.
         /// </para>
         ///  
         /// <para>
@@ -22973,21 +23962,44 @@ namespace Amazon.S3
         /// <para>
         ///  <c>s3:PutLifecycleConfiguration</c> 
         /// </para>
-        ///  </li> </ul> 
+        ///  
         /// <para>
         /// For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
         /// Access Permissions to Your Amazon S3 Resources</a>.
         /// </para>
-        ///  </dd> </dl> 
+        ///  </li> </ul> </li> </ul> <ul> <li> 
+        /// <para>
+        ///  <b>Directory bucket permissions</b> - You must have the <c>s3express:PutLifecycleConfiguration</c>
+        /// permission in an IAM identity-based policy to use this operation. Cross-account access
+        /// to this API operation isn't supported. The resource owner can optionally grant access
+        /// permissions to others by creating a role or user for them as long as they are within
+        /// the same account as the owner and resource.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about directory bucket policies and permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-security-iam.html">Authorizing
+        /// Regional endpoint APIs with IAM</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
+        /// API operation to the Regional endpoint. These endpoints support path-style requests
+        /// in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i>
+        /// </c>. Virtual-hosted-style requests aren't supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  </note> </li> </ul> </dd> <dd> 
+        /// <para>
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
+        /// </para>
+        ///  
         /// <para>
         /// The following operations are related to <c>PutBucketLifecycleConfiguration</c>:
         /// </para>
         ///  <ul> <li> 
-        /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/lifecycle-configuration-examples.html">Examples
-        /// of Lifecycle Configuration</a> 
-        /// </para>
-        ///  </li> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycleConfiguration.html">GetBucketLifecycleConfiguration</a>
         /// 
@@ -22997,7 +24009,7 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketLifecycle.html">DeleteBucketLifecycle</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> </dd> </dl>
         /// </summary>
         /// <param name="bucketName">The name of the bucket for which to set the configuration.</param>
         /// <param name="configuration">A property of PutLifecycleConfigurationRequest used to execute the PutLifecycleConfiguration service method.</param>
@@ -23007,19 +24019,22 @@ namespace Amazon.S3
         PutLifecycleConfigurationResponse PutLifecycleConfiguration(string bucketName, LifecycleConfiguration configuration);
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// This operation is not supported by directory buckets.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Creates a new lifecycle configuration for the bucket or replaces an existing lifecycle
         /// configuration. Keep in mind that this will overwrite an existing lifecycle configuration,
         /// so if you want to retain any configuration details, they must be included in the new
         /// lifecycle configuration. For information about lifecycle configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html">Managing
         /// your storage lifecycle</a>.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Bucket lifecycle configuration now supports specifying a lifecycle rule using an object
+        /// key name prefix, one or more object tags, object size, or any combination of these.
+        /// Accordingly, this section describes the latest API. The previous version of the API
+        /// supported filtering based only on an object key name prefix, which is supported for
+        /// backward compatibility. For the related API description, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>.
         /// </para>
-        ///  <dl> <dt>Rules</dt> <dd> 
+        ///  </note> <dl> <dt>Rules</dt> <dt>Permissions</dt> <dt>HTTP Host header syntax</dt>
+        /// <dd> 
         /// <para>
         /// You specify the lifecycle configuration in your request body. The lifecycle configuration
         /// is specified as XML consisting of one or more rules. An Amazon S3 Lifecycle configuration
@@ -23031,9 +24046,17 @@ namespace Amazon.S3
         /// key name prefix, one or more object tags, object size, or any combination of these.
         /// Accordingly, this section describes the latest API. The previous version of the API
         /// supported filtering based only on an object key name prefix, which is supported for
-        /// backward compatibility. For the related API description, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>.
+        /// backward compatibility for general purpose buckets. For the related API description,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>.
+        /// 
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// Lifecyle configurations for directory buckets only support expiring objects and cancelling
+        /// multipart uploads. Expiring of versioned objects,transitions and tag filters are not
+        /// supported.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// A lifecycle rule consists of the following:
         /// </para>
@@ -23060,14 +24083,14 @@ namespace Amazon.S3
         /// Lifecycle Management</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html">Lifecycle
         /// Configuration Elements</a>.
         /// </para>
-        ///  </dd> <dt>Permissions</dt> <dd> 
+        ///  </dd> <dd> <ul> <li> 
         /// <para>
-        /// By default, all Amazon S3 resources are private, including buckets, objects, and related
-        /// subresources (for example, lifecycle configuration and website configuration). Only
-        /// the resource owner (that is, the Amazon Web Services account that created it) can
-        /// access the resource. The resource owner can optionally grant access permissions to
-        /// others by writing an access policy. For this operation, a user must get the <c>s3:PutLifecycleConfiguration</c>
-        /// permission.
+        ///  <b>General purpose bucket permissions</b> - By default, all Amazon S3 resources are
+        /// private, including buckets, objects, and related subresources (for example, lifecycle
+        /// configuration and website configuration). Only the resource owner (that is, the Amazon
+        /// Web Services account that created it) can access the resource. The resource owner
+        /// can optionally grant access permissions to others by writing an access policy. For
+        /// this operation, a user must have the <c>s3:PutLifecycleConfiguration</c> permission.
         /// </para>
         ///  
         /// <para>
@@ -23087,21 +24110,44 @@ namespace Amazon.S3
         /// <para>
         ///  <c>s3:PutLifecycleConfiguration</c> 
         /// </para>
-        ///  </li> </ul> 
+        ///  
         /// <para>
         /// For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
         /// Access Permissions to Your Amazon S3 Resources</a>.
         /// </para>
-        ///  </dd> </dl> 
+        ///  </li> </ul> </li> </ul> <ul> <li> 
+        /// <para>
+        ///  <b>Directory bucket permissions</b> - You must have the <c>s3express:PutLifecycleConfiguration</c>
+        /// permission in an IAM identity-based policy to use this operation. Cross-account access
+        /// to this API operation isn't supported. The resource owner can optionally grant access
+        /// permissions to others by creating a role or user for them as long as they are within
+        /// the same account as the owner and resource.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about directory bucket policies and permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-security-iam.html">Authorizing
+        /// Regional endpoint APIs with IAM</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
+        /// API operation to the Regional endpoint. These endpoints support path-style requests
+        /// in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i>
+        /// </c>. Virtual-hosted-style requests aren't supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  </note> </li> </ul> </dd> <dd> 
+        /// <para>
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
+        /// </para>
+        ///  
         /// <para>
         /// The following operations are related to <c>PutBucketLifecycleConfiguration</c>:
         /// </para>
         ///  <ul> <li> 
-        /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/lifecycle-configuration-examples.html">Examples
-        /// of Lifecycle Configuration</a> 
-        /// </para>
-        ///  </li> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycleConfiguration.html">GetBucketLifecycleConfiguration</a>
         /// 
@@ -23111,7 +24157,7 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketLifecycle.html">DeleteBucketLifecycle</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> </dd> </dl>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutLifecycleConfiguration service method.</param>
         /// 
@@ -23121,19 +24167,22 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// This operation is not supported by directory buckets.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Creates a new lifecycle configuration for the bucket or replaces an existing lifecycle
         /// configuration. Keep in mind that this will overwrite an existing lifecycle configuration,
         /// so if you want to retain any configuration details, they must be included in the new
         /// lifecycle configuration. For information about lifecycle configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html">Managing
         /// your storage lifecycle</a>.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Bucket lifecycle configuration now supports specifying a lifecycle rule using an object
+        /// key name prefix, one or more object tags, object size, or any combination of these.
+        /// Accordingly, this section describes the latest API. The previous version of the API
+        /// supported filtering based only on an object key name prefix, which is supported for
+        /// backward compatibility. For the related API description, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>.
         /// </para>
-        ///  <dl> <dt>Rules</dt> <dd> 
+        ///  </note> <dl> <dt>Rules</dt> <dt>Permissions</dt> <dt>HTTP Host header syntax</dt>
+        /// <dd> 
         /// <para>
         /// You specify the lifecycle configuration in your request body. The lifecycle configuration
         /// is specified as XML consisting of one or more rules. An Amazon S3 Lifecycle configuration
@@ -23145,9 +24194,17 @@ namespace Amazon.S3
         /// key name prefix, one or more object tags, object size, or any combination of these.
         /// Accordingly, this section describes the latest API. The previous version of the API
         /// supported filtering based only on an object key name prefix, which is supported for
-        /// backward compatibility. For the related API description, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>.
+        /// backward compatibility for general purpose buckets. For the related API description,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>.
+        /// 
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// Lifecyle configurations for directory buckets only support expiring objects and cancelling
+        /// multipart uploads. Expiring of versioned objects,transitions and tag filters are not
+        /// supported.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// A lifecycle rule consists of the following:
         /// </para>
@@ -23174,14 +24231,14 @@ namespace Amazon.S3
         /// Lifecycle Management</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html">Lifecycle
         /// Configuration Elements</a>.
         /// </para>
-        ///  </dd> <dt>Permissions</dt> <dd> 
+        ///  </dd> <dd> <ul> <li> 
         /// <para>
-        /// By default, all Amazon S3 resources are private, including buckets, objects, and related
-        /// subresources (for example, lifecycle configuration and website configuration). Only
-        /// the resource owner (that is, the Amazon Web Services account that created it) can
-        /// access the resource. The resource owner can optionally grant access permissions to
-        /// others by writing an access policy. For this operation, a user must get the <c>s3:PutLifecycleConfiguration</c>
-        /// permission.
+        ///  <b>General purpose bucket permissions</b> - By default, all Amazon S3 resources are
+        /// private, including buckets, objects, and related subresources (for example, lifecycle
+        /// configuration and website configuration). Only the resource owner (that is, the Amazon
+        /// Web Services account that created it) can access the resource. The resource owner
+        /// can optionally grant access permissions to others by writing an access policy. For
+        /// this operation, a user must have the <c>s3:PutLifecycleConfiguration</c> permission.
         /// </para>
         ///  
         /// <para>
@@ -23201,21 +24258,44 @@ namespace Amazon.S3
         /// <para>
         ///  <c>s3:PutLifecycleConfiguration</c> 
         /// </para>
-        ///  </li> </ul> 
+        ///  
         /// <para>
         /// For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
         /// Access Permissions to Your Amazon S3 Resources</a>.
         /// </para>
-        ///  </dd> </dl> 
+        ///  </li> </ul> </li> </ul> <ul> <li> 
+        /// <para>
+        ///  <b>Directory bucket permissions</b> - You must have the <c>s3express:PutLifecycleConfiguration</c>
+        /// permission in an IAM identity-based policy to use this operation. Cross-account access
+        /// to this API operation isn't supported. The resource owner can optionally grant access
+        /// permissions to others by creating a role or user for them as long as they are within
+        /// the same account as the owner and resource.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about directory bucket policies and permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-security-iam.html">Authorizing
+        /// Regional endpoint APIs with IAM</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
+        /// API operation to the Regional endpoint. These endpoints support path-style requests
+        /// in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i>
+        /// </c>. Virtual-hosted-style requests aren't supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  </note> </li> </ul> </dd> <dd> 
+        /// <para>
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
+        /// </para>
+        ///  
         /// <para>
         /// The following operations are related to <c>PutBucketLifecycleConfiguration</c>:
         /// </para>
         ///  <ul> <li> 
-        /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/lifecycle-configuration-examples.html">Examples
-        /// of Lifecycle Configuration</a> 
-        /// </para>
-        ///  </li> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycleConfiguration.html">GetBucketLifecycleConfiguration</a>
         /// 
@@ -23225,7 +24305,7 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketLifecycle.html">DeleteBucketLifecycle</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> </dd> </dl>
         /// </summary>
         /// <param name="bucketName">The name of the bucket for which to set the configuration.</param>
         /// <param name="configuration">A property of PutLifecycleConfigurationRequest used to execute the PutLifecycleConfiguration service method.</param>
@@ -23239,19 +24319,22 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// This operation is not supported by directory buckets.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Creates a new lifecycle configuration for the bucket or replaces an existing lifecycle
         /// configuration. Keep in mind that this will overwrite an existing lifecycle configuration,
         /// so if you want to retain any configuration details, they must be included in the new
         /// lifecycle configuration. For information about lifecycle configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html">Managing
         /// your storage lifecycle</a>.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Bucket lifecycle configuration now supports specifying a lifecycle rule using an object
+        /// key name prefix, one or more object tags, object size, or any combination of these.
+        /// Accordingly, this section describes the latest API. The previous version of the API
+        /// supported filtering based only on an object key name prefix, which is supported for
+        /// backward compatibility. For the related API description, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>.
         /// </para>
-        ///  <dl> <dt>Rules</dt> <dd> 
+        ///  </note> <dl> <dt>Rules</dt> <dt>Permissions</dt> <dt>HTTP Host header syntax</dt>
+        /// <dd> 
         /// <para>
         /// You specify the lifecycle configuration in your request body. The lifecycle configuration
         /// is specified as XML consisting of one or more rules. An Amazon S3 Lifecycle configuration
@@ -23263,9 +24346,17 @@ namespace Amazon.S3
         /// key name prefix, one or more object tags, object size, or any combination of these.
         /// Accordingly, this section describes the latest API. The previous version of the API
         /// supported filtering based only on an object key name prefix, which is supported for
-        /// backward compatibility. For the related API description, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>.
+        /// backward compatibility for general purpose buckets. For the related API description,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>.
+        /// 
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// Lifecyle configurations for directory buckets only support expiring objects and cancelling
+        /// multipart uploads. Expiring of versioned objects,transitions and tag filters are not
+        /// supported.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// A lifecycle rule consists of the following:
         /// </para>
@@ -23292,14 +24383,14 @@ namespace Amazon.S3
         /// Lifecycle Management</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html">Lifecycle
         /// Configuration Elements</a>.
         /// </para>
-        ///  </dd> <dt>Permissions</dt> <dd> 
+        ///  </dd> <dd> <ul> <li> 
         /// <para>
-        /// By default, all Amazon S3 resources are private, including buckets, objects, and related
-        /// subresources (for example, lifecycle configuration and website configuration). Only
-        /// the resource owner (that is, the Amazon Web Services account that created it) can
-        /// access the resource. The resource owner can optionally grant access permissions to
-        /// others by writing an access policy. For this operation, a user must get the <c>s3:PutLifecycleConfiguration</c>
-        /// permission.
+        ///  <b>General purpose bucket permissions</b> - By default, all Amazon S3 resources are
+        /// private, including buckets, objects, and related subresources (for example, lifecycle
+        /// configuration and website configuration). Only the resource owner (that is, the Amazon
+        /// Web Services account that created it) can access the resource. The resource owner
+        /// can optionally grant access permissions to others by writing an access policy. For
+        /// this operation, a user must have the <c>s3:PutLifecycleConfiguration</c> permission.
         /// </para>
         ///  
         /// <para>
@@ -23319,21 +24410,44 @@ namespace Amazon.S3
         /// <para>
         ///  <c>s3:PutLifecycleConfiguration</c> 
         /// </para>
-        ///  </li> </ul> 
+        ///  
         /// <para>
         /// For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
         /// Access Permissions to Your Amazon S3 Resources</a>.
         /// </para>
-        ///  </dd> </dl> 
+        ///  </li> </ul> </li> </ul> <ul> <li> 
+        /// <para>
+        ///  <b>Directory bucket permissions</b> - You must have the <c>s3express:PutLifecycleConfiguration</c>
+        /// permission in an IAM identity-based policy to use this operation. Cross-account access
+        /// to this API operation isn't supported. The resource owner can optionally grant access
+        /// permissions to others by creating a role or user for them as long as they are within
+        /// the same account as the owner and resource.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about directory bucket policies and permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-security-iam.html">Authorizing
+        /// Regional endpoint APIs with IAM</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
+        /// API operation to the Regional endpoint. These endpoints support path-style requests
+        /// in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i>
+        /// </c>. Virtual-hosted-style requests aren't supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  </note> </li> </ul> </dd> <dd> 
+        /// <para>
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
+        /// </para>
+        ///  
         /// <para>
         /// The following operations are related to <c>PutBucketLifecycleConfiguration</c>:
         /// </para>
         ///  <ul> <li> 
-        /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/lifecycle-configuration-examples.html">Examples
-        /// of Lifecycle Configuration</a> 
-        /// </para>
-        ///  </li> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycleConfiguration.html">GetBucketLifecycleConfiguration</a>
         /// 
@@ -23343,7 +24457,7 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketLifecycle.html">DeleteBucketLifecycle</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> </dd> </dl>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutLifecycleConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -23379,9 +24493,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets</b> - For directory buckets, you must make requests for this
         /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
-        /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// requests in the format <c>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </li> </ul> </note> 
         /// <para>
@@ -23472,7 +24589,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -23518,9 +24635,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets</b> - For directory buckets, you must make requests for this
         /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
-        /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// requests in the format <c>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </li> </ul> </note> 
         /// <para>
@@ -23611,7 +24731,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -23646,7 +24766,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -23891,7 +25011,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -24142,7 +25262,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -24166,7 +25286,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -24196,7 +25316,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -24233,7 +25353,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -24276,7 +25396,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -24302,7 +25422,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -24334,7 +25454,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -24417,7 +25537,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -24506,7 +25626,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -24566,7 +25686,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -24632,7 +25752,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -24851,7 +25971,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -25071,7 +26191,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -25291,7 +26411,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -25512,7 +26632,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -25731,7 +26851,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -25953,7 +27073,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -26176,7 +27296,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -26399,7 +27519,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -26624,7 +27744,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -26850,7 +27970,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -26985,7 +28105,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -27169,9 +28289,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets</b> - For directory buckets, you must make requests for this
         /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
-        /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// requests in the format <c>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
@@ -27299,7 +28422,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -27386,9 +28509,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets</b> - For directory buckets, you must make requests for this
         /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
-        /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// requests in the format <c>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information about endpoints
+        /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Available
+        /// Local Zone for directory buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
@@ -27516,7 +28642,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
-        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -27566,7 +28692,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -27637,7 +28763,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>

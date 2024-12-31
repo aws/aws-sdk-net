@@ -1,6 +1,33 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.NeptuneGraph.Model.CancelExportTaskRequest.TaskIdentifier</property>
+    <pattern>t-[a-z0-9]{10}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NeptuneGraph.Model.CancelExportTaskResponse.Destination</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NeptuneGraph.Model.CancelExportTaskResponse.GraphId</property>
+    <pattern>g-[a-z0-9]{10}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NeptuneGraph.Model.CancelExportTaskResponse.KmsKeyIdentifier</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>arn:aws(|-cn|-us-gov):kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NeptuneGraph.Model.CancelExportTaskResponse.RoleArn</property>
+    <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)/[\w+=,.@-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NeptuneGraph.Model.CancelExportTaskResponse.TaskId</property>
+    <pattern>t-[a-z0-9]{10}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.CancelImportTaskRequest.TaskIdentifier</property>
     <pattern>t-[a-z0-9]{10}</pattern>
   </property-value-rule>
@@ -240,6 +267,33 @@
     <pattern>g-[a-z0-9]{10}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NeptuneGraph.Model.GetExportTaskRequest.TaskIdentifier</property>
+    <pattern>t-[a-z0-9]{10}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NeptuneGraph.Model.GetExportTaskResponse.Destination</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NeptuneGraph.Model.GetExportTaskResponse.GraphId</property>
+    <pattern>g-[a-z0-9]{10}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NeptuneGraph.Model.GetExportTaskResponse.KmsKeyIdentifier</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>arn:aws(|-cn|-us-gov):kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NeptuneGraph.Model.GetExportTaskResponse.RoleArn</property>
+    <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)/[\w+=,.@-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NeptuneGraph.Model.GetExportTaskResponse.TaskId</property>
+    <pattern>t-[a-z0-9]{10}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.GetGraphRequest.GraphIdentifier</property>
     <pattern>g-[a-z0-9]{10}</pattern>
   </property-value-rule>
@@ -336,6 +390,21 @@
   <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.GetQueryRequest.GraphIdentifier</property>
     <pattern>g-[a-z0-9]{10}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NeptuneGraph.Model.ListExportTasksRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NeptuneGraph.Model.ListExportTasksRequest.NextToken</property>
+    <min>1</min>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NeptuneGraph.Model.ListExportTasksResponse.NextToken</property>
+    <min>1</min>
+    <max>8192</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.ListGraphsRequest.MaxResults</property>
@@ -500,6 +569,48 @@
     <pattern>gs-[a-z0-9]{10}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NeptuneGraph.Model.StartExportTaskRequest.Destination</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NeptuneGraph.Model.StartExportTaskRequest.GraphIdentifier</property>
+    <pattern>g-[a-z0-9]{10}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NeptuneGraph.Model.StartExportTaskRequest.KmsKeyIdentifier</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>arn:aws(|-cn|-us-gov):kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NeptuneGraph.Model.StartExportTaskRequest.RoleArn</property>
+    <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)/[\w+=,.@-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NeptuneGraph.Model.StartExportTaskResponse.Destination</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NeptuneGraph.Model.StartExportTaskResponse.GraphId</property>
+    <pattern>g-[a-z0-9]{10}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NeptuneGraph.Model.StartExportTaskResponse.KmsKeyIdentifier</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>arn:aws(|-cn|-us-gov):kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NeptuneGraph.Model.StartExportTaskResponse.RoleArn</property>
+    <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)/[\w+=,.@-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NeptuneGraph.Model.StartExportTaskResponse.TaskId</property>
+    <pattern>t-[a-z0-9]{10}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.StartImportTaskRequest.GraphIdentifier</property>
     <pattern>g-[a-z0-9]{10}</pattern>
   </property-value-rule>
@@ -569,6 +680,38 @@
   <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.UpdateGraphResponse.SourceSnapshotId</property>
     <pattern>gs-[a-z0-9]{10}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NeptuneGraph.Model.ExportFilterPropertyAttributes.OutputType</property>
+    <pattern>(Any|Byte|Short|Int|Long|Float|Double|String|Bool|Boolean|Float\[\]|Double\[\])</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NeptuneGraph.Model.ExportFilterPropertyAttributes.SourcePropertyName</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NeptuneGraph.Model.ExportTaskSummary.Destination</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NeptuneGraph.Model.ExportTaskSummary.GraphId</property>
+    <pattern>g-[a-z0-9]{10}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NeptuneGraph.Model.ExportTaskSummary.KmsKeyIdentifier</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>arn:aws(|-cn|-us-gov):kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NeptuneGraph.Model.ExportTaskSummary.RoleArn</property>
+    <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)/[\w+=,.@-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NeptuneGraph.Model.ExportTaskSummary.TaskId</property>
+    <pattern>t-[a-z0-9]{10}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.GraphSnapshotSummary.Id</property>

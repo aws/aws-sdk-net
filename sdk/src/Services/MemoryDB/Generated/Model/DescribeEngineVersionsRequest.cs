@@ -31,7 +31,7 @@ namespace Amazon.MemoryDB.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeEngineVersions operation.
-    /// Returns a list of the available engine versions.
+    /// Returns a list of the available Redis OSS engine versions.
     /// </summary>
     public partial class DescribeEngineVersionsRequest : AmazonMemoryDBRequest
     {
@@ -64,7 +64,7 @@ namespace Amazon.MemoryDB.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// The engine version to return. Valid values are either valkey or redis.
+        /// The name of the engine for which to list available versions.
         /// </para>
         /// </summary>
         public string Engine
@@ -82,7 +82,7 @@ namespace Amazon.MemoryDB.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        /// The engine version.
+        /// The Redis OSS engine version
         /// </para>
         /// </summary>
         public string EngineVersion

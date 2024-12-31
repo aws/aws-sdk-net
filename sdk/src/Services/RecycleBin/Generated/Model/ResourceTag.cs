@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RecycleBin.Model
 {
     /// <summary>
-    /// Information about the resource tags used to identify resources that are retained by
-    /// the retention rule.
+    /// [Tag-level retention rules only] Information about the resource tags used to identify
+    /// resources that are retained by the retention rule.
     /// </summary>
     public partial class ResourceTag
     {

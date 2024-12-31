@@ -56,6 +56,7 @@ namespace Amazon.CloudWatchLogs.Model
         private List<string> _logGroupNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
         private string _queryDefinitionId;
+        private QueryLanguage _queryLanguage;
         private string _queryString;
 
         /// <summary>
@@ -82,11 +83,14 @@ namespace Amazon.CloudWatchLogs.Model
         /// Gets and sets the property LogGroupNames. 
         /// <para>
         /// Use this parameter to include specific log groups as part of your query definition.
+        /// If your query uses the OpenSearch Service query language, you specify the log group
+        /// names inside the <c>querystring</c> instead of here.
         /// </para>
         ///  
         /// <para>
-        /// If you are updating a query definition and you omit this parameter, then the updated
-        /// definition will contain no log groups.
+        /// If you are updating an existing query definition for the Logs Insights QL or OpenSearch
+        /// Service PPL and you omit this parameter, then the updated definition will contain
+        /// no log groups.
         /// </para>
         /// </summary>
         public List<string> LogGroupNames
@@ -148,6 +152,27 @@ namespace Amazon.CloudWatchLogs.Model
         internal bool IsSetQueryDefinitionId()
         {
             return this._queryDefinitionId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property QueryLanguage. 
+        /// <para>
+        /// Specify the query language to use for this query. The options are Logs Insights QL,
+        /// OpenSearch PPL, and OpenSearch SQL. For more information about the query languages
+        /// that CloudWatch Logs supports, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData_Languages.html">Supported
+        /// query languages</a>.
+        /// </para>
+        /// </summary>
+        public QueryLanguage QueryLanguage
+        {
+            get { return this._queryLanguage; }
+            set { this._queryLanguage = value; }
+        }
+
+        // Check to see if QueryLanguage property is set
+        internal bool IsSetQueryLanguage()
+        {
+            return this._queryLanguage != null;
         }
 
         /// <summary>

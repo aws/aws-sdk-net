@@ -187,7 +187,8 @@ namespace Amazon.AppConfig.Model
         ///  </li> <li> 
         /// <para>
         /// For an Amazon S3 object, specify the URI in the following format: <c>s3://&lt;bucket&gt;/&lt;objectKey&gt;
-        /// </c>. Here is an example: <c>s3://my-bucket/my-app/us-east-1/my-config.json</c> 
+        /// </c>. Here is an example: <c>s3://amzn-s3-demo-bucket/my-app/us-east-1/my-config.json</c>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>

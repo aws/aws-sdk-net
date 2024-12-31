@@ -155,6 +155,12 @@
     <pattern>[a-zA-Z0-9\-:/]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConnectCampaignsV2.Model.PutProfileOutboundRequestBatchRequest.Id</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9\-:/]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConnectCampaignsV2.Model.ResumeCampaignRequest.Id</property>
     <min>0</min>
     <max>256</max>
@@ -371,10 +377,28 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConnectCampaignsV2.Model.EventTrigger.CustomerProfilesDomainArn</property>
+    <min>20</min>
+    <max>500</max>
+    <pattern>arn:[a-zA-Z0-9-]+:[a-zA-Z0-9-]+:[a-z]{2}-[a-z]+-\d{1,2}:[a-zA-Z0-9-]+:[^:]+(?:/[^:]+)*(?:/[^:]+)?(?:\:[^:]+)?</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConnectCampaignsV2.Model.FailedCampaignStateResponse.CampaignId</property>
     <min>0</min>
     <max>256</max>
     <pattern>[a-zA-Z0-9\-:/]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCampaignsV2.Model.FailedProfileOutboundRequest.ClientToken</property>
+    <min>0</min>
+    <max>200</max>
+    <pattern>[a-zA-Z0-9_\-.]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCampaignsV2.Model.FailedProfileOutboundRequest.Id</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9_\-.]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectCampaignsV2.Model.FailedRequest.ClientToken</property>
@@ -427,6 +451,16 @@
     <property>Amazon.ConnectCampaignsV2.Model.PredictiveConfig.BandwidthAllocation</property>
     <min>0</min>
     <max>1</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCampaignsV2.Model.ProfileOutboundRequest.ClientToken</property>
+    <min>0</min>
+    <max>200</max>
+    <pattern>[a-zA-Z0-9_\-.]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCampaignsV2.Model.ProfileOutboundRequest.ProfileId</property>
+    <pattern>[a-f0-9]{32}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectCampaignsV2.Model.ProgressiveConfig.BandwidthAllocation</property>
@@ -515,6 +549,18 @@
     <min>0</min>
     <max>256</max>
     <pattern>[a-zA-Z0-9\-:/]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCampaignsV2.Model.SuccessfulProfileOutboundRequest.ClientToken</property>
+    <min>0</min>
+    <max>200</max>
+    <pattern>[a-zA-Z0-9_\-.]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCampaignsV2.Model.SuccessfulProfileOutboundRequest.Id</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9_\-.]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectCampaignsV2.Model.SuccessfulRequest.ClientToken</property>

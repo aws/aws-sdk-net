@@ -108,6 +108,18 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.OnStartDeepHealthChecks = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("OverrideVpcConfig", targetDepth))
+                {
+                    var unmarshaller = VpcConfigUnmarshaller.Instance;
+                    unmarshalledObject.OverrideVpcConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Status", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("TargetCount", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
@@ -118,6 +130,18 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ThreadsPerCore = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TrainingPlanArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TrainingPlanArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TrainingPlanStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TrainingPlanStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

@@ -45,6 +45,7 @@ namespace Amazon.CloudHSMV2.Model
         private BackupRetentionPolicy _backupRetentionPolicy;
         private string _hsmType;
         private ClusterMode _mode;
+        private NetworkType _networkType;
         private string _sourceBackupId;
         private List<string> _subnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<Tag> _tagList = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
@@ -103,6 +104,25 @@ namespace Amazon.CloudHSMV2.Model
         internal bool IsSetMode()
         {
             return this._mode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkType. 
+        /// <para>
+        /// The NetworkType to create a cluster with. The allowed values are <c>IPV4</c> and <c>DUALSTACK</c>.
+        /// 
+        /// </para>
+        /// </summary>
+        public NetworkType NetworkType
+        {
+            get { return this._networkType; }
+            set { this._networkType = value; }
+        }
+
+        // Check to see if NetworkType property is set
+        internal bool IsSetNetworkType()
+        {
+            return this._networkType != null;
         }
 
         /// <summary>

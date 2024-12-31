@@ -92,6 +92,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.DomainExecutionRole);
                     }
 
+                    if(publicRequest.IsSetDomainVersion())
+                    {
+                        context.Writer.WritePropertyName("domainVersion");
+                        context.Writer.Write(publicRequest.DomainVersion);
+                    }
+
                     if(publicRequest.IsSetKmsKeyIdentifier())
                     {
                         context.Writer.WritePropertyName("kmsKeyIdentifier");
@@ -102,6 +108,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     {
                         context.Writer.WritePropertyName("name");
                         context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetServiceRole())
+                    {
+                        context.Writer.WritePropertyName("serviceRole");
+                        context.Writer.Write(publicRequest.ServiceRole);
                     }
 
                     if(publicRequest.IsSetSingleSignOn())

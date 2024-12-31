@@ -35,7 +35,11 @@ namespace Amazon.MediaLive.Model
     public partial class CmafIngestGroupSettings
     {
         private OutputLocationRef _destination;
+        private CmafKLVBehavior _klvBehavior;
+        private string _klvNameModifier;
         private CmafNielsenId3Behavior _nielsenId3Behavior;
+        private string _nielsenId3NameModifier;
+        private string _scte35NameModifier;
         private Scte35Type _scte35Type;
         private int? _segmentLength;
         private CmafIngestSegmentLengthUnits _segmentLengthUnits;
@@ -58,6 +62,42 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
+        /// Gets and sets the property KlvBehavior. If set to passthrough, passes any KLV data
+        /// from the input source to this output.
+        /// </summary>
+        public CmafKLVBehavior KlvBehavior
+        {
+            get { return this._klvBehavior; }
+            set { this._klvBehavior = value; }
+        }
+
+        // Check to see if KlvBehavior property is set
+        internal bool IsSetKlvBehavior()
+        {
+            return this._klvBehavior != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KlvNameModifier. Change the modifier that MediaLive automatically
+        /// adds to the Streams() name that identifies a KLV track. The default is "klv", which
+        /// means the default name will be Streams(klv.cmfm). Any string you enter here will replace
+        /// the "klv" string.\nThe modifier can only contain: numbers, letters, plus (+), minus
+        /// (-), underscore (_) and period (.) and has a maximum length of 100 characters.
+        /// </summary>
+        [AWSProperty(Max=100)]
+        public string KlvNameModifier
+        {
+            get { return this._klvNameModifier; }
+            set { this._klvNameModifier = value; }
+        }
+
+        // Check to see if KlvNameModifier property is set
+        internal bool IsSetKlvNameModifier()
+        {
+            return this._klvNameModifier != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property NielsenId3Behavior. If set to passthrough, Nielsen inaudible
         /// tones for media tracking will be detected in the input audio and an equivalent ID3
         /// tag will be inserted in the output.
@@ -72,6 +112,48 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetNielsenId3Behavior()
         {
             return this._nielsenId3Behavior != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NielsenId3NameModifier. Change the modifier that MediaLive
+        /// automatically adds to the Streams() name that identifies a Nielsen ID3 track. The
+        /// default is "nid3", which means the default name will be Streams(nid3.cmfm). Any string
+        /// you enter here will replace the "nid3" string.\nThe modifier can only contain: numbers,
+        /// letters, plus (+), minus (-), underscore (_) and period (.) and has a maximum length
+        /// of 100 characters.
+        /// </summary>
+        [AWSProperty(Max=100)]
+        public string NielsenId3NameModifier
+        {
+            get { return this._nielsenId3NameModifier; }
+            set { this._nielsenId3NameModifier = value; }
+        }
+
+        // Check to see if NielsenId3NameModifier property is set
+        internal bool IsSetNielsenId3NameModifier()
+        {
+            return this._nielsenId3NameModifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Scte35NameModifier. Change the modifier that MediaLive
+        /// automatically adds to the Streams() name for a SCTE 35 track. The default is "scte",
+        /// which means the default name will be Streams(scte.cmfm). Any string you enter here
+        /// will replace the "scte" string.\nThe modifier can only contain: numbers, letters,
+        /// plus (+), minus (-), underscore (_) and period (.) and has a maximum length of 100
+        /// characters.
+        /// </summary>
+        [AWSProperty(Max=100)]
+        public string Scte35NameModifier
+        {
+            get { return this._scte35NameModifier; }
+            set { this._scte35NameModifier = value; }
+        }
+
+        // Check to see if Scte35NameModifier property is set
+        internal bool IsSetScte35NameModifier()
+        {
+            return this._scte35NameModifier != null;
         }
 
         /// <summary>

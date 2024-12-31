@@ -94,6 +94,12 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
                     response.IngestEndpoints = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("InputSwitchConfiguration", targetDepth))
+                {
+                    var unmarshaller = InputSwitchConfigurationUnmarshaller.Instance;
+                    response.InputSwitchConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("InputType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -104,6 +110,12 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.ModifiedAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("OutputHeaderConfiguration", targetDepth))
+                {
+                    var unmarshaller = OutputHeaderConfigurationUnmarshaller.Instance;
+                    response.OutputHeaderConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Tags", targetDepth))

@@ -64,7 +64,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property CreateTime. 
         /// <para>
-        /// The create date and time for a webhook. 
+        /// A timestamp of when Amplify created the webhook in your Git repository.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -102,7 +102,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property UpdateTime. 
         /// <para>
-        /// Updates the date and time for a webhook. 
+        /// A timestamp of when Amplify updated the webhook in your Git repository.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

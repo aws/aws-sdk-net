@@ -48,6 +48,20 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAnnotations())
+            {
+                context.Writer.WritePropertyName("annotations");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectAnnotationsKvp in requestObject.Annotations)
+                {
+                    context.Writer.WritePropertyName(requestObjectAnnotationsKvp.Key);
+                    var requestObjectAnnotationsValue = requestObjectAnnotationsKvp.Value;
+
+                        context.Writer.Write(requestObjectAnnotationsValue);
+                }
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetLabels())
             {
                 context.Writer.WritePropertyName("labels");
@@ -60,6 +74,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                         context.Writer.Write(requestObjectLabelsValue);
                 }
                 context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetNamespace())
+            {
+                context.Writer.WritePropertyName("namespace");
+                context.Writer.Write(requestObject.Namespace);
             }
 
         }

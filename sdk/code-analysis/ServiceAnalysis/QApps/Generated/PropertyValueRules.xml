@@ -22,6 +22,27 @@
     <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QApps.Model.CreatePresignedUrlRequest.AppId</property>
+    <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QApps.Model.CreatePresignedUrlRequest.CardId</property>
+    <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QApps.Model.CreatePresignedUrlRequest.FileContentsSha256</property>
+    <pattern>[A-Za-z0-9+/]{43}=$|^[A-Za-z0-9+/]{42}==$|^[A-Za-z0-9+/]{44}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QApps.Model.CreatePresignedUrlRequest.FileName</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QApps.Model.CreatePresignedUrlRequest.SessionId</property>
+    <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QApps.Model.CreateQAppRequest.Description</property>
     <min>0</min>
     <max>500</max>
@@ -66,11 +87,19 @@
     <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QApps.Model.DescribeQAppPermissionsRequest.AppId</property>
+    <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QApps.Model.DisassociateLibraryItemReviewRequest.LibraryItemId</property>
     <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.DisassociateQAppFromUserRequest.AppId</property>
+    <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QApps.Model.ExportQAppSessionDataRequest.SessionId</property>
     <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -97,6 +126,11 @@
   <property-value-rule>
     <property>Amazon.QApps.Model.GetQAppRequest.AppId</property>
     <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QApps.Model.GetQAppRequest.AppVersion</property>
+    <min>0</min>
+    <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.GetQAppResponse.AppId</property>
@@ -126,6 +160,34 @@
   <property-value-rule>
     <property>Amazon.QApps.Model.GetQAppSessionRequest.SessionId</property>
     <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QApps.Model.GetQAppSessionResponse.AppVersion</property>
+    <min>0</min>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QApps.Model.GetQAppSessionResponse.LatestPublishedAppVersion</property>
+    <min>0</min>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QApps.Model.GetQAppSessionResponse.SessionName</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QApps.Model.GetQAppSessionMetadataRequest.SessionId</property>
+    <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QApps.Model.GetQAppSessionMetadataResponse.SessionId</property>
+    <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QApps.Model.GetQAppSessionMetadataResponse.SessionName</property>
+    <min>0</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.ImportDocumentRequest.AppId</property>
@@ -167,6 +229,14 @@
     <property>Amazon.QApps.Model.ListQAppsRequest.NextToken</property>
     <min>0</min>
     <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QApps.Model.ListQAppSessionDataRequest.SessionId</property>
+    <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QApps.Model.ListQAppSessionDataResponse.SessionId</property>
+    <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.ListTagsForResourceRequest.ResourceARN</property>
@@ -258,8 +328,30 @@
     <pattern>[^{}\\"&lt;&gt;]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QApps.Model.UpdateQAppPermissionsRequest.AppId</property>
+    <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QApps.Model.UpdateQAppSessionRequest.SessionId</property>
     <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QApps.Model.UpdateQAppSessionMetadataRequest.SessionId</property>
+    <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QApps.Model.UpdateQAppSessionMetadataRequest.SessionName</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QApps.Model.UpdateQAppSessionMetadataResponse.SessionId</property>
+    <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QApps.Model.UpdateQAppSessionMetadataResponse.SessionName</property>
+    <min>0</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.AppDefinitionInput.InitialPrompt</property>
@@ -289,7 +381,7 @@
   <property-value-rule>
     <property>Amazon.QApps.Model.CardValue.Value</property>
     <min>0</min>
-    <max>5000</max>
+    <max>40000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.Category.Id</property>
@@ -357,6 +449,26 @@
     <pattern>[^{}\\"&lt;&gt;]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QApps.Model.FormInputCard.Id</property>
+    <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QApps.Model.FormInputCard.Title</property>
+    <min>0</min>
+    <max>100</max>
+    <pattern>[^{}\\"&lt;&gt;]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QApps.Model.FormInputCardInput.Id</property>
+    <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QApps.Model.FormInputCardInput.Title</property>
+    <min>0</min>
+    <max>100</max>
+    <pattern>[^{}\\"&lt;&gt;]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QApps.Model.LibraryItemMember.AppId</property>
     <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
   </property-value-rule>
@@ -368,6 +480,21 @@
   <property-value-rule>
     <property>Amazon.QApps.Model.LibraryItemMember.LibraryItemId</property>
     <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QApps.Model.PermissionInput.Action</property>
+    <min>1</min>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QApps.Model.PermissionInput.Principal</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QApps.Model.PermissionOutput.Action</property>
+    <min>1</min>
+    <max>20</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.PredictAppDefinition.Description</property>
@@ -386,19 +513,52 @@
     <max>10000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QApps.Model.PrincipalOutput.Email</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QApps.Model.PrincipalOutput.UserId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QApps.Model.PrincipalOutput.UserType</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QApps.Model.QAppSessionData.CardId</property>
+    <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QApps.Model.QAppSessionData.SubmissionId</property>
+    <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QApps.Model.QPluginCard.ActionIdentifier</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QApps.Model.QPluginCard.Id</property>
     <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.QPluginCard.Prompt</property>
     <min>0</min>
-    <max>7000</max>
+    <max>50000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.QPluginCard.Title</property>
     <min>0</min>
     <max>100</max>
     <pattern>[^{}\\"&lt;&gt;]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QApps.Model.QPluginCardInput.ActionIdentifier</property>
+    <min>1</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.QPluginCardInput.Id</property>
@@ -412,7 +572,7 @@
   <property-value-rule>
     <property>Amazon.QApps.Model.QPluginCardInput.Prompt</property>
     <min>0</min>
-    <max>7000</max>
+    <max>50000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.QPluginCardInput.Title</property>
@@ -427,7 +587,7 @@
   <property-value-rule>
     <property>Amazon.QApps.Model.QQueryCard.Prompt</property>
     <min>0</min>
-    <max>7000</max>
+    <max>50000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.QQueryCard.Title</property>
@@ -442,13 +602,21 @@
   <property-value-rule>
     <property>Amazon.QApps.Model.QQueryCardInput.Prompt</property>
     <min>0</min>
-    <max>7000</max>
+    <max>50000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.QQueryCardInput.Title</property>
     <min>0</min>
     <max>100</max>
     <pattern>[^{}\\"&lt;&gt;]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QApps.Model.Submission.SubmissionId</property>
+    <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QApps.Model.SubmissionMutation.SubmissionId</property>
+    <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.TextInputCard.DefaultValue</property>

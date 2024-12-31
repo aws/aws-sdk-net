@@ -50,8 +50,8 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Catalog. 
         /// <para>
-        ///  Specifies the catalog in which the AWS Opportunity exists. This is the environment
-        /// (e.g., <c>AWS</c> or <c>Sandbox</c>) where the opportunity is being managed. 
+        /// Specifies the catalog in which the AWS Opportunity exists. This is the environment
+        /// (e.g., <c>AWS</c> or <c>Sandbox</c>) where the opportunity is being managed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -70,9 +70,9 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Customer. 
         /// <para>
-        ///  Provides details about the customer associated with the AWS Opportunity, including
+        /// Provides details about the customer associated with the AWS Opportunity, including
         /// account information, industry, and other customer data. These details help partners
-        /// understand the business context of the opportunity. 
+        /// understand the business context of the opportunity.
         /// </para>
         /// </summary>
         public AwsOpportunityCustomer Customer
@@ -90,8 +90,8 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Insights. 
         /// <para>
-        ///  Provides insights into the AWS Opportunity, including engagement score and recommended
-        /// actions that AWS suggests for the partner. 
+        /// Provides insights into the AWS Opportunity, including engagement score and recommended
+        /// actions that AWS suggests for the partner.
         /// </para>
         /// </summary>
         public AwsOpportunityInsights Insights
@@ -109,9 +109,9 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property InvolvementType. 
         /// <para>
-        ///  Specifies the type of involvement AWS has in the opportunity, such as direct cosell
+        /// Specifies the type of involvement AWS has in the opportunity, such as direct cosell
         /// or advisory support. This field helps partners understand the role AWS plays in advancing
-        /// the opportunity. 
+        /// the opportunity.
         /// </para>
         /// </summary>
         public SalesInvolvementType InvolvementType
@@ -129,10 +129,9 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property InvolvementTypeChangeReason. 
         /// <para>
-        ///  Provides a reason for any changes in the involvement type of AWS in the opportunity.
+        /// Provides a reason for any changes in the involvement type of AWS in the opportunity.
         /// This field is used to track why the level of AWS engagement has changed from <c>For
         /// Visibility Only</c> to <c>Co-sell</c> offering transparency into the partnership dynamics.
-        /// 
         /// </para>
         /// </summary>
         public InvolvementTypeChangeReason InvolvementTypeChangeReason
@@ -150,9 +149,9 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property LifeCycle. 
         /// <para>
-        ///  Contains lifecycle information for the AWS Opportunity, including review status,
-        /// stage, and target close date. This field is crucial for partners to monitor the progression
-        /// of the opportunity. 
+        /// Contains lifecycle information for the AWS Opportunity, including review status, stage,
+        /// and target close date. This field is crucial for partners to monitor the progression
+        /// of the opportunity.
         /// </para>
         /// </summary>
         public AwsOpportunityLifeCycle LifeCycle
@@ -170,8 +169,8 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property OpportunityTeam. 
         /// <para>
-        ///  Details the AWS opportunity team, including members involved. This information helps
-        /// partners know who from AWS is engaged and what their role is. 
+        /// Details the AWS opportunity team, including members involved. This information helps
+        /// partners know who from AWS is engaged and what their role is.
         /// </para>
         /// </summary>
         public List<AwsTeamMember> OpportunityTeam
@@ -189,9 +188,9 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Origin. 
         /// <para>
-        ///  Specifies whether the AWS Opportunity originated from AWS or the partner. This helps
+        /// Specifies whether the AWS Opportunity originated from AWS or the partner. This helps
         /// distinguish between opportunities that were sourced by AWS and those referred by the
-        /// partner. 
+        /// partner.
         /// </para>
         /// </summary>
         public OpportunityOrigin Origin
@@ -209,9 +208,9 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Project. 
         /// <para>
-        ///  Provides details about the project associated with the AWS Opportunity, including
+        /// Provides details about the project associated with the AWS Opportunity, including
         /// the customer’s business problem, expected outcomes, and project scope. This information
-        /// is crucial for understanding the broader context of the opportunity. 
+        /// is crucial for understanding the broader context of the opportunity.
         /// </para>
         /// </summary>
         public AwsOpportunityProject Project
@@ -229,9 +228,9 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property RelatedEntityIds. 
         /// <para>
-        ///  Lists related entity identifiers, such as AWS products or partner solutions, associated
+        /// Lists related entity identifiers, such as AWS products or partner solutions, associated
         /// with the AWS Opportunity. These identifiers provide additional context and help partners
-        /// understand which AWS services are involved. 
+        /// understand which AWS services are involved.
         /// </para>
         /// </summary>
         public AwsOpportunityRelatedEntities RelatedEntityIds
@@ -249,9 +248,8 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property RelatedOpportunityId. 
         /// <para>
-        ///  Provides the unique identifier of the related partner opportunity, allowing partners
+        /// Provides the unique identifier of the related partner opportunity, allowing partners
         /// to link the AWS Opportunity to their corresponding opportunity in their CRM system.
-        /// 
         /// </para>
         /// </summary>
         public string RelatedOpportunityId
@@ -269,9 +267,9 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Visibility. 
         /// <para>
-        ///  Defines the visibility level for the AWS Opportunity. Use <c>Full</c> visibility
-        /// for most cases, while <c>Limited</c> visibility is reserved for special programs or
-        /// sensitive opportunities. 
+        /// Defines the visibility level for the AWS Opportunity. Use <c>Full</c> visibility for
+        /// most cases, while <c>Limited</c> visibility is reserved for special programs or sensitive
+        /// opportunities.
         /// </para>
         /// </summary>
         public Visibility Visibility

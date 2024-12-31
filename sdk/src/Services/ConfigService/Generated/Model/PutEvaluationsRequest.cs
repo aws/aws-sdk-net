@@ -31,8 +31,8 @@ namespace Amazon.ConfigService.Model
 {
     /// <summary>
     /// Container for the parameters to the PutEvaluations operation.
-    /// Used by an Lambda function to deliver evaluation results to Config. This action is
-    /// required in every Lambda function that is invoked by an Config rule.
+    /// Used by an Lambda function to deliver evaluation results to Config. This operation
+    /// is required in every Lambda function that is invoked by an Config rule.
     /// </summary>
     public partial class PutEvaluationsRequest : AmazonConfigServiceRequest
     {

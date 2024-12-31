@@ -41,7 +41,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserPoolId. 
         /// <para>
-        /// The user pool ID for the user pool that the users are to be imported into.
+        /// The ID of the user pool that the users are to be imported into.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=55)]

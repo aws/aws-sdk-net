@@ -179,6 +179,74 @@ namespace Amazon.SSMQuickSetup
 
         #endregion
         
+        #region  GetConfiguration
+
+
+        /// <summary>
+        /// Returns details about the specified configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetConfiguration service method, as returned by SSMQuickSetup.</returns>
+        /// <exception cref="Amazon.SSMQuickSetup.Model.AccessDeniedException">
+        /// The requester has insufficient permissions to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.SSMQuickSetup.Model.ConflictException">
+        /// Another request is being processed. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SSMQuickSetup.Model.InternalServerException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SSMQuickSetup.Model.ResourceNotFoundException">
+        /// The resource couldn't be found. Check the ID or name and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SSMQuickSetup.Model.ThrottlingException">
+        /// The request or operation exceeds the maximum allowed request rate per Amazon Web Services
+        /// account and Amazon Web Services Region.
+        /// </exception>
+        /// <exception cref="Amazon.SSMQuickSetup.Model.ValidationException">
+        /// The request is invalid. Verify the values provided for the request parameters are
+        /// accurate.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-quicksetup-2018-05-10/GetConfiguration">REST API Reference for GetConfiguration Operation</seealso>
+        GetConfigurationResponse GetConfiguration(GetConfigurationRequest request);
+
+
+
+        /// <summary>
+        /// Returns details about the specified configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetConfiguration service method, as returned by SSMQuickSetup.</returns>
+        /// <exception cref="Amazon.SSMQuickSetup.Model.AccessDeniedException">
+        /// The requester has insufficient permissions to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.SSMQuickSetup.Model.ConflictException">
+        /// Another request is being processed. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SSMQuickSetup.Model.InternalServerException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SSMQuickSetup.Model.ResourceNotFoundException">
+        /// The resource couldn't be found. Check the ID or name and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SSMQuickSetup.Model.ThrottlingException">
+        /// The request or operation exceeds the maximum allowed request rate per Amazon Web Services
+        /// account and Amazon Web Services Region.
+        /// </exception>
+        /// <exception cref="Amazon.SSMQuickSetup.Model.ValidationException">
+        /// The request is invalid. Verify the values provided for the request parameters are
+        /// accurate.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-quicksetup-2018-05-10/GetConfiguration">REST API Reference for GetConfiguration Operation</seealso>
+        Task<GetConfigurationResponse> GetConfigurationAsync(GetConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetConfigurationManager
 
 
@@ -362,6 +430,70 @@ namespace Amazon.SSMQuickSetup
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-quicksetup-2018-05-10/ListConfigurationManagers">REST API Reference for ListConfigurationManagers Operation</seealso>
         Task<ListConfigurationManagersResponse> ListConfigurationManagersAsync(ListConfigurationManagersRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListConfigurations
+
+
+        /// <summary>
+        /// Returns configurations deployed by Quick Setup in the requesting Amazon Web Services
+        /// account and Amazon Web Services Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the ListConfigurations service method, as returned by SSMQuickSetup.</returns>
+        /// <exception cref="Amazon.SSMQuickSetup.Model.AccessDeniedException">
+        /// The requester has insufficient permissions to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.SSMQuickSetup.Model.InternalServerException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SSMQuickSetup.Model.ResourceNotFoundException">
+        /// The resource couldn't be found. Check the ID or name and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SSMQuickSetup.Model.ThrottlingException">
+        /// The request or operation exceeds the maximum allowed request rate per Amazon Web Services
+        /// account and Amazon Web Services Region.
+        /// </exception>
+        /// <exception cref="Amazon.SSMQuickSetup.Model.ValidationException">
+        /// The request is invalid. Verify the values provided for the request parameters are
+        /// accurate.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-quicksetup-2018-05-10/ListConfigurations">REST API Reference for ListConfigurations Operation</seealso>
+        ListConfigurationsResponse ListConfigurations(ListConfigurationsRequest request);
+
+
+
+        /// <summary>
+        /// Returns configurations deployed by Quick Setup in the requesting Amazon Web Services
+        /// account and Amazon Web Services Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConfigurations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListConfigurations service method, as returned by SSMQuickSetup.</returns>
+        /// <exception cref="Amazon.SSMQuickSetup.Model.AccessDeniedException">
+        /// The requester has insufficient permissions to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.SSMQuickSetup.Model.InternalServerException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SSMQuickSetup.Model.ResourceNotFoundException">
+        /// The resource couldn't be found. Check the ID or name and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SSMQuickSetup.Model.ThrottlingException">
+        /// The request or operation exceeds the maximum allowed request rate per Amazon Web Services
+        /// account and Amazon Web Services Region.
+        /// </exception>
+        /// <exception cref="Amazon.SSMQuickSetup.Model.ValidationException">
+        /// The request is invalid. Verify the values provided for the request parameters are
+        /// accurate.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-quicksetup-2018-05-10/ListConfigurations">REST API Reference for ListConfigurations Operation</seealso>
+        Task<ListConfigurationsResponse> ListConfigurationsAsync(ListConfigurationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

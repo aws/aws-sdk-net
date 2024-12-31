@@ -72,6 +72,24 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                     unmarshalledObject.BytesScanned = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("estimatedBytesSkipped", targetDepth))
+                {
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
+                    unmarshalledObject.EstimatedBytesSkipped = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("estimatedRecordsSkipped", targetDepth))
+                {
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
+                    unmarshalledObject.EstimatedRecordsSkipped = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("logGroupsScanned", targetDepth))
+                {
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
+                    unmarshalledObject.LogGroupsScanned = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("recordsMatched", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;

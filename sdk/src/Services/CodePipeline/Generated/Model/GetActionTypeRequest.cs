@@ -72,6 +72,10 @@ namespace Amazon.CodePipeline.Model
         /// <para>
         ///  <c>Invoke</c> 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Compute</c> 
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]

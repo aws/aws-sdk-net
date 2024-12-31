@@ -123,6 +123,12 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         unmarshalledObject.BaselineEbsBandwidthMbps = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("BaselinePerformanceFactors", targetDepth))
+                    {
+                        var unmarshaller = BaselinePerformanceFactorsRequestUnmarshaller.Instance;
+                        unmarshalledObject.BaselinePerformanceFactors = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("BurstablePerformance", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

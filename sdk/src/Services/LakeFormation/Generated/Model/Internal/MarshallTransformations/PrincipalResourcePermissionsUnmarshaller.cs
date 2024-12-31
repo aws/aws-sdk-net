@@ -72,6 +72,12 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
                     unmarshalledObject.AdditionalDetails = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Condition", targetDepth))
+                {
+                    var unmarshaller = ConditionUnmarshaller.Instance;
+                    unmarshalledObject.Condition = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LastUpdated", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;

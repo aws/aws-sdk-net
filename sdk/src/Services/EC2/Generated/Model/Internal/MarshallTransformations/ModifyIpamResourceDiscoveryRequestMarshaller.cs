@@ -76,6 +76,23 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                          }
                     }
                 }
+                if(publicRequest.IsSetAddOrganizationalUnitExclusions())
+                {
+                    if (publicRequest.AddOrganizationalUnitExclusions.Count == 0)
+                        request.Parameters.Add("AddOrganizationalUnitExclusion", "");
+                    else
+                    {
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.AddOrganizationalUnitExclusions)
+                         {
+                            if(publicRequestlistValue.IsSetOrganizationsEntityPath())
+                            {
+                                request.Parameters.Add("AddOrganizationalUnitExclusion" + "." + publicRequestlistValueIndex + "." + "OrganizationsEntityPath", StringUtils.FromString(publicRequestlistValue.OrganizationsEntityPath));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
+                    }
+                }
                 if(publicRequest.IsSetDescription())
                 {
                     request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
@@ -96,6 +113,23 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             if(publicRequestlistValue.IsSetRegionName())
                             {
                                 request.Parameters.Add("RemoveOperatingRegion" + "." + publicRequestlistValueIndex + "." + "RegionName", StringUtils.FromString(publicRequestlistValue.RegionName));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
+                    }
+                }
+                if(publicRequest.IsSetRemoveOrganizationalUnitExclusions())
+                {
+                    if (publicRequest.RemoveOrganizationalUnitExclusions.Count == 0)
+                        request.Parameters.Add("RemoveOrganizationalUnitExclusion", "");
+                    else
+                    {
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.RemoveOrganizationalUnitExclusions)
+                         {
+                            if(publicRequestlistValue.IsSetOrganizationsEntityPath())
+                            {
+                                request.Parameters.Add("RemoveOrganizationalUnitExclusion" + "." + publicRequestlistValueIndex + "." + "OrganizationsEntityPath", StringUtils.FromString(publicRequestlistValue.OrganizationsEntityPath));
                             }
                              publicRequestlistValueIndex++;
                          }

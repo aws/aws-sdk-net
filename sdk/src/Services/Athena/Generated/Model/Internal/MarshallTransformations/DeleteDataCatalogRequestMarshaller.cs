@@ -71,6 +71,12 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
                     writer.Validate = false;
                     writer.WriteObjectStart();
                     var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDeleteCatalogOnly())
+                    {
+                        context.Writer.WritePropertyName("DeleteCatalogOnly");
+                        context.Writer.Write(publicRequest.DeleteCatalogOnly.Value);
+                    }
+
                     if(publicRequest.IsSetName())
                     {
                         context.Writer.WritePropertyName("Name");

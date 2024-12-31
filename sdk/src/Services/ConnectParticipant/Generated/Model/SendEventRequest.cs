@@ -44,6 +44,11 @@ namespace Amazon.ConnectParticipant.Model
     /// participants in the chat. Using the SendEvent API for message receipts when a supervisor
     /// is barged-in will result in a conflict exception.
     /// </para>
+    ///  
+    /// <para>
+    /// For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
+    /// Connect Chat security best practices</a>.
+    /// </para>
     ///  <note> 
     /// <para>
     ///  <c>ConnectionToken</c> is used for invoking this API instead of <c>ParticipantToken</c>.

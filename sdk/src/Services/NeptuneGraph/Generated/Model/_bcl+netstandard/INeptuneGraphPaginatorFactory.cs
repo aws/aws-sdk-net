@@ -27,6 +27,11 @@ namespace Amazon.NeptuneGraph.Model
     {
 
         /// <summary>
+        /// Paginator for ListExportTasks operation
+        ///</summary>
+        IListExportTasksPaginator ListExportTasks(ListExportTasksRequest request);
+
+        /// <summary>
         /// Paginator for ListGraphs operation
         ///</summary>
         IListGraphsPaginator ListGraphs(ListGraphsRequest request);

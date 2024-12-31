@@ -129,6 +129,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.PrivateDnsNameConfiguration = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("remoteAccessEnabled", targetDepth))
+                    {
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
+                        unmarshalledObject.RemoteAccessEnabled = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("serviceId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -167,6 +173,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.SupportedIpAddressTypes.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("supportedRegionSet/item", targetDepth))
+                    {
+                        var unmarshaller = SupportedRegionDetailUnmarshaller.Instance;
+                        if (unmarshalledObject.SupportedRegions == null)
+                        {
+                            unmarshalledObject.SupportedRegions = new List<SupportedRegionDetail>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.SupportedRegions.Add(item);
                         continue;
                     }
                     if (context.TestExpression("tagSet/item", targetDepth))

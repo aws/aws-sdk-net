@@ -55,6 +55,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("cidrEndpointsCustomSubDomain", targetDepth))
+                    {
+                        var unmarshaller = VerifiedAccessInstanceCustomSubDomainUnmarshaller.Instance;
+                        unmarshalledObject.CidrEndpointsCustomSubDomain = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("creationTime", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

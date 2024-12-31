@@ -36,6 +36,7 @@ namespace Amazon.DataZone.Model
     {
         private string _accountId;
         private bool? _autoImportDataQualityResult;
+        private string _catalogName;
         private string _dataAccessRole;
         private string _region;
         private List<RelationalFilterConfiguration> _relationalFilterConfigurations = AWSConfigs.InitializeCollections ? new List<RelationalFilterConfiguration>() : null;
@@ -77,6 +78,25 @@ namespace Amazon.DataZone.Model
         internal bool IsSetAutoImportDataQualityResult()
         {
             return this._autoImportDataQualityResult.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CatalogName. 
+        /// <para>
+        /// The catalog name in the Amazon Web Services Glue run configuration.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string CatalogName
+        {
+            get { return this._catalogName; }
+            set { this._catalogName = value; }
+        }
+
+        // Check to see if CatalogName property is set
+        internal bool IsSetCatalogName()
+        {
+            return this._catalogName != null;
         }
 
         /// <summary>

@@ -59,10 +59,34 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetKlvBehavior())
+            {
+                context.Writer.WritePropertyName("klvBehavior");
+                context.Writer.Write(requestObject.KlvBehavior);
+            }
+
+            if(requestObject.IsSetKlvNameModifier())
+            {
+                context.Writer.WritePropertyName("klvNameModifier");
+                context.Writer.Write(requestObject.KlvNameModifier);
+            }
+
             if(requestObject.IsSetNielsenId3Behavior())
             {
                 context.Writer.WritePropertyName("nielsenId3Behavior");
                 context.Writer.Write(requestObject.NielsenId3Behavior);
+            }
+
+            if(requestObject.IsSetNielsenId3NameModifier())
+            {
+                context.Writer.WritePropertyName("nielsenId3NameModifier");
+                context.Writer.Write(requestObject.NielsenId3NameModifier);
+            }
+
+            if(requestObject.IsSetScte35NameModifier())
+            {
+                context.Writer.WritePropertyName("scte35NameModifier");
+                context.Writer.Write(requestObject.Scte35NameModifier);
             }
 
             if(requestObject.IsSetScte35Type())

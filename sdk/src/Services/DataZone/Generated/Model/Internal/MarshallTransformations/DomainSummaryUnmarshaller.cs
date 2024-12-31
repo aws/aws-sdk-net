@@ -84,6 +84,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("domainVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DomainVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

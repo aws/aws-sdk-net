@@ -64,7 +64,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>/ssm/managed-instance/default-ec2-instance-management-role</c> 
+        ///  <c>/ssm/appmanager/appmanager-enabled</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -76,11 +76,19 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// /ssm/automation/enable-adaptive-concurrency
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>/ssm/documents/console/public-sharing-permission</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <c>/ssm/managed-instance/activation-tier</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>/ssm/managed-instance/default-ec2-instance-management-role</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>

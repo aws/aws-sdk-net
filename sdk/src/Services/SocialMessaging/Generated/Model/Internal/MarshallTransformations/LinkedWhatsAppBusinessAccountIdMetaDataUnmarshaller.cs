@@ -84,6 +84,12 @@ namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
                     unmarshalledObject.UnregisteredWhatsAppPhoneNumbers = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("wabaId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.WabaId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

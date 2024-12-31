@@ -42,7 +42,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AuthenticationResult. 
         /// <para>
-        /// The result returned by the server in response to the authentication request.
+        /// The outcome of a successful authentication process. After your application has passed
+        /// all challenges, Amazon Cognito returns an <c>AuthenticationResult</c> with the JSON
+        /// web tokens (JWTs) that indicate successful sign-in.
         /// </para>
         /// </summary>
         public AuthenticationResultType AuthenticationResult
@@ -60,7 +62,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ChallengeName. 
         /// <para>
-        /// The name of the challenge. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a>.
+        /// The name of the challenge that you must next respond to. You can find more information
+        /// about values for <c>ChallengeName</c> in the response parameters of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html#CognitoUserPools-AdminInitiateAuth-response-ChallengeName">AdminInitiateAuth</a>.
         /// </para>
         /// </summary>
         public ChallengeNameType ChallengeName
@@ -78,7 +81,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ChallengeParameters. 
         /// <para>
-        /// The challenge parameters. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a>.
+        /// The parameters that define your response to the next challenge. Take the values in
+        /// <c>ChallengeParameters</c> and provide values for them in the <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminRespondToAuthChallenge.html#CognitoUserPools-AdminRespondToAuthChallenge-request-ChallengeResponses">ChallengeResponses</a>
+        /// of the next <c>AdminRespondToAuthChallenge</c> request.
         /// </para>
         /// </summary>
         public Dictionary<string, string> ChallengeParameters
@@ -96,10 +101,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Session. 
         /// <para>
-        /// The session that should be passed both ways in challenge-response calls to the service.
-        /// If the caller must pass another challenge, they return a session with other challenge
-        /// parameters. This session should be passed as it is to the next <c>RespondToAuthChallenge</c>
-        /// API call.
+        /// The session identifier that maintains the state of authentication requests and challenge
+        /// responses. If an <c>AdminInitiateAuth</c> or <c>AdminRespondToAuthChallenge</c> API
+        /// request results in a determination that your application must pass another challenge,
+        /// Amazon Cognito returns a session with other challenge parameters. Send this session
+        /// identifier, unmodified, to the next <c>AdminRespondToAuthChallenge</c> request.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=20, Max=2048)]

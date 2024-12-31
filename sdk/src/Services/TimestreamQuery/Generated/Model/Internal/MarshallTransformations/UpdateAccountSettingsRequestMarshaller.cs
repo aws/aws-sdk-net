@@ -77,6 +77,17 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.MaxQueryTCU.Value);
                     }
 
+                    if(publicRequest.IsSetQueryCompute())
+                    {
+                        context.Writer.WritePropertyName("QueryCompute");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = QueryComputeRequestMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.QueryCompute, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
                     if(publicRequest.IsSetQueryPricingModel())
                     {
                         context.Writer.WritePropertyName("QueryPricingModel");

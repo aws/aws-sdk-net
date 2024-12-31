@@ -106,6 +106,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.ContactFlowId);
                     }
 
+                    if(publicRequest.IsSetCustomerId())
+                    {
+                        context.Writer.WritePropertyName("CustomerId");
+                        context.Writer.Write(publicRequest.CustomerId);
+                    }
+
                     if(publicRequest.IsSetInitialMessage())
                     {
                         context.Writer.WritePropertyName("InitialMessage");

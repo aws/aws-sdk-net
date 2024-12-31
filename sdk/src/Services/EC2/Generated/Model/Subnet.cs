@@ -38,6 +38,7 @@ namespace Amazon.EC2.Model
         private string _availabilityZone;
         private string _availabilityZoneId;
         private int? _availableIpAddressCount;
+        private BlockPublicAccessStates _blockPublicAccessStates;
         private string _cidrBlock;
         private string _customerOwnedIpv4Pool;
         private bool? _defaultForAz;
@@ -128,6 +129,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetAvailableIpAddressCount()
         {
             return this._availableIpAddressCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property BlockPublicAccessStates. 
+        /// <para>
+        /// The state of VPC Block Public Access (BPA).
+        /// </para>
+        /// </summary>
+        public BlockPublicAccessStates BlockPublicAccessStates
+        {
+            get { return this._blockPublicAccessStates; }
+            set { this._blockPublicAccessStates = value; }
+        }
+
+        // Check to see if BlockPublicAccessStates property is set
+        internal bool IsSetBlockPublicAccessStates()
+        {
+            return this._blockPublicAccessStates != null;
         }
 
         /// <summary>

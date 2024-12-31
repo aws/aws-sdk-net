@@ -59,6 +59,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetCidrEndpointsCustomSubDomain())
+                {
+                    request.Parameters.Add("CidrEndpointsCustomSubDomain", StringUtils.FromString(publicRequest.CidrEndpointsCustomSubDomain));
+                }
                 if(publicRequest.IsSetClientToken())
                 {
                     request.Parameters.Add("ClientToken", StringUtils.FromString(publicRequest.ClientToken));

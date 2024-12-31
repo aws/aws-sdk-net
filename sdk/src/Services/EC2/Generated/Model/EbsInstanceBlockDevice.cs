@@ -37,6 +37,7 @@ namespace Amazon.EC2.Model
         private string _associatedResource;
         private DateTime? _attachTime;
         private bool? _deleteOnTermination;
+        private OperatorResponse _operator;
         private AttachmentStatus _status;
         private string _volumeId;
         private string _volumeOwnerId;
@@ -93,6 +94,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetDeleteOnTermination()
         {
             return this._deleteOnTermination.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Operator. 
+        /// <para>
+        /// The service provider that manages the EBS volume.
+        /// </para>
+        /// </summary>
+        public OperatorResponse Operator
+        {
+            get { return this._operator; }
+            set { this._operator = value; }
+        }
+
+        // Check to see if Operator property is set
+        internal bool IsSetOperator()
+        {
+            return this._operator != null;
         }
 
         /// <summary>

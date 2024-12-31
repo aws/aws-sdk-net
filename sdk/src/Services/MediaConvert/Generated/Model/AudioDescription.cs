@@ -96,6 +96,7 @@ namespace Amazon.MediaConvert.Model
         /// name may be specified, with similar default/silence behavior. If no audio_source_name
         /// is specified, then "Audio Selector 1" will be chosen automatically.
         /// </summary>
+        [AWSProperty(Max=2048)]
         public string AudioSourceName
         {
             get { return this._audioSourceName; }

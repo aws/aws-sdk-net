@@ -35,6 +35,7 @@ namespace Amazon.CloudWatchLogs.Model
     public partial class GetQueryResultsResponse : AmazonWebServiceResponse
     {
         private string _encryptionKey;
+        private QueryLanguage _queryLanguage;
         private List<List<ResultField>> _results = AWSConfigs.InitializeCollections ? new List<List<ResultField>>() : null;
         private QueryStatistics _statistics;
         private QueryStatus _status;
@@ -59,6 +60,26 @@ namespace Amazon.CloudWatchLogs.Model
         internal bool IsSetEncryptionKey()
         {
             return this._encryptionKey != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property QueryLanguage. 
+        /// <para>
+        /// The query language used for this query. For more information about the query languages
+        /// that CloudWatch Logs supports, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData_Languages.html">Supported
+        /// query languages</a>.
+        /// </para>
+        /// </summary>
+        public QueryLanguage QueryLanguage
+        {
+            get { return this._queryLanguage; }
+            set { this._queryLanguage = value; }
+        }
+
+        // Check to see if QueryLanguage property is set
+        internal bool IsSetQueryLanguage()
+        {
+            return this._queryLanguage != null;
         }
 
         /// <summary>

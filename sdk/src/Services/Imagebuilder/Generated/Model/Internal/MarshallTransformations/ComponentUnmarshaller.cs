@@ -138,6 +138,12 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                     unmarshalledObject.Platform = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("productCodes", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ProductCodeListItem, ProductCodeListItemUnmarshaller>(ProductCodeListItemUnmarshaller.Instance);
+                    unmarshalledObject.ProductCodes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("publisher", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

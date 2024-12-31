@@ -256,7 +256,7 @@ namespace Amazon.Connect.Model
         /// (CCP).
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=0, Max=512)]
+        [AWSProperty(Sensitive=true, Min=0, Max=1024)]
         public string Name
         {
             get { return this._name; }

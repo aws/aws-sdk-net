@@ -30,17 +30,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Bedrock.Model
 {
     /// <summary>
-    /// Use to specify a automatic model evaluation job. The <c>EvaluationDatasetMetricConfig</c>
+    /// The configuration details of an automated evaluation job. The <c>EvaluationDatasetMetricConfig</c>
     /// object is used to specify the prompt datasets, task type, and metric names.
     /// </summary>
     public partial class AutomatedEvaluationConfig
     {
         private List<EvaluationDatasetMetricConfig> _datasetMetricConfigs = AWSConfigs.InitializeCollections ? new List<EvaluationDatasetMetricConfig>() : null;
+        private EvaluatorModelConfig _evaluatorModelConfig;
 
         /// <summary>
         /// Gets and sets the property DatasetMetricConfigs. 
         /// <para>
-        /// Specifies the required elements for an automatic model evaluation job.
+        /// Configuration details of the prompt datasets and metrics you want to use for your
+        /// evaluation job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=5)]
@@ -54,6 +56,26 @@ namespace Amazon.Bedrock.Model
         internal bool IsSetDatasetMetricConfigs()
         {
             return this._datasetMetricConfigs != null && (this._datasetMetricConfigs.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EvaluatorModelConfig. 
+        /// <para>
+        /// Contains the evaluator model configuration details. <c>EvaluatorModelConfig</c> is
+        /// required for evaluation jobs that use a knowledge base or in model evaluation job
+        /// that use a model as judge. This model computes all evaluation related metrics.
+        /// </para>
+        /// </summary>
+        public EvaluatorModelConfig EvaluatorModelConfig
+        {
+            get { return this._evaluatorModelConfig; }
+            set { this._evaluatorModelConfig = value; }
+        }
+
+        // Check to see if EvaluatorModelConfig property is set
+        internal bool IsSetEvaluatorModelConfig()
+        {
+            return this._evaluatorModelConfig != null;
         }
 
     }

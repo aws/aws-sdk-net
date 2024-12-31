@@ -114,6 +114,24 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                     unmarshalledObject.SseConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("status", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("statusMessage", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StatusMessage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("updateTime", targetDepth))
+                {
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                    unmarshalledObject.UpdateTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

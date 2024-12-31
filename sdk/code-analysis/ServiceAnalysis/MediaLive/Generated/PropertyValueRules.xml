@@ -992,6 +992,18 @@
     <max>86400</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaLive.Model.CmafIngestGroupSettings.KlvNameModifier</property>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.CmafIngestGroupSettings.NielsenId3NameModifier</property>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.CmafIngestGroupSettings.Scte35NameModifier</property>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaLive.Model.CmafIngestGroupSettings.SegmentLength</property>
     <min>1</min>
   </property-value-rule>
@@ -1986,7 +1998,15 @@
     <pattern>^([0,1]?[0-9]|2[0-3]):00$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaLive.Model.MediaPackageOutputDestinationSettings.ChannelGroup</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaLive.Model.MediaPackageOutputDestinationSettings.ChannelId</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.MediaPackageOutputDestinationSettings.ChannelName</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>

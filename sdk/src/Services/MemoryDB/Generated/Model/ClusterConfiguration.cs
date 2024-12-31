@@ -38,6 +38,8 @@ namespace Amazon.MemoryDB.Model
         private string _engine;
         private string _engineVersion;
         private string _maintenanceWindow;
+        private string _multiRegionClusterName;
+        private string _multiRegionParameterGroupName;
         private string _name;
         private string _nodeType;
         private int? _numShards;
@@ -71,7 +73,7 @@ namespace Amazon.MemoryDB.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// The configuration for the Redis OSS or Valkey engine used by the cluster.
+        /// The name of the engine used by the cluster configuration.
         /// </para>
         /// </summary>
         public string Engine
@@ -89,7 +91,7 @@ namespace Amazon.MemoryDB.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        /// The engine version used by the cluster
+        /// The Redis OSS engine version used by the cluster
         /// </para>
         /// </summary>
         public string EngineVersion
@@ -120,6 +122,42 @@ namespace Amazon.MemoryDB.Model
         internal bool IsSetMaintenanceWindow()
         {
             return this._maintenanceWindow != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MultiRegionClusterName. 
+        /// <para>
+        /// The name for the multi-Region cluster associated with the cluster configuration.
+        /// </para>
+        /// </summary>
+        public string MultiRegionClusterName
+        {
+            get { return this._multiRegionClusterName; }
+            set { this._multiRegionClusterName = value; }
+        }
+
+        // Check to see if MultiRegionClusterName property is set
+        internal bool IsSetMultiRegionClusterName()
+        {
+            return this._multiRegionClusterName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MultiRegionParameterGroupName. 
+        /// <para>
+        /// The name of the multi-Region parameter group associated with the cluster configuration.
+        /// </para>
+        /// </summary>
+        public string MultiRegionParameterGroupName
+        {
+            get { return this._multiRegionParameterGroupName; }
+            set { this._multiRegionParameterGroupName = value; }
+        }
+
+        // Check to see if MultiRegionParameterGroupName property is set
+        internal bool IsSetMultiRegionParameterGroupName()
+        {
+            return this._multiRegionParameterGroupName != null;
         }
 
         /// <summary>

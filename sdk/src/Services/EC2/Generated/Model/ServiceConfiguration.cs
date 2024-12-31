@@ -43,11 +43,13 @@ namespace Amazon.EC2.Model
         private PayerResponsibility _payerResponsibility;
         private string _privateDnsName;
         private PrivateDnsNameConfiguration _privateDnsNameConfiguration;
+        private bool? _remoteAccessEnabled;
         private string _serviceId;
         private string _serviceName;
         private ServiceState _serviceState;
         private List<ServiceTypeDetail> _serviceType = AWSConfigs.InitializeCollections ? new List<ServiceTypeDetail>() : null;
         private List<string> _supportedIpAddressTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<SupportedRegionDetail> _supportedRegions = AWSConfigs.InitializeCollections ? new List<SupportedRegionDetail>() : null;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
@@ -215,6 +217,25 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RemoteAccessEnabled. 
+        /// <para>
+        /// Indicates whether consumers can access the service from a Region other than the Region
+        /// where the service is hosted.
+        /// </para>
+        /// </summary>
+        public bool? RemoteAccessEnabled
+        {
+            get { return this._remoteAccessEnabled; }
+            set { this._remoteAccessEnabled = value; }
+        }
+
+        // Check to see if RemoteAccessEnabled property is set
+        internal bool IsSetRemoteAccessEnabled()
+        {
+            return this._remoteAccessEnabled.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ServiceId. 
         /// <para>
         /// The ID of the service.
@@ -303,6 +324,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetSupportedIpAddressTypes()
         {
             return this._supportedIpAddressTypes != null && (this._supportedIpAddressTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportedRegions. 
+        /// <para>
+        /// The supported Regions.
+        /// </para>
+        /// </summary>
+        public List<SupportedRegionDetail> SupportedRegions
+        {
+            get { return this._supportedRegions; }
+            set { this._supportedRegions = value; }
+        }
+
+        // Check to see if SupportedRegions property is set
+        internal bool IsSetSupportedRegions()
+        {
+            return this._supportedRegions != null && (this._supportedRegions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -69,6 +69,12 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                     writer.Validate = false;
                     writer.WriteObjectStart();
                     var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetApplicationType())
+                    {
+                        context.Writer.WritePropertyName("applicationType");
+                        context.Writer.Write(publicRequest.ApplicationType);
+                    }
+
                     if(publicRequest.IsSetClientRequestToken())
                     {
                         context.Writer.WritePropertyName("clientRequestToken");

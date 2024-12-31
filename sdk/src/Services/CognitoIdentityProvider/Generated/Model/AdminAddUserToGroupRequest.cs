@@ -107,7 +107,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserPoolId. 
         /// <para>
-        /// The user pool ID for the user pool.
+        /// The ID of the user pool that contains the group that you want to add the user to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=55)]

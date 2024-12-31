@@ -38,8 +38,28 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class Sheet
     {
+        private List<SheetImage> _images = AWSConfigs.InitializeCollections ? new List<SheetImage>() : null;
         private string _name;
         private string _sheetId;
+
+        /// <summary>
+        /// Gets and sets the property Images. 
+        /// <para>
+        /// A list of images on a sheet.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=10)]
+        public List<SheetImage> Images
+        {
+            get { return this._images; }
+            set { this._images = value; }
+        }
+
+        // Check to see if Images property is set
+        internal bool IsSetImages()
+        {
+            return this._images != null && (this._images.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property Name. 

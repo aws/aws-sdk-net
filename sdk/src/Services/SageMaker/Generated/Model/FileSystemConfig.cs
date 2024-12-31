@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// The Amazon Elastic File System storage configuration for a SageMaker image.
+    /// The Amazon Elastic File System storage configuration for a SageMaker AI image.
     /// </summary>
     public partial class FileSystemConfig
     {

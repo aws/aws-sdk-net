@@ -218,7 +218,7 @@ namespace Amazon.Bedrock.Model
         /// Gets and sets the property VpcConfig. 
         /// <para>
         /// The configuration of the Virtual Private Cloud (VPC) for the data in the batch inference
-        /// job. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-vpc">Protect
+        /// job. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-vpc">Protect
         /// batch inference jobs using a VPC</a>.
         /// </para>
         /// </summary>

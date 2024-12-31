@@ -34,6 +34,7 @@ namespace Amazon.ECS.Model
     /// </summary>
     public partial class Service
     {
+        private AvailabilityZoneRebalancing _availabilityZoneRebalancing;
         private List<CapacityProviderStrategyItem> _capacityProviderStrategy = AWSConfigs.InitializeCollections ? new List<CapacityProviderStrategyItem>() : null;
         private string _clusterArn;
         private DateTime? _createdAt;
@@ -67,9 +68,33 @@ namespace Amazon.ECS.Model
         private List<TaskSet> _taskSets = AWSConfigs.InitializeCollections ? new List<TaskSet>() : null;
 
         /// <summary>
+        /// Gets and sets the property AvailabilityZoneRebalancing. 
+        /// <para>
+        /// Indicates whether to use Availability Zone rebalancing for the service.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-rebalancing.html">Balancing
+        /// an Amazon ECS service across Availability Zones</a> in the <i>Amazon Elastic Container
+        /// Service Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public AvailabilityZoneRebalancing AvailabilityZoneRebalancing
+        {
+            get { return this._availabilityZoneRebalancing; }
+            set { this._availabilityZoneRebalancing = value; }
+        }
+
+        // Check to see if AvailabilityZoneRebalancing property is set
+        internal bool IsSetAvailabilityZoneRebalancing()
+        {
+            return this._availabilityZoneRebalancing != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CapacityProviderStrategy. 
         /// <para>
-        /// The capacity provider strategy the service uses. When using <c>DescribeServices</c>,
+        /// The capacity provider strategy the service uses. When using the DescribeServices API,
         /// this field is omitted if the service was created using a launch type.
         /// </para>
         /// </summary>
@@ -631,7 +656,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// The metadata that you apply to the service to help you categorize and organize them.
-        /// Each tag consists of a key and an optional value. You define both the key and value.
+        /// Each tag consists of a key and an optional value. You define bot the key and value.
         /// </para>
         ///  
         /// <para>

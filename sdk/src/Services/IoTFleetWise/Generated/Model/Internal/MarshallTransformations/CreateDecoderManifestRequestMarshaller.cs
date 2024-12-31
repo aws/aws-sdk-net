@@ -71,6 +71,12 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
                     writer.Validate = false;
                     writer.WriteObjectStart();
                     var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDefaultForUnmappedSignals())
+                    {
+                        context.Writer.WritePropertyName("defaultForUnmappedSignals");
+                        context.Writer.Write(publicRequest.DefaultForUnmappedSignals);
+                    }
+
                     if(publicRequest.IsSetDescription())
                     {
                         context.Writer.WritePropertyName("description");

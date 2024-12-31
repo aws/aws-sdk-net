@@ -121,14 +121,8 @@ namespace Amazon.SimpleNotificationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>ArchivePolicy</c> – Adds or updates an inline policy document to archive messages
-        /// stored in the specified Amazon SNS topic.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>BeginningArchiveTime</c> – The earliest starting point at which a message in the
-        /// topic’s archive can be replayed from. This point in time is based on the configured
-        /// message retention period set by the topic’s message archiving policy.
+        ///  <c>ArchivePolicy</c> – The policy that sets the retention period for messages stored
+        /// in the message archive of an Amazon SNS FIFO topic.
         /// </para>
         ///  </li> <li> 
         /// <para>

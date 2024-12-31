@@ -66,6 +66,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("connectionId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ConnectionId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("createdAt", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
@@ -76,6 +82,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DataSourceId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("description", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("domainId", targetDepth))

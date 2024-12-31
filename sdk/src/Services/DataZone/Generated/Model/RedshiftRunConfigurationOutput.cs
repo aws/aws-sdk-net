@@ -83,7 +83,6 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property RedshiftCredentialConfiguration.
         /// </summary>
-        [AWSProperty(Required=true)]
         public RedshiftCredentialConfiguration RedshiftCredentialConfiguration
         {
             get { return this._redshiftCredentialConfiguration; }

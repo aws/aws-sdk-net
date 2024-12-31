@@ -88,6 +88,12 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
                     response.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("InvocationConnectivityParameters", targetDepth))
+                {
+                    var unmarshaller = DescribeConnectionConnectivityParametersUnmarshaller.Instance;
+                    response.InvocationConnectivityParameters = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LastAuthorizedTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;

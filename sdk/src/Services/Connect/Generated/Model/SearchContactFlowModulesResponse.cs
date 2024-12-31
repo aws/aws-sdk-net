@@ -41,7 +41,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property ApproximateTotalCount. 
         /// <para>
-        /// The total number of contact flows which matched your search query.
+        /// The total number of flows which matched your search query.
         /// </para>
         /// </summary>
         public long? ApproximateTotalCount
@@ -59,7 +59,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property ContactFlowModules. 
         /// <para>
-        /// The search criteria to be used to return contact flow modules.
+        /// The search criteria to be used to return flow modules.
         /// </para>
         /// </summary>
         public List<ContactFlowModule> ContactFlowModules

@@ -44,7 +44,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// Gets and sets the property DeliveryModel. 
         /// <para>
         /// Specifies the customer's intended payment type agreement or procurement method to
-        /// acquire the solution or service outlined in the <c>Opportunity</c>. 
+        /// acquire the solution or service outlined in the <c>Opportunity</c>.
         /// </para>
         /// </summary>
         public RevenueModel DeliveryModel
@@ -63,7 +63,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// Gets and sets the property EffectiveDate. 
         /// <para>
         /// Specifies the <c>Opportunity</c>'s customer engagement start date for the contract's
-        /// effectiveness. 
+        /// effectiveness.
         /// </para>
         /// </summary>
         public string EffectiveDate
@@ -83,7 +83,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <para>
         /// Specifies the expiration date for the contract between the customer and Amazon Web
         /// Services partner. It signifies the termination date of the agreed-upon engagement
-        /// period between both parties. 
+        /// period between both parties.
         /// </para>
         /// </summary>
         public string ExpirationDate

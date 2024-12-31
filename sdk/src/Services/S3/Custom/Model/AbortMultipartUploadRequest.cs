@@ -81,6 +81,7 @@ namespace Amazon.S3.Model
         private string uploadId;
         private RequestPayer requestPayer;
         private string expectedBucketOwner;
+        private DateTime? ifMatchInitiatedTime;
 
         /// <summary>
         /// Gets and sets the property BucketName. 
@@ -223,6 +224,30 @@ namespace Amazon.S3.Model
         internal bool IsSetUploadId()
         {
             return this.uploadId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IfMatchInitiatedTime. 
+        /// <para>
+        /// If present, this header aborts an in progress multipart upload only if it was initiated on the provided timestamp.
+        /// If the initiated timestamp of the multipart upload does not match the provided value, the operation returns a <c>412 Precondition Failed</c> error.
+        /// If the initiated timestamp matches or if the multipart upload doesn't exist, the operation returns a <c>204 Success (No Content)</c> response.
+        /// </para>
+        /// <note>
+        /// <para>This functionality is only supported for directory buckets.
+        /// </para>
+        /// </note>
+        /// </summary>
+        public DateTime IfMatchInitiatedTime
+        {
+            get { return this.ifMatchInitiatedTime.GetValueOrDefault();  }
+            set { this.ifMatchInitiatedTime = value;}
+        }
+
+        // Check to see if IfMatch property is set
+        internal bool IsSetIfMatchInitiatedTime()
+        {
+            return this.ifMatchInitiatedTime.HasValue;
         }
     }
 }

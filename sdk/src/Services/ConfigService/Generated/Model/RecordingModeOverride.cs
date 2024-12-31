@@ -103,7 +103,7 @@ namespace Amazon.ConfigService.Model
         /// </para>
         ///  <important> 
         /// <para>
-        /// Daily recording is not supported for the following resource types:
+        /// Daily recording cannot be specified for the following resource types:
         /// </para>
         ///  <ul> <li> 
         /// <para>

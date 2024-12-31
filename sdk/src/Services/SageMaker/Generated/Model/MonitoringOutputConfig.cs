@@ -40,8 +40,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The Key Management Service (KMS) key that Amazon SageMaker uses to encrypt the model
-        /// artifacts at rest using Amazon S3 server-side encryption.
+        /// The Key Management Service (KMS) key that Amazon SageMaker AI uses to encrypt the
+        /// model artifacts at rest using Amazon S3 server-side encryption.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2048)]

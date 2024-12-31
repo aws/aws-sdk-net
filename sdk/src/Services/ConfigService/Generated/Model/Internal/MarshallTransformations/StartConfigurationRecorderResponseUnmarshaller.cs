@@ -78,6 +78,10 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                 {
                     return NoSuchConfigurationRecorderExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("UnmodifiableEntityException"))
+                {
+                    return UnmodifiableEntityExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
             }
             return new AmazonConfigServiceException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }

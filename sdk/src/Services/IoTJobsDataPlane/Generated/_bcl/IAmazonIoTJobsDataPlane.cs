@@ -32,12 +32,26 @@ namespace Amazon.IoTJobsDataPlane
     /// <summary>
     /// <para>Interface for accessing IoTJobsDataPlane</para>
     ///
-    /// AWS IoT Jobs is a service that allows you to define a set of jobs — remote operations
-    /// that are sent to and executed on one or more devices connected to AWS IoT. For example,
-    /// you can define a job that instructs a set of devices to download and install application
-    /// or firmware updates, reboot, rotate certificates, or perform remote troubleshooting
-    /// operations.
+    /// IoT Jobs is a service that allows you to define a set of jobs — remote operations
+    /// that are sent to and executed on one or more devices connected to Amazon Web Services
+    /// IoT Core. For example, you can define a job that instructs a set of devices to download
+    /// and install application or firmware updates, reboot, rotate certificates, or perform
+    /// remote troubleshooting operations.
     /// 
+    ///  
+    /// <para>
+    /// Find the endpoint address for actions in the IoT jobs data plane by running this CLI
+    /// command:
+    /// </para>
+    ///  
+    /// <para>
+    ///  <c>aws iot describe-endpoint --endpoint-type iot:Jobs</c> 
+    /// </para>
+    ///  
+    /// <para>
+    /// The service name used by <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Amazon
+    /// Web Services Signature Version 4</a> to sign requests is: <i>iot-jobs-data</i>.
+    /// </para>
     ///  
     /// <para>
     ///  To create a job, you make a job document which is a description of the remote operations
@@ -46,11 +60,11 @@ namespace Amazon.IoTJobsDataPlane
     /// </para>
     ///  
     /// <para>
-    ///  AWS IoT Jobs sends a message to inform the targets that a job is available. The target
+    ///  IoT Jobs sends a message to inform the targets that a job is available. The target
     /// starts the execution of the job by downloading the job document, performing the operations
-    /// it specifies, and reporting its progress to AWS IoT. The Jobs service provides commands
-    /// to track the progress of a job on a specific target and for all the targets of the
-    /// job
+    /// it specifies, and reporting its progress to Amazon Web Services IoT Core. The Jobs
+    /// service provides commands to track the progress of a job on a specific target and
+    /// for all the targets of the job
     /// </para>
     /// </summary>
     public partial interface IAmazonIoTJobsDataPlane : IAmazonService, IDisposable
@@ -63,6 +77,12 @@ namespace Amazon.IoTJobsDataPlane
 
         /// <summary>
         /// Gets details of a job execution.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeJobExecution</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeJobExecution service method.</param>
         /// 
@@ -71,9 +91,7 @@ namespace Amazon.IoTJobsDataPlane
         /// The certificate is invalid.
         /// </exception>
         /// <exception cref="Amazon.IoTJobsDataPlane.Model.InvalidRequestException">
-        /// The contents of the request were invalid. For example, this code is returned when
-        /// an UpdateJobExecution request contains invalid status details. The message contains
-        /// details about the error.
+        /// The contents of the request were invalid.
         /// </exception>
         /// <exception cref="Amazon.IoTJobsDataPlane.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
@@ -94,6 +112,12 @@ namespace Amazon.IoTJobsDataPlane
 
         /// <summary>
         /// Gets details of a job execution.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeJobExecution</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeJobExecution service method.</param>
         /// <param name="cancellationToken">
@@ -105,9 +129,7 @@ namespace Amazon.IoTJobsDataPlane
         /// The certificate is invalid.
         /// </exception>
         /// <exception cref="Amazon.IoTJobsDataPlane.Model.InvalidRequestException">
-        /// The contents of the request were invalid. For example, this code is returned when
-        /// an UpdateJobExecution request contains invalid status details. The message contains
-        /// details about the error.
+        /// The contents of the request were invalid.
         /// </exception>
         /// <exception cref="Amazon.IoTJobsDataPlane.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
@@ -131,6 +153,12 @@ namespace Amazon.IoTJobsDataPlane
 
         /// <summary>
         /// Gets the list of all jobs for a thing that are not in a terminal status.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetPendingJobExecutions</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPendingJobExecutions service method.</param>
         /// 
@@ -139,9 +167,7 @@ namespace Amazon.IoTJobsDataPlane
         /// The certificate is invalid.
         /// </exception>
         /// <exception cref="Amazon.IoTJobsDataPlane.Model.InvalidRequestException">
-        /// The contents of the request were invalid. For example, this code is returned when
-        /// an UpdateJobExecution request contains invalid status details. The message contains
-        /// details about the error.
+        /// The contents of the request were invalid.
         /// </exception>
         /// <exception cref="Amazon.IoTJobsDataPlane.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
@@ -159,6 +185,12 @@ namespace Amazon.IoTJobsDataPlane
 
         /// <summary>
         /// Gets the list of all jobs for a thing that are not in a terminal status.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetPendingJobExecutions</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPendingJobExecutions service method.</param>
         /// <param name="cancellationToken">
@@ -170,9 +202,7 @@ namespace Amazon.IoTJobsDataPlane
         /// The certificate is invalid.
         /// </exception>
         /// <exception cref="Amazon.IoTJobsDataPlane.Model.InvalidRequestException">
-        /// The contents of the request were invalid. For example, this code is returned when
-        /// an UpdateJobExecution request contains invalid status details. The message contains
-        /// details about the error.
+        /// The contents of the request were invalid.
         /// </exception>
         /// <exception cref="Amazon.IoTJobsDataPlane.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
@@ -188,12 +218,84 @@ namespace Amazon.IoTJobsDataPlane
 
         #endregion
         
+        #region  StartCommandExecution
+
+
+        /// <summary>
+        /// Using the command created with the <c>CreateCommand</c> API, start a command execution
+        /// on a specific device.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartCommandExecution service method.</param>
+        /// 
+        /// <returns>The response from the StartCommandExecution service method, as returned by IoTJobsDataPlane.</returns>
+        /// <exception cref="Amazon.IoTJobsDataPlane.Model.ConflictException">
+        /// A conflict has occurred when performing the API request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTJobsDataPlane.Model.InternalServerException">
+        /// An internal server error occurred when performing the API request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTJobsDataPlane.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTJobsDataPlane.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded for this request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTJobsDataPlane.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTJobsDataPlane.Model.ValidationException">
+        /// A validation error occurred when performing the API request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-jobs-data-2017-09-29/StartCommandExecution">REST API Reference for StartCommandExecution Operation</seealso>
+        StartCommandExecutionResponse StartCommandExecution(StartCommandExecutionRequest request);
+
+
+
+        /// <summary>
+        /// Using the command created with the <c>CreateCommand</c> API, start a command execution
+        /// on a specific device.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartCommandExecution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartCommandExecution service method, as returned by IoTJobsDataPlane.</returns>
+        /// <exception cref="Amazon.IoTJobsDataPlane.Model.ConflictException">
+        /// A conflict has occurred when performing the API request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTJobsDataPlane.Model.InternalServerException">
+        /// An internal server error occurred when performing the API request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTJobsDataPlane.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTJobsDataPlane.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded for this request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTJobsDataPlane.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTJobsDataPlane.Model.ValidationException">
+        /// A validation error occurred when performing the API request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-jobs-data-2017-09-29/StartCommandExecution">REST API Reference for StartCommandExecution Operation</seealso>
+        Task<StartCommandExecutionResponse> StartCommandExecutionAsync(StartCommandExecutionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  StartNextPendingJobExecution
 
 
         /// <summary>
         /// Gets and starts the next pending (status IN_PROGRESS or QUEUED) job execution for
         /// a thing.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">StartNextPendingJobExecution</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartNextPendingJobExecution service method.</param>
         /// 
@@ -202,9 +304,7 @@ namespace Amazon.IoTJobsDataPlane
         /// The certificate is invalid.
         /// </exception>
         /// <exception cref="Amazon.IoTJobsDataPlane.Model.InvalidRequestException">
-        /// The contents of the request were invalid. For example, this code is returned when
-        /// an UpdateJobExecution request contains invalid status details. The message contains
-        /// details about the error.
+        /// The contents of the request were invalid.
         /// </exception>
         /// <exception cref="Amazon.IoTJobsDataPlane.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
@@ -223,6 +323,12 @@ namespace Amazon.IoTJobsDataPlane
         /// <summary>
         /// Gets and starts the next pending (status IN_PROGRESS or QUEUED) job execution for
         /// a thing.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">StartNextPendingJobExecution</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartNextPendingJobExecution service method.</param>
         /// <param name="cancellationToken">
@@ -234,9 +340,7 @@ namespace Amazon.IoTJobsDataPlane
         /// The certificate is invalid.
         /// </exception>
         /// <exception cref="Amazon.IoTJobsDataPlane.Model.InvalidRequestException">
-        /// The contents of the request were invalid. For example, this code is returned when
-        /// an UpdateJobExecution request contains invalid status details. The message contains
-        /// details about the error.
+        /// The contents of the request were invalid.
         /// </exception>
         /// <exception cref="Amazon.IoTJobsDataPlane.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
@@ -257,6 +361,12 @@ namespace Amazon.IoTJobsDataPlane
 
         /// <summary>
         /// Updates the status of a job execution.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotjobsdataplane.html">UpdateJobExecution</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateJobExecution service method.</param>
         /// 
@@ -265,9 +375,7 @@ namespace Amazon.IoTJobsDataPlane
         /// The certificate is invalid.
         /// </exception>
         /// <exception cref="Amazon.IoTJobsDataPlane.Model.InvalidRequestException">
-        /// The contents of the request were invalid. For example, this code is returned when
-        /// an UpdateJobExecution request contains invalid status details. The message contains
-        /// details about the error.
+        /// The contents of the request were invalid.
         /// </exception>
         /// <exception cref="Amazon.IoTJobsDataPlane.Model.InvalidStateTransitionException">
         /// An update attempted to change the job execution to a state that is invalid because
@@ -291,6 +399,12 @@ namespace Amazon.IoTJobsDataPlane
 
         /// <summary>
         /// Updates the status of a job execution.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotjobsdataplane.html">UpdateJobExecution</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateJobExecution service method.</param>
         /// <param name="cancellationToken">
@@ -302,9 +416,7 @@ namespace Amazon.IoTJobsDataPlane
         /// The certificate is invalid.
         /// </exception>
         /// <exception cref="Amazon.IoTJobsDataPlane.Model.InvalidRequestException">
-        /// The contents of the request were invalid. For example, this code is returned when
-        /// an UpdateJobExecution request contains invalid status details. The message contains
-        /// details about the error.
+        /// The contents of the request were invalid.
         /// </exception>
         /// <exception cref="Amazon.IoTJobsDataPlane.Model.InvalidStateTransitionException">
         /// An update attempted to change the job execution to a state that is invalid because

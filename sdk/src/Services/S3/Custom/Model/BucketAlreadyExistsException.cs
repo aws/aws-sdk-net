@@ -83,6 +83,19 @@ namespace Amazon.S3.Model
         public BucketAlreadyExistsException(string message, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
             : base(message, errorType, errorCode, requestId, statusCode) { }
 
+        /// <summary>
+        /// Construct instance of BucketAlreadyExistsException
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
+        /// <param name="amazonId2"></param>
+        /// <param name="amazonCfId"></param>
+        public BucketAlreadyExistsException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode, string amazonId2, string amazonCfId)
+            : base(message, innerException, errorType, errorCode, requestId, statusCode, amazonId2, amazonCfId) { }
 
 #if !NETSTANDARD
         /// <summary>

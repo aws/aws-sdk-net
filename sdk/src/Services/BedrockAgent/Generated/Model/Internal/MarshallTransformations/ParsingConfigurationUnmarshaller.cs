@@ -66,6 +66,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("bedrockDataAutomationConfiguration", targetDepth))
+                {
+                    var unmarshaller = BedrockDataAutomationConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.BedrockDataAutomationConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("bedrockFoundationModelConfiguration", targetDepth))
                 {
                     var unmarshaller = BedrockFoundationModelConfigurationUnmarshaller.Instance;

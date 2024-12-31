@@ -36,6 +36,7 @@ namespace Amazon.DataZone.Model
     {
         private GlueRunConfigurationOutput _glueRunConfiguration;
         private RedshiftRunConfigurationOutput _redshiftRunConfiguration;
+        private SageMakerRunConfigurationOutput _sageMakerRunConfiguration;
 
         /// <summary>
         /// Gets and sets the property GlueRunConfiguration. 
@@ -71,6 +72,24 @@ namespace Amazon.DataZone.Model
         internal bool IsSetRedshiftRunConfiguration()
         {
             return this._redshiftRunConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SageMakerRunConfiguration. 
+        /// <para>
+        /// The Amazon SageMaker run configuration.
+        /// </para>
+        /// </summary>
+        public SageMakerRunConfigurationOutput SageMakerRunConfiguration
+        {
+            get { return this._sageMakerRunConfiguration; }
+            set { this._sageMakerRunConfiguration = value; }
+        }
+
+        // Check to see if SageMakerRunConfiguration property is set
+        internal bool IsSetSageMakerRunConfiguration()
+        {
+            return this._sageMakerRunConfiguration != null;
         }
 
     }

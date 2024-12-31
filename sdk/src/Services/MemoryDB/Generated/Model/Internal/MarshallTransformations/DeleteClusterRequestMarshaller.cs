@@ -83,6 +83,12 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.FinalSnapshotName);
                     }
 
+                    if(publicRequest.IsSetMultiRegionClusterName())
+                    {
+                        context.Writer.WritePropertyName("MultiRegionClusterName");
+                        context.Writer.Write(publicRequest.MultiRegionClusterName);
+                    }
+
                     writer.WriteObjectEnd();
                 }
 

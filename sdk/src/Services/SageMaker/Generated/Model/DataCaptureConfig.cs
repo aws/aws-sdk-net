@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Configuration to control how SageMaker captures inference data.
+    /// Configuration to control how SageMaker AI captures inference data.
     /// </summary>
     public partial class DataCaptureConfig
     {
@@ -45,7 +45,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property CaptureContentTypeHeader. 
         /// <para>
         /// Configuration specifying how to treat different headers. If no headers are specified
-        /// SageMaker will by default base64 encode when capturing the data.
+        /// SageMaker AI will by default base64 encode when capturing the data.
         /// </para>
         /// </summary>
         public CaptureContentTypeHeader CaptureContentTypeHeader
@@ -120,8 +120,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property InitialSamplingPercentage. 
         /// <para>
-        /// The percentage of requests SageMaker will capture. A lower value is recommended for
-        /// Endpoints with high traffic.
+        /// The percentage of requests SageMaker AI will capture. A lower value is recommended
+        /// for Endpoints with high traffic.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=100)]
@@ -140,8 +140,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of an Key Management Service key that SageMaker uses
-        /// to encrypt the captured data at rest using Amazon S3 server-side encryption.
+        /// The Amazon Resource Name (ARN) of an Key Management Service key that SageMaker AI
+        /// uses to encrypt the captured data at rest using Amazon S3 server-side encryption.
         /// </para>
         ///  
         /// <para>

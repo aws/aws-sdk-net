@@ -39,6 +39,7 @@ namespace Amazon.BedrockAgent.Model
         private List<string> _exclusionFilters = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _inclusionFilters = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private WebScopeType _scope;
+        private string _userAgent;
 
         /// <summary>
         /// Gets and sets the property CrawlerLimits. 
@@ -124,6 +125,28 @@ namespace Amazon.BedrockAgent.Model
         internal bool IsSetScope()
         {
             return this._scope != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserAgent. 
+        /// <para>
+        /// A string used for identifying the crawler or a bot when it accesses a web server.
+        /// By default, this is set to <c>bedrockbot_UUID</c> for your crawler. You can optionally
+        /// append a custom string to <c>bedrockbot_UUID</c> to allowlist a specific user agent
+        /// permitted to access your source URLs. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=15, Max=40)]
+        public string UserAgent
+        {
+            get { return this._userAgent; }
+            set { this._userAgent = value; }
+        }
+
+        // Check to see if UserAgent property is set
+        internal bool IsSetUserAgent()
+        {
+            return this._userAgent != null;
         }
 
     }

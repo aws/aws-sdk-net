@@ -47,6 +47,7 @@ namespace Amazon.BedrockAgentRuntime.Model
     public partial class FunctionResult
     {
         private string _actionGroup;
+        private string _agentId;
         private ConfirmationState _confirmationState;
         private string _function;
         private Dictionary<string, ContentBody> _responseBody = AWSConfigs.InitializeCollections ? new Dictionary<string, ContentBody>() : null;
@@ -69,6 +70,24 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetActionGroup()
         {
             return this._actionGroup != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AgentId. 
+        /// <para>
+        /// The agent's ID.
+        /// </para>
+        /// </summary>
+        public string AgentId
+        {
+            get { return this._agentId; }
+            set { this._agentId = value; }
+        }
+
+        // Check to see if AgentId property is set
+        internal bool IsSetAgentId()
+        {
+            return this._agentId != null;
         }
 
         /// <summary>

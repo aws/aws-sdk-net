@@ -172,6 +172,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
 
+                    if(publicRequest.IsSetPoolName())
+                    {
+                        context.Writer.WritePropertyName("PoolName");
+                        context.Writer.Write(publicRequest.PoolName);
+                    }
+
                     if(publicRequest.IsSetSmsAuthenticationMessage())
                     {
                         context.Writer.WritePropertyName("SmsAuthenticationMessage");
@@ -235,6 +241,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                                 context.Writer.Write(publicRequestUserPoolTagsValue);
                         }
                         context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetUserPoolTier())
+                    {
+                        context.Writer.WritePropertyName("UserPoolTier");
+                        context.Writer.Write(publicRequest.UserPoolTier);
                     }
 
                     if(publicRequest.IsSetVerificationMessageTemplate())

@@ -72,6 +72,17 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                     writer.Validate = false;
                     writer.WriteObjectStart();
                     var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetGuardrailConfiguration())
+                    {
+                        context.Writer.WritePropertyName("guardrailConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = GuardrailConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.GuardrailConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
                     if(publicRequest.IsSetNextToken())
                     {
                         context.Writer.WritePropertyName("nextToken");

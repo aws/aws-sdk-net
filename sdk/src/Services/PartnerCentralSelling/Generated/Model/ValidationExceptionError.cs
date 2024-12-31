@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PartnerCentralSelling.Model
 {
     /// <summary>
-    /// Indicates an invalid value for a field. 
+    /// Indicates an invalid value for a field.
     /// 
     ///  <ul> <li> 
     /// <para>
@@ -38,7 +38,7 @@ namespace Amazon.PartnerCentralSelling.Model
     /// </para>
     ///  
     /// <para>
-    /// Fix: Verify your request payload includes all required fields. 
+    /// Fix: Verify your request payload includes all required fields.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -47,7 +47,7 @@ namespace Amazon.PartnerCentralSelling.Model
     ///  
     /// <para>
     /// Fix: Check the documentation for the list of valid enum values, and update your request
-    /// with a valid value. 
+    /// with a valid value.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -56,7 +56,7 @@ namespace Amazon.PartnerCentralSelling.Model
     ///  
     /// <para>
     /// Fix: Confirm that the string is in the expected format (For example: email address,
-    /// date). 
+    /// date).
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -65,7 +65,7 @@ namespace Amazon.PartnerCentralSelling.Model
     ///  
     /// <para>
     /// Fix: Confirm that the value meets the expected criteria and is within the allowable
-    /// range or set. 
+    /// range or set.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -73,7 +73,7 @@ namespace Amazon.PartnerCentralSelling.Model
     /// </para>
     ///  
     /// <para>
-    /// Fix: Reduce the number of values to match the expected limit. 
+    /// Fix: Reduce the number of values to match the expected limit.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -82,7 +82,7 @@ namespace Amazon.PartnerCentralSelling.Model
     ///  
     /// <para>
     /// Fix: Verify that the action is appropriate for the current state, and that you have
-    /// the necessary permissions to perform it. 
+    /// the necessary permissions to perform it.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -92,7 +92,7 @@ namespace Amazon.PartnerCentralSelling.Model
     ///  
     /// <para>
     /// Fix: Verify that the value is unique and doesn't duplicate an existing value in the
-    /// system. 
+    /// system.
     /// </para>
     ///  </li> </ul>
     /// </summary>

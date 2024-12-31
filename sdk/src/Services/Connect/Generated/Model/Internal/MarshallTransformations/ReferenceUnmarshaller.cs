@@ -66,6 +66,24 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("Arn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Status", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StatusReason", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StatusReason = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -111,6 +111,12 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                         context.Writer.WriteArrayEnd();
                     }
 
+                    if(publicRequest.IsSetQueryLanguage())
+                    {
+                        context.Writer.WritePropertyName("queryLanguage");
+                        context.Writer.Write(publicRequest.QueryLanguage);
+                    }
+
                     if(publicRequest.IsSetQueryString())
                     {
                         context.Writer.WritePropertyName("queryString");

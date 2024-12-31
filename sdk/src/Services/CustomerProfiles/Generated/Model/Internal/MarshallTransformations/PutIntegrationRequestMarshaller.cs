@@ -72,6 +72,17 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                     writer.Validate = false;
                     writer.WriteObjectStart();
                     var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEventTriggerNames())
+                    {
+                        context.Writer.WritePropertyName("EventTriggerNames");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestEventTriggerNamesListValue in publicRequest.EventTriggerNames)
+                        {
+                                context.Writer.Write(publicRequestEventTriggerNamesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
                     if(publicRequest.IsSetFlowDefinition())
                     {
                         context.Writer.WritePropertyName("FlowDefinition");

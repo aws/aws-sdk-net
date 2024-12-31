@@ -3431,6 +3431,91 @@ namespace Amazon.Imagebuilder
 
         #endregion
         
+        #region  GetMarketplaceResource
+
+
+        /// <summary>
+        /// Verify the subscription and perform resource dependency checks on the requested Amazon
+        /// Web Services Marketplace resource. For Amazon Web Services Marketplace components,
+        /// the response contains fields to download the components and their artifacts.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMarketplaceResource service method.</param>
+        /// 
+        /// <returns>The response from the GetMarketplaceResource service method, as returned by Imagebuilder.</returns>
+        /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
+        /// You have exceeded the permitted request rate for the specific operation.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an invalid resource identifier.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
+        /// You are not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
+        /// You have requested an action that that the service doesn't support.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
+        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
+        /// The service is unable to process your request at this time.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetMarketplaceResource">REST API Reference for GetMarketplaceResource Operation</seealso>
+        public virtual GetMarketplaceResourceResponse GetMarketplaceResource(GetMarketplaceResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMarketplaceResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMarketplaceResourceResponseUnmarshaller.Instance;
+
+            return Invoke<GetMarketplaceResourceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Verify the subscription and perform resource dependency checks on the requested Amazon
+        /// Web Services Marketplace resource. For Amazon Web Services Marketplace components,
+        /// the response contains fields to download the components and their artifacts.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMarketplaceResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetMarketplaceResource service method, as returned by Imagebuilder.</returns>
+        /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
+        /// You have exceeded the permitted request rate for the specific operation.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an invalid resource identifier.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
+        /// You are not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
+        /// You have requested an action that that the service doesn't support.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
+        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
+        /// The service is unable to process your request at this time.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetMarketplaceResource">REST API Reference for GetMarketplaceResource Operation</seealso>
+        public virtual Task<GetMarketplaceResourceResponse> GetMarketplaceResourceAsync(GetMarketplaceResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMarketplaceResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMarketplaceResourceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetMarketplaceResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetWorkflow
 
 

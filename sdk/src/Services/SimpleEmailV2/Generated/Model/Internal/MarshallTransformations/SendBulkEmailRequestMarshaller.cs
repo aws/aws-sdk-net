@@ -118,6 +118,12 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                         context.Writer.WriteArrayEnd();
                     }
 
+                    if(publicRequest.IsSetEndpointId())
+                    {
+                        context.Writer.WritePropertyName("EndpointId");
+                        context.Writer.Write(publicRequest.EndpointId);
+                    }
+
                     if(publicRequest.IsSetFeedbackForwardingEmailAddress())
                     {
                         context.Writer.WritePropertyName("FeedbackForwardingEmailAddress");

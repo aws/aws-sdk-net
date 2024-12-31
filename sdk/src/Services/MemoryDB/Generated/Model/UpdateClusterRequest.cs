@@ -55,7 +55,7 @@ namespace Amazon.MemoryDB.Model
         /// <summary>
         /// Gets and sets the property ACLName. 
         /// <para>
-        /// The Access Control List that is associated with the cluster
+        /// The Access Control List that is associated with the cluster.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -74,7 +74,7 @@ namespace Amazon.MemoryDB.Model
         /// <summary>
         /// Gets and sets the property ClusterName. 
         /// <para>
-        /// The name of the cluster to update
+        /// The name of the cluster to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -93,7 +93,7 @@ namespace Amazon.MemoryDB.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of the cluster to update
+        /// The description of the cluster to update.
         /// </para>
         /// </summary>
         public string Description
@@ -111,8 +111,7 @@ namespace Amazon.MemoryDB.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// The name of the engine to be used for the nodes in this cluster. The value must be
-        /// set to either Redis or Valkey.
+        /// The name of the engine to be used for the cluster.
         /// </para>
         /// </summary>
         public string Engine
@@ -225,7 +224,7 @@ namespace Amazon.MemoryDB.Model
         /// <summary>
         /// Gets and sets the property ParameterGroupName. 
         /// <para>
-        /// The name of the parameter group to update
+        /// The name of the parameter group to update.
         /// </para>
         /// </summary>
         public string ParameterGroupName
@@ -243,7 +242,7 @@ namespace Amazon.MemoryDB.Model
         /// <summary>
         /// Gets and sets the property ReplicaConfiguration. 
         /// <para>
-        /// The number of replicas that will reside in each shard
+        /// The number of replicas that will reside in each shard.
         /// </para>
         /// </summary>
         public ReplicaConfigurationRequest ReplicaConfiguration
@@ -261,7 +260,7 @@ namespace Amazon.MemoryDB.Model
         /// <summary>
         /// Gets and sets the property SecurityGroupIds. 
         /// <para>
-        /// The SecurityGroupIds to update
+        /// The SecurityGroupIds to update.
         /// </para>
         /// </summary>
         public List<string> SecurityGroupIds
@@ -279,7 +278,7 @@ namespace Amazon.MemoryDB.Model
         /// <summary>
         /// Gets and sets the property ShardConfiguration. 
         /// <para>
-        /// The number of shards in the cluster
+        /// The number of shards in the cluster.
         /// </para>
         /// </summary>
         public ShardConfigurationRequest ShardConfiguration
@@ -336,7 +335,7 @@ namespace Amazon.MemoryDB.Model
         /// <summary>
         /// Gets and sets the property SnsTopicArn. 
         /// <para>
-        /// The SNS topic ARN to update
+        /// The SNS topic ARN to update.
         /// </para>
         /// </summary>
         public string SnsTopicArn

@@ -127,6 +127,12 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.Name);
                     }
 
+                    if(publicRequest.IsSetNetworkType())
+                    {
+                        context.Writer.WritePropertyName("networkType");
+                        context.Writer.Write(publicRequest.NetworkType);
+                    }
+
                     if(publicRequest.IsSetPreferredMaintenanceWindow())
                     {
                         context.Writer.WritePropertyName("preferredMaintenanceWindow");

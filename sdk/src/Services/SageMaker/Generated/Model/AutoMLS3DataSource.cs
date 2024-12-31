@@ -45,7 +45,7 @@ namespace Amazon.SageMaker.Model
         ///  <ul> <li> 
         /// <para>
         /// If you choose <c>S3Prefix</c>, <c>S3Uri</c> identifies a key name prefix. SageMaker
-        /// uses all objects that match the specified key name prefix for model training.
+        /// AI uses all objects that match the specified key name prefix for model training.
         /// </para>
         ///  
         /// <para>
@@ -58,7 +58,8 @@ namespace Amazon.SageMaker.Model
         ///  </li> <li> 
         /// <para>
         /// If you choose <c>ManifestFile</c>, <c>S3Uri</c> identifies an object that is a manifest
-        /// file containing a list of object keys that you want SageMaker to use for model training.
+        /// file containing a list of object keys that you want SageMaker AI to use for model
+        /// training.
         /// </para>
         ///  
         /// <para>

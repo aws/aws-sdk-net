@@ -108,7 +108,8 @@ namespace Amazon.Macie2.Model
         /// <para>
         /// OBJECT_UNAVAILABLE - The affected S3 object isn't available. The object was renamed,
         /// moved, deleted, or changed after Macie created the finding. Or the object is encrypted
-        /// with an KMS key that's currently disabled.
+        /// with an KMS key that isn’t available. For example, the key is disabled, is scheduled
+        /// for deletion, or was deleted.
         /// </para>
         /// </li> <li>
         /// <para>

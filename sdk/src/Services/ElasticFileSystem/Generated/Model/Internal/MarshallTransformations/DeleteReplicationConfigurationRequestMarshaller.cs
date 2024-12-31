@@ -62,7 +62,11 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetSourceFileSystemId())
                 throw new AmazonElasticFileSystemException("Request object does not have required field SourceFileSystemId set");
             request.AddPathResource("{SourceFileSystemId}", StringUtils.FromString(publicRequest.SourceFileSystemId));
+            
+            if (publicRequest.IsSetDeletionMode())
+                request.Parameters.Add("deletionMode", StringUtils.FromString(publicRequest.DeletionMode));
             request.ResourcePath = "/2015-02-01/file-systems/{SourceFileSystemId}/replication-configuration";
+            request.UseQueryString = true;
 
             return request;
         }

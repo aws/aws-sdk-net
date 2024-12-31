@@ -72,6 +72,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                     writer.Validate = false;
                     writer.WriteObjectStart();
                     var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAgentCollaboration())
+                    {
+                        context.Writer.WritePropertyName("agentCollaboration");
+                        context.Writer.Write(publicRequest.AgentCollaboration);
+                    }
+
                     if(publicRequest.IsSetAgentName())
                     {
                         context.Writer.WritePropertyName("agentName");
@@ -88,6 +94,17 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                     {
                         context.Writer.WritePropertyName("customerEncryptionKeyArn");
                         context.Writer.Write(publicRequest.CustomerEncryptionKeyArn);
+                    }
+
+                    if(publicRequest.IsSetCustomOrchestration())
+                    {
+                        context.Writer.WritePropertyName("customOrchestration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CustomOrchestrationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.CustomOrchestration, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
 
                     if(publicRequest.IsSetDescription())
@@ -134,6 +151,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                         marshaller.Marshall(publicRequest.MemoryConfiguration, context);
 
                         context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetOrchestrationType())
+                    {
+                        context.Writer.WritePropertyName("orchestrationType");
+                        context.Writer.Write(publicRequest.OrchestrationType);
                     }
 
                     if(publicRequest.IsSetPromptOverrideConfiguration())

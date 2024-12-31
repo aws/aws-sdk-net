@@ -66,6 +66,12 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("Condition", targetDepth))
+                {
+                    var unmarshaller = ConditionUnmarshaller.Instance;
+                    unmarshalledObject.Condition = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LastModified", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;

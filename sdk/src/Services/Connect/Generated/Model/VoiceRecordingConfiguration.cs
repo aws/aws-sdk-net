@@ -34,7 +34,30 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class VoiceRecordingConfiguration
     {
+        private IvrRecordingTrack _ivrRecordingTrack;
         private VoiceRecordingTrack _voiceRecordingTrack;
+
+        /// <summary>
+        /// Gets and sets the property IvrRecordingTrack. 
+        /// <para>
+        /// Identifies which IVR track is being recorded.
+        /// </para>
+        ///  
+        /// <para>
+        /// One and only one of the track configurations should be presented in the request.
+        /// </para>
+        /// </summary>
+        public IvrRecordingTrack IvrRecordingTrack
+        {
+            get { return this._ivrRecordingTrack; }
+            set { this._ivrRecordingTrack = value; }
+        }
+
+        // Check to see if IvrRecordingTrack property is set
+        internal bool IsSetIvrRecordingTrack()
+        {
+            return this._ivrRecordingTrack != null;
+        }
 
         /// <summary>
         /// Gets and sets the property VoiceRecordingTrack. 

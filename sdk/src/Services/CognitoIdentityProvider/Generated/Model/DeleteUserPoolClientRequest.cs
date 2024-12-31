@@ -31,7 +31,8 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteUserPoolClient operation.
-    /// Allows the developer to delete the user pool client.
+    /// Deletes a user pool app client. After you delete an app client, users can no longer
+    /// sign in to the associated application.
     /// </summary>
     public partial class DeleteUserPoolClientRequest : AmazonCognitoIdentityProviderRequest
     {
@@ -41,7 +42,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ClientId. 
         /// <para>
-        /// The app client ID of the app associated with the user pool.
+        /// The ID of the user pool app client that you want to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=128)]
@@ -60,7 +61,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserPoolId. 
         /// <para>
-        /// The user pool ID for the user pool where you want to delete the client.
+        /// The ID of the user pool where you want to delete the client.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=55)]

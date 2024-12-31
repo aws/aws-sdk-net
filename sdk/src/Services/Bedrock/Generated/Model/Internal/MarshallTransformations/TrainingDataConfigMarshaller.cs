@@ -48,6 +48,17 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetInvocationLogsConfig())
+            {
+                context.Writer.WritePropertyName("invocationLogsConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = InvocationLogsConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.InvocationLogsConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetS3Uri())
             {
                 context.Writer.WritePropertyName("s3Uri");

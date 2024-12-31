@@ -34,13 +34,54 @@ namespace Amazon.PartnerCentralSelling.Model
     /// </summary>
     public partial class StartEngagementFromOpportunityTaskResponse : AmazonWebServiceResponse
     {
+        private string _engagementId;
+        private string _engagementInvitationId;
         private string _message;
         private string _opportunityId;
         private ReasonCode _reasonCode;
+        private string _resourceSnapshotJobId;
         private DateTime? _startTime;
         private string _taskArn;
         private string _taskId;
         private TaskStatus _taskStatus;
+
+        /// <summary>
+        /// Gets and sets the property EngagementId. 
+        /// <para>
+        ///  The identifier of the newly created engagement. Only populated if TaskStatus is COMPLETE.
+        /// 
+        /// </para>
+        /// </summary>
+        public string EngagementId
+        {
+            get { return this._engagementId; }
+            set { this._engagementId = value; }
+        }
+
+        // Check to see if EngagementId property is set
+        internal bool IsSetEngagementId()
+        {
+            return this._engagementId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EngagementInvitationId. 
+        /// <para>
+        ///  The identifier of the new engagement invitation. Only populated if TaskStatus is
+        /// COMPLETE. 
+        /// </para>
+        /// </summary>
+        public string EngagementInvitationId
+        {
+            get { return this._engagementInvitationId; }
+            set { this._engagementInvitationId = value; }
+        }
+
+        // Check to see if EngagementInvitationId property is set
+        internal bool IsSetEngagementInvitationId()
+        {
+            return this._engagementInvitationId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Message. 
@@ -96,6 +137,25 @@ namespace Amazon.PartnerCentralSelling.Model
         internal bool IsSetReasonCode()
         {
             return this._reasonCode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceSnapshotJobId. 
+        /// <para>
+        ///  The identifier of the resource snapshot job created to add the opportunity resource
+        /// snapshot to the Engagement. Only populated if TaskStatus is COMPLETE. 
+        /// </para>
+        /// </summary>
+        public string ResourceSnapshotJobId
+        {
+            get { return this._resourceSnapshotJobId; }
+            set { this._resourceSnapshotJobId = value; }
+        }
+
+        // Check to see if ResourceSnapshotJobId property is set
+        internal bool IsSetResourceSnapshotJobId()
+        {
+            return this._resourceSnapshotJobId != null;
         }
 
         /// <summary>

@@ -259,6 +259,14 @@ namespace Amazon.CloudHSMV2
         /// </summary>
         public static readonly ClusterState INITIALIZED = new ClusterState("INITIALIZED");
         /// <summary>
+        /// Constant MODIFY_IN_PROGRESS for ClusterState
+        /// </summary>
+        public static readonly ClusterState MODIFY_IN_PROGRESS = new ClusterState("MODIFY_IN_PROGRESS");
+        /// <summary>
+        /// Constant ROLLBACK_IN_PROGRESS for ClusterState
+        /// </summary>
+        public static readonly ClusterState ROLLBACK_IN_PROGRESS = new ClusterState("ROLLBACK_IN_PROGRESS");
+        /// <summary>
         /// Constant UNINITIALIZED for ClusterState
         /// </summary>
         public static readonly ClusterState UNINITIALIZED = new ClusterState("UNINITIALIZED");
@@ -358,6 +366,56 @@ namespace Amazon.CloudHSMV2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator HsmState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type NetworkType.
+    /// </summary>
+    public class NetworkType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DUALSTACK for NetworkType
+        /// </summary>
+        public static readonly NetworkType DUALSTACK = new NetworkType("DUALSTACK");
+        /// <summary>
+        /// Constant IPV4 for NetworkType
+        /// </summary>
+        public static readonly NetworkType IPV4 = new NetworkType("IPV4");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NetworkType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NetworkType FindValue(string value)
+        {
+            return FindValue<NetworkType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NetworkType(string value)
         {
             return FindValue(value);
         }

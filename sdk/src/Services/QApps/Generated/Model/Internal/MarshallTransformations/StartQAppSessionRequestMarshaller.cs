@@ -97,6 +97,12 @@ namespace Amazon.QApps.Model.Internal.MarshallTransformations
                         context.Writer.WriteArrayEnd();
                     }
 
+                    if(publicRequest.IsSetSessionId())
+                    {
+                        context.Writer.WritePropertyName("sessionId");
+                        context.Writer.Write(publicRequest.SessionId);
+                    }
+
                     if(publicRequest.IsSetTags())
                     {
                         context.Writer.WritePropertyName("tags");

@@ -84,10 +84,32 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.Description);
                     }
 
+                    if(publicRequest.IsSetInputSwitchConfiguration())
+                    {
+                        context.Writer.WritePropertyName("InputSwitchConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = InputSwitchConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.InputSwitchConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
                     if(publicRequest.IsSetInputType())
                     {
                         context.Writer.WritePropertyName("InputType");
                         context.Writer.Write(publicRequest.InputType);
+                    }
+
+                    if(publicRequest.IsSetOutputHeaderConfiguration())
+                    {
+                        context.Writer.WritePropertyName("OutputHeaderConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = OutputHeaderConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.OutputHeaderConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
 
                     if(publicRequest.IsSetTags())

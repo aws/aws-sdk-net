@@ -36,6 +36,8 @@ namespace Amazon.MediaConvert.Model
     {
         private string _nextToken;
         private List<Queue> _queues = AWSConfigs.InitializeCollections ? new List<Queue>() : null;
+        private int? _totalConcurrentJobs;
+        private int? _unallocatedConcurrentJobs;
 
         /// <summary>
         /// Gets and sets the property NextToken. Use this string to request the next batch of
@@ -66,6 +68,39 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetQueues()
         {
             return this._queues != null && (this._queues.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TotalConcurrentJobs. The maximum number of jobs that MediaConvert
+        /// can process at one time, across all of your on-demand queues in the current AWS Region.
+        /// </summary>
+        public int? TotalConcurrentJobs
+        {
+            get { return this._totalConcurrentJobs; }
+            set { this._totalConcurrentJobs = value; }
+        }
+
+        // Check to see if TotalConcurrentJobs property is set
+        internal bool IsSetTotalConcurrentJobs()
+        {
+            return this._totalConcurrentJobs.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UnallocatedConcurrentJobs. The remaining number of concurrent
+        /// jobs that are not associated with a queue and are available to allocate to a queue.
+        /// You can allocate these jobs when you create or update a queue.
+        /// </summary>
+        public int? UnallocatedConcurrentJobs
+        {
+            get { return this._unallocatedConcurrentJobs; }
+            set { this._unallocatedConcurrentJobs = value; }
+        }
+
+        // Check to see if UnallocatedConcurrentJobs property is set
+        internal bool IsSetUnallocatedConcurrentJobs()
+        {
+            return this._unallocatedConcurrentJobs.HasValue; 
         }
 
     }

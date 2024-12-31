@@ -1997,6 +1997,10 @@ namespace Amazon.S3Control
         /// </summary>
         public static readonly S3ChecksumAlgorithm CRC32C = new S3ChecksumAlgorithm("CRC32C");
         /// <summary>
+        /// Constant CRC64NVME for S3ChecksumAlgorithm
+        /// </summary>
+        public static readonly S3ChecksumAlgorithm CRC64NVME = new S3ChecksumAlgorithm("CRC64NVME");
+        /// <summary>
         /// Constant SHA1 for S3ChecksumAlgorithm
         /// </summary>
         public static readonly S3ChecksumAlgorithm SHA1 = new S3ChecksumAlgorithm("SHA1");

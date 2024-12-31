@@ -66,6 +66,12 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("arn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("lastErrorCode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -112,6 +118,12 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Recording = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("servicePrincipal", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ServicePrincipal = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

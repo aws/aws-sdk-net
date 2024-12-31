@@ -66,6 +66,12 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("customOrchestrationTrace", targetDepth))
+                {
+                    var unmarshaller = CustomOrchestrationTraceUnmarshaller.Instance;
+                    unmarshalledObject.CustomOrchestrationTrace = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("failureTrace", targetDepth))
                 {
                     var unmarshaller = FailureTraceUnmarshaller.Instance;
@@ -94,6 +100,12 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = PreProcessingTraceUnmarshaller.Instance;
                     unmarshalledObject.PreProcessingTrace = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("routingClassifierTrace", targetDepth))
+                {
+                    var unmarshaller = RoutingClassifierTraceUnmarshaller.Instance;
+                    unmarshalledObject.RoutingClassifierTrace = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

@@ -66,6 +66,12 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("Ipv6AllowedForDualStack", targetDepth))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.Ipv6AllowedForDualStack = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SecurityGroupIds", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

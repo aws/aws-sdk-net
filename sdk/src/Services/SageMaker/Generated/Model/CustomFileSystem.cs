@@ -31,12 +31,13 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// A file system, created by you, that you assign to a user profile or space for an Amazon
-    /// SageMaker Domain. Permitted users can access this file system in Amazon SageMaker
-    /// Studio.
+    /// SageMaker AI Domain. Permitted users can access this file system in Amazon SageMaker
+    /// AI Studio.
     /// </summary>
     public partial class CustomFileSystem
     {
         private EFSFileSystem _efsFileSystem;
+        private FSxLustreFileSystem _fSxLustreFileSystem;
 
         /// <summary>
         /// Gets and sets the property EFSFileSystem. 
@@ -54,6 +55,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetEFSFileSystem()
         {
             return this._efsFileSystem != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FSxLustreFileSystem. 
+        /// <para>
+        /// A custom file system in Amazon FSx for Lustre.
+        /// </para>
+        /// </summary>
+        public FSxLustreFileSystem FSxLustreFileSystem
+        {
+            get { return this._fSxLustreFileSystem; }
+            set { this._fSxLustreFileSystem = value; }
+        }
+
+        // Check to see if FSxLustreFileSystem property is set
+        internal bool IsSetFSxLustreFileSystem()
+        {
+            return this._fSxLustreFileSystem != null;
         }
 
     }

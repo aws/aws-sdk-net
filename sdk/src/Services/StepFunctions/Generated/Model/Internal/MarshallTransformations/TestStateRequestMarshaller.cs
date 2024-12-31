@@ -101,6 +101,12 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.RoleArn);
                     }
 
+                    if(publicRequest.IsSetVariables())
+                    {
+                        context.Writer.WritePropertyName("variables");
+                        context.Writer.Write(publicRequest.Variables);
+                    }
+
                     writer.WriteObjectEnd();
                 }
 

@@ -96,6 +96,12 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.PartnerProfileId);
             }
 
+            if(requestObject.IsSetPreserveContentType())
+            {
+                context.Writer.WritePropertyName("PreserveContentType");
+                context.Writer.Write(requestObject.PreserveContentType);
+            }
+
             if(requestObject.IsSetSigningAlgorithm())
             {
                 context.Writer.WritePropertyName("SigningAlgorithm");

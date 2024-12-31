@@ -28,7 +28,7 @@
     <property>Amazon.VPCLattice.Model.CreateAccessLogSubscriptionRequest.ResourceIdentifier</property>
     <min>17</min>
     <max>200</max>
-    <pattern>^((((sn)|(svc))-[0-9a-z]{17})|(arn(:[a-z0-9]+([.-][a-z0-9]+)*){2}(:([a-z0-9]+([.-][a-z0-9]+)*)?){2}:((servicenetwork/sn)|(service/svc))-[0-9a-z]{17}))$</pattern>
+    <pattern>^((((sn)|(svc)|(rcfg))-[0-9a-z]{17})|(arn(:[a-z0-9]+([.-][a-z0-9]+)*){2}(:([a-z0-9]+([.-][a-z0-9]+)*)?){2}:((servicenetwork/sn)|(resourceconfiguration/rcfg)|(service/svc))-[0-9a-z]{17}))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VPCLattice.Model.CreateAccessLogSubscriptionResponse.Arn</property>
@@ -52,7 +52,7 @@
     <property>Amazon.VPCLattice.Model.CreateAccessLogSubscriptionResponse.ResourceArn</property>
     <min>20</min>
     <max>200</max>
-    <pattern>^arn(:[a-z0-9]+([.-][a-z0-9]+)*){2}(:([a-z0-9]+([.-][a-z0-9]+)*)?){2}:((servicenetwork/sn)|(service/svc))-[0-9a-z]{17}$</pattern>
+    <pattern>^arn(:[a-z0-9]+([.-][a-z0-9]+)*){2}(:([a-z0-9]+([.-][a-z0-9]+)*)?){2}:((servicenetwork/sn)|(service/svc)|(resourceconfiguration/rcfg))-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VPCLattice.Model.CreateAccessLogSubscriptionResponse.ResourceId</property>
@@ -117,6 +117,102 @@
     <min>21</min>
     <max>21</max>
     <pattern>^svc-[0-9a-z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.CreateResourceConfigurationRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[!-~]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.CreateResourceConfigurationRequest.Name</property>
+    <min>3</min>
+    <max>40</max>
+    <pattern>^(?!rcfg-)(?![-])(?!.*[-]$)(?!.*[-]{2})[a-z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.CreateResourceConfigurationRequest.ResourceConfigurationGroupIdentifier</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^((rcfg-[0-9a-z]{17})|(arn:[a-z0-9\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:resourceconfiguration/rcfg-[0-9a-z]{17}))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.CreateResourceConfigurationRequest.ResourceGatewayIdentifier</property>
+    <min>17</min>
+    <max>2048</max>
+    <pattern>^((rgw-[0-9a-z]{17})|(arn:[a-z0-9\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:resourcegateway/rgw-[0-9a-z]{17}))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.CreateResourceConfigurationResponse.Arn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:[a-z0-9f\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:resourceconfiguration/rcfg-[0-9a-z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.CreateResourceConfigurationResponse.Id</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>^rcfg-[0-9a-z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.CreateResourceConfigurationResponse.Name</property>
+    <min>3</min>
+    <max>40</max>
+    <pattern>^(?!rcfg-)(?![-])(?!.*[-]$)(?!.*[-]{2})[a-z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.CreateResourceConfigurationResponse.ResourceConfigurationGroupId</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>^rcfg-[0-9a-z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.CreateResourceConfigurationResponse.ResourceGatewayId</property>
+    <min>21</min>
+    <max>21</max>
+    <pattern>^rgw-[0-9a-z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.CreateResourceGatewayRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[!-~]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.CreateResourceGatewayRequest.Name</property>
+    <min>3</min>
+    <max>40</max>
+    <pattern>^(?!rgw-)(?![-])(?!.*[-]$)(?!.*[-]{2})[a-z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.CreateResourceGatewayRequest.VpcIdentifier</property>
+    <min>5</min>
+    <max>50</max>
+    <pattern>^vpc-(([0-9a-z]{8})|([0-9a-z]{17}))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.CreateResourceGatewayResponse.Arn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:[a-z0-9\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:resourcegateway/rgw-[0-9a-z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.CreateResourceGatewayResponse.Id</property>
+    <min>21</min>
+    <max>21</max>
+    <pattern>^rgw-[0-9a-z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.CreateResourceGatewayResponse.Name</property>
+    <min>3</min>
+    <max>40</max>
+    <pattern>^(?!rgw-)(?![-])(?!.*[-]$)(?!.*[-]{2})[a-z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.CreateResourceGatewayResponse.VpcIdentifier</property>
+    <min>5</min>
+    <max>50</max>
+    <pattern>^vpc-(([0-9a-z]{8})|([0-9a-z]{17}))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VPCLattice.Model.CreateRuleRequest.ClientToken</property>
@@ -242,8 +338,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VPCLattice.Model.CreateServiceNetworkResponse.Id</property>
-    <min>32</min>
-    <max>32</max>
+    <min>20</min>
+    <max>20</max>
     <pattern>^sn-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -251,6 +347,41 @@
     <min>3</min>
     <max>63</max>
     <pattern>^(?![-])(?!.*[-]$)(?!.*[-]{2})[a-z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.CreateServiceNetworkResourceAssociationRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[!-~]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.CreateServiceNetworkResourceAssociationRequest.ResourceConfigurationIdentifier</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^((rcfg-[0-9a-z]{17})|(arn:[a-z0-9\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:resourceconfiguration/rcfg-[0-9a-z]{17}))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.CreateServiceNetworkResourceAssociationRequest.ServiceNetworkIdentifier</property>
+    <min>3</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.CreateServiceNetworkResourceAssociationResponse.Arn</property>
+    <min>22</min>
+    <max>2048</max>
+    <pattern>^arn:[a-z0-9\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:servicenetworkresourceassociation/snra-[0-9a-f]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.CreateServiceNetworkResourceAssociationResponse.CreatedBy</property>
+    <min>1</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.CreateServiceNetworkResourceAssociationResponse.Id</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>^snra-[0-9a-f]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VPCLattice.Model.CreateServiceNetworkServiceAssociationRequest.ClientToken</property>
@@ -369,7 +500,7 @@
     <property>Amazon.VPCLattice.Model.DeleteAuthPolicyRequest.ResourceIdentifier</property>
     <min>17</min>
     <max>200</max>
-    <pattern>^((((sn)|(svc))-[0-9a-z]{17})|(arn(:[a-z0-9]+([.-][a-z0-9]+)*){2}(:([a-z0-9]+([.-][a-z0-9]+)*)?){2}:((servicenetwork/sn)|(service/svc))-[0-9a-z]{17}))$</pattern>
+    <pattern>^((((sn)|(svc)|(rcfg))-[0-9a-z]{17})|(arn(:[a-z0-9]+([.-][a-z0-9]+)*){2}(:([a-z0-9]+([.-][a-z0-9]+)*)?){2}:((servicenetwork/sn)|(resourceconfiguration/rcfg)|(service/svc))-[0-9a-z]{17}))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VPCLattice.Model.DeleteListenerRequest.ListenerIdentifier</property>
@@ -384,10 +515,76 @@
     <pattern>^((svc-[0-9a-z]{17})|(arn:[a-z0-9\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:service/svc-[0-9a-z]{17}))$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.VPCLattice.Model.DeleteResourceConfigurationRequest.ResourceConfigurationIdentifier</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^((rcfg-[0-9a-z]{17})|(arn:[a-z0-9\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:resourceconfiguration/rcfg-[0-9a-z]{17}))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.DeleteResourceEndpointAssociationRequest.ResourceEndpointAssociationIdentifier</property>
+    <min>21</min>
+    <max>2048</max>
+    <pattern>^((rea-[0-9a-f]{17})|(arn:[a-z0-9\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:resourceendpointassociation/rea-[0-9a-f]{17}))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.DeleteResourceEndpointAssociationResponse.Arn</property>
+    <min>21</min>
+    <max>2048</max>
+    <pattern>^arn:[a-z0-9\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:resourceendpointassociation/rea-[0-9a-f]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.DeleteResourceEndpointAssociationResponse.Id</property>
+    <min>21</min>
+    <max>21</max>
+    <pattern>^rea-[0-9a-f]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.DeleteResourceEndpointAssociationResponse.ResourceConfigurationArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:[a-z0-9f\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:resourceconfiguration/rcfg-[0-9a-z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.DeleteResourceEndpointAssociationResponse.ResourceConfigurationId</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>^rcfg-[0-9a-z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.DeleteResourceEndpointAssociationResponse.VpcEndpointId</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>^vpce-[0-9a-f]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.DeleteResourceGatewayRequest.ResourceGatewayIdentifier</property>
+    <min>17</min>
+    <max>2048</max>
+    <pattern>^((rgw-[0-9a-z]{17})|(arn:[a-z0-9\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:resourcegateway/rgw-[0-9a-z]{17}))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.DeleteResourceGatewayResponse.Arn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:[a-z0-9\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:resourcegateway/rgw-[0-9a-z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.DeleteResourceGatewayResponse.Id</property>
+    <min>21</min>
+    <max>21</max>
+    <pattern>^rgw-[0-9a-z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.DeleteResourceGatewayResponse.Name</property>
+    <min>3</min>
+    <max>40</max>
+    <pattern>^(?!rgw-)(?![-])(?!.*[-]$)(?!.*[-]{2})[a-z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.VPCLattice.Model.DeleteResourcePolicyRequest.ResourceArn</property>
     <min>20</min>
     <max>200</max>
-    <pattern>^arn(:[a-z0-9]+([.-][a-z0-9]+)*){2}(:([a-z0-9]+([.-][a-z0-9]+)*)?){2}:((servicenetwork/sn)|(service/svc))-[0-9a-z]{17}$</pattern>
+    <pattern>^arn(:[a-z0-9]+([.-][a-z0-9]+)*){2}(:([a-z0-9]+([.-][a-z0-9]+)*)?){2}:((servicenetwork/sn)|(service/svc)|(resourceconfiguration/rcfg))-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VPCLattice.Model.DeleteRuleRequest.ListenerIdentifier</property>
@@ -436,6 +633,24 @@
     <min>3</min>
     <max>2048</max>
     <pattern>^((sn-[0-9a-z]{17})|(arn:[a-z0-9\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:servicenetwork/sn-[0-9a-z]{17}))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.DeleteServiceNetworkResourceAssociationRequest.ServiceNetworkResourceAssociationIdentifier</property>
+    <min>22</min>
+    <max>2048</max>
+    <pattern>^((snra-[0-9a-z]{17})|(arn:[a-z0-9\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:servicenetworkresourceassociation/snra-[0-9a-f]{17}))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.DeleteServiceNetworkResourceAssociationResponse.Arn</property>
+    <min>22</min>
+    <max>2048</max>
+    <pattern>^arn:[a-z0-9\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:servicenetworkresourceassociation/snra-[0-9a-f]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.DeleteServiceNetworkResourceAssociationResponse.Id</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>^snra-[0-9a-f]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VPCLattice.Model.DeleteServiceNetworkServiceAssociationRequest.ServiceNetworkServiceAssociationIdentifier</property>
@@ -525,7 +740,7 @@
     <property>Amazon.VPCLattice.Model.GetAccessLogSubscriptionResponse.ResourceArn</property>
     <min>20</min>
     <max>200</max>
-    <pattern>^arn(:[a-z0-9]+([.-][a-z0-9]+)*){2}(:([a-z0-9]+([.-][a-z0-9]+)*)?){2}:((servicenetwork/sn)|(service/svc))-[0-9a-z]{17}$</pattern>
+    <pattern>^arn(:[a-z0-9]+([.-][a-z0-9]+)*){2}(:([a-z0-9]+([.-][a-z0-9]+)*)?){2}:((servicenetwork/sn)|(service/svc)|(resourceconfiguration/rcfg))-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VPCLattice.Model.GetAccessLogSubscriptionResponse.ResourceId</property>
@@ -537,7 +752,7 @@
     <property>Amazon.VPCLattice.Model.GetAuthPolicyRequest.ResourceIdentifier</property>
     <min>17</min>
     <max>200</max>
-    <pattern>^((((sn)|(svc))-[0-9a-z]{17})|(arn(:[a-z0-9]+([.-][a-z0-9]+)*){2}(:([a-z0-9]+([.-][a-z0-9]+)*)?){2}:((servicenetwork/sn)|(service/svc))-[0-9a-z]{17}))$</pattern>
+    <pattern>^((((sn)|(svc)|(rcfg))-[0-9a-z]{17})|(arn(:[a-z0-9]+([.-][a-z0-9]+)*){2}(:([a-z0-9]+([.-][a-z0-9]+)*)?){2}:((servicenetwork/sn)|(resourceconfiguration/rcfg)|(service/svc))-[0-9a-z]{17}))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VPCLattice.Model.GetAuthPolicyResponse.Policy</property>
@@ -592,10 +807,81 @@
     <pattern>^svc-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.VPCLattice.Model.GetResourceConfigurationRequest.ResourceConfigurationIdentifier</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^((rcfg-[0-9a-z]{17})|(arn:[a-z0-9\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:resourceconfiguration/rcfg-[0-9a-z]{17}))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.GetResourceConfigurationResponse.Arn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:[a-z0-9f\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:resourceconfiguration/rcfg-[0-9a-z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.GetResourceConfigurationResponse.CustomDomainName</property>
+    <min>3</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.GetResourceConfigurationResponse.Id</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>^rcfg-[0-9a-z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.GetResourceConfigurationResponse.Name</property>
+    <min>3</min>
+    <max>40</max>
+    <pattern>^(?!rcfg-)(?![-])(?!.*[-]$)(?!.*[-]{2})[a-z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.GetResourceConfigurationResponse.ResourceConfigurationGroupId</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>^rcfg-[0-9a-z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.GetResourceConfigurationResponse.ResourceGatewayId</property>
+    <min>21</min>
+    <max>21</max>
+    <pattern>^rgw-[0-9a-z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.GetResourceGatewayRequest.ResourceGatewayIdentifier</property>
+    <min>17</min>
+    <max>2048</max>
+    <pattern>^((rgw-[0-9a-z]{17})|(arn:[a-z0-9\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:resourcegateway/rgw-[0-9a-z]{17}))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.GetResourceGatewayResponse.Arn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:[a-z0-9\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:resourcegateway/rgw-[0-9a-z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.GetResourceGatewayResponse.Id</property>
+    <min>21</min>
+    <max>21</max>
+    <pattern>^rgw-[0-9a-z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.GetResourceGatewayResponse.Name</property>
+    <min>3</min>
+    <max>40</max>
+    <pattern>^(?!rgw-)(?![-])(?!.*[-]$)(?!.*[-]{2})[a-z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.GetResourceGatewayResponse.VpcId</property>
+    <min>5</min>
+    <max>50</max>
+    <pattern>^vpc-(([0-9a-z]{8})|([0-9a-z]{17}))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.VPCLattice.Model.GetResourcePolicyRequest.ResourceArn</property>
     <min>20</min>
     <max>200</max>
-    <pattern>^arn(:[a-z0-9]+([.-][a-z0-9]+)*){2}(:([a-z0-9]+([.-][a-z0-9]+)*)?){2}:((servicenetwork/sn)|(service/svc))-[0-9a-z]{17}$</pattern>
+    <pattern>^arn(:[a-z0-9]+([.-][a-z0-9]+)*){2}(:([a-z0-9]+([.-][a-z0-9]+)*)?){2}:((servicenetwork/sn)|(service/svc)|(resourceconfiguration/rcfg))-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VPCLattice.Model.GetResourcePolicyResponse.Policy</property>
@@ -693,8 +979,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VPCLattice.Model.GetServiceNetworkResponse.Id</property>
-    <min>32</min>
-    <max>32</max>
+    <min>20</min>
+    <max>20</max>
     <pattern>^sn-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -702,6 +988,63 @@
     <min>3</min>
     <max>63</max>
     <pattern>^(?![-])(?!.*[-]$)(?!.*[-]{2})[a-z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.GetServiceNetworkResourceAssociationRequest.ServiceNetworkResourceAssociationIdentifier</property>
+    <min>22</min>
+    <max>2048</max>
+    <pattern>^((snra-[0-9a-z]{17})|(arn:[a-z0-9\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:servicenetworkresourceassociation/snra-[0-9a-f]{17}))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.GetServiceNetworkResourceAssociationResponse.Arn</property>
+    <min>22</min>
+    <max>2048</max>
+    <pattern>^arn:[a-z0-9\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:servicenetworkresourceassociation/snra-[0-9a-f]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.GetServiceNetworkResourceAssociationResponse.CreatedBy</property>
+    <min>1</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.GetServiceNetworkResourceAssociationResponse.Id</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>^snra-[0-9a-f]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.GetServiceNetworkResourceAssociationResponse.ResourceConfigurationArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:[a-z0-9f\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:resourceconfiguration/rcfg-[0-9a-z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.GetServiceNetworkResourceAssociationResponse.ResourceConfigurationId</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>^rcfg-[0-9a-z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.GetServiceNetworkResourceAssociationResponse.ResourceConfigurationName</property>
+    <min>3</min>
+    <max>40</max>
+    <pattern>^(?!rcfg-)(?![-])(?!.*[-]$)(?!.*[-]{2})[a-z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.GetServiceNetworkResourceAssociationResponse.ServiceNetworkArn</property>
+    <min>3</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.GetServiceNetworkResourceAssociationResponse.ServiceNetworkId</property>
+    <min>3</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.GetServiceNetworkResourceAssociationResponse.ServiceNetworkName</property>
+    <min>3</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VPCLattice.Model.GetServiceNetworkServiceAssociationRequest.ServiceNetworkServiceAssociationIdentifier</property>
@@ -758,8 +1101,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VPCLattice.Model.GetServiceNetworkServiceAssociationResponse.ServiceNetworkId</property>
-    <min>32</min>
-    <max>32</max>
+    <min>20</min>
+    <max>20</max>
     <pattern>^sn-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -800,8 +1143,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VPCLattice.Model.GetServiceNetworkVpcAssociationResponse.ServiceNetworkId</property>
-    <min>32</min>
-    <max>32</max>
+    <min>20</min>
+    <max>20</max>
     <pattern>^sn-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -854,7 +1197,7 @@
     <property>Amazon.VPCLattice.Model.ListAccessLogSubscriptionsRequest.ResourceIdentifier</property>
     <min>17</min>
     <max>200</max>
-    <pattern>^((((sn)|(svc))-[0-9a-z]{17})|(arn(:[a-z0-9]+([.-][a-z0-9]+)*){2}(:([a-z0-9]+([.-][a-z0-9]+)*)?){2}:((servicenetwork/sn)|(service/svc))-[0-9a-z]{17}))$</pattern>
+    <pattern>^((((sn)|(svc)|(rcfg))-[0-9a-z]{17})|(arn(:[a-z0-9]+([.-][a-z0-9]+)*){2}(:([a-z0-9]+([.-][a-z0-9]+)*)?){2}:((servicenetwork/sn)|(resourceconfiguration/rcfg)|(service/svc))-[0-9a-z]{17}))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VPCLattice.Model.ListAccessLogSubscriptionsResponse.NextToken</property>
@@ -883,6 +1226,87 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.VPCLattice.Model.ListResourceConfigurationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.ListResourceConfigurationsRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.ListResourceConfigurationsRequest.ResourceConfigurationGroupIdentifier</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^((rcfg-[0-9a-z]{17})|(arn:[a-z0-9\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:resourceconfiguration/rcfg-[0-9a-z]{17}))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.ListResourceConfigurationsRequest.ResourceGatewayIdentifier</property>
+    <min>17</min>
+    <max>2048</max>
+    <pattern>^((rgw-[0-9a-z]{17})|(arn:[a-z0-9\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:resourcegateway/rgw-[0-9a-z]{17}))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.ListResourceConfigurationsResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.ListResourceEndpointAssociationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.ListResourceEndpointAssociationsRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.ListResourceEndpointAssociationsRequest.ResourceConfigurationIdentifier</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^((rcfg-[0-9a-z]{17})|(arn:[a-z0-9\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:resourceconfiguration/rcfg-[0-9a-z]{17}))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.ListResourceEndpointAssociationsRequest.ResourceEndpointAssociationIdentifier</property>
+    <min>21</min>
+    <max>2048</max>
+    <pattern>^((rea-[0-9a-f]{17})|(arn:[a-z0-9\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:resourceendpointassociation/rea-[0-9a-f]{17}))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.ListResourceEndpointAssociationsRequest.VpcEndpointId</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>^vpce-[0-9a-f]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.ListResourceEndpointAssociationsRequest.VpcEndpointOwner</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.ListResourceEndpointAssociationsResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.ListResourceGatewaysRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.ListResourceGatewaysRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.ListResourceGatewaysResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.VPCLattice.Model.ListRulesRequest.ListenerIdentifier</property>
     <min>20</min>
     <max>2048</max>
@@ -906,6 +1330,33 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VPCLattice.Model.ListRulesResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.ListServiceNetworkResourceAssociationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.ListServiceNetworkResourceAssociationsRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.ListServiceNetworkResourceAssociationsRequest.ResourceConfigurationIdentifier</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^((rcfg-[0-9a-z]{17})|(arn:[a-z0-9\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:resourceconfiguration/rcfg-[0-9a-z]{17}))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.ListServiceNetworkResourceAssociationsRequest.ServiceNetworkIdentifier</property>
+    <min>3</min>
+    <max>2048</max>
+    <pattern>^((sn-[0-9a-z]{17})|(arn:[a-z0-9\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:servicenetwork/sn-[0-9a-z]{17}))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.ListServiceNetworkResourceAssociationsResponse.NextToken</property>
     <min>1</min>
     <max>2048</max>
   </property-value-rule>
@@ -975,6 +1426,27 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VPCLattice.Model.ListServiceNetworkVpcAssociationsResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.ListServiceNetworkVpcEndpointAssociationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.ListServiceNetworkVpcEndpointAssociationsRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.ListServiceNetworkVpcEndpointAssociationsRequest.ServiceNetworkIdentifier</property>
+    <min>3</min>
+    <max>2048</max>
+    <pattern>^((sn-[0-9a-z]{17})|(arn:[a-z0-9\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:servicenetwork/sn-[0-9a-z]{17}))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.ListServiceNetworkVpcEndpointAssociationsResponse.NextToken</property>
     <min>1</min>
     <max>2048</max>
   </property-value-rule>
@@ -1050,7 +1522,7 @@
     <property>Amazon.VPCLattice.Model.PutAuthPolicyRequest.ResourceIdentifier</property>
     <min>17</min>
     <max>200</max>
-    <pattern>^((((sn)|(svc))-[0-9a-z]{17})|(arn(:[a-z0-9]+([.-][a-z0-9]+)*){2}(:([a-z0-9]+([.-][a-z0-9]+)*)?){2}:((servicenetwork/sn)|(service/svc))-[0-9a-z]{17}))$</pattern>
+    <pattern>^((((sn)|(svc)|(rcfg))-[0-9a-z]{17})|(arn(:[a-z0-9]+([.-][a-z0-9]+)*){2}(:([a-z0-9]+([.-][a-z0-9]+)*)?){2}:((servicenetwork/sn)|(resourceconfiguration/rcfg)|(service/svc))-[0-9a-z]{17}))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VPCLattice.Model.PutAuthPolicyResponse.Policy</property>
@@ -1067,7 +1539,7 @@
     <property>Amazon.VPCLattice.Model.PutResourcePolicyRequest.ResourceArn</property>
     <min>20</min>
     <max>200</max>
-    <pattern>^arn(:[a-z0-9]+([.-][a-z0-9]+)*){2}(:([a-z0-9]+([.-][a-z0-9]+)*)?){2}:((servicenetwork/sn)|(service/svc))-[0-9a-z]{17}$</pattern>
+    <pattern>^arn(:[a-z0-9]+([.-][a-z0-9]+)*){2}(:([a-z0-9]+([.-][a-z0-9]+)*)?){2}:((servicenetwork/sn)|(service/svc)|(resourceconfiguration/rcfg))-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VPCLattice.Model.RegisterTargetsRequest.TargetGroupIdentifier</property>
@@ -1121,7 +1593,7 @@
     <property>Amazon.VPCLattice.Model.UpdateAccessLogSubscriptionResponse.ResourceArn</property>
     <min>20</min>
     <max>200</max>
-    <pattern>^arn(:[a-z0-9]+([.-][a-z0-9]+)*){2}(:([a-z0-9]+([.-][a-z0-9]+)*)?){2}:((servicenetwork/sn)|(service/svc))-[0-9a-z]{17}$</pattern>
+    <pattern>^arn(:[a-z0-9]+([.-][a-z0-9]+)*){2}(:([a-z0-9]+([.-][a-z0-9]+)*)?){2}:((servicenetwork/sn)|(service/svc)|(resourceconfiguration/rcfg))-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VPCLattice.Model.UpdateAccessLogSubscriptionResponse.ResourceId</property>
@@ -1175,6 +1647,72 @@
     <min>21</min>
     <max>21</max>
     <pattern>^svc-[0-9a-z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.UpdateResourceConfigurationRequest.ResourceConfigurationIdentifier</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^((rcfg-[0-9a-z]{17})|(arn:[a-z0-9\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:resourceconfiguration/rcfg-[0-9a-z]{17}))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.UpdateResourceConfigurationResponse.Arn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:[a-z0-9f\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:resourceconfiguration/rcfg-[0-9a-z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.UpdateResourceConfigurationResponse.Id</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>^rcfg-[0-9a-z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.UpdateResourceConfigurationResponse.Name</property>
+    <min>3</min>
+    <max>40</max>
+    <pattern>^(?!rcfg-)(?![-])(?!.*[-]$)(?!.*[-]{2})[a-z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.UpdateResourceConfigurationResponse.ResourceConfigurationGroupId</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>^rcfg-[0-9a-z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.UpdateResourceConfigurationResponse.ResourceGatewayId</property>
+    <min>21</min>
+    <max>21</max>
+    <pattern>^rgw-[0-9a-z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.UpdateResourceGatewayRequest.ResourceGatewayIdentifier</property>
+    <min>17</min>
+    <max>2048</max>
+    <pattern>^((rgw-[0-9a-z]{17})|(arn:[a-z0-9\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:resourcegateway/rgw-[0-9a-z]{17}))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.UpdateResourceGatewayResponse.Arn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:[a-z0-9\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:resourcegateway/rgw-[0-9a-z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.UpdateResourceGatewayResponse.Id</property>
+    <min>21</min>
+    <max>21</max>
+    <pattern>^rgw-[0-9a-z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.UpdateResourceGatewayResponse.Name</property>
+    <min>3</min>
+    <max>40</max>
+    <pattern>^(?!rgw-)(?![-])(?!.*[-]$)(?!.*[-]{2})[a-z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.UpdateResourceGatewayResponse.VpcId</property>
+    <min>5</min>
+    <max>50</max>
+    <pattern>^vpc-(([0-9a-z]{8})|([0-9a-z]{17}))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VPCLattice.Model.UpdateRuleRequest.ListenerIdentifier</property>
@@ -1277,8 +1815,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VPCLattice.Model.UpdateServiceNetworkResponse.Id</property>
-    <min>32</min>
-    <max>32</max>
+    <min>20</min>
+    <max>20</max>
     <pattern>^sn-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1357,13 +1895,24 @@
     <property>Amazon.VPCLattice.Model.AccessLogSubscriptionSummary.ResourceArn</property>
     <min>20</min>
     <max>200</max>
-    <pattern>^arn(:[a-z0-9]+([.-][a-z0-9]+)*){2}(:([a-z0-9]+([.-][a-z0-9]+)*)?){2}:((servicenetwork/sn)|(service/svc))-[0-9a-z]{17}$</pattern>
+    <pattern>^arn(:[a-z0-9]+([.-][a-z0-9]+)*){2}(:([a-z0-9]+([.-][a-z0-9]+)*)?){2}:((servicenetwork/sn)|(service/svc)|(resourceconfiguration/rcfg))-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VPCLattice.Model.AccessLogSubscriptionSummary.ResourceId</property>
     <min>20</min>
     <max>50</max>
     <pattern>^((sn)|(svc))-[0-9a-z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.ArnResource.Arn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:[a-z0-9][-.a-z0-9]{0,62}:[a-z0-9][-.a-z0-9]{0,62}:([a-z0-9][-.a-z0-9]{0,62})?:\d{12}?:[^/].{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.DnsResource.DomainName</property>
+    <min>3</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VPCLattice.Model.FixedResponseAction.StatusCode</property>
@@ -1427,6 +1976,11 @@
     <max>16</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.VPCLattice.Model.IpResource.IpAddress</property>
+    <min>4</min>
+    <max>39</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.VPCLattice.Model.ListenerSummary.Arn</property>
     <min>20</min>
     <max>2048</max>
@@ -1466,6 +2020,108 @@
     <min>1</min>
     <max>200</max>
     <pattern>^/[a-zA-Z0-9@:%_+.~#?&amp;/=-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.ResourceConfigurationSummary.Arn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:[a-z0-9f\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:resourceconfiguration/rcfg-[0-9a-z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.ResourceConfigurationSummary.Id</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>^rcfg-[0-9a-z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.ResourceConfigurationSummary.Name</property>
+    <min>3</min>
+    <max>40</max>
+    <pattern>^(?!rcfg-)(?![-])(?!.*[-]$)(?!.*[-]{2})[a-z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.ResourceConfigurationSummary.ResourceConfigurationGroupId</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>^rcfg-[0-9a-z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.ResourceConfigurationSummary.ResourceGatewayId</property>
+    <min>21</min>
+    <max>21</max>
+    <pattern>^rgw-[0-9a-z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.ResourceEndpointAssociationSummary.Arn</property>
+    <min>21</min>
+    <max>2048</max>
+    <pattern>^arn:[a-z0-9\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:resourceendpointassociation/rea-[0-9a-f]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.ResourceEndpointAssociationSummary.CreatedBy</property>
+    <min>1</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.ResourceEndpointAssociationSummary.Id</property>
+    <min>21</min>
+    <max>21</max>
+    <pattern>^rea-[0-9a-f]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.ResourceEndpointAssociationSummary.ResourceConfigurationArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:[a-z0-9f\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:resourceconfiguration/rcfg-[0-9a-z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.ResourceEndpointAssociationSummary.ResourceConfigurationId</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>^rcfg-[0-9a-z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.ResourceEndpointAssociationSummary.ResourceConfigurationName</property>
+    <min>3</min>
+    <max>40</max>
+    <pattern>^(?!rcfg-)(?![-])(?!.*[-]$)(?!.*[-]{2})[a-z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.ResourceEndpointAssociationSummary.VpcEndpointId</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>^vpce-[0-9a-f]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.ResourceEndpointAssociationSummary.VpcEndpointOwner</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.ResourceGatewaySummary.Arn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:[a-z0-9\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:resourcegateway/rgw-[0-9a-z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.ResourceGatewaySummary.Id</property>
+    <min>21</min>
+    <max>21</max>
+    <pattern>^rgw-[0-9a-z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.ResourceGatewaySummary.Name</property>
+    <min>3</min>
+    <max>40</max>
+    <pattern>^(?!rgw-)(?![-])(?!.*[-]$)(?!.*[-]{2})[a-z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.ResourceGatewaySummary.VpcIdentifier</property>
+    <min>5</min>
+    <max>50</max>
+    <pattern>^vpc-(([0-9a-z]{8})|([0-9a-z]{17}))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VPCLattice.Model.RuleSummary.Arn</property>
@@ -1531,6 +2187,63 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.VPCLattice.Model.ServiceNetworkEndpointAssociation.ServiceNetworkArn</property>
+    <min>32</min>
+    <max>2048</max>
+    <pattern>^arn:[a-z0-9\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:servicenetwork/sn-[0-9a-z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.ServiceNetworkResourceAssociationSummary.Arn</property>
+    <min>22</min>
+    <max>2048</max>
+    <pattern>^arn:[a-z0-9\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:servicenetworkresourceassociation/snra-[0-9a-f]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.ServiceNetworkResourceAssociationSummary.CreatedBy</property>
+    <min>1</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.ServiceNetworkResourceAssociationSummary.Id</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>^snra-[0-9a-f]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.ServiceNetworkResourceAssociationSummary.ResourceConfigurationArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:[a-z0-9f\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:resourceconfiguration/rcfg-[0-9a-z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.ServiceNetworkResourceAssociationSummary.ResourceConfigurationId</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>^rcfg-[0-9a-z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.ServiceNetworkResourceAssociationSummary.ResourceConfigurationName</property>
+    <min>3</min>
+    <max>40</max>
+    <pattern>^(?!rcfg-)(?![-])(?!.*[-]$)(?!.*[-]{2})[a-z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.ServiceNetworkResourceAssociationSummary.ServiceNetworkArn</property>
+    <min>10</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.ServiceNetworkResourceAssociationSummary.ServiceNetworkId</property>
+    <min>3</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.ServiceNetworkResourceAssociationSummary.ServiceNetworkName</property>
+    <min>3</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.VPCLattice.Model.ServiceNetworkServiceAssociationSummary.Arn</property>
     <min>20</min>
     <max>2048</max>
@@ -1579,8 +2292,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VPCLattice.Model.ServiceNetworkServiceAssociationSummary.ServiceNetworkId</property>
-    <min>32</min>
-    <max>32</max>
+    <min>20</min>
+    <max>20</max>
     <pattern>^sn-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1597,8 +2310,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VPCLattice.Model.ServiceNetworkSummary.Id</property>
-    <min>32</min>
-    <max>32</max>
+    <min>20</min>
+    <max>20</max>
     <pattern>^sn-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1633,8 +2346,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VPCLattice.Model.ServiceNetworkVpcAssociationSummary.ServiceNetworkId</property>
-    <min>32</min>
-    <max>32</max>
+    <min>20</min>
+    <max>20</max>
     <pattern>^sn-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>

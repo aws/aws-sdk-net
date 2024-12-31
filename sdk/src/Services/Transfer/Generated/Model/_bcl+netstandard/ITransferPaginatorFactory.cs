@@ -82,6 +82,11 @@ namespace Amazon.Transfer.Model
         IListUsersPaginator ListUsers(ListUsersRequest request);
 
         /// <summary>
+        /// Paginator for ListWebApps operation
+        ///</summary>
+        IListWebAppsPaginator ListWebApps(ListWebAppsRequest request);
+
+        /// <summary>
         /// Paginator for ListWorkflows operation
         ///</summary>
         IListWorkflowsPaginator ListWorkflows(ListWorkflowsRequest request);

@@ -1070,6 +1070,61 @@ namespace Amazon.SimpleEmailV2
 
         #endregion
         
+        #region  CreateMultiRegionEndpoint
+
+        internal virtual CreateMultiRegionEndpointResponse CreateMultiRegionEndpoint(CreateMultiRegionEndpointRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMultiRegionEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMultiRegionEndpointResponseUnmarshaller.Instance;
+
+            return Invoke<CreateMultiRegionEndpointResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a multi-region endpoint (global-endpoint).
+        /// 
+        ///  
+        /// <para>
+        /// The primary region is going to be the AWS-Region where the operation is executed.
+        /// The secondary region has to be provided in request's parameters. From the data flow
+        /// standpoint there is no difference between primary and secondary regions - sending
+        /// traffic will be split equally between the two. The primary region is the region where
+        /// the resource has been created and where it can be managed. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMultiRegionEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateMultiRegionEndpoint service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.AlreadyExistsException">
+        /// The resource specified in your request already exists.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.LimitExceededException">
+        /// There are too many instances of the specified resource type.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateMultiRegionEndpoint">REST API Reference for CreateMultiRegionEndpoint Operation</seealso>
+        public virtual Task<CreateMultiRegionEndpointResponse> CreateMultiRegionEndpointAsync(CreateMultiRegionEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMultiRegionEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMultiRegionEndpointResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateMultiRegionEndpointResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteConfigurationSet
 
         internal virtual DeleteConfigurationSetResponse DeleteConfigurationSet(DeleteConfigurationSetRequest request)
@@ -1516,6 +1571,58 @@ namespace Amazon.SimpleEmailV2
             options.ResponseUnmarshaller = DeleteEmailTemplateResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteEmailTemplateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteMultiRegionEndpoint
+
+        internal virtual DeleteMultiRegionEndpointResponse DeleteMultiRegionEndpoint(DeleteMultiRegionEndpointRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMultiRegionEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMultiRegionEndpointResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteMultiRegionEndpointResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a multi-region endpoint (global-endpoint).
+        /// 
+        ///  
+        /// <para>
+        /// Only multi-region endpoints (global-endpoints) whose primary region is the AWS-Region
+        /// where operation is executed can be deleted.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMultiRegionEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteMultiRegionEndpoint service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.ConcurrentModificationException">
+        /// The resource is being modified by another operation or thread.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DeleteMultiRegionEndpoint">REST API Reference for DeleteMultiRegionEndpoint Operation</seealso>
+        public virtual Task<DeleteMultiRegionEndpointResponse> DeleteMultiRegionEndpointAsync(DeleteMultiRegionEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMultiRegionEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMultiRegionEndpointResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteMultiRegionEndpointResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2500,6 +2607,55 @@ namespace Amazon.SimpleEmailV2
 
         #endregion
         
+        #region  GetMultiRegionEndpoint
+
+        internal virtual GetMultiRegionEndpointResponse GetMultiRegionEndpoint(GetMultiRegionEndpointRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMultiRegionEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMultiRegionEndpointResponseUnmarshaller.Instance;
+
+            return Invoke<GetMultiRegionEndpointResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Displays the multi-region endpoint (global-endpoint) configuration.
+        /// 
+        ///  
+        /// <para>
+        /// Only multi-region endpoints (global-endpoints) whose primary region is the AWS-Region
+        /// where operation is executed can be displayed.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMultiRegionEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetMultiRegionEndpoint service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetMultiRegionEndpoint">REST API Reference for GetMultiRegionEndpoint Operation</seealso>
+        public virtual Task<GetMultiRegionEndpointResponse> GetMultiRegionEndpointAsync(GetMultiRegionEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMultiRegionEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMultiRegionEndpointResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetMultiRegionEndpointResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetSuppressedDestination
 
         internal virtual GetSuppressedDestinationResponse GetSuppressedDestination(GetSuppressedDestinationRequest request)
@@ -3022,6 +3178,52 @@ namespace Amazon.SimpleEmailV2
             options.ResponseUnmarshaller = ListImportJobsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListImportJobsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListMultiRegionEndpoints
+
+        internal virtual ListMultiRegionEndpointsResponse ListMultiRegionEndpoints(ListMultiRegionEndpointsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMultiRegionEndpointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMultiRegionEndpointsResponseUnmarshaller.Instance;
+
+            return Invoke<ListMultiRegionEndpointsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// List the multi-region endpoints (global-endpoints).
+        /// 
+        ///  
+        /// <para>
+        /// Only multi-region endpoints (global-endpoints) whose primary region is the AWS-Region
+        /// where operation is executed will be listed.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMultiRegionEndpoints service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListMultiRegionEndpoints service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListMultiRegionEndpoints">REST API Reference for ListMultiRegionEndpoints Operation</seealso>
+        public virtual Task<ListMultiRegionEndpointsResponse> ListMultiRegionEndpointsAsync(ListMultiRegionEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMultiRegionEndpointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMultiRegionEndpointsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListMultiRegionEndpointsResponse>(request, options, cancellationToken);
         }
 
         #endregion

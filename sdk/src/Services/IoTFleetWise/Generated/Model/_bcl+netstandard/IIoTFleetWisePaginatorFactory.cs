@@ -82,6 +82,11 @@ namespace Amazon.IoTFleetWise.Model
         IListSignalCatalogsPaginator ListSignalCatalogs(ListSignalCatalogsRequest request);
 
         /// <summary>
+        /// Paginator for ListStateTemplates operation
+        ///</summary>
+        IListStateTemplatesPaginator ListStateTemplates(ListStateTemplatesRequest request);
+
+        /// <summary>
         /// Paginator for ListVehicles operation
         ///</summary>
         IListVehiclesPaginator ListVehicles(ListVehiclesRequest request);

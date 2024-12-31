@@ -31,8 +31,7 @@ namespace Amazon.Glue.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateTableOptimizer operation.
-    /// Creates a new table optimizer for a specific function. <c>compaction</c> is the only
-    /// currently supported optimizer type.
+    /// Creates a new table optimizer for a specific function.
     /// </summary>
     public partial class CreateTableOptimizerRequest : AmazonGlueRequest
     {
@@ -122,7 +121,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of table optimizer. Currently, the only valid value is <c>compaction</c>.
+        /// The type of table optimizer.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

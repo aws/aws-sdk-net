@@ -41,7 +41,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Bucket. 
         /// <para>
-        /// The Amazon S3 bucket to store the access logs in, for example, <c>myawslogbucket.s3.amazonaws.com</c>.
+        /// The Amazon S3 bucket to store the access logs in, for example, <c>amzn-s3-demo-bucket.s3.amazonaws.com</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

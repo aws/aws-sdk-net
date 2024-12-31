@@ -72,6 +72,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.AliasICPRecordals.Add(unmarshaller.Unmarshall(context));
                         continue;
                     }
+                    if (context.TestExpression("AnycastIpListId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AnycastIpListId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ARN", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

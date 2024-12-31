@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
-    /// Reserved for internal use.
+    /// If an entity is rejected when a <c>PutLogEvents</c> request was made, this includes
+    /// details about the reason for the rejection.
     /// </summary>
     public partial class RejectedEntityInfo
     {
@@ -39,7 +40,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property ErrorType. 
         /// <para>
-        /// Reserved for internal use.
+        /// The type of error that caused the rejection of the entity when calling <c>PutLogEvents</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

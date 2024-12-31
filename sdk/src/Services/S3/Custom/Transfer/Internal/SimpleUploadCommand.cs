@@ -67,6 +67,7 @@ namespace Amazon.S3.Transfer.Internal
                 ServerSideEncryptionCustomerProvidedKeyMD5 = this._fileTransporterRequest.ServerSideEncryptionCustomerProvidedKeyMD5,
                 ServerSideEncryptionKeyManagementServiceKeyId = this._fileTransporterRequest.ServerSideEncryptionKeyManagementServiceKeyId,
                 IfNoneMatch = this._fileTransporterRequest.IfNoneMatch,
+                IfMatch = this._fileTransporterRequest.IfMatch,
                 Metadata = this._fileTransporterRequest.Metadata,
                 TagSet = this._fileTransporterRequest.TagSet,
                 DisableDefaultChecksumValidation = this._fileTransporterRequest.DisableDefaultChecksumValidation,

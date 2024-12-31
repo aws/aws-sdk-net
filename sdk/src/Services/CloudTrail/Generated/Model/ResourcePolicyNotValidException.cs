@@ -31,27 +31,7 @@ namespace Amazon.CloudTrail.Model
 {
     /// <summary>
     /// This exception is thrown when the resouce-based policy has syntax errors, or contains
-    /// a principal that is not valid. 
-    /// 
-    ///  
-    /// <para>
-    /// The following are requirements for the resource policy:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  Contains only one action: cloudtrail-data:PutAuditEvents 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  Contains at least one statement. The policy can have a maximum of 20 statements.
-    /// 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  Each statement contains at least one principal. A statement can have a maximum of
-    /// 50 principals. 
-    /// </para>
-    ///  </li> </ul>
+    /// a principal that is not valid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

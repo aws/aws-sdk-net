@@ -131,9 +131,17 @@ namespace Amazon.Imagebuilder
     {
 
         /// <summary>
+        /// Constant ACTIVE for ComponentStatus
+        /// </summary>
+        public static readonly ComponentStatus ACTIVE = new ComponentStatus("ACTIVE");
+        /// <summary>
         /// Constant DEPRECATED for ComponentStatus
         /// </summary>
         public static readonly ComponentStatus DEPRECATED = new ComponentStatus("DEPRECATED");
+        /// <summary>
+        /// Constant DISABLED for ComponentStatus
+        /// </summary>
+        public static readonly ComponentStatus DISABLED = new ComponentStatus("DISABLED");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1149,6 +1157,56 @@ namespace Amazon.Imagebuilder
 
 
     /// <summary>
+    /// Constants used for properties of type MarketplaceResourceType.
+    /// </summary>
+    public class MarketplaceResourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPONENT_ARTIFACT for MarketplaceResourceType
+        /// </summary>
+        public static readonly MarketplaceResourceType COMPONENT_ARTIFACT = new MarketplaceResourceType("COMPONENT_ARTIFACT");
+        /// <summary>
+        /// Constant COMPONENT_DATA for MarketplaceResourceType
+        /// </summary>
+        public static readonly MarketplaceResourceType COMPONENT_DATA = new MarketplaceResourceType("COMPONENT_DATA");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MarketplaceResourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MarketplaceResourceType FindValue(string value)
+        {
+            return FindValue<MarketplaceResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MarketplaceResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type OnWorkflowFailure.
     /// </summary>
     public class OnWorkflowFailure : ConstantClass
@@ -1208,6 +1266,10 @@ namespace Amazon.Imagebuilder
         /// Constant Amazon for Ownership
         /// </summary>
         public static readonly Ownership Amazon = new Ownership("Amazon");
+        /// <summary>
+        /// Constant AWSMarketplace for Ownership
+        /// </summary>
+        public static readonly Ownership AWSMarketplace = new Ownership("AWSMarketplace");
         /// <summary>
         /// Constant Self for Ownership
         /// </summary>
@@ -1404,6 +1466,52 @@ namespace Amazon.Imagebuilder
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Platform(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ProductCodeType.
+    /// </summary>
+    public class ProductCodeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Marketplace for ProductCodeType
+        /// </summary>
+        public static readonly ProductCodeType Marketplace = new ProductCodeType("marketplace");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ProductCodeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ProductCodeType FindValue(string value)
+        {
+            return FindValue<ProductCodeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ProductCodeType(string value)
         {
             return FindValue(value);
         }

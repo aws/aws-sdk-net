@@ -142,8 +142,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property AverageUtilization. 
         /// <para>
-        /// The average utilization of your recommendations. Amazon Web Services uses this to
-        /// calculate your recommended reservation purchases.
+        /// The average utilization of your instances. Amazon Web Services uses this to calculate
+        /// your recommended reservation purchases.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -162,7 +162,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property CurrencyCode. 
         /// <para>
-        /// The currency code that Amazon Web Services used to calculate the costs for this recommendation.
+        /// The currency code that Amazon Web Services used to calculate the costs for this instance.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -181,8 +181,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property EstimatedBreakEvenInMonths. 
         /// <para>
-        /// How long Amazon Web Services estimates that it takes for this recommendation to start
-        /// saving you money, in months.
+        /// How long Amazon Web Services estimates that it takes for this instance to start saving
+        /// you money, in months.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -479,7 +479,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property RecurringStandardMonthlyCost. 
         /// <para>
-        /// How much purchasing this recommendation costs you on a monthly basis.
+        /// How much purchasing this instance costs you on a monthly basis.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -516,7 +516,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property UpfrontCost. 
         /// <para>
-        /// How much purchasing this recommendation costs you upfront.
+        /// How much purchasing this instance costs you upfront.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]

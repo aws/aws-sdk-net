@@ -45,7 +45,6 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <para>
         /// The partner contact's title (job title or role) associated with the <c>Opportunity</c>.
         /// <c>BusinessTitle</c> supports either <c>PartnerAccountManager</c> or <c>OpportunityOwner</c>.
-        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=80)]
@@ -64,7 +63,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Email. 
         /// <para>
-        /// The contact's email address associated with the <c>Opportunity</c>. 
+        /// The contact's email address associated with the <c>Opportunity</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=80)]
@@ -83,7 +82,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property FirstName. 
         /// <para>
-        /// The contact's first name associated with the <c>Opportunity</c>. 
+        /// The contact's first name associated with the <c>Opportunity</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=80)]
@@ -102,7 +101,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property LastName. 
         /// <para>
-        /// The contact's last name associated with the <c>Opportunity</c>. 
+        /// The contact's last name associated with the <c>Opportunity</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=80)]
@@ -121,7 +120,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Phone. 
         /// <para>
-        /// The contact's phone number associated with the <c>Opportunity</c>. 
+        /// The contact's phone number associated with the <c>Opportunity</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=40)]

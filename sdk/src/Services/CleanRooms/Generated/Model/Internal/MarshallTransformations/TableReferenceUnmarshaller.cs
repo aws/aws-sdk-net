@@ -66,10 +66,22 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("athena", targetDepth))
+                {
+                    var unmarshaller = AthenaTableReferenceUnmarshaller.Instance;
+                    unmarshalledObject.Athena = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("glue", targetDepth))
                 {
                     var unmarshaller = GlueTableReferenceUnmarshaller.Instance;
                     unmarshalledObject.Glue = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("snowflake", targetDepth))
+                {
+                    var unmarshaller = SnowflakeTableReferenceUnmarshaller.Instance;
+                    unmarshalledObject.Snowflake = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

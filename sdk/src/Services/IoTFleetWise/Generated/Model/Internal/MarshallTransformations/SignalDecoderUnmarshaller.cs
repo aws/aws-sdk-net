@@ -72,6 +72,12 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
                     unmarshalledObject.CanSignal = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("customDecodingSignal", targetDepth))
+                {
+                    var unmarshaller = CustomDecodingSignalUnmarshaller.Instance;
+                    unmarshalledObject.CustomDecodingSignal = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("fullyQualifiedName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

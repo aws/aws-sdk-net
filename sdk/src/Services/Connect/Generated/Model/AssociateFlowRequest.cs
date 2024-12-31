@@ -84,6 +84,17 @@ namespace Amazon.Connect.Model
         /// <para>
         /// The identifier of the resource.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Amazon Web Services End User Messaging SMS phone number ARN when using <c>SMS_PHONE_NUMBER</c>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon Web Services End User Messaging Social phone number ARN when using <c>WHATSAPP_MESSAGING_PHONE_NUMBER</c>
+        /// 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ResourceId

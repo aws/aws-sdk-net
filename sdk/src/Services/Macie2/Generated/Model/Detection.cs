@@ -128,7 +128,8 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property Suppressed. 
         /// <para>
         /// Specifies whether occurrences of this type of sensitive data are excluded (true) or
-        /// included (false) in the bucket's sensitivity score.
+        /// included (false) in the bucket's sensitivity score, if the score is calculated by
+        /// Amazon Macie.
         /// </para>
         /// </summary>
         public bool? Suppressed

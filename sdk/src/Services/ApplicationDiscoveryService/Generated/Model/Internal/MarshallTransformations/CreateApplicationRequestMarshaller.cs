@@ -83,6 +83,12 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
                         context.Writer.Write(publicRequest.Name);
                     }
 
+                    if(publicRequest.IsSetWave())
+                    {
+                        context.Writer.WritePropertyName("wave");
+                        context.Writer.Write(publicRequest.Wave);
+                    }
+
                     writer.WriteObjectEnd();
                 }
 

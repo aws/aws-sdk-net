@@ -64,6 +64,18 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     response.Queues = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("totalConcurrentJobs", targetDepth))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    response.TotalConcurrentJobs = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("unallocatedConcurrentJobs", targetDepth))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    response.UnallocatedConcurrentJobs = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

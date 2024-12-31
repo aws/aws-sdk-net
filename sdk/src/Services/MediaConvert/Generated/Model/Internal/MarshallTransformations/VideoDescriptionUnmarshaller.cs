@@ -144,6 +144,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.TimecodeInsertion = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("timecodeTrack", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TimecodeTrack = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("videoPreprocessors", targetDepth))
                 {
                     var unmarshaller = VideoPreprocessorUnmarshaller.Instance;

@@ -101,6 +101,17 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.EngineVersion);
                     }
 
+                    if(publicRequest.IsSetKerberosAuthenticationSettings())
+                    {
+                        context.Writer.WritePropertyName("KerberosAuthenticationSettings");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = KerberosAuthenticationSettingsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.KerberosAuthenticationSettings, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
                     if(publicRequest.IsSetKmsKeyId())
                     {
                         context.Writer.WritePropertyName("KmsKeyId");

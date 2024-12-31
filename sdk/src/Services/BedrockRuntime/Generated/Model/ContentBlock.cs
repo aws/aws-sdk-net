@@ -43,6 +43,7 @@ namespace Amazon.BedrockRuntime.Model
         private string _text;
         private ToolResultBlock _toolResult;
         private ToolUseBlock _toolUse;
+        private VideoBlock _video;
 
         /// <summary>
         /// Gets and sets the property Document. 
@@ -161,6 +162,24 @@ namespace Amazon.BedrockRuntime.Model
         internal bool IsSetToolUse()
         {
             return this._toolUse != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Video. 
+        /// <para>
+        /// Video to include in the message. 
+        /// </para>
+        /// </summary>
+        public VideoBlock Video
+        {
+            get { return this._video; }
+            set { this._video = value; }
+        }
+
+        // Check to see if Video property is set
+        internal bool IsSetVideo()
+        {
+            return this._video != null;
         }
 
     }

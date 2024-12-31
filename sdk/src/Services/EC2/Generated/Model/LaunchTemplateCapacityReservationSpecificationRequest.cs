@@ -49,8 +49,14 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        ///  <c>capacity-reservations-only</c> - The instance will only run in a Capacity Reservation
+        /// or Capacity Reservation group. If capacity isn't available, the instance will fail
+        /// to launch.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>open</c> - The instance can run in any <c>open</c> Capacity Reservation that has
-        /// matching attributes (instance type, platform, Availability Zone).
+        /// matching attributes (instance type, platform, Availability Zone, tenancy).
         /// </para>
         ///  </li> <li> 
         /// <para>

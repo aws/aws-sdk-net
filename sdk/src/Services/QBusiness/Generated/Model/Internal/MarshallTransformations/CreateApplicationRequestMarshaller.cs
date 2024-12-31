@@ -165,6 +165,17 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
 
+                    if(publicRequest.IsSetQuickSightConfiguration())
+                    {
+                        context.Writer.WritePropertyName("quickSightConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = QuickSightConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.QuickSightConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
                     if(publicRequest.IsSetRoleArn())
                     {
                         context.Writer.WritePropertyName("roleArn");

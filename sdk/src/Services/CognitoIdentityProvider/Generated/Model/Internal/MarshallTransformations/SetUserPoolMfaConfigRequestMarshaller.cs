@@ -116,6 +116,17 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.UserPoolId);
                     }
 
+                    if(publicRequest.IsSetWebAuthnConfiguration())
+                    {
+                        context.Writer.WritePropertyName("WebAuthnConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = WebAuthnConfigurationTypeMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.WebAuthnConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
                     writer.WriteObjectEnd();
                 }
 

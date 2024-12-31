@@ -292,6 +292,152 @@ namespace Amazon.VPCLattice
 
         #endregion
         
+        #region  CreateResourceConfiguration
+
+
+        /// <summary>
+        /// Creates a resource configuration. A resource configuration defines a specific resource.
+        /// You can associate a resource configuration with a service network or a VPC endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateResourceConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the CreateResourceConfiguration service method, as returned by VPCLattice.</returns>
+        /// <exception cref="Amazon.VPCLattice.Model.AccessDeniedException">
+        /// The user does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. Updating or deleting
+        /// a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.InternalServerException">
+        /// An unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/CreateResourceConfiguration">REST API Reference for CreateResourceConfiguration Operation</seealso>
+        CreateResourceConfigurationResponse CreateResourceConfiguration(CreateResourceConfigurationRequest request);
+
+
+
+        /// <summary>
+        /// Creates a resource configuration. A resource configuration defines a specific resource.
+        /// You can associate a resource configuration with a service network or a VPC endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateResourceConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateResourceConfiguration service method, as returned by VPCLattice.</returns>
+        /// <exception cref="Amazon.VPCLattice.Model.AccessDeniedException">
+        /// The user does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. Updating or deleting
+        /// a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.InternalServerException">
+        /// An unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/CreateResourceConfiguration">REST API Reference for CreateResourceConfiguration Operation</seealso>
+        Task<CreateResourceConfigurationResponse> CreateResourceConfigurationAsync(CreateResourceConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateResourceGateway
+
+
+        /// <summary>
+        /// Creates a resource gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateResourceGateway service method.</param>
+        /// 
+        /// <returns>The response from the CreateResourceGateway service method, as returned by VPCLattice.</returns>
+        /// <exception cref="Amazon.VPCLattice.Model.AccessDeniedException">
+        /// The user does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. Updating or deleting
+        /// a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.InternalServerException">
+        /// An unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/CreateResourceGateway">REST API Reference for CreateResourceGateway Operation</seealso>
+        CreateResourceGatewayResponse CreateResourceGateway(CreateResourceGatewayRequest request);
+
+
+
+        /// <summary>
+        /// Creates a resource gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateResourceGateway service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateResourceGateway service method, as returned by VPCLattice.</returns>
+        /// <exception cref="Amazon.VPCLattice.Model.AccessDeniedException">
+        /// The user does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. Updating or deleting
+        /// a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.InternalServerException">
+        /// An unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/CreateResourceGateway">REST API Reference for CreateResourceGateway Operation</seealso>
+        Task<CreateResourceGatewayResponse> CreateResourceGatewayAsync(CreateResourceGatewayRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateRule
 
 
@@ -542,11 +688,88 @@ namespace Amazon.VPCLattice
 
         #endregion
         
+        #region  CreateServiceNetworkResourceAssociation
+
+
+        /// <summary>
+        /// Associates the specified service network with the specified resource configuration.
+        /// This allows the resource configuration to receive connections through the service
+        /// network, including through a service network VPC endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateServiceNetworkResourceAssociation service method.</param>
+        /// 
+        /// <returns>The response from the CreateServiceNetworkResourceAssociation service method, as returned by VPCLattice.</returns>
+        /// <exception cref="Amazon.VPCLattice.Model.AccessDeniedException">
+        /// The user does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. Updating or deleting
+        /// a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.InternalServerException">
+        /// An unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/CreateServiceNetworkResourceAssociation">REST API Reference for CreateServiceNetworkResourceAssociation Operation</seealso>
+        CreateServiceNetworkResourceAssociationResponse CreateServiceNetworkResourceAssociation(CreateServiceNetworkResourceAssociationRequest request);
+
+
+
+        /// <summary>
+        /// Associates the specified service network with the specified resource configuration.
+        /// This allows the resource configuration to receive connections through the service
+        /// network, including through a service network VPC endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateServiceNetworkResourceAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateServiceNetworkResourceAssociation service method, as returned by VPCLattice.</returns>
+        /// <exception cref="Amazon.VPCLattice.Model.AccessDeniedException">
+        /// The user does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. Updating or deleting
+        /// a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.InternalServerException">
+        /// An unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/CreateServiceNetworkResourceAssociation">REST API Reference for CreateServiceNetworkResourceAssociation Operation</seealso>
+        Task<CreateServiceNetworkResourceAssociationResponse> CreateServiceNetworkResourceAssociationAsync(CreateServiceNetworkResourceAssociationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateServiceNetworkServiceAssociation
 
 
         /// <summary>
-        /// Associates a service with a service network. For more information, see <a href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/service-network-associations.html#service-network-service-associations">Manage
+        /// Associates the specified service with the specified service network. For more information,
+        /// see <a href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/service-network-associations.html#service-network-service-associations">Manage
         /// service associations</a> in the <i>Amazon VPC Lattice User Guide</i>.
         /// 
         ///  
@@ -597,7 +820,8 @@ namespace Amazon.VPCLattice
 
 
         /// <summary>
-        /// Associates a service with a service network. For more information, see <a href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/service-network-associations.html#service-network-service-associations">Manage
+        /// Associates the specified service with the specified service network. For more information,
+        /// see <a href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/service-network-associations.html#service-network-service-associations">Manage
         /// service associations</a> in the <i>Amazon VPC Lattice User Guide</i>.
         /// 
         ///  
@@ -1040,6 +1264,196 @@ namespace Amazon.VPCLattice
 
         #endregion
         
+        #region  DeleteResourceConfiguration
+
+
+        /// <summary>
+        /// Deletes the specified resource configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourceConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteResourceConfiguration service method, as returned by VPCLattice.</returns>
+        /// <exception cref="Amazon.VPCLattice.Model.AccessDeniedException">
+        /// The user does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. Updating or deleting
+        /// a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.InternalServerException">
+        /// An unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/DeleteResourceConfiguration">REST API Reference for DeleteResourceConfiguration Operation</seealso>
+        DeleteResourceConfigurationResponse DeleteResourceConfiguration(DeleteResourceConfigurationRequest request);
+
+
+
+        /// <summary>
+        /// Deletes the specified resource configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourceConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteResourceConfiguration service method, as returned by VPCLattice.</returns>
+        /// <exception cref="Amazon.VPCLattice.Model.AccessDeniedException">
+        /// The user does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. Updating or deleting
+        /// a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.InternalServerException">
+        /// An unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/DeleteResourceConfiguration">REST API Reference for DeleteResourceConfiguration Operation</seealso>
+        Task<DeleteResourceConfigurationResponse> DeleteResourceConfigurationAsync(DeleteResourceConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteResourceEndpointAssociation
+
+
+        /// <summary>
+        /// Disassociates the resource configuration from the resource VPC endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourceEndpointAssociation service method.</param>
+        /// 
+        /// <returns>The response from the DeleteResourceEndpointAssociation service method, as returned by VPCLattice.</returns>
+        /// <exception cref="Amazon.VPCLattice.Model.AccessDeniedException">
+        /// The user does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.InternalServerException">
+        /// An unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/DeleteResourceEndpointAssociation">REST API Reference for DeleteResourceEndpointAssociation Operation</seealso>
+        DeleteResourceEndpointAssociationResponse DeleteResourceEndpointAssociation(DeleteResourceEndpointAssociationRequest request);
+
+
+
+        /// <summary>
+        /// Disassociates the resource configuration from the resource VPC endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourceEndpointAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteResourceEndpointAssociation service method, as returned by VPCLattice.</returns>
+        /// <exception cref="Amazon.VPCLattice.Model.AccessDeniedException">
+        /// The user does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.InternalServerException">
+        /// An unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/DeleteResourceEndpointAssociation">REST API Reference for DeleteResourceEndpointAssociation Operation</seealso>
+        Task<DeleteResourceEndpointAssociationResponse> DeleteResourceEndpointAssociationAsync(DeleteResourceEndpointAssociationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteResourceGateway
+
+
+        /// <summary>
+        /// Deletes the specified resource gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourceGateway service method.</param>
+        /// 
+        /// <returns>The response from the DeleteResourceGateway service method, as returned by VPCLattice.</returns>
+        /// <exception cref="Amazon.VPCLattice.Model.AccessDeniedException">
+        /// The user does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. Updating or deleting
+        /// a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.InternalServerException">
+        /// An unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/DeleteResourceGateway">REST API Reference for DeleteResourceGateway Operation</seealso>
+        DeleteResourceGatewayResponse DeleteResourceGateway(DeleteResourceGatewayRequest request);
+
+
+
+        /// <summary>
+        /// Deletes the specified resource gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourceGateway service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteResourceGateway service method, as returned by VPCLattice.</returns>
+        /// <exception cref="Amazon.VPCLattice.Model.AccessDeniedException">
+        /// The user does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. Updating or deleting
+        /// a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.InternalServerException">
+        /// An unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/DeleteResourceGateway">REST API Reference for DeleteResourceGateway Operation</seealso>
+        Task<DeleteResourceGatewayResponse> DeleteResourceGatewayAsync(DeleteResourceGatewayRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteResourcePolicy
 
 
@@ -1330,12 +1744,78 @@ namespace Amazon.VPCLattice
 
         #endregion
         
+        #region  DeleteServiceNetworkResourceAssociation
+
+
+        /// <summary>
+        /// Deletes the association between a service network and a resource configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteServiceNetworkResourceAssociation service method.</param>
+        /// 
+        /// <returns>The response from the DeleteServiceNetworkResourceAssociation service method, as returned by VPCLattice.</returns>
+        /// <exception cref="Amazon.VPCLattice.Model.AccessDeniedException">
+        /// The user does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. Updating or deleting
+        /// a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.InternalServerException">
+        /// An unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/DeleteServiceNetworkResourceAssociation">REST API Reference for DeleteServiceNetworkResourceAssociation Operation</seealso>
+        DeleteServiceNetworkResourceAssociationResponse DeleteServiceNetworkResourceAssociation(DeleteServiceNetworkResourceAssociationRequest request);
+
+
+
+        /// <summary>
+        /// Deletes the association between a service network and a resource configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteServiceNetworkResourceAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteServiceNetworkResourceAssociation service method, as returned by VPCLattice.</returns>
+        /// <exception cref="Amazon.VPCLattice.Model.AccessDeniedException">
+        /// The user does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. Updating or deleting
+        /// a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.InternalServerException">
+        /// An unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/DeleteServiceNetworkResourceAssociation">REST API Reference for DeleteServiceNetworkResourceAssociation Operation</seealso>
+        Task<DeleteServiceNetworkResourceAssociationResponse> DeleteServiceNetworkResourceAssociationAsync(DeleteServiceNetworkResourceAssociationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteServiceNetworkServiceAssociation
 
 
         /// <summary>
-        /// Deletes the association between a specified service and the specific service network.
-        /// This operation fails if an association is still in progress.
+        /// Deletes the association between a service and a service network. This operation fails
+        /// if an association is still in progress.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteServiceNetworkServiceAssociation service method.</param>
         /// 
@@ -1365,8 +1845,8 @@ namespace Amazon.VPCLattice
 
 
         /// <summary>
-        /// Deletes the association between a specified service and the specific service network.
-        /// This operation fails if an association is still in progress.
+        /// Deletes the association between a service and a service network. This operation fails
+        /// if an association is still in progress.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteServiceNetworkServiceAssociation service method.</param>
         /// <param name="cancellationToken">
@@ -1768,12 +2248,128 @@ namespace Amazon.VPCLattice
 
         #endregion
         
+        #region  GetResourceConfiguration
+
+
+        /// <summary>
+        /// Retrieves information about the specified resource configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourceConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetResourceConfiguration service method, as returned by VPCLattice.</returns>
+        /// <exception cref="Amazon.VPCLattice.Model.AccessDeniedException">
+        /// The user does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.InternalServerException">
+        /// An unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/GetResourceConfiguration">REST API Reference for GetResourceConfiguration Operation</seealso>
+        GetResourceConfigurationResponse GetResourceConfiguration(GetResourceConfigurationRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves information about the specified resource configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourceConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetResourceConfiguration service method, as returned by VPCLattice.</returns>
+        /// <exception cref="Amazon.VPCLattice.Model.AccessDeniedException">
+        /// The user does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.InternalServerException">
+        /// An unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/GetResourceConfiguration">REST API Reference for GetResourceConfiguration Operation</seealso>
+        Task<GetResourceConfigurationResponse> GetResourceConfigurationAsync(GetResourceConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetResourceGateway
+
+
+        /// <summary>
+        /// Retrieves information about the specified resource gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourceGateway service method.</param>
+        /// 
+        /// <returns>The response from the GetResourceGateway service method, as returned by VPCLattice.</returns>
+        /// <exception cref="Amazon.VPCLattice.Model.AccessDeniedException">
+        /// The user does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.InternalServerException">
+        /// An unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/GetResourceGateway">REST API Reference for GetResourceGateway Operation</seealso>
+        GetResourceGatewayResponse GetResourceGateway(GetResourceGatewayRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves information about the specified resource gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourceGateway service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetResourceGateway service method, as returned by VPCLattice.</returns>
+        /// <exception cref="Amazon.VPCLattice.Model.AccessDeniedException">
+        /// The user does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.InternalServerException">
+        /// An unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/GetResourceGateway">REST API Reference for GetResourceGateway Operation</seealso>
+        Task<GetResourceGatewayResponse> GetResourceGatewayAsync(GetResourceGatewayRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetResourcePolicy
 
 
         /// <summary>
-        /// Retrieves information about the resource policy. The resource policy is an IAM policy
-        /// created on behalf of the resource owner when they share a resource.
+        /// Retrieves information about the specified resource policy. The resource policy is
+        /// an IAM policy created on behalf of the resource owner when they share a resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicy service method.</param>
         /// 
@@ -1799,8 +2395,8 @@ namespace Amazon.VPCLattice
 
 
         /// <summary>
-        /// Retrieves information about the resource policy. The resource policy is an IAM policy
-        /// created on behalf of the resource owner when they share a resource.
+        /// Retrieves information about the specified resource policy. The resource policy is
+        /// an IAM policy created on behalf of the resource owner when they share a resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicy service method.</param>
         /// <param name="cancellationToken">
@@ -1832,8 +2428,8 @@ namespace Amazon.VPCLattice
 
 
         /// <summary>
-        /// Retrieves information about listener rules. You can also retrieve information about
-        /// the default listener rule. For more information, see <a href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/listeners.html#listener-rules">Listener
+        /// Retrieves information about the specified listener rules. You can also retrieve information
+        /// about the default listener rule. For more information, see <a href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/listeners.html#listener-rules">Listener
         /// rules</a> in the <i>Amazon VPC Lattice User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRule service method.</param>
@@ -1860,8 +2456,8 @@ namespace Amazon.VPCLattice
 
 
         /// <summary>
-        /// Retrieves information about listener rules. You can also retrieve information about
-        /// the default listener rule. For more information, see <a href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/listeners.html#listener-rules">Listener
+        /// Retrieves information about the specified listener rules. You can also retrieve information
+        /// about the default listener rule. For more information, see <a href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/listeners.html#listener-rules">Listener
         /// rules</a> in the <i>Amazon VPC Lattice User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRule service method.</param>
@@ -2006,6 +2602,66 @@ namespace Amazon.VPCLattice
 
         #endregion
         
+        #region  GetServiceNetworkResourceAssociation
+
+
+        /// <summary>
+        /// Retrieves information about the specified association between a service network and
+        /// a resource configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetServiceNetworkResourceAssociation service method.</param>
+        /// 
+        /// <returns>The response from the GetServiceNetworkResourceAssociation service method, as returned by VPCLattice.</returns>
+        /// <exception cref="Amazon.VPCLattice.Model.AccessDeniedException">
+        /// The user does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.InternalServerException">
+        /// An unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/GetServiceNetworkResourceAssociation">REST API Reference for GetServiceNetworkResourceAssociation Operation</seealso>
+        GetServiceNetworkResourceAssociationResponse GetServiceNetworkResourceAssociation(GetServiceNetworkResourceAssociationRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves information about the specified association between a service network and
+        /// a resource configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetServiceNetworkResourceAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetServiceNetworkResourceAssociation service method, as returned by VPCLattice.</returns>
+        /// <exception cref="Amazon.VPCLattice.Model.AccessDeniedException">
+        /// The user does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.InternalServerException">
+        /// An unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/GetServiceNetworkResourceAssociation">REST API Reference for GetServiceNetworkResourceAssociation Operation</seealso>
+        Task<GetServiceNetworkResourceAssociationResponse> GetServiceNetworkResourceAssociationAsync(GetServiceNetworkResourceAssociationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetServiceNetworkServiceAssociation
 
 
@@ -2070,7 +2726,8 @@ namespace Amazon.VPCLattice
 
 
         /// <summary>
-        /// Retrieves information about the association between a service network and a VPC.
+        /// Retrieves information about the specified association between a service network and
+        /// a VPC.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetServiceNetworkVpcAssociation service method.</param>
         /// 
@@ -2096,7 +2753,8 @@ namespace Amazon.VPCLattice
 
 
         /// <summary>
-        /// Retrieves information about the association between a service network and a VPC.
+        /// Retrieves information about the specified association between a service network and
+        /// a VPC.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetServiceNetworkVpcAssociation service method.</param>
         /// <param name="cancellationToken">
@@ -2186,7 +2844,7 @@ namespace Amazon.VPCLattice
 
 
         /// <summary>
-        /// Lists all access log subscriptions for the specified service network or service.
+        /// Lists the access log subscriptions for the specified service network or service.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAccessLogSubscriptions service method.</param>
         /// 
@@ -2209,7 +2867,7 @@ namespace Amazon.VPCLattice
 
 
         /// <summary>
-        /// Lists all access log subscriptions for the specified service network or service.
+        /// Lists the access log subscriptions for the specified service network or service.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAccessLogSubscriptions service method.</param>
         /// <param name="cancellationToken">
@@ -2292,11 +2950,167 @@ namespace Amazon.VPCLattice
 
         #endregion
         
+        #region  ListResourceConfigurations
+
+
+        /// <summary>
+        /// Lists the resource configurations owned by or shared with this account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the ListResourceConfigurations service method, as returned by VPCLattice.</returns>
+        /// <exception cref="Amazon.VPCLattice.Model.AccessDeniedException">
+        /// The user does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.InternalServerException">
+        /// An unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListResourceConfigurations">REST API Reference for ListResourceConfigurations Operation</seealso>
+        ListResourceConfigurationsResponse ListResourceConfigurations(ListResourceConfigurationsRequest request);
+
+
+
+        /// <summary>
+        /// Lists the resource configurations owned by or shared with this account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceConfigurations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListResourceConfigurations service method, as returned by VPCLattice.</returns>
+        /// <exception cref="Amazon.VPCLattice.Model.AccessDeniedException">
+        /// The user does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.InternalServerException">
+        /// An unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListResourceConfigurations">REST API Reference for ListResourceConfigurations Operation</seealso>
+        Task<ListResourceConfigurationsResponse> ListResourceConfigurationsAsync(ListResourceConfigurationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListResourceEndpointAssociations
+
+
+        /// <summary>
+        /// Lists the associations for the specified VPC endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceEndpointAssociations service method.</param>
+        /// 
+        /// <returns>The response from the ListResourceEndpointAssociations service method, as returned by VPCLattice.</returns>
+        /// <exception cref="Amazon.VPCLattice.Model.AccessDeniedException">
+        /// The user does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.InternalServerException">
+        /// An unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListResourceEndpointAssociations">REST API Reference for ListResourceEndpointAssociations Operation</seealso>
+        ListResourceEndpointAssociationsResponse ListResourceEndpointAssociations(ListResourceEndpointAssociationsRequest request);
+
+
+
+        /// <summary>
+        /// Lists the associations for the specified VPC endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceEndpointAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListResourceEndpointAssociations service method, as returned by VPCLattice.</returns>
+        /// <exception cref="Amazon.VPCLattice.Model.AccessDeniedException">
+        /// The user does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.InternalServerException">
+        /// An unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListResourceEndpointAssociations">REST API Reference for ListResourceEndpointAssociations Operation</seealso>
+        Task<ListResourceEndpointAssociationsResponse> ListResourceEndpointAssociationsAsync(ListResourceEndpointAssociationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListResourceGateways
+
+
+        /// <summary>
+        /// Lists the resource gateways that you own or that were shared with you.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceGateways service method.</param>
+        /// 
+        /// <returns>The response from the ListResourceGateways service method, as returned by VPCLattice.</returns>
+        /// <exception cref="Amazon.VPCLattice.Model.AccessDeniedException">
+        /// The user does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.InternalServerException">
+        /// An unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListResourceGateways">REST API Reference for ListResourceGateways Operation</seealso>
+        ListResourceGatewaysResponse ListResourceGateways(ListResourceGatewaysRequest request);
+
+
+
+        /// <summary>
+        /// Lists the resource gateways that you own or that were shared with you.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceGateways service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListResourceGateways service method, as returned by VPCLattice.</returns>
+        /// <exception cref="Amazon.VPCLattice.Model.AccessDeniedException">
+        /// The user does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.InternalServerException">
+        /// An unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListResourceGateways">REST API Reference for ListResourceGateways Operation</seealso>
+        Task<ListResourceGatewaysResponse> ListResourceGatewaysAsync(ListResourceGatewaysRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListRules
 
 
         /// <summary>
-        /// Lists the rules for the listener.
+        /// Lists the rules for the specified listener.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRules service method.</param>
         /// 
@@ -2322,7 +3136,7 @@ namespace Amazon.VPCLattice
 
 
         /// <summary>
-        /// Lists the rules for the listener.
+        /// Lists the rules for the specified listener.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRules service method.</param>
         /// <param name="cancellationToken">
@@ -2350,12 +3164,64 @@ namespace Amazon.VPCLattice
 
         #endregion
         
+        #region  ListServiceNetworkResourceAssociations
+
+
+        /// <summary>
+        /// Lists the associations between a service network and a resource configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListServiceNetworkResourceAssociations service method.</param>
+        /// 
+        /// <returns>The response from the ListServiceNetworkResourceAssociations service method, as returned by VPCLattice.</returns>
+        /// <exception cref="Amazon.VPCLattice.Model.AccessDeniedException">
+        /// The user does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.InternalServerException">
+        /// An unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListServiceNetworkResourceAssociations">REST API Reference for ListServiceNetworkResourceAssociations Operation</seealso>
+        ListServiceNetworkResourceAssociationsResponse ListServiceNetworkResourceAssociations(ListServiceNetworkResourceAssociationsRequest request);
+
+
+
+        /// <summary>
+        /// Lists the associations between a service network and a resource configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListServiceNetworkResourceAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListServiceNetworkResourceAssociations service method, as returned by VPCLattice.</returns>
+        /// <exception cref="Amazon.VPCLattice.Model.AccessDeniedException">
+        /// The user does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.InternalServerException">
+        /// An unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListServiceNetworkResourceAssociations">REST API Reference for ListServiceNetworkResourceAssociations Operation</seealso>
+        Task<ListServiceNetworkResourceAssociationsResponse> ListServiceNetworkResourceAssociationsAsync(ListServiceNetworkResourceAssociationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListServiceNetworks
 
 
         /// <summary>
-        /// Lists the service networks owned by the caller account or shared with the caller account.
-        /// Also includes the account ID in the ARN to show which account owns the service network.
+        /// Lists the service networks owned by or shared with this account. The account ID in
+        /// the ARN shows which account owns the service network.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListServiceNetworks service method.</param>
         /// 
@@ -2378,8 +3244,8 @@ namespace Amazon.VPCLattice
 
 
         /// <summary>
-        /// Lists the service networks owned by the caller account or shared with the caller account.
-        /// Also includes the account ID in the ARN to show which account owns the service network.
+        /// Lists the service networks owned by or shared with this account. The account ID in
+        /// the ARN shows which account owns the service network.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListServiceNetworks service method.</param>
         /// <param name="cancellationToken">
@@ -2408,17 +3274,16 @@ namespace Amazon.VPCLattice
 
 
         /// <summary>
-        /// Lists the associations between the service network and the service. You can filter
-        /// the list either by service or service network. You must provide either the service
-        /// network identifier or the service identifier.
+        /// Lists the associations between a service network and a service. You can filter the
+        /// list either by service or service network. You must provide either the service network
+        /// identifier or the service identifier.
         /// 
         ///  
         /// <para>
-        /// Every association in Amazon VPC Lattice is given a unique Amazon Resource Name (ARN),
-        /// such as when a service network is associated with a VPC or when a service is associated
-        /// with a service network. If the association is for a resource that is shared with another
-        /// account, the association includes the local account ID as the prefix in the ARN for
-        /// each account the resource is shared with.
+        /// Every association in Amazon VPC Lattice has a unique Amazon Resource Name (ARN), such
+        /// as when a service network is associated with a VPC or when a service is associated
+        /// with a service network. If the association is for a resource is shared with another
+        /// account, the association includes the local account ID as the prefix in the ARN.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListServiceNetworkServiceAssociations service method.</param>
@@ -2442,17 +3307,16 @@ namespace Amazon.VPCLattice
 
 
         /// <summary>
-        /// Lists the associations between the service network and the service. You can filter
-        /// the list either by service or service network. You must provide either the service
-        /// network identifier or the service identifier.
+        /// Lists the associations between a service network and a service. You can filter the
+        /// list either by service or service network. You must provide either the service network
+        /// identifier or the service identifier.
         /// 
         ///  
         /// <para>
-        /// Every association in Amazon VPC Lattice is given a unique Amazon Resource Name (ARN),
-        /// such as when a service network is associated with a VPC or when a service is associated
-        /// with a service network. If the association is for a resource that is shared with another
-        /// account, the association includes the local account ID as the prefix in the ARN for
-        /// each account the resource is shared with.
+        /// Every association in Amazon VPC Lattice has a unique Amazon Resource Name (ARN), such
+        /// as when a service network is associated with a VPC or when a service is associated
+        /// with a service network. If the association is for a resource is shared with another
+        /// account, the association includes the local account ID as the prefix in the ARN.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListServiceNetworkServiceAssociations service method.</param>
@@ -2482,9 +3346,9 @@ namespace Amazon.VPCLattice
 
 
         /// <summary>
-        /// Lists the service network and VPC associations. You can filter the list either by
-        /// VPC or service network. You must provide either the service network identifier or
-        /// the VPC identifier.
+        /// Lists the associations between a service network and a VPC. You can filter the list
+        /// either by VPC or service network. You must provide either the ID of the service network
+        /// identifier or the ID of the VPC.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListServiceNetworkVpcAssociations service method.</param>
         /// 
@@ -2507,9 +3371,9 @@ namespace Amazon.VPCLattice
 
 
         /// <summary>
-        /// Lists the service network and VPC associations. You can filter the list either by
-        /// VPC or service network. You must provide either the service network identifier or
-        /// the VPC identifier.
+        /// Lists the associations between a service network and a VPC. You can filter the list
+        /// either by VPC or service network. You must provide either the ID of the service network
+        /// identifier or the ID of the VPC.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListServiceNetworkVpcAssociations service method.</param>
         /// <param name="cancellationToken">
@@ -2531,6 +3395,58 @@ namespace Amazon.VPCLattice
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListServiceNetworkVpcAssociations">REST API Reference for ListServiceNetworkVpcAssociations Operation</seealso>
         Task<ListServiceNetworkVpcAssociationsResponse> ListServiceNetworkVpcAssociationsAsync(ListServiceNetworkVpcAssociationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListServiceNetworkVpcEndpointAssociations
+
+
+        /// <summary>
+        /// Lists the associations between a service network and a VPC endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListServiceNetworkVpcEndpointAssociations service method.</param>
+        /// 
+        /// <returns>The response from the ListServiceNetworkVpcEndpointAssociations service method, as returned by VPCLattice.</returns>
+        /// <exception cref="Amazon.VPCLattice.Model.AccessDeniedException">
+        /// The user does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.InternalServerException">
+        /// An unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListServiceNetworkVpcEndpointAssociations">REST API Reference for ListServiceNetworkVpcEndpointAssociations Operation</seealso>
+        ListServiceNetworkVpcEndpointAssociationsResponse ListServiceNetworkVpcEndpointAssociations(ListServiceNetworkVpcEndpointAssociationsRequest request);
+
+
+
+        /// <summary>
+        /// Lists the associations between a service network and a VPC endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListServiceNetworkVpcEndpointAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListServiceNetworkVpcEndpointAssociations service method, as returned by VPCLattice.</returns>
+        /// <exception cref="Amazon.VPCLattice.Model.AccessDeniedException">
+        /// The user does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.InternalServerException">
+        /// An unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListServiceNetworkVpcEndpointAssociations">REST API Reference for ListServiceNetworkVpcEndpointAssociations Operation</seealso>
+        Task<ListServiceNetworkVpcEndpointAssociationsResponse> ListServiceNetworkVpcEndpointAssociationsAsync(ListServiceNetworkVpcEndpointAssociationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -3160,6 +4076,9 @@ namespace Amazon.VPCLattice
         /// <exception cref="Amazon.VPCLattice.Model.ResourceNotFoundException">
         /// The request references a resource that does not exist.
         /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded.
+        /// </exception>
         /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
         /// The limit on the number of requests per second was exceeded.
         /// </exception>
@@ -3193,6 +4112,9 @@ namespace Amazon.VPCLattice
         /// <exception cref="Amazon.VPCLattice.Model.ResourceNotFoundException">
         /// The request references a resource that does not exist.
         /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded.
+        /// </exception>
         /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
         /// The limit on the number of requests per second was exceeded.
         /// </exception>
@@ -3204,12 +4126,134 @@ namespace Amazon.VPCLattice
 
         #endregion
         
+        #region  UpdateResourceConfiguration
+
+
+        /// <summary>
+        /// Updates the specified resource configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateResourceConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateResourceConfiguration service method, as returned by VPCLattice.</returns>
+        /// <exception cref="Amazon.VPCLattice.Model.AccessDeniedException">
+        /// The user does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.InternalServerException">
+        /// An unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/UpdateResourceConfiguration">REST API Reference for UpdateResourceConfiguration Operation</seealso>
+        UpdateResourceConfigurationResponse UpdateResourceConfiguration(UpdateResourceConfigurationRequest request);
+
+
+
+        /// <summary>
+        /// Updates the specified resource configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateResourceConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateResourceConfiguration service method, as returned by VPCLattice.</returns>
+        /// <exception cref="Amazon.VPCLattice.Model.AccessDeniedException">
+        /// The user does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.InternalServerException">
+        /// An unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/UpdateResourceConfiguration">REST API Reference for UpdateResourceConfiguration Operation</seealso>
+        Task<UpdateResourceConfigurationResponse> UpdateResourceConfigurationAsync(UpdateResourceConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateResourceGateway
+
+
+        /// <summary>
+        /// Updates the specified resource gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateResourceGateway service method.</param>
+        /// 
+        /// <returns>The response from the UpdateResourceGateway service method, as returned by VPCLattice.</returns>
+        /// <exception cref="Amazon.VPCLattice.Model.AccessDeniedException">
+        /// The user does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.InternalServerException">
+        /// An unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/UpdateResourceGateway">REST API Reference for UpdateResourceGateway Operation</seealso>
+        UpdateResourceGatewayResponse UpdateResourceGateway(UpdateResourceGatewayRequest request);
+
+
+
+        /// <summary>
+        /// Updates the specified resource gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateResourceGateway service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateResourceGateway service method, as returned by VPCLattice.</returns>
+        /// <exception cref="Amazon.VPCLattice.Model.AccessDeniedException">
+        /// The user does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.InternalServerException">
+        /// An unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/UpdateResourceGateway">REST API Reference for UpdateResourceGateway Operation</seealso>
+        Task<UpdateResourceGatewayResponse> UpdateResourceGatewayAsync(UpdateResourceGatewayRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  UpdateRule
 
 
         /// <summary>
-        /// Updates a rule for the listener. You can't modify a default listener rule. To modify
-        /// a default listener rule, use <c>UpdateListener</c>.
+        /// Updates a specified rule for the listener. You can't modify a default listener rule.
+        /// To modify a default listener rule, use <c>UpdateListener</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRule service method.</param>
         /// 
@@ -3227,6 +4271,9 @@ namespace Amazon.VPCLattice
         /// <exception cref="Amazon.VPCLattice.Model.ResourceNotFoundException">
         /// The request references a resource that does not exist.
         /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded.
+        /// </exception>
         /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
         /// The limit on the number of requests per second was exceeded.
         /// </exception>
@@ -3239,8 +4286,8 @@ namespace Amazon.VPCLattice
 
 
         /// <summary>
-        /// Updates a rule for the listener. You can't modify a default listener rule. To modify
-        /// a default listener rule, use <c>UpdateListener</c>.
+        /// Updates a specified rule for the listener. You can't modify a default listener rule.
+        /// To modify a default listener rule, use <c>UpdateListener</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRule service method.</param>
         /// <param name="cancellationToken">
@@ -3260,6 +4307,9 @@ namespace Amazon.VPCLattice
         /// </exception>
         /// <exception cref="Amazon.VPCLattice.Model.ResourceNotFoundException">
         /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded.
         /// </exception>
         /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
         /// The limit on the number of requests per second was exceeded.
@@ -3294,6 +4344,9 @@ namespace Amazon.VPCLattice
         /// <exception cref="Amazon.VPCLattice.Model.ResourceNotFoundException">
         /// The request references a resource that does not exist.
         /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded.
+        /// </exception>
         /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
         /// The limit on the number of requests per second was exceeded.
         /// </exception>
@@ -3326,6 +4379,9 @@ namespace Amazon.VPCLattice
         /// </exception>
         /// <exception cref="Amazon.VPCLattice.Model.ResourceNotFoundException">
         /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded.
         /// </exception>
         /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
         /// The limit on the number of requests per second was exceeded.
@@ -3409,10 +4465,10 @@ namespace Amazon.VPCLattice
 
         /// <summary>
         /// Updates the service network and VPC association. If you add a security group to the
-        /// service network and VPC association, the association must continue to always have
-        /// at least one security group. You can add or edit security groups at any time. However,
-        /// to remove all security groups, you must first delete the association and recreate
-        /// it without security groups.
+        /// service network and VPC association, the association must continue to have at least
+        /// one security group. You can add or edit security groups at any time. However, to remove
+        /// all security groups, you must first delete the association and then recreate it without
+        /// security groups.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateServiceNetworkVpcAssociation service method.</param>
         /// 
@@ -3443,10 +4499,10 @@ namespace Amazon.VPCLattice
 
         /// <summary>
         /// Updates the service network and VPC association. If you add a security group to the
-        /// service network and VPC association, the association must continue to always have
-        /// at least one security group. You can add or edit security groups at any time. However,
-        /// to remove all security groups, you must first delete the association and recreate
-        /// it without security groups.
+        /// service network and VPC association, the association must continue to have at least
+        /// one security group. You can add or edit security groups at any time. However, to remove
+        /// all security groups, you must first delete the association and then recreate it without
+        /// security groups.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateServiceNetworkVpcAssociation service method.</param>
         /// <param name="cancellationToken">
@@ -3500,6 +4556,9 @@ namespace Amazon.VPCLattice
         /// <exception cref="Amazon.VPCLattice.Model.ResourceNotFoundException">
         /// The request references a resource that does not exist.
         /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded.
+        /// </exception>
         /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
         /// The limit on the number of requests per second was exceeded.
         /// </exception>
@@ -3532,6 +4591,9 @@ namespace Amazon.VPCLattice
         /// </exception>
         /// <exception cref="Amazon.VPCLattice.Model.ResourceNotFoundException">
         /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded.
         /// </exception>
         /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
         /// The limit on the number of requests per second was exceeded.

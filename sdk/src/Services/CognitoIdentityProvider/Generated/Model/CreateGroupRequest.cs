@@ -31,7 +31,9 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateGroup operation.
-    /// Creates a new group in the specified user pool.
+    /// Creates a new group in the specified user pool. For more information about user pool
+    /// groups see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-user-groups.html">Adding
+    /// groups to a user pool</a>.
     /// 
     ///  <note> 
     /// <para>
@@ -66,7 +68,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A string containing the description of the group.
+        /// A description of the group that you're creating.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2048)]
@@ -85,7 +87,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property GroupName. 
         /// <para>
-        /// The name of the group. Must be unique.
+        /// A name for the group. This name must be unique in your user pool.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -141,7 +143,12 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The role Amazon Resource Name (ARN) for the group.
+        /// The Amazon Resource Name (ARN) for the IAM role that you want to associate with the
+        /// group. A group role primarily declares a preferred role for the credentials that you
+        /// get from an identity pool. Amazon Cognito ID tokens have a <c>cognito:preferred_role</c>
+        /// claim that presents the highest-precedence group that a user belongs to. Both ID and
+        /// access tokens also contain a <c>cognito:groups</c> claim that list all the groups
+        /// that a user is a member of.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -160,7 +167,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserPoolId. 
         /// <para>
-        /// The user pool ID for the user pool.
+        /// The ID of the user pool where you want to create a user group.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=55)]

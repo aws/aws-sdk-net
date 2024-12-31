@@ -323,5 +323,13 @@ namespace Amazon.QuickSight.Model
         {
             return new SearchGroupsPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for SearchTopics operation
+        ///</summary>
+        public ISearchTopicsPaginator SearchTopics(SearchTopicsRequest request) 
+        {
+            return new SearchTopicsPaginator(this.client, request);
+        }
     }
 }

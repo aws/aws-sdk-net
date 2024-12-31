@@ -35,6 +35,7 @@ namespace Amazon.TimestreamQuery.Model
     public partial class UpdateAccountSettingsResponse : AmazonWebServiceResponse
     {
         private int? _maxQueryTCU;
+        private QueryComputeResponse _queryCompute;
         private QueryPricingModel _queryPricingModel;
 
         /// <summary>
@@ -54,6 +55,24 @@ namespace Amazon.TimestreamQuery.Model
         internal bool IsSetMaxQueryTCU()
         {
             return this._maxQueryTCU.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property QueryCompute. 
+        /// <para>
+        /// Confirms the updated account settings for querying data in your account.
+        /// </para>
+        /// </summary>
+        public QueryComputeResponse QueryCompute
+        {
+            get { return this._queryCompute; }
+            set { this._queryCompute = value; }
+        }
+
+        // Check to see if QueryCompute property is set
+        internal bool IsSetQueryCompute()
+        {
+            return this._queryCompute != null;
         }
 
         /// <summary>

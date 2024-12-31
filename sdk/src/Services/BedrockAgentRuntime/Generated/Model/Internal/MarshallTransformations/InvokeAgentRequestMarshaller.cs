@@ -78,6 +78,17 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                     writer.Validate = false;
                     writer.WriteObjectStart();
                     var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBedrockModelConfigurations())
+                    {
+                        context.Writer.WritePropertyName("bedrockModelConfigurations");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = BedrockModelConfigurationsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.BedrockModelConfigurations, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
                     if(publicRequest.IsSetEnableTrace())
                     {
                         context.Writer.WritePropertyName("enableTrace");
@@ -113,12 +124,28 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
 
+                    if(publicRequest.IsSetStreamingConfigurations())
+                    {
+                        context.Writer.WritePropertyName("streamingConfigurations");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = StreamingConfigurationsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.StreamingConfigurations, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
                     writer.WriteObjectEnd();
                 }
 
                 request.Content = memoryStream.ToArray();
             }
 
+        
+            if (publicRequest.IsSetSourceArn()) 
+            {
+                request.Headers["x-amz-source-arn"] = publicRequest.SourceArn;
+            }
 
             return request;
         }

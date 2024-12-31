@@ -349,7 +349,19 @@
     <pattern>^arn:aws[0-9a-zA-Z_\-:\/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ControlTower.Model.EnabledBaselineDetails.ParentIdentifier</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws[0-9a-zA-Z_\-:\/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ControlTower.Model.EnabledBaselineSummary.Arn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws[0-9a-zA-Z_\-:\/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ControlTower.Model.EnabledBaselineSummary.ParentIdentifier</property>
     <min>20</min>
     <max>2048</max>
     <pattern>^arn:aws[0-9a-zA-Z_\-:\/]+$</pattern>

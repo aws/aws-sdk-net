@@ -31,10 +31,11 @@ namespace Amazon.Bedrock.Model
 {
     /// <summary>
     /// Container for the parameters to the ListEvaluationJobs operation.
-    /// Lists model evaluation jobs.
+    /// Lists all existing evaluation jobs.
     /// </summary>
     public partial class ListEvaluationJobsRequest : AmazonBedrockRequest
     {
+        private ApplicationType _applicationTypeEquals;
         private DateTime? _creationTimeAfter;
         private DateTime? _creationTimeBefore;
         private int? _maxResults;
@@ -45,9 +46,28 @@ namespace Amazon.Bedrock.Model
         private EvaluationJobStatus _statusEquals;
 
         /// <summary>
+        /// Gets and sets the property ApplicationTypeEquals. 
+        /// <para>
+        /// A filter to only list evaluation jobs that are either model evaluations or knowledge
+        /// base evaluations.
+        /// </para>
+        /// </summary>
+        public ApplicationType ApplicationTypeEquals
+        {
+            get { return this._applicationTypeEquals; }
+            set { this._applicationTypeEquals = value; }
+        }
+
+        // Check to see if ApplicationTypeEquals property is set
+        internal bool IsSetApplicationTypeEquals()
+        {
+            return this._applicationTypeEquals != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CreationTimeAfter. 
         /// <para>
-        /// A filter that includes model evaluation jobs created after the time specified.
+        /// A filter to only list evaluation jobs created after a specified time.
         /// </para>
         /// </summary>
         public DateTime? CreationTimeAfter
@@ -65,7 +85,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property CreationTimeBefore. 
         /// <para>
-        /// A filter that includes model evaluation jobs created prior to the time specified.
+        /// A filter to only list evaluation jobs created before a specified time.
         /// </para>
         /// </summary>
         public DateTime? CreationTimeBefore
@@ -102,7 +122,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property NameContains. 
         /// <para>
-        /// Query parameter string for model evaluation job names.
+        /// A filter to only list evaluation jobs that contain a specified string in the job name.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=63)]
@@ -141,7 +161,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property SortBy. 
         /// <para>
-        /// Allows you to sort model evaluation jobs by when they were created.
+        /// Specifies a creation time to sort the list of evaluation jobs by when they were created.
         /// </para>
         /// </summary>
         public SortJobsBy SortBy
@@ -159,7 +179,8 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property SortOrder. 
         /// <para>
-        /// How you want the order of jobs sorted.
+        /// Specifies whether to sort the list of evaluation jobs by either ascending or descending
+        /// order.
         /// </para>
         /// </summary>
         public SortOrder SortOrder
@@ -177,7 +198,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property StatusEquals. 
         /// <para>
-        /// Only return jobs where the status condition is met.
+        /// A filter to only list evaluation jobs that are of a certain status.
         /// </para>
         /// </summary>
         public EvaluationJobStatus StatusEquals

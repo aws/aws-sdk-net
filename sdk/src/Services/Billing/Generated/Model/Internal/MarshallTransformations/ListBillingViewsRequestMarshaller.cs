@@ -82,6 +82,28 @@ namespace Amazon.Billing.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
 
+                    if(publicRequest.IsSetArns())
+                    {
+                        context.Writer.WritePropertyName("arns");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestArnsListValue in publicRequest.Arns)
+                        {
+                                context.Writer.Write(publicRequestArnsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetBillingViewTypes())
+                    {
+                        context.Writer.WritePropertyName("billingViewTypes");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestBillingViewTypesListValue in publicRequest.BillingViewTypes)
+                        {
+                                context.Writer.Write(publicRequestBillingViewTypesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
                     if(publicRequest.IsSetMaxResults())
                     {
                         context.Writer.WritePropertyName("maxResults");
@@ -92,6 +114,12 @@ namespace Amazon.Billing.Model.Internal.MarshallTransformations
                     {
                         context.Writer.WritePropertyName("nextToken");
                         context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetOwnerAccountId())
+                    {
+                        context.Writer.WritePropertyName("ownerAccountId");
+                        context.Writer.Write(publicRequest.OwnerAccountId);
                     }
 
                     writer.WriteObjectEnd();

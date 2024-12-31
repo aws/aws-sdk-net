@@ -81,7 +81,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property PolicyName. 
         /// <para>
-        /// The name of the policy
+        /// Name of the resiliency policy.
         /// </para>
         /// </summary>
         public string PolicyName

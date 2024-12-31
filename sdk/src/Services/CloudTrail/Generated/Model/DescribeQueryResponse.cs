@@ -37,6 +37,7 @@ namespace Amazon.CloudTrail.Model
         private string _deliveryS3Uri;
         private DeliveryStatus _deliveryStatus;
         private string _errorMessage;
+        private string _eventDataStoreOwnerAccountId;
         private string _prompt;
         private string _queryId;
         private QueryStatisticsForDescribeQuery _queryStatistics;
@@ -97,6 +98,25 @@ namespace Amazon.CloudTrail.Model
         internal bool IsSetErrorMessage()
         {
             return this._errorMessage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EventDataStoreOwnerAccountId. 
+        /// <para>
+        ///  The account ID of the event data store owner. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=16)]
+        public string EventDataStoreOwnerAccountId
+        {
+            get { return this._eventDataStoreOwnerAccountId; }
+            set { this._eventDataStoreOwnerAccountId = value; }
+        }
+
+        // Check to see if EventDataStoreOwnerAccountId property is set
+        internal bool IsSetEventDataStoreOwnerAccountId()
+        {
+            return this._eventDataStoreOwnerAccountId != null;
         }
 
         /// <summary>

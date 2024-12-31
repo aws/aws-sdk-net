@@ -31,9 +31,9 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the ImportPhoneNumber operation.
-    /// Imports a claimed phone number from an external service, such as Amazon Pinpoint,
-    /// into an Amazon Connect instance. You can call this API only in the same Amazon Web
-    /// Services Region where the Amazon Connect instance was created.
+    /// Imports a claimed phone number from an external service, such as Amazon Web Services
+    /// End User Messaging, into an Amazon Connect instance. You can call this API only in
+    /// the same Amazon Web Services Region where the Amazon Connect instance was created.
     /// 
     ///  <important> 
     /// <para>
@@ -137,8 +137,9 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property SourcePhoneNumberArn. 
         /// <para>
         /// The claimed phone number ARN being imported from the external service, such as Amazon
-        /// Pinpoint. If it is from Amazon Pinpoint, it looks like the ARN of the phone number
-        /// to import from Amazon Pinpoint.
+        /// Web Services End User Messaging. If it is from Amazon Web Services End User Messaging,
+        /// it looks like the ARN of the phone number to import from Amazon Web Services End User
+        /// Messaging.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

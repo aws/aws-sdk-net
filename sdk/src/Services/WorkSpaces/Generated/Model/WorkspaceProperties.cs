@@ -35,6 +35,7 @@ namespace Amazon.WorkSpaces.Model
     public partial class WorkspaceProperties
     {
         private Compute _computeTypeName;
+        private GlobalAcceleratorForWorkSpace _globalAccelerator;
         private OperatingSystemName _operatingSystemName;
         private List<string> _protocols = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _rootVolumeSizeGib;
@@ -59,6 +60,24 @@ namespace Amazon.WorkSpaces.Model
         internal bool IsSetComputeTypeName()
         {
             return this._computeTypeName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GlobalAccelerator. 
+        /// <para>
+        /// Indicates the Global Accelerator properties.
+        /// </para>
+        /// </summary>
+        public GlobalAcceleratorForWorkSpace GlobalAccelerator
+        {
+            get { return this._globalAccelerator; }
+            set { this._globalAccelerator = value; }
+        }
+
+        // Check to see if GlobalAccelerator property is set
+        internal bool IsSetGlobalAccelerator()
+        {
+            return this._globalAccelerator != null;
         }
 
         /// <summary>

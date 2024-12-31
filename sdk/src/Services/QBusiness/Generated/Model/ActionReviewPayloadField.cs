@@ -88,7 +88,7 @@ namespace Amazon.QBusiness.Model
         /// Gets and sets the property ArrayItemJsonSchema. 
         /// <para>
         /// Use to create a custom form with array fields (fields with nested objects inside an
-        /// array). 
+        /// array).
         /// </para>
         /// </summary>
         public Amazon.Runtime.Documents.Document ArrayItemJsonSchema

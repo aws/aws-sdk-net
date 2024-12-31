@@ -163,14 +163,14 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ExecutionRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to
-        /// perform actions on your behalf. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker
-        /// Roles</a>. 
+        /// The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker AI can assume
+        /// to perform actions on your behalf. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker
+        /// AI Roles</a>. 
         /// </para>
         ///  <note> 
         /// <para>
-        /// To be able to pass this role to Amazon SageMaker, the caller of this action must have
-        /// the <c>iam:PassRole</c> permission.
+        /// To be able to pass this role to Amazon SageMaker AI, the caller of this action must
+        /// have the <c>iam:PassRole</c> permission.
         /// </para>
         ///  </note>
         /// </summary>

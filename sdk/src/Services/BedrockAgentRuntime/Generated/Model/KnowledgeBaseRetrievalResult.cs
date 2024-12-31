@@ -53,7 +53,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property Content. 
         /// <para>
-        /// Contains a chunk of text from a data source in the knowledge base.
+        /// Contains information about the content of the chunk.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true)]

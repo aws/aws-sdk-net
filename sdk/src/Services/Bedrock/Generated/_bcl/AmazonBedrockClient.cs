@@ -270,7 +270,7 @@ namespace Amazon.Bedrock
 
 
         /// <summary>
-        /// Creates a batch deletion job. A model evaluation job can only be deleted if it has
+        /// Deletes a batch of evaluation jobs. An evaluation job can only be deleted if it has
         /// following status <c>FAILED</c>, <c>COMPLETED</c>, and <c>STOPPED</c>. You can request
         /// up to 25 model evaluation jobs be deleted in a single request.
         /// </summary>
@@ -308,7 +308,7 @@ namespace Amazon.Bedrock
 
 
         /// <summary>
-        /// Creates a batch deletion job. A model evaluation job can only be deleted if it has
+        /// Deletes a batch of evaluation jobs. An evaluation job can only be deleted if it has
         /// following status <c>FAILED</c>, <c>COMPLETED</c>, and <c>STOPPED</c>. You can request
         /// up to 25 model evaluation jobs be deleted in a single request.
         /// </summary>
@@ -353,10 +353,7 @@ namespace Amazon.Bedrock
 
 
         /// <summary>
-        /// API operation for creating and managing Amazon Bedrock automatic model evaluation
-        /// jobs and model evaluation jobs that use human workers. To learn more about the requirements
-        /// for creating a model evaluation job see, <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation.html">Model
-        /// evaluation</a>.
+        /// Creates an evaluation job.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEvaluationJob service method.</param>
         /// 
@@ -395,10 +392,7 @@ namespace Amazon.Bedrock
 
 
         /// <summary>
-        /// API operation for creating and managing Amazon Bedrock automatic model evaluation
-        /// jobs and model evaluation jobs that use human workers. To learn more about the requirements
-        /// for creating a model evaluation job see, <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation.html">Model
-        /// evaluation</a>.
+        /// Creates an evaluation job.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEvaluationJob service method.</param>
         /// <param name="cancellationToken">
@@ -483,8 +477,8 @@ namespace Amazon.Bedrock
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html">Guardrails
-        /// for Amazon Bedrock</a> in the <i>Amazon Bedrock User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html">Amazon
+        /// Bedrock Guardrails</a> in the <i>Amazon Bedrock User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateGuardrail service method.</param>
@@ -568,8 +562,8 @@ namespace Amazon.Bedrock
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html">Guardrails
-        /// for Amazon Bedrock</a> in the <i>Amazon Bedrock User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html">Amazon
+        /// Bedrock Guardrails</a> in the <i>Amazon Bedrock User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateGuardrail service method.</param>
@@ -811,6 +805,93 @@ namespace Amazon.Bedrock
             options.ResponseUnmarshaller = CreateInferenceProfileResponseUnmarshaller.Instance;
             
             return InvokeAsync<CreateInferenceProfileResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateMarketplaceModelEndpoint
+
+
+        /// <summary>
+        /// Creates an endpoint for a model from Amazon Bedrock Marketplace. The endpoint is hosted
+        /// by Amazon SageMaker.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMarketplaceModelEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the CreateMarketplaceModelEndpoint service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateMarketplaceModelEndpoint">REST API Reference for CreateMarketplaceModelEndpoint Operation</seealso>
+        public virtual CreateMarketplaceModelEndpointResponse CreateMarketplaceModelEndpoint(CreateMarketplaceModelEndpointRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMarketplaceModelEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMarketplaceModelEndpointResponseUnmarshaller.Instance;
+
+            return Invoke<CreateMarketplaceModelEndpointResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates an endpoint for a model from Amazon Bedrock Marketplace. The endpoint is hosted
+        /// by Amazon SageMaker.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMarketplaceModelEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateMarketplaceModelEndpoint service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateMarketplaceModelEndpoint">REST API Reference for CreateMarketplaceModelEndpoint Operation</seealso>
+        public virtual Task<CreateMarketplaceModelEndpointResponse> CreateMarketplaceModelEndpointAsync(CreateMarketplaceModelEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMarketplaceModelEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMarketplaceModelEndpointResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateMarketplaceModelEndpointResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1690,6 +1771,79 @@ namespace Amazon.Bedrock
 
         #endregion
         
+        #region  DeleteMarketplaceModelEndpoint
+
+
+        /// <summary>
+        /// Deletes an endpoint for a model from Amazon Bedrock Marketplace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMarketplaceModelEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the DeleteMarketplaceModelEndpoint service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteMarketplaceModelEndpoint">REST API Reference for DeleteMarketplaceModelEndpoint Operation</seealso>
+        public virtual DeleteMarketplaceModelEndpointResponse DeleteMarketplaceModelEndpoint(DeleteMarketplaceModelEndpointRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMarketplaceModelEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMarketplaceModelEndpointResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteMarketplaceModelEndpointResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes an endpoint for a model from Amazon Bedrock Marketplace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMarketplaceModelEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteMarketplaceModelEndpoint service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteMarketplaceModelEndpoint">REST API Reference for DeleteMarketplaceModelEndpoint Operation</seealso>
+        public virtual Task<DeleteMarketplaceModelEndpointResponse> DeleteMarketplaceModelEndpointAsync(DeleteMarketplaceModelEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMarketplaceModelEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMarketplaceModelEndpointResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteMarketplaceModelEndpointResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteModelInvocationLoggingConfiguration
 
 
@@ -1834,6 +1988,89 @@ namespace Amazon.Bedrock
 
         #endregion
         
+        #region  DeregisterMarketplaceModelEndpoint
+
+
+        /// <summary>
+        /// Deregisters an endpoint for a model from Amazon Bedrock Marketplace. This operation
+        /// removes the endpoint's association with Amazon Bedrock but does not delete the underlying
+        /// Amazon SageMaker endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterMarketplaceModelEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the DeregisterMarketplaceModelEndpoint service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ServiceUnavailableException">
+        /// Returned if the service cannot complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeregisterMarketplaceModelEndpoint">REST API Reference for DeregisterMarketplaceModelEndpoint Operation</seealso>
+        public virtual DeregisterMarketplaceModelEndpointResponse DeregisterMarketplaceModelEndpoint(DeregisterMarketplaceModelEndpointRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeregisterMarketplaceModelEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeregisterMarketplaceModelEndpointResponseUnmarshaller.Instance;
+
+            return Invoke<DeregisterMarketplaceModelEndpointResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deregisters an endpoint for a model from Amazon Bedrock Marketplace. This operation
+        /// removes the endpoint's association with Amazon Bedrock but does not delete the underlying
+        /// Amazon SageMaker endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterMarketplaceModelEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeregisterMarketplaceModelEndpoint service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ServiceUnavailableException">
+        /// Returned if the service cannot complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeregisterMarketplaceModelEndpoint">REST API Reference for DeregisterMarketplaceModelEndpoint Operation</seealso>
+        public virtual Task<DeregisterMarketplaceModelEndpointResponse> DeregisterMarketplaceModelEndpointAsync(DeregisterMarketplaceModelEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeregisterMarketplaceModelEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeregisterMarketplaceModelEndpointResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeregisterMarketplaceModelEndpointResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetCustomModel
 
 
@@ -1917,9 +2154,7 @@ namespace Amazon.Bedrock
 
 
         /// <summary>
-        /// Retrieves the properties associated with a model evaluation job, including the status
-        /// of the job. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation.html">Model
-        /// evaluation</a>.
+        /// Gets information about an evaluation job, such as the status of the job.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEvaluationJob service method.</param>
         /// 
@@ -1952,9 +2187,7 @@ namespace Amazon.Bedrock
 
 
         /// <summary>
-        /// Retrieves the properties associated with a model evaluation job, including the status
-        /// of the job. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation.html">Model
-        /// evaluation</a>.
+        /// Gets information about an evaluation job, such as the status of the job.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEvaluationJob service method.</param>
         /// <param name="cancellationToken">
@@ -2288,6 +2521,79 @@ namespace Amazon.Bedrock
 
         #endregion
         
+        #region  GetMarketplaceModelEndpoint
+
+
+        /// <summary>
+        /// Retrieves details about a specific endpoint for a model from Amazon Bedrock Marketplace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMarketplaceModelEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the GetMarketplaceModelEndpoint service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetMarketplaceModelEndpoint">REST API Reference for GetMarketplaceModelEndpoint Operation</seealso>
+        public virtual GetMarketplaceModelEndpointResponse GetMarketplaceModelEndpoint(GetMarketplaceModelEndpointRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMarketplaceModelEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMarketplaceModelEndpointResponseUnmarshaller.Instance;
+
+            return Invoke<GetMarketplaceModelEndpointResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves details about a specific endpoint for a model from Amazon Bedrock Marketplace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMarketplaceModelEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetMarketplaceModelEndpoint service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetMarketplaceModelEndpoint">REST API Reference for GetMarketplaceModelEndpoint Operation</seealso>
+        public virtual Task<GetMarketplaceModelEndpointResponse> GetMarketplaceModelEndpointAsync(GetMarketplaceModelEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMarketplaceModelEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMarketplaceModelEndpointResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetMarketplaceModelEndpointResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetModelCopyJob
 
 
@@ -2527,8 +2833,8 @@ namespace Amazon.Bedrock
 
 
         /// <summary>
-        /// Gets details about a batch inference job. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-manage.html#batch-inference-view">View
-        /// details about a batch inference job</a>
+        /// Gets details about a batch inference job. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-monitor">Monitor
+        /// batch inference jobs</a>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetModelInvocationJob service method.</param>
         /// 
@@ -2561,8 +2867,8 @@ namespace Amazon.Bedrock
 
 
         /// <summary>
-        /// Gets details about a batch inference job. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-manage.html#batch-inference-view">View
-        /// details about a batch inference job</a>
+        /// Gets details about a batch inference job. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-monitor">Monitor
+        /// batch inference jobs</a>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetModelInvocationJob service method.</param>
         /// <param name="cancellationToken">
@@ -2653,6 +2959,79 @@ namespace Amazon.Bedrock
             options.ResponseUnmarshaller = GetModelInvocationLoggingConfigurationResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetModelInvocationLoggingConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetPromptRouter
+
+
+        /// <summary>
+        /// Retrieves details about a prompt router.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPromptRouter service method.</param>
+        /// 
+        /// <returns>The response from the GetPromptRouter service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetPromptRouter">REST API Reference for GetPromptRouter Operation</seealso>
+        public virtual GetPromptRouterResponse GetPromptRouter(GetPromptRouterRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPromptRouterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPromptRouterResponseUnmarshaller.Instance;
+
+            return Invoke<GetPromptRouterResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves details about a prompt router.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPromptRouter service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetPromptRouter service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetPromptRouter">REST API Reference for GetPromptRouter Operation</seealso>
+        public virtual Task<GetPromptRouterResponse> GetPromptRouterAsync(GetPromptRouterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPromptRouterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPromptRouterResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetPromptRouterResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2819,7 +3198,7 @@ namespace Amazon.Bedrock
 
 
         /// <summary>
-        /// Lists model evaluation jobs.
+        /// Lists all existing evaluation jobs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEvaluationJobs service method.</param>
         /// 
@@ -2848,7 +3227,7 @@ namespace Amazon.Bedrock
 
 
         /// <summary>
-        /// Lists model evaluation jobs.
+        /// Lists all existing evaluation jobs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEvaluationJobs service method.</param>
         /// <param name="cancellationToken">
@@ -3188,6 +3567,81 @@ namespace Amazon.Bedrock
 
         #endregion
         
+        #region  ListMarketplaceModelEndpoints
+
+
+        /// <summary>
+        /// Lists the endpoints for models from Amazon Bedrock Marketplace in your Amazon Web
+        /// Services account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMarketplaceModelEndpoints service method.</param>
+        /// 
+        /// <returns>The response from the ListMarketplaceModelEndpoints service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListMarketplaceModelEndpoints">REST API Reference for ListMarketplaceModelEndpoints Operation</seealso>
+        public virtual ListMarketplaceModelEndpointsResponse ListMarketplaceModelEndpoints(ListMarketplaceModelEndpointsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMarketplaceModelEndpointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMarketplaceModelEndpointsResponseUnmarshaller.Instance;
+
+            return Invoke<ListMarketplaceModelEndpointsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists the endpoints for models from Amazon Bedrock Marketplace in your Amazon Web
+        /// Services account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMarketplaceModelEndpoints service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListMarketplaceModelEndpoints service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListMarketplaceModelEndpoints">REST API Reference for ListMarketplaceModelEndpoints Operation</seealso>
+        public virtual Task<ListMarketplaceModelEndpointsResponse> ListMarketplaceModelEndpointsAsync(ListMarketplaceModelEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMarketplaceModelEndpointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMarketplaceModelEndpointsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListMarketplaceModelEndpointsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListModelCopyJobs
 
 
@@ -3423,7 +3877,7 @@ namespace Amazon.Bedrock
 
 
         /// <summary>
-        /// Lists all batch inference jobs in the account. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-manage.html#batch-inference-view">View
+        /// Lists all batch inference jobs in the account. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-view.html">View
         /// details about a batch inference job</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListModelInvocationJobs service method.</param>
@@ -3453,7 +3907,7 @@ namespace Amazon.Bedrock
 
 
         /// <summary>
-        /// Lists all batch inference jobs in the account. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-manage.html#batch-inference-view">View
+        /// Lists all batch inference jobs in the account. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-view.html">View
         /// details about a batch inference job</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListModelInvocationJobs service method.</param>
@@ -3482,6 +3936,71 @@ namespace Amazon.Bedrock
             options.ResponseUnmarshaller = ListModelInvocationJobsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListModelInvocationJobsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListPromptRouters
+
+
+        /// <summary>
+        /// Retrieves a list of prompt routers.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPromptRouters service method.</param>
+        /// 
+        /// <returns>The response from the ListPromptRouters service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListPromptRouters">REST API Reference for ListPromptRouters Operation</seealso>
+        public virtual ListPromptRoutersResponse ListPromptRouters(ListPromptRoutersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPromptRoutersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPromptRoutersResponseUnmarshaller.Instance;
+
+            return Invoke<ListPromptRoutersResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves a list of prompt routers.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPromptRouters service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPromptRouters service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListPromptRouters">REST API Reference for ListPromptRouters Operation</seealso>
+        public virtual Task<ListPromptRoutersResponse> ListPromptRoutersAsync(ListPromptRoutersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPromptRoutersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPromptRoutersResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListPromptRoutersResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3707,11 +4226,92 @@ namespace Amazon.Bedrock
 
         #endregion
         
+        #region  RegisterMarketplaceModelEndpoint
+
+
+        /// <summary>
+        /// Registers an existing Amazon SageMaker endpoint with Amazon Bedrock Marketplace, allowing
+        /// it to be used with Amazon Bedrock APIs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterMarketplaceModelEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the RegisterMarketplaceModelEndpoint service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ServiceUnavailableException">
+        /// Returned if the service cannot complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/RegisterMarketplaceModelEndpoint">REST API Reference for RegisterMarketplaceModelEndpoint Operation</seealso>
+        public virtual RegisterMarketplaceModelEndpointResponse RegisterMarketplaceModelEndpoint(RegisterMarketplaceModelEndpointRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterMarketplaceModelEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterMarketplaceModelEndpointResponseUnmarshaller.Instance;
+
+            return Invoke<RegisterMarketplaceModelEndpointResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Registers an existing Amazon SageMaker endpoint with Amazon Bedrock Marketplace, allowing
+        /// it to be used with Amazon Bedrock APIs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterMarketplaceModelEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RegisterMarketplaceModelEndpoint service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ServiceUnavailableException">
+        /// Returned if the service cannot complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/RegisterMarketplaceModelEndpoint">REST API Reference for RegisterMarketplaceModelEndpoint Operation</seealso>
+        public virtual Task<RegisterMarketplaceModelEndpointResponse> RegisterMarketplaceModelEndpointAsync(RegisterMarketplaceModelEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterMarketplaceModelEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterMarketplaceModelEndpointResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<RegisterMarketplaceModelEndpointResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StopEvaluationJob
 
 
         /// <summary>
-        /// Stops an in progress model evaluation job.
+        /// Stops an evaluation job that is current being created or running.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopEvaluationJob service method.</param>
         /// 
@@ -3747,7 +4347,7 @@ namespace Amazon.Bedrock
 
 
         /// <summary>
-        /// Stops an in progress model evaluation job.
+        /// Stops an evaluation job that is current being created or running.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopEvaluationJob service method.</param>
         /// <param name="cancellationToken">
@@ -3874,7 +4474,7 @@ namespace Amazon.Bedrock
 
         /// <summary>
         /// Stops a batch inference job. You're only charged for tokens that were already processed.
-        /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-manage.html#batch-inference-stop">Stop
+        /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-stop.html">Stop
         /// a batch inference job</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopModelInvocationJob service method.</param>
@@ -3912,7 +4512,7 @@ namespace Amazon.Bedrock
 
         /// <summary>
         /// Stops a batch inference job. You're only charged for tokens that were already processed.
-        /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-manage.html#batch-inference-stop">Stop
+        /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-stop.html">Stop
         /// a batch inference job</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopModelInvocationJob service method.</param>
@@ -4301,6 +4901,93 @@ namespace Amazon.Bedrock
             options.ResponseUnmarshaller = UpdateGuardrailResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateGuardrailResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateMarketplaceModelEndpoint
+
+
+        /// <summary>
+        /// Updates the configuration of an existing endpoint for a model from Amazon Bedrock
+        /// Marketplace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMarketplaceModelEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the UpdateMarketplaceModelEndpoint service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/UpdateMarketplaceModelEndpoint">REST API Reference for UpdateMarketplaceModelEndpoint Operation</seealso>
+        public virtual UpdateMarketplaceModelEndpointResponse UpdateMarketplaceModelEndpoint(UpdateMarketplaceModelEndpointRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMarketplaceModelEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMarketplaceModelEndpointResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateMarketplaceModelEndpointResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the configuration of an existing endpoint for a model from Amazon Bedrock
+        /// Marketplace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMarketplaceModelEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateMarketplaceModelEndpoint service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/UpdateMarketplaceModelEndpoint">REST API Reference for UpdateMarketplaceModelEndpoint Operation</seealso>
+        public virtual Task<UpdateMarketplaceModelEndpointResponse> UpdateMarketplaceModelEndpointAsync(UpdateMarketplaceModelEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMarketplaceModelEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMarketplaceModelEndpointResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateMarketplaceModelEndpointResponse>(request, options, cancellationToken);
         }
 
         #endregion

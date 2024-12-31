@@ -40,6 +40,7 @@ namespace Amazon.CodePipeline.Model
         private string _externalExecutionUrl;
         private DateTime? _lastStatusChange;
         private string _lastUpdatedBy;
+        private string _logStreamARN;
         private int? _percentComplete;
         private ActionExecutionStatus _status;
         private string _summary;
@@ -161,6 +162,25 @@ namespace Amazon.CodePipeline.Model
         internal bool IsSetLastUpdatedBy()
         {
             return this._lastUpdatedBy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LogStreamARN. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the log stream for the action compute.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=250)]
+        public string LogStreamARN
+        {
+            get { return this._logStreamARN; }
+            set { this._logStreamARN = value; }
+        }
+
+        // Check to see if LogStreamARN property is set
+        internal bool IsSetLogStreamARN()
+        {
+            return this._logStreamARN != null;
         }
 
         /// <summary>

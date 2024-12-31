@@ -136,6 +136,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.ServiceName = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("serviceRegion", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ServiceRegion = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("serviceType/item", targetDepth))
                     {
                         var unmarshaller = ServiceTypeDetailUnmarshaller.Instance;

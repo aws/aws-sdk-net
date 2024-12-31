@@ -138,6 +138,12 @@
     <max>200</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.LinkedWhatsAppBusinessAccountIdMetaData.WabaId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>.*(^waba-.*$)|(^arn:.*:waba/[0-9a-zA-Z]+$).*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SocialMessaging.Model.LinkedWhatsAppBusinessAccountSummary.Arn</property>
     <min>0</min>
     <max>2048</max>
@@ -210,6 +216,10 @@
     <min>0</min>
     <max>2048</max>
     <pattern>arn:.*:[a-z-]+([/:](.*))?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.WhatsAppBusinessAccountEventDestination.RoleArn</property>
+    <pattern>arn:aws:iam::\d{12}:role\/[a-zA-Z0-9+=,.@\-_]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SocialMessaging.Model.WhatsAppPhoneNumberDetail.Arn</property>

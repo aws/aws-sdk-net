@@ -97,6 +97,17 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                         context.Writer.WritePropertyName("clientRequestToken");
                         context.Writer.Write(Guid.NewGuid().ToString());
                     }
+                    if(publicRequest.IsSetComputeConfig())
+                    {
+                        context.Writer.WritePropertyName("computeConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ComputeConfigRequestMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ComputeConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
                     if(publicRequest.IsSetEncryptionConfig())
                     {
                         context.Writer.WritePropertyName("encryptionConfig");
@@ -152,6 +163,17 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
 
+                    if(publicRequest.IsSetRemoteNetworkConfig())
+                    {
+                        context.Writer.WritePropertyName("remoteNetworkConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = RemoteNetworkConfigRequestMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.RemoteNetworkConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
                     if(publicRequest.IsSetResourcesVpcConfig())
                     {
                         context.Writer.WritePropertyName("resourcesVpcConfig");
@@ -167,6 +189,17 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                     {
                         context.Writer.WritePropertyName("roleArn");
                         context.Writer.Write(publicRequest.RoleArn);
+                    }
+
+                    if(publicRequest.IsSetStorageConfig())
+                    {
+                        context.Writer.WritePropertyName("storageConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = StorageConfigRequestMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.StorageConfig, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
 
                     if(publicRequest.IsSetTags())

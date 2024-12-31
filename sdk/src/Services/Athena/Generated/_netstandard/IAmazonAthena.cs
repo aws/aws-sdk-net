@@ -207,6 +207,27 @@ namespace Amazon.Athena
         /// <summary>
         /// Creates (registers) a data catalog with the specified name and properties. Catalogs
         /// created are visible to all users of the same Amazon Web Services account.
+        /// 
+        ///  
+        /// <para>
+        /// This API operation creates the following resources.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// CFN Stack Name with a maximum length of 128 characters and prefix <c>athenafederatedcatalog-CATALOG_NAME_SANITIZED</c>
+        /// with length 23 characters.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Lambda Function Name with a maximum length of 64 characters and prefix <c>athenafederatedcatalog_CATALOG_NAME_SANITIZED</c>
+        /// with length 23 characters.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Glue Connection Name with a maximum length of 255 characters and a prefix <c>athenafederatedcatalog_CATALOG_NAME_SANITIZED</c>
+        /// with length 23 characters. 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDataCatalog service method.</param>
         /// <param name="cancellationToken">

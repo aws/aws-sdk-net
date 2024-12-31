@@ -207,6 +207,29 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                                     request.Parameters.Add("LaunchTemplateConfigs" + "." + publicRequestlistValueIndex + "." + "Overrides" + "." + publicRequestlistValuelistValueIndex + "." + "InstanceRequirements" + "." + "BaselineEbsBandwidthMbps" + "." + "Min", StringUtils.FromInt(publicRequestlistValuelistValue.InstanceRequirements.BaselineEbsBandwidthMbps.Min));
                                                 }
                                             }
+                                            if(publicRequestlistValuelistValue.InstanceRequirements.IsSetBaselinePerformanceFactors())
+                                            {
+                                                if(publicRequestlistValuelistValue.InstanceRequirements.BaselinePerformanceFactors.IsSetCpu())
+                                                {
+                                                    if(publicRequestlistValuelistValue.InstanceRequirements.BaselinePerformanceFactors.Cpu.IsSetReferences())
+                                                    {
+                                                        if (publicRequestlistValuelistValue.InstanceRequirements.BaselinePerformanceFactors.Cpu.References.Count == 0)
+                                                            request.Parameters.Add("LaunchTemplateConfigs" + "." + publicRequestlistValueIndex + "." + "Overrides" + "." + publicRequestlistValuelistValueIndex + "." + "InstanceRequirements" + "." + "BaselinePerformanceFactors" + "." + "Cpu" + "." + "Reference", "");
+                                                        else
+                                                        {
+                                                             int publicRequestlistValuelistValueInstanceRequirementsBaselinePerformanceFactorsCpulistValueIndex = 1;
+                                                             foreach(var publicRequestlistValuelistValueInstanceRequirementsBaselinePerformanceFactorsCpulistValue in publicRequestlistValuelistValue.InstanceRequirements.BaselinePerformanceFactors.Cpu.References)
+                                                             {
+                                                                if(publicRequestlistValuelistValueInstanceRequirementsBaselinePerformanceFactorsCpulistValue.IsSetInstanceFamily())
+                                                                {
+                                                                    request.Parameters.Add("LaunchTemplateConfigs" + "." + publicRequestlistValueIndex + "." + "Overrides" + "." + publicRequestlistValuelistValueIndex + "." + "InstanceRequirements" + "." + "BaselinePerformanceFactors" + "." + "Cpu" + "." + "Reference" + "." + publicRequestlistValuelistValueInstanceRequirementsBaselinePerformanceFactorsCpulistValueIndex + "." + "InstanceFamily", StringUtils.FromString(publicRequestlistValuelistValueInstanceRequirementsBaselinePerformanceFactorsCpulistValue.InstanceFamily));
+                                                                }
+                                                                 publicRequestlistValuelistValueInstanceRequirementsBaselinePerformanceFactorsCpulistValueIndex++;
+                                                             }
+                                                        }
+                                                    }
+                                                }
+                                            }
                                             if(publicRequestlistValuelistValue.InstanceRequirements.IsSetBurstablePerformance())
                                             {
                                                 request.Parameters.Add("LaunchTemplateConfigs" + "." + publicRequestlistValueIndex + "." + "Overrides" + "." + publicRequestlistValuelistValueIndex + "." + "InstanceRequirements" + "." + "BurstablePerformance", StringUtils.FromString(publicRequestlistValuelistValue.InstanceRequirements.BurstablePerformance));

@@ -59,6 +59,17 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetIdcAuthConfiguration())
+            {
+                context.Writer.WritePropertyName("idcAuthConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = IdcAuthConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.IdcAuthConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetNoAuthConfiguration())
             {
                 context.Writer.WritePropertyName("noAuthConfiguration");

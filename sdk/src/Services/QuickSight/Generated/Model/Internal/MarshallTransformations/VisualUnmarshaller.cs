@@ -144,6 +144,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.KPIVisual = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LayerMapVisual", targetDepth))
+                {
+                    var unmarshaller = LayerMapVisualUnmarshaller.Instance;
+                    unmarshalledObject.LayerMapVisual = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LineChartVisual", targetDepth))
                 {
                     var unmarshaller = LineChartVisualUnmarshaller.Instance;
@@ -160,6 +166,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = PivotTableVisualUnmarshaller.Instance;
                     unmarshalledObject.PivotTableVisual = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PluginVisual", targetDepth))
+                {
+                    var unmarshaller = PluginVisualUnmarshaller.Instance;
+                    unmarshalledObject.PluginVisual = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RadarChartVisual", targetDepth))

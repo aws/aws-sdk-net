@@ -82,8 +82,9 @@ namespace Amazon.AppConfig.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of items to return for this call. The call also returns a token
-        /// that you can specify in a subsequent call to get the next set of results.
+        /// The maximum number of items to return for this call. If <c>MaxResults</c> is not provided
+        /// in the call, AppConfig returns the maximum of 50. The call also returns a token that
+        /// you can specify in a subsequent call to get the next set of results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

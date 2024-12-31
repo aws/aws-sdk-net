@@ -286,7 +286,7 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// Enables data tiering. Data tiering is only supported for replication groups using
         /// the r6gd node type. This parameter must be set to true when using r6gd nodes. For
-        /// more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data
+        /// more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/data-tiering.html">Data
         /// tiering</a>.
         /// </para>
         /// </summary>
@@ -454,7 +454,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property MultiAZ. 
         /// <para>
         /// A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more
-        /// information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing
+        /// information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/AutoFailover.html">Minimizing
         /// Downtime: Multi-AZ</a> 
         /// </para>
         /// </summary>

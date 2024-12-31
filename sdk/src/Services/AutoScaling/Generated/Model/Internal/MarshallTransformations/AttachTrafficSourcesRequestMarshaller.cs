@@ -63,6 +63,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AutoScalingGroupName", StringUtils.FromString(publicRequest.AutoScalingGroupName));
                 }
+                if(publicRequest.IsSetSkipZonalShiftValidation())
+                {
+                    request.Parameters.Add("SkipZonalShiftValidation", StringUtils.FromBool(publicRequest.SkipZonalShiftValidation));
+                }
                 if(publicRequest.IsSetTrafficSources())
                 {
                     if (publicRequest.TrafficSources.Count == 0)

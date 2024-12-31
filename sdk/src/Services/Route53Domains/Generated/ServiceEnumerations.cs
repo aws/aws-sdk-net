@@ -1605,6 +1605,10 @@ namespace Amazon.Route53Domains
         /// </summary>
         public static readonly OperationType RENEW_DOMAIN = new OperationType("RENEW_DOMAIN");
         /// <summary>
+        /// Constant RESTORE_DOMAIN for OperationType
+        /// </summary>
+        public static readonly OperationType RESTORE_DOMAIN = new OperationType("RESTORE_DOMAIN");
+        /// <summary>
         /// Constant TRANSFER_IN_DOMAIN for OperationType
         /// </summary>
         public static readonly OperationType TRANSFER_IN_DOMAIN = new OperationType("TRANSFER_IN_DOMAIN");

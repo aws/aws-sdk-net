@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// This is the response object from the RebootDBShardGroup operation.
+    /// Contains the details for an Amazon RDS DB shard group.
     /// </summary>
     public partial class RebootDBShardGroupResponse : AmazonWebServiceResponse
     {

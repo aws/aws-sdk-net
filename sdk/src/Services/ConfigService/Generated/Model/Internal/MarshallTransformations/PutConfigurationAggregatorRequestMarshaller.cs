@@ -87,6 +87,17 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                         context.Writer.WriteArrayEnd();
                     }
 
+                    if(publicRequest.IsSetAggregatorFilters())
+                    {
+                        context.Writer.WritePropertyName("AggregatorFilters");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = AggregatorFiltersMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AggregatorFilters, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
                     if(publicRequest.IsSetConfigurationAggregatorName())
                     {
                         context.Writer.WritePropertyName("ConfigurationAggregatorName");

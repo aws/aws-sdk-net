@@ -157,10 +157,29 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  
         /// <para>
-        /// This can be <c>gp2</c> for General Purpose SSD, <c>io1</c> or <c>io2</c> for Provisioned
-        /// IOPS SSD, <c>st1</c> for Throughput Optimized HDD, <c>sc1</c> for Cold HDD, or <c>standard</c>
-        /// for Magnetic volumes.
+        /// The volume types can be the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// General Purpose SSD <c>gp2</c> and <c>gp3</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Provisioned IOPS SSD <c>io1</c>, <c>io2</c>, and <c>io2 Block Express</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Throughput Optimized HDD <c>st1</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cold HDD <c>sc1</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Magnetic volumes <c>standard</c> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string VolumeType
         {

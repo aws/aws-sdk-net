@@ -59,6 +59,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetFSxLustreFileSystem())
+            {
+                context.Writer.WritePropertyName("FSxLustreFileSystem");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = FSxLustreFileSystemMarshaller.Instance;
+                marshaller.Marshall(requestObject.FSxLustreFileSystem, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

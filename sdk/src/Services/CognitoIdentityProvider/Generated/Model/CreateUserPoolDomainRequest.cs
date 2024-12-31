@@ -31,8 +31,24 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateUserPoolDomain operation.
-    /// Creates a new domain for a user pool.
+    /// A user pool domain hosts managed login, an authorization server and web server for
+    /// authentication in your application. This operation creates a new user pool prefix
+    /// or custom domain and sets the managed login branding version. Set the branding version
+    /// to <c>1</c> for hosted UI (classic) or <c>2</c> for managed login. When you choose
+    /// a custom domain, you must provide an SSL certificate in the US East (N. Virginia)
+    /// Amazon Web Services Region in your request.
     /// 
+    ///  
+    /// <para>
+    /// Your prefix domain might take up to one minute to take effect. Your custom domain
+    /// is online within five minutes, but it can take up to one hour to distribute your SSL
+    /// certificate.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information about adding a custom domain to your user pool, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html">Configuring
+    /// a user pool domain</a>.
+    /// </para>
     ///  <note> 
     /// <para>
     /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
@@ -59,19 +75,19 @@ namespace Amazon.CognitoIdentityProvider.Model
     {
         private CustomDomainConfigType _customDomainConfig;
         private string _domain;
+        private int? _managedLoginVersion;
         private string _userPoolId;
 
         /// <summary>
         /// Gets and sets the property CustomDomainConfig. 
         /// <para>
-        /// The configuration for a custom domain that hosts the sign-up and sign-in webpages
-        /// for your application.
+        /// The configuration for a custom domain. Configures your domain with an Certificate
+        /// Manager certificate in the <c>us-east-1</c> Region.
         /// </para>
         ///  
         /// <para>
         /// Provide this parameter only if you want to use a custom domain for your user pool.
-        /// Otherwise, you can exclude this parameter and use the Amazon Cognito hosted domain
-        /// instead.
+        /// Otherwise, you can exclude this parameter and use a prefix domain instead.
         /// </para>
         ///  
         /// <para>
@@ -95,8 +111,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property Domain. 
         /// <para>
         /// The domain string. For custom domains, this is the fully-qualified domain name, such
-        /// as <c>auth.example.com</c>. For Amazon Cognito prefix domains, this is the prefix
-        /// alone, such as <c>auth</c>.
+        /// as <c>auth.example.com</c>. For prefix domains, this is the prefix alone, such as
+        /// <c>myprefix</c>. A prefix value of <c>myprefix</c> for a user pool in the us-east-1
+        /// Region results in a domain of <c>myprefix.auth.us-east-1.amazoncognito.com</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=63)]
@@ -113,9 +130,34 @@ namespace Amazon.CognitoIdentityProvider.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ManagedLoginVersion. 
+        /// <para>
+        /// The version of managed login branding that you want to apply to your domain. A value
+        /// of <c>1</c> indicates hosted UI (classic) and a version of <c>2</c> indicates managed
+        /// login.
+        /// </para>
+        ///  
+        /// <para>
+        /// Managed login requires that your user pool be configured for any <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sign-in-feature-plans.html">feature
+        /// plan</a> other than <c>Lite</c>.
+        /// </para>
+        /// </summary>
+        public int? ManagedLoginVersion
+        {
+            get { return this._managedLoginVersion; }
+            set { this._managedLoginVersion = value; }
+        }
+
+        // Check to see if ManagedLoginVersion property is set
+        internal bool IsSetManagedLoginVersion()
+        {
+            return this._managedLoginVersion.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property UserPoolId. 
         /// <para>
-        /// The user pool ID.
+        /// The ID of the user pool where you want to add a domain.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=55)]

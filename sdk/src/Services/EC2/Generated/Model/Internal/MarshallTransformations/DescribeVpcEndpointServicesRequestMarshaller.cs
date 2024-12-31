@@ -112,6 +112,20 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                          }
                     }
                 }
+                if(publicRequest.IsSetServiceRegions())
+                {
+                    if (publicRequest.ServiceRegions.Count == 0)
+                        request.Parameters.Add("ServiceRegion", "");
+                    else
+                    {
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.ServiceRegions)
+                         {
+                             request.Parameters.Add("ServiceRegion" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
+                    }
+                }
             }
             return request;
         }

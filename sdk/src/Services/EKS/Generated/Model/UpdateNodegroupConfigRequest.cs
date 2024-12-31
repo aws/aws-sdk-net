@@ -43,6 +43,7 @@ namespace Amazon.EKS.Model
         private string _clusterName;
         private UpdateLabelsPayload _labels;
         private string _nodegroupName;
+        private NodeRepairConfig _nodeRepairConfig;
         private NodegroupScalingConfig _scalingConfig;
         private UpdateTaintsPayload _taints;
         private NodegroupUpdateConfig _updateConfig;
@@ -120,6 +121,24 @@ namespace Amazon.EKS.Model
         internal bool IsSetNodegroupName()
         {
             return this._nodegroupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NodeRepairConfig. 
+        /// <para>
+        /// The node auto repair configuration for the node group.
+        /// </para>
+        /// </summary>
+        public NodeRepairConfig NodeRepairConfig
+        {
+            get { return this._nodeRepairConfig; }
+            set { this._nodeRepairConfig = value; }
+        }
+
+        // Check to see if NodeRepairConfig property is set
+        internal bool IsSetNodeRepairConfig()
+        {
+            return this._nodeRepairConfig != null;
         }
 
         /// <summary>

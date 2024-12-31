@@ -107,6 +107,12 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.IdempotencyToken);
                     }
 
+                    if(publicRequest.IsSetIndex())
+                    {
+                        context.Writer.WritePropertyName("Index");
+                        context.Writer.Write(publicRequest.Index);
+                    }
+
                     if(publicRequest.IsSetLifecycle())
                     {
                         context.Writer.WritePropertyName("Lifecycle");

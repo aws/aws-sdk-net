@@ -242,6 +242,16 @@ namespace Amazon.SimpleSystemsManagement.Model
         IListDocumentVersionsPaginator ListDocumentVersions(ListDocumentVersionsRequest request);
 
         /// <summary>
+        /// Paginator for ListNodes operation
+        ///</summary>
+        IListNodesPaginator ListNodes(ListNodesRequest request);
+
+        /// <summary>
+        /// Paginator for ListNodesSummary operation
+        ///</summary>
+        IListNodesSummaryPaginator ListNodesSummary(ListNodesSummaryRequest request);
+
+        /// <summary>
         /// Paginator for ListOpsItemEvents operation
         ///</summary>
         IListOpsItemEventsPaginator ListOpsItemEvents(ListOpsItemEventsRequest request);

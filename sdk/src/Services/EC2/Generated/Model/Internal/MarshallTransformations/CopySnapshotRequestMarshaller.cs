@@ -59,6 +59,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetCompletionDurationMinutes())
+                {
+                    request.Parameters.Add("CompletionDurationMinutes", StringUtils.FromInt(publicRequest.CompletionDurationMinutes));
+                }
                 if(publicRequest.IsSetDescription())
                 {
                     request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));

@@ -34,13 +34,17 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class Contact
     {
+        private AdditionalEmailRecipients _additionalEmailRecipients;
         private AgentInfo _agentInfo;
         private AnsweringMachineDetectionStatus _answeringMachineDetectionStatus;
         private string _arn;
         private Campaign _campaign;
         private Channel _channel;
         private DateTime? _connectedToSystemTimestamp;
+        private string _contactAssociationId;
         private Customer _customer;
+        private EndpointInfo _customerEndpoint;
+        private string _customerId;
         private CustomerVoiceActivity _customerVoiceActivity;
         private string _description;
         private DisconnectDetails _disconnectDetails;
@@ -62,10 +66,29 @@ namespace Amazon.Connect.Model
         private RoutingCriteria _routingCriteria;
         private DateTime? _scheduledTimestamp;
         private Dictionary<string, SegmentAttributeValue> _segmentAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, SegmentAttributeValue>() : null;
+        private EndpointInfo _systemEndpoint;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private int? _totalPauseCount;
         private int? _totalPauseDurationInSeconds;
         private WisdomInfo _wisdomInfo;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalEmailRecipients. 
+        /// <para>
+        /// List of additional email addresses for an email contact.
+        /// </para>
+        /// </summary>
+        public AdditionalEmailRecipients AdditionalEmailRecipients
+        {
+            get { return this._additionalEmailRecipients; }
+            set { this._additionalEmailRecipients = value; }
+        }
+
+        // Check to see if AdditionalEmailRecipients property is set
+        internal bool IsSetAdditionalEmailRecipients()
+        {
+            return this._additionalEmailRecipients != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AgentInfo. 
@@ -174,6 +197,26 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ContactAssociationId. 
+        /// <para>
+        /// This is the root contactId which is used as a unique identifier for all subsequent
+        /// contacts in a contact tree.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string ContactAssociationId
+        {
+            get { return this._contactAssociationId; }
+            set { this._contactAssociationId = value; }
+        }
+
+        // Check to see if ContactAssociationId property is set
+        internal bool IsSetContactAssociationId()
+        {
+            return this._contactAssociationId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Customer. 
         /// <para>
         /// Information about the Customer on the contact.
@@ -189,6 +232,47 @@ namespace Amazon.Connect.Model
         internal bool IsSetCustomer()
         {
             return this._customer != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomerEndpoint. 
+        /// <para>
+        /// The customer or external third party participant endpoint.
+        /// </para>
+        /// </summary>
+        public EndpointInfo CustomerEndpoint
+        {
+            get { return this._customerEndpoint; }
+            set { this._customerEndpoint = value; }
+        }
+
+        // Check to see if CustomerEndpoint property is set
+        internal bool IsSetCustomerEndpoint()
+        {
+            return this._customerEndpoint != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomerId. 
+        /// <para>
+        /// The customer's identification number. For example, the <c>CustomerId</c> may be a
+        /// customer number from your CRM. You can create a Lambda function to pull the unique
+        /// customer ID of the caller from your CRM system. If you enable Amazon Connect Voice
+        /// ID capability, this attribute is populated with the <c>CustomerSpeakerId</c> of the
+        /// caller.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=128)]
+        public string CustomerId
+        {
+            get { return this._customerId; }
+            set { this._customerId = value; }
+        }
+
+        // Check to see if CustomerId property is set
+        internal bool IsSetCustomerId()
+        {
+            return this._customerId != null;
         }
 
         /// <summary>
@@ -404,7 +488,7 @@ namespace Amazon.Connect.Model
         /// The name of the contact.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=0, Max=512)]
+        [AWSProperty(Sensitive=true, Min=0, Max=1024)]
         public string Name
         {
             get { return this._name; }
@@ -592,6 +676,28 @@ namespace Amazon.Connect.Model
         internal bool IsSetSegmentAttributes()
         {
             return this._segmentAttributes != null && (this._segmentAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SystemEndpoint. 
+        /// <para>
+        /// The system endpoint. For <c>INBOUND</c>, this is the phone number or email address
+        /// that the customer dialed. For <c>OUTBOUND</c> and <c>EXTERNAL_OUTBOUND</c>, this is
+        /// the outbound caller ID number assigned to the outbound queue that is used to dial
+        /// the customer. For callback, this shows up as Softphone for calls handled by agents
+        /// with softphone.
+        /// </para>
+        /// </summary>
+        public EndpointInfo SystemEndpoint
+        {
+            get { return this._systemEndpoint; }
+            set { this._systemEndpoint = value; }
+        }
+
+        // Check to see if SystemEndpoint property is set
+        internal bool IsSetSystemEndpoint()
+        {
+            return this._systemEndpoint != null;
         }
 
         /// <summary>

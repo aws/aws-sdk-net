@@ -92,6 +92,12 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.ResourceIdentifier);
                     }
 
+                    if(publicRequest.IsSetServiceNetworkLogType())
+                    {
+                        context.Writer.WritePropertyName("serviceNetworkLogType");
+                        context.Writer.Write(publicRequest.ServiceNetworkLogType);
+                    }
+
                     if(publicRequest.IsSetTags())
                     {
                         context.Writer.WritePropertyName("tags");

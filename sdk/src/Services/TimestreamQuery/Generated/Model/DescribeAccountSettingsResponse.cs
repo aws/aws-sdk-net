@@ -35,6 +35,7 @@ namespace Amazon.TimestreamQuery.Model
     public partial class DescribeAccountSettingsResponse : AmazonWebServiceResponse
     {
         private int? _maxQueryTCU;
+        private QueryComputeResponse _queryCompute;
         private QueryPricingModel _queryPricingModel;
 
         /// <summary>
@@ -42,6 +43,9 @@ namespace Amazon.TimestreamQuery.Model
         /// <para>
         /// The maximum number of <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/tcu.html">Timestream
         /// compute units</a> (TCUs) the service will use at any point in time to serve your queries.
+        /// To run queries, you must set a minimum capacity of 4 TCU. You can set the maximum
+        /// number of TCU in multiples of 4, for example, 4, 8, 16, 32, and so on. This configuration
+        /// is applicable only for on-demand usage of (TCUs). 
         /// </para>
         /// </summary>
         public int? MaxQueryTCU
@@ -57,10 +61,36 @@ namespace Amazon.TimestreamQuery.Model
         }
 
         /// <summary>
+        /// Gets and sets the property QueryCompute. 
+        /// <para>
+        /// An object that contains the usage settings for Timestream Compute Units (TCUs) in
+        /// your account for the query workload. 
+        /// </para>
+        /// </summary>
+        public QueryComputeResponse QueryCompute
+        {
+            get { return this._queryCompute; }
+            set { this._queryCompute = value; }
+        }
+
+        // Check to see if QueryCompute property is set
+        internal bool IsSetQueryCompute()
+        {
+            return this._queryCompute != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property QueryPricingModel. 
         /// <para>
         /// The pricing model for queries in your account.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <c>QueryPricingModel</c> parameter is used by several Timestream operations; however,
+        /// the <c>UpdateAccountSettings</c> API operation doesn't recognize any values other
+        /// than <c>COMPUTE_UNITS</c>.
+        /// </para>
+        ///  </note>
         /// </summary>
         public QueryPricingModel QueryPricingModel
         {

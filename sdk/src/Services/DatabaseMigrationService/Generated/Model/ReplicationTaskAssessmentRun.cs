@@ -353,6 +353,11 @@ namespace Amazon.DatabaseMigrationService.Model
         ///  <c>"starting"</c> – The assessment run is starting, but resources are not yet being
         /// provisioned for individual assessments.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>"warning"</c> – At least one individual assessment completed with a <c>warning</c>
+        /// status.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public string Status

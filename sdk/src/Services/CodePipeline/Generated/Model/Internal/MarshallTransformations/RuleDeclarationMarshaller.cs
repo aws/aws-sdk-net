@@ -48,6 +48,17 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetCommands())
+            {
+                context.Writer.WritePropertyName("commands");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectCommandsListValue in requestObject.Commands)
+                {
+                        context.Writer.Write(requestObjectCommandsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetConfiguration())
             {
                 context.Writer.WritePropertyName("configuration");

@@ -139,6 +139,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.Name);
                     }
 
+                    if(publicRequest.IsSetSelfAssignFlowId())
+                    {
+                        context.Writer.WritePropertyName("SelfAssignFlowId");
+                        context.Writer.Write(publicRequest.SelfAssignFlowId);
+                    }
+
                     if(publicRequest.IsSetStatus())
                     {
                         context.Writer.WritePropertyName("Status");

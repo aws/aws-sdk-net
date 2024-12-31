@@ -178,16 +178,24 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 	* AWS Backup is a fully managed backup service that makes it easy to centralize and automate the back up of data across AWS services in the cloud as well as on-premises.
 * [AWSSDK.BackupGateway](https://www.nuget.org/packages/AWSSDK.BackupGateway/)
 	* Initial release of AWS Backup gateway which enables you to centralize and automate protection of on-premises VMware and VMware Cloud on AWS workloads using AWS Backup.
+* [AWSSDK.BackupSearch](https://www.nuget.org/packages/AWSSDK.BackupSearch/)
+	* Add support for searching backups
 * [AWSSDK.Batch](https://www.nuget.org/packages/AWSSDK.Batch/)
 	* AWS Batch enables developers, scientists, and engineers to easily and efficiently run hundreds of thousands of batch computing jobs on AWS. 
 * [AWSSDK.BCMDataExports](https://www.nuget.org/packages/AWSSDK.BCMDataExports/)
 	* Users can create, read, update, delete Exports of billing and cost management data.  Users can get details of Export Executions and details of Tables for exporting.  Tagging support is provided for Exports
+* [AWSSDK.BCMPricingCalculator](https://www.nuget.org/packages/AWSSDK.BCMPricingCalculator/)
+	* Initial release of the AWS Billing and Cost Management Pricing Calculator API.
 * [AWSSDK.Bedrock](https://www.nuget.org/packages/AWSSDK.Bedrock/)
 	* Model Invocation logging added to enable or disable logs in customer account. Model listing and description support added. Provisioned Throughput feature added. Custom model support added for creating custom models. Also includes list, and delete functions for custom model.
 * [AWSSDK.BedrockAgent](https://www.nuget.org/packages/AWSSDK.BedrockAgent/)
 	* This release introduces Agents for Amazon Bedrock
 * [AWSSDK.BedrockAgentRuntime](https://www.nuget.org/packages/AWSSDK.BedrockAgentRuntime/)
 	* This release introduces Agents for Amazon Bedrock Runtime
+* [AWSSDK.BedrockDataAutomation](https://www.nuget.org/packages/AWSSDK.BedrockDataAutomation/)
+	* Release Bedrock Data Automation SDK
+* [AWSSDK.BedrockDataAutomationRuntime](https://www.nuget.org/packages/AWSSDK.BedrockDataAutomationRuntime/)
+	* Release Bedrock Data Automation Runtime SDK
 * [AWSSDK.BedrockRuntime](https://www.nuget.org/packages/AWSSDK.BedrockRuntime/)
 	* Run Inference: Added support to run the inference on models.  Includes set of APIs for running inference in streaming and non-streaming mode.
 * [AWSSDK.Billing](https://www.nuget.org/packages/AWSSDK.Billing/)
@@ -350,6 +358,8 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 	* Launched Amazon DocumentDB Elastic Clusters. You can now use the SDK to create, list, update and delete Amazon DocumentDB Elastic Cluster resources
 * [AWSSDK.Drs](https://www.nuget.org/packages/AWSSDK.Drs/)
 	* Introducing AWS Elastic Disaster Recovery (AWS DRS), a new service that minimizes downtime and data loss with fast, reliable recovery of on-premises and cloud-based applications using affordable storage, minimal compute, and point-in-time recovery.
+* [AWSSDK.DSQL](https://www.nuget.org/packages/AWSSDK.DSQL/)
+	* Add new API operations for Amazon Aurora DSQL. Amazon Aurora DSQL is a serverless, distributed SQL database with virtually unlimited scale, highest availability, and zero infrastructure management.
 * [AWSSDK.DynamoDBv2](https://www.nuget.org/packages/AWSSDK.DynamoDBv2/)
 	* Amazon DynamoDB is a fast and flexible NoSQL database service for all applications that need consistent, single-digit millisecond latency at any scale.
 * [AWSSDK.DynamoDBStreams](https://www.nuget.org/packages/AWSSDK.DynamoDBStreams/)
@@ -458,6 +468,8 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 	* This release adds support for the new Amazon Inspector Scan API. The new Inspector Scan API can synchronously scan SBOMs adhering to the CycloneDX v1.5 format.
 * [AWSSDK.InternetMonitor](https://www.nuget.org/packages/AWSSDK.InternetMonitor/)
 	* CloudWatch Internet Monitor is a a new service within CloudWatch that will help application developers and network engineers continuously monitor internet performance metrics such as availability and performance between their AWS-hosted applications and end-users of these applications
+* [AWSSDK.Invoicing](https://www.nuget.org/packages/AWSSDK.Invoicing/)
+	* AWS Invoice Configuration allows you to receive separate AWS invoices based on your organizational needs. You can use the AWS SDKs to manage Invoice Units and programmatically fetch the information of the invoice receiver.
 * [AWSSDK.IoT](https://www.nuget.org/packages/AWSSDK.IoT/)
 	* AWS IoT allows you to leverage AWS to build your Internet of Things.
 * [AWSSDK.IoT1ClickDevicesService](https://www.nuget.org/packages/AWSSDK.IoT1ClickDevicesService/)
@@ -630,12 +642,20 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 	* This is the initial SDK release for Amazon Neptune Analytics
 * [AWSSDK.NetworkFirewall](https://www.nuget.org/packages/AWSSDK.NetworkFirewall/)
 	* (New Service) AWS Network Firewall is a managed network layer firewall service that makes it easy to secure your virtual private cloud (VPC) networks and block malicious traffic.
+* [AWSSDK.NetworkFlowMonitor](https://www.nuget.org/packages/AWSSDK.NetworkFlowMonitor/)
+	* This release adds documentation for a new feature in Amazon CloudWatch called Network Flow Monitor. You can use Network Flow Monitor to get near real-time metrics, including retransmissions and data transferred, for your actual workloads.
 * [AWSSDK.NetworkManager](https://www.nuget.org/packages/AWSSDK.NetworkManager/)
 	* This is the initial SDK release for AWS Network Manager.
 * [AWSSDK.NetworkMonitor](https://www.nuget.org/packages/AWSSDK.NetworkMonitor/)
 	* CloudWatch Network Monitor is a new service within CloudWatch that will help network administrators and operators continuously monitor network performance metrics such as round-trip-time and packet loss between their AWS-hosted applications and their on-premises locations.
+* [AWSSDK.Notifications](https://www.nuget.org/packages/AWSSDK.Notifications/)
+	* This release adds support for AWS User Notifications. You can now configure and view notifications from AWS services in a central location using the AWS SDK.
+* [AWSSDK.NotificationsContacts](https://www.nuget.org/packages/AWSSDK.NotificationsContacts/)
+	* This release adds support for AWS User Notifications Contacts. You can now configure and view email contacts for AWS User Notifications using the AWS SDK.
 * [AWSSDK.OAM](https://www.nuget.org/packages/AWSSDK.OAM/)
 	* Amazon CloudWatch Observability Access Manager is a new service that allows configuration of the CloudWatch cross-account observability feature.
+* [AWSSDK.ObservabilityAdmin](https://www.nuget.org/packages/AWSSDK.ObservabilityAdmin/)
+	* Amazon CloudWatch Observability Admin adds the ability to audit telemetry configuration for AWS resources in customers AWS Accounts and Organizations. The release introduces new APIs to turn on/off the new experience, which supports discovering supported AWS resources and their state of telemetry.
 * [AWSSDK.Omics](https://www.nuget.org/packages/AWSSDK.Omics/)
 	* Amazon Omics is a new, purpose-built service that can be used by healthcare and life science organizations to store, query, and analyze omics data. The insights from that data can be used to accelerate scientific discoveries and improve healthcare.
 * [AWSSDK.OpenSearchServerless](https://www.nuget.org/packages/AWSSDK.OpenSearchServerless/)
@@ -754,6 +774,8 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 	* Add support for new S3 Block Public Access account-level APIs. The Block Public Access settings allow account owners to prevent public access to S3 data via bucket/object ACLs or bucket policies.
 * [AWSSDK.S3Outposts](https://www.nuget.org/packages/AWSSDK.S3Outposts/)
 	* Amazon S3 on Outposts expands object storage to on-premises AWS Outposts environments, enabling you to store and retrieve objects using S3 APIs and features.
+* [AWSSDK.S3Tables](https://www.nuget.org/packages/AWSSDK.S3Tables/)
+	* Amazon S3 Tables deliver the first cloud object store with built-in open table format support, and the easiest way to store tabular data at scale.
 * [AWSSDK.SageMaker](https://www.nuget.org/packages/AWSSDK.SageMaker/)
 	* Amazon SageMaker is a fully-managed service that enables data scientists and developers to quickly and easily build, train, and deploy machine learning models, at scale.
 * [AWSSDK.SagemakerEdgeManager](https://www.nuget.org/packages/AWSSDK.SagemakerEdgeManager/)
@@ -776,6 +798,8 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 	* AWS Secrets Manager enables you to easily create and manage the secrets that you use in your customer-facing apps. Instead of embedding credentials into your source code, you can dynamically query Secrets Manager from your app whenever you need credentials. You can automatically and frequently rotate your secrets without having to deploy updates to your apps. All secret values are encrypted when they're at rest with AWS KMS, and while they're in transit with HTTPS and TLS.
 * [AWSSDK.SecurityHub](https://www.nuget.org/packages/AWSSDK.SecurityHub/)
 	* AWS Security Hub provides you with a comprehensive view of your security state within AWS and your compliance with the security industry standards and best practices. Security Hub collects security data from across AWS accounts, services, and supported third-party partners and helps you analyze your security trends and identify the highest priority security issues.
+* [AWSSDK.SecurityIR](https://www.nuget.org/packages/AWSSDK.SecurityIR/)
+	* AWS Security Incident Response is a purpose-built security incident solution designed to help customers prepare for, respond to, and recover from security incidents.
 * [AWSSDK.SecurityLake](https://www.nuget.org/packages/AWSSDK.SecurityLake/)
 	* Amazon Security Lake automatically centralizes security data from cloud, on-premises, and custom sources into a purpose-built data lake stored in your account. Security Lake makes it easier to analyze security data, so you can improve the protection of your workloads, applications, and data
 * [AWSSDK.SecurityToken](https://www.nuget.org/packages/AWSSDK.SecurityToken/)

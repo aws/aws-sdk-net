@@ -35,6 +35,7 @@ namespace Amazon.LakeFormation.Model
     public partial class PrincipalResourcePermissions
     {
         private DetailsMap _additionalDetails;
+        private Condition _condition;
         private DateTime? _lastUpdated;
         private string _lastUpdatedBy;
         private List<string> _permissions = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -59,6 +60,25 @@ namespace Amazon.LakeFormation.Model
         internal bool IsSetAdditionalDetails()
         {
             return this._additionalDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Condition. 
+        /// <para>
+        /// A Lake Formation condition, which applies to permissions and opt-ins that contain
+        /// an expression.
+        /// </para>
+        /// </summary>
+        public Condition Condition
+        {
+            get { return this._condition; }
+            set { this._condition = value; }
+        }
+
+        // Check to see if Condition property is set
+        internal bool IsSetCondition()
+        {
+            return this._condition != null;
         }
 
         /// <summary>

@@ -31,7 +31,9 @@ namespace Amazon.Keyspaces.Model
 {
     /// <summary>
     /// Container for the parameters to the GetKeyspace operation.
-    /// Returns the name and the Amazon Resource Name (ARN) of the specified table.
+    /// Returns the name of the specified keyspace, the Amazon Resource Name (ARN), the replication
+    /// strategy, the Amazon Web Services Regions of a multi-Region keyspace, and the status
+    /// of newly added Regions after an <c>UpdateKeyspace</c> operation.
     /// </summary>
     public partial class GetKeyspaceRequest : AmazonKeyspacesRequest
     {

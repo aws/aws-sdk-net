@@ -67,6 +67,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.Port = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("portRangeSet/item", targetDepth))
+                    {
+                        var unmarshaller = VerifiedAccessEndpointPortRangeUnmarshaller.Instance;
+                        if (unmarshalledObject.PortRanges == null)
+                        {
+                            unmarshalledObject.PortRanges = new List<VerifiedAccessEndpointPortRange>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.PortRanges.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("protocol", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

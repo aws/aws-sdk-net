@@ -39,6 +39,7 @@ namespace Amazon.IoTSiteWise.Model
         private string _id;
         private DateTime? _lastUpdateDate;
         private string _name;
+        private PortalType _portalType;
         private string _roleArn;
         private string _startUrl;
         private PortalStatus _status;
@@ -134,6 +135,25 @@ namespace Amazon.IoTSiteWise.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PortalType. 
+        /// <para>
+        /// Define the type of portal. The value for IoT SiteWise Monitor (Classic) is <c>SITEWISE_PORTAL_V1</c>.
+        /// The value for IoT SiteWise Monitor (AI-aware) is <c>SITEWISE_PORTAL_V2</c>.
+        /// </para>
+        /// </summary>
+        public PortalType PortalType
+        {
+            get { return this._portalType; }
+            set { this._portalType = value; }
+        }
+
+        // Check to see if PortalType property is set
+        internal bool IsSetPortalType()
+        {
+            return this._portalType != null;
         }
 
         /// <summary>

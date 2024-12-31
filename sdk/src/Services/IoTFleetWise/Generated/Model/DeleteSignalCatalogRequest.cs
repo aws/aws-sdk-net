@@ -31,14 +31,7 @@ namespace Amazon.IoTFleetWise.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteSignalCatalog operation.
-    /// Deletes a signal catalog. 
-    /// 
-    ///  <note> 
-    /// <para>
-    /// If the signal catalog is successfully deleted, Amazon Web Services IoT FleetWise sends
-    /// back an HTTP 200 response with an empty body.
-    /// </para>
-    ///  </note>
+    /// Deletes a signal catalog.
     /// </summary>
     public partial class DeleteSignalCatalogRequest : AmazonIoTFleetWiseRequest
     {

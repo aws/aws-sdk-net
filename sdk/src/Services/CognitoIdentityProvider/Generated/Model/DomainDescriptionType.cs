@@ -30,7 +30,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// A container for information about a domain.
+    /// A container for information about the user pool domain associated with the hosted
+    /// UI and OAuth endpoints.
+    /// 
+    ///  
+    /// <para>
+    /// This data type is a response parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPoolDomain.html">DescribeUserPoolDomain</a>.
+    /// </para>
     /// </summary>
     public partial class DomainDescriptionType
     {
@@ -38,6 +44,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         private string _cloudFrontDistribution;
         private CustomDomainConfigType _customDomainConfig;
         private string _domain;
+        private int? _managedLoginVersion;
         private string _s3Bucket;
         private DomainStatusType _status;
         private string _userPoolId;
@@ -46,7 +53,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AWSAccountId. 
         /// <para>
-        /// The Amazon Web Services ID for the user pool owner.
+        /// The Amazon Web Services account that you created the user pool in.
         /// </para>
         /// </summary>
         [AWSProperty(Max=12)]
@@ -65,8 +72,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property CloudFrontDistribution. 
         /// <para>
-        /// The Amazon CloudFront endpoint that you use as the target of the alias that you set
-        /// up with your Domain Name Service (DNS) provider.
+        /// The Amazon CloudFront endpoint that hosts your custom domain.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=131072)]
@@ -123,6 +129,31 @@ namespace Amazon.CognitoIdentityProvider.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ManagedLoginVersion. 
+        /// <para>
+        /// The version of managed login branding that you want to apply to your domain. A value
+        /// of <c>1</c> indicates hosted UI (classic) branding and a version of <c>2</c> indicates
+        /// managed login branding.
+        /// </para>
+        ///  
+        /// <para>
+        /// Managed login requires that your user pool be configured for any <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sign-in-feature-plans.html">feature
+        /// plan</a> other than <c>Lite</c>.
+        /// </para>
+        /// </summary>
+        public int? ManagedLoginVersion
+        {
+            get { return this._managedLoginVersion; }
+            set { this._managedLoginVersion = value; }
+        }
+
+        // Check to see if ManagedLoginVersion property is set
+        internal bool IsSetManagedLoginVersion()
+        {
+            return this._managedLoginVersion.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property S3Bucket. 
         /// <para>
         /// The Amazon S3 bucket where the static files for this domain are stored.
@@ -162,7 +193,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserPoolId. 
         /// <para>
-        /// The user pool ID.
+        /// The ID of the user pool that the domain is attached to.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=55)]

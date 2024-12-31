@@ -336,7 +336,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property StartReplicationType. 
         /// <para>
-        /// The replication type.
+        /// The type of replication to start.
         /// </para>
         /// </summary>
         public string StartReplicationType

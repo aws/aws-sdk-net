@@ -31,36 +31,75 @@ namespace Amazon.ConfigService.Model
 {
     /// <summary>
     /// Container for the parameters to the PutConfigurationRecorder operation.
-    /// Creates a new configuration recorder to record configuration changes for specified
-    /// resource types.
+    /// Creates or updates the customer managed configuration recorder.
     /// 
     ///  
     /// <para>
-    /// You can also use this action to change the <c>roleARN</c> or the <c>recordingGroup</c>
-    /// of an existing recorder. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/stop-start-recorder.html">
-    /// <b>Managing the Configuration Recorder</b> </a> in the <i>Config Developer Guide</i>.
-    /// </para>
-    ///  <note> 
-    /// <para>
-    /// You can specify only one configuration recorder for each Amazon Web Services Region
-    /// for each account.
+    /// You can use this operation to create a new customer managed configuration recorder
+    /// or to update the <c>roleARN</c> and the <c>recordingGroup</c> for an existing customer
+    /// managed configuration recorder.
     /// </para>
     ///  
     /// <para>
-    /// If the configuration recorder does not have the <c>recordingGroup</c> field specified,
-    /// the default is to record all supported resource types.
+    /// To start the customer managed configuration recorder and begin recording configuration
+    /// changes for the resource types you specify, use the <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_StartConfigurationRecorder.html">StartConfigurationRecorder</a>
+    /// operation.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/stop-start-recorder.html">
+    /// <b>Working with the Configuration Recorder</b> </a> in the <i>Config Developer Guide</i>.
+    /// </para>
+    ///  <note> 
+    /// <para>
+    ///  <b>One customer managed configuration recorder per account per Region</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// You can create only one customer managed configuration recorder for each account for
+    /// each Amazon Web Services Region.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Default is to record all supported resource types, excluding the global IAM resource
+    /// types</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// If you have not specified values for the <c>recordingGroup</c> field, the default
+    /// for the customer managed configuration recorder is to record all supported resource
+    /// types, excluding the global IAM resource types: <c>AWS::IAM::Group</c>, <c>AWS::IAM::Policy</c>,
+    /// <c>AWS::IAM::Role</c>, and <c>AWS::IAM::User</c>.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Tags are added at creation and cannot be updated</b> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <c>PutConfigurationRecorder</c> is an idempotent API. Subsequent requests won’t create
+    /// a duplicate resource if one was already created. If a following request has different
+    /// tags values, Config will ignore these differences and treat it as an idempotent request
+    /// of the previous. In this case, tags will not be updated, even if they are different.
+    /// </para>
+    ///  
+    /// <para>
+    /// Use <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_TagResource.html">TagResource</a>
+    /// and <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_UntagResource.html">UntagResource</a>
+    /// to update tags after creation.
     /// </para>
     ///  </note>
     /// </summary>
     public partial class PutConfigurationRecorderRequest : AmazonConfigServiceRequest
     {
         private ConfigurationRecorder _configurationRecorder;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property ConfigurationRecorder. 
         /// <para>
-        /// An object for the configuration recorder to record configuration changes for specified
-        /// resource types.
+        /// An object for the configuration recorder. A configuration recorder records configuration
+        /// changes for the resource types in scope.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -74,6 +113,26 @@ namespace Amazon.ConfigService.Model
         internal bool IsSetConfigurationRecorder()
         {
             return this._configurationRecorder != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags for the customer managed configuration recorder. Each tag consists of a key
+        /// and an optional value, both of which you define.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

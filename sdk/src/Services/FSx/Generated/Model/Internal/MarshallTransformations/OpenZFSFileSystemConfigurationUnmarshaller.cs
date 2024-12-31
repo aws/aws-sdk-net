@@ -120,6 +120,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                     unmarshalledObject.PreferredSubnetId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ReadCacheConfiguration", targetDepth))
+                {
+                    var unmarshaller = OpenZFSReadCacheConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ReadCacheConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RootVolumeId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

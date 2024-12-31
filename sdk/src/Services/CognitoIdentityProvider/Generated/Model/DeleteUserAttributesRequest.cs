@@ -32,7 +32,8 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteUserAttributes operation.
-    /// Deletes the attributes for a user.
+    /// Self-deletes attributes for a user. For example, your application can submit a request
+    /// to this operation when a user wants to remove their <c>birthdate</c> attribute value.
     /// 
     ///  
     /// <para>
@@ -81,8 +82,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  
         /// <para>
-        /// For custom attributes, you must prependattach the <c>custom:</c> prefix to the front
-        /// of the attribute name.
+        /// For custom attributes, you must prepend the <c>custom:</c> prefix to the attribute
+        /// name, for example <c>custom:department</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

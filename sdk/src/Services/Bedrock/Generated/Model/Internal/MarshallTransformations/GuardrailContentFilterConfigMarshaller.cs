@@ -48,10 +48,32 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetInputModalities())
+            {
+                context.Writer.WritePropertyName("inputModalities");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectInputModalitiesListValue in requestObject.InputModalities)
+                {
+                        context.Writer.Write(requestObjectInputModalitiesListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetInputStrength())
             {
                 context.Writer.WritePropertyName("inputStrength");
                 context.Writer.Write(requestObject.InputStrength);
+            }
+
+            if(requestObject.IsSetOutputModalities())
+            {
+                context.Writer.WritePropertyName("outputModalities");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectOutputModalitiesListValue in requestObject.OutputModalities)
+                {
+                        context.Writer.Write(requestObjectOutputModalitiesListValue);
+                }
+                context.Writer.WriteArrayEnd();
             }
 
             if(requestObject.IsSetOutputStrength())

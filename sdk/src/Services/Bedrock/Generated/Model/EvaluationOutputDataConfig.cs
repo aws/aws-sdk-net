@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Bedrock.Model
 {
     /// <summary>
-    /// The Amazon S3 location where the results of your model evaluation job are saved.
+    /// The Amazon S3 location where the results of your evaluation job are saved.
     /// </summary>
     public partial class EvaluationOutputDataConfig
     {
@@ -39,7 +39,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property S3Uri. 
         /// <para>
-        /// The Amazon S3 URI where the results of model evaluation job are saved.
+        /// The Amazon S3 URI where the results of the evaluation job are saved.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]

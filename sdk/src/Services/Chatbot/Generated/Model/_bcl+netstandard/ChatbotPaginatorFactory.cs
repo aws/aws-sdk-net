@@ -69,6 +69,22 @@ namespace Amazon.Chatbot.Model
         }
 
         /// <summary>
+        /// Paginator for ListAssociations operation
+        ///</summary>
+        public IListAssociationsPaginator ListAssociations(ListAssociationsRequest request) 
+        {
+            return new ListAssociationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListCustomActions operation
+        ///</summary>
+        public IListCustomActionsPaginator ListCustomActions(ListCustomActionsRequest request) 
+        {
+            return new ListCustomActionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListMicrosoftTeamsChannelConfigurations operation
         ///</summary>
         public IListMicrosoftTeamsChannelConfigurationsPaginator ListMicrosoftTeamsChannelConfigurations(ListMicrosoftTeamsChannelConfigurationsRequest request) 

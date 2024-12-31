@@ -1,0 +1,16 @@
+{
+    "version": 2,
+    "testCases": [
+        {
+            "id": "DescribeClustersSuccess",
+            "operationName": "DescribeClusters",
+            "input": {},
+            "expectation": {
+                "success": {}
+            },
+            "config": {
+                "region": "us-west-2"
+            }
+        }
+    ]
+}

@@ -34,6 +34,12 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// and body of the email message template for MFA messages. To activate this setting,
     /// <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">
     /// advanced security features</a> must be active in your user pool.
+    /// 
+    ///  
+    /// <para>
+    /// This data type is a request parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html">SetUserPoolMfaConfig</a>
+    /// and a response parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUserPoolMfaConfig.html">GetUserPoolMfaConfig</a>.
+    /// </para>
     /// </summary>
     public partial class EmailMfaConfigType
     {
@@ -43,10 +49,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        /// The template for the email message that your user pool sends to users with an MFA
-        /// code. The message must contain the <c>{####}</c> placeholder. In the message, Amazon
-        /// Cognito replaces this placeholder with the code. If you don't provide this parameter,
-        /// Amazon Cognito sends messages in the default format.
+        /// The template for the email message that your user pool sends to users with a code
+        /// for MFA and sign-in with an email OTP. The message must contain the <c>{####}</c>
+        /// placeholder. In the message, Amazon Cognito replaces this placeholder with the code.
+        /// If you don't provide this parameter, Amazon Cognito sends messages in the default
+        /// format.
         /// </para>
         /// </summary>
         [AWSProperty(Min=6, Max=20000)]
@@ -65,7 +72,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Subject. 
         /// <para>
-        /// The subject of the email message that your user pool sends to users with an MFA code.
+        /// The subject of the email message that your user pool sends to users with a code for
+        /// MFA and email OTP sign-in.
         /// </para>
         /// </summary>
         public string Subject

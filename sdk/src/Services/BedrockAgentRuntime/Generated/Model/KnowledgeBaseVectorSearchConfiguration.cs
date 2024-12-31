@@ -53,8 +53,10 @@ namespace Amazon.BedrockAgentRuntime.Model
     public partial class KnowledgeBaseVectorSearchConfiguration
     {
         private RetrievalFilter _filter;
+        private ImplicitFilterConfiguration _implicitFilterConfiguration;
         private int? _numberOfResults;
         private SearchType _overrideSearchType;
+        private VectorSearchRerankingConfiguration _rerankingConfiguration;
 
         /// <summary>
         /// Gets and sets the property Filter. 
@@ -75,6 +77,24 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetFilter()
         {
             return this._filter != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImplicitFilterConfiguration. 
+        /// <para>
+        /// Settings for implicit filtering.
+        /// </para>
+        /// </summary>
+        public ImplicitFilterConfiguration ImplicitFilterConfiguration
+        {
+            get { return this._implicitFilterConfiguration; }
+            set { this._implicitFilterConfiguration = value; }
+        }
+
+        // Check to see if ImplicitFilterConfiguration property is set
+        internal bool IsSetImplicitFilterConfiguration()
+        {
+            return this._implicitFilterConfiguration != null;
         }
 
         /// <summary>
@@ -118,6 +138,26 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetOverrideSearchType()
         {
             return this._overrideSearchType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RerankingConfiguration. 
+        /// <para>
+        /// Contains configurations for reranking the retrieved results. For more information,
+        /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/rerank.html">Improve
+        /// the relevance of query responses with a reranker model</a>.
+        /// </para>
+        /// </summary>
+        public VectorSearchRerankingConfiguration RerankingConfiguration
+        {
+            get { return this._rerankingConfiguration; }
+            set { this._rerankingConfiguration = value; }
+        }
+
+        // Check to see if RerankingConfiguration property is set
+        internal bool IsSetRerankingConfiguration()
+        {
+            return this._rerankingConfiguration != null;
         }
 
     }

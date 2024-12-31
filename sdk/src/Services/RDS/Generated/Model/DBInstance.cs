@@ -64,6 +64,7 @@ namespace Amazon.RDS.Model
         private bool? _copyTagsToSnapshot;
         private bool? _customerOwnedIpEnabled;
         private string _customIamInstanceProfile;
+        private DatabaseInsightsMode _databaseInsightsMode;
         private string _dbClusterIdentifier;
         private string _dbInstanceArn;
         private List<DBInstanceAutomatedBackupsReplication> _dbInstanceAutomatedBackupsReplications = AWSConfigs.InitializeCollections ? new List<DBInstanceAutomatedBackupsReplication>() : null;
@@ -566,6 +567,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetCustomIamInstanceProfile()
         {
             return this._customIamInstanceProfile != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DatabaseInsightsMode. 
+        /// <para>
+        /// The mode of Database Insights that is enabled for the instance.
+        /// </para>
+        /// </summary>
+        public DatabaseInsightsMode DatabaseInsightsMode
+        {
+            get { return this._databaseInsightsMode; }
+            set { this._databaseInsightsMode = value; }
+        }
+
+        // Check to see if DatabaseInsightsMode property is set
+        internal bool IsSetDatabaseInsightsMode()
+        {
+            return this._databaseInsightsMode != null;
         }
 
         /// <summary>

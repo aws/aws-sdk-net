@@ -66,6 +66,12 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("DataSourceId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DataSourceId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ErrorCode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

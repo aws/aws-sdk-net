@@ -54,6 +54,17 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.CustomerProfilesSegmentArn);
             }
 
+            if(requestObject.IsSetEventTrigger())
+            {
+                context.Writer.WritePropertyName("eventTrigger");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = EventTriggerMarshaller.Instance;
+                marshaller.Marshall(requestObject.EventTrigger, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

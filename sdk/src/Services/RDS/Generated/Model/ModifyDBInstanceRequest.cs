@@ -49,6 +49,7 @@ namespace Amazon.RDS.Model
         private bool? _certificateRotationRestart;
         private CloudwatchLogsExportConfiguration _cloudwatchLogsExportConfiguration;
         private bool? _copyTagsToSnapshot;
+        private DatabaseInsightsMode _databaseInsightsMode;
         private string _dbInstanceClass;
         private string _dbInstanceIdentifier;
         private string _dbParameterGroupName;
@@ -450,6 +451,36 @@ namespace Amazon.RDS.Model
         /// <para>
         /// This setting doesn't apply to RDS Custom DB instances.
         /// </para>
+        ///  
+        /// <para>
+        /// The following values are valid for each DB engine:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Aurora MySQL - <c>audit | error | general | slowquery</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Aurora PostgreSQL - <c>postgresql</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// RDS for MySQL - <c>error | general | slowquery</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// RDS for PostgreSQL - <c>postgresql | upgrade</c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information about exporting CloudWatch Logs for Amazon RDS, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">
+        /// Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+        /// Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.
+        /// </para>
         /// </summary>
         public CloudwatchLogsExportConfiguration CloudwatchLogsExportConfiguration
         {
@@ -486,6 +517,33 @@ namespace Amazon.RDS.Model
         internal bool IsSetCopyTagsToSnapshot()
         {
             return this._copyTagsToSnapshot.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DatabaseInsightsMode. 
+        /// <para>
+        /// Specifies the mode of Database Insights to enable for the DB instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting only applies to Amazon Aurora DB instances.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Currently, this value is inherited from the DB cluster and can't be changed.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public DatabaseInsightsMode DatabaseInsightsMode
+        {
+            get { return this._databaseInsightsMode; }
+            set { this._databaseInsightsMode = value; }
+        }
+
+        // Check to see if DatabaseInsightsMode property is set
+        internal bool IsSetDatabaseInsightsMode()
+        {
+            return this._databaseInsightsMode != null;
         }
 
         /// <summary>

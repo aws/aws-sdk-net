@@ -547,6 +547,11 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodePipeline.Model.ActionExecution.LogStreamARN</property>
+    <min>1</min>
+    <max>250</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodePipeline.Model.ActionExecution.PercentComplete</property>
     <min>0</min>
     <max>100</max>
@@ -600,6 +605,11 @@
     <property>Amazon.CodePipeline.Model.ActionExecutionResult.ExternalExecutionUrl</property>
     <min>1</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodePipeline.Model.ActionExecutionResult.LogStreamARN</property>
+    <min>1</min>
+    <max>250</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodePipeline.Model.ActionRevision.RevisionChangeId</property>

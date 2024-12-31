@@ -76,6 +76,17 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Name);
             }
 
+            if(requestObject.IsSetPersistentVolumeClaim())
+            {
+                context.Writer.WritePropertyName("persistentVolumeClaim");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = EksPersistentVolumeClaimMarshaller.Instance;
+                marshaller.Marshall(requestObject.PersistentVolumeClaim, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetSecret())
             {
                 context.Writer.WritePropertyName("secret");

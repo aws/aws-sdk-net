@@ -37,6 +37,7 @@ namespace Amazon.BedrockAgent.Model
     {
         private string _embeddingModelArn;
         private EmbeddingModelConfiguration _embeddingModelConfiguration;
+        private SupplementalDataStorageConfiguration _supplementalDataStorageConfiguration;
 
         /// <summary>
         /// Gets and sets the property EmbeddingModelArn. 
@@ -75,6 +76,27 @@ namespace Amazon.BedrockAgent.Model
         internal bool IsSetEmbeddingModelConfiguration()
         {
             return this._embeddingModelConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupplementalDataStorageConfiguration. 
+        /// <para>
+        /// If you include multimodal data from your data source, use this object to specify configurations
+        /// for the storage location of the images extracted from your documents. These images
+        /// can be retrieved and returned to the end user. They can also be used in generation
+        /// when using <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_RetrieveAndGenerate.html">RetrieveAndGenerate</a>.
+        /// </para>
+        /// </summary>
+        public SupplementalDataStorageConfiguration SupplementalDataStorageConfiguration
+        {
+            get { return this._supplementalDataStorageConfiguration; }
+            set { this._supplementalDataStorageConfiguration = value; }
+        }
+
+        // Check to see if SupplementalDataStorageConfiguration property is set
+        internal bool IsSetSupplementalDataStorageConfiguration()
+        {
+            return this._supplementalDataStorageConfiguration != null;
         }
 
     }

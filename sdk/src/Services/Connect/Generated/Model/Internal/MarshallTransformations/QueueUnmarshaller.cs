@@ -108,6 +108,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.OutboundCallerConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("OutboundEmailConfig", targetDepth))
+                {
+                    var unmarshaller = OutboundEmailConfigUnmarshaller.Instance;
+                    unmarshalledObject.OutboundEmailConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("QueueArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

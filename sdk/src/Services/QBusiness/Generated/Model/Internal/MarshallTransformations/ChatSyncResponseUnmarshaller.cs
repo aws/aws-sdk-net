@@ -131,6 +131,10 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                 {
                     return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ExternalResourceException"))
+                {
+                    return ExternalResourceExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                 {
                     return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

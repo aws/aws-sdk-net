@@ -70,6 +70,17 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetOAuth2Credentials())
+            {
+                context.Writer.WritePropertyName("OAuth2Credentials");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = OAuth2CredentialsMarshaller.Instance;
+                marshaller.Marshall(requestObject.OAuth2Credentials, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetOAuth2GrantType())
             {
                 context.Writer.WritePropertyName("OAuth2GrantType");

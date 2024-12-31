@@ -103,7 +103,7 @@ namespace Amazon.MemoryDB.Model
         /// <summary>
         /// Gets and sets the property UserName. 
         /// <para>
-        /// The name of the user
+        /// The name of the user.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

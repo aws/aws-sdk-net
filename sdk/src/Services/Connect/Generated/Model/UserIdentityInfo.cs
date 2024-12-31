@@ -79,7 +79,9 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property FirstName. 
         /// <para>
         /// The first name. This is required if you are using Amazon Connect or SAML for identity
-        /// management.
+        /// management. Inputs must be in Unicode Normalization Form C (NFC). Text containing
+        /// characters in a non-NFC form (for example, decomposed characters or combining marks)
+        /// are not accepted.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=255)]
@@ -99,7 +101,9 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property LastName. 
         /// <para>
         /// The last name. This is required if you are using Amazon Connect or SAML for identity
-        /// management.
+        /// management. Inputs must be in Unicode Normalization Form C (NFC). Text containing
+        /// characters in a non-NFC form (for example, decomposed characters or combining marks)
+        /// are not accepted.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=300)]

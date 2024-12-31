@@ -62,6 +62,27 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The list of log types to disable.
         /// </para>
+        ///  
+        /// <para>
+        /// The following values are valid for each DB engine:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Aurora MySQL - <c>audit | error | general | slowquery</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Aurora PostgreSQL - <c>postgresql</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// RDS for MySQL - <c>error | general | slowquery</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// RDS for PostgreSQL - <c>postgresql | upgrade</c> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public List<string> DisableLogTypes
         {
@@ -80,6 +101,27 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The list of log types to enable.
         /// </para>
+        ///  
+        /// <para>
+        /// The following values are valid for each DB engine:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Aurora MySQL - <c>audit | error | general | slowquery</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Aurora PostgreSQL - <c>postgresql</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// RDS for MySQL - <c>error | general | slowquery</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// RDS for PostgreSQL - <c>postgresql | upgrade</c> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public List<string> EnableLogTypes
         {

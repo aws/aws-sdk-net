@@ -138,6 +138,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                     unmarshalledObject.LocalSecondaryIndexes = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MultiRegionConsistency", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MultiRegionConsistency = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("OnDemandThroughput", targetDepth))
                 {
                     var unmarshaller = OnDemandThroughputUnmarshaller.Instance;

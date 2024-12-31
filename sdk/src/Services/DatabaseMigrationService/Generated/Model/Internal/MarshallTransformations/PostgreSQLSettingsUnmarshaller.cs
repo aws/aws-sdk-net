@@ -102,6 +102,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.DdlArtifactsSchema = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DisableUnicodeSourceFilter", targetDepth))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.DisableUnicodeSourceFilter = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ExecuteTimeout", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;

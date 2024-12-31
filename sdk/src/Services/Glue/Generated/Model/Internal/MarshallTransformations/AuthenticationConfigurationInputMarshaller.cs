@@ -54,6 +54,37 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.AuthenticationType);
             }
 
+            if(requestObject.IsSetBasicAuthenticationCredentials())
+            {
+                context.Writer.WritePropertyName("BasicAuthenticationCredentials");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = BasicAuthenticationCredentialsMarshaller.Instance;
+                marshaller.Marshall(requestObject.BasicAuthenticationCredentials, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetCustomAuthenticationCredentials())
+            {
+                context.Writer.WritePropertyName("CustomAuthenticationCredentials");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectCustomAuthenticationCredentialsKvp in requestObject.CustomAuthenticationCredentials)
+                {
+                    context.Writer.WritePropertyName(requestObjectCustomAuthenticationCredentialsKvp.Key);
+                    var requestObjectCustomAuthenticationCredentialsValue = requestObjectCustomAuthenticationCredentialsKvp.Value;
+
+                        context.Writer.Write(requestObjectCustomAuthenticationCredentialsValue);
+                }
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetKmsKeyArn())
+            {
+                context.Writer.WritePropertyName("KmsKeyArn");
+                context.Writer.Write(requestObject.KmsKeyArn);
+            }
+
             if(requestObject.IsSetOAuth2Properties())
             {
                 context.Writer.WritePropertyName("OAuth2Properties");

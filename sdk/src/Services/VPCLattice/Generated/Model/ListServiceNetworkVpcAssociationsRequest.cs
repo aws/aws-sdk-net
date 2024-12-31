@@ -31,9 +31,9 @@ namespace Amazon.VPCLattice.Model
 {
     /// <summary>
     /// Container for the parameters to the ListServiceNetworkVpcAssociations operation.
-    /// Lists the service network and VPC associations. You can filter the list either by
-    /// VPC or service network. You must provide either the service network identifier or
-    /// the VPC identifier.
+    /// Lists the associations between a service network and a VPC. You can filter the list
+    /// either by VPC or service network. You must provide either the ID of the service network
+    /// identifier or the ID of the VPC.
     /// </summary>
     public partial class ListServiceNetworkVpcAssociationsRequest : AmazonVPCLatticeRequest
     {
@@ -83,7 +83,7 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property ServiceNetworkIdentifier. 
         /// <para>
-        /// The ID or Amazon Resource Name (ARN) of the service network.
+        /// The ID or ARN of the service network.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=2048)]
@@ -102,7 +102,7 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property VpcIdentifier. 
         /// <para>
-        /// The ID or Amazon Resource Name (ARN) of the VPC.
+        /// The ID or ARN of the VPC.
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=50)]

@@ -32,7 +32,7 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// Container for the parameters to the CreateUser operation.
     /// For Valkey engine version 7.2 onwards and Redis OSS 6.0 and onwards: Creates a user.
-    /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
+    /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Clusters.RBAC.html">Using
     /// Role Based Access Control (RBAC)</a>.
     /// </summary>
     public partial class CreateUserRequest : AmazonElastiCacheRequest

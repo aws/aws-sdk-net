@@ -141,6 +141,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.TimecodeInsertion);
             }
 
+            if(requestObject.IsSetTimecodeTrack())
+            {
+                context.Writer.WritePropertyName("timecodeTrack");
+                context.Writer.Write(requestObject.TimecodeTrack);
+            }
+
             if(requestObject.IsSetVideoPreprocessors())
             {
                 context.Writer.WritePropertyName("videoPreprocessors");

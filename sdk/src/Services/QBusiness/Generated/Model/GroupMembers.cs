@@ -46,7 +46,6 @@ namespace Amazon.QBusiness.Model
         /// "Engineering", and "Sales and Marketing" all belong to the group "Company".
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1000)]
         public List<MemberGroup> MemberGroups
         {
             get { return this._memberGroups; }
@@ -66,7 +65,6 @@ namespace Amazon.QBusiness.Model
         /// to the "Interns" group.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1000)]
         public List<MemberUser> MemberUsers
         {
             get { return this._memberUsers; }

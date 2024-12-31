@@ -62,8 +62,8 @@ namespace Amazon.Chatbot.Model
         /// <summary>
         /// Gets and sets the property ChatConfigurationArn. 
         /// <para>
-        /// The Amazon Resource Number (ARN) of the SlackChannelConfiguration associated with
-        /// the user identity to delete.
+        /// The Amazon Resource Name (ARN) of the SlackChannelConfiguration associated with the
+        /// user identity to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=19, Max=1169)]

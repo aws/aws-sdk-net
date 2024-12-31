@@ -75,6 +75,11 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.ClientToken);
                     }
 
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
                     if(publicRequest.IsSetDescription())
                     {
                         context.Writer.WritePropertyName("description");
@@ -97,6 +102,28 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                     {
                         context.Writer.WritePropertyName("name");
                         context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetPropagatedSetLevelTags())
+                    {
+                        context.Writer.WritePropertyName("propagatedSetLevelTags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestPropagatedSetLevelTagsListValue in publicRequest.PropagatedSetLevelTags)
+                        {
+                                context.Writer.Write(publicRequestPropagatedSetLevelTagsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetS3AccessConfig())
+                    {
+                        context.Writer.WritePropertyName("s3AccessConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = S3AccessConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.S3AccessConfig, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
 
                     if(publicRequest.IsSetSseConfig())

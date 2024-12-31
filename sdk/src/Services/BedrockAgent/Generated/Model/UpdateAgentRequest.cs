@@ -35,17 +35,38 @@ namespace Amazon.BedrockAgent.Model
     /// </summary>
     public partial class UpdateAgentRequest : AmazonBedrockAgentRequest
     {
+        private AgentCollaboration _agentCollaboration;
         private string _agentId;
         private string _agentName;
         private string _agentResourceRoleArn;
         private string _customerEncryptionKeyArn;
+        private CustomOrchestration _customOrchestration;
         private string _description;
         private string _foundationModel;
         private GuardrailConfiguration _guardrailConfiguration;
         private int? _idleSessionTTLInSeconds;
         private string _instruction;
         private MemoryConfiguration _memoryConfiguration;
+        private OrchestrationType _orchestrationType;
         private PromptOverrideConfiguration _promptOverrideConfiguration;
+
+        /// <summary>
+        /// Gets and sets the property AgentCollaboration. 
+        /// <para>
+        /// The agent's collaboration role.
+        /// </para>
+        /// </summary>
+        public AgentCollaboration AgentCollaboration
+        {
+            get { return this._agentCollaboration; }
+            set { this._agentCollaboration = value; }
+        }
+
+        // Check to see if AgentCollaboration property is set
+        internal bool IsSetAgentCollaboration()
+        {
+            return this._agentCollaboration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AgentId. 
@@ -122,6 +143,24 @@ namespace Amazon.BedrockAgent.Model
         internal bool IsSetCustomerEncryptionKeyArn()
         {
             return this._customerEncryptionKeyArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomOrchestration. 
+        /// <para>
+        ///  Contains details of the custom orchestration configured for the agent. 
+        /// </para>
+        /// </summary>
+        public CustomOrchestration CustomOrchestration
+        {
+            get { return this._customOrchestration; }
+            set { this._customOrchestration = value; }
+        }
+
+        // Check to see if CustomOrchestration property is set
+        internal bool IsSetCustomOrchestration()
+        {
+            return this._customOrchestration != null;
         }
 
         /// <summary>
@@ -280,6 +319,25 @@ namespace Amazon.BedrockAgent.Model
         internal bool IsSetMemoryConfiguration()
         {
             return this._memoryConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OrchestrationType. 
+        /// <para>
+        ///  Specifies the type of orchestration strategy for the agent. This is set to <c>DEFAULT</c>
+        /// orchestration type, by default. 
+        /// </para>
+        /// </summary>
+        public OrchestrationType OrchestrationType
+        {
+            get { return this._orchestrationType; }
+            set { this._orchestrationType = value; }
+        }
+
+        // Check to see if OrchestrationType property is set
+        internal bool IsSetOrchestrationType()
+        {
+            return this._orchestrationType != null;
         }
 
         /// <summary>

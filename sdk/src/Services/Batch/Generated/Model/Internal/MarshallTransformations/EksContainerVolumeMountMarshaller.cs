@@ -66,6 +66,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ReadOnly.Value);
             }
 
+            if(requestObject.IsSetSubPath())
+            {
+                context.Writer.WritePropertyName("subPath");
+                context.Writer.Write(requestObject.SubPath);
+            }
+
         }
 
         /// <summary>

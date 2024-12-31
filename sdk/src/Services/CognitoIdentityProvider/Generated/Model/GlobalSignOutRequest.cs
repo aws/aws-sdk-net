@@ -60,7 +60,11 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// Other requests might be valid until your user's token expires.
+    /// Other requests might be valid until your user's token expires. This operation doesn't
+    /// clear the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html">managed
+    /// login</a> session cookie. To clear the session for a user who signed in with managed
+    /// login or the classic hosted UI, direct their browser session to the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/logout-endpoint.html">logout
+    /// endpoint</a>.
     /// </para>
     ///  
     /// <para>

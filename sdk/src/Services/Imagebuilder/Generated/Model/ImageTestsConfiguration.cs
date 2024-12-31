@@ -64,7 +64,7 @@ namespace Amazon.Imagebuilder.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The timeoutMinutes attribute is not currently active. This value is ignored.
+        /// The timeout attribute is not currently active. This value is ignored.
         /// </para>
         ///  </note>
         /// </summary>

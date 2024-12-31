@@ -120,6 +120,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.Sheets = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("StaticFiles", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<StaticFile, StaticFileUnmarshaller>(StaticFileUnmarshaller.Instance);
+                    unmarshalledObject.StaticFiles = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

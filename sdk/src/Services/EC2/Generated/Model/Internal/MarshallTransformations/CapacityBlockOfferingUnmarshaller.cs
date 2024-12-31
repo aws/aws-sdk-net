@@ -67,6 +67,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.CapacityBlockDurationHours = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("capacityBlockDurationMinutes", targetDepth))
+                    {
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
+                        unmarshalledObject.CapacityBlockDurationMinutes = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("capacityBlockOfferingId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

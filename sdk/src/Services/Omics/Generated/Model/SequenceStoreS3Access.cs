@@ -34,8 +34,27 @@ namespace Amazon.Omics.Model
     /// </summary>
     public partial class SequenceStoreS3Access
     {
+        private string _accessLogLocation;
         private string _s3AccessPointArn;
         private string _s3Uri;
+
+        /// <summary>
+        /// Gets and sets the property AccessLogLocation. 
+        /// <para>
+        /// Location of the access logs.
+        /// </para>
+        /// </summary>
+        public string AccessLogLocation
+        {
+            get { return this._accessLogLocation; }
+            set { this._accessLogLocation = value; }
+        }
+
+        // Check to see if AccessLogLocation property is set
+        internal bool IsSetAccessLogLocation()
+        {
+            return this._accessLogLocation != null;
+        }
 
         /// <summary>
         /// Gets and sets the property S3AccessPointArn. 

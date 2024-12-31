@@ -85,6 +85,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.LaunchTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("operator", targetDepth))
+                    {
+                        var unmarshaller = OperatorResponseUnmarshaller.Instance;
+                        unmarshalledObject.Operator = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("instanceOwnerId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

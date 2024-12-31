@@ -48,6 +48,7 @@ namespace Amazon.CustomerProfiles.Model
     public partial class PutIntegrationRequest : AmazonCustomerProfilesRequest
     {
         private string _domainName;
+        private List<string> _eventTriggerNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private FlowDefinition _flowDefinition;
         private string _objectTypeName;
         private Dictionary<string, string> _objectTypeNames = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
@@ -72,6 +73,25 @@ namespace Amazon.CustomerProfiles.Model
         internal bool IsSetDomainName()
         {
             return this._domainName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EventTriggerNames. 
+        /// <para>
+        /// A list of unique names for active event triggers associated with the integration.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<string> EventTriggerNames
+        {
+            get { return this._eventTriggerNames; }
+            set { this._eventTriggerNames = value; }
+        }
+
+        // Check to see if EventTriggerNames property is set
+        internal bool IsSetEventTriggerNames()
+        {
+            return this._eventTriggerNames != null && (this._eventTriggerNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

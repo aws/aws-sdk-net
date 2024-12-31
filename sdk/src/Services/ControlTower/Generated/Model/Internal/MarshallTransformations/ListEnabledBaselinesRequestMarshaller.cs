@@ -80,6 +80,12 @@ namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
 
+                    if(publicRequest.IsSetIncludeChildren())
+                    {
+                        context.Writer.WritePropertyName("includeChildren");
+                        context.Writer.Write(publicRequest.IncludeChildren.Value);
+                    }
+
                     if(publicRequest.IsSetMaxResults())
                     {
                         context.Writer.WritePropertyName("maxResults");

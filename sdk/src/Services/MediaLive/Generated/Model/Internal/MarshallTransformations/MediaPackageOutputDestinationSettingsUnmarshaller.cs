@@ -66,10 +66,22 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("channelGroup", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ChannelGroup = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("channelId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ChannelId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("channelName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ChannelName = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

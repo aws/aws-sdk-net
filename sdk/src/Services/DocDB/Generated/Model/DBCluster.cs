@@ -55,6 +55,7 @@ namespace Amazon.DocDB.Model
         private string _kmsKeyId;
         private DateTime? _latestRestorableTime;
         private string _masterUsername;
+        private ClusterMasterUserSecret _masterUserSecret;
         private bool? _multiAZ;
         private string _percentProgress;
         private int? _port;
@@ -455,6 +456,25 @@ namespace Amazon.DocDB.Model
         internal bool IsSetMasterUsername()
         {
             return this._masterUsername != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MasterUserSecret. 
+        /// <para>
+        /// The secret managed by Amazon DocumentDB in Amazon Web Services Secrets Manager for
+        /// the master user password.
+        /// </para>
+        /// </summary>
+        public ClusterMasterUserSecret MasterUserSecret
+        {
+            get { return this._masterUserSecret; }
+            set { this._masterUserSecret = value; }
+        }
+
+        // Check to see if MasterUserSecret property is set
+        internal bool IsSetMasterUserSecret()
+        {
+            return this._masterUserSecret != null;
         }
 
         /// <summary>

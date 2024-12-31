@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
-    /// Represents a package installed on an Image Builder image.
+    /// A software package that's installed on top of the base image to create a customized
+    /// image.
     /// </summary>
     public partial class ImagePackage
     {
@@ -40,7 +41,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property PackageName. 
         /// <para>
-        /// The name of the package as reported to the operating system package manager.
+        /// The name of the package that's reported to the operating system package manager.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -59,7 +60,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property PackageVersion. 
         /// <para>
-        /// The version of the package as reported to the operating system package manager.
+        /// The version of the package that's reported to the operating system package manager.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

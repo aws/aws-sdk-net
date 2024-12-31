@@ -66,6 +66,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("BaseInferenceComponentName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.BaseInferenceComponentName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ComputeResourceRequirements", targetDepth))
                 {
                     var unmarshaller = InferenceComponentComputeResourceRequirementsUnmarshaller.Instance;

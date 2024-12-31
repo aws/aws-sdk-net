@@ -35,7 +35,29 @@ namespace Amazon.BedrockAgent.Model
     /// </summary>
     public partial class WebCrawlerLimits
     {
+        private int? _maxPages;
         private int? _rateLimit;
+
+        /// <summary>
+        /// Gets and sets the property MaxPages. 
+        /// <para>
+        ///  The max number of web pages crawled from your source URLs, up to 25,000 pages. If
+        /// the web pages exceed this limit, the data source sync will fail and no web pages will
+        /// be ingested. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public int? MaxPages
+        {
+            get { return this._maxPages; }
+            set { this._maxPages = value; }
+        }
+
+        // Check to see if MaxPages property is set
+        internal bool IsSetMaxPages()
+        {
+            return this._maxPages.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property RateLimit. 

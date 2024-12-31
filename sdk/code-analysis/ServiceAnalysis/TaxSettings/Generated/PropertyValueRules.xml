@@ -23,6 +23,12 @@
     <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.TaxSettings.Model.GetTaxRegistrationDocumentResponse.PresignedS3Url</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^https.*\S.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.TaxSettings.Model.ListSupplementalTaxRegistrationsRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
@@ -35,6 +41,23 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TaxSettings.Model.ListSupplementalTaxRegistrationsResponse.NextToken</property>
+    <min>1</min>
+    <max>2000</max>
+    <pattern>^[-A-Za-z0-9_+\=\/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TaxSettings.Model.ListTaxExemptionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TaxSettings.Model.ListTaxExemptionsRequest.NextToken</property>
+    <min>1</min>
+    <max>2000</max>
+    <pattern>^[-A-Za-z0-9_+\=\/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TaxSettings.Model.ListTaxExemptionsResponse.NextToken</property>
     <min>1</min>
     <max>2000</max>
     <pattern>^[-A-Za-z0-9_+\=\/]+$</pattern>
@@ -58,6 +81,18 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TaxSettings.Model.PutSupplementalTaxRegistrationResponse.AuthorityId</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^[\s\S]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TaxSettings.Model.PutTaxExemptionRequest.ExemptionType</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^[\s\S]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TaxSettings.Model.PutTaxExemptionResponse.CaseId</property>
     <min>1</min>
     <max>200</max>
     <pattern>^[\s\S]*$</pattern>
@@ -126,6 +161,18 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TaxSettings.Model.Address.StateOrRegion</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>^(?!\s*$)[\s\S]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TaxSettings.Model.Authority.Country</property>
+    <min>2</min>
+    <max>2</max>
+    <pattern>^[a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TaxSettings.Model.Authority.State</property>
     <min>1</min>
     <max>50</max>
     <pattern>^(?!\s*$)[\s\S]+$</pattern>
@@ -215,6 +262,17 @@
     <min>8</min>
     <max>8</max>
     <pattern>^\d+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TaxSettings.Model.ExemptionCertificate.DocumentFile</property>
+    <min>1</min>
+    <max>4194304</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TaxSettings.Model.ExemptionCertificate.DocumentName</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>^([A-Za-z0-9-_.]+).(pdf|jpg|png)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TaxSettings.Model.IndiaAdditionalInfo.Pan</property>
@@ -317,7 +375,7 @@
   <property-value-rule>
     <property>Amazon.TaxSettings.Model.SupplementalTaxRegistration.RegistrationId</property>
     <min>1</min>
-    <max>20</max>
+    <max>200</max>
     <pattern>^(?!\s*$)[\s\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -329,7 +387,7 @@
   <property-value-rule>
     <property>Amazon.TaxSettings.Model.SupplementalTaxRegistrationEntry.RegistrationId</property>
     <min>1</min>
-    <max>20</max>
+    <max>200</max>
     <pattern>^(?!\s*$)[\s\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -338,6 +396,30 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TaxSettings.Model.TaxDocumentMetadata.TaxDocumentName</property>
+    <pattern>^[\s\S]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TaxSettings.Model.TaxExemptionDetails.HeritageObtainedParentEntity</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^[\s\S]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TaxSettings.Model.TaxExemptionDetails.HeritageObtainedReason</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^[\s\S]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TaxSettings.Model.TaxExemptionType.Description</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^[\s\S]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TaxSettings.Model.TaxExemptionType.DisplayName</property>
+    <min>0</min>
+    <max>50</max>
     <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -363,8 +445,17 @@
   <property-value-rule>
     <property>Amazon.TaxSettings.Model.TaxRegistration.RegistrationId</property>
     <min>1</min>
-    <max>20</max>
+    <max>200</max>
     <pattern>^(?!\s*$)[\s\S]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TaxSettings.Model.TaxRegistrationDocFile.FileContent</property>
+    <min>1</min>
+    <max>5242880</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TaxSettings.Model.TaxRegistrationDocFile.FileName</property>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TaxSettings.Model.TaxRegistrationEntry.CertifiedEmailId</property>
@@ -379,7 +470,7 @@
   <property-value-rule>
     <property>Amazon.TaxSettings.Model.TaxRegistrationEntry.RegistrationId</property>
     <min>1</min>
-    <max>20</max>
+    <max>200</max>
     <pattern>^(?!\s*$)[\s\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -395,7 +486,7 @@
   <property-value-rule>
     <property>Amazon.TaxSettings.Model.TaxRegistrationWithJurisdiction.RegistrationId</property>
     <min>1</min>
-    <max>20</max>
+    <max>200</max>
     <pattern>^(?!\s*$)[\s\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>

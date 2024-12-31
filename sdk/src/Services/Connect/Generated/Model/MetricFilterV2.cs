@@ -113,6 +113,18 @@ namespace Amazon.Connect.Model
         /// for the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#flows-outcome-historical">Flow
         /// outcome</a> metric in the <i>Amazon Connect Administrator Guide</i>.
         /// </para>
+        ///  
+        /// <para>
+        /// For valid values of the metric-level filter <c>BOT_CONVERSATION_OUTCOME_TYPE</c>,
+        /// see the description for the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/bot-metrics.html#bot-conversations-completed-metric">Bot
+        /// conversations completed</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For valid values of the metric-level filter <c>BOT_INTENT_OUTCOME_TYPE</c>, see the
+        /// description for the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/bot-metrics.html#bot-intents-completed-metric">Bot
+        /// intents completed</a> metric in the <i>Amazon Connect Administrator Guide</i>.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
         public List<string> MetricFilterValues

@@ -30,7 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// Specifies the event feedback type.
+    /// The feedback that your application submitted to an advanced security features event
+    /// log, as displayed in an <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminListUserAuthEvents.html">AdminListUserAuthEvents</a>
+    /// response.
     /// </summary>
     public partial class EventFeedbackType
     {
@@ -41,7 +43,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property FeedbackDate. 
         /// <para>
-        /// The event feedback date.
+        /// The date that you or your user submitted the feedback.
         /// </para>
         /// </summary>
         public DateTime? FeedbackDate
@@ -82,7 +84,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Provider. 
         /// <para>
-        /// The provider.
+        /// The submitter of the event feedback. For example, if you submit event feedback in
+        /// the Amazon Cognito console, this value is <c>Admin</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=131072)]

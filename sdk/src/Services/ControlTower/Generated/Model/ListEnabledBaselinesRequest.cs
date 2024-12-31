@@ -39,6 +39,7 @@ namespace Amazon.ControlTower.Model
     public partial class ListEnabledBaselinesRequest : AmazonControlTowerRequest
     {
         private EnabledBaselineFilter _filter;
+        private bool? _includeChildren;
         private int? _maxResults;
         private string _nextToken;
 
@@ -60,6 +61,25 @@ namespace Amazon.ControlTower.Model
         internal bool IsSetFilter()
         {
             return this._filter != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeChildren. 
+        /// <para>
+        /// A value that can be set to include the child enabled baselines in responses. The default
+        /// value is false.
+        /// </para>
+        /// </summary>
+        public bool? IncludeChildren
+        {
+            get { return this._includeChildren; }
+            set { this._includeChildren = value; }
+        }
+
+        // Check to see if IncludeChildren property is set
+        internal bool IsSetIncludeChildren()
+        {
+            return this._includeChildren.HasValue; 
         }
 
         /// <summary>

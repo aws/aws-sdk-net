@@ -56,6 +56,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
+                    if (context.TestExpression("groupId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.GroupId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("return", targetDepth))
+                    {
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
+                        response.Return = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 } 
             }
 

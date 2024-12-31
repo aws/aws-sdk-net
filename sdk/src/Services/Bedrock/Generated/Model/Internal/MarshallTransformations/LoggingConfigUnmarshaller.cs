@@ -96,6 +96,12 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                     unmarshalledObject.TextDataDeliveryEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("videoDataDeliveryEnabled", targetDepth))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.VideoDataDeliveryEnabled = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

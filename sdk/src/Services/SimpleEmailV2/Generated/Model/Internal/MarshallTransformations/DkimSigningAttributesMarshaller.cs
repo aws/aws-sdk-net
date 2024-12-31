@@ -48,6 +48,12 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetDomainSigningAttributesOrigin())
+            {
+                context.Writer.WritePropertyName("DomainSigningAttributesOrigin");
+                context.Writer.Write(requestObject.DomainSigningAttributesOrigin);
+            }
+
             if(requestObject.IsSetDomainSigningPrivateKey())
             {
                 context.Writer.WritePropertyName("DomainSigningPrivateKey");

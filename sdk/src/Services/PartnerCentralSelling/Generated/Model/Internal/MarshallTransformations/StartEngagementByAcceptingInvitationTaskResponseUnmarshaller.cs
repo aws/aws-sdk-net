@@ -76,6 +76,12 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
                     response.ReasonCode = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ResourceSnapshotJobId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ResourceSnapshotJobId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("StartTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;

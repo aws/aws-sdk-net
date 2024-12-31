@@ -48,7 +48,7 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         ///  
         /// <para>
-        /// For details about how to use the attributes, see <a href="https://docs.aws.amazon.com/adding-your-own-related-telemetry.html">How
+        /// For details about how to use the attributes, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/adding-your-own-related-telemetry.html">How
         /// to add related information to telemetry</a> in the <i>CloudWatch User Guide</i>.
         /// </para>
         /// </summary>
@@ -79,7 +79,7 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         ///  
         /// <para>
-        /// For details about how to use the key attributes to specify an entity, see <a href="https://docs.aws.amazon.com/adding-your-own-related-telemetry.html">How
+        /// For details about how to use the key attributes to specify an entity, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/adding-your-own-related-telemetry.html">How
         /// to add related information to telemetry</a> in the <i>CloudWatch User Guide</i>.
         /// </para>
         /// </summary>

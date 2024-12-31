@@ -72,6 +72,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     writer.Validate = false;
                     writer.WriteObjectStart();
                     var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetConcurrentJobs())
+                    {
+                        context.Writer.WritePropertyName("concurrentJobs");
+                        context.Writer.Write(publicRequest.ConcurrentJobs.Value);
+                    }
+
                     if(publicRequest.IsSetDescription())
                     {
                         context.Writer.WritePropertyName("description");

@@ -78,6 +78,18 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                     unmarshalledObject.EndOffset = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("mediaId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MediaId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("mediaMimeType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MediaMimeType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("snippetExcerpt", targetDepth))
                 {
                     var unmarshaller = SnippetExcerptUnmarshaller.Instance;

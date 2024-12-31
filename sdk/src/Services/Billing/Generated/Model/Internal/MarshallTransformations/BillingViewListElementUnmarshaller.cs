@@ -78,6 +78,12 @@ namespace Amazon.Billing.Model.Internal.MarshallTransformations
                     unmarshalledObject.BillingViewType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("description", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

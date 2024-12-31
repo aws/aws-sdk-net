@@ -72,6 +72,17 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                     writer.Validate = false;
                     writer.WriteObjectStart();
                     var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBrowserExtensionConfiguration())
+                    {
+                        context.Writer.WritePropertyName("browserExtensionConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = BrowserExtensionConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.BrowserExtensionConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
                     if(publicRequest.IsSetClientToken())
                     {
                         context.Writer.WritePropertyName("clientToken");
@@ -83,6 +94,17 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                         context.Writer.WritePropertyName("clientToken");
                         context.Writer.Write(Guid.NewGuid().ToString());
                     }
+                    if(publicRequest.IsSetCustomizationConfiguration())
+                    {
+                        context.Writer.WritePropertyName("customizationConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CustomizationConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.CustomizationConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
                     if(publicRequest.IsSetIdentityProviderConfiguration())
                     {
                         context.Writer.WritePropertyName("identityProviderConfiguration");

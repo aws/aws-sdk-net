@@ -38,6 +38,7 @@ namespace Amazon.BedrockRuntime.Model
         private ImageBlock _image;
         private Amazon.Runtime.Documents.Document _json;
         private string _text;
+        private VideoBlock _video;
 
         /// <summary>
         /// Gets and sets the property Document. 
@@ -114,6 +115,24 @@ namespace Amazon.BedrockRuntime.Model
         internal bool IsSetText()
         {
             return this._text != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Video. 
+        /// <para>
+        /// A tool result that is video.
+        /// </para>
+        /// </summary>
+        public VideoBlock Video
+        {
+            get { return this._video; }
+            set { this._video = value; }
+        }
+
+        // Check to see if Video property is set
+        internal bool IsSetVideo()
+        {
+            return this._video != null;
         }
 
     }

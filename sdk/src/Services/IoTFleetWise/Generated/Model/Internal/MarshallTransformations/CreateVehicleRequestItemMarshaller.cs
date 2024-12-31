@@ -80,6 +80,22 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ModelManifestArn);
             }
 
+            if(requestObject.IsSetStateTemplates())
+            {
+                context.Writer.WritePropertyName("stateTemplates");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectStateTemplatesListValue in requestObject.StateTemplates)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = StateTemplateAssociationMarshaller.Instance;
+                    marshaller.Marshall(requestObjectStateTemplatesListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetTags())
             {
                 context.Writer.WritePropertyName("tags");

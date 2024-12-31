@@ -72,6 +72,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("concurrentJobs", targetDepth))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.ConcurrentJobs = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("createdAt", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
@@ -112,6 +118,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = ReservationPlanUnmarshaller.Instance;
                     unmarshalledObject.ReservationPlan = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("serviceOverrides", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ServiceOverride, ServiceOverrideUnmarshaller>(ServiceOverrideUnmarshaller.Instance);
+                    unmarshalledObject.ServiceOverrides = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("status", targetDepth))

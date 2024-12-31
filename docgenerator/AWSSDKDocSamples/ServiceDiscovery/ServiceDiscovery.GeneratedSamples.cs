@@ -118,6 +118,23 @@ namespace AWSSDKDocSamples.Amazon.ServiceDiscovery.Generated
             #endregion
         }
 
+        public void ServiceDiscoveryDeleteServiceAttributes()
+        {
+            #region example-delete-service-attributes-1587416462902
+
+            var client = new AmazonServiceDiscoveryClient();
+            var response = client.DeleteServiceAttributes(new DeleteServiceAttributesRequest 
+            {
+                Attributes = new List<string> {
+                    "port"
+                },
+                ServiceId = "srv-e4anhexample0004"
+            });
+
+
+            #endregion
+        }
+
         public void ServiceDiscoveryDeregisterInstance()
         {
             #region example-deregister-a-service-instance-1587416305738
@@ -240,6 +257,21 @@ namespace AWSSDKDocSamples.Amazon.ServiceDiscovery.Generated
             });
 
             Service service = response.Service;
+
+            #endregion
+        }
+
+        public void ServiceDiscoveryGetServiceAttributes()
+        {
+            #region get-service-attributes-example-1590117234294
+
+            var client = new AmazonServiceDiscoveryClient();
+            var response = client.GetServiceAttributes(new GetServiceAttributesRequest 
+            {
+                ServiceId = "srv-e4anhexample0004"
+            });
+
+            ServiceAttributes serviceAttributes = response.ServiceAttributes;
 
             #endregion
         }
@@ -423,7 +455,7 @@ namespace AWSSDKDocSamples.Amazon.ServiceDiscovery.Generated
 
         public void ServiceDiscoveryUpdatePrivateDnsNamespace()
         {
-            #region to-update-a-private-dns-namespace-1712868389604
+            #region to-update-a-public-dns-namespace-1712868389604
 
             var client = new AmazonServiceDiscoveryClient();
             var response = client.UpdatePrivateDnsNamespace(new UpdatePrivateDnsNamespaceRequest 
@@ -440,7 +472,7 @@ namespace AWSSDKDocSamples.Amazon.ServiceDiscovery.Generated
 
         public void ServiceDiscoveryUpdatePrivateDnsNamespace()
         {
-            #region to-update-a-public-dns-namespace-1712868389604
+            #region to-update-a-private-dns-namespace-1712868389604
 
             var client = new AmazonServiceDiscoveryClient();
             var response = client.UpdatePrivateDnsNamespace(new UpdatePrivateDnsNamespaceRequest 
@@ -479,6 +511,23 @@ namespace AWSSDKDocSamples.Amazon.ServiceDiscovery.Generated
             });
 
             string operationId = response.OperationId;
+
+            #endregion
+        }
+
+        public void ServiceDiscoveryUpdateServiceAttributes()
+        {
+            #region update-service-attributes-example-1590117830880
+
+            var client = new AmazonServiceDiscoveryClient();
+            var response = client.UpdateServiceAttributes(new UpdateServiceAttributesRequest 
+            {
+                Attributes = new Dictionary<string, string> {
+                    { "port", "80" }
+                },
+                ServiceId = "srv-e4anhexample0004"
+            });
+
 
             #endregion
         }
