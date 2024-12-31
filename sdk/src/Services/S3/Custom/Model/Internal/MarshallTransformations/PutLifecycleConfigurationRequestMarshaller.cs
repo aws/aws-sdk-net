@@ -124,7 +124,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                         xmlWriter.WriteStartElement("NoncurrentVersionExpiration");
                                         if (noncurrentVersionExpiration.IsSetNewerNoncurrentVersions())
                                         {
-                                            xmlWriter.WriteElementString("NewerNoncurrentVersions", S3Transforms.ToXmlStringValue(noncurrentVersionExpiration.NewerNoncurrentVersions));
+                                            xmlWriter.WriteElementString("NewerNoncurrentVersions", S3Transforms.ToXmlStringValue(noncurrentVersionExpiration.NewerNoncurrentVersions.Value));
                                         }
                                         if (noncurrentVersionExpiration.IsSetNoncurrentDays())
                                         {
