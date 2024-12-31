@@ -1,9 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
-    <TargetFramework>net472</TargetFramework>
-    <AssemblyName>AWSSDK.Extensions.CrtIntegration</AssemblyName>
-    <PackageId>AWSSDK.Extensions.CrtIntegration</PackageId>
+    <TargetFrameworks>net472</TargetFrameworks>
+    <AssemblyName>BedrockMEAITests</AssemblyName>
+    <PackageId>BedrockMEAITests</PackageId>
+
     <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
@@ -12,33 +12,24 @@
     <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
     <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
     <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <LangVersion>Latest</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="**/obj/**" />
-  </ItemGroup>
-  
-  <Choose>
-    <When Condition=" '$(AWSKeyFile)' == '' ">
-      <PropertyGroup>
-        <AssemblyOriginatorKeyFile>..\..\..\sdk\awssdk.dll.snk</AssemblyOriginatorKeyFile>
-      </PropertyGroup>
-    </When>
-    <Otherwise>
-      <PropertyGroup>
-        <AssemblyOriginatorKeyFile>$(AWSKeyFile)</AssemblyOriginatorKeyFile>
-      </PropertyGroup>
-    </Otherwise>
-  </Choose>
-
-  <ItemGroup>
-    <PackageReference Include="AWSCRT-AUTH" Version="0.4.4" />
-    <PackageReference Include="AWSCRT-CHECKSUMS" Version="0.4.4" />
+    <PackageReference Include="Microsoft.Extensions.AI.Abstractions" Version="9.0.1-preview.1.24570.5" />
+    <PackageReference Include="xunit" Version="2.9.2" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.8.2" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\sdk\src\Core\AWSSDK.Core.NetFramework.csproj" />
+    <ProjectReference Include="../../../sdk/src/Core/AWSSDK.Core.NetFramework.csproj" />
+    <ProjectReference Include="../../src/AWSSDK.Extensions.Bedrock.MEAI/AWSSDK.Extensions.Bedrock.MEAI.NetFramework.csproj" />
+    <ProjectReference Include="../../../sdk/test/UnitTests/Custom/AWSSDK.UnitTestUtilities.NetFramework.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.11.1" />
   </ItemGroup>
 </Project>

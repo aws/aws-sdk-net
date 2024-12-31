@@ -1,9 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFramework>net472</TargetFramework>
-    <AssemblyName>AWSSDK.Extensions.CrtIntegration</AssemblyName>
-    <PackageId>AWSSDK.Extensions.CrtIntegration</PackageId>
+    <AssemblyName>AWSSDK.Extensions.Bedrock.MEAI</AssemblyName>
+    <PackageId>AWSSDK.Extensions.Bedrock.MEAI</PackageId>
+
     <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
@@ -13,9 +13,12 @@
     <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
     <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    
+    <LangVersion>Latest</LangVersion>
+    <Nullable>enable</Nullable>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
-
+  
   <ItemGroup>
     <Compile Remove="**/obj/**" />
   </ItemGroup>
@@ -32,13 +35,13 @@
       </PropertyGroup>
     </Otherwise>
   </Choose>
-
+  
   <ItemGroup>
-    <PackageReference Include="AWSCRT-AUTH" Version="0.4.4" />
-    <PackageReference Include="AWSCRT-CHECKSUMS" Version="0.4.4" />
+    <PackageReference Include="Microsoft.Extensions.AI.Abstractions" Version="9.0.1-preview.1.24570.5" />
   </ItemGroup>
-
+  
   <ItemGroup>
-    <ProjectReference Include="..\..\..\sdk\src\Core\AWSSDK.Core.NetFramework.csproj" />
+    <ProjectReference Include="../../../sdk/src/Core/AWSSDK.Core.NetFramework.csproj" />
+    <ProjectReference Include="../../../sdk/src/Services/BedrockRuntime/AWSSDK.BedrockRuntime.NetFramework.csproj" />
   </ItemGroup>
 </Project>
