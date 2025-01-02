@@ -174,7 +174,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 request.Headers[HeaderKeys.TransferEncodingHeader] = "chunked";
             }
 
-            request.DisablePayloadSigning = true;
+            request.UnsignedPayload = true;
 
             if (!writeGetObjectResponseRequest.IsSetContentType())
                 request.Headers["x-amz-fwd-header-Content-Type"] = "binary/octet-stream";

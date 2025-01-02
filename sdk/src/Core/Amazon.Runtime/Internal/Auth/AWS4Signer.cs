@@ -499,7 +499,7 @@ namespace Amazon.Runtime.Internal.Auth
         public static string SetRequestBodyHash(IRequest request, bool signPayload, string chunkedBodyHash, int signatureLength)
         {
             // If unsigned payload, set the appropriate magic string in the header and return it
-            if (request.DisablePayloadSigning != null ? request.DisablePayloadSigning.Value : !signPayload)
+            if (request.UnsignedPayload || request.DisablePayloadSigning.GetValueOrDefault() || !signPayload)
             {
                 if (request.TrailingHeaders?.Count > 0)
                 {
