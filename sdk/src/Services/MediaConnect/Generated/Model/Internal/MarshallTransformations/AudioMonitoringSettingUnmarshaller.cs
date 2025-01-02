@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for MonitoringConfig Object
+    /// Response Unmarshaller for AudioMonitoringSetting Object
     /// </summary>  
-    public class MonitoringConfigUnmarshaller : IUnmarshaller<MonitoringConfig, XmlUnmarshallerContext>, IUnmarshaller<MonitoringConfig, JsonUnmarshallerContext>
+    public class AudioMonitoringSettingUnmarshaller : IUnmarshaller<AudioMonitoringSetting, XmlUnmarshallerContext>, IUnmarshaller<AudioMonitoringSetting, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        MonitoringConfig IUnmarshaller<MonitoringConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AudioMonitoringSetting IUnmarshaller<AudioMonitoringSetting, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public MonitoringConfig Unmarshall(JsonUnmarshallerContext context)
+        public AudioMonitoringSetting Unmarshall(JsonUnmarshallerContext context)
         {
-            MonitoringConfig unmarshalledObject = new MonitoringConfig();
+            AudioMonitoringSetting unmarshalledObject = new AudioMonitoringSetting();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,28 +66,10 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("audioMonitoringSettings", targetDepth))
+                if (context.TestExpression("silentAudio", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AudioMonitoringSetting, AudioMonitoringSettingUnmarshaller>(AudioMonitoringSettingUnmarshaller.Instance);
-                    unmarshalledObject.AudioMonitoringSettings = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("contentQualityAnalysisState", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ContentQualityAnalysisState = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("thumbnailState", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ThumbnailState = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("videoMonitoringSettings", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<VideoMonitoringSetting, VideoMonitoringSettingUnmarshaller>(VideoMonitoringSettingUnmarshaller.Instance);
-                    unmarshalledObject.VideoMonitoringSettings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = SilentAudioUnmarshaller.Instance;
+                    unmarshalledObject.SilentAudio = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -95,12 +77,12 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
         }
 
 
-        private static MonitoringConfigUnmarshaller _instance = new MonitoringConfigUnmarshaller();        
+        private static AudioMonitoringSettingUnmarshaller _instance = new AudioMonitoringSettingUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static MonitoringConfigUnmarshaller Instance
+        public static AudioMonitoringSettingUnmarshaller Instance
         {
             get
             {

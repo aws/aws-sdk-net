@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for MonitoringConfig Object
+    /// Response Unmarshaller for FrozenFrames Object
     /// </summary>  
-    public class MonitoringConfigUnmarshaller : IUnmarshaller<MonitoringConfig, XmlUnmarshallerContext>, IUnmarshaller<MonitoringConfig, JsonUnmarshallerContext>
+    public class FrozenFramesUnmarshaller : IUnmarshaller<FrozenFrames, XmlUnmarshallerContext>, IUnmarshaller<FrozenFrames, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        MonitoringConfig IUnmarshaller<MonitoringConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        FrozenFrames IUnmarshaller<FrozenFrames, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public MonitoringConfig Unmarshall(JsonUnmarshallerContext context)
+        public FrozenFrames Unmarshall(JsonUnmarshallerContext context)
         {
-            MonitoringConfig unmarshalledObject = new MonitoringConfig();
+            FrozenFrames unmarshalledObject = new FrozenFrames();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,28 +66,16 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("audioMonitoringSettings", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<AudioMonitoringSetting, AudioMonitoringSettingUnmarshaller>(AudioMonitoringSettingUnmarshaller.Instance);
-                    unmarshalledObject.AudioMonitoringSettings = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("contentQualityAnalysisState", targetDepth))
+                if (context.TestExpression("state", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ContentQualityAnalysisState = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.State = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("thumbnailState", targetDepth))
+                if (context.TestExpression("thresholdSeconds", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ThumbnailState = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("videoMonitoringSettings", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<VideoMonitoringSetting, VideoMonitoringSettingUnmarshaller>(VideoMonitoringSettingUnmarshaller.Instance);
-                    unmarshalledObject.VideoMonitoringSettings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.ThresholdSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -95,12 +83,12 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
         }
 
 
-        private static MonitoringConfigUnmarshaller _instance = new MonitoringConfigUnmarshaller();        
+        private static FrozenFramesUnmarshaller _instance = new FrozenFramesUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static MonitoringConfigUnmarshaller Instance
+        public static FrozenFramesUnmarshaller Instance
         {
             get
             {

@@ -48,10 +48,48 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAudioMonitoringSettings())
+            {
+                context.Writer.WritePropertyName("audioMonitoringSettings");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectAudioMonitoringSettingsListValue in requestObject.AudioMonitoringSettings)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AudioMonitoringSettingMarshaller.Instance;
+                    marshaller.Marshall(requestObjectAudioMonitoringSettingsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetContentQualityAnalysisState())
+            {
+                context.Writer.WritePropertyName("contentQualityAnalysisState");
+                context.Writer.Write(requestObject.ContentQualityAnalysisState);
+            }
+
             if(requestObject.IsSetThumbnailState())
             {
                 context.Writer.WritePropertyName("thumbnailState");
                 context.Writer.Write(requestObject.ThumbnailState);
+            }
+
+            if(requestObject.IsSetVideoMonitoringSettings())
+            {
+                context.Writer.WritePropertyName("videoMonitoringSettings");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectVideoMonitoringSettingsListValue in requestObject.VideoMonitoringSettings)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = VideoMonitoringSettingMarshaller.Instance;
+                    marshaller.Marshall(requestObjectVideoMonitoringSettingsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
             }
 
         }
