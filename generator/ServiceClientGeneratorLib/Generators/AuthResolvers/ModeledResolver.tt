@@ -76,7 +76,7 @@ namespace <#=this.Config.Namespace#>.Internal
 <# if (GeneratorHelpers.DetermineSignerOverride(this.Config.ServiceModel.SignatureVersion) != null) { #>
 
         /// <inheritdoc/>
-        protected override AbstractAWSSigner GetSigner(IAuthScheme<BaseIdentity> scheme)
+        protected override ISigner GetSigner(IAuthScheme<BaseIdentity> scheme)
         {
             return new <#=GeneratorHelpers.DetermineSignerOverride(this.Config.ServiceModel.SignatureVersion)#>();
         }

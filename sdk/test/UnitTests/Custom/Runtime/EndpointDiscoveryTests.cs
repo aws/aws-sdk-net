@@ -17,6 +17,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
+using Moq;
 using Amazon;
 using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.Model;
@@ -336,7 +337,10 @@ namespace AWSSDK.UnitTests
 
                 // Jump in the future so the endpoint we just cached will be evicted the next time we do discovery
                 SetUtcNowSource(() => currentDateTime.AddDays(1));
-                executionContext.RequestContext.ImmutableCredentials = new ImmutableCredentials("AWS_ACCESS_KEY_ID" + "2", "test2", "test2");
+                
+                var awsCredentials = new Mock<AWSCredentials>();
+                awsCredentials.Setup(e => e.GetCredentials()).Returns(new ImmutableCredentials("AWS_ACCESS_KEY_ID" + "2", "test2", "test2"));
+                executionContext.RequestContext.Identity = awsCredentials.Object;
                 EndpointDiscoveryHandler.DiscoverEndpoints(executionContext.RequestContext, false);
 
                 // First endpoint should be evicted, leaving us with only the second one
@@ -369,14 +373,16 @@ namespace AWSSDK.UnitTests
             options.RequestMarshaller = new CreateTableRequestMarshaller();
             options.EndpointDiscoveryMarshaller = new TestEndpointDiscoveryMarshaller(required, identifiers);
             client.SetOptionsEndpointOperation(options);
-            var credentials = new ImmutableCredentials(AWS_ACCESS_KEY_ID, "test", "test");
 
+            var awsCredentials = new Mock<AWSCredentials>();
+            awsCredentials.Setup(e => e.GetCredentials()).Returns(new ImmutableCredentials(AWS_ACCESS_KEY_ID, "test", "test"));
+            
             var executionContext = new ExecutionContext(
                 new RequestContext(true, new NullSigner())
                 {
                     ClientConfig = config,
                     Request = options.RequestMarshaller.Marshall(request),
-                    ImmutableCredentials = credentials,
+                    Identity = awsCredentials.Object,
                     OriginalRequest = request,
                     Options = options
                 },

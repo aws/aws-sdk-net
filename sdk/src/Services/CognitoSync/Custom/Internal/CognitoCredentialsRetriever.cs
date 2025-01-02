@@ -34,39 +34,41 @@ using Amazon.Util.Internal;
 namespace Amazon.CognitoSync.Internal
 {
     /// <summary>
-    /// This handler overrides the base CredentialsRetriever which is removed from the pipeline. When
-    /// the service client is using the CognitoAWSCredentials credentials object it makes sure that all
+    /// When the service client is using the CognitoAWSCredentials credentials object it makes sure that all
     /// CognitoSync calls have the latest identity id and identity pool id.
     /// </summary>
 #if NET8_0_OR_GREATER
     [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("Amazon CognitoSync has not been updated to support Native AOT compilations.")]
 #endif
-    public class CognitoCredentialsRetriever : CredentialsRetriever
+    public class CognitoCredentialsRetriever : PipelineHandler
     {
         /// <summary>
-        /// Construct an instance of CognitoCredentialsRetriever
+        /// Calls pre invoke logic before calling the next handler 
+        /// in the pipeline.
         /// </summary>
-        public CognitoCredentialsRetriever()
-            : base()
-        { }
+        /// <param name="executionContext">The execution context which contains both the
+        /// request and response context.</param>
+        public override void InvokeSync(IExecutionContext executionContext)
+        {
+            PreInvoke(executionContext);
+            base.InvokeSync(executionContext);
+        }
 
-#if BCL
         /// <summary>
         /// Custom pipeline handler
         /// </summary>
         /// <param name="executionContext"></param>
-        protected override void PreInvoke(IExecutionContext executionContext)
+        protected void PreInvoke(IExecutionContext executionContext)
         {
-            base.PreInvoke(executionContext);
-
             // Only configure IdentityPoolId and IdentityId when using CognitoAWSCredentials
             var cognitoCredentials = executionContext.RequestContext.Identity as CognitoAWSCredentials;
             if (cognitoCredentials != null)
             {
-                SetIdentity(executionContext, cognitoCredentials.GetIdentityId(), cognitoCredentials.IdentityPoolId);       
+                SetIdentity(executionContext, cognitoCredentials.GetIdentityId(), cognitoCredentials.IdentityPoolId);
             }
         }
-#elif AWS_ASYNC_API
+
+#if AWS_ASYNC_API
         /// <summary>
         /// Continue the request pipeline and copy over the cognito identity id.
         /// </summary>
