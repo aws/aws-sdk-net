@@ -36,12 +36,15 @@ namespace Amazon.GameLift.Model
     /// 
     ///  
     /// <para>
-    ///  <b>Used with:</b> <a>CreateContainerGroupDefinition</a> 
+    ///  <b>Used with:</b> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerGroupDefinition.html">CreateContainerGroupDefinition</a>
+    /// 
     /// </para>
     ///  
     /// <para>
-    ///  <b>Returned by:</b> <a>DescribeContainerGroupDefinition</a>, <a>ListContainerGroupDefinitions</a>,
-    /// <a>UpdateContainerGroupDefinition</a> 
+    ///  <b>Returned by:</b> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeContainerGroupDefinition.html">DescribeContainerGroupDefinition</a>,
+    /// <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListContainerGroupDefinitions.html">ListContainerGroupDefinitions</a>,
+    /// <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateContainerGroupDefinition.html">UpdateContainerGroupDefinition</a>
+    /// 
     /// </para>
     /// </summary>
     public partial class ContainerGroupDefinition
@@ -236,13 +239,13 @@ namespace Amazon.GameLift.Model
         ///  <ul> <li> 
         /// <para>
         /// An internal issue prevented Amazon GameLift from creating the container group definition
-        /// resource. Delete the failed resource and call <a>CreateContainerGroupDefinition</a>again.
+        /// resource. Delete the failed resource and call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerGroupDefinition.html">CreateContainerGroupDefinition</a>again.
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// An access-denied message means that you don't have permissions to access the container
-        /// image on ECR. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-iam-policy-examples.html">
+        /// image on ECR. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-iam-policy-examples.html.html">
         /// IAM permission examples</a> for help setting up required IAM permissions for Amazon
         /// GameLift.
         /// </para>

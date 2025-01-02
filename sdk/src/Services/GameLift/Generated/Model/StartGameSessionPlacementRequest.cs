@@ -89,7 +89,8 @@ namespace Amazon.GameLift.Model
     /// To track the status of a placement request, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameSessionPlacement.html">DescribeGameSessionPlacement</a>
     /// and check the request's status. If the status is <c>FULFILLED</c>, a new game session
     /// has been created and a game session ARN and Region are referenced. If the placement
-    /// request times out, submit a new request to the same queue or a different queue.
+    /// request times out, you can resubmit the request or retry it with a different queue.
+    /// 
     /// </para>
     /// </summary>
     public partial class StartGameSessionPlacementRequest : AmazonGameLiftRequest

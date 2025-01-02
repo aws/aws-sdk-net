@@ -50,11 +50,11 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>GENERATED</b> -- Generate a TLS/SSL certificate for this fleet.
+        ///  <b>GENERATED</b> - Generate a TLS/SSL certificate for this fleet.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>DISABLED</b> -- (default) Do not generate a TLS/SSL certificate for this fleet.
+        ///  <b>DISABLED</b> - (default) Do not generate a TLS/SSL certificate for this fleet.
         /// 
         /// </para>
         ///  </li> </ul>

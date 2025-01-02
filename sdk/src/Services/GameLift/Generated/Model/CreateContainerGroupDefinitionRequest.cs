@@ -34,7 +34,8 @@ namespace Amazon.GameLift.Model
     /// Creates a <c>ContainerGroupDefinition</c> that describes a set of containers for hosting
     /// your game server with Amazon GameLift managed containers hosting. An Amazon GameLift
     /// container group is similar to a container task or pod. Use container group definitions
-    /// when you create a container fleet with <a>CreateContainerFleet</a>. 
+    /// when you create a container fleet with <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerFleet.html">CreateContainerFleet</a>.
+    /// 
     /// 
     ///  
     /// <para>
@@ -188,8 +189,8 @@ namespace Amazon.GameLift.Model
     /// <para>
     /// If successful, this request creates a <c>ContainerGroupDefinition</c> resource and
     /// assigns a unique ARN value. You can update most properties of a container group definition
-    /// by calling <a>UpdateContainerGroupDefinition</a>, and optionally save the update as
-    /// a new version.
+    /// by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateContainerGroupDefinition.html">UpdateContainerGroupDefinition</a>,
+    /// and optionally save the update as a new version.
     /// </para>
     /// </summary>
     public partial class CreateContainerGroupDefinitionRequest : AmazonGameLiftRequest

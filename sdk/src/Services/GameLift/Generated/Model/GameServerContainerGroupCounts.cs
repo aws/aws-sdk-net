@@ -39,7 +39,8 @@ namespace Amazon.GameLift.Model
     /// 
     ///  
     /// <para>
-    ///  <b>Returned by:</b> <a>DescribeFleetCapacity</a>, <a>DescribeFleetLocationCapacity</a>
+    ///  <b>Returned by:</b> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetCapacity.html">https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetCapacity.html</a>,
+    /// <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetLocationCapacity.html">https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetLocationCapacity.html</a>
     /// 
     /// </para>
     /// </summary>

@@ -34,7 +34,8 @@ namespace Amazon.GameLift.Model
     /// 
     ///  
     /// <para>
-    ///  <b>Returned by:</b> <a>DescribeCompute</a> 
+    ///  <b>Returned by:</b> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeCompute.html">DescribeCompute</a>
+    /// 
     /// </para>
     /// </summary>
     public partial class ContainerAttribute

@@ -847,46 +847,43 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Creates an Amazon GameLift build resource for your game server software and stores
-        /// the software for deployment to hosting resources. Combine game server binaries and
-        /// dependencies into a single .zip file 
+        /// Creates a new Amazon GameLift build resource for your game server binary files. Combine
+        /// game server binaries into a zip file for use with Amazon GameLift. 
         /// 
         ///  <important> 
         /// <para>
-        /// Use the CLI command <b> <a href="https://docs.aws.amazon.com/cli/latest/reference/gamelift/upload-build.html">upload-build</a>
-        /// </b> to quickly and simply create a new build and upload your game build .zip file
-        /// to Amazon GameLift Amazon S3. This helper command eliminates the need to explicitly
-        /// manage access permissions.
+        /// When setting up a new game build for Amazon GameLift, we recommend using the CLI command
+        /// <b> <a href="https://docs.aws.amazon.com/cli/latest/reference/gamelift/upload-build.html">upload-build</a>
+        /// </b>. This helper command combines two tasks: (1) it uploads your build files from
+        /// a file directory to an Amazon GameLift Amazon S3 location, and (2) it creates a new
+        /// build resource.
         /// </para>
         ///  </important> 
         /// <para>
-        /// Alternatively, use the <c>CreateBuild</c> action for the following scenarios:
+        /// You can use the <c>CreateBuild</c> operation in the following scenarios:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You want to create a build and upload a game build zip file from in an Amazon S3 location
-        /// that you control. In this scenario, you need to give Amazon GameLift permission to
-        /// access to the Amazon S3 bucket. With permission in place, call <c>CreateBuild</c>
-        /// and specify a build name, the build's runtime operating system, and the Amazon S3
-        /// storage location where the build file is stored.
+        /// Create a new game build with build files that are in an Amazon S3 location under an
+        /// Amazon Web Services account that you control. To use this option, you give Amazon
+        /// GameLift access to the Amazon S3 bucket. With permissions in place, specify a build
+        /// name, operating system, and the Amazon S3 storage location of your game build.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You want to create a build and upload a local game build zip file to an Amazon S3
-        /// location that's controlled by Amazon GameLift. (See the <c>upload-build</c> CLI command
-        /// for this scenario.) In this scenario, you need to request temporary access credentials
-        /// to the Amazon GameLift Amazon S3 location. Specify a build name and the build's runtime
-        /// operating system. The response provides an Amazon S3 location and a set of temporary
-        /// access credentials. Use the credentials to upload your build files to the specified
-        /// Amazon S3 location (see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UploadingObjects.html">Uploading
-        /// Objects</a> in the <i>Amazon S3 Developer Guide</i>). You can't update build files
-        /// after uploading them to Amazon GameLift Amazon S3.
+        /// Upload your build files to a Amazon GameLift Amazon S3 location. To use this option,
+        /// specify a build name and operating system. This operation creates a new build resource
+        /// and also returns an Amazon S3 location with temporary access credentials. Use the
+        /// credentials to manually upload your build files to the specified Amazon S3 location.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UploadingObjects.html">Uploading
+        /// Objects</a> in the <i>Amazon S3 Developer Guide</i>. After you upload build files
+        /// to the Amazon GameLift Amazon S3 location, you can't update them. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If successful, this action creates a new build resource with a unique build ID and
-        /// places it in <c>INITIALIZED</c> status. When the build reaches <c>READY</c> status,
-        /// you can create fleets with it.
+        /// If successful, this operation creates a new build resource with a unique build ID
+        /// and places it in <c>INITIALIZED</c> status. A build must be in <c>READY</c> status
+        /// before you can create fleets with it.
         /// </para>
         ///  
         /// <para>
@@ -942,46 +939,43 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Creates an Amazon GameLift build resource for your game server software and stores
-        /// the software for deployment to hosting resources. Combine game server binaries and
-        /// dependencies into a single .zip file 
+        /// Creates a new Amazon GameLift build resource for your game server binary files. Combine
+        /// game server binaries into a zip file for use with Amazon GameLift. 
         /// 
         ///  <important> 
         /// <para>
-        /// Use the CLI command <b> <a href="https://docs.aws.amazon.com/cli/latest/reference/gamelift/upload-build.html">upload-build</a>
-        /// </b> to quickly and simply create a new build and upload your game build .zip file
-        /// to Amazon GameLift Amazon S3. This helper command eliminates the need to explicitly
-        /// manage access permissions.
+        /// When setting up a new game build for Amazon GameLift, we recommend using the CLI command
+        /// <b> <a href="https://docs.aws.amazon.com/cli/latest/reference/gamelift/upload-build.html">upload-build</a>
+        /// </b>. This helper command combines two tasks: (1) it uploads your build files from
+        /// a file directory to an Amazon GameLift Amazon S3 location, and (2) it creates a new
+        /// build resource.
         /// </para>
         ///  </important> 
         /// <para>
-        /// Alternatively, use the <c>CreateBuild</c> action for the following scenarios:
+        /// You can use the <c>CreateBuild</c> operation in the following scenarios:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You want to create a build and upload a game build zip file from in an Amazon S3 location
-        /// that you control. In this scenario, you need to give Amazon GameLift permission to
-        /// access to the Amazon S3 bucket. With permission in place, call <c>CreateBuild</c>
-        /// and specify a build name, the build's runtime operating system, and the Amazon S3
-        /// storage location where the build file is stored.
+        /// Create a new game build with build files that are in an Amazon S3 location under an
+        /// Amazon Web Services account that you control. To use this option, you give Amazon
+        /// GameLift access to the Amazon S3 bucket. With permissions in place, specify a build
+        /// name, operating system, and the Amazon S3 storage location of your game build.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You want to create a build and upload a local game build zip file to an Amazon S3
-        /// location that's controlled by Amazon GameLift. (See the <c>upload-build</c> CLI command
-        /// for this scenario.) In this scenario, you need to request temporary access credentials
-        /// to the Amazon GameLift Amazon S3 location. Specify a build name and the build's runtime
-        /// operating system. The response provides an Amazon S3 location and a set of temporary
-        /// access credentials. Use the credentials to upload your build files to the specified
-        /// Amazon S3 location (see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UploadingObjects.html">Uploading
-        /// Objects</a> in the <i>Amazon S3 Developer Guide</i>). You can't update build files
-        /// after uploading them to Amazon GameLift Amazon S3.
+        /// Upload your build files to a Amazon GameLift Amazon S3 location. To use this option,
+        /// specify a build name and operating system. This operation creates a new build resource
+        /// and also returns an Amazon S3 location with temporary access credentials. Use the
+        /// credentials to manually upload your build files to the specified Amazon S3 location.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UploadingObjects.html">Uploading
+        /// Objects</a> in the <i>Amazon S3 Developer Guide</i>. After you upload build files
+        /// to the Amazon GameLift Amazon S3 location, you can't update them. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If successful, this action creates a new build resource with a unique build ID and
-        /// places it in <c>INITIALIZED</c> status. When the build reaches <c>READY</c> status,
-        /// you can create fleets with it.
+        /// If successful, this operation creates a new build resource with a unique build ID
+        /// and places it in <c>INITIALIZED</c> status. A build must be in <c>READY</c> status
+        /// before you can create fleets with it.
         /// </para>
         ///  
         /// <para>
@@ -1340,7 +1334,8 @@ namespace Amazon.GameLift
         /// Creates a <c>ContainerGroupDefinition</c> that describes a set of containers for hosting
         /// your game server with Amazon GameLift managed containers hosting. An Amazon GameLift
         /// container group is similar to a container task or pod. Use container group definitions
-        /// when you create a container fleet with <a>CreateContainerFleet</a>. 
+        /// when you create a container fleet with <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerFleet.html">CreateContainerFleet</a>.
+        /// 
         /// 
         ///  
         /// <para>
@@ -1494,8 +1489,8 @@ namespace Amazon.GameLift
         /// <para>
         /// If successful, this request creates a <c>ContainerGroupDefinition</c> resource and
         /// assigns a unique ARN value. You can update most properties of a container group definition
-        /// by calling <a>UpdateContainerGroupDefinition</a>, and optionally save the update as
-        /// a new version.
+        /// by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateContainerGroupDefinition.html">UpdateContainerGroupDefinition</a>,
+        /// and optionally save the update as a new version.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateContainerGroupDefinition service method.</param>
@@ -1542,7 +1537,8 @@ namespace Amazon.GameLift
         /// Creates a <c>ContainerGroupDefinition</c> that describes a set of containers for hosting
         /// your game server with Amazon GameLift managed containers hosting. An Amazon GameLift
         /// container group is similar to a container task or pod. Use container group definitions
-        /// when you create a container fleet with <a>CreateContainerFleet</a>. 
+        /// when you create a container fleet with <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerFleet.html">CreateContainerFleet</a>.
+        /// 
         /// 
         ///  
         /// <para>
@@ -1696,8 +1692,8 @@ namespace Amazon.GameLift
         /// <para>
         /// If successful, this request creates a <c>ContainerGroupDefinition</c> resource and
         /// assigns a unique ARN value. You can update most properties of a container group definition
-        /// by calling <a>UpdateContainerGroupDefinition</a>, and optionally save the update as
-        /// a new version.
+        /// by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateContainerGroupDefinition.html">UpdateContainerGroupDefinition</a>,
+        /// and optionally save the update as a new version.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateContainerGroupDefinition service method.</param>
@@ -2081,9 +2077,9 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Adds remote locations to a managed EC2 fleet or managed container fleet and begins
-        /// populating the new locations with instances. The new instances conform to the fleet's
-        /// instance type, auto-scaling, and other configuration settings.
+        /// Adds remote locations to an EC2 and begins populating the new locations with instances.
+        /// The new instances conform to the fleet's instance type, auto-scaling, and other configuration
+        /// settings.
         /// 
         ///  <note> 
         /// <para>
@@ -2173,9 +2169,9 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Adds remote locations to a managed EC2 fleet or managed container fleet and begins
-        /// populating the new locations with instances. The new instances conform to the fleet's
-        /// instance type, auto-scaling, and other configuration settings.
+        /// Adds remote locations to an EC2 and begins populating the new locations with instances.
+        /// The new instances conform to the fleet's instance type, auto-scaling, and other configuration
+        /// settings.
         /// 
         ///  <note> 
         /// <para>
@@ -2470,8 +2466,8 @@ namespace Amazon.GameLift
         /// Creates a multiplayer game session for players in a specific fleet location. This
         /// operation prompts an available server process to start a game session and retrieves
         /// connection information for the new game session. As an alternative, consider using
-        /// the Amazon GameLift game session placement feature with <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartGameSessionPlacement.html">StartGameSessionPlacement</a>
-        /// , which uses the FleetIQ algorithm and queues to optimize the placement process.
+        /// the Amazon GameLift game session placement feature with <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartGameSessionPlacement.html">StartGameSessionPlacement</a>,
+        /// which uses the FleetIQ algorithm and queues to optimize the placement process.
         /// 
         ///  
         /// <para>
@@ -2594,8 +2590,8 @@ namespace Amazon.GameLift
         /// Creates a multiplayer game session for players in a specific fleet location. This
         /// operation prompts an available server process to start a game session and retrieves
         /// connection information for the new game session. As an alternative, consider using
-        /// the Amazon GameLift game session placement feature with <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartGameSessionPlacement.html">StartGameSessionPlacement</a>
-        /// , which uses the FleetIQ algorithm and queues to optimize the placement process.
+        /// the Amazon GameLift game session placement feature with <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartGameSessionPlacement.html">StartGameSessionPlacement</a>,
+        /// which uses the FleetIQ algorithm and queues to optimize the placement process.
         /// 
         ///  
         /// <para>
@@ -3972,16 +3968,16 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Creates a script resource for your Realtime Servers script. Realtime scripts are JavaScript
-        /// files that provide configuration settings and optional custom game logic for your
-        /// game. Script logic is executed during an active game session. To deploy Realtime Servers
-        /// for hosting, create an Amazon GameLift managed fleet with the script.
+        /// Creates a new script record for your Realtime Servers script. Realtime scripts are
+        /// JavaScript that provide configuration settings and optional custom game logic for
+        /// your game. The script is deployed when you create a Realtime Servers fleet to host
+        /// your game sessions. Script logic is executed during an active game session. 
         /// 
         ///  
         /// <para>
-        /// To create a script resource, specify a script name and provide the script file(s).
-        /// The script files and all dependencies must be combined into a single .zip file. You
-        /// can upload the .zip file from either of these locations: 
+        /// To create a new script record, specify a script name and provide the script file(s).
+        /// The script files and all dependencies must be zipped into a single file. You can pull
+        /// the zip file from either of these locations: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -3996,8 +3992,11 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If the call is successful, Amazon GameLift creates a new script resource with a unique
-        /// script ID. The script is uploaded to an Amazon S3 bucket that is owned by Amazon GameLift.
+        /// If the call is successful, a new script record is created with a unique script ID.
+        /// If the script file is provided as a local file, the file is uploaded to an Amazon
+        /// GameLift-owned S3 bucket and the script record's storage location reflects this location.
+        /// If the script file is provided as an S3 bucket, Amazon GameLift accesses the file
+        /// at this storage location as needed for deployment.
         /// </para>
         ///  
         /// <para>
@@ -4057,16 +4056,16 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Creates a script resource for your Realtime Servers script. Realtime scripts are JavaScript
-        /// files that provide configuration settings and optional custom game logic for your
-        /// game. Script logic is executed during an active game session. To deploy Realtime Servers
-        /// for hosting, create an Amazon GameLift managed fleet with the script.
+        /// Creates a new script record for your Realtime Servers script. Realtime scripts are
+        /// JavaScript that provide configuration settings and optional custom game logic for
+        /// your game. The script is deployed when you create a Realtime Servers fleet to host
+        /// your game sessions. Script logic is executed during an active game session. 
         /// 
         ///  
         /// <para>
-        /// To create a script resource, specify a script name and provide the script file(s).
-        /// The script files and all dependencies must be combined into a single .zip file. You
-        /// can upload the .zip file from either of these locations: 
+        /// To create a new script record, specify a script name and provide the script file(s).
+        /// The script files and all dependencies must be zipped into a single file. You can pull
+        /// the zip file from either of these locations: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -4081,8 +4080,11 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If the call is successful, Amazon GameLift creates a new script resource with a unique
-        /// script ID. The script is uploaded to an Amazon S3 bucket that is owned by Amazon GameLift.
+        /// If the call is successful, a new script record is created with a unique script ID.
+        /// If the script file is provided as a local file, the file is uploaded to an Amazon
+        /// GameLift-owned S3 bucket and the script record's storage location reflects this location.
+        /// If the script file is provided as an S3 bucket, Amazon GameLift accesses the file
+        /// at this storage location as needed for deployment.
         /// </para>
         ///  
         /// <para>
@@ -5008,8 +5010,7 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Deletes a container group definition. You can delete a container group definition
-        /// if there are no fleets using the definition. 
+        /// Deletes a container group definition. 
         /// 
         ///  
         /// <para>
@@ -5030,6 +5031,29 @@ namespace Amazon.GameLift
         /// Keep the newest versions and delete all older versions. Specify the container group
         /// definition name and the number of versions to retain. For example, set <c>VersionCountToRetain</c>
         /// to 5 to delete all but the five most recent versions.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Result</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// If successful, Amazon GameLift removes the container group definition versions that
+        /// you request deletion for. This request will fail for any requested versions if the
+        /// following is true: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If the version is being used in an active fleet
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the version is being deployed to a fleet in a deployment that's currently in progress.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the version is designated as a rollback definition in a fleet deployment that's
+        /// currently in progress.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -5079,8 +5103,7 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Deletes a container group definition. You can delete a container group definition
-        /// if there are no fleets using the definition. 
+        /// Deletes a container group definition. 
         /// 
         ///  
         /// <para>
@@ -5101,6 +5124,29 @@ namespace Amazon.GameLift
         /// Keep the newest versions and delete all older versions. Specify the container group
         /// definition name and the number of versions to retain. For example, set <c>VersionCountToRetain</c>
         /// to 5 to delete all but the five most recent versions.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Result</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// If successful, Amazon GameLift removes the container group definition versions that
+        /// you request deletion for. This request will fail for any requested versions if the
+        /// following is true: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If the version is being used in an active fleet
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the version is being deployed to a fleet in a deployment that's currently in progress.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the version is designated as a rollback definition in a fleet deployment that's
+        /// currently in progress.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -7102,7 +7148,8 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Retrieves properties for a compute resource in an Amazon GameLift fleet. To get a
-        /// list of all computes in a fleet, call <a>ListCompute</a>. 
+        /// list of all computes in a fleet, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListCompute.html">https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListCompute.html</a>.
+        /// 
         /// 
         ///  
         /// <para>
@@ -7158,7 +7205,8 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Retrieves properties for a compute resource in an Amazon GameLift fleet. To get a
-        /// list of all computes in a fleet, call <a>ListCompute</a>. 
+        /// list of all computes in a fleet, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListCompute.html">https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListCompute.html</a>.
+        /// 
         /// 
         ///  
         /// <para>
@@ -8051,7 +8099,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         /// With multi-location fleets, this operation retrieves data for the fleet's home Region
-        /// only. To retrieve capacity for remote locations, see <a>DescribeFleetLocationCapacity</a>.
+        /// only. To retrieve capacity for remote locations, see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetLocationCapacity.html">https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetLocationCapacity.html</a>.
         /// </para>
         ///  
         /// <para>
@@ -8138,7 +8186,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         /// With multi-location fleets, this operation retrieves data for the fleet's home Region
-        /// only. To retrieve capacity for remote locations, see <a>DescribeFleetLocationCapacity</a>.
+        /// only. To retrieve capacity for remote locations, see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetLocationCapacity.html">https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetLocationCapacity.html</a>.
         /// </para>
         ///  
         /// <para>
@@ -8923,12 +8971,10 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Retrieves a fleet's inbound connection permissions. Inbound permissions specify IP
-        /// addresses and port settings that incoming traffic can use to access server processes
+        /// Retrieves a fleet's inbound connection permissions. Connection permissions specify
+        /// IP addresses and port settings that incoming traffic can use to access server processes
         /// in the fleet. Game server processes that are running in the fleet must use a port
-        /// that falls within this range. To connect to game server processes on a managed container
-        /// fleet, the port settings should include one or more of the container fleet's connection
-        /// ports. 
+        /// that falls within this range. 
         /// 
         ///  
         /// <para>
@@ -8992,12 +9038,10 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Retrieves a fleet's inbound connection permissions. Inbound permissions specify IP
-        /// addresses and port settings that incoming traffic can use to access server processes
+        /// Retrieves a fleet's inbound connection permissions. Connection permissions specify
+        /// IP addresses and port settings that incoming traffic can use to access server processes
         /// in the fleet. Game server processes that are running in the fleet must use a port
-        /// that falls within this range. To connect to game server processes on a managed container
-        /// fleet, the port settings should include one or more of the container fleet's connection
-        /// ports. 
+        /// that falls within this range. 
         /// 
         ///  
         /// <para>
@@ -9063,12 +9107,10 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Retrieves a fleet's inbound connection permissions. Inbound permissions specify IP
-        /// addresses and port settings that incoming traffic can use to access server processes
+        /// Retrieves a fleet's inbound connection permissions. Connection permissions specify
+        /// IP addresses and port settings that incoming traffic can use to access server processes
         /// in the fleet. Game server processes that are running in the fleet must use a port
-        /// that falls within this range. To connect to game server processes on a managed container
-        /// fleet, the port settings should include one or more of the container fleet's connection
-        /// ports. 
+        /// that falls within this range. 
         /// 
         ///  
         /// <para>
@@ -9135,12 +9177,10 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Retrieves a fleet's inbound connection permissions. Inbound permissions specify IP
-        /// addresses and port settings that incoming traffic can use to access server processes
+        /// Retrieves a fleet's inbound connection permissions. Connection permissions specify
+        /// IP addresses and port settings that incoming traffic can use to access server processes
         /// in the fleet. Game server processes that are running in the fleet must use a port
-        /// that falls within this range. To connect to game server processes on a managed container
-        /// fleet, the port settings should include one or more of the container fleet's connection
-        /// ports. 
+        /// that falls within this range. 
         /// 
         ///  
         /// <para>
@@ -10340,8 +10380,9 @@ namespace Amazon.GameLift
         /// Retrieves information about the EC2 instances in an Amazon GameLift managed fleet,
         /// including instance ID, connection data, and status. You can use this operation with
         /// a multi-location fleet to get location-specific instance information. As an alternative,
-        /// use the operations <a>ListCompute</a> and <a>DescribeCompute</a> to retrieve information
-        /// for compute resources, including EC2 and Anywhere fleets.
+        /// use the operations <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListCompute">https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListCompute</a>
+        /// and <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeCompute">https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeCompute</a>
+        /// to retrieve information for compute resources, including EC2 and Anywhere fleets.
         /// 
         ///  
         /// <para>
@@ -10431,8 +10472,9 @@ namespace Amazon.GameLift
         /// Retrieves information about the EC2 instances in an Amazon GameLift managed fleet,
         /// including instance ID, connection data, and status. You can use this operation with
         /// a multi-location fleet to get location-specific instance information. As an alternative,
-        /// use the operations <a>ListCompute</a> and <a>DescribeCompute</a> to retrieve information
-        /// for compute resources, including EC2 and Anywhere fleets.
+        /// use the operations <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListCompute">https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListCompute</a>
+        /// and <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeCompute">https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeCompute</a>
+        /// to retrieve information for compute resources, including EC2 and Anywhere fleets.
         /// 
         ///  
         /// <para>
@@ -11003,9 +11045,9 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Retrieves a fleet's runtime configuration settings. The runtime configuration determines
-        /// which server processes run, and how they run, and how many run concurrently on computes
-        /// in managed EC2 and Anywhere fleets. You can update a fleet's runtime configuration
-        /// at any time using <a>UpdateRuntimeConfiguration</a>.
+        /// which server processes run, and how, on computes in the fleet. For managed EC2 fleets,
+        /// the runtime configuration describes server processes that run on each fleet instance.
+        /// can update a fleet's runtime configuration at any time using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateRuntimeConfiguration.html">UpdateRuntimeConfiguration</a>.
         /// 
         ///  
         /// <para>
@@ -11062,9 +11104,9 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Retrieves a fleet's runtime configuration settings. The runtime configuration determines
-        /// which server processes run, and how they run, and how many run concurrently on computes
-        /// in managed EC2 and Anywhere fleets. You can update a fleet's runtime configuration
-        /// at any time using <a>UpdateRuntimeConfiguration</a>.
+        /// which server processes run, and how, on computes in the fleet. For managed EC2 fleets,
+        /// the runtime configuration describes server processes that run on each fleet instance.
+        /// can update a fleet's runtime configuration at any time using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateRuntimeConfiguration.html">UpdateRuntimeConfiguration</a>.
         /// 
         ///  
         /// <para>
@@ -12034,7 +12076,7 @@ namespace Amazon.GameLift
         /// Requests authorization to remotely connect to an instance in an Amazon GameLift managed
         /// fleet. Use this operation to connect to instances with game servers that use Amazon
         /// GameLift server SDK 4.x or earlier. To connect to instances with game servers that
-        /// use server SDK 5.x or later, call <a>GetComputeAccess</a>.
+        /// use server SDK 5.x or later, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetComputeAccess">https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetComputeAccess</a>.
         /// 
         ///  
         /// <para>
@@ -12117,7 +12159,7 @@ namespace Amazon.GameLift
         /// Requests authorization to remotely connect to an instance in an Amazon GameLift managed
         /// fleet. Use this operation to connect to instances with game servers that use Amazon
         /// GameLift server SDK 4.x or earlier. To connect to instances with game servers that
-        /// use server SDK 5.x or later, call <a>GetComputeAccess</a>.
+        /// use server SDK 5.x or later, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetComputeAccess">https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetComputeAccess</a>.
         /// 
         ///  
         /// <para>
@@ -12697,7 +12739,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         /// This operation returns only the latest version of each definition. To retrieve all
-        /// versions of a container group definition, use <a>ListContainerGroupDefinitionVersions</a>.
+        /// versions of a container group definition, use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListContainerGroupDefinitionVersions.html">ListContainerGroupDefinitionVersions</a>.
         /// </para>
         ///  
         /// <para>
@@ -12726,16 +12768,7 @@ namespace Amazon.GameLift
         /// This operation returns the list of container group definitions in no particular order.
         /// 
         /// </para>
-        ///  </note> 
-        /// <para>
-        ///  <b>Learn more</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/containers-create-groups.html">Manage
-        /// a container group definition</a> 
-        /// </para>
-        ///  </li> </ul>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListContainerGroupDefinitions service method.</param>
         /// 
@@ -12773,7 +12806,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         /// This operation returns only the latest version of each definition. To retrieve all
-        /// versions of a container group definition, use <a>ListContainerGroupDefinitionVersions</a>.
+        /// versions of a container group definition, use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListContainerGroupDefinitionVersions.html">ListContainerGroupDefinitionVersions</a>.
         /// </para>
         ///  
         /// <para>
@@ -12802,16 +12835,7 @@ namespace Amazon.GameLift
         /// This operation returns the list of container group definitions in no particular order.
         /// 
         /// </para>
-        ///  </note> 
-        /// <para>
-        ///  <b>Learn more</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/containers-create-groups.html">Manage
-        /// a container group definition</a> 
-        /// </para>
-        ///  </li> </ul>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListContainerGroupDefinitions service method.</param>
         /// <param name="cancellationToken">
@@ -12997,7 +13021,7 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Retrieves a collection of container fleet deployments in an Amazon Web Services Region.
-        /// 
+        /// Use the pagination parameters to retrieve results as a set of sequential pages. 
         /// 
         ///  
         /// <para>
@@ -13012,16 +13036,7 @@ namespace Amazon.GameLift
         /// <para>
         /// Get a list of all deployments for a fleet. Specify the container fleet ID or ARN value.
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To get a list of all Realtime Servers fleets with a specific configuration script,
-        /// provide the script ID. 
-        /// </para>
         ///  </li> </ul> 
-        /// <para>
-        /// Use the pagination parameters to retrieve results as a set of sequential pages. 
-        /// </para>
-        ///  
         /// <para>
         ///  <b>Results</b> 
         /// </para>
@@ -13032,7 +13047,7 @@ namespace Amazon.GameLift
         /// </para>
         ///  <note> 
         /// <para>
-        /// Fleet IDs are returned in no particular order.
+        /// Deployments are returned starting with the latest.
         /// </para>
         ///  </note>
         /// </summary>
@@ -13070,7 +13085,7 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Retrieves a collection of container fleet deployments in an Amazon Web Services Region.
-        /// 
+        /// Use the pagination parameters to retrieve results as a set of sequential pages. 
         /// 
         ///  
         /// <para>
@@ -13085,16 +13100,7 @@ namespace Amazon.GameLift
         /// <para>
         /// Get a list of all deployments for a fleet. Specify the container fleet ID or ARN value.
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To get a list of all Realtime Servers fleets with a specific configuration script,
-        /// provide the script ID. 
-        /// </para>
         ///  </li> </ul> 
-        /// <para>
-        /// Use the pagination parameters to retrieve results as a set of sequential pages. 
-        /// </para>
-        ///  
         /// <para>
         ///  <b>Results</b> 
         /// </para>
@@ -13105,7 +13111,7 @@ namespace Amazon.GameLift
         /// </para>
         ///  <note> 
         /// <para>
-        /// Fleet IDs are returned in no particular order.
+        /// Deployments are returned starting with the latest.
         /// </para>
         ///  </note>
         /// </summary>
@@ -14961,8 +14967,7 @@ namespace Amazon.GameLift
         /// <para>
         /// If successful, a <c>GameSession</c> object is returned for each game session that
         /// matches the request. Search finds game sessions that are in <c>ACTIVE</c> status only.
-        /// To retrieve information on game sessions in other statuses, use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameSessions.html">DescribeGameSessions</a>
-        /// .
+        /// To retrieve information on game sessions in other statuses, use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameSessions.html">DescribeGameSessions</a>.
         /// </para>
         ///  
         /// <para>
@@ -14984,8 +14989,8 @@ namespace Amazon.GameLift
         /// <para>
         ///  <b>gameSessionProperties</b> -- A set of key-value pairs that can store custom data
         /// in a game session. For example: <c>{"Key": "difficulty", "Value": "novice"}</c>. The
-        /// filter expression must specify the <a>GameProperty</a> -- a <c>Key</c> and a string
-        /// <c>Value</c> to search for the game sessions.
+        /// filter expression must specify the <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameProperty">https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameProperty</a>
+        /// -- a <c>Key</c> and a string <c>Value</c> to search for the game sessions.
         /// </para>
         ///  
         /// <para>
@@ -15111,8 +15116,7 @@ namespace Amazon.GameLift
         /// <para>
         /// If successful, a <c>GameSession</c> object is returned for each game session that
         /// matches the request. Search finds game sessions that are in <c>ACTIVE</c> status only.
-        /// To retrieve information on game sessions in other statuses, use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameSessions.html">DescribeGameSessions</a>
-        /// .
+        /// To retrieve information on game sessions in other statuses, use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameSessions.html">DescribeGameSessions</a>.
         /// </para>
         ///  
         /// <para>
@@ -15134,8 +15138,8 @@ namespace Amazon.GameLift
         /// <para>
         ///  <b>gameSessionProperties</b> -- A set of key-value pairs that can store custom data
         /// in a game session. For example: <c>{"Key": "difficulty", "Value": "novice"}</c>. The
-        /// filter expression must specify the <a>GameProperty</a> -- a <c>Key</c> and a string
-        /// <c>Value</c> to search for the game sessions.
+        /// filter expression must specify the <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameProperty">https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameProperty</a>
+        /// -- a <c>Key</c> and a string <c>Value</c> to search for the game sessions.
         /// </para>
         ///  
         /// <para>
@@ -15427,7 +15431,8 @@ namespace Amazon.GameLift
         /// To track the status of a placement request, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameSessionPlacement.html">DescribeGameSessionPlacement</a>
         /// and check the request's status. If the status is <c>FULFILLED</c>, a new game session
         /// has been created and a game session ARN and Region are referenced. If the placement
-        /// request times out, submit a new request to the same queue or a different queue.
+        /// request times out, you can resubmit the request or retry it with a different queue.
+        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartGameSessionPlacement service method.</param>
@@ -15518,7 +15523,8 @@ namespace Amazon.GameLift
         /// To track the status of a placement request, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameSessionPlacement.html">DescribeGameSessionPlacement</a>
         /// and check the request's status. If the status is <c>FULFILLED</c>, a new game session
         /// has been created and a game session ARN and Region are referenced. If the placement
-        /// request times out, submit a new request to the same queue or a different queue.
+        /// request times out, you can resubmit the request or retry it with a different queue.
+        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartGameSessionPlacement service method.</param>
@@ -16519,6 +16525,187 @@ namespace Amazon.GameLift
 
         #endregion
         
+        #region  TerminateGameSession
+
+
+        /// <summary>
+        /// Ends a game session that's currently in progress. You can use this action to terminate
+        /// any game session that isn't in <c>TERMINATED</c> or <c>TERMINATING</c> status. Terminating
+        /// a game session is the most efficient way to free up a server process when it's hosting
+        /// a game session that's in a bad state or not ending naturally. You can use this action
+        /// to terminate a game session that's being hosted on any type of Amazon GameLift fleet
+        /// compute, including computes for managed EC2, managed container, and Anywhere fleets.
+        /// 
+        ///  
+        /// <para>
+        /// There are two potential methods for terminating a game session:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// With a graceful termination, the Amazon GameLift service prompts the server process
+        /// to initiate its normal game session shutdown sequence. This sequence is implemented
+        /// in the game server code and might involve a variety of actions to gracefully end a
+        /// game session, such as notifying players, and stop the server process. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// With a forceful termination, the Amazon GameLift service takes immediate action to
+        /// terminate the game session by stopping the server process. Termination occurs without
+        /// the normal game session shutdown sequence. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Request options</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Request termination for a single game session. Provide the game session ID and the
+        /// termination method. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Results</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// If successful, game session termination is initiated, which includes changing the
+        /// game session status to <c>TERMINATING</c>. As a result of this action, and depending
+        /// on the implementation of <c>OnProcessTerminate()</c>, the server process either becomes
+        /// available to host a new game session, or it's recycled and a new server process started
+        /// with availability to host a game session. The game session status is changed to <c>TERMINATED</c>,
+        /// with a status reason that indicates the termination method used.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TerminateGameSession service method.</param>
+        /// 
+        /// <returns>The response from the TerminateGameSession service method, as returned by GameLift.</returns>
+        /// <exception cref="Amazon.GameLift.Model.InternalServiceException">
+        /// The service encountered an unrecoverable internal failure while processing the request.
+        /// Clients can retry such requests immediately or after a waiting period.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.InvalidGameSessionStatusException">
+        /// The requested operation would cause a conflict with the current state of a resource
+        /// associated with the request and/or the game instance. Resolve the conflict before
+        /// retrying.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.InvalidRequestException">
+        /// One or more parameter values in the request are invalid. Correct the invalid parameter
+        /// values before retrying.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.NotFoundException">
+        /// The requested resources was not found. The resource was either not created yet or
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.NotReadyException">
+        /// The operation failed because Amazon GameLift has not yet finished validating this
+        /// compute. We recommend attempting 8 to 10 retries over 3 to 5 minutes with <a href="http://aws.amazon.com/blogs/https:/aws.amazon.com/blogs/architecture/exponential-backoff-and-jitter/">exponential
+        /// backoffs and jitter</a>.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
+        /// The client failed authentication. Clients should not retry such requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/TerminateGameSession">REST API Reference for TerminateGameSession Operation</seealso>
+        public virtual TerminateGameSessionResponse TerminateGameSession(TerminateGameSessionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TerminateGameSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TerminateGameSessionResponseUnmarshaller.Instance;
+
+            return Invoke<TerminateGameSessionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Ends a game session that's currently in progress. You can use this action to terminate
+        /// any game session that isn't in <c>TERMINATED</c> or <c>TERMINATING</c> status. Terminating
+        /// a game session is the most efficient way to free up a server process when it's hosting
+        /// a game session that's in a bad state or not ending naturally. You can use this action
+        /// to terminate a game session that's being hosted on any type of Amazon GameLift fleet
+        /// compute, including computes for managed EC2, managed container, and Anywhere fleets.
+        /// 
+        ///  
+        /// <para>
+        /// There are two potential methods for terminating a game session:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// With a graceful termination, the Amazon GameLift service prompts the server process
+        /// to initiate its normal game session shutdown sequence. This sequence is implemented
+        /// in the game server code and might involve a variety of actions to gracefully end a
+        /// game session, such as notifying players, and stop the server process. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// With a forceful termination, the Amazon GameLift service takes immediate action to
+        /// terminate the game session by stopping the server process. Termination occurs without
+        /// the normal game session shutdown sequence. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Request options</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Request termination for a single game session. Provide the game session ID and the
+        /// termination method. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Results</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// If successful, game session termination is initiated, which includes changing the
+        /// game session status to <c>TERMINATING</c>. As a result of this action, and depending
+        /// on the implementation of <c>OnProcessTerminate()</c>, the server process either becomes
+        /// available to host a new game session, or it's recycled and a new server process started
+        /// with availability to host a game session. The game session status is changed to <c>TERMINATED</c>,
+        /// with a status reason that indicates the termination method used.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TerminateGameSession service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TerminateGameSession service method, as returned by GameLift.</returns>
+        /// <exception cref="Amazon.GameLift.Model.InternalServiceException">
+        /// The service encountered an unrecoverable internal failure while processing the request.
+        /// Clients can retry such requests immediately or after a waiting period.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.InvalidGameSessionStatusException">
+        /// The requested operation would cause a conflict with the current state of a resource
+        /// associated with the request and/or the game instance. Resolve the conflict before
+        /// retrying.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.InvalidRequestException">
+        /// One or more parameter values in the request are invalid. Correct the invalid parameter
+        /// values before retrying.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.NotFoundException">
+        /// The requested resources was not found. The resource was either not created yet or
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.NotReadyException">
+        /// The operation failed because Amazon GameLift has not yet finished validating this
+        /// compute. We recommend attempting 8 to 10 retries over 3 to 5 minutes with <a href="http://aws.amazon.com/blogs/https:/aws.amazon.com/blogs/architecture/exponential-backoff-and-jitter/">exponential
+        /// backoffs and jitter</a>.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
+        /// The client failed authentication. Clients should not retry such requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/TerminateGameSession">REST API Reference for TerminateGameSession Operation</seealso>
+        public virtual Task<TerminateGameSessionResponse> TerminateGameSessionAsync(TerminateGameSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TerminateGameSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TerminateGameSessionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<TerminateGameSessionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UntagResource
 
 
@@ -16872,7 +17059,7 @@ namespace Amazon.GameLift
         /// <summary>
         /// Updates the properties of a managed container fleet. Depending on the properties being
         /// updated, this operation might initiate a fleet deployment. You can track deployments
-        /// for a fleet using <a>DescribeFleetDeployment</a>.
+        /// for a fleet using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetDeployment.html">https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetDeployment.html</a>.
         /// 
         ///  
         /// <para>
@@ -16984,7 +17171,7 @@ namespace Amazon.GameLift
         /// <summary>
         /// Updates the properties of a managed container fleet. Depending on the properties being
         /// updated, this operation might initiate a fleet deployment. You can track deployments
-        /// for a fleet using <a>DescribeFleetDeployment</a>.
+        /// for a fleet using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetDeployment.html">https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetDeployment.html</a>.
         /// 
         ///  
         /// <para>
@@ -17155,7 +17342,7 @@ namespace Amazon.GameLift
         /// <para>
         /// If the container group definition version is used in an active fleets, the update
         /// automatically initiates a new fleet deployment of the new version. You can track a
-        /// fleet's deployments using <a>ListFleetDeployments</a>.
+        /// fleet's deployments using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListFleetDeployments.html">ListFleetDeployments</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateContainerGroupDefinition service method.</param>
@@ -17249,7 +17436,7 @@ namespace Amazon.GameLift
         /// <para>
         /// If the container group definition version is used in an active fleets, the update
         /// automatically initiates a new fleet deployment of the new version. You can track a
-        /// fleet's deployments using <a>ListFleetDeployments</a>.
+        /// fleet's deployments using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListFleetDeployments.html">ListFleetDeployments</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateContainerGroupDefinition service method.</param>
@@ -17648,11 +17835,6 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// For a container fleet, inbound permissions must specify port numbers that are defined
-        /// in the fleet's connection port settings.
-        /// </para>
-        ///  
-        /// <para>
         /// If successful, the fleet ID for the updated fleet is returned. For fleets with remote
         /// locations, port setting updates can take time to propagate across all locations. You
         /// can check the status of updates in each location by calling <c>DescribeFleetPortSettings</c>
@@ -17719,11 +17901,6 @@ namespace Amazon.GameLift
         /// be made. List the permissions you want to add in <c>InboundPermissionAuthorizations</c>,
         /// and permissions you want to remove in <c>InboundPermissionRevocations</c>. Permissions
         /// to be removed must match existing fleet permissions. 
-        /// </para>
-        ///  
-        /// <para>
-        /// For a container fleet, inbound permissions must specify port numbers that are defined
-        /// in the fleet's connection port settings.
         /// </para>
         ///  
         /// <para>

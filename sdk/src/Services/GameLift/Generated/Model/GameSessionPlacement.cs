@@ -39,7 +39,7 @@ namespace Amazon.GameLift.Model
     /// ID/ARN, region, IP address/DNS, and port aren't final. A game session is not active
     /// and ready to accept players until placement status reaches <c>FULFILLED</c>. When
     /// the placement is in <c>PENDING</c> status, Amazon GameLift may attempt to place a
-    /// game session multiple times before succeeding. With each attempt it creates a <a>GameSession</a>
+    /// game session multiple times before succeeding. With each attempt it creates a <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameSession">https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameSession</a>
     /// object and updates this placement object with the new game session properties..
     /// </para>
     ///  </note>
@@ -444,7 +444,7 @@ namespace Amazon.GameLift.Model
         ///  </li> <li> 
         /// <para>
         ///  <b>TIMED_OUT</b> -- A new game session was not successfully created before the time
-        /// limit expired. You can resubmit as a new placement request as needed.
+        /// limit expired. You can resubmit the placement request as needed.
         /// </para>
         ///  </li> <li> 
         /// <para>

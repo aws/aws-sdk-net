@@ -3339,9 +3339,17 @@ namespace Amazon.GameLift
     {
 
         /// <summary>
+        /// Constant FORCE_TERMINATED for GameSessionStatusReason
+        /// </summary>
+        public static readonly GameSessionStatusReason FORCE_TERMINATED = new GameSessionStatusReason("FORCE_TERMINATED");
+        /// <summary>
         /// Constant INTERRUPTED for GameSessionStatusReason
         /// </summary>
         public static readonly GameSessionStatusReason INTERRUPTED = new GameSessionStatusReason("INTERRUPTED");
+        /// <summary>
+        /// Constant TRIGGERED_ON_PROCESS_TERMINATE for GameSessionStatusReason
+        /// </summary>
+        public static readonly GameSessionStatusReason TRIGGERED_ON_PROCESS_TERMINATE = new GameSessionStatusReason("TRIGGERED_ON_PROCESS_TERMINATE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -4438,6 +4446,56 @@ namespace Amazon.GameLift
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SortOrder(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TerminationMode.
+    /// </summary>
+    public class TerminationMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FORCE_TERMINATE for TerminationMode
+        /// </summary>
+        public static readonly TerminationMode FORCE_TERMINATE = new TerminationMode("FORCE_TERMINATE");
+        /// <summary>
+        /// Constant TRIGGER_ON_PROCESS_TERMINATE for TerminationMode
+        /// </summary>
+        public static readonly TerminationMode TRIGGER_ON_PROCESS_TERMINATE = new TerminationMode("TRIGGER_ON_PROCESS_TERMINATE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TerminationMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TerminationMode FindValue(string value)
+        {
+            return FindValue<TerminationMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TerminationMode(string value)
         {
             return FindValue(value);
         }

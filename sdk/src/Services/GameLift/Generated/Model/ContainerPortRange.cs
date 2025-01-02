@@ -34,7 +34,8 @@ namespace Amazon.GameLift.Model
     /// 
     ///  
     /// <para>
-    ///  <b>Part of:</b> <a>ContainerPortConfiguration</a> 
+    ///  <b>Part of:</b> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerPortConfiguration.html">ContainerPortConfiguration</a>
+    /// 
     /// </para>
     /// </summary>
     public partial class ContainerPortRange

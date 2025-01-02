@@ -31,8 +31,7 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteContainerGroupDefinition operation.
-    /// Deletes a container group definition. You can delete a container group definition
-    /// if there are no fleets using the definition. 
+    /// Deletes a container group definition. 
     /// 
     ///  
     /// <para>
@@ -53,6 +52,29 @@ namespace Amazon.GameLift.Model
     /// Keep the newest versions and delete all older versions. Specify the container group
     /// definition name and the number of versions to retain. For example, set <c>VersionCountToRetain</c>
     /// to 5 to delete all but the five most recent versions.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <b>Result</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// If successful, Amazon GameLift removes the container group definition versions that
+    /// you request deletion for. This request will fail for any requested versions if the
+    /// following is true: 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// If the version is being used in an active fleet
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If the version is being deployed to a fleet in a deployment that's currently in progress.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If the version is designated as a rollback definition in a fleet deployment that's
+    /// currently in progress.
     /// </para>
     ///  </li> </ul> 
     /// <para>

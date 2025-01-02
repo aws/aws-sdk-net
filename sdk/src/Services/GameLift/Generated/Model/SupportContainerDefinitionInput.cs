@@ -38,11 +38,12 @@ namespace Amazon.GameLift.Model
     /// <para>
     /// This definition includes container configuration, resources, and start instructions.
     /// Use this data type when creating or updating a container group definition. For properties
-    /// of a deployed support container, see <a>SupportContainerDefinition</a>.
+    /// of a deployed support container, see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_SupportContainerDefinition.html">SupportContainerDefinition</a>.
     /// </para>
     ///  
     /// <para>
-    ///  <b>Use with: </b> <a>CreateContainerGroupDefinition</a>, <a>UpdateContainerGroupDefinition</a>
+    ///  <b>Use with: </b> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerGroupDefinition.html">CreateContainerGroupDefinition</a>,
+    /// <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateContainerGroupDefinition.html">UpdateContainerGroupDefinition</a>
     /// 
     /// </para>
     /// </summary>
@@ -224,7 +225,7 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>Related data type: </b> <a>ContainerGroupDefinition</a> TotalMemoryLimitMebibytes<code/>
+        ///  <b>Related data type: </b> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a>TotalMemoryLimitMebibytes<code/>
         /// 
         /// </para>
         /// </summary>
@@ -297,7 +298,8 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>Related data type: </b> <a>ContainerGroupDefinition</a> TotalCpuLimit 
+        ///  <b>Related data type: </b> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a>
+        /// TotalCpuLimit 
         /// </para>
         /// </summary>
         [AWSProperty(Max=10)]

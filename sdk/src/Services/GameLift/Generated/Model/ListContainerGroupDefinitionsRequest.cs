@@ -38,7 +38,7 @@ namespace Amazon.GameLift.Model
     ///  
     /// <para>
     /// This operation returns only the latest version of each definition. To retrieve all
-    /// versions of a container group definition, use <a>ListContainerGroupDefinitionVersions</a>.
+    /// versions of a container group definition, use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListContainerGroupDefinitionVersions.html">ListContainerGroupDefinitionVersions</a>.
     /// </para>
     ///  
     /// <para>
@@ -67,16 +67,7 @@ namespace Amazon.GameLift.Model
     /// This operation returns the list of container group definitions in no particular order.
     /// 
     /// </para>
-    ///  </note> 
-    /// <para>
-    ///  <b>Learn more</b> 
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/containers-create-groups.html">Manage
-    /// a container group definition</a> 
-    /// </para>
-    ///  </li> </ul>
+    ///  </note>
     /// </summary>
     public partial class ListContainerGroupDefinitionsRequest : AmazonGameLiftRequest
     {
