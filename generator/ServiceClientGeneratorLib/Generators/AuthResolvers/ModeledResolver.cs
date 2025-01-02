@@ -181,8 +181,8 @@ namespace ServiceClientGenerator.Generators.AuthResolvers
             
             #line default
             #line hidden
-            this.Write("\r\n        /// <inheritdoc/>\r\n        protected override AbstractAWSSigner GetSign" +
-                    "er(IAuthScheme<BaseIdentity> scheme)\r\n        {\r\n            return new ");
+            this.Write("\r\n        /// <inheritdoc/>\r\n        protected override ISigner GetSigner(IAuthSc" +
+                    "heme<BaseIdentity> scheme)\r\n        {\r\n            return new ");
             
             #line 81 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\AuthResolvers\ModeledResolver.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GeneratorHelpers.DetermineSignerOverride(this.Config.ServiceModel.SignatureVersion)));

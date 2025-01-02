@@ -300,7 +300,6 @@ namespace AWSSDK.UnitTests.Runtime
         {
             var pipeline = new RuntimePipeline(new MockHandler());
             pipeline.AddHandler(new Signer());
-            pipeline.AddHandler(new CredentialsRetriever());
             pipeline.AddHandler(new MockAuthResolverHandler());
 
             return pipeline;
