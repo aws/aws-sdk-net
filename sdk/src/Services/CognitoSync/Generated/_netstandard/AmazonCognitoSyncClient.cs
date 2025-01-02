@@ -246,8 +246,7 @@ namespace Amazon.CognitoSync
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
         protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
         {
-            pipeline.RemoveHandler<Amazon.Runtime.Internal.CredentialsRetriever>();
-            pipeline.AddHandlerBefore<Amazon.Runtime.Internal.Marshaller>(new Amazon.CognitoSync.Internal.CognitoCredentialsRetriever(this.Credentials));
+            pipeline.AddHandlerBefore<Amazon.Runtime.Internal.RetryHandler>(new Amazon.CognitoSync.Internal.CognitoCredentialsRetriever());
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCognitoSyncEndpointResolver());
         }
