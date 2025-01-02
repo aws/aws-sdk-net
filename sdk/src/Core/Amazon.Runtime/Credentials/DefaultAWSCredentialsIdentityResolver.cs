@@ -34,11 +34,12 @@ namespace Amazon.Runtime.Credentials
         private const string AWS_PROFILE_ENVIRONMENT_VARIABLE = "AWS_PROFILE";
         private const string DEFAULT_PROFILE_NAME = "default";
 
-        private static ReaderWriterLockSlim _cachedCredentialsLock = new ReaderWriterLockSlim();
+        private static readonly ReaderWriterLockSlim _cachedCredentialsLock = new();
         private delegate AWSCredentials CredentialsGenerator();
         private AWSCredentials _cachedCredentials;
-        private List<CredentialsGenerator> _credentialsGenerators { get; set; }
-        private readonly CredentialProfileStoreChain _credentialProfileChain = new CredentialProfileStoreChain();
+        private readonly List<CredentialsGenerator> _credentialsGenerators;
+        private readonly CredentialProfileStoreChain _credentialProfileChain = new();
+        private readonly EnvironmentState _lastKnownEnvironmentState = new();
 
         public DefaultAWSCredentialsIdentityResolver()
         {
@@ -51,8 +52,8 @@ namespace Amazon.Runtime.Credentials
 #if BCL
                     () => new AppConfigAWSCredentials(), // Test explicit keys/profile name first.
 #endif
-                    () => AssumeRoleWithWebIdentityCredentials.FromEnvironmentVariables(),
                     () => new EnvironmentVariablesAWSCredentials(), // Look for credentials set in environment vars.
+                    () => AssumeRoleWithWebIdentityCredentials.FromEnvironmentVariables(),
                     () => GetAWSCredentials(_credentialProfileChain),
                     () => ContainerEC2CredentialsWrapper(), // either get ECS / EKS credentials or instance profile credentials
                 };
@@ -66,12 +67,18 @@ namespace Amazon.Runtime.Credentials
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types", Justification = "We need to catch all exceptions to be able to move the the next generator.")]
         public BaseIdentity ResolveIdentity()
         {
+            var hasEnvironmentChanged = false;
+
             try
             {
                 _cachedCredentialsLock.EnterReadLock();
                 if (_cachedCredentials != null)
                 {
-                    return _cachedCredentials;
+                    hasEnvironmentChanged = _lastKnownEnvironmentState.HasEnvironmentChanged();
+                    if (!hasEnvironmentChanged)
+                    { 
+                        return _cachedCredentials;
+                    }
                 }
             }
             finally
@@ -82,7 +89,7 @@ namespace Amazon.Runtime.Credentials
             try
             {
                 _cachedCredentialsLock.EnterWriteLock();
-                if (_cachedCredentials != null)
+                if (_cachedCredentials != null && !hasEnvironmentChanged)
                 {
                     return _cachedCredentials;
                 }
@@ -104,19 +111,30 @@ namespace Amazon.Runtime.Credentials
                     {
                         throw;
                     }
+                    // Also breaking the chain in case a custom profile name was specified and the profile does not exist.
+                    // This differs from the FallbackCredentialsFactory, which would default to the IMDS provider (and throw
+                    // an error that may not be applicable when running outside of an EC2 environment).
+                    catch (ProfileNotFoundException)
+                    {
+                        throw;
+                    }
                     catch (Exception e)
                     {
                         _cachedCredentials = null;
-
                         errors.Add(e);
                     }
 
                     if (_cachedCredentials != null)
+                    {
                         break;
+                    }
                 }
 
                 if (_cachedCredentials != null)
+                {
+                    _lastKnownEnvironmentState.UpdateEnvironment();
                     return _cachedCredentials;
+                }
 
                 using (StringWriter writer = new StringWriter(CultureInfo.InvariantCulture))
                 {
@@ -147,12 +165,17 @@ namespace Amazon.Runtime.Credentials
         private static AWSCredentials GetAWSCredentials(ICredentialProfileSource source)
         {
             var profileName = GetProfileName();
-
-            CredentialProfile profile;
-            if (source.TryGetProfile(profileName, out profile))
+            if (source.TryGetProfile(profileName, out CredentialProfile profile))
+            {
                 return profile.GetAWSCredentials(source, true);
+            }
 
-            throw new AmazonClientException($"Unable to find the \"{profileName}\" profile in CredentialProfileStoreChain.");
+            if (!profileName.Equals(DEFAULT_PROFILE_NAME, StringComparison.OrdinalIgnoreCase))
+            {
+                throw new ProfileNotFoundException($"Unable to find the \"{profileName}\" profile.");
+            }
+
+            throw new AmazonClientException($"Unable to find the \"{DEFAULT_PROFILE_NAME}\" profile.");
         }
 
         internal static string GetProfileName()
@@ -160,10 +183,14 @@ namespace Amazon.Runtime.Credentials
             var profileName = AWSConfigs.AWSProfileName;
 
             if (string.IsNullOrEmpty(profileName?.Trim()))
+            {
                 profileName = Environment.GetEnvironmentVariable(AWS_PROFILE_ENVIRONMENT_VARIABLE);
+            }
 
             if (string.IsNullOrEmpty(profileName?.Trim()))
+            {
                 profileName = DEFAULT_PROFILE_NAME;
+            }
 
             return profileName;
         }
@@ -190,6 +217,49 @@ namespace Amazon.Runtime.Credentials
                     $" Either {GenericContainerCredentials.RelativeURIEnvVariable} or {GenericContainerCredentials.FullURIEnvVariable} environment variables must be set.");
             }
             return DefaultInstanceProfileAWSCredentials.Instance;
+        }
+
+        /// <summary>
+        /// This helper class keeps track of the environment state at the time credentials were last resolved.
+        /// <para>
+        /// The <see cref="FallbackCredentialsFactory"/> was written with the assumption the environment wouldn't change between calls, so it returns
+        /// cached values if available. However, in some scenarios (such as a PowerShell interactive session), customers may set a different profile or
+        /// temporary access and secret keys (and we want to pick up that change to match the behavior of the AWS CLI).
+        /// </para>
+        /// </summary>
+        /// <remarks>
+        /// This class intentionally doesn't check for variables related to the <see cref="GenericContainerCredentials"/> provider, as those are expected to 
+        /// be set once when the container starts and not to change for its lifecycle.
+        /// </remarks>
+        private class EnvironmentState
+        {
+            public string AccessKey { get; private set; }
+            public string SecretKey { get; private set; }
+            public string SessionToken { get; private set; }
+            public string ProfileName { get; private set; }
+
+            public bool HasEnvironmentChanged()
+            {
+                var secretKey = 
+                    Environment.GetEnvironmentVariable(EnvironmentVariablesAWSCredentials.ENVIRONMENT_VARIABLE_SECRETKEY) ?? 
+                    Environment.GetEnvironmentVariable(EnvironmentVariablesAWSCredentials.LEGACY_ENVIRONMENT_VARIABLE_SECRETKEY);
+
+                return 
+                    AccessKey != Environment.GetEnvironmentVariable(EnvironmentVariablesAWSCredentials.ENVIRONMENT_VARIABLE_ACCESSKEY) ||
+                    SecretKey != secretKey ||
+                    SessionToken != Environment.GetEnvironmentVariable(EnvironmentVariablesAWSCredentials.ENVIRONMENT_VARIABLE_SESSION_TOKEN) ||
+                    ProfileName != Environment.GetEnvironmentVariable(AWS_PROFILE_ENVIRONMENT_VARIABLE);
+            }
+
+            public void UpdateEnvironment()
+            {
+                AccessKey = Environment.GetEnvironmentVariable(EnvironmentVariablesAWSCredentials.ENVIRONMENT_VARIABLE_ACCESSKEY);
+                SecretKey = 
+                    Environment.GetEnvironmentVariable(EnvironmentVariablesAWSCredentials.ENVIRONMENT_VARIABLE_SECRETKEY) ??
+                    Environment.GetEnvironmentVariable(EnvironmentVariablesAWSCredentials.LEGACY_ENVIRONMENT_VARIABLE_SECRETKEY);
+                SessionToken = Environment.GetEnvironmentVariable(EnvironmentVariablesAWSCredentials.ENVIRONMENT_VARIABLE_SESSION_TOKEN);
+                ProfileName = Environment.GetEnvironmentVariable(AWS_PROFILE_ENVIRONMENT_VARIABLE);
+            }
         }
     }
 }
