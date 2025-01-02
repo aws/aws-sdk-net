@@ -14,16 +14,14 @@
  */
 
 using System.Collections.Generic;
-using Amazon.Util.Internal;
 using Amazon.Runtime.Internal.Settings;
-using System.Linq;
+using System;
 
 namespace Amazon.Runtime.CredentialManagement
 {
     /// <summary>
     /// Class to abstract the combined use of NetSDKCredentialsFile and SharedCredentialsFile where possible.
     /// </summary>
-    /// <returns></returns>
     public class CredentialProfileStoreChain : ICredentialProfileSource
     {
         /// <summary>
@@ -212,5 +210,32 @@ namespace Amazon.Runtime.CredentialManagement
                 profile.CredentialProfileStore.UnregisterProfile(profileName);
             }
         }
+    }
+
+    /// <summary>
+    /// Exception thrown when a custom profile (i.e. specified via the <c>AWS_PROFILE</c> environment variable and
+    /// different than <c>default</c>) does not exist. 
+    /// </summary>
+    /// <remarks>
+    /// This will be surfaced to the user instead of moving on to the next credential provider.
+    /// </remarks>
+#if !NETSTANDARD
+    [Serializable]
+#endif
+    public class ProfileNotFoundException : AmazonClientException
+    {
+        public ProfileNotFoundException(string message) : base(message) { }
+
+        public ProfileNotFoundException(string message, Exception inner)
+            : base(message, inner)
+        {
+        }
+
+#if !NETSTANDARD
+        protected ProfileNotFoundException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+            : base(info, context)
+        {
+        }
+#endif
     }
 }
