@@ -10679,6 +10679,56 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type H264WriteMp4PackagingType.
+    /// </summary>
+    public class H264WriteMp4PackagingType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AVC1 for H264WriteMp4PackagingType
+        /// </summary>
+        public static readonly H264WriteMp4PackagingType AVC1 = new H264WriteMp4PackagingType("AVC1");
+        /// <summary>
+        /// Constant AVC3 for H264WriteMp4PackagingType
+        /// </summary>
+        public static readonly H264WriteMp4PackagingType AVC3 = new H264WriteMp4PackagingType("AVC3");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public H264WriteMp4PackagingType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static H264WriteMp4PackagingType FindValue(string value)
+        {
+            return FindValue<H264WriteMp4PackagingType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator H264WriteMp4PackagingType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type H265AdaptiveQuantization.
     /// </summary>
     public class H265AdaptiveQuantization : ConstantClass
