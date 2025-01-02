@@ -13,6 +13,13 @@
  * permissions and limitations under the License.
  */
 
+#if AWS_ASYNC_API
+using System.Threading;
+using System.Threading.Tasks;
+#endif
+using Amazon.Runtime.Internal.Util;
+using Amazon.Runtime.Identity;
+
 namespace Amazon.Runtime.Internal.Auth
 {
     /// <summary>
@@ -24,11 +31,47 @@ namespace Amazon.Runtime.Internal.Auth
     /// the service to authenticate the SDK customer's identity.
     /// </para>
     /// </summary>
-#pragma warning disable CA1040 // Avoid empty interfaces
     public interface ISigner
-#pragma warning restore CA1040 // Avoid empty interfaces
     {
-        // TODO: This is a marker interface at the moment since the signers defined in the SDK
-        // currently reference internal types that need to be extracted / refactored (e.g. IRequest).
+        /// <summary> 
+        /// Signs the provided HTTP request using the provided identity. Throws an exception if the 
+        /// identity is not compatible with this signer. 
+        /// </summary> 
+        /// <param name="request">The request to be signed</param> 
+        /// <param name="clientConfig">Client configuration settings</param> 
+        /// <param name="metrics">Request metrics to be tracked</param> 
+        /// <param name="identity">The identity to be used for signing</param> 
+        void Sign(IRequest request, IClientConfig clientConfig, RequestMetrics metrics, BaseIdentity identity);
+
+#if AWS_ASYNC_API
+        /// <summary> 
+        /// Asynchronously signs the provided HTTP request using the provided identity. Throws an exception if the 
+        /// identity is not compatible with this signer. 
+        /// </summary> 
+        /// <param name="request">The request to be signed</param> 
+        /// <param name="clientConfig">Client configuration settings</param> 
+        /// <param name="metrics">Request metrics to be tracked</param> 
+        /// <param name="identity">The identity to be used for signing</param> 
+        /// <param name="token">Cancellation token for the async operation</param> 
+        /// <returns>A Task representing the asynchronous signing operation</returns> 
+        Task SignAsync(
+        IRequest request,
+        IClientConfig clientConfig,
+        RequestMetrics metrics,
+        BaseIdentity identity,
+        CancellationToken token = default);
+#endif
+
+        /// <summary> 
+        /// Gets the client protocol used by this signer. 
+        /// </summary> 
+        ClientProtocol Protocol { get; }
+
+        /// <summary> 
+        /// Signals to the <see cref="Signer"/> Pipeline Handler 
+        /// if a Signer requires valid credentials in order to 
+        /// correctly <see cref="Sign(IRequest,IClientConfig,RequestMetrics,BaseIdentity)"/>.
+        /// </summary> 
+        bool RequiresCredentials { get; }
     }
 }

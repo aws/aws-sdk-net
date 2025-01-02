@@ -154,9 +154,9 @@ namespace Amazon.Runtime.Internal
             }
         }
 
-        protected virtual AbstractAWSSigner GetSigner(IAuthScheme<BaseIdentity> scheme)
+        protected virtual ISigner GetSigner(IAuthScheme<BaseIdentity> scheme)
         {
-            return scheme.Signer() as AbstractAWSSigner;
+            return scheme.Signer();
         }
 
         /// <summary>
