@@ -41,6 +41,7 @@ namespace Amazon.SageMaker.Model
         private string _frameworkVersion;
         private string _image;
         private string _imageDigest;
+        private string _modelDataETag;
         private ModelDataSource _modelDataSource;
         private string _modelDataUrl;
         private ModelInput _modelInput;
@@ -187,6 +188,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetImageDigest()
         {
             return this._imageDigest != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModelDataETag. 
+        /// <para>
+        /// The ETag associated with Model Data URL.
+        /// </para>
+        /// </summary>
+        public string ModelDataETag
+        {
+            get { return this._modelDataETag; }
+            set { this._modelDataETag = value; }
+        }
+
+        // Check to see if ModelDataETag property is set
+        internal bool IsSetModelDataETag()
+        {
+            return this._modelDataETag != null;
         }
 
         /// <summary>

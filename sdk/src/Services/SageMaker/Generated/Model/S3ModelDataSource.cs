@@ -35,7 +35,9 @@ namespace Amazon.SageMaker.Model
     public partial class S3ModelDataSource
     {
         private ModelCompressionType _compressionType;
+        private string _eTag;
         private InferenceHubAccessConfig _hubAccessConfig;
+        private string _manifestEtag;
         private string _manifestS3Uri;
         private ModelAccessConfig _modelAccessConfig;
         private S3ModelDataType _s3DataType;
@@ -140,6 +142,24 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ETag. 
+        /// <para>
+        /// The ETag associated with S3 URI.
+        /// </para>
+        /// </summary>
+        public string ETag
+        {
+            get { return this._eTag; }
+            set { this._eTag = value; }
+        }
+
+        // Check to see if ETag property is set
+        internal bool IsSetETag()
+        {
+            return this._eTag != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property HubAccessConfig. 
         /// <para>
         /// Configuration information for hub access.
@@ -155,6 +175,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetHubAccessConfig()
         {
             return this._hubAccessConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManifestEtag. 
+        /// <para>
+        /// The ETag associated with Manifest S3URI.
+        /// </para>
+        /// </summary>
+        public string ManifestEtag
+        {
+            get { return this._manifestEtag; }
+            set { this._manifestEtag = value; }
+        }
+
+        // Check to see if ManifestEtag property is set
+        internal bool IsSetManifestEtag()
+        {
+            return this._manifestEtag != null;
         }
 
         /// <summary>
