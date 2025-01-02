@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// The specified queue doesn't exist.
+    /// Ensure that the <c>QueueUrl</c> is correct and that the queue has not been deleted.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
