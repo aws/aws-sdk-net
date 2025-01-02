@@ -2,8 +2,8 @@
     "runtimePipelineOverride":{
         "overrides":[
             {
-                "operation":"replace",
-                "targetType":"Amazon.Runtime.Internal.CredentialsRetriever",
+                "operation":"addBefore",
+                "targetType":"Amazon.Runtime.Internal.RetryHandler",
                 "newType":"Amazon.CognitoSync.Internal.CognitoCredentialsRetriever"
             }
         ]

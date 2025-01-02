@@ -113,7 +113,7 @@ namespace Amazon.S3.Util
         private static string GetHeadBucketPreSignedUrl(string bucketName, IRequestContext requestContext)
         {
             // all buckets accessible via USEast1
-            using (var s3Client = GetUsEast1ClientFromCredentials(requestContext.ImmutableCredentials))
+            using (var s3Client = GetUsEast1ClientFromCredentials(requestContext.ClientConfig.DefaultAWSCredentials))
             {
                 // IMPORTANT:
                 // This method is called as part of the request pipeline.
@@ -144,20 +144,20 @@ namespace Amazon.S3.Util
             }
         }
 
-        private static AmazonS3Client GetUsEast1ClientFromCredentials(ImmutableCredentials credentials)
+        /// <summary>
+        /// Creates an Amazon S3 client for the US East 1 region using provided credentials.
+        /// </summary>
+        /// <param name="credentials">AWS credentials to be used for the S3 client</param>
+        /// <returns>An AmazonS3Client instance configured for US East 1 region</returns>
+        /// <remarks>
+        /// This method explicitly uses the provided customer credentials rather than relying on 
+        /// requestContext.Identity. This is necessary because any identity set directly would be 
+        /// overridden in the request pipeline. By using provided credentials, we ensure proper 
+        /// authentication, otherwise the AuthResolver will handle credential resolution.
+        /// </remarks>
+        private static AmazonS3Client GetUsEast1ClientFromCredentials(AWSCredentials credentials)
         {
-            if (credentials == null)
-            {
-                return new AmazonS3Client(new AnonymousAWSCredentials(), RegionEndpoint.USEast1);
-            }
-            else if(credentials.UseToken)
-            {
-                return new AmazonS3Client(credentials.AccessKey, credentials.SecretKey, credentials.Token, RegionEndpoint.USEast1);
-            }
-            else
-            {
-                return new AmazonS3Client(credentials.AccessKey, credentials.SecretKey, RegionEndpoint.USEast1);
-            }
+            return new AmazonS3Client(credentials, RegionEndpoint.USEast1);
         }
     }
 }

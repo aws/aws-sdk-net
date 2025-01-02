@@ -24,7 +24,6 @@ namespace AWSSDK.UnitTests
         {            
             var pipeline = new RuntimePipeline(new MockHandler());
             pipeline.AddHandler(new Signer());
-            pipeline.AddHandler(new CredentialsRetriever());
 
             var signer = new MockSigner();
             var context = CreateTestContext(signer);
@@ -32,7 +31,7 @@ namespace AWSSDK.UnitTests
             pipeline.InvokeSync(context);
 
             Assert.IsTrue(context.RequestContext.IsSigned);
-            Assert.AreEqual(0, signer.SignCount);
+            Assert.AreEqual(1, signer.SignCount);
         }
 
         [TestMethod][TestCategory("UnitTest")]
@@ -41,7 +40,6 @@ namespace AWSSDK.UnitTests
         {
             var pipeline = new RuntimePipeline(new MockHandler());
             pipeline.AddHandler(new Signer());
-            pipeline.AddHandler(new CredentialsRetriever());
 
             var signer = new MockSigner();
             var context = CreateTestContext(signer);
@@ -58,7 +56,6 @@ namespace AWSSDK.UnitTests
         {
             var pipeline = new RuntimePipeline(new MockHandler());           
             pipeline.AddHandler(new Signer());
-            pipeline.AddHandler(new CredentialsRetriever());
 
             var signer = new AWS4Signer();
             var context = CreateTestContext(signer);
@@ -219,7 +216,6 @@ namespace AWSSDK.UnitTests
         {
             var pipeline = new RuntimePipeline(new MockHandler());            
             pipeline.AddHandler(new Signer());
-            pipeline.AddHandler(new CredentialsRetriever());
 
             var signer = new MockSigner();
             var context = CreateTestContext(signer);

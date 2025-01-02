@@ -84,7 +84,6 @@ namespace Amazon.S3.Internal.S3Express
             }
 
             requestContext.Request.Headers[S3ExpressSessionHeader] = sessionCredentials.SessionToken;
-            requestContext.ImmutableCredentials = new ImmutableCredentials(sessionCredentials.AccessKeyId, sessionCredentials.SecretAccessKey, null);
             requestContext.Identity = new BasicAWSCredentials(sessionCredentials.AccessKeyId, sessionCredentials.SecretAccessKey);
         }
 
@@ -135,7 +134,6 @@ namespace Amazon.S3.Internal.S3Express
             }
 
             requestContext.Request.Headers[S3ExpressSessionHeader] = sessionCredentials.SessionToken;
-            requestContext.ImmutableCredentials = new ImmutableCredentials(sessionCredentials.AccessKeyId, sessionCredentials.SecretAccessKey, null);
             requestContext.Identity = new BasicAWSCredentials(sessionCredentials.AccessKeyId, sessionCredentials.SecretAccessKey);
         }
 #endif

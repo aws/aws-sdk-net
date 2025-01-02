@@ -76,7 +76,7 @@ namespace Amazon.S3.Internal
         }
 
         /// <inheritdoc/>
-        protected override AbstractAWSSigner GetSigner(IAuthScheme<BaseIdentity> scheme)
+        protected override ISigner GetSigner(IAuthScheme<BaseIdentity> scheme)
         {
             return new Amazon.S3.Internal.S3Signer();
         }

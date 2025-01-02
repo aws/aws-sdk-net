@@ -133,7 +133,9 @@ namespace Amazon.Runtime.Internal
         private static IEnumerable<DiscoveryEndpointBase> ProcessEndpointDiscovery(IRequestContext requestContext, bool evictCacheKey, Uri evictUri)
         {    
             var options = requestContext.Options;
-            if (options.EndpointDiscoveryMarshaller != null && options.EndpointOperation != null && requestContext.ImmutableCredentials != null)
+            var immutableCredentials = (requestContext.Identity as AWSCredentials)?.GetCredentials();
+
+            if (options.EndpointDiscoveryMarshaller != null && options.EndpointOperation != null && immutableCredentials != null)
             {
                 //Endpoint discovery is supported by this operation and we have an endpoint operation available to use                
                 var endpointDiscoveryData = options.EndpointDiscoveryMarshaller.Marshall(requestContext.OriginalRequest);
@@ -142,7 +144,7 @@ namespace Amazon.Runtime.Internal
                 {
                     operationName = AWSSDKUtils.ExtractOperationName(requestContext.RequestName);
                 }
-                return options.EndpointOperation(new EndpointOperationContext(requestContext.ImmutableCredentials.AccessKey, operationName, endpointDiscoveryData, evictCacheKey, evictUri));
+                return options.EndpointOperation(new EndpointOperationContext(immutableCredentials.AccessKey, operationName, endpointDiscoveryData, evictCacheKey, evictUri));
             }
 
             return null;
