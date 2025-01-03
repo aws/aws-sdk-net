@@ -35,7 +35,7 @@ namespace Amazon.ECS.Model
     /// 
     ///  
     /// <para>
-    /// A service deployment happens when you release a softwre update for the service. You
+    /// A service deployment happens when you release a software update for the service. You
     /// route traffic from the running service revisions to the new service revison and control
     /// the number of running tasks. 
     /// </para>
