@@ -1,3 +1,14 @@
+### 3.7.956.0 (2025-01-03 19:18 UTC)
+* ECS (3.7.408.7)
+	* Adding SDK reference examples for Amazon ECS operations.
+* Route53Domains (3.7.401.9)
+	* Doc only update for Route 53 Domains that fixes several customer-reported issues
+* S3 (3.7.411.0)
+	* This change is only for updating the model regexp of CopySource which is not for validation but only for documentation and user guide change.
+* Core 3.7.400.72
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.955.0 (2025-01-02 19:23 UTC)
 * AppSync (3.7.404.0)
 	* Modify UpdateGraphQLAPI operation and flag authenticationType as required.
