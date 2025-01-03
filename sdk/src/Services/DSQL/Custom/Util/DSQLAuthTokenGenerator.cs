@@ -14,6 +14,7 @@
  */
 
 using Amazon.Runtime;
+using Amazon.Runtime.Credentials.Internal;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
@@ -81,7 +82,7 @@ namespace Amazon.DSQL.Util
         /// <returns></returns>
         public static string GenerateDbConnectAuthToken(RegionEndpoint region, string hostname)
         {
-            AWSCredentials credentials = FallbackCredentialsFactory.GetCredentials();
+            AWSCredentials credentials = DefaultIdentityResolverConfiguration.ResolveDefaultIdentity<AWSCredentials>();
             return GenerateDbConnectAuthToken(credentials, region, hostname);
         }
 
@@ -166,7 +167,7 @@ namespace Amazon.DSQL.Util
         /// <returns></returns>
         public static string GenerateDbConnectAdminAuthToken(RegionEndpoint region, string hostname)
         {
-            AWSCredentials credentials = FallbackCredentialsFactory.GetCredentials();
+            AWSCredentials credentials = DefaultIdentityResolverConfiguration.ResolveDefaultIdentity<AWSCredentials>();
             return GenerateDbConnectAdminAuthToken(credentials, region, hostname);
         }
 
