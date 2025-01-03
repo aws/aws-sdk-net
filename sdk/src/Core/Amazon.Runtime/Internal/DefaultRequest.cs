@@ -447,6 +447,15 @@ namespace Amazon.Runtime.Internal
         public bool UseDoubleEncoding { get; set; } = true;
 
         /// <summary>
+        /// Gets and sets a flag that indicates if the payload shouldn't be signed.
+        /// </summary>
+        public bool UnsignedPayload
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
         /// Used for Amazon S3 requests where the bucket name is removed from
         /// the marshalled resource path into the host header. To comply with
         /// AWS2 signature calculation, we need to recover the bucket name

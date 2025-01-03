@@ -60,6 +60,15 @@ namespace Amazon.Runtime.Internal
         }
 
         /// <summary>
+        /// Gets and sets a flag that indicates if the payload shouldn't be signed.
+        /// </summary>
+        bool UnsignedPayload
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
         /// Returns a dictionary of the parameters included in this request.
         /// </summary>
         IDictionary<String, String> Parameters
