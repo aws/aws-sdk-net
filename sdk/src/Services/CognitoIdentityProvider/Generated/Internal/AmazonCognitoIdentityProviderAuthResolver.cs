@@ -74,6 +74,8 @@ namespace Amazon.CognitoIdentityProvider.Internal
                     return AuthSchemeOption.DEFAULT_NOAUTH;
                 case "ChangePasswordRequest":
                     return AuthSchemeOption.DEFAULT_NOAUTH;
+                case "CompleteWebAuthnRegistrationRequest":
+                    return AuthSchemeOption.DEFAULT_NOAUTH;
                 case "ConfirmDeviceRequest":
                     return AuthSchemeOption.DEFAULT_NOAUTH;
                 case "ConfirmForgotPasswordRequest":
@@ -83,6 +85,8 @@ namespace Amazon.CognitoIdentityProvider.Internal
                 case "DeleteUserRequest":
                     return AuthSchemeOption.DEFAULT_NOAUTH;
                 case "DeleteUserAttributesRequest":
+                    return AuthSchemeOption.DEFAULT_NOAUTH;
+                case "DeleteWebAuthnCredentialRequest":
                     return AuthSchemeOption.DEFAULT_NOAUTH;
                 case "ForgetDeviceRequest":
                     return AuthSchemeOption.DEFAULT_NOAUTH;
@@ -94,11 +98,15 @@ namespace Amazon.CognitoIdentityProvider.Internal
                     return AuthSchemeOption.DEFAULT_NOAUTH;
                 case "GetUserAttributeVerificationCodeRequest":
                     return AuthSchemeOption.DEFAULT_NOAUTH;
+                case "GetUserAuthFactorsRequest":
+                    return AuthSchemeOption.DEFAULT_NOAUTH;
                 case "GlobalSignOutRequest":
                     return AuthSchemeOption.DEFAULT_NOAUTH;
                 case "InitiateAuthRequest":
                     return AuthSchemeOption.DEFAULT_NOAUTH;
                 case "ListDevicesRequest":
+                    return AuthSchemeOption.DEFAULT_NOAUTH;
+                case "ListWebAuthnCredentialsRequest":
                     return AuthSchemeOption.DEFAULT_NOAUTH;
                 case "ResendConfirmationCodeRequest":
                     return AuthSchemeOption.DEFAULT_NOAUTH;
@@ -111,6 +119,8 @@ namespace Amazon.CognitoIdentityProvider.Internal
                 case "SetUserSettingsRequest":
                     return AuthSchemeOption.DEFAULT_NOAUTH;
                 case "SignUpRequest":
+                    return AuthSchemeOption.DEFAULT_NOAUTH;
+                case "StartWebAuthnRegistrationRequest":
                     return AuthSchemeOption.DEFAULT_NOAUTH;
                 case "UpdateAuthEventFeedbackRequest":
                     return AuthSchemeOption.DEFAULT_NOAUTH;
