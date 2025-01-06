@@ -58,6 +58,7 @@ namespace ServiceClientGenerator
         public const string ResponseAlgorithmsKey = "responseAlgorithms";
         public const string RequestCompressionKey = "requestcompression";
         public const string EncodingsKey = "encodings";
+        public const string UnsignedPayloadKey = "unsignedPayload";
 
         // shapes
         public const string ShapesKey = "shapes";
