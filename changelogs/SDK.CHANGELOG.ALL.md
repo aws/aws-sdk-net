@@ -1,3 +1,14 @@
+### 3.7.957.0 (2025-01-06 19:15 UTC)
+* IoTSecureTunneling (3.7.401.0)
+	* Adds dualstack endpoint support for IoT Secure Tunneling
+* S3 (3.7.411.1)
+	* Adjustments to S3 RequestsWith200Error request list generation.
+* SupplyChain (3.7.404.0)
+	* Allow vanity DNS domain when creating a new ASC instance
+* Core 3.7.400.73
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.956.0 (2025-01-03 19:18 UTC)
 * ECS (3.7.408.7)
 	* Adding SDK reference examples for Amazon ECS operations.

@@ -32,7 +32,7 @@ namespace Amazon.KinesisVideoArchivedMedia
     public partial class AmazonKinesisVideoArchivedMediaConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Kinesis Video Archived Media", "3.7.400.72");
+            InternalSDKUtils.BuildUserAgentString("Kinesis Video Archived Media", "3.7.400.73");
 
         private string _userAgent = UserAgentString;
         ///<summary>
