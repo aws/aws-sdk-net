@@ -1,0 +1,11 @@
+{
+    "services": [
+        {
+            "serviceName": "S3",
+            "type": "patch",
+            "changeLogMessages": [
+                "Adjustments to S3 RequestsWith200Error request list generation."
+            ]
+        }
+    ]
+}

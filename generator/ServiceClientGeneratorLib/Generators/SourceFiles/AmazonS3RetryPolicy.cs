@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AmazonS3RetryPolicy.tt"
+    #line 1 "C:\Dev\worktrees\s3-200\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AmazonS3RetryPolicy.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "17.0.0.0")]
     public partial class AmazonS3RetryPolicy : BaseGenerator
     {
@@ -29,7 +29,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
         public override string TransformText()
         {
             
-            #line 6 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AmazonS3RetryPolicy.tt"
+            #line 6 "C:\Dev\worktrees\s3-200\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AmazonS3RetryPolicy.tt"
 
 	AddLicenseHeader();
 
@@ -58,12 +58,20 @@ namespace Amazon.S3.Internal
 		{
 ");
             
-            #line 29 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AmazonS3RetryPolicy.tt"
+            #line 29 "C:\Dev\worktrees\s3-200\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AmazonS3RetryPolicy.tt"
 
 	
 	foreach(var operation in this.Config.ServiceModel.Operations)
 	{
-		if(operation.RequestStructure != null && !operation.RequestStructure.Members.Any(member => member.IsStreaming))
+		// List all operations without an output shape or an output shape that does not match any of the following conditions:
+		// "streaming":true
+		// "eventstream":true
+		// "payload" of type "string"
+		if((operation.ResponseStructure != null && 
+			!operation.ResponseStructure.Members.Any(member => member.IsStreaming || member.IsEventStream) &&
+			operation.ResponseStructure.PayloadMember?.OwningShape.IsString != true) ||
+			operation.ResponseStructure == null // When ResponseStructure is null the operation does not have an output shape.
+		)
 		{
 
             
@@ -71,14 +79,14 @@ namespace Amazon.S3.Internal
             #line hidden
             this.Write("\t\t\ttypeof(");
             
-            #line 36 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AmazonS3RetryPolicy.tt"
+            #line 44 "C:\Dev\worktrees\s3-200\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AmazonS3RetryPolicy.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Request),\r\n");
             
-            #line 37 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AmazonS3RetryPolicy.tt"
+            #line 45 "C:\Dev\worktrees\s3-200\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AmazonS3RetryPolicy.tt"
 
 		}
 	}
