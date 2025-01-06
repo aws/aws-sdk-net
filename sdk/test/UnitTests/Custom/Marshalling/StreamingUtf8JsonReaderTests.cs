@@ -21,14 +21,6 @@ namespace AWSSDK.UnitTests
     [TestClass]
     public class StreamingUtf8JsonReaderTests
     {
-        private static int originalBufferSize;
-        [ClassInitialize]
-        public static void Initialize(TestContext testContext)
-        {
-            originalBufferSize = AWSConfigs.StreamingUtf8JsonReaderBufferSize.GetValueOrDefault();
-            AWSConfigs.StreamingUtf8JsonReaderBufferSize = 4096;
-        }
-
         [TestMethod]
         public void SkipsUtf8BOM()
         {
@@ -58,7 +50,7 @@ namespace AWSSDK.UnitTests
             // here we're creating a json string that is greater than the default buffer size to test the GetMoreBytesFromStream logic
             var sb = new StringBuilder();
             sb.Append("{ \"key\": \"");
-            var size = AWSConfigs.StreamingUtf8JsonReaderBufferSize.GetValueOrDefault() + 500;
+            var size = 4096 + 500;
             sb.Append(new string('x', size));
             sb.Append("\" }");
             string largeJson = sb.ToString();
@@ -122,7 +114,7 @@ namespace AWSSDK.UnitTests
         {
             var sb = new StringBuilder();
             // everything other than the 'x' is 13 bytes
-            var size = AWSConfigs.StreamingUtf8JsonReaderBufferSize.GetValueOrDefault() - 13;
+            var size = 4096 - 13;
             sb.Append("{ \"key\": \"");
             sb.Append(new string('x', size));
             sb.Append("\" }");
@@ -157,7 +149,7 @@ namespace AWSSDK.UnitTests
         {
             var sb = new StringBuilder();
             // everything other than the 'x' is 13 bytes
-            var size = AWSConfigs.StreamingUtf8JsonReaderBufferSize.GetValueOrDefault() - 13 + 1;
+            var size = 4096 - 13 + 1;
             sb.Append("{ \"key\": \"");
             sb.Append(new string('x', size));
             sb.Append("\" }");
@@ -191,7 +183,7 @@ namespace AWSSDK.UnitTests
         {
             var sb = new StringBuilder();
             // everything other than the 'x' is 13 bytes
-            var size = AWSConfigs.StreamingUtf8JsonReaderBufferSize.GetValueOrDefault() - 13 - 1;
+            var size = 4096 - 13 - 1;
             sb.Append("{ \"key\": \"");
             sb.Append(new string('x', size));
             sb.Append("\" }");
@@ -218,12 +210,6 @@ namespace AWSSDK.UnitTests
                 Assert.AreEqual<string>("key", key);
                 Assert.AreEqual<string>(new string('x', size), value);
             }
-        }
-
-        [ClassCleanup]
-        public static void ClassCleanup()
-        {
-            AWSConfigs.StreamingUtf8JsonReaderBufferSize = originalBufferSize;
         }
     }
 }

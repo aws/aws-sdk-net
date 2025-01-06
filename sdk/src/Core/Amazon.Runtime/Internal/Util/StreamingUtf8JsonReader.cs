@@ -46,19 +46,31 @@ namespace Amazon.Runtime.Internal.Util
 
         private Stream _stream;
         private byte[] _buffer;
+
+        /// <summary>
+        /// Initializes a new instance of the StreamingUtf8JsonReader. Upon initialization the reader will read from the stream and fill the buffer.
+        /// If a UTF8 BOM is present in the stream, it will be skipped. Unless <see cref="AWSConfigs.StreamingUtf8JsonReaderBufferSize"/> is set, the default
+        /// buffer size for buffering data from the stream will be 4096. You can also use the constructor that accepts bufferSize to change this value.
+        /// </summary>
+        /// <param name="stream">the stream containing the data</param>
+        public StreamingUtf8JsonReader(Stream stream) : this(stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096)
+        {
+        }
+
         /// <summary>
         /// Initializes a new instance of the StreamingUtf8JsonReader. Upon initialization the reader will read from the stream and fill the buffer.
         /// If a UTF8 BOM is present in the stream, it will be skipped.
         /// </summary>
         /// <param name="stream">the stream containing the data</param>
+        /// <param name="bufferSize">the size of the buffer when reading data from the stream</param>
         /// <exception cref="ArgumentException"></exception>
-        public StreamingUtf8JsonReader(Stream stream)
+        public StreamingUtf8JsonReader(Stream stream, int bufferSize)
         {
             if (stream is null)
                 throw new ArgumentException("Stream must not be null. Please initialize a stream and pass it into the constructor.");
 
             _stream = stream;
-            _buffer = ArrayPool<byte>.Shared.Rent(AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096);
+            _buffer = ArrayPool<byte>.Shared.Rent(bufferSize);
             int utf8BomLength = JsonConstants.Utf8Bom.Length;
             Debug.Assert(_buffer.Length >= utf8BomLength);
 
