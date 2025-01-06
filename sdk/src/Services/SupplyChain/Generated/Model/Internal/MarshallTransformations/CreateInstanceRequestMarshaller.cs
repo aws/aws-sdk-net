@@ -110,6 +110,12 @@ namespace Amazon.SupplyChain.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetWebAppDnsDomain())
+                {
+                    context.Writer.WritePropertyName("webAppDnsDomain");
+                    context.Writer.Write(publicRequest.WebAppDnsDomain);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

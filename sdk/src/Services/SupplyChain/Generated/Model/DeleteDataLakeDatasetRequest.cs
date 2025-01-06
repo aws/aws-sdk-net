@@ -63,9 +63,8 @@ namespace Amazon.SupplyChain.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the dataset. If the namespace is <i>asc</i>, the name must be one of the
-        /// supported <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html">data
-        /// entities </a>.
+        /// The name of the dataset. For <b>asc</b> name space, the name must be one of the supported
+        /// data entities under <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html">https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=75)]
@@ -84,16 +83,16 @@ namespace Amazon.SupplyChain.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        /// The namespace of the dataset. The available values are:
+        /// The name space of the dataset. The available values are:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// asc: for <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html">
-        /// AWS Supply Chain supported datasets </a>.
+        ///  <b>asc</b> - For information on the Amazon Web Services Supply Chain supported datasets
+        /// see <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html">https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// default: for datasets with custom user-defined schemas.
+        ///  <b>default</b> - For datasets with custom user-defined schemas.
         /// </para>
         ///  </li> </ul>
         /// </summary>

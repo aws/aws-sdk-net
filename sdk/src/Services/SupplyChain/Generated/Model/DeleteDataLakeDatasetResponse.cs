@@ -79,7 +79,7 @@ namespace Amazon.SupplyChain.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        /// The namespace of deleted dataset.
+        /// The name space of deleted dataset.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]
