@@ -35,7 +35,7 @@ namespace Amazon.EC2Protocol.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for RecursiveXmlShapesOutputNested2 Object
     /// </summary>  
-    public class RecursiveXmlShapesOutputNested2Unmarshaller : IUnmarshaller<RecursiveXmlShapesOutputNested2, XmlUnmarshallerContext>, IUnmarshaller<RecursiveXmlShapesOutputNested2, JsonUnmarshallerContext>
+    public class RecursiveXmlShapesOutputNested2Unmarshaller : IXmlUnmarshaller<RecursiveXmlShapesOutputNested2, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.EC2Protocol.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public RecursiveXmlShapesOutputNested2 Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static RecursiveXmlShapesOutputNested2Unmarshaller _instance = new RecursiveXmlShapesOutputNested2Unmarshaller();        
 

@@ -28,8 +28,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.JSONRPC10.Model.Internal.MarshallTransformations
 {
@@ -63,45 +63,50 @@ namespace Amazon.JSONRPC10.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDoubleValue())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("doubleValue");
+                if(StringUtils.IsSpecialDoubleValue(publicRequest.DoubleValue.Value))
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDoubleValue())
-                    {
-                        context.Writer.WritePropertyName("doubleValue");
-                        if(StringUtils.IsSpecialDoubleValue(publicRequest.DoubleValue.Value))
-                        {
-                            context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.DoubleValue.Value));
-                        }
-                        else
-                        {
-                            context.Writer.Write(publicRequest.DoubleValue.Value);
-                        }
-                    }
-
-                    if(publicRequest.IsSetFloatValue())
-                    {
-                        context.Writer.WritePropertyName("floatValue");
-                        if(StringUtils.IsSpecialFloatValue(publicRequest.FloatValue.Value))
-                        {
-                            context.Writer.Write(StringUtils.FromSpecialFloatValue(publicRequest.FloatValue.Value));
-                        }
-                        else
-                        {
-                            context.Writer.Write(publicRequest.FloatValue.Value);
-                        }
-                    }
-
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(publicRequest.DoubleValue.Value));
                 }
-
-                request.Content = memoryStream.ToArray();
+                else
+                {
+                    context.Writer.WriteNumberValue(publicRequest.DoubleValue.Value);
+                }
             }
+
+            if(publicRequest.IsSetFloatValue())
+            {
+                context.Writer.WritePropertyName("floatValue");
+                if(StringUtils.IsSpecialFloatValue(publicRequest.FloatValue.Value))
+                {
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialFloatValue(publicRequest.FloatValue.Value));
+                }
+                else
+                {
+                    context.Writer.WriteNumberValue(publicRequest.FloatValue.Value);
+                }
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;
