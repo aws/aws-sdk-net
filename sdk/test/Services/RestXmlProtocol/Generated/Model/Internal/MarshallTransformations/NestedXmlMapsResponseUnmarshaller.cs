@@ -71,13 +71,13 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                         {
                             response.FlatNestedMap = new Dictionary<string, Dictionary<string, string>>();
                         }
-                        var unmarshaller = new KeyValueUnmarshaller<string, Dictionary<string, string>, StringUnmarshaller, DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>>(StringUnmarshaller.Instance, new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance));
+                        var unmarshaller = new XmlKeyValueUnmarshaller<string, Dictionary<string, string>, StringUnmarshaller, XmlDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>>(StringUnmarshaller.Instance, new XmlDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance));
                         response.FlatNestedMap.Add(unmarshaller.Unmarshall(context));
                         continue;
                     }
                     if (context.TestExpression("nestedMap", targetDepth))
                     {
-                        var unmarshaller = new DictionaryUnmarshaller<string, Dictionary<string, string>, StringUnmarshaller, DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>>(StringUnmarshaller.Instance, new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance));
+                        var unmarshaller = new XmlDictionaryUnmarshaller<string, Dictionary<string, string>, StringUnmarshaller, XmlDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>>(StringUnmarshaller.Instance, new XmlDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance));
                         response.NestedMap = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -101,7 +101,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            ErrorResponse errorResponse = XmlErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 

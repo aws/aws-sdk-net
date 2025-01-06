@@ -77,7 +77,7 @@ namespace Amazon.EC2Protocol.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            ErrorResponse errorResponse = XmlErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             if (errorResponse.Code != null && errorResponse.Code.Equals("ComplexError"))
             {
                 return new ComplexErrorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);

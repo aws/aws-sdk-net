@@ -95,7 +95,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("intEnumMap", targetDepth))
                     {
-                        var unmarshaller = new DictionaryUnmarshaller<string, int, StringUnmarshaller, IntUnmarshaller>(StringUnmarshaller.Instance, IntUnmarshaller.Instance);
+                        var unmarshaller = new XmlDictionaryUnmarshaller<string, int, StringUnmarshaller, IntUnmarshaller>(StringUnmarshaller.Instance, IntUnmarshaller.Instance);
                         response.IntEnumMap = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -129,7 +129,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            ErrorResponse errorResponse = XmlErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 

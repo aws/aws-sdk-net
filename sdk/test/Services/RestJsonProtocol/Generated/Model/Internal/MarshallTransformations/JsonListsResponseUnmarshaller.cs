@@ -29,8 +29,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using Amazon.Util;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
 {
@@ -47,63 +47,63 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
             JsonListsResponse response = new JsonListsResponse();
-
-            context.Read();
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("booleanList", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<bool, BoolUnmarshaller>(BoolUnmarshaller.Instance);
-                    response.BooleanList = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<bool, BoolUnmarshaller>(BoolUnmarshaller.Instance);
+                    response.BooleanList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("enumList", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    response.EnumList = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.EnumList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("integerList", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<int, IntUnmarshaller>(IntUnmarshaller.Instance);
-                    response.IntegerList = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<int, IntUnmarshaller>(IntUnmarshaller.Instance);
+                    response.IntegerList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("intEnumList", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<int, IntUnmarshaller>(IntUnmarshaller.Instance);
-                    response.IntEnumList = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<int, IntUnmarshaller>(IntUnmarshaller.Instance);
+                    response.IntEnumList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("nestedStringList", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<List<string>, ListUnmarshaller<string, StringUnmarshaller>>(new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance));
-                    response.NestedStringList = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<List<string>, JsonListUnmarshaller<string,StringUnmarshaller>>(new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance));
+                    response.NestedStringList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("stringList", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    response.StringList = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.StringList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("stringSet", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    response.StringSet = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.StringSet = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("myStructureList", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<StructureListMember, StructureListMemberUnmarshaller>(StructureListMemberUnmarshaller.Instance);
-                    response.StructureList = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<StructureListMember, StructureListMemberUnmarshaller>(StructureListMemberUnmarshaller.Instance);
+                    response.StructureList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("timestampList", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<DateTime, DateTimeUnmarshaller>(DateTimeUnmarshaller.Instance);
-                    response.TimestampList = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<DateTime, DateTimeUnmarshaller>(DateTimeUnmarshaller.Instance);
+                    response.TimestampList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -120,7 +120,8 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context, ref reader);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
@@ -129,6 +130,7 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
+                StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy);
             }
             return new AmazonRestJsonProtocolException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }

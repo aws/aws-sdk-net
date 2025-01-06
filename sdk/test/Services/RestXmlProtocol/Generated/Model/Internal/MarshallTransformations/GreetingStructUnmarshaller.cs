@@ -36,7 +36,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for GreetingStruct Object
     /// </summary>  
-    public class GreetingStructUnmarshaller : IUnmarshaller<GreetingStruct, XmlUnmarshallerContext>, IUnmarshaller<GreetingStruct, JsonUnmarshallerContext>
+    public class GreetingStructUnmarshaller : IXmlUnmarshaller<GreetingStruct, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -70,17 +70,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
-        
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public GreetingStruct Unmarshall(JsonUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
         private static GreetingStructUnmarshaller _instance = new GreetingStructUnmarshaller();        
 
         /// <summary>
