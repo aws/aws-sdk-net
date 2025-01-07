@@ -20,6 +20,7 @@ using System.Text;
 using ThirdParty.Json.LitJson;
 using Amazon.Runtime.Internal.Util;
 using System.Text.Json;
+using Amazon.Util;
 
 namespace Amazon.Runtime.Internal.Transform
 {
@@ -88,13 +89,22 @@ namespace Amazon.Runtime.Internal.Transform
             bool isException,
             IRequestContext requestContext)
         {
+            // In the case of an exception or when maintainResponseBody is true, we must maintain a copy of the stream.
+            // This is because during unmarshalling, a new StreamingUtf8JsonReader is instantiated and in its constructor the stream is automatically read
+            // to fill the buffer. This advances the position of the stream to the end and subsequent calls to Context.ResponseBodyBytes will return a 0 byte array 
+            // since there is nothing to read. To avoid this, we maintain a copy of the stream if an exception occurs or if maintainResponseBody is true.
+
             if (isException)
             {
-                this.WrappingStream = new CachingWrapperStream(responseStream);
+                var copyStream = new MemoryStream();
+                AWSSDKUtils.CopyStreamAndSetPositionToZero(responseStream, copyStream);
+                this.WrappingStream = new CachingWrapperStream(copyStream);
             }
             else if (maintainResponseBody)
             {
-                this.WrappingStream = new CachingWrapperStream(responseStream, AWSConfigs.LoggingConfig.LogResponsesSizeLimit);
+                var copyStream = new MemoryStream();
+                AWSSDKUtils.CopyStreamAndSetPositionToZero(responseStream, copyStream);
+                this.WrappingStream = new CachingWrapperStream(copyStream, AWSConfigs.LoggingConfig.LogResponsesSizeLimit);
             }
 
             if (isException || maintainResponseBody)

@@ -102,11 +102,14 @@ namespace ServiceClientGenerator.Generators.Marshallers
             
             #line default
             #line hidden
-            this.Write(" Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorRespons" +
-                    "e errorResponse, ref StreamingUtf8JsonReader reader)\r\n        {\r\n            con" +
-                    "text.Read(ref reader);\r\n\r\n");
+            this.Write(@" Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse, ref StreamingUtf8JsonReader reader)
+        {
+            // Some error responses have no body and only send the error information in the header
+            if (!string.IsNullOrEmpty(context.ResponseBody))
+                context.Read(ref reader);
+");
             
-            #line 43 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCExceptionUnmarshaller.tt"
+            #line 44 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCExceptionUnmarshaller.tt"
 
             if  (this.Config.ServiceModel.IsAwsQueryCompatible)
             {
@@ -117,14 +120,14 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("            ");
             
-            #line 48 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCExceptionUnmarshaller.tt"
+            #line 49 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCExceptionUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.UnmarshallerBaseName));
             
             #line default
             #line hidden
             this.Write(" unmarshalledObject = new ");
             
-            #line 48 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCExceptionUnmarshaller.tt"
+            #line 49 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCExceptionUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.UnmarshallerBaseName));
             
             #line default
@@ -132,7 +135,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             this.Write("(errorResponse.Message, errorResponse.InnerException,\r\n                errorType," +
                     " errorCode, errorResponse.RequestId, errorResponse.StatusCode);\r\n");
             
-            #line 50 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCExceptionUnmarshaller.tt"
+            #line 51 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCExceptionUnmarshaller.tt"
 
             }
             else
@@ -143,14 +146,14 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("            ");
             
-            #line 55 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCExceptionUnmarshaller.tt"
+            #line 56 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCExceptionUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.UnmarshallerBaseName));
             
             #line default
             #line hidden
             this.Write(" unmarshalledObject = new ");
             
-            #line 55 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCExceptionUnmarshaller.tt"
+            #line 56 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCExceptionUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.UnmarshallerBaseName));
             
             #line default
@@ -159,17 +162,18 @@ namespace ServiceClientGenerator.Generators.Marshallers
                     "nse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode)" +
                     ";\r\n");
             
-            #line 57 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCExceptionUnmarshaller.tt"
+            #line 58 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCExceptionUnmarshaller.tt"
 
             }
 
             
             #line default
             #line hidden
-            this.Write("        \r\n            int targetDepth = context.CurrentDepth;\r\n            while " +
-                    "(context.ReadAtDepth(targetDepth, ref reader))\r\n            {\r\n");
+            this.Write("        \r\n            int targetDepth = context.CurrentDepth;\r\n            if (!s" +
+                    "tring.IsNullOrEmpty(context.ResponseBody))\r\n            {\r\n                while" +
+                    " (context.ReadAtDepth(targetDepth, ref reader))\r\n                {\r\n");
             
-            #line 64 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCExceptionUnmarshaller.tt"
+            #line 67 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCExceptionUnmarshaller.tt"
 
     if(this.Structure != null)
     {
@@ -179,31 +183,32 @@ namespace ServiceClientGenerator.Generators.Marshallers
             
             #line default
             #line hidden
-            this.Write("                if (context.TestExpression(\"");
+            this.Write("                    if (context.TestExpression(\"");
             
-            #line 70 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCExceptionUnmarshaller.tt"
+            #line 73 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCExceptionUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallName));
             
             #line default
             #line hidden
-            this.Write("\", targetDepth))\r\n                {\r\n                    var unmarshaller = ");
+            this.Write("\", targetDepth))\r\n                    {\r\n                        var unmarshaller" +
+                    " = ");
             
-            #line 72 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCExceptionUnmarshaller.tt"
+            #line 75 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCExceptionUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.DetermineTypeUnmarshallerInstantiate()));
             
             #line default
             #line hidden
-            this.Write(";\r\n                    unmarshalledObject.");
+            this.Write(";\r\n                        unmarshalledObject.");
             
-            #line 73 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCExceptionUnmarshaller.tt"
+            #line 76 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCExceptionUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
             #line hidden
-            this.Write(" = unmarshaller.Unmarshall(context, ref reader);\r\n                    continue;\r\n" +
-                    "                }\r\n");
+            this.Write(" = unmarshaller.Unmarshall(context, ref reader);\r\n                        continu" +
+                    "e;\r\n                    }\r\n");
             
-            #line 76 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCExceptionUnmarshaller.tt"
+            #line 79 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCExceptionUnmarshaller.tt"
 
         }
     }
@@ -211,9 +216,10 @@ namespace ServiceClientGenerator.Generators.Marshallers
             
             #line default
             #line hidden
-            this.Write("            }\r\n          \r\n            return unmarshalledObject;\r\n        }\r\n\r\n");
+            this.Write("                }\r\n            }\r\n          \r\n            return unmarshalledObje" +
+                    "ct;\r\n        }\r\n\r\n");
             
-            #line 85 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCExceptionUnmarshaller.tt"
+            #line 89 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCExceptionUnmarshaller.tt"
 
     this.AddStructureSingletonMethod();
 

@@ -38,8 +38,9 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public <#=this.UnmarshallerBaseName #> Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse, ref StreamingUtf8JsonReader reader)
         {
-            context.Read(ref reader);
-
+            // Some error responses have no body and only send the error information in the header
+            if (!string.IsNullOrEmpty(context.ResponseBody))
+                context.Read(ref reader);
 <#
             if  (this.Config.ServiceModel.IsAwsQueryCompatible)
             {
@@ -59,24 +60,27 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 #>
         
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            if (!string.IsNullOrEmpty(context.ResponseBody))
             {
+                while (context.ReadAtDepth(targetDepth, ref reader))
+                {
 <#
     if(this.Structure != null)
     {
         foreach (var member in this.Structure.Members)
         {
 #>
-                if (context.TestExpression("<#=member.MarshallName#>", targetDepth))
-                {
-                    var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
-                    unmarshalledObject.<#=member.PropertyName#> = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    if (context.TestExpression("<#=member.MarshallName#>", targetDepth))
+                    {
+                        var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
+                        unmarshalledObject.<#=member.PropertyName#> = unmarshaller.Unmarshall(context, ref reader);
+                        continue;
+                    }
 <#
         }
     }
 #>
+                }
             }
           
             return unmarshalledObject;
