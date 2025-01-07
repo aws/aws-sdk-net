@@ -1,3 +1,14 @@
+### 3.7.958.0 (2025-01-07 19:16 UTC)
+* CloudHSMV2 (3.7.402.0)
+	* Adds support to ModifyCluster for modifying a Cluster's Hsm Type.
+* DynamoDBv2 (3.7.405.0)
+	* This release makes Amazon DynamoDB point-in-time-recovery (PITR) to be configurable. You can set PITR recovery period for each table individually to between 1 and 35 days.
+* Imagebuilder (3.7.403.0)
+	* This release adds support for importing images from ISO disk files. Added new ImportDiskImage API operation.
+* Core 3.7.400.74
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.957.0 (2025-01-06 19:15 UTC)
 * IoTSecureTunneling (3.7.401.0)
 	* Adds dualstack endpoint support for IoT Secure Tunneling
