@@ -1,0 +1,9 @@
+{
+  "core": {
+    "changeLogMessages": [
+      "Disable signing the payload when the operation is modeled as having an UnsignedPayload set to true."
+    ],
+    "type": "patch",
+    "updateMinimum": true
+  }
+}
