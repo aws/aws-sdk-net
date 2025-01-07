@@ -35,6 +35,10 @@ namespace Amazon.Imagebuilder
         /// </summary>
         public static readonly BuildType IMPORT = new BuildType("IMPORT");
         /// <summary>
+        /// Constant IMPORT_ISO for BuildType
+        /// </summary>
+        public static readonly BuildType IMPORT_ISO = new BuildType("IMPORT_ISO");
+        /// <summary>
         /// Constant SCHEDULED for BuildType
         /// </summary>
         public static readonly BuildType SCHEDULED = new BuildType("SCHEDULED");
