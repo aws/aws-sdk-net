@@ -59,19 +59,23 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public ConditionalCheckFailedException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse, ref StreamingUtf8JsonReader reader)
         {
-            context.Read(ref reader);
-
+            // Some error responses have no body and only send the error information in the header
+            if (!string.IsNullOrEmpty(context.ResponseBody))
+                context.Read(ref reader);
             ConditionalCheckFailedException unmarshalledObject = new ConditionalCheckFailedException(errorResponse.Message, errorResponse.InnerException,
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            if (!string.IsNullOrEmpty(context.ResponseBody))
             {
-                if (context.TestExpression("Item", targetDepth))
+                while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    var unmarshaller = new JsonDictionaryUnmarshaller<string, AttributeValue, StringUnmarshaller, AttributeValueUnmarshaller>(StringUnmarshaller.Instance, AttributeValueUnmarshaller.Instance);
-                    unmarshalledObject.Item = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    if (context.TestExpression("Item", targetDepth))
+                    {
+                        var unmarshaller = new JsonDictionaryUnmarshaller<string, AttributeValue, StringUnmarshaller, AttributeValueUnmarshaller>(StringUnmarshaller.Instance, AttributeValueUnmarshaller.Instance);
+                        unmarshalledObject.Item = unmarshaller.Unmarshall(context, ref reader);
+                        continue;
+                    }
                 }
             }
           

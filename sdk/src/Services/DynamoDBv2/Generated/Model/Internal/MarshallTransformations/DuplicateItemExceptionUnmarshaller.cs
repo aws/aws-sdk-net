@@ -59,14 +59,18 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public DuplicateItemException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse, ref StreamingUtf8JsonReader reader)
         {
-            context.Read(ref reader);
-
+            // Some error responses have no body and only send the error information in the header
+            if (!string.IsNullOrEmpty(context.ResponseBody))
+                context.Read(ref reader);
             DuplicateItemException unmarshalledObject = new DuplicateItemException(errorResponse.Message, errorResponse.InnerException,
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            if (!string.IsNullOrEmpty(context.ResponseBody))
             {
+                while (context.ReadAtDepth(targetDepth, ref reader))
+                {
+                }
             }
           
             return unmarshalledObject;
