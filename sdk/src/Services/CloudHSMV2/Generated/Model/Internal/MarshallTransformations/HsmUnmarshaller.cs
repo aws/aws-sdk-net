@@ -102,6 +102,12 @@ namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.HsmId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("HsmType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.HsmType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("State", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
