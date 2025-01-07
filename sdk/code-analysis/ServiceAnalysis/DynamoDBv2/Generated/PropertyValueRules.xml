@@ -894,6 +894,16 @@
     <max>8192</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.PointInTimeRecoveryDescription.RecoveryPeriodInDays</property>
+    <min>1</min>
+    <max>35</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.PointInTimeRecoverySpecification.RecoveryPeriodInDays</property>
+    <min>1</min>
+    <max>35</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.ProvisionedThroughput.ReadCapacityUnits</property>
     <min>1</min>
   </property-value-rule>
