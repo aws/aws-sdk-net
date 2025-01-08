@@ -32,7 +32,7 @@ namespace Amazon.DAX
     public partial class AmazonDAXConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("DAX", "3.7.400.74");
+            InternalSDKUtils.BuildUserAgentString("DAX", "3.7.400.75");
 
         private string _userAgent = UserAgentString;
         ///<summary>

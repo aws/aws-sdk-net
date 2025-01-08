@@ -1,3 +1,14 @@
+### 3.7.959.0 (2025-01-08 19:18 UTC)
+* RDS (3.7.410.12)
+	* Updates Amazon RDS documentation to clarify the RestoreDBClusterToPointInTime description.
+* Route53 (3.7.404.0)
+	* Amazon Route 53 now supports the Asia Pacific (Thailand) Region (ap-southeast-7) for latency records, geoproximity records, and private DNS for Amazon VPCs in that region
+* SageMaker (3.7.420.0)
+	* Adds support for IPv6 for SageMaker HyperPod cluster nodes.
+* Core 3.7.400.75
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.958.0 (2025-01-07 19:16 UTC)
 * CloudHSMV2 (3.7.402.0)
 	* Adds support to ModifyCluster for modifying a Cluster's Hsm Type.
