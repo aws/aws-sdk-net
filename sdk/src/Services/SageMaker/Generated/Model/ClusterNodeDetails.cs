@@ -46,6 +46,7 @@ namespace Amazon.SageMaker.Model
         private ClusterInstancePlacement _placement;
         private string _privateDnsHostname;
         private string _privatePrimaryIp;
+        private string _privatePrimaryIpv6;
         private int? _threadsPerCore;
 
         /// <summary>
@@ -244,6 +245,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetPrivatePrimaryIp()
         {
             return this._privatePrimaryIp != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrivatePrimaryIpv6. 
+        /// <para>
+        /// The private primary IPv6 address of the SageMaker HyperPod cluster node.
+        /// </para>
+        /// </summary>
+        public string PrivatePrimaryIpv6
+        {
+            get { return this._privatePrimaryIpv6; }
+            set { this._privatePrimaryIpv6 = value; }
+        }
+
+        // Check to see if PrivatePrimaryIpv6 property is set
+        internal bool IsSetPrivatePrimaryIpv6()
+        {
+            return this._privatePrimaryIpv6 != null;
         }
 
         /// <summary>

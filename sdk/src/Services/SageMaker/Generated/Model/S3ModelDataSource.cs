@@ -180,7 +180,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ManifestEtag. 
         /// <para>
-        /// The ETag associated with Manifest S3URI.
+        /// The ETag associated with Manifest S3 URI.
         /// </para>
         /// </summary>
         public string ManifestEtag

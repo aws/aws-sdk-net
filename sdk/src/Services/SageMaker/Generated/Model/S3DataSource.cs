@@ -140,10 +140,10 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        /// If you choose <c>AugmentedManifestFile</c>, S3Uri identifies an object that is an
-        /// augmented manifest file in JSON lines format. This file contains the data you want
-        /// to use for model training. <c>AugmentedManifestFile</c> can only be used if the Channel's
-        /// input mode is <c>Pipe</c>.
+        /// If you choose <c>AugmentedManifestFile</c>, <c>S3Uri</c> identifies an object that
+        /// is an augmented manifest file in JSON lines format. This file contains the data you
+        /// want to use for model training. <c>AugmentedManifestFile</c> can only be used if the
+        /// Channel's input mode is <c>Pipe</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

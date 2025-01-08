@@ -132,6 +132,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.PrivatePrimaryIp = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PrivatePrimaryIpv6", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PrivatePrimaryIpv6 = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ThreadsPerCore", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
