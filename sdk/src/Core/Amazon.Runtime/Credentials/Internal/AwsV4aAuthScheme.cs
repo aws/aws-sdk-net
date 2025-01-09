@@ -26,20 +26,22 @@ namespace Amazon.Runtime.Credentials.Internal
     public class AwsV4aAuthScheme : IAuthScheme<AWSCredentials>
     {
         private static ISigner _signer;
+        
         /// <inheritdoc/>
         public string SchemeId => AuthSchemeOption.SigV4A;
 
         /// <inheritdoc/>
-        public IIdentityResolver GetIdentityResolver(IIdentityResolverConfiguration configuration)
-        {
-            return configuration.GetIdentityResolver<AWSCredentials>();
-        }
+        public IIdentityResolver<AWSCredentials> GetIdentityResolver(IIdentityResolverConfiguration configuration) 
+            => configuration.GetIdentityResolver<AWSCredentials>();
 
         /// <inheritdoc/>
         public ISigner Signer()
         {
             if (_signer == null)
+            {
                 Interlocked.Exchange(ref _signer, new AWS4aSignerCRTWrapper());
+            }
+
             return _signer;
         }
     }

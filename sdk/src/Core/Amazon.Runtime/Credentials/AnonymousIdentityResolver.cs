@@ -22,19 +22,19 @@ namespace Amazon.Runtime
     /// <summary>
     /// A resolver that provides an anonymous identity. 
     /// </summary>
-    public class AnonymousIdentityResolver : IIdentityResolver
+    public class AnonymousIdentityResolver : IIdentityResolver<AnonymousAWSCredentials>
     {
         private readonly AnonymousAWSCredentials _credentials = new();
 
         /// <summary>
         /// Resolves the identity by returning an instance of <see cref="AnonymousAWSCredentials"/>.
         /// </summary>
-        public BaseIdentity ResolveIdentity() => _credentials;
+        public AnonymousAWSCredentials ResolveIdentity() => _credentials;
 
         /// <summary>
         /// Resolves the identity by returning an instance of <see cref="AnonymousAWSCredentials"/>.
         /// </summary>
-        public Task<BaseIdentity> ResolveIdentityAsync(CancellationToken cancellationToken = default)
-            => Task.FromResult<BaseIdentity>(_credentials);
+        public Task<AnonymousAWSCredentials> ResolveIdentityAsync(CancellationToken cancellationToken = default)
+            => Task.FromResult(_credentials);
     }
 }

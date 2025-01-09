@@ -25,19 +25,15 @@ namespace Amazon.Runtime.Credentials.Internal
     public class AwsV4AuthScheme : IAuthScheme<AWSCredentials>
     {
         private static readonly ISigner _signer = new AWS4Signer();
+        
         /// <inheritdoc/>
         public string SchemeId => AuthSchemeOption.SigV4;
 
         /// <inheritdoc/>
-        public IIdentityResolver GetIdentityResolver(IIdentityResolverConfiguration configuration)
-        {
-            return configuration.GetIdentityResolver<AWSCredentials>();
-        }
+        public IIdentityResolver<AWSCredentials> GetIdentityResolver(IIdentityResolverConfiguration configuration) 
+            => configuration.GetIdentityResolver<AWSCredentials>();
 
         /// <inheritdoc/>
-        public ISigner Signer()
-        {
-            return _signer;
-        }
+        public ISigner Signer() => _signer;
     }
 }

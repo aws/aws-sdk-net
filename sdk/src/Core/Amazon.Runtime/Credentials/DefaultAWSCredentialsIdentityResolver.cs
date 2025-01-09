@@ -29,7 +29,7 @@ namespace Amazon.Runtime.Credentials
     /// <summary>
     /// A resolver that provides an AWSCredentials identity. 
     /// </summary>
-    public class DefaultAWSCredentialsIdentityResolver : IIdentityResolver
+    public class DefaultAWSCredentialsIdentityResolver : IIdentityResolver<AWSCredentials>
     {
         private const string AWS_PROFILE_ENVIRONMENT_VARIABLE = "AWS_PROFILE";
         private const string DEFAULT_PROFILE_NAME = "default";
@@ -65,7 +65,7 @@ namespace Amazon.Runtime.Credentials
         }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types", Justification = "We need to catch all exceptions to be able to move the the next generator.")]
-        public BaseIdentity ResolveIdentity()
+        public AWSCredentials ResolveIdentity()
         {
             var hasEnvironmentChanged = false;
 
@@ -157,7 +157,7 @@ namespace Amazon.Runtime.Credentials
             }
         }
 
-        public async Task<BaseIdentity> ResolveIdentityAsync(CancellationToken cancellationToken = default)
+        public async Task<AWSCredentials> ResolveIdentityAsync(CancellationToken cancellationToken = default)
         {
             return await Task.Run(() => ResolveIdentity(), cancellationToken).ConfigureAwait(false);
         }

@@ -22,7 +22,7 @@ namespace Amazon.Runtime.Credentials
     /// <summary>
     /// A resolver that provides a bearer token identity.
     /// </summary>
-    public class DefaultAWSTokenIdentityResolver : IIdentityResolver
+    public class DefaultAWSTokenIdentityResolver : IIdentityResolver<AWSToken>
     {
         private readonly IAWSTokenProvider _tokenProvider;
 
@@ -32,7 +32,7 @@ namespace Amazon.Runtime.Credentials
             => _tokenProvider = new AWSTokenProviderChain(new ProfileTokenProvider(profileName));
 
         /// <inheritdoc/>
-        public BaseIdentity ResolveIdentity()
+        public AWSToken ResolveIdentity()
         {
 #if NETFRAMEWORK
             if (_tokenProvider.TryResolveToken(out var token))
@@ -54,7 +54,7 @@ namespace Amazon.Runtime.Credentials
         }
 
         /// <inheritdoc/>
-        public async Task<BaseIdentity> ResolveIdentityAsync(CancellationToken cancellationToken = default)
+        public async Task<AWSToken> ResolveIdentityAsync(CancellationToken cancellationToken = default)
         {
             var tokenResponse = await _tokenProvider.TryResolveTokenAsync(cancellationToken).ConfigureAwait(false);
             if (tokenResponse.Success)

@@ -29,7 +29,7 @@ namespace Amazon.Runtime.Credentials.Internal
         public string SchemeId => AuthSchemeOption.Bearer;
 
         /// <inheritdoc/>
-        public IIdentityResolver GetIdentityResolver(IIdentityResolverConfiguration configuration)
+        public IIdentityResolver<AWSToken> GetIdentityResolver(IIdentityResolverConfiguration configuration)
             => configuration.GetIdentityResolver<AWSToken>();
 
         /// <inheritdoc/>

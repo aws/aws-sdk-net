@@ -28,18 +28,18 @@ namespace Amazon.Runtime.Identity
     /// <item>Local memory (e.g. environment variables)</item>
     /// </list>
     /// </summary>
-    public interface IIdentityResolver
+    public interface IIdentityResolver<T> where T : BaseIdentity
     {
         /// <summary>
         /// Loads the customer's identity for this resolver. 
         /// If the identity cannot be resolved an <c>AmazonClientException</c> will be thrown.
         /// </summary>
-        BaseIdentity ResolveIdentity();
+        T ResolveIdentity();
 
         /// <summary>
         /// Loads the customer's identity for this resolver. 
         /// If the identity cannot be resolved an <c>AmazonClientException</c> will be thrown.
         /// </summary>
-        Task<BaseIdentity> ResolveIdentityAsync(CancellationToken cancellationToken = default);
+        Task<T> ResolveIdentityAsync(CancellationToken cancellationToken = default);
     }
 }
