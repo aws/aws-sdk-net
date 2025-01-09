@@ -52,14 +52,14 @@ namespace Amazon.Runtime
             internal bool IsExpiredWithin(TimeSpan preemptExpiryTime)
             {
                 var now = AWSSDKUtils.CorrectedUtcNow;
-                var exp = Expiration;
+                var exp = Expiration.ToUniversalTime();
                 return now > exp - preemptExpiryTime;
             }
 
             internal TimeSpan GetTimeToLive(TimeSpan preemptExpiryTime)
             {
                 var now = AWSSDKUtils.CorrectedUtcNow;
-                var exp = Expiration;
+                var exp = Expiration.ToUniversalTime();
 
                 return exp - now + preemptExpiryTime;
             }

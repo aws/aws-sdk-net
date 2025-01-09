@@ -227,10 +227,10 @@ namespace AWSSDK_DotNet.UnitTests
         {   
             //Arrange
             var dateWithNoDecimals = "2022-05-05T11:56:11Z";
-            var expectedDateNoDecimal = DateTime.Parse(dateWithNoDecimals);
+            var expectedDateNoDecimal = DateTime.Parse(dateWithNoDecimals, CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal);
 
             var dateWithDecimals = "2022-05-05T11:56:11.000Z";
-            var expectedDateDecimal = DateTime.Parse(dateWithDecimals);
+            var expectedDateDecimal = DateTime.Parse(dateWithDecimals, CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal);
 
             var jsonDateWithNoDecimals = JsonMapper.ToJson(new
             {
