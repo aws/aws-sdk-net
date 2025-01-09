@@ -11221,6 +11221,16 @@
                 }
               ]
             },
+            "ap-southeast-7": {
+              "variants": [
+                {
+                  "hostname": "elasticfilesystem-fips.ap-southeast-7.amazonaws.com",
+                  "tags": [
+                    "fips"
+                  ]
+                }
+              ]
+            },
             "ca-central-1": {
               "variants": [
                 {
@@ -11404,6 +11414,13 @@
               },
               "deprecated": true,
               "hostname": "elasticfilesystem-fips.ap-southeast-5.amazonaws.com"
+            },
+            "fips-ap-southeast-7": {
+              "credentialScope": {
+                "region": "ap-southeast-7"
+              },
+              "deprecated": true,
+              "hostname": "elasticfilesystem-fips.ap-southeast-7.amazonaws.com"
             },
             "fips-ca-central-1": {
               "credentialScope": {
