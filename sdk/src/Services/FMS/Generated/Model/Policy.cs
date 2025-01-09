@@ -45,6 +45,7 @@ namespace Amazon.FMS.Model
         private string _policyUpdateToken;
         private bool? _remediationEnabled;
         private List<string> _resourceSetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private ResourceTagLogicalOperator _resourceTagLogicalOperator;
         private List<ResourceTag> _resourceTags = AWSConfigs.InitializeCollections ? new List<ResourceTag>() : null;
         private string _resourceType;
         private List<string> _resourceTypeList = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -345,6 +346,30 @@ namespace Amazon.FMS.Model
         internal bool IsSetResourceSetIds()
         {
             return this._resourceSetIds != null && (this._resourceSetIds.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceTagLogicalOperator. 
+        /// <para>
+        /// Specifies whether to combine multiple resource tags with AND, so that a resource must
+        /// have all tags to be included or excluded, or OR, so that a resource must have at least
+        /// one tag.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <c>AND</c> 
+        /// </para>
+        /// </summary>
+        public ResourceTagLogicalOperator ResourceTagLogicalOperator
+        {
+            get { return this._resourceTagLogicalOperator; }
+            set { this._resourceTagLogicalOperator = value; }
+        }
+
+        // Check to see if ResourceTagLogicalOperator property is set
+        internal bool IsSetResourceTagLogicalOperator()
+        {
+            return this._resourceTagLogicalOperator != null;
         }
 
         /// <summary>
