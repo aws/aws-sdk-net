@@ -1,3 +1,19 @@
+### 3.7.960.0 (2025-01-09 19:19 UTC)
+* CodeBuild (3.7.408.0)
+	* AWS CodeBuild Now Supports BuildBatch in Reserved Capacity and Lambda
+* ComputeOptimizer (3.7.402.0)
+	* This release expands AWS Compute Optimizer rightsizing recommendation support for Amazon EC2 Auto Scaling groups to include those with scaling policies and multiple instance types.
+* FMS (3.7.402.0)
+	* AWS Firewall Manager now lets you combine multiple resource tags using the logical AND operator or the logical OR operator.
+* IoT1ClickDevicesService (Removed)
+	* AWS IoT 1-Click Devices service has been removed from the SDK because it has been discontinued.
+* IoT1ClickProjects (Removed)
+	* AWS IoT 1-Click Projects service has been removed from the SDK because it has been discontinued.
+* Core 3.7.400.76
+	* Updating endpoints.json file.
+	* Updating partitions.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.959.0 (2025-01-08 19:18 UTC)
 * RDS (3.7.410.12)
 	* Updates Amazon RDS documentation to clarify the RestoreDBClusterToPointInTime description.
