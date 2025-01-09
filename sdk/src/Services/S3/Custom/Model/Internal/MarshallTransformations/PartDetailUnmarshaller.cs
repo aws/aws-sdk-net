@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
      /// <summary>
      ///   PartsItem Unmarshaller
      /// </summary>
-    public class PartDetailUnmarshaller : IUnmarshaller<PartDetail, XmlUnmarshallerContext>, IUnmarshaller<PartDetail, JsonUnmarshallerContext> 
+    public class PartDetailUnmarshaller : IXmlUnmarshaller<PartDetail, XmlUnmarshallerContext>, IXmlUnmarshaller<PartDetail, JsonUnmarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
