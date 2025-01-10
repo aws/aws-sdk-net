@@ -1,3 +1,14 @@
+### 3.7.960.1 (2025-01-10 21:22 UTC)
+* Redshift (3.7.405.18)
+	* Additions to the PubliclyAccessible and Encrypted parameters clarifying what the defaults are.
+* SecurityLake (3.7.401.43)
+	* Doc only update for ServiceName that fixes several customer-reported issues
+* SecurityToken (3.7.401.26)
+	* Fixed typos in the descriptions.
+* Core 3.7.400.77
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.960.0 (2025-01-09 19:19 UTC)
 * CodeBuild (3.7.408.0)
 	* AWS CodeBuild Now Supports BuildBatch in Reserved Capacity and Lambda
