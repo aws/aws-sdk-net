@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -41,11 +41,14 @@ using System.Diagnostics.CodeAnalysis;
 [module: SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix", Scope = "type", Target = "Amazon.Runtime.Internal.Transform.IUnmarshaller`2", MessageId = "T")]
 [module: SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix", Scope = "type", Target = "Amazon.Runtime.Internal.Transform.DictionaryUnmarshaller`4", MessageId = "T")]
 [module: SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix", Scope = "type", Target = "Amazon.Runtime.Internal.Transform.IMarshaller`2", MessageId = "T")]
-[module: SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix", Scope = "type", Target = "Amazon.Runtime.Internal.Transform.ListUnmarshaller`2", MessageId = "T")]
-[module: SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix", Scope = "type", Target = "Amazon.Runtime.Internal.Transform.KeyValueUnmarshaller`4", MessageId = "T")]
 [module: SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix", Scope = "type", Target = "Amazon.Runtime.Internal.Transform.IRequestMarshaller`2", MessageId = "T")]
 [module: SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix", Scope = "type", Target = "Amazon.Runtime.Internal.AutoConstructedDictionary`2", MessageId = "T")]
-
+[module: SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix", Scope = "type", Target = "Amazon.Runtime.Internal.Transform.XmlKeyValueUnmarshaller`4", MessageId = "T")]
+[module: SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix", Scope = "type", Target = "Amazon.Runtime.Internal.Transform.JsonKeyValueUnmarshaller`4", MessageId = "T")]
+[module: SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix", Scope = "type", Target = "Amazon.Runtime.Internal.Transform.XmlDictionaryUnmarshaller`2", MessageId = "T")]
+[module: SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix", Scope = "type", Target = "Amazon.Runtime.Internal.Transform.JsonDictionaryUnmarshaller`2", MessageId = "T")]
+[module: SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix", Scope = "type", Target = "Amazon.Runtime.Internal.Transform.XmlListUnmarshaller`2", MessageId = "T")]
+[module: SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix", Scope = "type", Target = "Amazon.Runtime.Internal.Transform.JsonListUnmarshaller`2", MessageId = "T")]
 // Identifiers should not contain type names
 [module: SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames", Scope = "member", Target = "Amazon.Runtime.Internal.Auth.AWS4PreSignedUrlSigner.#MaxAWS4PreSignedUrlExpiry", MessageId = "signed")]
 [module: SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames", Scope = "member", Target = "Amazon.Runtime.Internal.Auth.AWS4Signer.#FormatDateTime(System.DateTime,System.String)", MessageId = "string")]
@@ -426,6 +429,8 @@ using System.Diagnostics.CodeAnalysis;
 // Amazon.Runtime.Internal.Signer type conflicts with Amazon.Signer service namespace. 
 [module: SuppressMessage("Microsoft.Naming", "CA1724:TypeNamesShouldNotMatchNamespaces", Scope = "type", Target = "Amazon.Runtime.Internal.Signer")]
 
+// Override Equals and operator equals on value types
+[module: SuppressMessage("Performance","CA1815:Override equals and operator equals on value types",Scope = "type",Target = "T:Amazon.Runtime.Internal.Util.StreamingUtf8JsonReader")]
 
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Naming", "CA1720:Identifier contains type name", Scope = "type", Target = "~T:ThirdParty.Json.LitJson.JsonType")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1010:Collections should implement generic interface", Scope = "type", Target = "~T:Amazon.MissingTypes.IOrderedDictionary")]

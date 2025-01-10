@@ -8,8 +8,6 @@
 
 	AddCommonUsingStatements();
 #>
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformations
 {

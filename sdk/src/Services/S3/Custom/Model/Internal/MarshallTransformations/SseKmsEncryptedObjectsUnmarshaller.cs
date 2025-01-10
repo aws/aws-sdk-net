@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// SseKmsEncryptedObjects unmarshaller
     /// </summary>
-    public class SseKmsEncryptedObjectsUnmarshaller : IUnmarshaller<SseKmsEncryptedObjects, XmlUnmarshallerContext>, IUnmarshaller<SseKmsEncryptedObjects, JsonUnmarshallerContext>
+    public class SseKmsEncryptedObjectsUnmarshaller : IXmlUnmarshaller<SseKmsEncryptedObjects, XmlUnmarshallerContext>, IXmlUnmarshaller<SseKmsEncryptedObjects, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

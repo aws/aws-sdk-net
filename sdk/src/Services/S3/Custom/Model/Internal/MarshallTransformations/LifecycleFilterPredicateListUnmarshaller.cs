@@ -22,8 +22,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// LifecycleFilterPredicate Unmarshaller
     /// </summary>
-    public class LifecycleFilterPredicateListUnmarshaller : IUnmarshaller<List<LifecycleFilterPredicate>, XmlUnmarshallerContext>,
-        IUnmarshaller<List<LifecycleFilterPredicate>, JsonUnmarshallerContext>
+    public class LifecycleFilterPredicateListUnmarshaller : IXmlUnmarshaller<List<LifecycleFilterPredicate>, XmlUnmarshallerContext>,
+        IXmlUnmarshaller<List<LifecycleFilterPredicate>, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

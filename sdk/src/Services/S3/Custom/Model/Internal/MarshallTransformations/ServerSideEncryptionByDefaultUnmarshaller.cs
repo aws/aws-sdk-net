@@ -23,7 +23,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// ServerSideEncryptionByDefault unmarshaller
     /// </summary>
-    public class ServerSideEncryptionByDefaultUnmarshaller : IUnmarshaller<ServerSideEncryptionByDefault, XmlUnmarshallerContext>, IUnmarshaller<ServerSideEncryptionByDefault, JsonUnmarshallerContext>
+    public class ServerSideEncryptionByDefaultUnmarshaller : IXmlUnmarshaller<ServerSideEncryptionByDefault, XmlUnmarshallerContext>, IXmlUnmarshaller<ServerSideEncryptionByDefault, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

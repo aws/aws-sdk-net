@@ -24,7 +24,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 	/// <summary>
 	///   Tiering Unmarshaller
 	/// </summary>
-	public class TieringUnmarshaller : IUnmarshaller<Tiering, XmlUnmarshallerContext>, IUnmarshaller<Tiering, JsonUnmarshallerContext>
+	public class TieringUnmarshaller : IXmlUnmarshaller<Tiering, XmlUnmarshallerContext>, IXmlUnmarshaller<Tiering, JsonUnmarshallerContext>
 	{
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
