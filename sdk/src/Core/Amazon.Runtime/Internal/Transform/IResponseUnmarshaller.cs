@@ -26,19 +26,26 @@ namespace Amazon.Runtime.Internal.Transform
     /// in the XML stream goes into what members of an object. 
     /// </summary>
     /// <typeparam name="T">The type of object the unmarshaller returns</typeparam>
-    /// <typeparam name="R">The type of the XML unmashaller context, which contains the
-    /// state of parsing the XML stream. Uaually an instance of 
+    /// <typeparam name="R">The type of the unmashaller context, which contains the
+    /// state of parsing the stream. Usually an instance of 
     /// <c>Amazon.Runtime.Internal.Transform.UnmarshallerContext</c>.</typeparam>
-    public interface IResponseUnmarshaller<T, R> : IUnmarshaller<T, R>
+    public interface IResponseUnmarshaller<T, R>
     {
         /// <summary>
         /// Extracts an exeption with data from an ErrorResponse.
         /// </summary>
-        /// <param name="input">The XML parsing context.</param>
+        /// <param name="input">The parsing context.</param>
         /// <param name="innerException">An inner exception to be included with the returned exception</param>
         /// <param name="statusCode">The HttpStatusCode from the ErrorResponse</param>
         /// <returns>Either an exception based on the ErrorCode from the ErrorResponse, or the 
         /// general service exception for the service in question.</returns>
         AmazonServiceException UnmarshallException(R input, Exception innerException, HttpStatusCode statusCode);
+
+        /// <summary>
+        /// Given the current position in the stream, extract a T
+        /// </summary>
+        /// <param name="input">The parsing context</param>
+        /// <returns>An object of type T populated with data from the XML stream.</returns>
+        T Unmarshall(R input);
     }
 }

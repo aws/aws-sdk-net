@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
      /// <summary>
      ///   Owner Unmarshaller
      /// </summary>
-    public class OwnerUnmarshaller : IUnmarshaller<Owner, XmlUnmarshallerContext>, IUnmarshaller<Owner, JsonUnmarshallerContext> 
+    public class OwnerUnmarshaller : IXmlUnmarshaller<Owner, XmlUnmarshallerContext>, IXmlUnmarshaller<Owner, JsonUnmarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

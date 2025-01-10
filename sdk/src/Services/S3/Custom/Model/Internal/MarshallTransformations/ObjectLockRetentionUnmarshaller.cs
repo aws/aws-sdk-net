@@ -35,7 +35,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ObjectLockRetention Object
     /// </summary>  
-    public class ObjectLockRetentionUnmarshaller : IUnmarshaller<ObjectLockRetention, XmlUnmarshallerContext>, IUnmarshaller<ObjectLockRetention, JsonUnmarshallerContext>
+    public class ObjectLockRetentionUnmarshaller : IXmlUnmarshaller<ObjectLockRetention, XmlUnmarshallerContext>, IXmlUnmarshaller<ObjectLockRetention, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

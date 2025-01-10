@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
      /// <summary>
      ///   ErrorsItem Unmarshaller
      /// </summary>
-    public class ErrorsItemUnmarshaller : IUnmarshaller<DeleteError, XmlUnmarshallerContext>, IUnmarshaller<DeleteError, JsonUnmarshallerContext> 
+    public class ErrorsItemUnmarshaller : IXmlUnmarshaller<DeleteError, XmlUnmarshallerContext>, IXmlUnmarshaller<DeleteError, JsonUnmarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

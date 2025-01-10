@@ -25,7 +25,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// OwnershipControlsRule unmarshaller
     /// </summary>
-    public class OwnershipControlsRuleUnmarshaller : IUnmarshaller<OwnershipControlsRule, XmlUnmarshallerContext>, IUnmarshaller<OwnershipControlsRule, JsonUnmarshallerContext>
+    public class OwnershipControlsRuleUnmarshaller : IXmlUnmarshaller<OwnershipControlsRule, XmlUnmarshallerContext>, IXmlUnmarshaller<OwnershipControlsRule, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
