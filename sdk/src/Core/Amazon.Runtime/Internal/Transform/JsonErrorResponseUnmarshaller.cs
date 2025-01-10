@@ -39,7 +39,6 @@ namespace Amazon.Runtime.Internal.Transform
         public ErrorResponse Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ErrorResponse response;
-            bool firstByte = false;
 
             // we cannot use context.Peek() because the stream used by streamreader has been read to completion by the 
             // streamingutf8jsonreader. Since responseBody will be populated, we use that instead.
@@ -49,7 +48,6 @@ namespace Amazon.Runtime.Internal.Transform
                     continue;
                 else
                 {
-                    firstByte = true;
                     if (context.ResponseBody[i] == 60) //starts with '<' so assuming XML.
                     {
                         XmlErrorResponseUnmarshaller xmlUnmarshaller = new XmlErrorResponseUnmarshaller();

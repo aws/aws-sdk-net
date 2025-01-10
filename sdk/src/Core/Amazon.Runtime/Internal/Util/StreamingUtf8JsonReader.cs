@@ -156,8 +156,8 @@ namespace Amazon.Runtime.Internal.Util
                 return;
             }
 
-            // passing in 0, bytesRead +leftover.Length is safe here because even if we are on the last buffer block, and leftover is junk, that means bytesRead would've been zero 
-            // and control would flow through the if block above.
+            // passing in 0 for the start position and bytesRead + leftover.Length as the span length is safe here because even if we are on the last buffer block,
+            // and leftover is junk, that means bytesRead would've been zero and control would flow through the if block above.
             reader = new Utf8JsonReader(buffer.AsSpan(0, bytesRead + leftover.Length), isFinalBlock: ((bytesRead + leftover.Length) != buffer.Length || bytesRead == 0), reader.CurrentState);
         }
 
