@@ -22,10 +22,6 @@ namespace Amazon.DynamoDBv2.DataModel
     /// <summary>
     /// Input for the Query operation in the object-persistence programming model
     /// </summary>
-#if NET8_0_OR_GREATER
-    // The DataModel namespace doesn't support trimming yet, so annotate public classes/methods as incompatible
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif
     public class QueryConfig : BaseOperationConfig
     {
         /// <summary>

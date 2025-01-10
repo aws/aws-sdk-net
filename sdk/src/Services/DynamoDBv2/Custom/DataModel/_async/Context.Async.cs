@@ -16,6 +16,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.DynamoDBv2.DocumentModel;
@@ -31,7 +32,11 @@ namespace Amazon.DynamoDBv2.DataModel
         #region Save async
 
         /// <inheritdoc/>
+#if NET8_0_OR_GREATER
+        public async Task SaveAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(T value, CancellationToken cancellationToken = default)
+#else
         public async Task SaveAsync<T>(T value, CancellationToken cancellationToken = default)
+#endif
         {
             using (DynamoDBTelemetry.CreateSpan(this, nameof(SaveAsync)))
             {
@@ -41,7 +46,11 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <inheritdoc/>
         [Obsolete("Use the SaveAsync overload that takes SaveConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to SaveAsync.")]
+#if NET8_0_OR_GREATER
+        public async Task SaveAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(T value, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default)
+#else
         public async Task SaveAsync<T>(T value, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default)
+#endif
         {
             using (DynamoDBTelemetry.CreateSpan(this, nameof(SaveAsync)))
             {
@@ -50,7 +59,11 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         /// <inheritdoc/>
+#if NET8_0_OR_GREATER
+        public async Task SaveAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(T value, SaveConfig saveConfig, CancellationToken cancellationToken = default)
+#else
         public async Task SaveAsync<T>(T value, SaveConfig saveConfig, CancellationToken cancellationToken = default)
+#endif
         {
             using (DynamoDBTelemetry.CreateSpan(this, nameof(SaveAsync)))
             {
@@ -59,7 +72,11 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         /// <inheritdoc/>
+#if NET8_0_OR_GREATER
+        public async Task SaveAsync([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] Type valueType, object value, CancellationToken cancellationToken = default)
+#else
         public async Task SaveAsync(Type valueType, object value, CancellationToken cancellationToken = default)
+#endif
         {
             using (DynamoDBTelemetry.CreateSpan(this, nameof(SaveAsync)))
             {
@@ -69,7 +86,11 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <inheritdoc/>
         [Obsolete("Use the SaveAsync overload that takes SaveConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to SaveAsync.")]
+#if NET8_0_OR_GREATER
+        public async Task SaveAsync([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] Type valueType, object value, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default)
+#else
         public async Task SaveAsync(Type valueType, object value, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default)
+#endif
         {
             using (DynamoDBTelemetry.CreateSpan(this, nameof(SaveAsync)))
             {
@@ -78,7 +99,11 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         /// <inheritdoc/>
+#if NET8_0_OR_GREATER
+        public async Task SaveAsync([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] Type valueType, object value, SaveConfig saveConfig, CancellationToken cancellationToken = default)
+#else
         public async Task SaveAsync(Type valueType, object value, SaveConfig saveConfig, CancellationToken cancellationToken = default)
+#endif
         {
             using (DynamoDBTelemetry.CreateSpan(this, nameof(SaveAsync)))
             {
@@ -91,7 +116,11 @@ namespace Amazon.DynamoDBv2.DataModel
         #region Load async
 
         /// <inheritdoc/>
+#if NET8_0_OR_GREATER
+        public async Task<T> LoadAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(object hashKey, CancellationToken cancellationToken = default)
+#else
         public async Task<T> LoadAsync<T>(object hashKey, CancellationToken cancellationToken = default)
+#endif
         {
             using (DynamoDBTelemetry.CreateSpan(this, nameof(LoadAsync)))
             {
@@ -101,7 +130,11 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <inheritdoc/>
         [Obsolete("Use the LoadAsync overload that takes LoadConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to LoadAsync.")]
+#if NET8_0_OR_GREATER
+        public async Task<T> LoadAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(object hashKey, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default)
+#else
         public async Task<T> LoadAsync<T>(object hashKey, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default)
+#endif
         {
             using (DynamoDBTelemetry.CreateSpan(this, nameof(LoadAsync)))
             {
@@ -110,7 +143,11 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         /// <inheritdoc/>
+#if NET8_0_OR_GREATER
+        public async Task<T> LoadAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(object hashKey, LoadConfig loadConfig, CancellationToken cancellationToken = default)
+#else
         public async Task<T> LoadAsync<T>(object hashKey, LoadConfig loadConfig, CancellationToken cancellationToken = default)
+#endif
         {
             using (DynamoDBTelemetry.CreateSpan(this, nameof(LoadAsync)))
             {
@@ -119,7 +156,11 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         /// <inheritdoc/>
+#if NET8_0_OR_GREATER
+        public async Task<T> LoadAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(object hashKey, object rangeKey, CancellationToken cancellationToken = default)
+#else
         public async Task<T> LoadAsync<T>(object hashKey, object rangeKey, CancellationToken cancellationToken = default)
+#endif
         {
             using (DynamoDBTelemetry.CreateSpan(this, nameof(LoadAsync)))
             {
@@ -129,7 +170,11 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <inheritdoc/>
         [Obsolete("Use the LoadAsync overload that takes LoadConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to LoadAsync.")]
+#if NET8_0_OR_GREATER
+        public async Task<T> LoadAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(object hashKey, object rangeKey, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default)
+#else
         public async Task<T> LoadAsync<T>(object hashKey, object rangeKey, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default)
+#endif
         {
             using (DynamoDBTelemetry.CreateSpan(this, nameof(LoadAsync)))
             {
@@ -138,7 +183,11 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         /// <inheritdoc/>
+#if NET8_0_OR_GREATER
+        public async Task<T> LoadAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(object hashKey, object rangeKey, LoadConfig loadConfig, CancellationToken cancellationToken = default)
+#else
         public async Task<T> LoadAsync<T>(object hashKey, object rangeKey, LoadConfig loadConfig, CancellationToken cancellationToken = default)
+#endif
         {
             using (DynamoDBTelemetry.CreateSpan(this, nameof(LoadAsync)))
             {
@@ -147,7 +196,11 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         /// <inheritdoc/>
+#if NET8_0_OR_GREATER
+        public async Task<T> LoadAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(T keyObject, CancellationToken cancellationToken = default)
+#else
         public async Task<T> LoadAsync<T>(T keyObject, CancellationToken cancellationToken = default)
+#endif
         {
             using (DynamoDBTelemetry.CreateSpan(this, nameof(LoadAsync)))
             {
@@ -157,7 +210,11 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <inheritdoc/>
         [Obsolete("Use the LoadAsync overload that takes LoadConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to LoadAsync.")]
+#if NET8_0_OR_GREATER
+        public async Task<T> LoadAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(T keyObject, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default)
+#else
         public async Task<T> LoadAsync<T>(T keyObject, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default)
+#endif
         {
             using (DynamoDBTelemetry.CreateSpan(this, nameof(LoadAsync)))
             {
@@ -166,7 +223,11 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         /// <inheritdoc/>
+#if NET8_0_OR_GREATER
+        public async Task<T> LoadAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(T keyObject, LoadConfig loadConfig, CancellationToken cancellationToken = default)
+#else
         public async Task<T> LoadAsync<T>(T keyObject, LoadConfig loadConfig, CancellationToken cancellationToken = default)
+#endif
         {
             using (DynamoDBTelemetry.CreateSpan(this, nameof(LoadAsync)))
             {
@@ -179,7 +240,11 @@ namespace Amazon.DynamoDBv2.DataModel
         #region Delete async
 
         /// <inheritdoc/>
+#if NET8_0_OR_GREATER
+        public async Task DeleteAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(T value, CancellationToken cancellationToken = default)
+#else
         public async Task DeleteAsync<T>(T value, CancellationToken cancellationToken = default)
+#endif
         {
             using (DynamoDBTelemetry.CreateSpan(this, nameof(DeleteAsync)))
             {
@@ -189,7 +254,11 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <inheritdoc/>
         [Obsolete("Use the DeleteAsync overload that takes DeleteConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to DeleteAsync.")]
+#if NET8_0_OR_GREATER
+        public async Task DeleteAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(T value, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default)
+#else
         public async Task DeleteAsync<T>(T value, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default)
+#endif
         {
             using (DynamoDBTelemetry.CreateSpan(this, nameof(DeleteAsync)))
             {
@@ -198,7 +267,11 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         /// <inheritdoc/>
+#if NET8_0_OR_GREATER
+        public async Task DeleteAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(T value, DeleteConfig deleteConfig, CancellationToken cancellationToken = default)
+#else
         public async Task DeleteAsync<T>(T value, DeleteConfig deleteConfig, CancellationToken cancellationToken = default)
+#endif
         {
             using (DynamoDBTelemetry.CreateSpan(this, nameof(DeleteAsync)))
             {
@@ -207,7 +280,11 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         /// <inheritdoc/>
+#if NET8_0_OR_GREATER
+        public async Task DeleteAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(object hashKey, CancellationToken cancellationToken = default)
+#else
         public async Task DeleteAsync<T>(object hashKey, CancellationToken cancellationToken = default)
+#endif
         {
             using (DynamoDBTelemetry.CreateSpan(this, nameof(DeleteAsync)))
             {
@@ -217,7 +294,11 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <inheritdoc/>
         [Obsolete("Use the DeleteAsync overload that takes DeleteConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to DeleteAsync.")]
+#if NET8_0_OR_GREATER
+        public async Task DeleteAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(object hashKey, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default)
+#else
         public async Task DeleteAsync<T>(object hashKey, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default)
+#endif
         {
             using (DynamoDBTelemetry.CreateSpan(this, nameof(DeleteAsync)))
             {
@@ -226,7 +307,11 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         /// <inheritdoc/>
+#if NET8_0_OR_GREATER
+        public async Task DeleteAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(object hashKey, DeleteConfig deleteConfig, CancellationToken cancellationToken = default)
+#else
         public async Task DeleteAsync<T>(object hashKey, DeleteConfig deleteConfig, CancellationToken cancellationToken = default)
+#endif
         {
             using (DynamoDBTelemetry.CreateSpan(this, nameof(DeleteAsync)))
             {
@@ -235,7 +320,11 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         /// <inheritdoc/>
+#if NET8_0_OR_GREATER
+        public async Task DeleteAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(object hashKey, object rangeKey, CancellationToken cancellationToken = default)
+#else
         public async Task DeleteAsync<T>(object hashKey, object rangeKey, CancellationToken cancellationToken = default)
+#endif
         {
             using (DynamoDBTelemetry.CreateSpan(this, nameof(DeleteAsync)))
             {
@@ -245,7 +334,11 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <inheritdoc/>
         [Obsolete("Use the DeleteAsync overload that takes DeleteConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to DeleteAsync.")]
+#if NET8_0_OR_GREATER
+        public async Task DeleteAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(object hashKey, object rangeKey, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default)
+#else
         public async Task DeleteAsync<T>(object hashKey, object rangeKey, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default)
+#endif
         {
             using (DynamoDBTelemetry.CreateSpan(this, nameof(DeleteAsync)))
             {
@@ -254,7 +347,11 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         /// <inheritdoc/>
+#if NET8_0_OR_GREATER
+        public async Task DeleteAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(object hashKey, object rangeKey, DeleteConfig deleteConfig, CancellationToken cancellationToken = default)
+#else
         public async Task DeleteAsync<T>(object hashKey, object rangeKey, DeleteConfig deleteConfig, CancellationToken cancellationToken = default)
+#endif
         {
             using (DynamoDBTelemetry.CreateSpan(this, nameof(DeleteAsync)))
             {
@@ -332,7 +429,11 @@ namespace Amazon.DynamoDBv2.DataModel
         #region Scan async
 
         /// <inheritdoc/>
+#if NET8_0_OR_GREATER
+        public IAsyncSearch<T> ScanAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(IEnumerable<ScanCondition> conditions)
+#else
         public IAsyncSearch<T> ScanAsync<T>(IEnumerable<ScanCondition> conditions)
+#endif
         {
             using (DynamoDBTelemetry.CreateSpan(this, nameof(ScanAsync)))
             {
@@ -343,7 +444,11 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <inheritdoc/>
         [Obsolete("Use the ScanAsync overload that takes ScanConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to ScanAsync.")]
+#if NET8_0_OR_GREATER
+        public IAsyncSearch<T> ScanAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(IEnumerable<ScanCondition> conditions, DynamoDBOperationConfig operationConfig = null)
+#else
         public IAsyncSearch<T> ScanAsync<T>(IEnumerable<ScanCondition> conditions, DynamoDBOperationConfig operationConfig = null)
+#endif
         {
             using (DynamoDBTelemetry.CreateSpan(this, nameof(ScanAsync)))
             {
@@ -353,7 +458,11 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         /// <inheritdoc/>
+#if NET8_0_OR_GREATER
+        public IAsyncSearch<T> ScanAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(IEnumerable<ScanCondition> conditions, ScanConfig scanConfig)
+#else
         public IAsyncSearch<T> ScanAsync<T>(IEnumerable<ScanCondition> conditions, ScanConfig scanConfig)
+#endif
         {
             using (DynamoDBTelemetry.CreateSpan(this, nameof(ScanAsync)))
             {
@@ -363,7 +472,11 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         /// <inheritdoc/>
+#if NET8_0_OR_GREATER
+        public IAsyncSearch<T> FromScanAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(ScanOperationConfig scanConfig)
+#else
         public IAsyncSearch<T> FromScanAsync<T>(ScanOperationConfig scanConfig)
+#endif
         {
             using (DynamoDBTelemetry.CreateSpan(this, nameof(FromScanAsync)))
             {
@@ -376,7 +489,11 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <inheritdoc/>
         [Obsolete("Use the FromScanAsync overload that takes ScanConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to FromScanAsync.")]
+#if NET8_0_OR_GREATER
+        public IAsyncSearch<T> FromScanAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(ScanOperationConfig scanConfig, DynamoDBOperationConfig operationConfig = null)
+#else
         public IAsyncSearch<T> FromScanAsync<T>(ScanOperationConfig scanConfig, DynamoDBOperationConfig operationConfig = null)
+#endif
         {
             using (DynamoDBTelemetry.CreateSpan(this, nameof(FromScanAsync)))
             {
@@ -388,7 +505,11 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         /// <inheritdoc/>
+#if NET8_0_OR_GREATER
+        public IAsyncSearch<T> FromScanAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(ScanOperationConfig scanConfig, FromScanConfig fromScanConfig)
+#else
         public IAsyncSearch<T> FromScanAsync<T>(ScanOperationConfig scanConfig, FromScanConfig fromScanConfig)
+#endif
         {
             using (DynamoDBTelemetry.CreateSpan(this, nameof(FromScanAsync)))
             {
@@ -404,7 +525,11 @@ namespace Amazon.DynamoDBv2.DataModel
         #region Query async
 
         /// <inheritdoc/>
+#if NET8_0_OR_GREATER
+        public IAsyncSearch<T> QueryAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(object hashKeyValue)
+#else
         public IAsyncSearch<T> QueryAsync<T>(object hashKeyValue)
+#endif
         {
             using (DynamoDBTelemetry.CreateSpan(this, nameof(QueryAsync)))
             {
@@ -415,7 +540,11 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <inheritdoc/>
         [Obsolete("Use the QueryAsync overload that takes QueryConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to QueryAsync.")]
+#if NET8_0_OR_GREATER
+        public IAsyncSearch<T> QueryAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(object hashKeyValue, DynamoDBOperationConfig operationConfig = null)
+#else
         public IAsyncSearch<T> QueryAsync<T>(object hashKeyValue, DynamoDBOperationConfig operationConfig = null)
+#endif
         {
             using (DynamoDBTelemetry.CreateSpan(this, nameof(QueryAsync)))
             {
@@ -425,7 +554,11 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         /// <inheritdoc/>
+#if NET8_0_OR_GREATER
+        public IAsyncSearch<T> QueryAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(object hashKeyValue, QueryConfig queryConfig)
+#else
         public IAsyncSearch<T> QueryAsync<T>(object hashKeyValue, QueryConfig queryConfig)
+#endif
         {
             using (DynamoDBTelemetry.CreateSpan(this, nameof(QueryAsync)))
             {
@@ -435,7 +568,11 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         /// <inheritdoc/>
+#if NET8_0_OR_GREATER
+        public IAsyncSearch<T> QueryAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(object hashKeyValue, QueryOperator op, IEnumerable<object> values)
+#else
         public IAsyncSearch<T> QueryAsync<T>(object hashKeyValue, QueryOperator op, IEnumerable<object> values)
+#endif
         {
             using (DynamoDBTelemetry.CreateSpan(this, nameof(QueryAsync)))
             {
@@ -449,7 +586,11 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <inheritdoc/>
         [Obsolete("Use the QueryAsync overload that takes QueryConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to QueryAsync.")]
+#if NET8_0_OR_GREATER
+        public IAsyncSearch<T> QueryAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(object hashKeyValue, QueryOperator op, IEnumerable<object> values, DynamoDBOperationConfig operationConfig = null)
+#else
         public IAsyncSearch<T> QueryAsync<T>(object hashKeyValue, QueryOperator op, IEnumerable<object> values, DynamoDBOperationConfig operationConfig = null)
+#endif
         {
             using (DynamoDBTelemetry.CreateSpan(this, nameof(QueryAsync)))
             {
@@ -462,7 +603,11 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         /// <inheritdoc/>
+#if NET8_0_OR_GREATER
+        public IAsyncSearch<T> QueryAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(object hashKeyValue, QueryOperator op, IEnumerable<object> values, QueryConfig queryConfig)
+#else
         public IAsyncSearch<T> QueryAsync<T>(object hashKeyValue, QueryOperator op, IEnumerable<object> values, QueryConfig queryConfig)
+#endif
         {
             using (DynamoDBTelemetry.CreateSpan(this, nameof(QueryAsync)))
             {
@@ -475,7 +620,11 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         /// <inheritdoc/>
+#if NET8_0_OR_GREATER
+        public IAsyncSearch<T> FromQueryAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(QueryOperationConfig queryConfig)
+#else
         public IAsyncSearch<T> FromQueryAsync<T>(QueryOperationConfig queryConfig)
+#endif
         {
             using (DynamoDBTelemetry.CreateSpan(this, nameof(FromQueryAsync)))
             {
@@ -488,7 +637,11 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <inheritdoc/>
         [Obsolete("Use the FromQueryAsync overload that takes QueryConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to FromQueryAsync.")]
+#if NET8_0_OR_GREATER
+        public IAsyncSearch<T> FromQueryAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(QueryOperationConfig queryConfig, DynamoDBOperationConfig operationConfig = null)
+#else
         public IAsyncSearch<T> FromQueryAsync<T>(QueryOperationConfig queryConfig, DynamoDBOperationConfig operationConfig = null)
+#endif
         {
             using (DynamoDBTelemetry.CreateSpan(this, nameof(FromQueryAsync)))
             {
@@ -500,7 +653,11 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         /// <inheritdoc/>
+#if NET8_0_OR_GREATER
+        public IAsyncSearch<T> FromQueryAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(QueryOperationConfig queryConfig, FromQueryConfig fromQueryConfig)
+#else
         public IAsyncSearch<T> FromQueryAsync<T>(QueryOperationConfig queryConfig, FromQueryConfig fromQueryConfig)
+#endif
         {
             using (DynamoDBTelemetry.CreateSpan(this, nameof(FromQueryAsync)))
             {

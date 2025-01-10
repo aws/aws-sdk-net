@@ -26,7 +26,7 @@ namespace Amazon.RuntimeDependencies
         /// <summary>
         /// The type of context.
         /// </summary>
-        public enum ContextType 
+        public enum ContextType
         {
             /// <summary>
             /// Context for creating AmazonSecurityTokenServiceClient
@@ -56,7 +56,12 @@ namespace Amazon.RuntimeDependencies
             /// <summary>
             /// Context for creating AmazonSSOOIDCClient
             /// </summary>
-            SSOOIDCClient
+            SSOOIDCClient,
+
+            /// <summary>
+            /// Context for creating AmazonS3Client
+            /// </summary>
+            S3ClientContext
         }
 
         /// <summary>
@@ -120,6 +125,16 @@ namespace Amazon.RuntimeDependencies
         }
 
         /// <summary>
+        /// Create an instance of CreateInstanceContext with the SSOOIDCClientContext context
+        /// </summary>
+        /// <param name="context"></param>
+        public CreateInstanceContext(S3ClientContext context)
+        {
+            S3ClientContextData = context;
+            Type = ContextType.S3ClientContext;
+        }
+
+        /// <summary>
         /// The type of context being sent into the factory method. For each type there is a corresponding Data property set containing any relevant information that can be
         /// used for creating the dependency instance.
         /// </summary>
@@ -154,6 +169,11 @@ namespace Amazon.RuntimeDependencies
         /// Data for the SOOIDCClient context
         /// </summary>
         public SSOOIDCClientContext SSOOIDCClientContextData { get; }
+
+        /// <summary>
+        /// Data for the AmazonS3Client context
+        /// </summary>
+        public S3ClientContext S3ClientContextData {get;}
     }
 
 
@@ -260,5 +280,27 @@ namespace Amazon.RuntimeDependencies
         /// Proxy settings that can be applied to the service client config object.
         /// </summary>
         public IWebProxy ProxySettings { get; set; }
+    }
+
+    /// <summary>
+    /// Context for the factory method to create the AmazonS3Client runtime dependency.
+    /// </summary>
+    public class S3ClientContext
+    {
+        /// <summary>
+        /// The possibly actions the AmazonS3Client will be created for.
+        /// </summary>
+        public enum ActionContext { DynamoBDS3Link };
+
+
+        /// <summary>
+        /// The action the AmazonS3Client is being created for. For example creating an S3 client for the DynamoDB S3 Link feature.
+        /// </summary>
+        public ActionContext Action { get; set; }
+
+        /// <summary>
+        /// The region the SDK expects the S3 client to be configured for.
+        /// </summary>
+        public RegionEndpoint Region { get; set; }
     }
 }

@@ -15,6 +15,8 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
+
 #if AWS_ASYNC_API
 using System.Threading;
 using System.Threading.Tasks;
@@ -43,7 +45,11 @@ namespace Amazon.DynamoDBv2.DataModel
     /// Represents a generic interface for retrieving multiple items
     /// from a single DynamoDB table in a transaction.
     /// </summary>
+#if NET8_0_OR_GREATER
+    public interface ITransactGet<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T> : ITransactGet
+#else
     public interface ITransactGet<T> : ITransactGet
+#endif
     {
         /// <summary>
         /// List of generic results retrieved from DynamoDB.
@@ -110,7 +116,12 @@ namespace Amazon.DynamoDBv2.DataModel
     /// Represents a strongly-typed object for retrieving multiple items
     /// from a single DynamoDB table in a transaction.
     /// </summary>
+#if NET8_0_OR_GREATER
+    public partial class TransactGet<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T> : TransactGet, ITransactGet<T>
+#else
     public partial class TransactGet<T> : TransactGet, ITransactGet<T>
+#endif
+
     {
         private readonly DynamoDBContext _context;
         private readonly DynamoDBFlatConfig _config;

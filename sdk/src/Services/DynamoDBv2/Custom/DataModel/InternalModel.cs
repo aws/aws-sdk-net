@@ -36,9 +36,6 @@ namespace Amazon.DynamoDBv2.DataModel
     /// <summary>
     /// Basic property storage information
     /// </summary>
-#if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif
     internal class SimplePropertyStorage
     {
         // local property name
@@ -51,21 +48,34 @@ namespace Amazon.DynamoDBv2.DataModel
         // Type of the property
 
 #if NET8_0_OR_GREATER
-        [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicParameterlessConstructor)]
+        [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)]
 #endif
         public Type MemberType { get; protected set; }
         // Converter type, if one is present
+
+#if NET8_0_OR_GREATER
+        [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors | DynamicallyAccessedMemberTypes.Interfaces)]
+#endif
         public Type ConverterType { get; set; }
         // Converter, if one is present
         public IPropertyConverter Converter { get; protected set; }
 
-        public SimplePropertyStorage(MemberInfo member)
+#if NET8_0_OR_GREATER
+        [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("ReflectionAnalysis", "IL2072",
+            Justification = "The user's type has been annotated with DynamicallyAccessedMemberTypes.All with the public API into the library. At this point the type will not be trimmed.")]
+#endif
+        internal SimplePropertyStorage(MemberInfo member)
             : this(Utils.GetType(member))
         {
             Member = member;
             PropertyName = member.Name;
         }
+
+#if NET8_0_OR_GREATER
+        public SimplePropertyStorage([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)]Type memberType)
+#else
         public SimplePropertyStorage(Type memberType)
+#endif
         {
             MemberType = memberType;
         }
@@ -80,9 +90,6 @@ namespace Amazon.DynamoDBv2.DataModel
     /// <summary>
     /// DynamoDB property storage information
     /// </summary>
-#if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif
     internal class PropertyStorage : SimplePropertyStorage
     {
         // flags
@@ -188,7 +195,11 @@ namespace Amazon.DynamoDBv2.DataModel
                 IndexNames.AddRange(index.IndexNames);
         }
 
-        public PropertyStorage(MemberInfo member)
+#if NET8_0_OR_GREATER
+        [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("ReflectionAnalysis", "IL2026",
+            Justification = "The user's type has been annotated with DynamicallyAccessedMemberTypes.All with the public API into the library. At this point the type will not be trimmed.")]
+#endif
+        internal PropertyStorage(MemberInfo member)
             : base(member)
         {
             IndexNames = new List<string>();
@@ -199,9 +210,6 @@ namespace Amazon.DynamoDBv2.DataModel
     /// <summary>
     /// Storage information for a single item
     /// </summary>
-#if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif
     internal class ItemStorage
     {
         public Document Document { get; set; }
@@ -238,9 +246,6 @@ namespace Amazon.DynamoDBv2.DataModel
     /// <summary>
     /// Storage information for a specific class
     /// </summary>
-#if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif
     internal class StorageConfig
     {
         // normalized PropertyStorage objects
@@ -310,7 +315,11 @@ namespace Amazon.DynamoDBv2.DataModel
             throw new InvalidOperationException(errorMessage);
         }
 
+#if NET8_0_OR_GREATER
+        private static Dictionary<string, MemberInfo> GetMembersDictionary([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] Type type)
+#else
         private static Dictionary<string, MemberInfo> GetMembersDictionary(Type type)
+#endif
         {
             Dictionary<string, MemberInfo> dictionary = new Dictionary<string, MemberInfo>(StringComparer.Ordinal);
 
@@ -324,9 +333,14 @@ namespace Amazon.DynamoDBv2.DataModel
             return dictionary;
         }
 
-        
+
+
         // constructor
-        public StorageConfig(Type targetType)
+#if NET8_0_OR_GREATER
+        internal StorageConfig([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] Type targetType)
+#else
+        internal StorageConfig(Type targetType)
+#endif
         {
             if (!Utils.CanInstantiate(targetType))
                 throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture,
@@ -346,9 +360,6 @@ namespace Amazon.DynamoDBv2.DataModel
     /// <summary>
     /// Storage information for a specific class that is associated with a table
     /// </summary>
-#if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif
     internal class ItemStorageConfig : StorageConfig
     {
         // table
@@ -558,7 +569,11 @@ namespace Amazon.DynamoDBv2.DataModel
 
 
         // constructor
-        public ItemStorageConfig(Type targetType)
+#if NET8_0_OR_GREATER
+        internal ItemStorageConfig([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] Type targetType)
+#else
+        internal ItemStorageConfig(Type targetType)
+#endif
             : base(targetType)
         {
             AttributeToIndexesNameMapping = new Dictionary<string, List<string>>(StringComparer.Ordinal);
@@ -575,9 +590,6 @@ namespace Amazon.DynamoDBv2.DataModel
     /// <summary>
     /// Cache of ItemStorageConfig objects
     /// </summary>
-#if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif
     internal class ItemStorageConfigCache : IDisposable
     {
         // Cache of ItemStorageConfig objects per table and the
@@ -607,12 +619,21 @@ namespace Amazon.DynamoDBv2.DataModel
             Context = context;
         }
 
+#if NET8_0_OR_GREATER
+        public ItemStorageConfig GetConfig<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(DynamoDBFlatConfig flatConfig, bool conversionOnly = false)
+#else
         public ItemStorageConfig GetConfig<T>(DynamoDBFlatConfig flatConfig, bool conversionOnly = false)
+#endif
         {
             Type type = typeof(T);
             return GetConfig(type, flatConfig, conversionOnly);
         }
+
+#if NET8_0_OR_GREATER
+        public ItemStorageConfig GetConfig([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] Type type, DynamoDBFlatConfig flatConfig, bool conversionOnly = false)
+#else
         public ItemStorageConfig GetConfig(Type type, DynamoDBFlatConfig flatConfig, bool conversionOnly = false)
+#endif
         {
             ConfigTableCache tableCache = null;
             ItemStorageConfig config;
@@ -697,7 +718,11 @@ namespace Amazon.DynamoDBv2.DataModel
             return (config.LowerCamelCaseProperties ? Utils.ToLowerCamelCase(value) : value);
         }
 
+#if NET8_0_OR_GREATER
+        private ItemStorageConfig CreateStorageConfig([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] Type baseType, string actualTableName, DynamoDBFlatConfig flatConfig)
+#else
         private ItemStorageConfig CreateStorageConfig(Type baseType, string actualTableName, DynamoDBFlatConfig flatConfig)
+#endif
         {
             if (baseType == null) 
                 throw new ArgumentNullException("baseType");
@@ -745,7 +770,11 @@ namespace Amazon.DynamoDBv2.DataModel
             return config;
         }
 
+#if NET8_0_OR_GREATER
+        private static void PopulateConfigFromType(ItemStorageConfig config, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)]  Type type)
+#else
         private static void PopulateConfigFromType(ItemStorageConfig config, Type type)
+#endif
         {
             DynamoDBTableAttribute tableAttribute = Utils.GetTableAttribute(type);
             if (tableAttribute == null)

@@ -22,10 +22,6 @@ namespace Amazon.DynamoDBv2.DataModel
     /// This should only contain members that are relevant to all object persistence operations, 
     /// anything operation-specific should be added to derived classes.
     /// </remarks>
-#if NET8_0_OR_GREATER
-    // The DataModel namespace doesn't support trimming yet, so annotate public classes/methods as incompatible
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif
     public abstract class BaseOperationConfig
     {
         /// <summary>

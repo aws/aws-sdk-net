@@ -177,10 +177,10 @@ namespace Amazon.DynamoDBv2.DataModel
 
 #if NET8_0_OR_GREATER
         [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("ReflectionAnalysis", "IL2073",
-            Justification = "By the time the DynamoDB high level libraries got to this code path the collection type with the generic type would have already been found by the compiler preventing the element type from being trimmed.")]
+            Justification = "The user's type has been annotated with DynamicallyAccessedMemberTypes.All with the public API into the library. At this point the type will not be trimmed.")]
         [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("ReflectionAnalysis", "IL2063",
-            Justification = "By the time the DynamoDB high level libraries got to this code path the collection type with the generic type would have already been found by the compiler preventing the element type from being trimmed.")]
-        [return: DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors | DynamicallyAccessedMemberTypes.Interfaces)]
+            Justification = "The user's type has been annotated with DynamicallyAccessedMemberTypes.All with the public API into the library. At this point the type will not be trimmed.")]
+        [return: DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)]
         internal static Type GetElementType(Type collectionType)
 #else
         internal static Type GetElementType(Type collectionType)
@@ -461,6 +461,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
             return true;
         }
+
         internal static Type GetType(MemberInfo member)
         {
             var pi = member as PropertyInfo;
@@ -470,6 +471,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
             return (pi != null ? pi.PropertyType : fi.FieldType);
         }
+
         internal static bool IsReadWrite(MemberInfo member)
         {
             PropertyInfo property = member as PropertyInfo;

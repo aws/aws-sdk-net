@@ -142,5 +142,27 @@ namespace Amazon.RuntimeDependencies
         {
             RegisterInstance(ServiceClientHelpers.SSO_OIDC_ASSEMBLY_NAME, ServiceClientHelpers.SSO_OIDC_SERVICE_CLASS_NAME, factory);
         }
+
+        /// <summary>
+        /// Register the Amazon.S3.AmazonS3Client instance from the AWSSDK.S3 package.
+        /// 
+        /// The S3 client is used by the DynamoDB high level feature called S3 link.
+        /// </summary>
+        /// <param name="instance"></param>
+        public void RegisterS3Client(object instance)
+        {
+            RegisterInstance(ServiceClientHelpers.S3_ASSEMBLY_NAME, ServiceClientHelpers.S3_SERVICE_CLASS_NAME, instance);
+        }
+
+        /// <summary>
+        /// Register the Amazon.S3.AmazonS3Client instance from the AWSSDK.S3 package.
+        /// 
+        /// The S3 client is used by the DynamoDB high level feature called S3 link.
+        /// </summary>
+        /// <param name="factory"></param>
+        public void RegisterS3Client(RuntimeDependencyFactory factory)
+        {
+            RegisterInstance(ServiceClientHelpers.S3_ASSEMBLY_NAME, ServiceClientHelpers.S3_SERVICE_CLASS_NAME, factory);
+        }
     }
 }

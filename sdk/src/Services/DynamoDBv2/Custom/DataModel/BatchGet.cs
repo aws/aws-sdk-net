@@ -17,6 +17,8 @@ using System;
 using System.Collections.Generic;
 using Amazon.DynamoDBv2.DocumentModel;
 using Amazon.Runtime.Telemetry.Tracing;
+using System.Diagnostics.CodeAnalysis;
+
 
 
 #if AWS_ASYNC_API
@@ -59,7 +61,11 @@ namespace Amazon.DynamoDBv2.DataModel
     /// Represents a generic interface for retrieving a batch of items
     /// from a single DynamoDB table
     /// </summary>
+#if NET8_0_OR_GREATER
+    public interface IBatchGet<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T> : IBatchGet
+#else
     public interface IBatchGet<T> : IBatchGet
+#endif
     {
         /// <summary>
         /// List of generic results retrieved from DynamoDB.
@@ -127,7 +133,11 @@ namespace Amazon.DynamoDBv2.DataModel
     /// Represents a strongly-typed object for retrieving a batch of items
     /// from a single DynamoDB table
     /// </summary>
+#if NET8_0_OR_GREATER
+    public partial class BatchGet<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T> : BatchGet, IBatchGet<T>
+#else
     public partial class BatchGet<T> : BatchGet, IBatchGet<T>
+#endif
     {
         private readonly DynamoDBContext _context;
         private readonly DynamoDBFlatConfig _config;

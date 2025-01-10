@@ -15,13 +15,18 @@
 
 using Amazon.Runtime.Telemetry.Tracing;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
+#if NET8_0_OR_GREATER
+    public partial interface IAsyncSearch<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>
+#else
     public partial interface IAsyncSearch<T>
+#endif
     {
         /// <summary>
         /// Initiates the asynchronous execution to get the next set of results from DynamoDB.
@@ -48,7 +53,12 @@ namespace Amazon.DynamoDBv2.DataModel
         Task<List<T>> GetRemainingAsync(CancellationToken cancellationToken = default(CancellationToken));
     }
 
+#if NET8_0_OR_GREATER
+    public partial class AsyncSearch<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T> : IAsyncSearch<T>
+#else
     public partial class AsyncSearch<T> : IAsyncSearch<T>
+#endif
+
     {
         /// <inheritdoc/>
         public virtual async Task<List<T>> GetNextSetAsync(CancellationToken cancellationToken = default(CancellationToken))

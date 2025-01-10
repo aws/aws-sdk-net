@@ -14,6 +14,7 @@
  */
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 
 namespace Amazon.DynamoDBv2.DataModel
@@ -176,7 +177,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Converter must be the type of a class that implements IPropertyConverter.
         /// </summary>
         /// <param name="converter">Custom converter type.</param>
+#if NET8_0_OR_GREATER
+        public DynamoDBPropertyAttribute([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors | DynamicallyAccessedMemberTypes.Interfaces)] Type converter)
+#else
         public DynamoDBPropertyAttribute(Type converter)
+#endif
         {
             Converter = converter;
         }
@@ -203,7 +208,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Name of attribute to be associated with property or field.
         /// </param>
         /// <param name="converter">Custom converter type.</param>
+#if NET8_0_OR_GREATER
+        public DynamoDBPropertyAttribute(string attributeName, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors | DynamicallyAccessedMemberTypes.Interfaces)] Type converter)
+#else
         public DynamoDBPropertyAttribute(string attributeName, Type converter)
+#endif
             : base(attributeName)
         {
             Converter = converter;
@@ -230,6 +239,9 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Type of the custom converter.
         /// Cannot be set at the same time as StoreAsEpoch.
         /// </summary>
+#if NET8_0_OR_GREATER
+        [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors | DynamicallyAccessedMemberTypes.Interfaces)]
+#endif
         public Type Converter { get; set; }
 
         /// <summary>
@@ -275,7 +287,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Converter must be the type of a class that implements IPropertyConverter.
         /// </summary>
         /// <param name="converter">Custom converter type.</param>
+#if NET8_0_OR_GREATER
+        public DynamoDBHashKeyAttribute([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors | DynamicallyAccessedMemberTypes.Interfaces)] Type converter)
+#else
         public DynamoDBHashKeyAttribute(Type converter)
+#endif
             : base(converter)
         {
         }
@@ -289,7 +305,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Name of attribute to be associated with property or field.
         /// </param>
         /// <param name="converter">Custom converter type.</param>
+#if NET8_0_OR_GREATER
+        public DynamoDBHashKeyAttribute(string attributeName, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors | DynamicallyAccessedMemberTypes.Interfaces)] Type converter)
+#else
         public DynamoDBHashKeyAttribute(string attributeName, Type converter)
+#endif
             : base(attributeName, converter)
         {
         }
@@ -330,7 +350,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Converter must be the type of a class that implements IPropertyConverter.
         /// </summary>
         /// <param name="converter">Custom converter type.</param>
+#if NET8_0_OR_GREATER
+        public DynamoDBRangeKeyAttribute([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors | DynamicallyAccessedMemberTypes.Interfaces)] Type converter)
+#else
         public DynamoDBRangeKeyAttribute(Type converter)
+#endif
             : base(converter)
         {
         }
@@ -344,7 +368,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Name of attribute to be associated with property or field.
         /// </param>
         /// <param name="converter">Custom converter type.</param>
+#if NET8_0_OR_GREATER
+        public DynamoDBRangeKeyAttribute(string attributeName, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors | DynamicallyAccessedMemberTypes.Interfaces)] Type converter)
+#else
         public DynamoDBRangeKeyAttribute(string attributeName, Type converter)
+#endif
             : base(attributeName, converter)
         {
         }

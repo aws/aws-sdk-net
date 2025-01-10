@@ -15,6 +15,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 #if AWS_ASYNC_API
 using System.Threading;
@@ -38,7 +39,11 @@ namespace Amazon.DynamoDBv2.DataModel
     /// Represents a generic interface for writing/deleting/version-checking multiple items
     /// in a single DynamoDB table in a transaction.
     /// </summary>
+#if NET8_0_OR_GREATER
+    public interface ITransactWrite<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T> : ITransactWrite
+#else
     public interface ITransactWrite<T> : ITransactWrite
+#endif
     {
         /// <summary>
         /// Creates a MultiTableTransactWrite object that is a combination
@@ -176,9 +181,10 @@ namespace Amazon.DynamoDBv2.DataModel
     /// in a single DynamoDB table in a transaction.
     /// </summary>
 #if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif
+    public partial class TransactWrite<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T> : TransactWrite, ITransactWrite<T>
+#else
     public partial class TransactWrite<T> : TransactWrite, ITransactWrite<T>
+#endif
     {
         private readonly DynamoDBContext _context;
         private readonly DynamoDBFlatConfig _config;

@@ -16,6 +16,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.DynamoDBv2.DocumentModel;
@@ -40,7 +41,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="value">Object to save.</param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
+#if NET8_0_OR_GREATER
+        Task SaveAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(T value, CancellationToken cancellationToken = default);
+#else
         Task SaveAsync<T>(T value, CancellationToken cancellationToken = default);
+#endif
 
         /// <summary>
         /// Saves an object to DynamoDB.
@@ -54,7 +59,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
         [Obsolete("Use the SaveAsync overload that takes SaveConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to SaveAsync.")]
+#if NET8_0_OR_GREATER
+        Task SaveAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(T value, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default);
+#else
         Task SaveAsync<T>(T value, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default);
+#endif
 
         /// <summary>
         /// Saves an object to DynamoDB.
@@ -67,7 +76,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="saveConfig">Config object that can be used to override properties on the table's context for this request.</param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
+#if NET8_0_OR_GREATER
+        Task SaveAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(T value, SaveConfig saveConfig, CancellationToken cancellationToken = default);
+#else
         Task SaveAsync<T>(T value, SaveConfig saveConfig, CancellationToken cancellationToken = default);
+#endif
 
         /// <summary>
         /// Saves an object to DynamoDB.
@@ -79,7 +92,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="value">Object to save.</param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
+#if NET8_0_OR_GREATER
+        Task SaveAsync([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] Type valueType, object value, CancellationToken cancellationToken = default);
+#else
         Task SaveAsync(Type valueType, object value, CancellationToken cancellationToken = default);
+#endif
 
         /// <summary>
         /// Saves an object to DynamoDB.
@@ -93,7 +110,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
         [Obsolete("Use the SaveAsync overload that takes SaveConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to SaveAsync.")]
+#if NET8_0_OR_GREATER
+        Task SaveAsync([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] Type valueType, object value, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default);
+#else
         Task SaveAsync(Type valueType, object value, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default);
+#endif
 
         /// <summary>
         /// Saves an object to DynamoDB.
@@ -106,7 +127,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="saveConfig">Config object that can be used to override properties on the table's context for this request.</param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
+#if NET8_0_OR_GREATER
+        Task SaveAsync([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] Type valueType, object value, SaveConfig saveConfig, CancellationToken cancellationToken = default);
+#else
         Task SaveAsync(Type valueType, object value, SaveConfig saveConfig, CancellationToken cancellationToken = default);
+#endif
 
         #endregion
 
@@ -123,7 +148,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="hashKey">Hash key element of the target item.</param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>Object of type T, populated with the properties of the item loaded from DynamoDB.</returns>
+#if NET8_0_OR_GREATER
+        Task<T> LoadAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(object hashKey, CancellationToken cancellationToken = default);
+#else
         Task<T> LoadAsync<T>(object hashKey, CancellationToken cancellationToken = default);
+#endif
 
         /// <summary>
         /// Loads an object from DynamoDB for the given hash key.
@@ -140,7 +169,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>Object of type T, populated with the properties of the item loaded from DynamoDB.</returns>
         [Obsolete("Use the LoadAsync overload that takes LoadConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to LoadAsync.")]
+#if NET8_0_OR_GREATER
+        Task<T> LoadAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(object hashKey, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default);
+#else
         Task<T> LoadAsync<T>(object hashKey, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default);
+#endif
 
         /// <summary>
         /// Loads an object from DynamoDB for the given hash key.
@@ -154,7 +187,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="loadConfig">Config object that can be used to override properties on the table's context for this request.</param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
+#if NET8_0_OR_GREATER
+        Task<T> LoadAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(object hashKey, LoadConfig loadConfig, CancellationToken cancellationToken = default);
+#else
         Task<T> LoadAsync<T>(object hashKey, LoadConfig loadConfig, CancellationToken cancellationToken = default);
+#endif
 
         /// <summary>
         /// Loads an object from DynamoDB for the given hash-and-range primary key.
@@ -167,7 +204,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="rangeKey">Range key element of the target item.</param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>Object of type T, populated with the properties of the item loaded from DynamoDB.</returns>
+#if NET8_0_OR_GREATER
+        Task<T> LoadAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(object hashKey, object rangeKey, CancellationToken cancellationToken = default);
+#else
         Task<T> LoadAsync<T>(object hashKey, object rangeKey, CancellationToken cancellationToken = default);
+#endif
 
         /// <summary>
         /// Loads an object from DynamoDB for the given hash-and-range primary key.
@@ -186,7 +227,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>Object of type T, populated with the properties of the item loaded from DynamoDB.</returns>
         [Obsolete("Use the LoadAsync overload that takes LoadConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to LoadAsync.")]
+#if NET8_0_OR_GREATER
+        Task<T> LoadAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(object hashKey, object rangeKey, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default);
+#else
         Task<T> LoadAsync<T>(object hashKey, object rangeKey, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default);
+#endif
 
         /// <summary>
         /// Loads an object from DynamoDB for the given hash-and-range primary key.
@@ -201,7 +246,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="loadConfig">Config object that can be used to override properties on the table's context for this request.</param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
+#if NET8_0_OR_GREATER
+        Task<T> LoadAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(object hashKey, object rangeKey, LoadConfig loadConfig, CancellationToken cancellationToken = default);
+#else
         Task<T> LoadAsync<T>(object hashKey, object rangeKey, LoadConfig loadConfig, CancellationToken cancellationToken = default);
+#endif
 
         /// <summary>
         /// Loads an object from DynamoDB for the given key.
@@ -217,7 +266,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="keyObject">Key of the target item.</param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>Object of type T, populated with the properties of the item loaded from DynamoDB.</returns>
+#if NET8_0_OR_GREATER
+        Task<T> LoadAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(T keyObject, CancellationToken cancellationToken = default);
+#else
         Task<T> LoadAsync<T>(T keyObject, CancellationToken cancellationToken = default);
+#endif
 
         /// <summary>
         /// Loads an object from DynamoDB for the given key.
@@ -243,7 +296,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>Object of type T, populated with the properties of the item loaded from DynamoDB.</returns>
         [Obsolete("Use the LoadAsync overload that takes LoadConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to LoadAsync.")]
+#if NET8_0_OR_GREATER
+        Task<T> LoadAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(T keyObject, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default);
+#else
         Task<T> LoadAsync<T>(T keyObject, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default);
+#endif
 
         /// <summary>
         /// Loads an object from DynamoDB for the given key.
@@ -259,7 +316,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="loadConfig">Config object that can be used to override properties on the table's context for this request.</param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
+#if NET8_0_OR_GREATER
+        Task<T> LoadAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(T keyObject, LoadConfig loadConfig, CancellationToken cancellationToken = default);
+#else
         Task<T> LoadAsync<T>(T keyObject, LoadConfig loadConfig, CancellationToken cancellationToken = default);
+#endif
 
         #endregion
 
@@ -277,7 +338,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="value">Object to delete.</param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
+#if NET8_0_OR_GREATER
+        Task DeleteAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(T value, CancellationToken cancellationToken = default);
+#else
         Task DeleteAsync<T>(T value, CancellationToken cancellationToken = default);
+#endif
 
         /// <summary>
         /// Deletes an item in DynamoDB corresponding to given object.
@@ -293,7 +358,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
         [Obsolete("Use the DeleteAsync overload that takes DeleteConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to DeleteAsync.")]
+#if NET8_0_OR_GREATER
+        Task DeleteAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(T value, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default);
+#else
         Task DeleteAsync<T>(T value, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default);
+#endif
 
         /// <summary>
         /// Deletes an item in DynamoDB corresponding to given object.
@@ -308,7 +377,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="deleteConfig">Config object that can be used to override properties on the table's context for this request.</param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
+#if NET8_0_OR_GREATER
+        Task DeleteAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(T value, DeleteConfig deleteConfig, CancellationToken cancellationToken = default);
+#else
         Task DeleteAsync<T>(T value, DeleteConfig deleteConfig, CancellationToken cancellationToken = default);
+#endif
 
         /// <summary>
         /// Deletes an item in DynamoDB corresponding to given hash key.
@@ -322,7 +395,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="hashKey">Hash key element of the object to delete.</param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
+#if NET8_0_OR_GREATER
+        Task DeleteAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(object hashKey, CancellationToken cancellationToken = default);
+#else
         Task DeleteAsync<T>(object hashKey, CancellationToken cancellationToken = default);
+#endif
 
         /// <summary>
         /// Deletes an item in DynamoDB corresponding to given hash key.
@@ -338,7 +415,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
         [Obsolete("Use the DeleteAsync overload that takes DeleteConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to DeleteAsync.")]
+#if NET8_0_OR_GREATER
+        Task DeleteAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(object hashKey, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default);
+#else
         Task DeleteAsync<T>(object hashKey, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default);
+#endif
 
         /// <summary>
         /// Deletes an item in DynamoDB corresponding to given hash key.
@@ -353,7 +434,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="deleteConfig">Config object that can be used to override properties on the table's context for this request.</param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
+#if NET8_0_OR_GREATER
+        Task DeleteAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(object hashKey, DeleteConfig deleteConfig, CancellationToken cancellationToken = default);
+#else
         Task DeleteAsync<T>(object hashKey, DeleteConfig deleteConfig, CancellationToken cancellationToken = default);
+#endif
 
         /// <summary>
         /// Deletes an item in DynamoDB corresponding to a given hash-and-range primary key.
@@ -368,7 +453,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="rangeKey">Range key element of the object to delete.</param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
+#if NET8_0_OR_GREATER
+        Task DeleteAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(object hashKey, object rangeKey, CancellationToken cancellationToken = default);
+#else
         Task DeleteAsync<T>(object hashKey, object rangeKey, CancellationToken cancellationToken = default);
+#endif
 
         /// <summary>
         /// Deletes an item in DynamoDB corresponding to a given hash-and-range primary key.
@@ -385,7 +474,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
         [Obsolete("Use the DeleteAsync overload that takes DeleteConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to DeleteAsync.")]
+#if NET8_0_OR_GREATER
+        Task DeleteAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(object hashKey, object rangeKey, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default);
+#else
         Task DeleteAsync<T>(object hashKey, object rangeKey, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default);
+#endif
 
         /// <summary>
         /// Deletes an item in DynamoDB corresponding to a given hash-and-range primary key.
@@ -401,7 +494,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="deleteConfig">Config object that can be used to override properties on the table's context for this request.</param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
+#if NET8_0_OR_GREATER
+        Task DeleteAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(object hashKey, object rangeKey, DeleteConfig deleteConfig, CancellationToken cancellationToken = default);
+#else
         Task DeleteAsync<T>(object hashKey, object rangeKey, DeleteConfig deleteConfig, CancellationToken cancellationToken = default);
+#endif
 
         #endregion
 
@@ -482,7 +579,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Conditions that the results should meet.
         /// </param>
         /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
+#if NET8_0_OR_GREATER
+        IAsyncSearch<T> ScanAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(IEnumerable<ScanCondition> conditions);
+#else
         IAsyncSearch<T> ScanAsync<T>(IEnumerable<ScanCondition> conditions);
+#endif
 
         /// <summary>
         /// Configures an async Scan operation against DynamoDB, finding items
@@ -496,7 +597,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
 
         [Obsolete("Use the ScanAsync overload that takes ScanConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to ScanAsync.")]
+#if NET8_0_OR_GREATER
+        IAsyncSearch<T> ScanAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(IEnumerable<ScanCondition> conditions, DynamoDBOperationConfig operationConfig = null);
+#else
         IAsyncSearch<T> ScanAsync<T>(IEnumerable<ScanCondition> conditions, DynamoDBOperationConfig operationConfig = null);
+#endif
 
         /// <summary>
         /// Configures an async Scan operation against DynamoDB, finding items
@@ -508,7 +613,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </param>
         /// <param name="scanConfig">Config object that can be used to override properties on the table's context for this request.</param>
         /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
+#if NET8_0_OR_GREATER
+        IAsyncSearch<T> ScanAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(IEnumerable<ScanCondition> conditions, ScanConfig scanConfig);
+#else
         IAsyncSearch<T> ScanAsync<T>(IEnumerable<ScanCondition> conditions, ScanConfig scanConfig);
+#endif
 
         /// <summary>
         /// Configures an async Scan operation against DynamoDB, finding items
@@ -517,7 +626,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <typeparam name="T">Type of object.</typeparam>
         /// <param name="scanConfig">Scan request object.</param>
         /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
+#if NET8_0_OR_GREATER
+        IAsyncSearch<T> FromScanAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(ScanOperationConfig scanConfig);
+#else
         IAsyncSearch<T> FromScanAsync<T>(ScanOperationConfig scanConfig);
+#endif
 
         /// <summary>
         /// Configures an async Scan operation against DynamoDB, finding items
@@ -528,7 +641,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="operationConfig">Config object which can be used to override the table used.</param>
         /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
         [Obsolete("Use the FromScanAsync overload that takes ScanConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to FromScanAsync.")]
+#if NET8_0_OR_GREATER
+        IAsyncSearch<T> FromScanAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(ScanOperationConfig scanConfig, DynamoDBOperationConfig operationConfig = null);
+#else
         IAsyncSearch<T> FromScanAsync<T>(ScanOperationConfig scanConfig, DynamoDBOperationConfig operationConfig = null);
+#endif
 
         /// <summary>
         ///  Configures an async Scan operation against DynamoDB, finding items
@@ -538,7 +655,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="scanConfig">Scan request object.</param>
         /// <param name="fromScanConfig">Config object that can be used to override properties on the table's context for this request.</param>
         /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
+#if NET8_0_OR_GREATER
+        IAsyncSearch<T> FromScanAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(ScanOperationConfig scanConfig, FromScanConfig fromScanConfig);
+#else
         IAsyncSearch<T> FromScanAsync<T>(ScanOperationConfig scanConfig, FromScanConfig fromScanConfig);
+#endif
 
         #endregion
 
@@ -551,7 +672,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <typeparam name="T">Type of object.</typeparam>
         /// <param name="hashKeyValue">Hash key of the items to query.</param>
         /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
+#if NET8_0_OR_GREATER
+        IAsyncSearch<T> QueryAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(object hashKeyValue);
+#else
         IAsyncSearch<T> QueryAsync<T>(object hashKeyValue);
+#endif
 
         /// <summary>
         /// Configures an async Query operation against DynamoDB, finding items
@@ -562,7 +687,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="operationConfig">Config object which can be used to override the table used.</param>
         /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
         [Obsolete("Use the QueryAsync overload that takes QueryConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to QueryAsync.")]
+#if NET8_0_OR_GREATER
+        IAsyncSearch<T> QueryAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(object hashKeyValue, DynamoDBOperationConfig operationConfig = null);
+#else
         IAsyncSearch<T> QueryAsync<T>(object hashKeyValue, DynamoDBOperationConfig operationConfig = null);
+#endif
 
         /// <summary>
         /// Configures an async Query operation against DynamoDB, finding items
@@ -572,7 +701,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="hashKeyValue">Hash key of the items to query.</param>
         /// <param name="queryConfig">Config object that can be used to override properties on the table's context for this request.</param>
         /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
+#if NET8_0_OR_GREATER
+        IAsyncSearch<T> QueryAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(object hashKeyValue, QueryConfig queryConfig);
+#else
         IAsyncSearch<T> QueryAsync<T>(object hashKeyValue, QueryConfig queryConfig);
+#endif
 
         /// <summary>
         /// Configures an async Query operation against DynamoDB, finding items
@@ -587,7 +720,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// For QueryOperator.Betwee, values should be two values.
         /// </param>
         /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
+#if NET8_0_OR_GREATER
+        IAsyncSearch<T> QueryAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(object hashKeyValue, QueryOperator op, IEnumerable<object> values);
+#else
         IAsyncSearch<T> QueryAsync<T>(object hashKeyValue, QueryOperator op, IEnumerable<object> values);
+#endif
 
         /// <summary>
         /// Configures an async Query operation against DynamoDB, finding items
@@ -604,7 +741,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="operationConfig">Config object which can be used to override the table used.</param>
         /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
         [Obsolete("Use the QueryAsync overload that takes QueryConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to QueryAsync.")]
+#if NET8_0_OR_GREATER
+        IAsyncSearch<T> QueryAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(object hashKeyValue, QueryOperator op, IEnumerable<object> values, DynamoDBOperationConfig operationConfig = null);
+#else
         IAsyncSearch<T> QueryAsync<T>(object hashKeyValue, QueryOperator op, IEnumerable<object> values, DynamoDBOperationConfig operationConfig = null);
+#endif
 
         /// <summary>
         /// Configures an async Query operation against DynamoDB, finding items
@@ -620,7 +761,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </param>
         /// <param name="queryConfig">Config object that can be used to override properties on the table's context for this request.</param>
         /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
+#if NET8_0_OR_GREATER
+        IAsyncSearch<T> QueryAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(object hashKeyValue, QueryOperator op, IEnumerable<object> values, QueryConfig queryConfig);
+#else
         IAsyncSearch<T> QueryAsync<T>(object hashKeyValue, QueryOperator op, IEnumerable<object> values, QueryConfig queryConfig);
+#endif
 
         /// <summary>
         /// Configures an async Query operation against DynamoDB using a mid-level document model 
@@ -629,7 +774,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <typeparam name="T">Type of object.</typeparam>
         /// <param name="queryConfig">Mid-level, document model query request object.</param>
         /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
+#if NET8_0_OR_GREATER
+        IAsyncSearch<T> FromQueryAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(QueryOperationConfig queryConfig);
+#else
         IAsyncSearch<T> FromQueryAsync<T>(QueryOperationConfig queryConfig);
+#endif
 
         /// <summary>
         /// Configures an async Query operation against DynamoDB, finding items
@@ -640,7 +789,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="operationConfig">Config object which can be used to override the table used.</param>
         /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
         [Obsolete("Use the FromQueryAsync overload that takes QueryConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to FromQueryAsync.")]
+#if NET8_0_OR_GREATER
+        IAsyncSearch<T> FromQueryAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(QueryOperationConfig queryConfig, DynamoDBOperationConfig operationConfig = null);
+#else
         IAsyncSearch<T> FromQueryAsync<T>(QueryOperationConfig queryConfig, DynamoDBOperationConfig operationConfig = null);
+#endif
 
         /// <summary>
         /// Configures an async Query operation against DynamoDB using a mid-level document model 
@@ -650,7 +803,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="queryConfig">Mid-level, document model query request object.</param>
         /// <param name="fromQueryConfig">Config object that can be used to override properties on the table's context for this request.</param>
         /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
+#if NET8_0_OR_GREATER
+        IAsyncSearch<T> FromQueryAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(QueryOperationConfig queryConfig, FromQueryConfig fromQueryConfig);
+#else
         IAsyncSearch<T> FromQueryAsync<T>(QueryOperationConfig queryConfig, FromQueryConfig fromQueryConfig);
+#endif
 
         #endregion
     }

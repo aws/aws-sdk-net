@@ -15,6 +15,7 @@ using Amazon.Util.Internal;
 using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.Model;
 using Amazon.DynamoDBv2.DataModel;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Amazon
 {
@@ -332,6 +333,9 @@ namespace Amazon.Util
         /// <summary>
         /// The type of converter that should be used on this property
         /// </summary>
+#if NET8_0_OR_GREATER
+        [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors | DynamicallyAccessedMemberTypes.Interfaces)]
+#endif
         public Type Converter { get; set; }
 
         /// <summary>

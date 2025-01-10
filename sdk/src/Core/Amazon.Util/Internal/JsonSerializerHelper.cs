@@ -121,7 +121,9 @@ namespace Amazon.Util.Internal
         public bool WriteIndented {get;set;}
     }
 
+#pragma warning disable CA1019 // Since this is a dummy implementation of JsonSerializableAttribute for pre .NET 8 targets we don't need the accessor.
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = true)]
-    internal sealed class JsonSerializableAttribute : Attribute { internal JsonSerializableAttribute(Type type) { } }
+    public sealed class JsonSerializableAttribute : Attribute { public JsonSerializableAttribute(Type type) { } }
+#pragma warning restore CA1019
 #endif
 }

@@ -15,6 +15,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 
 using Amazon.DynamoDBv2.DocumentModel;
 
@@ -51,8 +52,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <typeparam name="T">Type to serialize as.</typeparam>
         /// <param name="value">Object to serialize.</param>
         /// <returns><see cref="Document"/> with attributes populated from object.</returns>
+#if NET8_0_OR_GREATER
+        Document ToDocument<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(T value);
+#else
         Document ToDocument<T>(T value);
-
+#endif
         /// <summary>
         /// Serializes an object to a <see cref="Document"/>.
         /// </summary>
@@ -61,7 +65,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="operationConfig">Config object which can be used to override the table used.</param>
         /// <returns><see cref="Document"/> with attributes populated from object.</returns>
         [Obsolete("Use the ToDocument overload that takes ToDocumentConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to ToDocument.")]
+#if NET8_0_OR_GREATER
+        Document ToDocument<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(T value, DynamoDBOperationConfig operationConfig);
+#else
         Document ToDocument<T>(T value, DynamoDBOperationConfig operationConfig);
+#endif
 
         /// <summary>
         /// Serializes an object to a <see cref="Document"/>.
@@ -70,7 +78,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="value">Object to serialize.</param>
         /// <param name="toDocumentConfig">Config object that can be used to override properties on the table's context for this request.</param>
         /// <returns><see cref="Document"/> with attributes populated from object.</returns>
+#if NET8_0_OR_GREATER
+        Document ToDocument<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(T value, ToDocumentConfig toDocumentConfig);
+#else
         Document ToDocument<T>(T value, ToDocumentConfig toDocumentConfig);
+#endif
 
         #endregion
 
@@ -84,7 +96,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <returns>
         /// Object of type T, populated with properties from the document.
         /// </returns>
+#if NET8_0_OR_GREATER
+        T FromDocument<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(Document document);
+#else
         T FromDocument<T>(Document document);
+#endif
 
         /// <summary>
         /// Deserializes a <see cref="Document"/> to an instance of type T.
@@ -96,8 +112,12 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Object of type T, populated with properties from the document.
         /// </returns>
         [Obsolete("Use the FromDocument overload that takes FromDocumentConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to FromDocument.")]
-
+#if NET8_0_OR_GREATER
+        T FromDocument<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(Document document, DynamoDBOperationConfig operationConfig);
+#else
         T FromDocument<T>(Document document, DynamoDBOperationConfig operationConfig);
+#endif
+
 
         /// <summary>
         /// Deserializes a <see cref="Document"/> to an instance of type T.
@@ -108,7 +128,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <returns>
         /// Object of type T, populated with properties from the document.
         /// </returns>
+#if NET8_0_OR_GREATER
+        T FromDocument<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(Document document, FromDocumentConfig fromDocumentConfig);
+#else
         T FromDocument<T>(Document document, FromDocumentConfig fromDocumentConfig);
+#endif
 
         /// <summary>
         /// Deserializes a collections of documents to a collection of instances of type T.
@@ -118,7 +142,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <returns>
         /// Collection of items of type T, each populated with properties from a corresponding document.
         /// </returns>
+#if NET8_0_OR_GREATER
+        IEnumerable<T> FromDocuments<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(IEnumerable<Document> documents);
+#else
         IEnumerable<T> FromDocuments<T>(IEnumerable<Document> documents);
+#endif
 
         /// <summary>
         /// Deserializes a collections of documents to a collection of instances of type T.
@@ -130,7 +158,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Collection of items of type T, each populated with properties from a corresponding document.
         /// </returns>
         [Obsolete("Use the FromDocuments overload that takes FromDocumentConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to FromDocuments.")]
+#if NET8_0_OR_GREATER
+        IEnumerable<T> FromDocuments<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(IEnumerable<Document> documents, DynamoDBOperationConfig operationConfig);
+#else
         IEnumerable<T> FromDocuments<T>(IEnumerable<Document> documents, DynamoDBOperationConfig operationConfig);
+#endif
 
         /// <summary>
         /// Deserializes a collections of documents to a collection of instances of type T.
@@ -141,7 +173,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <returns>
         /// Collection of items of type T, each populated with properties from a corresponding document.
         /// </returns>
+#if NET8_0_OR_GREATER
+        IEnumerable<T> FromDocuments<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(IEnumerable<Document> documents, FromDocumentConfig fromDocumentConfig);
+#else
         IEnumerable<T> FromDocuments<T>(IEnumerable<Document> documents, FromDocumentConfig fromDocumentConfig);
+#endif
 
         #endregion
 
@@ -153,7 +189,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         /// <typeparam name="T">Type of objects to get</typeparam>
         /// <returns>Empty strongly-typed BatchGet object</returns>
+#if NET8_0_OR_GREATER
+        IBatchGet<T> CreateBatchGet<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>();
+#else
         IBatchGet<T> CreateBatchGet<T>();
+#endif
 
         /// <summary>
         /// Creates a strongly-typed BatchGet object, allowing
@@ -163,7 +203,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="operationConfig">Config object which can be used to override that table used.</param>
         /// <returns>A BatchGet object using this context's configuration, which can be used to prepare and execute a BatchGet request</returns>
         [Obsolete("Use the CreateBatchGet overload that takes BatchGetConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to BatchGet.")]
+#if NET8_0_OR_GREATER
+        IBatchGet<T> CreateBatchGet<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(DynamoDBOperationConfig operationConfig = null);
+#else
         IBatchGet<T> CreateBatchGet<T>(DynamoDBOperationConfig operationConfig = null);
+#endif
 
         /// <summary>
         /// Creates a strongly-typed BatchGet object, allowing
@@ -172,7 +216,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <typeparam name="T">Type of objects to get</typeparam>
         /// <param name="batchGetConfig">Config object that can be used to override properties on the table's context for this request</param>
         /// <returns>A BatchGet object based on the provided <see cref="BatchGetConfig"/>, which can be used to prepare and execute a BatchGet request</returns>
+#if NET8_0_OR_GREATER
+        IBatchGet<T> CreateBatchGet<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(BatchGetConfig batchGetConfig);
+#else
         IBatchGet<T> CreateBatchGet<T>(BatchGetConfig batchGetConfig);
+#endif
 
         /// <summary>
         /// Creates a MultiTableBatchGet object, composed of multiple
@@ -192,7 +240,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         /// <typeparam name="T">Type of objects to write</typeparam>
         /// <returns>Empty strongly-typed BatchWrite object</returns>
+#if NET8_0_OR_GREATER
+        IBatchWrite<T> CreateBatchWrite<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>();
+#else
         IBatchWrite<T> CreateBatchWrite<T>();
+#endif
 
         /// <summary>
         /// Creates a strongly-typed BatchWrite object, allowing
@@ -202,8 +254,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="operationConfig">Config object which can be used to override that table used.</param>
         /// <returns>Empty strongly-typed BatchWrite object</returns>
         [Obsolete("Use the CreateBatchWrite overload that takes BatchWriteConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to BatchWrite.")]
-
+#if NET8_0_OR_GREATER
+        IBatchWrite<T> CreateBatchWrite<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(DynamoDBOperationConfig operationConfig = null);
+#else
         IBatchWrite<T> CreateBatchWrite<T>(DynamoDBOperationConfig operationConfig = null);
+#endif
 
         /// <summary>
         /// Creates a strongly-typed BatchWrite object, allowing
@@ -217,7 +272,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         /// <param name="valuesType">The type of data which will be persisted in this batch.</param>
         /// <returns>Empty strongly-typed BatchWrite object</returns>
+#if NET8_0_OR_GREATER
+        IBatchWrite<object> CreateBatchWrite([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] Type valuesType);
+#else
         IBatchWrite<object> CreateBatchWrite(Type valuesType);
+#endif
 
         /// <summary>
         /// Creates a strongly-typed BatchWrite object, allowing
@@ -233,7 +292,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="operationConfig">Config object which can be used to override that table used.</param>
         /// <returns>Empty strongly-typed BatchWrite object</returns>
         [Obsolete("Use the CreateBatchWrite overload that takes BatchWriteConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to BatchWrite.")]
+#if NET8_0_OR_GREATER
+        IBatchWrite<object> CreateBatchWrite([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] Type valuesType, DynamoDBOperationConfig operationConfig = null);
+#else
         IBatchWrite<object> CreateBatchWrite(Type valuesType, DynamoDBOperationConfig operationConfig = null);
+#endif
 
         /// <summary>
         /// Creates a strongly-typed BatchWrite object, allowing
@@ -242,7 +305,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <typeparam name="T">Type of objects to write</typeparam>
         /// <param name="batchWriteConfig">Config object that can be used to override properties on the table's context for this request.</param>
         /// <returns>Empty strongly-typed BatchWrite object</returns>
+#if NET8_0_OR_GREATER
+        IBatchWrite<T> CreateBatchWrite<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(BatchWriteConfig batchWriteConfig);
+#else
         IBatchWrite<T> CreateBatchWrite<T>(BatchWriteConfig batchWriteConfig);
+#endif
 
         /// <summary>
         /// Creates a strongly-typed BatchWrite object, allowing
@@ -257,7 +324,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="valuesType">The type of data which will be persisted in this batch.</param>
         /// <param name="batchWriteConfig">Config object that can be used to override properties on the table's context for this request.</param>
         /// <returns>Empty strongly-typed BatchWrite object</returns>
+#if NET8_0_OR_GREATER
+        IBatchWrite<object> CreateBatchWrite([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] Type valuesType, BatchWriteConfig batchWriteConfig);
+#else
         IBatchWrite<object> CreateBatchWrite(Type valuesType, BatchWriteConfig batchWriteConfig);
+#endif
 
         /// <summary>
         /// Creates a MultiTableBatchWrite object, composed of multiple
@@ -277,7 +348,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         /// <typeparam name="T">Type of objects to get.</typeparam>
         /// <returns>Empty strongly-typed TransactGet object.</returns>
+#if NET8_0_OR_GREATER
+        ITransactGet<T> CreateTransactGet<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>();
+#else
         ITransactGet<T> CreateTransactGet<T>();
+#endif
 
         /// <summary>
         /// Creates a strongly-typed TransactGet object, allowing
@@ -287,7 +362,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="operationConfig">Config object which can be used to override that table used.</param>
         /// <returns>Empty strongly-typed TransactGet object.</returns>
         [Obsolete("Use the CreateTransactGet overload that takes TransactGetConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to BatchGet.")]
+#if NET8_0_OR_GREATER
+        ITransactGet<T> CreateTransactGet<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(DynamoDBOperationConfig operationConfig = null);
+#else
         ITransactGet<T> CreateTransactGet<T>(DynamoDBOperationConfig operationConfig = null);
+#endif
 
         /// <summary>
         /// Creates a strongly-typed TransactGet object, allowing
@@ -296,7 +375,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <typeparam name="T">Type of objects to get.</typeparam>
         /// <param name="transactGetConfig">Config object that can be used to override properties on the table's context for this request.</param>
         /// <returns>Empty strongly-typed TransactGet object.</returns>
+#if NET8_0_OR_GREATER
+        ITransactGet<T> CreateTransactGet<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(TransactGetConfig transactGetConfig);
+#else
         ITransactGet<T> CreateTransactGet<T>(TransactGetConfig transactGetConfig);
+#endif
 
         /// <summary>
         /// Creates a MultiTableTransactGet object, composed of multiple
@@ -316,7 +399,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         /// <typeparam name="T">Type of objects to write.</typeparam>
         /// <returns>Empty strongly-typed TransactWrite object.</returns>
+#if NET8_0_OR_GREATER
+        ITransactWrite<T> CreateTransactWrite<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>();
+#else
         ITransactWrite<T> CreateTransactWrite<T>();
+#endif
 
         /// <summary>
         /// Creates a strongly-typed TransactWrite object, allowing
@@ -326,7 +413,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="operationConfig">Config object which can be used to override that table used.</param>
         /// <returns>Empty strongly-typed TransactWrite object.</returns>
         [Obsolete("Use the CreateTransactWrite overload that takes TransactWriteConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to CreateTransactWrite.")]
+#if NET8_0_OR_GREATER
+        ITransactWrite<T> CreateTransactWrite<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(DynamoDBOperationConfig operationConfig = null);
+#else
         ITransactWrite<T> CreateTransactWrite<T>(DynamoDBOperationConfig operationConfig = null);
+#endif
 
         /// <summary>
         /// Creates a strongly-typed TransactWrite object, allowing
@@ -335,7 +426,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <typeparam name="T">Type of objects to write.</typeparam>
         /// <param name="transactWriteConfig">Config object that can be used to override properties on the table's context for this request.</param>
         /// <returns>Empty strongly-typed TransactWrite object.</returns>
+#if NET8_0_OR_GREATER
+        ITransactWrite<T> CreateTransactWrite<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(TransactWriteConfig transactWriteConfig);
+#else
         ITransactWrite<T> CreateTransactWrite<T>(TransactWriteConfig transactWriteConfig);
+#endif
 
         /// <summary>
         /// Creates a MultiTableTransactWrite object, composed of multiple
