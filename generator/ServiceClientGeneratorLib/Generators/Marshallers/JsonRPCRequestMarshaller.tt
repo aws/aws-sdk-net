@@ -10,7 +10,9 @@
 #>
 using System.Text.Json;
 using System.Buffers;
+#if !NETFRAMEWORK
 using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 {

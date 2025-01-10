@@ -229,8 +229,6 @@ namespace Amazon.Runtime.Internal.Transform
             }
         }
 
-        public abstract AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext input);
-
         public override AmazonServiceException UnmarshallException(UnmarshallerContext input, Exception innerException, HttpStatusCode statusCode)
         {
             JsonUnmarshallerContext context = input as JsonUnmarshallerContext;
