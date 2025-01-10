@@ -13,14 +13,11 @@
  * permissions and limitations under the License.
  */
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.Diagnostics;
-using System.Globalization;
-using System.Reflection;
-using System.Text;
 using System.ComponentModel;
-using Amazon.Runtime;
+using System.Linq;
+using System.Threading;
 using Amazon.Util.Internal;
 
 namespace Amazon.Runtime.Internal.Util
@@ -31,9 +28,8 @@ namespace Amazon.Runtime.Internal.Util
     /// </summary>
     public class Logger : ILogger
     {
-        private static IDictionary<Type, Logger> cachedLoggers = new Dictionary<Type, Logger>();
+        private static ConcurrentDictionary<Type, Lazy<Logger>> cachedLoggers = new ConcurrentDictionary<Type, Lazy<Logger>>();
         private List<InternalLogger> loggers;
-        private static Logger emptyLogger = new Logger();
 
         private Logger()
         {
@@ -46,19 +42,20 @@ namespace Amazon.Runtime.Internal.Util
 #endif
         private Logger(Type type)
         {
-            loggers = new List<InternalLogger>();
-
             if(!InternalSDKUtils.IsRunningNativeAot())
             {
+                loggers = new List<InternalLogger>(3);
 #pragma warning disable
-                InternalLog4netLogger log4netLogger = new InternalLog4netLogger(type);
-                loggers.Add(log4netLogger);
+                loggers.Add(new InternalLog4netLogger(type));
 #pragma warning restore
+            }
+            else
+            {
+                loggers = new List<InternalLogger>(2);
             }
 
             loggers.Add(new InternalConsoleLogger(type));
-            InternalSystemDiagnosticsLogger sdLogger = new InternalSystemDiagnosticsLogger(type);
-            loggers.Add(sdLogger);
+            loggers.Add(new InternalSystemDiagnosticsLogger(type));
             ConfigureLoggers();
             AWSConfigs.PropertyChanged += ConfigsChanged;
         }
@@ -80,6 +77,23 @@ namespace Amazon.Runtime.Internal.Util
                     il.IsEnabled = (logging & LoggingOptions.Console) == LoggingOptions.Console;
                 if (il is InternalSystemDiagnosticsLogger)
                     il.IsEnabled = (logging & LoggingOptions.SystemDiagnostics) == LoggingOptions.SystemDiagnostics;
+
+                if (!IsEnabled)
+                {
+                    IsEnabled = il.IsEnabled;
+                }
+                if (!IsErrorEnabled)
+                {
+                    IsErrorEnabled = il.IsErrorEnabled;
+                }
+                if (!IsInfoEnabled)
+                {
+                    IsInfoEnabled = il.IsInfoEnabled;
+                }
+                if (!IsDebugEnabled)
+                {
+                    IsDebugEnabled = il.IsDebugEnabled;
+                }
             }
         }
 
@@ -87,31 +101,51 @@ namespace Amazon.Runtime.Internal.Util
 
         public static Logger GetLogger(Type type)
         {
-            if (type == null) throw new ArgumentNullException("type");
+            if (type == null) throw new ArgumentNullException(nameof(type));
 
-            Logger l;
-            lock (cachedLoggers)
-            {
-                if (!cachedLoggers.TryGetValue(type, out l))
-                {
-                    l = new Logger(type);
-                    cachedLoggers[type] = l;
-                }
-            }
-            return l;
+            // Use a lazy initialization to ensure that we only create a logger for a given type once because
+            // the constructor does some heavy lifting including setting up event listeners.
+            var lazyLogger = cachedLoggers.GetOrAdd(type, static t => new Lazy<Logger>(() => new Logger(t)));
+            return lazyLogger.Value;
         }
 
         public static void ClearLoggerCache()
         {
-            lock (cachedLoggers)
+            var newLoggerCache = new ConcurrentDictionary<Type, Lazy<Logger>>();
+            ConcurrentDictionary<Type, Lazy<Logger>> oldLoggerCache;
+
+            do
             {
-                cachedLoggers = new Dictionary<Type, Logger>();
+                oldLoggerCache = cachedLoggers;
+            } while (Interlocked.CompareExchange(ref cachedLoggers, newLoggerCache, oldLoggerCache) != oldLoggerCache);
+
+            // Unregister all the loggers in the old cache
+            foreach (var item in oldLoggerCache ?? Enumerable.Empty<KeyValuePair<Type, Lazy<Logger>>>())
+            {
+                var lazyLogger = item.Value;
+                if (lazyLogger.IsValueCreated)
+                {
+                    lazyLogger.Value.Unregister();
+                }
             }
         }
 
-        public static Logger EmptyLogger { get { return emptyLogger; } }
+        public static Logger EmptyLogger { get; } = new Logger();
 
         #endregion
+
+        internal bool IsEnabled { get; private set; }
+
+        internal virtual bool IsErrorEnabled { get; private set; }
+
+        internal virtual bool IsDebugEnabled { get; private set; }
+
+        internal virtual bool IsInfoEnabled { get; private set; }
+
+        internal void Unregister()
+        {
+            AWSConfigs.PropertyChanged -= ConfigsChanged;
+        }
 
         #region Logging methods
 
