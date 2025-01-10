@@ -834,6 +834,10 @@ namespace Amazon.Redshift.Model
         /// <para>
         /// If <c>true</c>, the cluster can be accessed from a public network. 
         /// </para>
+        ///  
+        /// <para>
+        /// Default: false
+        /// </para>
         /// </summary>
         public bool PubliclyAccessible
         {
