@@ -31,7 +31,7 @@ namespace Amazon.Runtime.Credentials.Internal
         public string SchemeId => AuthSchemeOption.SigV4A;
 
         /// <inheritdoc/>
-        public IIdentityResolver<AWSCredentials> GetIdentityResolver(IIdentityResolverConfiguration configuration) 
+        public IIdentityResolver GetIdentityResolver(IIdentityResolverConfiguration configuration) 
             => configuration.GetIdentityResolver<AWSCredentials>();
 
         /// <inheritdoc/>

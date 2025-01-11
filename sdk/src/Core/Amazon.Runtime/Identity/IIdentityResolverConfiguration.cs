@@ -26,6 +26,6 @@ namespace Amazon.Runtime.Identity
         /// <typeparam name="T">
         /// The type of the identity, which must inherit from <see cref="BaseIdentity"/>.
         /// </typeparam>
-        IIdentityResolver<T> GetIdentityResolver<T>() where T : BaseIdentity;
+        IIdentityResolver GetIdentityResolver<T>() where T : BaseIdentity;
     }
 }

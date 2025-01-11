@@ -32,6 +32,12 @@ namespace Amazon.Runtime.Credentials
             => _tokenProvider = new AWSTokenProviderChain(new ProfileTokenProvider(profileName));
 
         /// <inheritdoc/>
+        BaseIdentity IIdentityResolver.ResolveIdentity()
+        {
+            return ResolveIdentity();
+        }
+
+        /// <inheritdoc/>
         public AWSToken ResolveIdentity()
         {
 #if NETFRAMEWORK
@@ -51,6 +57,12 @@ namespace Amazon.Runtime.Credentials
 
             throw new AmazonClientException($"Failed to resolve bearer token in {nameof(DefaultAWSTokenIdentityResolver)}");
 #endif
+        }
+
+        async Task<BaseIdentity> IIdentityResolver.ResolveIdentityAsync(CancellationToken cancellationToken)
+        {
+            var identity = await ResolveIdentityAsync(cancellationToken).ConfigureAwait(false);
+            return identity;
         }
 
         /// <inheritdoc/>

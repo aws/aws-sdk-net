@@ -29,7 +29,18 @@ namespace Amazon.Runtime
         /// <summary>
         /// Resolves the identity by returning an instance of <see cref="AnonymousAWSCredentials"/>.
         /// </summary>
+        BaseIdentity IIdentityResolver.ResolveIdentity() => _credentials;
+
+        /// <summary>
+        /// Resolves the identity by returning an instance of <see cref="AnonymousAWSCredentials"/>.
+        /// </summary>
         public AnonymousAWSCredentials ResolveIdentity() => _credentials;
+
+        /// <summary>
+        /// Resolves the identity by returning an instance of <see cref="AnonymousAWSCredentials"/>.
+        /// </summary>
+        Task<BaseIdentity> IIdentityResolver.ResolveIdentityAsync(CancellationToken cancellationToken)
+            => Task.FromResult<BaseIdentity>(_credentials);
 
         /// <summary>
         /// Resolves the identity by returning an instance of <see cref="AnonymousAWSCredentials"/>.

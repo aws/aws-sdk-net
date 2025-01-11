@@ -31,7 +31,7 @@ namespace Amazon.Runtime.Credentials.Internal
         };
 
         /// <inheritdoc/>
-        public IIdentityResolver<T> GetIdentityResolver<T>() where T : BaseIdentity
+        public IIdentityResolver GetIdentityResolver<T>() where T : BaseIdentity
         {
             if (identityResolvers.TryGetValue(typeof(T), out var identityResolver))
             {
@@ -44,7 +44,7 @@ namespace Amazon.Runtime.Credentials.Internal
         public static T ResolveDefaultIdentity<T>() where T : BaseIdentity
         {
             var identityResolver = Instance.GetIdentityResolver<T>();
-            return identityResolver.ResolveIdentity();
+            return identityResolver.ResolveIdentity() as T;
         }
     }
 }

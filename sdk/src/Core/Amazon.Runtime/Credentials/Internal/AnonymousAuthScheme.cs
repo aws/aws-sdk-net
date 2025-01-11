@@ -29,7 +29,7 @@ namespace Amazon.Runtime.Credentials.Internal
         public string SchemeId => AuthSchemeOption.NoAuth;
 
         /// <inheritdoc/>
-        public IIdentityResolver<AnonymousAWSCredentials> GetIdentityResolver(IIdentityResolverConfiguration configuration) 
+        public IIdentityResolver GetIdentityResolver(IIdentityResolverConfiguration configuration) 
             => configuration.GetIdentityResolver<AnonymousAWSCredentials>();
 
         /// <inheritdoc/>

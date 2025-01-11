@@ -29,7 +29,7 @@ namespace Amazon.Runtime.Internal.Auth
     /// AWS credentials and the AWS SigV4 signer.
     /// </para>
     /// </summary>
-    public interface IAuthScheme<T> where T : BaseIdentity
+    public interface IAuthScheme<out T> where T : BaseIdentity
     {
         /// <summary>
         /// Unique identifier for the authentication scheme (e.g. "smithy.api#noAuth" or "aws.auth#sigv4").
@@ -39,7 +39,7 @@ namespace Amazon.Runtime.Internal.Auth
         /// <summary>
         /// Retrieves the identity resolver associated with this authentication scheme.
         /// </summary>
-        IIdentityResolver<T> GetIdentityResolver(IIdentityResolverConfiguration configuration);
+        IIdentityResolver GetIdentityResolver(IIdentityResolverConfiguration configuration);
 
         /// <summary>
         /// Retrieves the signer associated with this authentication scheme.

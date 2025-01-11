@@ -64,6 +64,11 @@ namespace Amazon.Runtime.Credentials
             }
         }
 
+        BaseIdentity IIdentityResolver.ResolveIdentity()
+        {
+            return ResolveIdentity();
+        }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types", Justification = "We need to catch all exceptions to be able to move the the next generator.")]
         public AWSCredentials ResolveIdentity()
         {
@@ -155,6 +160,12 @@ namespace Amazon.Runtime.Credentials
             {
                 _cachedCredentialsLock.ExitWriteLock();
             }
+        }
+
+        async Task<BaseIdentity> IIdentityResolver.ResolveIdentityAsync(CancellationToken cancellationToken)
+        {
+            var identity = await ResolveIdentityAsync(cancellationToken).ConfigureAwait(false);
+            return identity;
         }
 
         public async Task<AWSCredentials> ResolveIdentityAsync(CancellationToken cancellationToken = default)

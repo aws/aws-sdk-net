@@ -19,6 +19,24 @@ using System.Threading.Tasks;
 namespace Amazon.Runtime.Identity
 {
     /// <summary>
+    /// 
+    /// </summary>
+    public interface IIdentityResolver
+    {
+        /// <summary>
+        /// Loads the customer's identity for this resolver. 
+        /// If the identity cannot be resolved an <c>AmazonClientException</c> will be thrown.
+        /// </summary>
+        BaseIdentity ResolveIdentity();
+
+        /// <summary>
+        /// Loads the customer's identity for this resolver. 
+        /// If the identity cannot be resolved an <c>AmazonClientException</c> will be thrown.
+        /// </summary>
+        Task<BaseIdentity> ResolveIdentityAsync(CancellationToken cancellationToken = default);
+    }
+
+    /// <summary>
     /// An identity resolver is a component that is able to resolve a customer's <see cref="BaseIdentity"/>.
     /// It might load the identity from:
     /// <list type="bullet">
@@ -28,18 +46,18 @@ namespace Amazon.Runtime.Identity
     /// <item>Local memory (e.g. environment variables)</item>
     /// </list>
     /// </summary>
-    public interface IIdentityResolver<T> where T : BaseIdentity
+    public interface IIdentityResolver<T> : IIdentityResolver where T : BaseIdentity
     {
         /// <summary>
         /// Loads the customer's identity for this resolver. 
         /// If the identity cannot be resolved an <c>AmazonClientException</c> will be thrown.
         /// </summary>
-        T ResolveIdentity();
+        new T ResolveIdentity();
 
         /// <summary>
         /// Loads the customer's identity for this resolver. 
         /// If the identity cannot be resolved an <c>AmazonClientException</c> will be thrown.
         /// </summary>
-        Task<T> ResolveIdentityAsync(CancellationToken cancellationToken = default);
+        new Task<T> ResolveIdentityAsync(CancellationToken cancellationToken = default);
     }
 }
