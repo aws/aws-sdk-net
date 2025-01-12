@@ -19,7 +19,14 @@ using System.Threading.Tasks;
 namespace Amazon.Runtime.Identity
 {
     /// <summary>
-    /// 
+    /// An identity resolver is a component that is able to resolve a customer's <see cref="BaseIdentity"/>.
+    /// It might load the identity from:
+    /// <list type="bullet">
+    /// <item>Remote service (e.g. AWS Security Token Service)</item>
+    /// <item>Local service (e.g. Instance Metadata Service)</item>
+    /// <item>Local disk (e.g. configuration file)</item>
+    /// <item>Local memory (e.g. environment variables)</item>
+    /// </list>
     /// </summary>
     public interface IIdentityResolver
     {
