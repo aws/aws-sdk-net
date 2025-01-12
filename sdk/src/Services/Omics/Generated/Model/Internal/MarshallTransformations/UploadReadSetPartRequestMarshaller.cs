@@ -85,6 +85,7 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =
                 request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);
             request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "application/octet-stream";
+            request.DisablePayloadSigning = true;
             request.UseQueryString = true;
             
             request.HostPrefix = $"storage-";

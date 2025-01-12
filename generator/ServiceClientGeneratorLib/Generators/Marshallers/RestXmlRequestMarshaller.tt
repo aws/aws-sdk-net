@@ -72,6 +72,12 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 #>
 
 <#
+	if (this.Operation.UnsignedPayload)
+	{
+#>
+			request.DisablePayloadSigning = true;
+<#	}
+
 	// If there aren't any members that are marshalled as part of the body or streamed	
 	if(this.Operation.UseQueryString)
 	{

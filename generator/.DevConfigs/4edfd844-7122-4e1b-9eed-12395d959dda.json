@@ -1,0 +1,9 @@
+{
+    "core": {
+      "changeLogMessages": [
+        "Adjustments to fix failing DateTimes asserts in tests due to local/UTC inconsistencies."
+      ],
+      "type": "patch",
+      "updateMinimum": true
+    }
+  }
