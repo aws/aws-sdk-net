@@ -28,6 +28,7 @@ using Amazon.SecurityToken.SAML;
 using Amazon.DynamoDBv2;
 using Amazon.ElasticTranscoder;
 using System.Threading;
+using System.Text.Json;
 using AWSSDK_DotNet.CommonTest.Utils;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests
@@ -460,12 +461,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         public void JsonCountSerializationBug()
         {
             var json = @"{""Data"":{""NotCount"":""42""}}";
-            var poco = ThirdParty.Json.LitJson.JsonMapper.ToObject<Poco>(json);
+            var poco = JsonSerializer.Deserialize<Poco>(json);
             Assert.AreEqual(1, poco.Data.Count);
             Assert.AreEqual("42", poco.Data["NotCount"]);
 
             json = @"{""Data"":{""Count"":""Dracula""}}";
-            poco = ThirdParty.Json.LitJson.JsonMapper.ToObject<Poco>(json);
+            poco = JsonSerializer.Deserialize<Poco>(json);
             Assert.AreEqual(1, poco.Data.Count);
             Assert.AreEqual("Dracula", poco.Data["Count"]);
         }
