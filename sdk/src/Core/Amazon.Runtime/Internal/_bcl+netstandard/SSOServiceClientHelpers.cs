@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Net;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.SharedInterfaces;
 using Amazon.RuntimeDependencies;
 using Amazon.Util.Internal;
+using ThirdParty.RuntimeBackports;
 
 namespace Amazon.Runtime.Internal
 {
@@ -12,10 +14,8 @@ namespace Amazon.Runtime.Internal
     /// Collection of helper methods for constructing the necessary Service client to
     /// interrogate AWS SSO Services.
     /// </summary>
-#if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("ReflectionAnalysis", "IL2026",
+    [UnconditionalSuppressMessage("ReflectionAnalysis", "IL2026",
         Justification = "Reflection code is only used as a fallback in case the SDK was not trimmed. Trimmed scenarios should register dependencies with Amazon.RuntimeDependencyRegistry.GlobalRuntimeDependencyRegistry")]
-#endif
     public static class SSOServiceClientHelpers
     {
         public static ICoreAmazonSSOOIDC BuildSSOIDCClient(
@@ -42,10 +42,8 @@ namespace Amazon.Runtime.Internal
             return coreSSO;
         }
 
-#if NET8_0_OR_GREATER
-        [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("ReflectionAnalysis", "IL2026",
+        [UnconditionalSuppressMessage("ReflectionAnalysis", "IL2026",
             Justification = "Reflection code is only used as a fallback in case the SDK was not trimmed. Trimmed scenarios should register dependencies with Amazon.RuntimeDependencyRegistry.GlobalRuntimeDependencyRegistry")]
-#endif
         public static ICoreAmazonSSO BuildSSOClient(
             RegionEndpoint region,
 #if BCL
@@ -69,10 +67,8 @@ namespace Amazon.Runtime.Internal
             return coreSSO;
         }
 
-#if NET8_0_OR_GREATER
-        [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("ReflectionAnalysis", "IL2026",
+        [UnconditionalSuppressMessage("ReflectionAnalysis", "IL2026",
             Justification = "Reflection code is only used as a fallback in case the SDK was not trimmed. Trimmed scenarios should register dependencies with Amazon.RuntimeDependencyRegistry.GlobalRuntimeDependencyRegistry")]
-#endif
         public static ICoreAmazonSSO_Logout BuildSSOLogoutClient(
             RegionEndpoint region,
 #if BCL
@@ -96,10 +92,8 @@ namespace Amazon.Runtime.Internal
             return coreSSOLogout;
         }
 
-#if NET8_0_OR_GREATER
-        [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("ReflectionAnalysis", "IL2026",
+        [UnconditionalSuppressMessage("ReflectionAnalysis", "IL2026",
             Justification = "Reflection code is only used as a fallback in case the SDK was not trimmed. Trimmed scenarios should register dependencies with Amazon.RuntimeDependencyRegistry.GlobalRuntimeDependencyRegistry")]
-#endif
         public static ICoreAmazonSSOOIDC_V2 BuildSSOIDC_V2Client(
             RegionEndpoint region,
 #if BCL
@@ -127,9 +121,7 @@ namespace Amazon.Runtime.Internal
         /// <summary>
         /// Attempts to get a service client at runtime which cannot be made a project reference.
         /// </summary>
-#if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("Using CreateClient to dynamically load dependency is not supported for Native AOT. SDK calling code must use Amazon.RuntimeDependencyRegistry to explicitly provide runtime dependencies.")]
-#endif
+    [RequiresUnreferencedCode("Using CreateClient to dynamically load dependency is not supported for Native AOT. SDK calling code must use Amazon.RuntimeDependencyRegistry to explicitly provide runtime dependencies.")]
         private static T CreateClient<T>(
         RegionEndpoint region,
             string serviceClassName, 

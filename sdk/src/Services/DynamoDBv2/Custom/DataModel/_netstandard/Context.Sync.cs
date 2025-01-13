@@ -17,6 +17,7 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 
 using Amazon.DynamoDBv2.DocumentModel;
+using ThirdParty.RuntimeBackports;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
@@ -25,32 +26,20 @@ namespace Amazon.DynamoDBv2.DataModel
         #region Table methods
 
         /// <inheritdoc/>
-#if NET8_0_OR_GREATER
-        public ITable GetTargetTable<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>()
-#else
-        public ITable GetTargetTable<T>()
-#endif
+        public ITable GetTargetTable<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>()
         {
             return GetTargetTableInternal<T>(new DynamoDBFlatConfig(null, Config));
         }
 
         /// <inheritdoc/>
         [Obsolete("Use the GetTargetTable overload that takes GetTargetTableConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to GetTargetTable.")]
-#if NET8_0_OR_GREATER
-        public ITable GetTargetTable<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(DynamoDBOperationConfig operationConfig = null)
-#else
-        public ITable GetTargetTable<T>(DynamoDBOperationConfig operationConfig = null)
-#endif
+        public ITable GetTargetTable<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(DynamoDBOperationConfig operationConfig = null)
         {
             return GetTargetTableInternal<T>(new DynamoDBFlatConfig(operationConfig, Config));
         }
 
         /// <inheritdoc/>
-#if NET8_0_OR_GREATER
-        public ITable GetTargetTable<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(GetTargetTableConfig getTargetTableConfig)
-#else
-        public ITable GetTargetTable<T>(GetTargetTableConfig getTargetTableConfig)
-#endif
+        public ITable GetTargetTable<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(GetTargetTableConfig getTargetTableConfig)
         {
             return GetTargetTableInternal<T>(new DynamoDBFlatConfig(getTargetTableConfig?.ToDynamoDBOperationConfig(), Config));
         }

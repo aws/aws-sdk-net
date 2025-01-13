@@ -20,6 +20,8 @@ using Amazon.Util.Internal;
 using System;
 using System.Globalization;
 using System.Net;
+using System.Diagnostics.CodeAnalysis;
+using ThirdParty.RuntimeBackports;
 
 namespace Amazon.Runtime
 {
@@ -89,10 +91,8 @@ namespace Amazon.Runtime
             PreemptExpiryTime = TimeSpan.FromMinutes(15);
         }
 
-#if NET8_0_OR_GREATER
-        [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("ReflectionAnalysis", "IL2026", 
+        [UnconditionalSuppressMessage("ReflectionAnalysis", "IL2026", 
             Justification = "Reflection code is only used as a fallback in case the SDK was not trimmed. Trimmed scenarios should register dependencies with Amazon.RuntimeDependencyRegistry.GlobalRuntimeDependencyRegistry")]
-#endif
         protected override CredentialsRefreshState GenerateNewCredentials()
         {
             var region = FallbackRegionFactory.GetRegionEndpoint() ?? DefaultSTSClientRegion;

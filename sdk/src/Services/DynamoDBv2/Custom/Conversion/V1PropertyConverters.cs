@@ -25,6 +25,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Diagnostics.CodeAnalysis;
+using ThirdParty.RuntimeBackports;
 
 namespace Amazon.DynamoDBv2
 {
@@ -40,28 +41,19 @@ namespace Amazon.DynamoDBv2
     /// The default value for this field is the standard V1 conversion.
     /// </summary>
 
-#if NET8_0_OR_GREATER
     public class SetPropertyConverter<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] TCollection, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] TElement> : IPropertyConverter
         where TCollection : ICollection<TElement>, new()
-#else
-    public class SetPropertyConverter<TCollection, TElement> : IPropertyConverter
-        where TCollection : ICollection<TElement>, new()
-#endif
     {
         /// <summary>
         /// Reference to the type object for the TCollection generic.
         /// </summary>
-#if NET8_0_OR_GREATER
         [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)]
-#endif
         protected static readonly Type collectionType = typeof(TCollection);
 
         /// <summary>
         /// Reference to the type object for the TElement generic.
         /// </summary>
-#if NET8_0_OR_GREATER
         [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)]
-#endif
         protected static readonly Type elementType = typeof(TElement);
 
         /// <summary>
@@ -151,9 +143,7 @@ namespace Amazon.DynamoDBv2
     /// </summary>
     /// <typeparam name="TElement"></typeparam>
     public class ListToSetPropertyConverter<
-#if NET8_0_OR_GREATER
         [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)]
-#endif
     TElement> : SetPropertyConverter<List<TElement>, TElement>
     { }
 

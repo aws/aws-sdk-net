@@ -17,9 +17,11 @@ using Amazon.Util.Internal;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Net;
 using ThirdParty.Json.LitJson;
+using ThirdParty.RuntimeBackports;
 
 namespace Amazon.Runtime
 {
@@ -50,27 +52,21 @@ namespace Amazon.Runtime
         }
 
         [Obsolete("This method is not compatible with Native AOT builds. The GetObjectFromResponse overload using the generic parameter taking in a JsonSerializerContext should be used instead.")]
-#if NET8_0_OR_GREATER
-        [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("GetObjectFromResponse overload using the generic parameter taking in a JsonSerializerContext should be used instead.")]
-#endif
+        [RequiresUnreferencedCode("GetObjectFromResponse overload using the generic parameter taking in a JsonSerializerContext should be used instead.")]
         protected static T GetObjectFromResponse<T>(Uri uri)
         {
             return GetObjectFromResponse<T>(uri, null, null);
         }
 
         [Obsolete("This method is not compatible with Native AOT builds. The GetObjectFromResponse overload using the generic parameter taking in a JsonSerializerContext should be used instead.")]
-#if NET8_0_OR_GREATER
-        [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("GetObjectFromResponse overload using the generic parameter taking in a JsonSerializerContext should be used instead.")]
-#endif
+        [RequiresUnreferencedCode("GetObjectFromResponse overload using the generic parameter taking in a JsonSerializerContext should be used instead.")]
         protected static T GetObjectFromResponse<T>(Uri uri, IWebProxy proxy)
         {
             return GetObjectFromResponse<T>(uri, proxy, null);
         }
 
         [Obsolete("This method is not compatible with Native AOT builds. The GetObjectFromResponse overload using the generic parameter taking in a JsonSerializerContext should be used instead.")]
-#if NET8_0_OR_GREATER
-        [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("GetObjectFromResponse overload using the generic parameter taking in a JsonSerializerContext should be used instead.")]
-#endif
+        [RequiresUnreferencedCode("GetObjectFromResponse overload using the generic parameter taking in a JsonSerializerContext should be used instead.")]
         protected static T GetObjectFromResponse<T>(Uri uri, IWebProxy proxy, Dictionary<string, string> headers)
         {
             string json = GetContents(uri, proxy, headers);

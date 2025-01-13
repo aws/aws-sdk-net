@@ -10,6 +10,8 @@ using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.SharedInterfaces;
 using Amazon.RuntimeDependencies;
 using Amazon.Util.Internal;
+using System.Diagnostics.CodeAnalysis;
+using ThirdParty.RuntimeBackports;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
@@ -35,10 +37,8 @@ namespace Amazon.DynamoDBv2.DataModel
             this.clientsByRegion.Add(region.SystemName, client);
         }
 
-#if NET8_0_OR_GREATER
-        [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("ReflectionAnalysis", "IL2026", 
+        [UnconditionalSuppressMessage("ReflectionAnalysis", "IL2026", 
             Justification = "Reflection code is only used as a fallback in case the SDK was not trimmed. Trimmed scenarios should register dependencies with Amazon.RuntimeDependencyRegistry.GlobalRuntimeDependencyRegistry")]
-#endif
         internal ICoreAmazonS3 GetClient(RegionEndpoint region)
         {
             ICoreAmazonS3 output;

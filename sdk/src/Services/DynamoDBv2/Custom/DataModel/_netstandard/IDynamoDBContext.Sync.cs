@@ -17,6 +17,7 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 
 using Amazon.DynamoDBv2.DocumentModel;
+using ThirdParty.RuntimeBackports;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
@@ -33,11 +34,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         /// <typeparam name="T">Type to retrieve table for</typeparam>
         /// <returns>Table object</returns>
-#if NET8_0_OR_GREATER
-        ITable GetTargetTable<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>();
-#else
-        ITable GetTargetTable<T>();
-#endif
+        ITable GetTargetTable<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>();
 
         /// <summary>
         /// Retrieves the target table for the specified type
@@ -45,22 +42,14 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <typeparam name="T">Type to retrieve table for</typeparam>
         /// <returns>Table object</returns>
         [Obsolete("Use the GetTargetTable overload that takes GetTargetTableConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to GetTargetTable.")]
-#if NET8_0_OR_GREATER
-        ITable GetTargetTable<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(DynamoDBOperationConfig operationConfig = null);
-#else
-        ITable GetTargetTable<T>(DynamoDBOperationConfig operationConfig = null);
-#endif
+        ITable GetTargetTable<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(DynamoDBOperationConfig operationConfig = null);
 
         /// <summary>
         /// Retrieves the target table for the specified type
         /// </summary>
         /// <typeparam name="T">Type to retrieve table for</typeparam>
         /// <returns>Table object</returns>
-#if NET8_0_OR_GREATER
-        ITable GetTargetTable<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(GetTargetTableConfig getTargetTableConfig);
-#else
-        ITable GetTargetTable<T>(GetTargetTableConfig getTargetTableConfig);
-#endif
+        ITable GetTargetTable<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(GetTargetTableConfig getTargetTableConfig);
 
         #endregion
     }

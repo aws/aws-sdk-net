@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Globalization;
@@ -21,15 +22,14 @@ using System.Text;
 using System.ComponentModel;
 
 using Amazon.Util.Internal;
+using ThirdParty.RuntimeBackports;
 
 namespace Amazon.Runtime.Internal.Util
 {
     /// <summary>
     /// Logger wrapper for reflected log4net logging methods.
     /// </summary>
-#if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("SDK logging to Log4net is not supported when trimming is enabled.")]
-#endif
+    [RequiresUnreferencedCode("SDK logging to Log4net is not supported when trimming is enabled.")]
     internal class InternalLog4netLogger : InternalLogger
     {
         enum LoadState { Uninitialized, Failed, Loading, Success };

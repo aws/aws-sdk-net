@@ -16,12 +16,14 @@ using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Reflection;
 using System.Text;
 using System.ComponentModel;
 using Amazon.Runtime;
 using Amazon.Util.Internal;
+using ThirdParty.RuntimeBackports;
 
 namespace Amazon.Runtime.Internal.Util
 {
@@ -40,10 +42,8 @@ namespace Amazon.Runtime.Internal.Util
             loggers = new List<InternalLogger>();
         }
 
-#if NET8_0_OR_GREATER
-        [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("ReflectionAnalysis", "IL2026",
+        [UnconditionalSuppressMessage("ReflectionAnalysis", "IL2026",
             Justification = "Constructor looks to see if running in a NativeAOT environment and if so skips the Log4net internal logger which is not Native AOT complaint.")]
-#endif
         private Logger(Type type)
         {
             loggers = new List<InternalLogger>();

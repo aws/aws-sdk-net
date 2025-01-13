@@ -19,7 +19,7 @@ using Amazon.DynamoDBv2.DocumentModel;
 using System.Globalization;
 using Amazon.Runtime.Telemetry.Tracing;
 using System.Diagnostics.CodeAnalysis;
-
+using ThirdParty.RuntimeBackports;
 
 #if AWS_ASYNC_API
 using System.Threading.Tasks;
@@ -40,12 +40,8 @@ namespace Amazon.DynamoDBv2.DataModel
     /// Represents a generic interface for writing/deleting a batch of items
     /// in a single DynamoDB table
     /// </summary>
-#if NET8_0_OR_GREATER
-    public interface IBatchWrite<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T> : IBatchWrite
+    public interface IBatchWrite<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T> : IBatchWrite
 
-#else
-    public interface IBatchWrite<T> : IBatchWrite
-#endif
     {
         /// <summary>
         /// Creates a MultiTableBatchWrite object that is a combination
@@ -113,11 +109,7 @@ namespace Amazon.DynamoDBv2.DataModel
     /// Represents a strongly-typed object for writing/deleting a batch of items
     /// in a single DynamoDB table
     /// </summary>
-#if NET8_0_OR_GREATER
-    public partial class BatchWrite<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T> : BatchWrite, IBatchWrite<T>
-#else
-    public partial class BatchWrite<T> : BatchWrite, IBatchWrite<T>
-#endif
+    public partial class BatchWrite<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T> : BatchWrite, IBatchWrite<T>
     {
         private readonly DynamoDBContext _context;
         private readonly DynamoDBFlatConfig _config;
@@ -128,11 +120,7 @@ namespace Amazon.DynamoDBv2.DataModel
         {
         }
 
-#if NET8_0_OR_GREATER
-        internal BatchWrite(DynamoDBContext context, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] Type valuesType, DynamoDBFlatConfig config)
-#else
-        internal BatchWrite(DynamoDBContext context, Type valuesType, DynamoDBFlatConfig config)
-#endif
+        internal BatchWrite(DynamoDBContext context, [DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type valuesType, DynamoDBFlatConfig config)
         {
             _context = context;
             _config = config;

@@ -27,15 +27,14 @@ using System.Linq;
 using System.Text;
 
 using Amazon.Util.Internal;
+using ThirdParty.RuntimeBackports;
 
 namespace Amazon.Runtime
 {
     /// <summary>
     /// Base class for constant class that holds the value that will be sent to AWS for the static constants.
     /// </summary>
-#if NET8_0_OR_GREATER
     [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicFields)]
-#endif
     public class ConstantClass
     {
         static readonly object staticFieldsLock = new object();
@@ -91,11 +90,7 @@ namespace Amazon.Runtime
             return map.TryGetValue(this.Value, out foundValue) ? foundValue : this;
         }
 
-#if NET8_0_OR_GREATER
         protected static T FindValue<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicFields | DynamicallyAccessedMemberTypes.PublicConstructors)] T>(string value) where T : ConstantClass
-#else
-        protected static T FindValue<T>(string value) where T : ConstantClass
-#endif
         {
             if (value == null)
                 return null;
@@ -115,11 +110,7 @@ namespace Amazon.Runtime
             return foundValue as T;
         }
 
-#if NET8_0_OR_GREATER
         private static void LoadFields([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicFields)] Type type)
-#else
-        private static void LoadFields(Type type)
-#endif
         {
             if (staticFields.ContainsKey(type))
                 return;

@@ -26,6 +26,7 @@ using Amazon.DynamoDBv2.Model;
 using Amazon.Util.Internal;
 using System.Globalization;
 using System.Diagnostics.CodeAnalysis;
+using ThirdParty.RuntimeBackports;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
@@ -119,11 +120,7 @@ namespace Amazon.DynamoDBv2.DataModel
         #region Table methods
 
         // Retrieves the target table for the specified type
-#if NET8_0_OR_GREATER
-        private Table GetTargetTableInternal<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(DynamoDBFlatConfig flatConfig)
-#else
-        private Table GetTargetTableInternal<T>(DynamoDBFlatConfig flatConfig)
-#endif
+        private Table GetTargetTableInternal<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(DynamoDBFlatConfig flatConfig)
         {
             Type type = typeof(T);
             ItemStorageConfig storageConfig = StorageConfigCache.GetConfig(type, flatConfig);
@@ -340,21 +337,13 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <summary>
         /// Deserializes a DynamoDB document to an object
         /// </summary>
-#if NET8_0_OR_GREATER
-        private T DocumentToObject<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(ItemStorage storage, DynamoDBFlatConfig flatConfig)
-#else
-        private T DocumentToObject<T>(ItemStorage storage, DynamoDBFlatConfig flatConfig)
-#endif
+        private T DocumentToObject<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(ItemStorage storage, DynamoDBFlatConfig flatConfig)
         {
             Type type = typeof(T);
             return (T)DocumentToObject(type, storage, flatConfig);
         }
 
-#if NET8_0_OR_GREATER
-        private object DocumentToObject([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] Type objectType, ItemStorage storage, DynamoDBFlatConfig flatConfig)
-#else
-        private object DocumentToObject(Type objectType, ItemStorage storage, DynamoDBFlatConfig flatConfig)
-#endif
+        private object DocumentToObject([DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type objectType, ItemStorage storage, DynamoDBFlatConfig flatConfig)
         {
             if (storage == null) throw new ArgumentNullException("storage");
 
@@ -412,11 +401,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <summary>
         /// Serializes an object into a DynamoDB document
         /// </summary>
-#if NET8_0_OR_GREATER
-        private ItemStorage ObjectToItemStorage<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(T toStore, bool keysOnly, DynamoDBFlatConfig flatConfig)
-#else
-        private ItemStorage ObjectToItemStorage<T>(T toStore, bool keysOnly, DynamoDBFlatConfig flatConfig)
-#endif
+        private ItemStorage ObjectToItemStorage<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(T toStore, bool keysOnly, DynamoDBFlatConfig flatConfig)
         {
             if (toStore == null) return null;
 
@@ -424,11 +409,7 @@ namespace Amazon.DynamoDBv2.DataModel
             return ObjectToItemStorage(toStore, objectType, keysOnly, flatConfig);
         }
 
-#if NET8_0_OR_GREATER
-        private ItemStorage ObjectToItemStorage(object toStore, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] Type objectType, bool keysOnly, DynamoDBFlatConfig flatConfig)
-#else
-        private ItemStorage ObjectToItemStorage(object toStore, Type objectType, bool keysOnly, DynamoDBFlatConfig flatConfig)
-#endif
+        private ItemStorage ObjectToItemStorage(object toStore, [DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type objectType, bool keysOnly, DynamoDBFlatConfig flatConfig)
         {
             ItemStorageConfig config = StorageConfigCache.GetConfig(objectType, flatConfig);
             ItemStorage storage = ObjectToItemStorageHelper(toStore, config, flatConfig, keysOnly, flatConfig.IgnoreNullValues.Value);
@@ -537,25 +518,17 @@ namespace Amazon.DynamoDBv2.DataModel
             }
         }
 
-#if NET8_0_OR_GREATER
-        private bool TryFromList([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] Type targetType, DynamoDBList list, DynamoDBFlatConfig flatConfig, out object output)
-#else
-        private bool TryFromList(Type targetType, DynamoDBList list, DynamoDBFlatConfig flatConfig, out object output)
-#endif
+        private bool TryFromList([DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type targetType, DynamoDBList list, DynamoDBFlatConfig flatConfig, out object output)
         {
             return targetType.IsArray ?
                  TryFromListToArray(targetType, list, flatConfig, out output) : //targetType is Array
                  TryFromListToIList(targetType, list, flatConfig, out output) ; //targetType is IList or has Add method.
         }
 
-#if NET8_0_OR_GREATER
-        [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("ReflectionAnalysis", "IL2062",
-            Justification = "The user's type has been annotated with DynamicallyAccessedMemberTypes.All with the public API into the library. At this point the type will not be trimmed.")]
+        [UnconditionalSuppressMessage("ReflectionAnalysis", "IL2062",
+            Justification = "The user's type has been annotated with InternalConstants.DataModelModeledType with the public API into the library. At this point the type will not be trimmed.")]
 
-        private bool TryFromListToIList([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] Type targetType, DynamoDBList list, DynamoDBFlatConfig flatConfig, out object output)
-#else
-        private bool TryFromListToIList(Type targetType, DynamoDBList list, DynamoDBFlatConfig flatConfig, out object output)
-#endif
+        private bool TryFromListToIList([DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type targetType, DynamoDBList list, DynamoDBFlatConfig flatConfig, out object output)
         {
             if ((!Utils.ImplementsInterface(targetType, typeof(ICollection<>)) &&
                 !Utils.ImplementsInterface(targetType, typeof(IList))) ||
@@ -591,11 +564,7 @@ namespace Amazon.DynamoDBv2.DataModel
             return true;
         }
 
-#if NET8_0_OR_GREATER
-        private bool TryFromListToArray([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] Type targetType, DynamoDBList list, DynamoDBFlatConfig flatConfig, out object output)
-#else
-        private bool TryFromListToArray(Type targetType, DynamoDBList list, DynamoDBFlatConfig flatConfig, out object output)
-#endif
+        private bool TryFromListToArray([DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type targetType, DynamoDBList list, DynamoDBFlatConfig flatConfig, out object output)
         {
             if (!Utils.CanInstantiateArray(targetType))
             {
@@ -619,13 +588,9 @@ namespace Amazon.DynamoDBv2.DataModel
             return true;
         }
 
-#if NET8_0_OR_GREATER
-        [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("ReflectionAnalysis", "IL2067",
-            Justification = "The user's type has been annotated with DynamicallyAccessedMemberTypes.All with the public API into the library. At this point the type will not be trimmed.")]
-        private bool TryFromMap([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] Type targetType, Document map, DynamoDBFlatConfig flatConfig, out object output)
-#else
-        private bool TryFromMap(Type targetType, Document map, DynamoDBFlatConfig flatConfig, out object output)
-#endif
+        [UnconditionalSuppressMessage("ReflectionAnalysis", "IL2067",
+            Justification = "The user's type has been annotated with InternalConstants.DataModelModeledType with the public API into the library. At this point the type will not be trimmed.")]
+        private bool TryFromMap([DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type targetType, Document map, DynamoDBFlatConfig flatConfig, out object output)
         {
             output = null;
 
@@ -697,13 +662,9 @@ namespace Amazon.DynamoDBv2.DataModel
             }
         }
 
-#if NET8_0_OR_GREATER
-        [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("ReflectionAnalysis", "IL2067",
-            Justification = "The user's type has been annotated with DynamicallyAccessedMemberTypes.All with the public API into the library. At this point the type will not be trimmed.")]
-        private bool TryToMap(object value, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] Type type, DynamoDBFlatConfig flatConfig, out Document output)
-#else
-        private bool TryToMap(object value, Type type, DynamoDBFlatConfig flatConfig, out Document output)
-#endif
+        [UnconditionalSuppressMessage("ReflectionAnalysis", "IL2067",
+            Justification = "The user's type has been annotated with InternalConstants.DataModelModeledType with the public API into the library. At this point the type will not be trimmed.")]
+        private bool TryToMap(object value, [DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type type, DynamoDBFlatConfig flatConfig, out Document output)
         {
             output = null;
 
@@ -736,11 +697,7 @@ namespace Amazon.DynamoDBv2.DataModel
             return true;
         }
 
-#if NET8_0_OR_GREATER
         private bool TryToList(object value, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.Interfaces)] Type type, DynamoDBFlatConfig flatConfig, out DynamoDBList output)
-#else
-        private bool TryToList(object value, Type type, DynamoDBFlatConfig flatConfig, out DynamoDBList output)
-#endif
         {
             if (!Utils.ImplementsInterface(type, typeof(ICollection<>)))
             {
@@ -807,21 +764,13 @@ namespace Amazon.DynamoDBv2.DataModel
             return false;
         }
 
-#if NET8_0_OR_GREATER
         private static bool IsSupportedDictionaryType([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.Interfaces)] Type type, out Type valueType)
-#else
-        private static bool IsSupportedDictionaryType(Type type, out Type valueType)
-#endif
         {
             Type keyType;
             return IsSupportedDictionaryType(type, out keyType, out valueType);
         }
 
-#if NET8_0_OR_GREATER
         private static bool IsSupportedDictionaryType([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.Interfaces)] Type type, out Type keyType, out Type valueType)
-#else
-        private static bool IsSupportedDictionaryType(Type type, out Type keyType, out Type valueType)
-#endif
         {
             keyType = valueType = null;
 
@@ -845,11 +794,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Deserializes a given Document to instance of targetType
         /// Use only for property conversions, not for full item conversion
         /// </summary>
-#if NET8_0_OR_GREATER
-        private object DeserializeFromDocument(Document document, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] Type targetType, DynamoDBFlatConfig flatConfig)
-#else
-        private object DeserializeFromDocument(Document document, Type targetType, DynamoDBFlatConfig flatConfig)
-#endif
+        private object DeserializeFromDocument(Document document, [DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type targetType, DynamoDBFlatConfig flatConfig)
         {
             ItemStorageConfig storageConfig = StorageConfigCache.GetConfig(targetType, flatConfig, conversionOnly: true);
             ItemStorage storage = new ItemStorage(storageConfig);
@@ -862,11 +807,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Serializes a given value to Document
         /// Use only for property conversions, not for full item conversion
         /// </summary>
-#if NET8_0_OR_GREATER
-        private Document SerializeToDocument(object value, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] Type type, DynamoDBFlatConfig flatConfig)
-#else
-        private Document SerializeToDocument(object value, Type type, DynamoDBFlatConfig flatConfig)
-#endif
+        private Document SerializeToDocument(object value, [DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type type, DynamoDBFlatConfig flatConfig)
         {
             ItemStorageConfig config = StorageConfigCache.GetConfig(type, flatConfig, conversionOnly: true);
             var itemStorage = ObjectToItemStorageHelper(value, config, flatConfig, keysOnly: false, ignoreNullValues: flatConfig.IgnoreNullValues.Value);
@@ -1212,12 +1153,7 @@ namespace Amazon.DynamoDBv2.DataModel
             }
         }
 
-#if NET8_0_OR_GREATER
-        private IEnumerable<T> FromSearch<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(ContextSearch cs)
-
-#else
-        private IEnumerable<T> FromSearch<T>(ContextSearch cs)
-#endif
+        private IEnumerable<T> FromSearch<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(ContextSearch cs)
         {
             if (cs == null) throw new ArgumentNullException("cs");
 
@@ -1245,11 +1181,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
         #region Scan/Query
 
-#if NET8_0_OR_GREATER
-        private ContextSearch ConvertScan<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(IEnumerable<ScanCondition> conditions, DynamoDBOperationConfig operationConfig)
-#else
-        private ContextSearch ConvertScan<T>(IEnumerable<ScanCondition> conditions, DynamoDBOperationConfig operationConfig)
-#endif
+        private ContextSearch ConvertScan<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(IEnumerable<ScanCondition> conditions, DynamoDBOperationConfig operationConfig)
         {
             DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(operationConfig, this.Config);
             ItemStorageConfig storageConfig = StorageConfigCache.GetConfig<T>(flatConfig);
@@ -1271,11 +1203,7 @@ namespace Amazon.DynamoDBv2.DataModel
             return new ContextSearch(scan, flatConfig);
         }
 
-#if NET8_0_OR_GREATER
-        private ContextSearch ConvertFromScan<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(ScanOperationConfig scanConfig, DynamoDBOperationConfig operationConfig)
-#else
-        private ContextSearch ConvertFromScan<T>(ScanOperationConfig scanConfig, DynamoDBOperationConfig operationConfig)
-#endif
+        private ContextSearch ConvertFromScan<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(ScanOperationConfig scanConfig, DynamoDBOperationConfig operationConfig)
         {
             DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(operationConfig, Config);
             ItemStorageConfig storageConfig = StorageConfigCache.GetConfig<T>(flatConfig);
@@ -1286,11 +1214,7 @@ namespace Amazon.DynamoDBv2.DataModel
             return new ContextSearch(search, flatConfig);
         }
 
-#if NET8_0_OR_GREATER
-        private ContextSearch ConvertFromQuery<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(QueryOperationConfig queryConfig, DynamoDBOperationConfig operationConfig)
-#else
-        private ContextSearch ConvertFromQuery<T>(QueryOperationConfig queryConfig, DynamoDBOperationConfig operationConfig)
-#endif
+        private ContextSearch ConvertFromQuery<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(QueryOperationConfig queryConfig, DynamoDBOperationConfig operationConfig)
         {
             DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(operationConfig, Config);
             ItemStorageConfig storageConfig = StorageConfigCache.GetConfig<T>(flatConfig);
@@ -1301,11 +1225,7 @@ namespace Amazon.DynamoDBv2.DataModel
             return new ContextSearch(search, flatConfig);
         }
 
-#if NET8_0_OR_GREATER
-        private ContextSearch ConvertQueryByValue<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(object hashKeyValue, QueryOperator op, IEnumerable<object> values, DynamoDBOperationConfig operationConfig)
-#else
-        private ContextSearch ConvertQueryByValue<T>(object hashKeyValue, QueryOperator op, IEnumerable<object> values, DynamoDBOperationConfig operationConfig)
-#endif
+        private ContextSearch ConvertQueryByValue<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(object hashKeyValue, QueryOperator op, IEnumerable<object> values, DynamoDBOperationConfig operationConfig)
         {
             DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(operationConfig, Config);
             ItemStorageConfig storageConfig = StorageConfigCache.GetConfig<T>(flatConfig);
@@ -1314,11 +1234,7 @@ namespace Amazon.DynamoDBv2.DataModel
             return query;
         }
 
-#if NET8_0_OR_GREATER
-        private ContextSearch ConvertQueryByValue<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(object hashKeyValue, IEnumerable<QueryCondition> conditions, DynamoDBOperationConfig operationConfig, ItemStorageConfig storageConfig = null)
-#else
-        private ContextSearch ConvertQueryByValue<T>(object hashKeyValue, IEnumerable<QueryCondition> conditions, DynamoDBOperationConfig operationConfig, ItemStorageConfig storageConfig = null)
-#endif
+        private ContextSearch ConvertQueryByValue<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(object hashKeyValue, IEnumerable<QueryCondition> conditions, DynamoDBOperationConfig operationConfig, ItemStorageConfig storageConfig = null)
         {
             DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(operationConfig, Config);
             if (storageConfig == null)
@@ -1358,11 +1274,7 @@ namespace Amazon.DynamoDBv2.DataModel
             return new ContextSearch(query, currentConfig);
         }
 
-#if NET8_0_OR_GREATER
-        private AsyncSearch<T> FromSearchAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(ContextSearch contextSearch)
-#else
-        private AsyncSearch<T> FromSearchAsync<T>(ContextSearch contextSearch)
-#endif
+        private AsyncSearch<T> FromSearchAsync<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(ContextSearch contextSearch)
         {
             return new AsyncSearch<T>(this, contextSearch);
         }
