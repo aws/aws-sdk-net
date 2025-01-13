@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for EvaluationBedrockModel Object
+    /// Response Unmarshaller for PerformanceConfiguration Object
     /// </summary>  
-    public class EvaluationBedrockModelUnmarshaller : IUnmarshaller<EvaluationBedrockModel, XmlUnmarshallerContext>, IUnmarshaller<EvaluationBedrockModel, JsonUnmarshallerContext>
+    public class PerformanceConfigurationUnmarshaller : IUnmarshaller<PerformanceConfiguration, XmlUnmarshallerContext>, IUnmarshaller<PerformanceConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        EvaluationBedrockModel IUnmarshaller<EvaluationBedrockModel, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        PerformanceConfiguration IUnmarshaller<PerformanceConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public EvaluationBedrockModel Unmarshall(JsonUnmarshallerContext context)
+        public PerformanceConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            EvaluationBedrockModel unmarshalledObject = new EvaluationBedrockModel();
+            PerformanceConfiguration unmarshalledObject = new PerformanceConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,22 +66,10 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("inferenceParams", targetDepth))
+                if (context.TestExpression("latency", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InferenceParams = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("modelIdentifier", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ModelIdentifier = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("performanceConfig", targetDepth))
-                {
-                    var unmarshaller = PerformanceConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.PerformanceConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Latency = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -89,12 +77,12 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         }
 
 
-        private static EvaluationBedrockModelUnmarshaller _instance = new EvaluationBedrockModelUnmarshaller();        
+        private static PerformanceConfigurationUnmarshaller _instance = new PerformanceConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static EvaluationBedrockModelUnmarshaller Instance
+        public static PerformanceConfigurationUnmarshaller Instance
         {
             get
             {

@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// EvaluationBedrockModel Marshaller
+    /// PerformanceConfiguration Marshaller
     /// </summary>
-    public class EvaluationBedrockModelMarshaller : IRequestMarshaller<EvaluationBedrockModel, JsonMarshallerContext> 
+    public class PerformanceConfigurationMarshaller : IRequestMarshaller<PerformanceConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,31 +44,14 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(EvaluationBedrockModel requestObject, JsonMarshallerContext context)
+        public void Marshall(PerformanceConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetInferenceParams())
+            if(requestObject.IsSetLatency())
             {
-                context.Writer.WritePropertyName("inferenceParams");
-                context.Writer.Write(requestObject.InferenceParams);
-            }
-
-            if(requestObject.IsSetModelIdentifier())
-            {
-                context.Writer.WritePropertyName("modelIdentifier");
-                context.Writer.Write(requestObject.ModelIdentifier);
-            }
-
-            if(requestObject.IsSetPerformanceConfig())
-            {
-                context.Writer.WritePropertyName("performanceConfig");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = PerformanceConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.PerformanceConfig, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("latency");
+                context.Writer.Write(requestObject.Latency);
             }
 
         }
@@ -76,7 +59,7 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static EvaluationBedrockModelMarshaller Instance = new EvaluationBedrockModelMarshaller();
+        public readonly static PerformanceConfigurationMarshaller Instance = new PerformanceConfigurationMarshaller();
 
     }
 }
