@@ -1,3 +1,18 @@
+### 3.7.961.0 (2025-01-13 19:18 UTC)
+* Artifact (3.7.402.0)
+	* Support resolving regional API calls to partition's leader region endpoint.
+* Bedrock (3.7.413.0)
+	* With this release, Bedrock Evaluation will now support latency-optimized inference for foundation models.
+* EC2 (3.7.426.0)
+	* Add support for DisconnectOnSessionTimeout flag in CreateClientVpnEndpoint and ModifyClientVpnEndpoint requests and DescribeClientVpnEndpoints responses
+* KafkaConnect (3.7.401.0)
+	* Support updating connector configuration via UpdateConnector API. Release Operations API to monitor the status of the connector operation.
+* TranscribeService (3.7.401.0)
+	* This update provides tagging support for Transcribe's Call Analytics Jobs and Call Analytics Categories.
+* Core 3.7.400.78
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.960.1 (2025-01-10 21:22 UTC)
 * Redshift (3.7.405.18)
 	* Additions to the PubliclyAccessible and Encrypted parameters clarifying what the defaults are.
