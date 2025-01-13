@@ -173,6 +173,16 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>operator.managed</c> - A Boolean that indicates whether this is a managed network
+        /// interface.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>operator.principal</c> - The principal that manages the network interface. Only
+        /// valid for managed network interfaces, where <c>managed</c> is <c>true</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>owner-id</c> - The Amazon Web Services account ID of the network interface owner.
         /// </para>
         ///  </li> <li> 
