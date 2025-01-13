@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Text.Json;
 
 #if NET8_0_OR_GREATER
-using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Text.Json.Serialization.Metadata;
 #endif
@@ -12,6 +13,13 @@ namespace Amazon.Util.Internal
 {
     public static class JsonSerializerHelper
     {
+        private static System.Text.Json.JsonSerializerOptions options = new System.Text.Json.JsonSerializerOptions
+        {
+            AllowTrailingCommas = true,
+        };
+
+        // compile regex once to avoid re-parsing every time
+        private static readonly System.Text.RegularExpressions.Regex regex = new System.Text.RegularExpressions.Regex(@"(""[^""]*""|\d+)(\s*""[^""]*""\s*:)", System.Text.RegularExpressions.RegexOptions.Compiled);
 #if NET8_0_OR_GREATER
         public static T Deserialize<T>(string json, JsonSerializerContext context)
         {
@@ -25,21 +33,26 @@ namespace Amazon.Util.Internal
 #else
         public static T Deserialize<T>(string json, JsonSerializerContext typeInfo)
         {
-            return ThirdParty.Json.LitJson.JsonMapper.ToObject<T>(json);
+            string sanitizedJson = SanitizeJson(json);
+            return JsonSerializer.Deserialize<T>(sanitizedJson, options);
         }
 
         public static string Serialize<T>(object obj, JsonSerializerContext typeInfo)
         {
-            var json = new StringBuilder();
-            var writer = new ThirdParty.Json.LitJson.JsonWriter(json)
+            var jsonSerializerOptions = new System.Text.Json.JsonSerializerOptions
             {
-                PrettyPrint = (typeInfo?.Options?.WriteIndented).GetValueOrDefault()
+                WriteIndented = (typeInfo?.Options?.WriteIndented).GetValueOrDefault()
             };
 
-            ThirdParty.Json.LitJson.JsonMapper.ToJson(obj, writer);
-            return json.ToString();
+            return JsonSerializer.Serialize(obj, jsonSerializerOptions);
         }
 #endif
+        public static string SanitizeJson(string rawJson)
+        {
+            // Add a comma after numbers or strings if they're not followed by a closing brace/bracket or comma.
+            rawJson = regex.Replace(rawJson, "$1,$2");
+            return rawJson;
+        }
     }
 
     [JsonSerializable(typeof(IAMInstanceProfileMetadata))]
@@ -104,7 +117,7 @@ namespace Amazon.Util.Internal
     {
         public JsonSerializerContext() { }
 
-        public JsonSerializerContext(JsonSerializerOptions defaultOptions) 
+        public JsonSerializerContext(JsonSerializerOptions defaultOptions)
         {
             Options = defaultOptions;
         }
@@ -118,7 +131,7 @@ namespace Amazon.Util.Internal
     {
         public bool PropertyNameCaseInsensitive { get; set; }
 
-        public bool WriteIndented {get;set;}
+        public bool WriteIndented { get; set; }
     }
 
 #pragma warning disable CA1019 // Since this is a dummy implementation of JsonSerializableAttribute for pre .NET 8 targets we don't need the accessor.

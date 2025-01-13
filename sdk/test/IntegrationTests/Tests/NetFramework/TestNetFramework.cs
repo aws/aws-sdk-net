@@ -12,6 +12,9 @@ using Amazon.Runtime.Internal.Auth;
 using System.Configuration;
 using System.Collections.Specialized;
 using System.Xml;
+using System.IO;
+using System.Text.Json;
+using System.Text;
 
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests
@@ -83,11 +86,19 @@ Date: Tue, 28 Jul 2015 23:51:34 GMT
                     httpResponse.Headers.Remove("x-amz-crc32");
 
                     // modify body
-                    var json = ThirdParty.Json.LitJson.JsonMapper.ToObject(httpResponse.Body);
-                    var tableNames = json["TableNames"];
-                    tableNames.Clear();
-                    tableNames.Add("Logs");
-                    httpResponse.Body = json.ToJson();
+                    using (var memoryStream = new MemoryStream())
+                    using (var writer = new Utf8JsonWriter(memoryStream))
+                    {
+                        writer.WriteStartObject();
+                        writer.WritePropertyName("TableNames");
+                        writer.WriteStartArray();
+                        writer.WriteStringValue("Logs"); // Add a new table name
+                        writer.WriteEndArray();
+                        writer.WriteEndObject();
+                        writer.Flush();
+                        var newBody = Encoding.UTF8.GetString(memoryStream.ToArray());
+                        httpResponse.Body = newBody;
+                    }
 
                     return httpResponse;
                 };
