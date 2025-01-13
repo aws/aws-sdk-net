@@ -1,0 +1,18 @@
+{
+  "core": {
+    "changeLogMessages": [
+      "Backport the .NET trimming attributes like DynamicallyAccessedMembersAttribute into ThirdParty.RuntimeBackports namespace for Target Frameworks before .NET 8. This simplifies the SDK's codebase by removing compilation conditional checks when using the attributes."
+    ],
+    "type": "patch",
+    "updateMinimum": true
+  },
+  "services": [
+    {
+      "serviceName": "S3",
+      "type": "patch",
+      "changeLogMessages": [
+        "Add NativeAOT support for the DataModel namespace also known as the Object Persistence high level library."
+      ]
+    }
+  ]
+}
