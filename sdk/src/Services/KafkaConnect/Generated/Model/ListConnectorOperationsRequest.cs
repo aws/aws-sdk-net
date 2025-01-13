@@ -30,20 +30,22 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KafkaConnect.Model
 {
     /// <summary>
-    /// This is the response object from the UpdateConnector operation.
+    /// Container for the parameters to the ListConnectorOperations operation.
+    /// Lists information about a connector's operation(s).
     /// </summary>
-    public partial class UpdateConnectorResponse : AmazonWebServiceResponse
+    public partial class ListConnectorOperationsRequest : AmazonKafkaConnectRequest
     {
         private string _connectorArn;
-        private string _connectorOperationArn;
-        private ConnectorState _connectorState;
+        private int? _maxResults;
+        private string _nextToken;
 
         /// <summary>
         /// Gets and sets the property ConnectorArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the connector.
+        /// The Amazon Resource Name (ARN) of the connector for which to list operations.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ConnectorArn
         {
             get { return this._connectorArn; }
@@ -57,39 +59,41 @@ namespace Amazon.KafkaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ConnectorOperationArn. 
+        /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the connector operation.
+        /// Maximum number of connector operations to fetch in one get request.
         /// </para>
         /// </summary>
-        public string ConnectorOperationArn
+        [AWSProperty(Min=1, Max=100)]
+        public int MaxResults
         {
-            get { return this._connectorOperationArn; }
-            set { this._connectorOperationArn = value; }
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
         }
 
-        // Check to see if ConnectorOperationArn property is set
-        internal bool IsSetConnectorOperationArn()
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
         {
-            return this._connectorOperationArn != null;
+            return this._maxResults.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property ConnectorState. 
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// The state of the connector.
+        /// If the response is truncated, it includes a NextToken. Send this NextToken in a subsequent
+        /// request to continue listing from where it left off.
         /// </para>
         /// </summary>
-        public ConnectorState ConnectorState
+        public string NextToken
         {
-            get { return this._connectorState; }
-            set { this._connectorState = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
-        // Check to see if ConnectorState property is set
-        internal bool IsSetConnectorState()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this._connectorState != null;
+            return this._nextToken != null;
         }
 
     }

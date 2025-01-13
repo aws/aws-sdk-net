@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UpdateConnector operation
+    /// Response Unmarshaller for DescribeConnectorOperation operation
     /// </summary>  
-    public class UpdateConnectorResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DescribeConnectorOperationResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,7 +46,7 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            UpdateConnectorResponse response = new UpdateConnectorResponse();
+            DescribeConnectorOperationResponse response = new DescribeConnectorOperationResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -64,10 +64,64 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
                     response.ConnectorOperationArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("connectorState", targetDepth))
+                if (context.TestExpression("connectorOperationState", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ConnectorState = unmarshaller.Unmarshall(context);
+                    response.ConnectorOperationState = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("connectorOperationType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ConnectorOperationType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("creationTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.CreationTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("endTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.EndTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("errorInfo", targetDepth))
+                {
+                    var unmarshaller = StateDescriptionUnmarshaller.Instance;
+                    response.ErrorInfo = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("operationSteps", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ConnectorOperationStep, ConnectorOperationStepUnmarshaller>(ConnectorOperationStepUnmarshaller.Instance);
+                    response.OperationSteps = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("originConnectorConfiguration", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    response.OriginConnectorConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("originWorkerSetting", targetDepth))
+                {
+                    var unmarshaller = WorkerSettingUnmarshaller.Instance;
+                    response.OriginWorkerSetting = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("targetConnectorConfiguration", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    response.TargetConnectorConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("targetWorkerSetting", targetDepth))
+                {
+                    var unmarshaller = WorkerSettingUnmarshaller.Instance;
+                    response.TargetWorkerSetting = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -125,9 +179,9 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
             return new AmazonKafkaConnectException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static UpdateConnectorResponseUnmarshaller _instance = new UpdateConnectorResponseUnmarshaller();        
+        private static DescribeConnectorOperationResponseUnmarshaller _instance = new DescribeConnectorOperationResponseUnmarshaller();        
 
-        internal static UpdateConnectorResponseUnmarshaller GetInstance()
+        internal static DescribeConnectorOperationResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -135,7 +189,7 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateConnectorResponseUnmarshaller Instance
+        public static DescribeConnectorOperationResponseUnmarshaller Instance
         {
             get
             {

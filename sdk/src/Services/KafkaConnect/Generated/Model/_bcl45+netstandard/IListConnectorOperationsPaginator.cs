@@ -16,34 +16,24 @@
 /*
  * Do not modify this file. This file is generated from the kafkaconnect-2021-09-14.normal.json service model.
  */
+using Amazon.Runtime;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KafkaConnect.Model
 {
     /// <summary>
-    /// Paginators for the KafkaConnect service
+    /// Paginator for the ListConnectorOperations operation
     ///</summary>
-    public interface IKafkaConnectPaginatorFactory
+    public interface IListConnectorOperationsPaginator
     {
+        /// <summary>
+        /// Enumerable containing all full responses for the operation
+        /// </summary>
+        IPaginatedEnumerable<ListConnectorOperationsResponse> Responses { get; }
 
         /// <summary>
-        /// Paginator for ListConnectorOperations operation
-        ///</summary>
-        IListConnectorOperationsPaginator ListConnectorOperations(ListConnectorOperationsRequest request);
-
-        /// <summary>
-        /// Paginator for ListConnectors operation
-        ///</summary>
-        IListConnectorsPaginator ListConnectors(ListConnectorsRequest request);
-
-        /// <summary>
-        /// Paginator for ListCustomPlugins operation
-        ///</summary>
-        IListCustomPluginsPaginator ListCustomPlugins(ListCustomPluginsRequest request);
-
-        /// <summary>
-        /// Paginator for ListWorkerConfigurations operation
-        ///</summary>
-        IListWorkerConfigurationsPaginator ListWorkerConfigurations(ListWorkerConfigurationsRequest request);
+        /// Enumerable containing all of the ConnectorOperations
+        /// </summary>
+        IPaginatedEnumerable<ConnectorOperationSummary> ConnectorOperations { get; }
     }
 }

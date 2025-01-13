@@ -30,38 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KafkaConnect.Model
 {
     /// <summary>
-    /// This is the response object from the UpdateConnector operation.
+    /// Container for the parameters to the DescribeConnectorOperation operation.
+    /// Returns information about the specified connector's operations.
     /// </summary>
-    public partial class UpdateConnectorResponse : AmazonWebServiceResponse
+    public partial class DescribeConnectorOperationRequest : AmazonKafkaConnectRequest
     {
-        private string _connectorArn;
         private string _connectorOperationArn;
-        private ConnectorState _connectorState;
-
-        /// <summary>
-        /// Gets and sets the property ConnectorArn. 
-        /// <para>
-        /// The Amazon Resource Name (ARN) of the connector.
-        /// </para>
-        /// </summary>
-        public string ConnectorArn
-        {
-            get { return this._connectorArn; }
-            set { this._connectorArn = value; }
-        }
-
-        // Check to see if ConnectorArn property is set
-        internal bool IsSetConnectorArn()
-        {
-            return this._connectorArn != null;
-        }
 
         /// <summary>
         /// Gets and sets the property ConnectorOperationArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the connector operation.
+        /// ARN of the connector operation to be described.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ConnectorOperationArn
         {
             get { return this._connectorOperationArn; }
@@ -72,24 +54,6 @@ namespace Amazon.KafkaConnect.Model
         internal bool IsSetConnectorOperationArn()
         {
             return this._connectorOperationArn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ConnectorState. 
-        /// <para>
-        /// The state of the connector.
-        /// </para>
-        /// </summary>
-        public ConnectorState ConnectorState
-        {
-            get { return this._connectorState; }
-            set { this._connectorState = value; }
-        }
-
-        // Check to see if ConnectorState property is set
-        internal bool IsSetConnectorState()
-        {
-            return this._connectorState != null;
         }
 
     }

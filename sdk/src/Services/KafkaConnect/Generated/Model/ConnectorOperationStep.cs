@@ -30,50 +30,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KafkaConnect.Model
 {
     /// <summary>
-    /// Details about a connector's provisioned capacity.
+    /// Details of a step that is involved in a connector's operation.
     /// </summary>
-    public partial class ProvisionedCapacity
+    public partial class ConnectorOperationStep
     {
-        private int? _mcuCount;
-        private int? _workerCount;
+        private ConnectorOperationStepState _stepState;
+        private ConnectorOperationStepType _stepType;
 
         /// <summary>
-        /// Gets and sets the property McuCount. 
+        /// Gets and sets the property StepState. 
         /// <para>
-        /// The number of microcontroller units (MCUs) allocated to each connector worker. The
-        /// valid values are 1,2,4,8.
+        /// The step state of the operation.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=8)]
-        public int McuCount
+        public ConnectorOperationStepState StepState
         {
-            get { return this._mcuCount.GetValueOrDefault(); }
-            set { this._mcuCount = value; }
+            get { return this._stepState; }
+            set { this._stepState = value; }
         }
 
-        // Check to see if McuCount property is set
-        internal bool IsSetMcuCount()
+        // Check to see if StepState property is set
+        internal bool IsSetStepState()
         {
-            return this._mcuCount.HasValue; 
+            return this._stepState != null;
         }
 
         /// <summary>
-        /// Gets and sets the property WorkerCount. 
+        /// Gets and sets the property StepType. 
         /// <para>
-        /// The number of workers that are allocated to the connector.
+        /// The step type of the operation.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public int WorkerCount
+        public ConnectorOperationStepType StepType
         {
-            get { return this._workerCount.GetValueOrDefault(); }
-            set { this._workerCount = value; }
+            get { return this._stepType; }
+            set { this._stepType = value; }
         }
 
-        // Check to see if WorkerCount property is set
-        internal bool IsSetWorkerCount()
+        // Check to see if StepType property is set
+        internal bool IsSetStepType()
         {
-            return this._workerCount.HasValue; 
+            return this._stepType != null;
         }
 
     }

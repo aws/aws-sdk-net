@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UpdateConnector operation
+    /// Response Unmarshaller for ListConnectorOperations operation
     /// </summary>  
-    public class UpdateConnectorResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListConnectorOperationsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,28 +46,22 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            UpdateConnectorResponse response = new UpdateConnectorResponse();
+            ListConnectorOperationsResponse response = new ListConnectorOperationsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("connectorArn", targetDepth))
+                if (context.TestExpression("connectorOperations", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ConnectorArn = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<ConnectorOperationSummary, ConnectorOperationSummaryUnmarshaller>(ConnectorOperationSummaryUnmarshaller.Instance);
+                    response.ConnectorOperations = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("connectorOperationArn", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ConnectorOperationArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("connectorState", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ConnectorState = unmarshaller.Unmarshall(context);
+                    response.NextToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -125,9 +119,9 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
             return new AmazonKafkaConnectException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static UpdateConnectorResponseUnmarshaller _instance = new UpdateConnectorResponseUnmarshaller();        
+        private static ListConnectorOperationsResponseUnmarshaller _instance = new ListConnectorOperationsResponseUnmarshaller();        
 
-        internal static UpdateConnectorResponseUnmarshaller GetInstance()
+        internal static ListConnectorOperationsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -135,7 +129,7 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateConnectorResponseUnmarshaller Instance
+        public static ListConnectorOperationsResponseUnmarshaller Instance
         {
             get
             {

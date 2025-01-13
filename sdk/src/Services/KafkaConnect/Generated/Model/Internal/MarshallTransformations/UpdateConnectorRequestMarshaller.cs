@@ -84,6 +84,20 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetConnectorConfiguration())
+                {
+                    context.Writer.WritePropertyName("connectorConfiguration");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestConnectorConfigurationKvp in publicRequest.ConnectorConfiguration)
+                    {
+                        context.Writer.WritePropertyName(publicRequestConnectorConfigurationKvp.Key);
+                        var publicRequestConnectorConfigurationValue = publicRequestConnectorConfigurationKvp.Value;
+
+                            context.Writer.Write(publicRequestConnectorConfigurationValue);
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

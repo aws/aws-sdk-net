@@ -519,6 +519,72 @@ namespace Amazon.KafkaConnect
 
         #endregion
         
+        #region  DescribeConnectorOperation
+
+
+        /// <summary>
+        /// Returns information about the specified connector's operations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConnectorOperation service method.</param>
+        /// 
+        /// <returns>The response from the DescribeConnectorOperation service method, as returned by KafkaConnect.</returns>
+        /// <exception cref="Amazon.KafkaConnect.Model.BadRequestException">
+        /// HTTP Status Code 400: Bad request due to incorrect input. Correct your request and
+        /// then retry it.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.ForbiddenException">
+        /// HTTP Status Code 403: Access forbidden. Correct your credentials and then retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.InternalServerErrorException">
+        /// HTTP Status Code 500: Unexpected internal server error. Retrying your request might
+        /// resolve the issue.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.NotFoundException">
+        /// HTTP Status Code 404: Resource not found due to incorrect input. Correct your request
+        /// and then retry it.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.ServiceUnavailableException">
+        /// HTTP Status Code 503: Service Unavailable. Retrying your request in some time might
+        /// resolve the issue.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.TooManyRequestsException">
+        /// HTTP Status Code 429: Limit exceeded. Resource limit reached.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.UnauthorizedException">
+        /// HTTP Status Code 401: Unauthorized request. The provided credentials couldn't be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/DescribeConnectorOperation">REST API Reference for DescribeConnectorOperation Operation</seealso>
+        DescribeConnectorOperationResponse DescribeConnectorOperation(DescribeConnectorOperationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeConnectorOperation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConnectorOperation operation on AmazonKafkaConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeConnectorOperation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/DescribeConnectorOperation">REST API Reference for DescribeConnectorOperation Operation</seealso>
+        IAsyncResult BeginDescribeConnectorOperation(DescribeConnectorOperationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeConnectorOperation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeConnectorOperation.</param>
+        /// 
+        /// <returns>Returns a  DescribeConnectorOperationResult from KafkaConnect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/DescribeConnectorOperation">REST API Reference for DescribeConnectorOperation Operation</seealso>
+        DescribeConnectorOperationResponse EndDescribeConnectorOperation(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeCustomPlugin
 
 
@@ -648,6 +714,72 @@ namespace Amazon.KafkaConnect
         /// <returns>Returns a  DescribeWorkerConfigurationResult from KafkaConnect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/DescribeWorkerConfiguration">REST API Reference for DescribeWorkerConfiguration Operation</seealso>
         DescribeWorkerConfigurationResponse EndDescribeWorkerConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListConnectorOperations
+
+
+        /// <summary>
+        /// Lists information about a connector's operation(s).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConnectorOperations service method.</param>
+        /// 
+        /// <returns>The response from the ListConnectorOperations service method, as returned by KafkaConnect.</returns>
+        /// <exception cref="Amazon.KafkaConnect.Model.BadRequestException">
+        /// HTTP Status Code 400: Bad request due to incorrect input. Correct your request and
+        /// then retry it.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.ForbiddenException">
+        /// HTTP Status Code 403: Access forbidden. Correct your credentials and then retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.InternalServerErrorException">
+        /// HTTP Status Code 500: Unexpected internal server error. Retrying your request might
+        /// resolve the issue.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.NotFoundException">
+        /// HTTP Status Code 404: Resource not found due to incorrect input. Correct your request
+        /// and then retry it.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.ServiceUnavailableException">
+        /// HTTP Status Code 503: Service Unavailable. Retrying your request in some time might
+        /// resolve the issue.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.TooManyRequestsException">
+        /// HTTP Status Code 429: Limit exceeded. Resource limit reached.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.UnauthorizedException">
+        /// HTTP Status Code 401: Unauthorized request. The provided credentials couldn't be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/ListConnectorOperations">REST API Reference for ListConnectorOperations Operation</seealso>
+        ListConnectorOperationsResponse ListConnectorOperations(ListConnectorOperationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListConnectorOperations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListConnectorOperations operation on AmazonKafkaConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListConnectorOperations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/ListConnectorOperations">REST API Reference for ListConnectorOperations Operation</seealso>
+        IAsyncResult BeginListConnectorOperations(ListConnectorOperationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListConnectorOperations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListConnectorOperations.</param>
+        /// 
+        /// <returns>Returns a  ListConnectorOperationsResult from KafkaConnect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/ListConnectorOperations">REST API Reference for ListConnectorOperations Operation</seealso>
+        ListConnectorOperationsResponse EndListConnectorOperations(IAsyncResult asyncResult);
 
         #endregion
         
