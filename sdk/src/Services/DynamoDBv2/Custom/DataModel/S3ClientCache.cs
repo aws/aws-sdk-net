@@ -48,7 +48,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 output = GlobalRuntimeDependencyRegistry.Instance.GetInstance<ICoreAmazonS3>(ServiceClientHelpers.S3_ASSEMBLY_NAME, ServiceClientHelpers.S3_SERVICE_CLASS_NAME,
                     new CreateInstanceContext(new S3ClientContext { Action = S3ClientContext.ActionContext.DynamoBDS3Link, Region = region }));
 
-                if (output != null)
+                if (output == null)
                 {
                     try
                     {
