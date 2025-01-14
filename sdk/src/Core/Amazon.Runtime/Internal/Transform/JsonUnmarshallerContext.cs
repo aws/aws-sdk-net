@@ -267,7 +267,15 @@ namespace Amazon.Runtime.Internal.Transform
                     break;
                 case JsonTokenType.True:
                 case JsonTokenType.False:
-                    text = reader.Reader.GetBoolean().ToString();
+                case JsonTokenType.PropertyName:
+                case JsonTokenType.String:
+                case JsonTokenType.Number:
+#if NETSTANDARD2_0 || NETFRAMEWORK
+                    // overload which accepts a ReadOnlySpan<byte> is only available in netstandard2.1 and netcore2.1+
+                    text = Encoding.UTF8.GetString(reader.Reader.ValueSpan.ToArray());
+#else
+                    text = Encoding.UTF8.GetString(reader.Reader.ValueSpan);
+#endif
                     break;
                 case JsonTokenType.PropertyName:
                 case JsonTokenType.String:
