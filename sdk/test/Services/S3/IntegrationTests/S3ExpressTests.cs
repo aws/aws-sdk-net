@@ -213,7 +213,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
         [TestMethod]
         [TestCategory("S3")]
-        [Ignore("Skip test while copying from regular S3 to S3 Express is broken")]
         public void Test_CopyObject_BetweenRegularBucket_And_S3ExpressBucket()
         {
             var oldObjectKey = "Test Object 123";
