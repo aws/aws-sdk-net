@@ -24,19 +24,15 @@ namespace Amazon.Runtime.Credentials.Internal
     public class AnonymousAuthScheme : IAuthScheme<AnonymousAWSCredentials>
     {
         private static readonly ISigner _signer = new NullSigner();
+        
         /// <inheritdoc/>
         public string SchemeId => AuthSchemeOption.NoAuth;
 
         /// <inheritdoc/>
-        public IIdentityResolver GetIdentityResolver(IIdentityResolverConfiguration configuration)
-        {
-            return configuration.GetIdentityResolver<AnonymousAWSCredentials>();       
-        }
+        public IIdentityResolver GetIdentityResolver(IIdentityResolverConfiguration configuration) 
+            => configuration.GetIdentityResolver<AnonymousAWSCredentials>();
 
         /// <inheritdoc/>
-        public ISigner Signer()
-        {
-            return _signer;
-        }
+        public ISigner Signer() => _signer;
     }
 }
