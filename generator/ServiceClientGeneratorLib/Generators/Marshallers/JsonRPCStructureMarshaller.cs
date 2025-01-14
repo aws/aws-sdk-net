@@ -1425,7 +1425,7 @@ this.Write("));\r\n");
 
 	protected void DetermineCustomMarshallerJsonWriteMethod(Member member, string memberProperty, int level)
 	{
-		if (String.Equals(member.CustomMarshallerTransformation,"Amazon.Runtime.Internal.Transform.CustomMarshallTransformations.ConvertDateTimeToEpochMilliseconds", StringComparison.OrdinalIgnoreCase))
+		if (String.Equals(member.CustomMarshallerTransformation,"Amazon.Runtime.Internal.Util.StringUtils.FromDateTimeToISO8601NoMs", StringComparison.OrdinalIgnoreCase))
 		{
 
         
@@ -1582,7 +1582,7 @@ this.Write(");\r\n");
         #line 240 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 
 		}
-		else if (shape.IsDateTime)
+		else if (shape.IsTimeStamp)
 		{
 			if (shape.data[Shape.TimestampFormatKey] != null && !string.Equals(shape.data["timestampFormat"].ToString(),"unixTimestamp"))
 			{
