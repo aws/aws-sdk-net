@@ -211,7 +211,7 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 <#+
 	protected void DetermineCustomMarshallerJsonWriteMethod(Member member, string memberProperty, int level)
 	{
-		if (String.Equals(member.CustomMarshallerTransformation,"Amazon.Runtime.Internal.Transform.CustomMarshallTransformations.ConvertDateTimeToEpochMilliseconds", StringComparison.OrdinalIgnoreCase))
+		if (String.Equals(member.CustomMarshallerTransformation,"Amazon.Runtime.Internal.Util.StringUtils.FromDateTimeToISO8601NoMs", StringComparison.OrdinalIgnoreCase))
 		{
 #>
 <#=new string(' ', level * 4)#>                context.Writer.WriteNumberValue(<#=member.CustomMarshallerTransformation#>(<#=memberProperty#>));
@@ -239,7 +239,7 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 <#=new string(' ', level * 4)#>                context.Writer.WriteStringValue(<#=memberProperty#>);
 <#+
 		}
-		else if (shape.IsDateTime)
+		else if (shape.IsTimeStamp)
 		{
 			if (shape.data[Shape.TimestampFormatKey] != null && !string.Equals(shape.data["timestampFormat"].ToString(),"unixTimestamp"))
 			{
