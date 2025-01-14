@@ -162,6 +162,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     unmarshalledObject.Port = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PriorityConfigurationOverride", targetDepth))
+                {
+                    var unmarshaller = PriorityConfigurationOverrideUnmarshaller.Instance;
+                    unmarshalledObject.PriorityConfigurationOverride = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("StartTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

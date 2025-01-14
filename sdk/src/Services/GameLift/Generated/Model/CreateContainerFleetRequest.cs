@@ -215,7 +215,7 @@ namespace Amazon.GameLift.Model
         /// account]:role/[role name]</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=512)]
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string FleetRoleArn
         {
             get { return this._fleetRoleArn; }
