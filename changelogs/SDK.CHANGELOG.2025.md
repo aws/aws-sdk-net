@@ -1,3 +1,12 @@
+### 3.7.962.0 (2025-01-14 19:13 UTC)
+* GameLift (3.7.404.0)
+	* Amazon GameLift releases a new game session placement feature: PriorityConfigurationOverride. You can now override how a game session queue prioritizes placement locations for a single StartGameSessionPlacement request.
+* Route53 (3.7.405.0)
+	* Amazon Route 53 now supports the Mexico (Central) Region (mx-central-1) for latency records, geoproximity records, and private DNS for Amazon VPCs in that region
+* Core 3.7.400.79
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.961.0 (2025-01-13 19:18 UTC)
 * Artifact (3.7.402.0)
 	* Support resolving regional API calls to partition's leader region endpoint.
