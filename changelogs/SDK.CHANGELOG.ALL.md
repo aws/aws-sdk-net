@@ -1,3 +1,30 @@
+### 3.7.963.0 (2025-01-15 20:19 UTC)
+* APIGateway (3.7.401.24)
+	* Documentation updates for Amazon API Gateway
+* BedrockAgentRuntime (3.7.415.0)
+	* Now supports streaming for inline agents.
+* CognitoIdentity (3.7.402.0)
+	* corrects the dual-stack endpoint configuration
+* PartnerCentralSelling (3.7.403.0)
+	* Add Tagging support for ResourceSnapshotJob resources
+* S3 (3.7.412.0)
+	* This change enhances integrity protections for new SDK requests to S3. S3 SDKs now support the CRC64NVME checksum algorithm, full object checksums for multipart S3 objects, and new default integrity protections for S3 requests.
+	* In order to improve [data integrity](https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html), the AWS SDKs, including the AWS SDK for .NET, now automatically calculate checksums for all requests and responses that support it (using the `CRC32` algorithm by default). Although not recommended, you may disable the checksum validation by either: setting the `RequestChecksumCalculation` / `ResponseChecksumValidation` options of the `AmazonS3Config` to `WHEN_REQUIRED` (this will instruct the SDK to only calculate checksums when the service requires one) or setting the `DisableDefaultChecksumValidation` flag of the `PutObject` / `UploadPart` / `TransferUtilityUpload` operations to `false` (this will bypass the checksum calculations - meaning data integrity will rely only on SIGV4 payload signing and HTTPS).
+	* BREAKING CHANGE: The `CompleteMultipartUploadRequest.AddPartETags` method now only includes ETags returned by `CopyObject` and `UploadPart` operations. This only impacts use cases where multi-part uploads were performed using the low-level APIs and a checksum algorithm was explicitly specified in the `InitiateMultipartUploadRequest`; to include additional checksums (such as `ChecksumCRC32` or `ChecksumSHA256`), use the new `AddPartETagsAndChecksums` method instead.
+* SecurityIR (3.7.401.0)
+	* Increase minimum length of Threat Actor IP 'userAgent' to 1.
+* SimpleEmailV2 (3.7.407.0)
+	* This release introduces a new recommendation in Virtual Deliverability Manager Advisor, which detects elevated complaint rates for customer sending identities.
+* WorkSpaces (3.7.408.0)
+	* Added GeneralPurpose.4xlarge & GeneralPurpose.8xlarge ComputeTypes.
+* WorkSpacesThinClient (3.7.401.0)
+	* Mark type in MaintenanceWindow as required.
+* Core 3.7.401.0
+	* Add `CRC32` implementation compatible with `HashAlgorithm` without requiring a CRT dependency
+	* Add RequestChecksumCalculation and ResponseChecksumValidation configuration options
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.962.0 (2025-01-14 19:13 UTC)
 * GameLift (3.7.404.0)
 	* Amazon GameLift releases a new game session placement feature: PriorityConfigurationOverride. You can now override how a game session queue prioritizes placement locations for a single StartGameSessionPlacement request.
