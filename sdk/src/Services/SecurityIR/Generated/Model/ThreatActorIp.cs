@@ -56,7 +56,7 @@ namespace Amazon.SecurityIR.Model
         /// <summary>
         /// Gets and sets the property UserAgent.
         /// </summary>
-        [AWSProperty(Min=0, Max=500)]
+        [AWSProperty(Min=1, Max=500)]
         public string UserAgent
         {
             get { return this._userAgent; }
