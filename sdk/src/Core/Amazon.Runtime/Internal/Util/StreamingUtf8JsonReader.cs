@@ -74,7 +74,7 @@ namespace Amazon.Runtime.Internal.Util
             int utf8BomLength = JsonConstants.Utf8Bom.Length;
             Debug.Assert(_buffer.Length >= utf8BomLength);
 
-            int bytesRead = _stream.Read(_buffer, 0, _buffer.Length);
+            int bytesRead = FillBuffer(stream, ref _buffer,0, _buffer.Length);
             int start = 0;
             if (_buffer.AsSpan().StartsWith(JsonConstants.Utf8Bom))
             {

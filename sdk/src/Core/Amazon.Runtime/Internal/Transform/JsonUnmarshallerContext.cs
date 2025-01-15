@@ -265,23 +265,24 @@ namespace Amazon.Runtime.Internal.Transform
                 case JsonTokenType.Null:
                     text = null;
                     break;
-                case JsonTokenType.String:
-                    text = reader.Reader.GetString();
-                    break;
-                case JsonTokenType.Number:
-                    if (reader.Reader.TryGetInt64(out long longValue))
-                        text = longValue.ToString(CultureInfo.InvariantCulture);
-                    else if (reader.Reader.TryGetDouble(out double doubleValue))
-                        text = doubleValue.ToString(CultureInfo.InvariantCulture);
-                    else if (reader.Reader.TryGetInt32(out int intValue))
-                        text = intValue.ToString(CultureInfo.InvariantCulture);
+                case JsonTokenType.True:
+                case JsonTokenType.False:
+                    text = reader.Reader.GetBoolean().ToString();
                     break;
                 case JsonTokenType.PropertyName:
                     text = reader.Reader.GetString();
                     break;
-                case JsonTokenType.True:
-                case JsonTokenType.False:
-                    text = reader.Reader.GetBoolean().ToString();
+                case JsonTokenType.String:
+                    text = reader.Reader.GetString();
+                    break;
+                   // For numbers we grab the raw value b/ c we don't want to lose precision.
+                case JsonTokenType.Number:
+#if NETSTANDARD2_0 || NETFRAMEWORK
+                    // overload which accepts a ReadOnlySpan<byte> is only available in netstandard2.1 and netcore2.1+
+                    text = Encoding.UTF8.GetString(reader.Reader.ValueSpan.ToArray());
+#else
+                                    text = Encoding.UTF8.GetString(reader.Reader.ValueSpan);
+#endif
                     break;
                 default:
                     throw new AmazonClientException($"Unexpected token: {currentToken}");
@@ -289,7 +290,7 @@ namespace Amazon.Runtime.Internal.Transform
             return text;
         }
 
-        #endregion
+#endregion
 
         #region Public properties
 

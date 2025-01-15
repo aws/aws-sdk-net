@@ -1425,7 +1425,7 @@ this.Write("));\r\n");
 
 	protected void DetermineCustomMarshallerJsonWriteMethod(Member member, string memberProperty, int level)
 	{
-		if (String.Equals(member.CustomMarshallerTransformation,"Amazon.Runtime.Internal.Util.StringUtils.FromDateTimeToISO8601NoMs", StringComparison.OrdinalIgnoreCase))
+		if (String.Equals(member.CustomMarshallerTransformation,"Amazon.Util.AWSSDKUtils.ConvertToUnixEpochMilliseconds", StringComparison.OrdinalIgnoreCase))
 		{
 
         
