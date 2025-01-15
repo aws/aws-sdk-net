@@ -942,7 +942,7 @@ namespace Amazon.S3.Model
         /// Gets and sets the property ServerSideEncryptionKeyManagementServiceEncryptionContext. 
         /// <para>
         /// Specifies the Amazon Web Services KMS Encryption Context as an additional encryption context to use for the destination object encryption. 
-        /// The value of this header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value pairs.
+        /// The value of this header is a Base64 encoded UTF-8 string holding JSON with the encryption context key-value pairs.
         /// </para> 
         /// 
         /// <para>

@@ -21,6 +21,7 @@ using AWSSDK_DotNet.IntegrationTests.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using static AWSSDK.UnitTests.Mocking.TestUtils;
 
@@ -126,14 +127,10 @@ namespace AWSSDK.UnitTests
                     ServerSideEncryptionRules = new List<ServerSideEncryptionRule>() { new ServerSideEncryptionRule { BucketKeyEnabled = true } }
                 }
             };
-            var expectedPayload = "<ServerSideEncryptionConfiguration xmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\"><Rule><BucketKeyEnabled>true</BucketKeyEnabled></Rule></ServerSideEncryptionConfiguration>";
-
-            var payloadChecksum = Amazon.Util.AWSSDKUtils.GenerateChecksumForContent(expectedPayload, true);
 
             var response = S3ArnTestUtils.RunMockRequest(request, PutBucketEncryptionRequestMarshaller.Instance);
 
-            Assert.IsTrue(response.Headers.ContainsKey(Amazon.Util.HeaderKeys.ContentMD5Header));
-            Assert.AreEqual(payloadChecksum, response.Headers[Amazon.Util.HeaderKeys.ContentMD5Header]);
+            Assert.IsTrue(response.Headers.Keys.Any(k => k.ToUpper().Contains("CHECKSUM")));
         }
 
         [TestMethod]
@@ -151,7 +148,7 @@ namespace AWSSDK.UnitTests
             var response = S3ArnTestUtils.RunMockRequest(request, PutBucketEncryptionRequestMarshaller.Instance);
 
             Assert.IsTrue(response.ChecksumData != null);
-            Assert.IsTrue(response.ChecksumData.FallbackToMD5.Value);
+            Assert.IsFalse(response.ChecksumData.FallbackToMD5.GetValueOrDefault());
             Assert.IsTrue(response.ChecksumData.SelectedChecksum == null);
         }
     }

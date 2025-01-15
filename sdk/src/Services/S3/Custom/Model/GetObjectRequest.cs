@@ -752,6 +752,7 @@ namespace Amazon.S3.Model
 
                 return CoreChecksumResponseBehavior.DISABLED;
             }
+            set { this.ChecksumMode = value.ToString(); }
         }
 
         private static List<CoreChecksumAlgorithm> _supportedChecksumAlgorithms = new List<CoreChecksumAlgorithm>

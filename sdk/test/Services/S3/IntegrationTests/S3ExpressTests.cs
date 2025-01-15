@@ -14,6 +14,7 @@ using Amazon.SecurityToken.Model;
 using Amazon.S3.Transfer;
 using AWSSDK_DotNet.IntegrationTests.Utils;
 using Amazon;
+using Amazon.Util;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
@@ -560,6 +561,53 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     File.Delete(filePath);
                 if (File.Exists(retrievedFilepath))
                     File.Delete(retrievedFilepath);
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void Test_TransferUtility_Precalculated()
+        {
+            var random = new Random();
+            var key = "key-" + random.Next() + ".txt";
+            var filePath = Path.Combine(Path.GetTempPath(), key);
+            var totalSize = megSize * 20;
+
+            UtilityMethods.GenerateFile(filePath, totalSize);
+            var precalculatedChecksum = CryptoUtilFactory.CryptoInstance.ComputeCRC32CHash(File.ReadAllBytes(filePath));
+
+            try
+            {
+                using (var tu = new TransferUtility(Client))
+                {
+                    tu.Upload(new TransferUtilityUploadRequest
+                    {
+                        BucketName = bucketName,
+                        Key = key,
+                        FilePath = filePath,
+                        ChecksumCRC32C = precalculatedChecksum,
+                    });
+
+                    var getObjectResponse = Client.GetObject(new GetObjectRequest
+                    {
+                        BucketName = bucketName,
+                        Key = key
+                    });
+                    Assert.IsNotNull(getObjectResponse.ChecksumCRC32C);
+                }
+
+                Client.DeleteObject(new DeleteObjectRequest
+                {
+                    BucketName = bucketName,
+                    Key = key
+                });
+            }
+            finally
+            {
+                if (File.Exists(filePath))
+                {
+                    File.Delete(filePath);
+                }
             }
         }
 

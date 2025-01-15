@@ -58,7 +58,8 @@ namespace Amazon.S3.Transfer
         private ObjectLockMode objectLockMode;
         private bool disablePayloadSigning;
         private DateTime? objectLockRetainUntilDate;
-       
+        private ChecksumAlgorithm checksumAlgorithm;
+
         /// <summary>
         /// Gets or sets whether the payload should be signed or not
         /// </summary>
@@ -331,6 +332,10 @@ namespace Amazon.S3.Transfer
         /// <summary>
         /// Gets or sets whether the Content-MD5 header should be calculated for upload.
         /// </summary>
+        /// <remarks>
+        /// If set, the SDK populates the Content-MD5 header but S3 will prioritize the checksum headers (for example, <c>x-amz-checksum-crc32</c>).
+        /// </remarks>
+        [Obsolete("This property is redundant in the latest version of the AWSSDK.S3 package, which automatically calculates a checksum to verify data integrity (using CRC32 by default).")]
         public bool CalculateContentMD5Header
         {
             get { return this.calculateContentMD5Header; }
@@ -461,6 +466,32 @@ namespace Amazon.S3.Transfer
         {
             get { return this.tagset; }
             set { this.tagset = value; }
+        }
+
+        /// <summary>
+        /// <para><b>WARNING: Setting DisableDefaultChecksumValidation to true disables the default data 
+        /// integrity check on upload requests.</b></para>
+        /// <para>When true, checksum verification will not be used in upload requests. This may increase upload 
+        /// performance under high CPU loads. The default value is false.</para>
+        /// <para>Checksums, SigV4 payload signing, and HTTPS each provide some data integrity 
+        /// verification. If DisableDefaultChecksumValidation is true and DisablePayloadSigning is true, then the 
+        /// possibility of data corruption is completely dependent on HTTPS being the only remaining 
+        /// source of data integrity verification.</para>
+        /// </summary>
+        public bool? DisableDefaultChecksumValidation { get; set; }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumAlgorithm. 
+        /// <para>
+        /// Indicates the algorithm used to create the checksum for each object in the provided directory.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
+        /// Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public ChecksumAlgorithm ChecksumAlgorithm
+        {
+            get { return this.checksumAlgorithm; }
+            set { this.checksumAlgorithm = value; }
         }
     }
 

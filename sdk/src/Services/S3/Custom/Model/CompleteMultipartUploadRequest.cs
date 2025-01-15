@@ -197,8 +197,11 @@ namespace Amazon.S3.Model
         private string bucketName;
         private string _checksumCRC32;
         private string _checksumCRC32C;
+        private string _checksumCRC64NVME;
         private string _checksumSHA1;
         private string _checksumSHA256;
+        private ChecksumType checksumType;
+        private long? mpuObjectSize;
         private string key;
         private List<PartETag> partETags = AWSConfigs.InitializeCollections ? new List<PartETag>() : null;
         private string uploadId;
@@ -268,8 +271,8 @@ namespace Amazon.S3.Model
         /// Gets and sets the property ChecksumCRC32. 
         /// <para>
         /// This header can be used as a data integrity check to verify that the data received
-        /// is the same data that was originally sent. This specifies the base64-encoded, 32-bit
-        /// CRC-32 checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
+        /// is the same data that was originally sent. This specifies the Base64 encoded, 32-bit
+        /// <c>CRC-32</c> checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
         /// Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>
@@ -289,8 +292,8 @@ namespace Amazon.S3.Model
         /// Gets and sets the property ChecksumCRC32C. 
         /// <para>
         /// This header can be used as a data integrity check to verify that the data received
-        /// is the same data that was originally sent. This specifies the base64-encoded, 32-bit
-        /// CRC-32C checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
+        /// is the same data that was originally sent. This specifies the Base64 encoded, 32-bit
+        /// <c>CRC-32C</c> checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
         /// Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>
@@ -307,11 +310,32 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ChecksumCRC64NVME. 
+        /// <para>
+        /// This header can be used as a data integrity check to verify that the data received
+        /// is the same data that was originally sent. This specifies the Base64 encoded, 64-bit
+        /// <c>CRC-64NVME</c> checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
+        /// Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string ChecksumCRC64NVME
+        {
+            get { return this._checksumCRC64NVME; }
+            set { this._checksumCRC64NVME = value; }
+        }
+
+        // Check to see if ChecksumCRC64NVME property is set
+        internal bool IsSetChecksumCRC64NVME()
+        {
+            return this._checksumCRC64NVME != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ChecksumSHA1. 
         /// <para>
         /// This header can be used as a data integrity check to verify that the data received
-        /// is the same data that was originally sent. This specifies the base64-encoded, 160-bit
-        /// SHA-1 digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
+        /// is the same data that was originally sent. This specifies the Base64 encoded, 160-bit
+        /// <c>SHA-1</c> digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
         /// Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>
@@ -331,8 +355,8 @@ namespace Amazon.S3.Model
         /// Gets and sets the property ChecksumSHA256. 
         /// <para>
         /// This header can be used as a data integrity check to verify that the data received
-        /// is the same data that was originally sent. This specifies the base64-encoded, 256-bit
-        /// SHA-256 digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
+        /// is the same data that was originally sent. This specifies the Base64 encoded, 256-bit
+        /// <c>SHA-256</c> digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
         /// Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>
@@ -346,6 +370,55 @@ namespace Amazon.S3.Model
         internal bool IsSetChecksumSHA256()
         {
             return this._checksumSHA256 != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumType.
+        /// <para>
+        /// This header specifies the checksum type of the object, which determines how part-level checksums
+        /// are combined to create an object-level checksum for multipart objects.You can use this header as
+        /// a data integrity check to verify that the checksum type that is received is the same checksum that
+        /// was specified. If the checksum type doesn't match the checksum type that was specified for the object
+        /// during the<c> CreateMultipartUpload</c> request, it'll result in a<c> BadDigest</c> error.For more information,
+        /// see Checking object integrity in the Amazon S3 User Guide.
+        /// </para>
+        /// </summary>
+        public ChecksumType ChecksumType
+        {
+            get { return this.checksumType; }
+            set { this.checksumType = value; }
+        }
+
+        /// <summary>
+        /// Checks to see if ChecksumType is set.
+        /// </summary>
+        /// <returns>true, if ChecksumType property is set.</returns>
+        internal bool IsSetChecksumType()
+        {
+            return checksumType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MpuObjectSize. 
+        /// <para>
+        /// The expected total object size of the multipart upload request.
+        /// If there's a mismatch between the specified object size value and the actual
+        /// object size value, it results in an <c>HTTP 400 InvalidRequest</c> error.
+        /// </para>
+        /// </summary>
+        public long MpuObjectSize
+        {
+            get { return this.mpuObjectSize.GetValueOrDefault(); }
+            set { this.mpuObjectSize = value; }
+        }
+
+        /// <summary>
+        /// Checks if MpuObjectSize property is set.
+        /// </summary>
+        /// <returns>true if MpuObjectSize property is set.</returns>
+        internal bool IsSetMpuObjectSize()
+        {
+            return this.mpuObjectSize.HasValue;
         }
 
         /// <summary>
@@ -447,7 +520,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// A collection of part numbers and corresponding etags.
+        /// A collection of part numbers and corresponding etags / checksums.
         /// </summary>
         public List<PartETag> PartETags
         {
@@ -456,7 +529,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Adds a collection of part numbers and corresponding etags.
+        /// Adds a collection of parts (including ETags and checksums) to this request.
         /// </summary>
         /// <param name="partETags">PartETags that will added to this request.</param>
         public void AddPartETags(params PartETag[] partETags)
@@ -471,7 +544,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Adds a collection of part numbers and corresponding etags.
+        /// Adds a collection of parts (including ETags and checksums) to this request.
         /// </summary>
         /// <param name="partETags">PartETags that will added to this request.</param>
         public void AddPartETags(IEnumerable<PartETag> partETags)
@@ -490,6 +563,9 @@ namespace Amazon.S3.Model
         /// Adds a collection of part numbers and corresponding etags by transforming the UploadPartResponses into PartETags.
         /// </summary>
         /// <param name="responses">The list of response objects return from UploadParts.</param>
+        /// <remarks>
+        /// This method only includes ETags. Use one of the <c>AddPartETagsAndChecksums</c> overloads to include checksums as well.
+        /// </remarks>
         public void AddPartETags(params UploadPartResponse[] responses)
         {
             if (PartETags == null)
@@ -499,7 +575,7 @@ namespace Amazon.S3.Model
 
             foreach (UploadPartResponse response in responses)
             {
-                this.PartETags.Add(new PartETag(response));
+                this.PartETags.Add(new PartETag(response, copyChecksums: false));
             }
         }
 
@@ -507,6 +583,9 @@ namespace Amazon.S3.Model
         /// Adds a collection of part numbers and corresponding etags by transforming the UploadPartResponses into PartETags.
         /// </summary>
         /// <param name="responses">The list of response objects return from UploadParts.</param>
+        /// <remarks>
+        /// This method only includes ETags. Use one of the <c>AddPartETagsAndChecksums</c> overloads to include checksums as well.
+        /// </remarks>
         public void AddPartETags(IEnumerable<UploadPartResponse> responses)
         {
             if (PartETags == null)
@@ -516,7 +595,41 @@ namespace Amazon.S3.Model
 
             foreach (UploadPartResponse response in responses)
             {
-                this.PartETags.Add(new PartETag(response));
+                this.PartETags.Add(new PartETag(response, copyChecksums: false));
+            }
+        }
+
+        /// <summary>
+        /// Adds a collection of part numbers, ETags and checksums by transforming the UploadPartResponses into PartETags.
+        /// </summary>
+        /// <param name="responses">The list of response objects return from UploadParts.</param>
+        public void AddPartETagsAndChecksums(params UploadPartResponse[] responses)
+        {
+            if (PartETags == null)
+            {
+                PartETags = new List<PartETag>();
+            }
+
+            foreach (UploadPartResponse response in responses)
+            {
+                this.PartETags.Add(new PartETag(response, copyChecksums: true));
+            }
+        }
+
+        /// <summary>
+        /// Adds a collection of part numbers, ETags and checksums by transforming the UploadPartResponses into PartETags.
+        /// </summary>
+        /// <param name="responses">The list of response objects return from UploadParts.</param>
+        public void AddPartETagsAndChecksums(IEnumerable<UploadPartResponse> responses)
+        {
+            if (PartETags == null)
+            {
+                PartETags = new List<PartETag>();
+            }
+
+            foreach (UploadPartResponse response in responses)
+            {
+                this.PartETags.Add(new PartETag(response, copyChecksums: true));
             }
         }
 
@@ -524,6 +637,9 @@ namespace Amazon.S3.Model
         /// Adds a collection of part numbers and corresponding etags by transforming the CopyPartResponse into PartETags.
         /// </summary>
         /// <param name="responses">The list of response objects return from CopyParts.</param>
+        /// <remarks>
+        /// This method only includes ETags. Use one of the <c>AddPartETagsAndChecksums</c> overloads to include checksums as well.
+        /// </remarks>
         public void AddPartETags(params CopyPartResponse[] responses)
         {
             if (PartETags == null)
@@ -533,7 +649,7 @@ namespace Amazon.S3.Model
 
             foreach (CopyPartResponse response in responses)
             {
-                this.PartETags.Add(new PartETag(response));
+                this.PartETags.Add(new PartETag(response, copyChecksums: false));
             }
         }
 
@@ -541,6 +657,9 @@ namespace Amazon.S3.Model
         /// Adds a collection of part numbers and corresponding etags by transforming the CopyPartResponse into PartETags.
         /// </summary>
         /// <param name="responses">The list of response objects return from CopyParts.</param>
+        /// <remarks>
+        /// This method only includes ETags. Use one of the <c>AddPartETagsAndChecksums</c> overloads to include checksums as well.
+        /// </remarks>
         public void AddPartETags(IEnumerable<CopyPartResponse> responses)
         {
             if (PartETags == null)
@@ -550,7 +669,41 @@ namespace Amazon.S3.Model
 
             foreach (CopyPartResponse response in responses)
             {
-                this.PartETags.Add(new PartETag(response));
+                this.PartETags.Add(new PartETag(response, copyChecksums: false));
+            }
+        }
+
+        /// <summary>
+        /// Adds a collection of part numbers, ETags and checksums by transforming the UploadPartResponses into PartETags.
+        /// </summary>
+        /// <param name="responses">The list of response objects return from CopyParts.</param>
+        public void AddPartETagsAndChecksums(params CopyPartResponse[] responses)
+        {
+            if (PartETags == null)
+            {
+                PartETags = new List<PartETag>();
+            }
+
+            foreach (CopyPartResponse response in responses)
+            {
+                this.PartETags.Add(new PartETag(response, copyChecksums: true));
+            }
+        }
+
+        /// <summary>
+        /// Adds a collection of part numbers, ETags and checksums by transforming the UploadPartResponses into PartETags.
+        /// </summary>
+        /// <param name="responses">The list of response objects return from CopyParts.</param>
+        public void AddPartETagsAndChecksums(IEnumerable<CopyPartResponse> responses)
+        {
+            if (PartETags == null)
+            {
+                PartETags = new List<PartETag>();
+            }
+
+            foreach (CopyPartResponse response in responses)
+            {
+                this.PartETags.Add(new PartETag(response, copyChecksums: true));
             }
         }
 

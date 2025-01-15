@@ -56,11 +56,20 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (completeMultipartUploadRequest.IsSetChecksumCRC32C())
                 request.Headers["x-amz-checksum-crc32c"] = completeMultipartUploadRequest.ChecksumCRC32C;
 
+            if (completeMultipartUploadRequest.IsSetChecksumCRC64NVME())
+                request.Headers["x-amz-checksum-crc64nvme"] = completeMultipartUploadRequest.ChecksumCRC64NVME;
+
             if (completeMultipartUploadRequest.IsSetChecksumSHA1())
                 request.Headers["x-amz-checksum-sha1"] = completeMultipartUploadRequest.ChecksumSHA1;
 
             if (completeMultipartUploadRequest.IsSetChecksumSHA256())
                 request.Headers["x-amz-checksum-sha256"] = completeMultipartUploadRequest.ChecksumSHA256;
+
+            if (completeMultipartUploadRequest.IsSetChecksumType())
+                request.Headers[S3Constants.AmzHeaderChecksumType] = completeMultipartUploadRequest.ChecksumType;
+
+            if (completeMultipartUploadRequest.IsSetMpuObjectSize())
+                request.Headers["x-amz-mp-object-size"] = S3Transforms.ToStringValue(completeMultipartUploadRequest.MpuObjectSize);
 
             if (completeMultipartUploadRequest.IsSetSSECustomerAlgorithm())
                 request.Headers["x-amz-server-side-encryption-customer-algorithm"] = completeMultipartUploadRequest.SSECustomerAlgorithm;
@@ -120,6 +129,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                             {
                                 xmlWriter.WriteElementString("ChecksumCRC32C",
                                     S3Transforms.ToXmlStringValue(multipartUploadMultipartUploadpartsListValue.ChecksumCRC32C));
+                            }
+                            if (multipartUploadMultipartUploadpartsListValue.IsSetChecksumCRC64NVME())
+                            {
+                                xmlWriter.WriteElementString("ChecksumCRC64NVME",
+                                    S3Transforms.ToXmlStringValue(multipartUploadMultipartUploadpartsListValue.ChecksumCRC64NVME));
                             }
 
                             if (multipartUploadMultipartUploadpartsListValue.IsSetChecksumSHA1())

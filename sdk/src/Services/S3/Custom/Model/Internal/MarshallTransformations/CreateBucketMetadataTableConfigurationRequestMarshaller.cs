@@ -85,7 +85,13 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 var content = stringWriter.ToString();
                 request.Content = Encoding.UTF8.GetBytes(content);
                 request.Headers[HeaderKeys.ContentTypeHeader] = "application/xml";
-                ChecksumUtils.SetChecksumData(request, createBucketMetadataTableConfigurationRequest.ChecksumAlgorithm);
+                ChecksumUtils.SetChecksumData(
+                    request, 
+                    createBucketMetadataTableConfigurationRequest.ChecksumAlgorithm,
+                    fallbackToMD5: false,
+                    isRequestChecksumRequired: true,
+                    headerName: S3Constants.AmzHeaderSdkChecksumAlgorithm
+                );
             }
             catch (EncoderFallbackException e)
             {
