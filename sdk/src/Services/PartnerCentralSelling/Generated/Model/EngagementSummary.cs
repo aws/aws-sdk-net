@@ -44,7 +44,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of the created engagement. 
+        /// The Amazon Resource Name (ARN) of the created Engagement.
         /// </para>
         /// </summary>
         public string Arn
@@ -62,7 +62,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        ///  The date and time when the engagement was created. 
+        /// The date and time when the Engagement was created.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -80,7 +80,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property CreatedBy. 
         /// <para>
-        ///  The AWS account ID of the engagement creator. 
+        /// The AWS Account ID of the Engagement creator.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -99,7 +99,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        ///  The unique identifier for the engagement. 
+        /// The unique identifier for the Engagement.
         /// </para>
         /// </summary>
         public string Id
@@ -117,7 +117,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property MemberCount. 
         /// <para>
-        ///  The number of members in the engagement. 
+        /// The number of members in the Engagement.
         /// </para>
         /// </summary>
         public int MemberCount
@@ -135,7 +135,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Title. 
         /// <para>
-        ///  The title of the engagement. 
+        /// The title of the Engagement.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=40)]

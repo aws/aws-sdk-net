@@ -65,8 +65,8 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property CreatedBy. 
         /// <para>
-        /// The AWS account ID of the principal (user or role) who created the snapshot. This
-        /// helps in tracking the origin of the snapshot. 
+        /// The AWS account ID of the entity that owns the resource from which the snapshot was
+        /// created.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -140,8 +140,8 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Revision. 
         /// <para>
-        ///  The revision number of the snapshot. This integer value is incremented each time
-        /// the snapshot is updated, allowing for version tracking of the resource snapshot. 
+        /// The revision number of the snapshot. This integer value is incremented each time the
+        /// snapshot is updated, allowing for version tracking of the resource snapshot. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

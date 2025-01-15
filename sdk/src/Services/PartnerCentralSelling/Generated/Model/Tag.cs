@@ -30,51 +30,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PartnerCentralSelling.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetEngagement operation.
-    /// Use this action to retrieve the engagement record for a given <c>EngagementIdentifier</c>.
+    /// The key-value pair assigned to a specified resource.
     /// </summary>
-    public partial class GetEngagementRequest : AmazonPartnerCentralSellingRequest
+    public partial class Tag
     {
-        private string _catalog;
-        private string _identifier;
+        private string _key;
+        private string _value;
 
         /// <summary>
-        /// Gets and sets the property Catalog. 
+        /// Gets and sets the property Key. 
         /// <para>
-        /// Specifies the catalog related to the engagement request. Valid values are <c>AWS</c>
-        /// and <c>Sandbox</c>.
+        /// The key in the tag.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string Catalog
+        [AWSProperty(Required=true, Min=1, Max=128)]
+        public string Key
         {
-            get { return this._catalog; }
-            set { this._catalog = value; }
+            get { return this._key; }
+            set { this._key = value; }
         }
 
-        // Check to see if Catalog property is set
-        internal bool IsSetCatalog()
+        // Check to see if Key property is set
+        internal bool IsSetKey()
         {
-            return this._catalog != null;
+            return this._key != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Identifier. 
+        /// Gets and sets the property Value. 
         /// <para>
-        /// Specifies the identifier of the Engagement record to retrieve.
+        /// The value in the tag.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string Identifier
+        [AWSProperty(Required=true, Min=0, Max=256)]
+        public string Value
         {
-            get { return this._identifier; }
-            set { this._identifier = value; }
+            get { return this._value; }
+            set { this._value = value; }
         }
 
-        // Check to see if Identifier property is set
-        internal bool IsSetIdentifier()
+        // Check to see if Value property is set
+        internal bool IsSetValue()
         {
-            return this._identifier != null;
+            return this._value != null;
         }
 
     }

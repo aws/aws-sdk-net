@@ -50,7 +50,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        ///  he Amazon Resource Name (ARN) of the snapshot job. This globally unique identifier
+        /// The Amazon Resource Name (ARN) of the snapshot job. This globally unique identifier
         /// can be used for resource-specific operations across AWS services. 
         /// </para>
         /// </summary>
@@ -69,7 +69,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Catalog. 
         /// <para>
-        ///  The catalog in which the snapshot job was created. This will match the catalog specified
+        /// The catalog in which the snapshot job was created. This will match the Catalog specified
         /// in the request. 
         /// </para>
         /// </summary>
@@ -89,7 +89,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        ///  The date and time when the snapshot job was created, in ISO 8601 format (UTC). Example:
+        /// The date and time when the snapshot job was created in ISO 8601 format (UTC). Example:
         /// "2023-05-01T20:37:46Z" 
         /// </para>
         /// </summary>
@@ -108,7 +108,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property EngagementId. 
         /// <para>
-        ///  The identifier of the engagement associated with this snapshot job. This links the
+        /// The identifier of the engagement associated with this snapshot job. This links the
         /// job to a specific engagement context. 
         /// </para>
         /// </summary>
@@ -127,7 +127,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        ///  The unique identifier of the snapshot job. This matches the <c>ResourceSnapshotJobIdentifier</c>
+        /// The unique identifier of the snapshot job. This matches the ResourceSnapshotJobIdentifier
         /// provided in the request. 
         /// </para>
         /// </summary>
@@ -146,7 +146,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property LastFailure. 
         /// <para>
-        ///  If the job has encountered any failures, this field contains the error message from
+        /// If the job has encountered any failures, this field contains the error message from
         /// the most recent failure. This can be useful for troubleshooting issues with the job.
         /// 
         /// </para>
@@ -166,7 +166,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property LastSuccessfulExecutionDate. 
         /// <para>
-        ///  The date and time of the last successful execution of the job, in ISO 8601 format
+        /// The date and time of the last successful execution of the job, in ISO 8601 format
         /// (UTC). Example: "2023-05-01T20:37:46Z" 
         /// </para>
         /// </summary>
@@ -185,7 +185,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of the resource being snapshotted. This provides a
+        /// The Amazon Resource Name (ARN) of the resource being snapshotted. This provides a
         /// globally unique identifier for the resource across AWS. 
         /// </para>
         /// </summary>
@@ -204,8 +204,8 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        ///  The identifier of the specific resource being snapshotted. The format may vary depending
-        /// on the <c>ResourceType</c>. 
+        /// The identifier of the specific resource being snapshotted. The format might vary depending
+        /// on the ResourceType. 
         /// </para>
         /// </summary>
         public string ResourceId
@@ -223,8 +223,8 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property ResourceSnapshotTemplateName. 
         /// <para>
-        ///  The name of the template used for creating the snapshot. This is the same as the
-        /// template name. It defines the structure and content of the snapshot. 
+        /// The name of the template used for creating the snapshot. This is the same as the template
+        /// name. It defines the structure and content of the snapshot.
         /// </para>
         /// </summary>
         public string ResourceSnapshotTemplateName
@@ -242,8 +242,8 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        ///  The type of resource being snapshotted. This would have <c>Opportunity</c> as a value
-        /// as it is dependent on the supported resource type. 
+        /// The type of resource being snapshotted. This would have "Opportunity" as a value as
+        /// it is dependent on the supported resource type.
         /// </para>
         /// </summary>
         public ResourceType ResourceType
@@ -261,15 +261,15 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        ///  The current status of the snapshot job. Valid values: 
+        /// The current status of the snapshot job. Valid values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  STOPPED: The job is not currently running. 
+        /// STOPPED: The job is not currently running.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  RUNNING: The job is actively executing. 
+        /// RUNNING: The job is actively executing.
         /// </para>
         ///  </li> </ul>
         /// </summary>

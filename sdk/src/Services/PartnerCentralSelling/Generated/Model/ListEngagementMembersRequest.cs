@@ -31,10 +31,10 @@ namespace Amazon.PartnerCentralSelling.Model
 {
     /// <summary>
     /// Container for the parameters to the ListEngagementMembers operation.
-    /// Retrieves the details of member partners in an engagement. This operation can only
-    /// be invoked by members of the engagement. The <c>ListEngagementMembers</c> operation
-    /// allows you to fetch information about the members of a specific engagement. This action
-    /// is restricted to members of the engagement being queried.
+    /// Retrieves the details of member partners in an Engagement. This operation can only
+    /// be invoked by members of the Engagement. The <c>ListEngagementMembers</c> operation
+    /// allows you to fetch information about the members of a specific Engagement. This action
+    /// is restricted to members of the Engagement being queried.
     /// </summary>
     public partial class ListEngagementMembersRequest : AmazonPartnerCentralSellingRequest
     {
@@ -46,7 +46,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Catalog. 
         /// <para>
-        ///  The catalog related to the request. 
+        /// The catalog related to the request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -65,7 +65,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Identifier. 
         /// <para>
-        ///  Identifier of the engagement record to retrieve members from. 
+        /// Identifier of the Engagement record to retrieve members from.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -84,7 +84,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        ///  The maximum number of results to return in a single call. 
+        /// The maximum number of results to return in a single call.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
@@ -103,7 +103,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  The token for the next set of results. 
+        /// The token for the next set of results.
         /// </para>
         /// </summary>
         public string NextToken

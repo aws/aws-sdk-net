@@ -30,47 +30,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PartnerCentralSelling.Model
 {
     /// <summary>
-    /// This is the response object from the CreateResourceSnapshotJob operation.
+    /// This is the response object from the ListTagsForResource operation.
     /// </summary>
-    public partial class CreateResourceSnapshotJobResponse : AmazonWebServiceResponse
+    public partial class ListTagsForResourceResponse : AmazonWebServiceResponse
     {
-        private string _arn;
-        private string _id;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
-        /// Gets and sets the property Arn. 
+        /// Gets and sets the property Tags. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the created snapshot job.
+        /// A map of the key-value pairs for the tag or tags assigned to the specified resource.
         /// </para>
         /// </summary>
-        public string Arn
+        [AWSProperty(Required=true, Min=1, Max=200)]
+        public List<Tag> Tags
         {
-            get { return this._arn; }
-            set { this._arn = value; }
+            get { return this._tags; }
+            set { this._tags = value; }
         }
 
-        // Check to see if Arn property is set
-        internal bool IsSetArn()
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
         {
-            return this._arn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Id. 
-        /// <para>
-        /// The unique identifier for the created snapshot job.
-        /// </para>
-        /// </summary>
-        public string Id
-        {
-            get { return this._id; }
-            set { this._id = value; }
-        }
-
-        // Check to see if Id property is set
-        internal bool IsSetId()
-        {
-            return this._id != null;
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

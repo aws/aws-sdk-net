@@ -40,7 +40,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property EngagementSummaryList. 
         /// <para>
-        ///  An array of engagement summary objects. 
+        /// An array of engagement summary objects.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,7 +59,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  The token to retrieve the next set of results. This field will be null if there are
+        /// The token to retrieve the next set of results. This field will be null if there are
         /// no more results. 
         /// </para>
         /// </summary>

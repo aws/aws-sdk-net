@@ -67,7 +67,8 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property CreatedBy. 
         /// <para>
-        ///  The AWS account ID of the entity that created the association. 
+        /// The AWS account ID of the entity that owns the resource. Identifies the account responsible
+        /// for or having primary control over the resource. 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]

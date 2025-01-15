@@ -47,8 +47,18 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Catalog. 
         /// <para>
-        ///  Specifies the catalog in which to search for engagement-resource associations. 
+        /// Specifies the catalog in which to search for engagement-resource associations. Valid
+        /// Values: "AWS" or "Sandbox"
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>AWS</c> for production environments.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Sandbox</c> for testing and development purposes.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public string Catalog
@@ -66,8 +76,8 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property CreatedBy. 
         /// <para>
-        ///  Filters the results to include only associations with resources owned by the specified
-        /// AWS account. Use this when you want to find associations related to resources owned
+        /// Filters the response to include only snapshots of resources owned by the specified
+        /// AWS account ID. Use this when you want to find associations related to resources owned
         /// by a particular account. 
         /// </para>
         /// </summary>
@@ -87,9 +97,8 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property EngagementIdentifier. 
         /// <para>
-        ///  Filters the results to include only associations related to the specified engagement.
+        /// Filters the results to include only associations related to the specified engagement.
         /// Use this when you want to find all resources associated with a specific engagement.
-        /// 
         /// </para>
         /// </summary>
         public string EngagementIdentifier
@@ -107,8 +116,8 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        ///  Limits the number of results returned in a single call. Use this to control the number
-        /// of results returned, especially useful for pagination. 
+        /// Limits the number of results returned in a single call. Use this to control the number
+        /// of results returned, especially useful for pagination.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -127,8 +136,8 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  A token used for pagination of results. Include this token in subsequent requests
-        /// to retrieve the next set of results. 
+        /// A token used for pagination of results. Include this token in subsequent requests
+        /// to retrieve the next set of results.
         /// </para>
         /// </summary>
         public string NextToken
@@ -146,9 +155,9 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property ResourceIdentifier. 
         /// <para>
-        ///  Filters the results to include only associations with the specified resource. Varies
+        /// Filters the results to include only associations with the specified resource. Varies
         /// depending on the resource type. Use this when you want to find all engagements associated
-        /// with a specific resource. 
+        /// with a specific resource.
         /// </para>
         /// </summary>
         public string ResourceIdentifier

@@ -69,8 +69,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property EngagementInvitationId. 
         /// <para>
-        ///  The unique identifier of the engagement identifier created as a result of the task.
-        /// This field is populated when the task is completed successfully. 
+        /// The unique identifier of the Engagement Invitation.
         /// </para>
         /// </summary>
         public string EngagementInvitationId

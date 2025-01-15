@@ -48,8 +48,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of the snapshot. This globally unique identifier can
-        /// be used for resource-specific operations across AWS services. 
+        /// The Amazon Resource Name (ARN) that uniquely identifies the resource snapshot.
         /// </para>
         /// </summary>
         public string Arn
@@ -160,8 +159,8 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        ///  The identifier of the specific resource that was snapshotted. Matches the <c>ResourceIdentifier</c>
-        /// specified in the request. 
+        /// The identifier of the specific resource that was snapshotted. Matches the ResourceIdentifier
+        /// specified in the request.
         /// </para>
         /// </summary>
         public string ResourceId
@@ -179,8 +178,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property ResourceSnapshotTemplateName. 
         /// <para>
-        ///  The name of the view used for this snapshot. This is the same as the template name.
-        /// 
+        /// The name of the view used for this snapshot. This is the same as the template name.
         /// </para>
         /// </summary>
         public string ResourceSnapshotTemplateName
@@ -198,8 +196,8 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        ///  The type of the resource that was snapshotted. Matches the <c>ResourceType</c> specified
-        /// in the request. 
+        /// The type of the resource that was snapshotted. Matches the ResourceType specified
+        /// in the request.
         /// </para>
         /// </summary>
         public ResourceType ResourceType
@@ -217,8 +215,8 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Revision. 
         /// <para>
-        ///  The revision number of this snapshot. This is a positive integer that is sequential
-        /// and unique within the context of a resource view. 
+        /// The revision number of this snapshot. This is a positive integer that is sequential
+        /// and unique within the context of a resource view.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

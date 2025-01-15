@@ -122,7 +122,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property ResourceSnapshotJobId. 
         /// <para>
-        ///  The identifier of the resource snapshot job created as part of this task. 
+        /// The identifier of the Resource Snapshot Job created as part of this task.
         /// </para>
         /// </summary>
         public string ResourceSnapshotJobId

@@ -40,7 +40,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property SortBy. 
         /// <para>
-        ///  The field by which to sort the results. 
+        /// The field by which to sort the results.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,7 +59,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property SortOrder. 
         /// <para>
-        ///  The order in which to sort the results. 
+        /// The order in which to sort the results.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

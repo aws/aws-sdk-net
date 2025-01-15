@@ -30,32 +30,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PartnerCentralSelling.Model
 {
     /// <summary>
-    /// Represents the payload of an Engagement context. The structure of this payload varies
-    /// based on the context type specified in the EngagementContextDetails.
+    /// This is the response object from the UntagResource operation.
     /// </summary>
-    public partial class EngagementContextPayload
+    public partial class UntagResourceResponse : AmazonWebServiceResponse
     {
-        private CustomerProjectsContext _customerProject;
-
-        /// <summary>
-        /// Gets and sets the property CustomerProject. 
-        /// <para>
-        /// Contains detailed information about a customer project when the context type is "CustomerProject".
-        /// This field is present only when the Type in EngagementContextDetails is set to "CustomerProject".
-        /// 
-        /// </para>
-        /// </summary>
-        public CustomerProjectsContext CustomerProject
-        {
-            get { return this._customerProject; }
-            set { this._customerProject = value; }
-        }
-
-        // Check to see if CustomerProject property is set
-        internal bool IsSetCustomerProject()
-        {
-            return this._customerProject != null;
-        }
 
     }
 }

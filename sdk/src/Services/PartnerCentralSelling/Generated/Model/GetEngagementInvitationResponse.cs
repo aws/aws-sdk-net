@@ -94,7 +94,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property EngagementDescription. 
         /// <para>
-        ///  The description of the engagement associated with this invitation. 
+        /// The description of the engagement associated with this invitation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=255)]
@@ -113,8 +113,8 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property EngagementId. 
         /// <para>
-        ///  The identifier of the engagement associated with this invitation.This ID links the
-        /// invitation to its corresponding engagement. 
+        /// The identifier of the engagement associated with this invitation.This ID links the
+        /// invitation to its corresponding engagement.
         /// </para>
         /// </summary>
         public string EngagementId
@@ -152,17 +152,16 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property ExistingMembers. 
         /// <para>
-        ///  A list of active members currently part of the Engagement. This array contains a
-        /// maximum of 10 members, each represented by an object with the following properties.
-        /// 
+        /// A list of active members currently part of the Engagement. This array contains a maximum
+        /// of 10 members, each represented by an object with the following properties.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  CompanyName: The name of the member's company. 
+        /// CompanyName: The name of the member's company.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  WebsiteUrl: The website URL of the member's company. 
+        /// WebsiteUrl: The website URL of the member's company.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -237,7 +236,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property InvitationMessage. 
         /// <para>
-        ///  The message sent to the invited partner when the invitation was created. 
+        /// The message sent to the invited partner when the invitation was created.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

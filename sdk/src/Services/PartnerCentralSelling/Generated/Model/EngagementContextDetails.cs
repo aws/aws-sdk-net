@@ -41,7 +41,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Payload. 
         /// <para>
-        ///  Contains the specific details of the Engagement context. The structure of this payload
+        /// Contains the specific details of the Engagement context. The structure of this payload
         /// varies depending on the Type field. 
         /// </para>
         /// </summary>
@@ -60,7 +60,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        ///  Specifies the type of Engagement context. Valid values are "CustomerProject" or "Document",
+        /// Specifies the type of Engagement context. Valid values are "CustomerProject" or "Document",
         /// indicating whether the context relates to a customer project or a document respectively.
         /// 
         /// </para>

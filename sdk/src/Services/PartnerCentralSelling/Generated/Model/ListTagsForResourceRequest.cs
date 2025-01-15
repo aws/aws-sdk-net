@@ -30,47 +30,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PartnerCentralSelling.Model
 {
     /// <summary>
-    /// This is the response object from the CreateResourceSnapshotJob operation.
+    /// Container for the parameters to the ListTagsForResource operation.
+    /// Returns a list of tags for a resource.
     /// </summary>
-    public partial class CreateResourceSnapshotJobResponse : AmazonWebServiceResponse
+    public partial class ListTagsForResourceRequest : AmazonPartnerCentralSellingRequest
     {
-        private string _arn;
-        private string _id;
+        private string _resourceArn;
 
         /// <summary>
-        /// Gets and sets the property Arn. 
+        /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the created snapshot job.
+        /// The Amazon Resource Name (ARN) of the resource for which you want to retrieve tags.
         /// </para>
         /// </summary>
-        public string Arn
+        [AWSProperty(Required=true, Min=1, Max=1000)]
+        public string ResourceArn
         {
-            get { return this._arn; }
-            set { this._arn = value; }
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
         }
 
-        // Check to see if Arn property is set
-        internal bool IsSetArn()
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
         {
-            return this._arn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Id. 
-        /// <para>
-        /// The unique identifier for the created snapshot job.
-        /// </para>
-        /// </summary>
-        public string Id
-        {
-            get { return this._id; }
-            set { this._id = value; }
-        }
-
-        // Check to see if Id property is set
-        internal bool IsSetId()
-        {
-            return this._id != null;
+            return this._resourceArn != null;
         }
 
     }
