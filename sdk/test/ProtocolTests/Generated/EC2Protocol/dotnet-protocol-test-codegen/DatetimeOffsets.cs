@@ -52,7 +52,7 @@ namespace AWSSDK.ProtocolTests.AwsEc2
             var webResponseData = new WebResponseData();
             webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
             webResponseData.Headers["Content-Type"] = "text/xml;charset=UTF-8";
-            byte[] bytes = Encoding.ASCII.GetBytes("<DatetimeOffsetsResponse xmlns=\"https://example.com/\">\n    <datetime>2019-12-16T22:48:18-01:00</datetime>\n    <RequestId>requestid</RequestId>\n</DatetimeOffsetsResponse>\n");
+            byte[] bytes = Encoding.ASCII.GetBytes("<DatetimeOffsetsResponse xmlns=\"https://example.com/\">\n    <datetime>2019-12-16T22:48:18-01:00</datetime>\n    <requestId>requestid</requestId>\n</DatetimeOffsetsResponse>\n");
             var stream = new MemoryStream(bytes);
             var context = new XmlUnmarshallerContext(stream,true,webResponseData);
 
@@ -83,7 +83,7 @@ namespace AWSSDK.ProtocolTests.AwsEc2
             var webResponseData = new WebResponseData();
             webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
             webResponseData.Headers["Content-Type"] = "text/xml;charset=UTF-8";
-            byte[] bytes = Encoding.ASCII.GetBytes("<DatetimeOffsetsResponse xmlns=\"https://example.com/\">\n    <datetime>2019-12-17T00:48:18+01:00</datetime>\n    <RequestId>requestid</RequestId>\n</DatetimeOffsetsResponse>\n");
+            byte[] bytes = Encoding.ASCII.GetBytes("<DatetimeOffsetsResponse xmlns=\"https://example.com/\">\n    <datetime>2019-12-17T00:48:18+01:00</datetime>\n    <requestId>requestid</requestId>\n</DatetimeOffsetsResponse>\n");
             var stream = new MemoryStream(bytes);
             var context = new XmlUnmarshallerContext(stream,true,webResponseData);
 

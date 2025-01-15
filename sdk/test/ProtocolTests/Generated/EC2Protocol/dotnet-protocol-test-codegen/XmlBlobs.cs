@@ -51,7 +51,7 @@ namespace AWSSDK.ProtocolTests.AwsEc2
             var webResponseData = new WebResponseData();
             webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
             webResponseData.Headers["Content-Type"] = "text/xml;charset=UTF-8";
-            byte[] bytes = Encoding.ASCII.GetBytes("<XmlBlobsResponse xmlns=\"https://example.com/\">\n    <data>dmFsdWU=</data>\n    <RequestId>requestid</RequestId>\n</XmlBlobsResponse>\n");
+            byte[] bytes = Encoding.ASCII.GetBytes("<XmlBlobsResponse xmlns=\"https://example.com/\">\n    <data>dmFsdWU=</data>\n    <requestId>requestid</requestId>\n</XmlBlobsResponse>\n");
             var stream = new MemoryStream(bytes);
             var context = new XmlUnmarshallerContext(stream,true,webResponseData);
 

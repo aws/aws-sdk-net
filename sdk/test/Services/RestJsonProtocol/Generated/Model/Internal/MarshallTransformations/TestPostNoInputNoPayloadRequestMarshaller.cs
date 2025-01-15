@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// TestNoPayload Request Marshaller
+    /// TestPostNoInputNoPayload Request Marshaller
     /// </summary>       
-    public class TestNoPayloadRequestMarshaller : IMarshaller<IRequest, TestNoPayloadRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class TestPostNoInputNoPayloadRequestMarshaller : IMarshaller<IRequest, TestPostNoInputNoPayloadRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((TestNoPayloadRequest)input);
+            return this.Marshall((TestPostNoInputNoPayloadRequest)input);
         }
 
         /// <summary>
@@ -53,24 +53,19 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(TestNoPayloadRequest publicRequest)
+        public IRequest Marshall(TestPostNoInputNoPayloadRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.RestJsonProtocol");
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-12-16";
-            request.HttpMethod = "GET";
+            request.HttpMethod = "POST";
 
-            request.ResourcePath = "/no_payload";
-        
-            if (publicRequest.IsSetTestId()) 
-            {
-                request.Headers["X-Amz-Test-Id"] = publicRequest.TestId;
-            }
+            request.ResourcePath = "/no_input_no_payload";
 
             return request;
         }
-        private static TestNoPayloadRequestMarshaller _instance = new TestNoPayloadRequestMarshaller();        
+        private static TestPostNoInputNoPayloadRequestMarshaller _instance = new TestPostNoInputNoPayloadRequestMarshaller();        
 
-        internal static TestNoPayloadRequestMarshaller GetInstance()
+        internal static TestPostNoInputNoPayloadRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -78,7 +73,7 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static TestNoPayloadRequestMarshaller Instance
+        public static TestPostNoInputNoPayloadRequestMarshaller Instance
         {
             get
             {
