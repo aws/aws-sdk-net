@@ -114,6 +114,8 @@ namespace Amazon.Runtime.Internal.Util
         {
             int bytesRead = 0;
             ReadOnlySpan<byte> leftover = buffer.AsSpan().Slice((int)reader.BytesConsumed);
+            var data = Encoding.UTF8.GetString(buffer);
+            Console.WriteLine(data);
             if (reader.BytesConsumed < buffer.Length)
             {
                 // If BytesConsumed is 0 that means that the previous Read failed because the JSON token was too large to fit in the buffer.
