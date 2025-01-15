@@ -2,8 +2,14 @@
     "version": "2.0",
     "metadata": {
         "apiVersion": "2019-12-16",
+        "auth": [
+            "aws.auth#sigv4"
+        ],
         "endpointPrefix": "restxml",
         "protocol": "rest-xml",
+        "protocols": [
+            "rest-xml"
+        ],
         "serviceFullName": "Sample Rest Xml Protocol Service",
         "serviceId": "Rest Xml Protocol",
         "signatureVersion": "v4",
@@ -63,6 +69,23 @@
                 "shape": "ConstantQueryStringInput"
             },
             "documentation": "<p>This example uses a constant query string parameters and a label. This simply tests that labels and query string parameters are compatible. The fixed query string parameter named &quot;hello&quot; should in no way conflict with the label, <code>{hello}</code>.</p>"
+        },
+        "ContentTypeParameters": {
+            "name": "ContentTypeParameters",
+            "http": {
+                "method": "PUT",
+                "requestUri": "/ContentTypeParameters",
+                "responseCode": 200
+            },
+            "input": {
+                "shape": "ContentTypeParametersInput",
+                "locationName": "ContentTypeParametersRequest"
+            },
+            "output": {
+                "shape": "ContentTypeParametersOutput"
+            },
+            "documentation": "<p>The example tests how servers must support requests containing a <code>Content-Type</code> header with parameters.</p>",
+            "idempotent": true
         },
         "DatetimeOffsets": {
             "name": "DatetimeOffsets",
@@ -445,6 +468,22 @@
             },
             "documentation": "<p>The example tests how requests and responses are serialized when there is no input or output payload but there are HTTP header bindings.</p>"
         },
+        "NestedXmlMapWithXmlName": {
+            "name": "NestedXmlMapWithXmlName",
+            "http": {
+                "method": "POST",
+                "requestUri": "/NestedXmlMapWithXmlName",
+                "responseCode": 200
+            },
+            "input": {
+                "shape": "NestedXmlMapWithXmlNameInputOutput",
+                "locationName": "NestedXmlMapWithXmlNameRequest"
+            },
+            "output": {
+                "shape": "NestedXmlMapWithXmlNameInputOutput"
+            },
+            "documentation": "<p>Nested Xml Maps with key/values with @xmlName</p>"
+        },
         "NestedXmlMaps": {
             "name": "NestedXmlMaps",
             "http": {
@@ -494,7 +533,7 @@
             "output": {
                 "shape": "NullAndEmptyHeadersIO"
             },
-            "documentation": "<p>Null and empty headers are not sent over the wire.</p>"
+            "documentation": "<p>Null headers are not sent over the wire, empty headers are serialized to &quot;&quot;</p>"
         },
         "NullAndEmptyHeadersServer": {
             "name": "NullAndEmptyHeadersServer",
@@ -509,7 +548,7 @@
             "output": {
                 "shape": "NullAndEmptyHeadersIO"
             },
-            "documentation": "<p>Null and empty headers are not sent over the wire.</p>"
+            "documentation": "<p>Null headers are not sent over the wire, empty headers are serialized to &quot;&quot;</p>"
         },
         "OmitsNullSerializesEmptyString": {
             "name": "OmitsNullSerializesEmptyString",
@@ -1070,6 +1109,18 @@
                 }
             }
         },
+        "ContentTypeParametersInput": {
+            "type": "structure",
+            "members": {
+                "value": {
+                    "shape": "Integer"
+                }
+            }
+        },
+        "ContentTypeParametersOutput": {
+            "type": "structure",
+            "members": {}
+        },
         "DateTime": {
             "type": "timestamp",
             "timestampFormat": "iso8601"
@@ -1366,12 +1417,12 @@
                 "foo": {
                     "shape": "String",
                     "location": "header",
-                    "locationName": "X-Foo"
+                    "locationName": "x-foo"
                 },
                 "fooMap": {
                     "shape": "FooPrefixHeaders",
                     "location": "headers",
-                    "locationName": "X-Foo-"
+                    "locationName": "x-foo-"
                 }
             }
         },
@@ -1723,6 +1774,35 @@
                 "shape": "StringList"
             },
             "documentation": "<p>A list of lists of strings.</p>"
+        },
+        "NestedXmlMapWithXmlNameInnerMap": {
+            "type": "map",
+            "key": {
+                "shape": "String",
+                "locationName": "InnerKey"
+            },
+            "value": {
+                "shape": "String",
+                "locationName": "InnerValue"
+            }
+        },
+        "NestedXmlMapWithXmlNameInputOutput": {
+            "type": "structure",
+            "members": {
+                "nestedXmlMapWithXmlNameMap": {
+                    "shape": "NestedXmlMapWithXmlNameMap"
+                }
+            }
+        },
+        "NestedXmlMapWithXmlNameMap": {
+            "type": "map",
+            "key": {
+                "shape": "String",
+                "locationName": "OuterKey"
+            },
+            "value": {
+                "shape": "NestedXmlMapWithXmlNameInnerMap"
+            }
         },
         "NestedXmlMapsRequest": {
             "type": "structure",
