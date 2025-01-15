@@ -38,7 +38,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public <#=this.UnmarshallerBaseName #> Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse, ref StreamingUtf8JsonReader reader)
         {
-            if (!string.IsNullOrEmpty(context.ResponseBody))
+            if (context.Stream.Length > 0)
             {
                 context.Read(ref reader);
             }
@@ -62,7 +62,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 #>
         
             int targetDepth = context.CurrentDepth;
-            if (!string.IsNullOrEmpty(context.ResponseBody))
+            if (context.Stream.Length > 0)
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {

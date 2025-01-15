@@ -368,7 +368,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line default
             #line hidden
             this.Write("            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, fals" +
-                    "e, null))\r\n");
+                    "e, context.ResponseData))\r\n");
             
             #line 169 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
 

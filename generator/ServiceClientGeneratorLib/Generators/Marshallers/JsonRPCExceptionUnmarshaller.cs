@@ -104,7 +104,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write(@" Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse, ref StreamingUtf8JsonReader reader)
         {
-            if (!string.IsNullOrEmpty(context.ResponseBody))
+            if (context.Stream.Length > 0)
             {
                 context.Read(ref reader);
             }
@@ -171,9 +171,9 @@ namespace ServiceClientGenerator.Generators.Marshallers
             
             #line default
             #line hidden
-            this.Write("        \r\n            int targetDepth = context.CurrentDepth;\r\n            if (!s" +
-                    "tring.IsNullOrEmpty(context.ResponseBody))\r\n            {\r\n                while" +
-                    " (context.ReadAtDepth(targetDepth, ref reader))\r\n                {\r\n");
+            this.Write("        \r\n            int targetDepth = context.CurrentDepth;\r\n            if (co" +
+                    "ntext.Stream.Length > 0)\r\n            {\r\n                while (context.ReadAtDe" +
+                    "pth(targetDepth, ref reader))\r\n                {\r\n");
             
             #line 69 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCExceptionUnmarshaller.tt"
 
