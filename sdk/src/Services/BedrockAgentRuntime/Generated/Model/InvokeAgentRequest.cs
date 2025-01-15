@@ -31,11 +31,7 @@ namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
     /// Container for the parameters to the InvokeAgent operation.
-    /// <note> 
-    /// <para>
-    /// The CLI doesn't support streaming operations in Amazon Bedrock, including <c>InvokeAgent</c>.
-    /// </para>
-    ///  </note> 
+    /// <note> </note> 
     /// <para>
     /// Sends a prompt for the agent to process and respond to. Note the following fields
     /// for the request:
@@ -82,7 +78,12 @@ namespace Amazon.BedrockAgentRuntime.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// The response is returned in the <c>bytes</c> field of the <c>chunk</c> object.
+    /// The response contains both <b>chunk</b> and <b>trace</b> attributes.
+    /// </para>
+    ///  
+    /// <para>
+    /// The final response is returned in the <c>bytes</c> field of the <c>chunk</c> object.
+    /// The <c>InvokeAgent</c> returns one chunk for the entire interaction.
     /// </para>
     ///  <ul> <li> 
     /// <para>
