@@ -56,8 +56,8 @@ namespace AWSSDK.ProtocolTests.RestXml
                 FooMap = new Dictionary<string, string>()
                 {
 
-                    { "Abc", "Abc value" },
-                    { "Def", "Def value" },
+                    { "abc", "Abc value" },
+                    { "def", "Def value" },
                 },
             };
             var config = new AmazonRestXmlProtocolConfig
@@ -73,13 +73,13 @@ namespace AWSSDK.ProtocolTests.RestXml
             Assert.AreEqual("GET", marshalledRequest.HttpMethod);
             Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
             Assert.AreEqual("/HttpPrefixHeaders", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("Foo".Replace(" ",""), marshalledRequest.Headers["X-Foo"].Replace(" ",""));
-            Assert.AreEqual("Abc value".Replace(" ",""), marshalledRequest.Headers["X-Foo-Abc"].Replace(" ",""));
-            Assert.AreEqual("Def value".Replace(" ",""), marshalledRequest.Headers["X-Foo-Def"].Replace(" ",""));
+            Assert.AreEqual("Foo".Replace(" ",""), marshalledRequest.Headers["x-foo"].Replace(" ",""));
+            Assert.AreEqual("Abc value".Replace(" ",""), marshalledRequest.Headers["x-foo-abc"].Replace(" ",""));
+            Assert.AreEqual("Def value".Replace(" ",""), marshalledRequest.Headers["x-foo-def"].Replace(" ",""));
         }
 
         /// <summary>
-        /// No prefix headers are serialized because the value is empty
+        /// No prefix headers are serialized because the value is not present
         /// </summary>
         [TestMethod]
         [TestCategory("ProtocolTest")]
@@ -109,7 +109,41 @@ namespace AWSSDK.ProtocolTests.RestXml
             Assert.AreEqual("GET", marshalledRequest.HttpMethod);
             Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
             Assert.AreEqual("/HttpPrefixHeaders", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("Foo".Replace(" ",""), marshalledRequest.Headers["X-Foo"].Replace(" ",""));
+            Assert.AreEqual("Foo".Replace(" ",""), marshalledRequest.Headers["x-foo"].Replace(" ",""));
+        }
+
+        /// <summary>
+        /// Serialize prefix headers were the value is present but empty
+        /// </summary>
+        [TestMethod]
+        [TestCategory("ProtocolTest")]
+        [TestCategory("RequestTest")]
+        [TestCategory("RestXml")]
+        public void HttpPrefixEmptyHeadersRequest()
+        {
+            // Arrange
+            var request = new HttpPrefixHeadersRequest
+            {
+                FooMap = new Dictionary<string, string>()
+                {
+
+                    { "abc", "" },
+                },
+            };
+            var config = new AmazonRestXmlProtocolConfig
+            {
+              ServiceURL = "https://test.com/"
+            };
+
+            var marshaller = new HttpPrefixHeadersRequestMarshaller();
+            // Act
+            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+
+            // Assert
+            Assert.AreEqual("GET", marshalledRequest.HttpMethod);
+            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
+            Assert.AreEqual("/HttpPrefixHeaders", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
+            Assert.AreEqual("".Replace(" ",""), marshalledRequest.Headers["x-foo-abc"].Replace(" ",""));
         }
 
         /// <summary>
@@ -124,9 +158,9 @@ namespace AWSSDK.ProtocolTests.RestXml
             // Arrange
             var webResponseData = new WebResponseData();
             webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["X-Foo"] = "Foo";
-            webResponseData.Headers["X-Foo-Abc"] = "Abc value";
-            webResponseData.Headers["X-Foo-Def"] = "Def value";
+            webResponseData.Headers["x-foo"] = "Foo";
+            webResponseData.Headers["x-foo-abc"] = "Abc value";
+            webResponseData.Headers["x-foo-def"] = "Def value";
             byte[] bytes = Encoding.ASCII.GetBytes("");
             var stream = new MemoryStream(bytes);
             var context = new XmlUnmarshallerContext(stream,true,webResponseData);
@@ -139,8 +173,8 @@ namespace AWSSDK.ProtocolTests.RestXml
                 FooMap = new Dictionary<string, string>()
                 {
 
-                    { "Abc", "Abc value" },
-                    { "Def", "Def value" },
+                    { "abc", "Abc value" },
+                    { "def", "Def value" },
                 },
             };
 
@@ -162,7 +196,7 @@ namespace AWSSDK.ProtocolTests.RestXml
             // Arrange
             var webResponseData = new WebResponseData();
             webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["X-Foo"] = "Foo";
+            webResponseData.Headers["x-foo"] = "Foo";
             byte[] bytes = Encoding.ASCII.GetBytes("");
             var stream = new MemoryStream(bytes);
             var context = new XmlUnmarshallerContext(stream,true,webResponseData);

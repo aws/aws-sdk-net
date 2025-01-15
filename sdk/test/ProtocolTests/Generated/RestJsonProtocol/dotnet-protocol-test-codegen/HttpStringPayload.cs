@@ -40,6 +40,12 @@ namespace AWSSDK.ProtocolTests.RestJson
     [TestClass]
     public class HttpStringPayload
     {
+        /*
+        * This test either requires a breaking change and will be addressed
+        * in V4, or has a backlog item to be fixed in the future. Please
+        * refer to the VNextTests list to see which it is.
+        * */
+        [Ignore]
         [TestMethod]
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
@@ -66,6 +72,7 @@ namespace AWSSDK.ProtocolTests.RestJson
             Assert.AreEqual("POST", marshalledRequest.HttpMethod);
             Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
             Assert.AreEqual("/StringPayload", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
+            Assert.AreEqual("text/plain".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
         }
 
         [TestMethod]
@@ -77,6 +84,7 @@ namespace AWSSDK.ProtocolTests.RestJson
             // Arrange
             var webResponseData = new WebResponseData();
             webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
+            webResponseData.Headers["Content-Type"] = "text/plain";
             byte[] bytes = Encoding.ASCII.GetBytes("rawstring");
             var stream = new MemoryStream(bytes);
             var context = new JsonUnmarshallerContext(stream,true,webResponseData);

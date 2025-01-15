@@ -242,6 +242,41 @@ namespace Amazon.JSONRPC10
         #endregion
 
 
+        #region  ContentTypeParameters
+
+        internal virtual ContentTypeParametersResponse ContentTypeParameters(ContentTypeParametersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ContentTypeParametersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ContentTypeParametersResponseUnmarshaller.Instance;
+
+            return Invoke<ContentTypeParametersResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// The example tests how servers must support requests containing a <c>Content-Type</c>
+        /// header with parameters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ContentTypeParameters service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ContentTypeParameters service method, as returned by JSONRPC10.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-rpc-10-2020-07-14/ContentTypeParameters">REST API Reference for ContentTypeParameters Operation</seealso>
+        public virtual Task<ContentTypeParametersResponse> ContentTypeParametersAsync(ContentTypeParametersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ContentTypeParametersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ContentTypeParametersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ContentTypeParametersResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  EmptyInputAndEmptyOutput
 
         internal virtual EmptyInputAndEmptyOutputResponse EmptyInputAndEmptyOutput(EmptyInputAndEmptyOutputRequest request)

@@ -46,22 +46,22 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
             HttpPrefixHeadersResponse response = new HttpPrefixHeadersResponse();
-            if (context.ResponseData.IsHeaderPresent("X-Foo"))
-                response.Foo = context.ResponseData.GetHeaderValue("X-Foo");
-            //Map of headers with prefix "X-Foo-".
+            if (context.ResponseData.IsHeaderPresent("x-foo"))
+                response.Foo = context.ResponseData.GetHeaderValue("x-foo");
+            //Map of headers with prefix "x-foo-".
             var headersForFooMap = new Dictionary<string, string>();
             foreach (var nameFooMap in context.ResponseData.GetHeaderNames())
             {
                 var keyToUse = nameFooMap;
-                if("X-Foo-".Length > 0 && keyToUse.StartsWith("X-Foo-")) {
-                    keyToUse = keyToUse.Substring("X-Foo-".Length);
+                if("x-foo-".Length > 0 && keyToUse.StartsWith("x-foo-")) {
+                    keyToUse = keyToUse.Substring("x-foo-".Length);
                 }
 
-                if (context.ResponseData.IsHeaderPresent($"X-Foo-{keyToUse}"))
+                if (context.ResponseData.IsHeaderPresent($"x-foo-{keyToUse}"))
                 {
                     headersForFooMap.Add(
                         keyToUse,
-                        context.ResponseData.GetHeaderValue($"X-Foo-{keyToUse}")
+                        context.ResponseData.GetHeaderValue($"x-foo-{keyToUse}")
                     );
                 }
             }

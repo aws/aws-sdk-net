@@ -30,16 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RestJsonProtocol.Model
 {
     /// <summary>
-    /// Container for the parameters to the TestNoPayload operation.
-    /// This example operation serializes a request without an HTTP body.
-    /// 
-    ///  
-    /// <para>
-    /// These tests are to ensure we do not attach a body or related headers (Content-Length,
-    /// Content-Type) to operations that semantically cannot produce an HTTP body.
-    /// </para>
+    /// This is the response object from the TestGetNoInputNoPayload operation.
     /// </summary>
-    public partial class TestNoPayloadRequest : AmazonRestJsonProtocolRequest
+    public partial class TestGetNoInputNoPayloadResponse : AmazonWebServiceResponse
     {
         private string _testId;
 

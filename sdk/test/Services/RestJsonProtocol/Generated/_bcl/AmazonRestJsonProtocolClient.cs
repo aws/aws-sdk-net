@@ -371,6 +371,49 @@ namespace Amazon.RestJsonProtocol
 
         #endregion
         
+        #region  ContentTypeParameters
+
+
+        /// <summary>
+        /// The example tests how servers must support requests containing a <c>Content-Type</c>
+        /// header with parameters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ContentTypeParameters service method.</param>
+        /// 
+        /// <returns>The response from the ContentTypeParameters service method, as returned by RestJsonProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/ContentTypeParameters">REST API Reference for ContentTypeParameters Operation</seealso>
+        public virtual ContentTypeParametersResponse ContentTypeParameters(ContentTypeParametersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ContentTypeParametersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ContentTypeParametersResponseUnmarshaller.Instance;
+
+            return Invoke<ContentTypeParametersResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// The example tests how servers must support requests containing a <c>Content-Type</c>
+        /// header with parameters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ContentTypeParameters service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ContentTypeParameters service method, as returned by RestJsonProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/ContentTypeParameters">REST API Reference for ContentTypeParameters Operation</seealso>
+        public virtual Task<ContentTypeParametersResponse> ContentTypeParametersAsync(ContentTypeParametersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ContentTypeParametersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ContentTypeParametersResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ContentTypeParametersResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DatetimeOffsets
 
 
@@ -1939,7 +1982,7 @@ namespace Amazon.RestJsonProtocol
 
 
         /// <summary>
-        /// Null and empty headers are not sent over the wire.
+        /// Null headers are not sent over the wire, empty headers are serialized to &quot;&quot;
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the NullAndEmptyHeadersClient service method.</param>
         /// 
@@ -1956,7 +1999,7 @@ namespace Amazon.RestJsonProtocol
 
 
         /// <summary>
-        /// Null and empty headers are not sent over the wire.
+        /// Null headers are not sent over the wire, empty headers are serialized to &quot;&quot;
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the NullAndEmptyHeadersClient service method.</param>
         /// <param name="cancellationToken">
@@ -1980,7 +2023,7 @@ namespace Amazon.RestJsonProtocol
 
 
         /// <summary>
-        /// Null and empty headers are not sent over the wire.
+        /// Null headers are not sent over the wire, empty headers are serialized to &quot;&quot;
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the NullAndEmptyHeadersServer service method.</param>
         /// 
@@ -1997,7 +2040,7 @@ namespace Amazon.RestJsonProtocol
 
 
         /// <summary>
-        /// Null and empty headers are not sent over the wire.
+        /// Null headers are not sent over the wire, empty headers are serialized to &quot;&quot;
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the NullAndEmptyHeadersServer service method.</param>
         /// <param name="cancellationToken">
@@ -2347,6 +2390,88 @@ namespace Amazon.RestJsonProtocol
 
         #endregion
         
+        #region  ResponseCodeHttpFallback
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResponseCodeHttpFallback service method.</param>
+        /// 
+        /// <returns>The response from the ResponseCodeHttpFallback service method, as returned by RestJsonProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/ResponseCodeHttpFallback">REST API Reference for ResponseCodeHttpFallback Operation</seealso>
+        public virtual ResponseCodeHttpFallbackResponse ResponseCodeHttpFallback(ResponseCodeHttpFallbackRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ResponseCodeHttpFallbackRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResponseCodeHttpFallbackResponseUnmarshaller.Instance;
+
+            return Invoke<ResponseCodeHttpFallbackResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResponseCodeHttpFallback service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ResponseCodeHttpFallback service method, as returned by RestJsonProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/ResponseCodeHttpFallback">REST API Reference for ResponseCodeHttpFallback Operation</seealso>
+        public virtual Task<ResponseCodeHttpFallbackResponse> ResponseCodeHttpFallbackAsync(ResponseCodeHttpFallbackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ResponseCodeHttpFallbackRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResponseCodeHttpFallbackResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ResponseCodeHttpFallbackResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ResponseCodeRequired
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResponseCodeRequired service method.</param>
+        /// 
+        /// <returns>The response from the ResponseCodeRequired service method, as returned by RestJsonProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/ResponseCodeRequired">REST API Reference for ResponseCodeRequired Operation</seealso>
+        public virtual ResponseCodeRequiredResponse ResponseCodeRequired(ResponseCodeRequiredRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ResponseCodeRequiredRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResponseCodeRequiredResponseUnmarshaller.Instance;
+
+            return Invoke<ResponseCodeRequiredResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResponseCodeRequired service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ResponseCodeRequired service method, as returned by RestJsonProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/ResponseCodeRequired">REST API Reference for ResponseCodeRequired Operation</seealso>
+        public virtual Task<ResponseCodeRequiredResponse> ResponseCodeRequiredAsync(ResponseCodeRequiredRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ResponseCodeRequiredRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResponseCodeRequiredResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ResponseCodeRequiredResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  SimpleScalarProperties
 
 
@@ -2441,11 +2566,11 @@ namespace Amazon.RestJsonProtocol
 
         #endregion
         
-        #region  TestNoPayload
+        #region  TestGetNoInputNoPayload
 
 
         /// <summary>
-        /// This example operation serializes a request without an HTTP body.
+        /// This example GET operation has no input and serializes a request without a HTTP body.
         /// 
         ///  
         /// <para>
@@ -2453,22 +2578,22 @@ namespace Amazon.RestJsonProtocol
         /// Content-Type) to operations that semantically cannot produce an HTTP body.
         /// </para>
         /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the TestNoPayload service method.</param>
+        /// <param name="request">Container for the necessary parameters to execute the TestGetNoInputNoPayload service method.</param>
         /// 
-        /// <returns>The response from the TestNoPayload service method, as returned by RestJsonProtocol.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/TestNoPayload">REST API Reference for TestNoPayload Operation</seealso>
-        public virtual TestNoPayloadResponse TestNoPayload(TestNoPayloadRequest request)
+        /// <returns>The response from the TestGetNoInputNoPayload service method, as returned by RestJsonProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/TestGetNoInputNoPayload">REST API Reference for TestGetNoInputNoPayload Operation</seealso>
+        public virtual TestGetNoInputNoPayloadResponse TestGetNoInputNoPayload(TestGetNoInputNoPayloadRequest request)
         {
             var options = new InvokeOptions();
-            options.RequestMarshaller = TestNoPayloadRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = TestNoPayloadResponseUnmarshaller.Instance;
+            options.RequestMarshaller = TestGetNoInputNoPayloadRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TestGetNoInputNoPayloadResponseUnmarshaller.Instance;
 
-            return Invoke<TestNoPayloadResponse>(request, options);
+            return Invoke<TestGetNoInputNoPayloadResponse>(request, options);
         }
 
 
         /// <summary>
-        /// This example operation serializes a request without an HTTP body.
+        /// This example GET operation has no input and serializes a request without a HTTP body.
         /// 
         ///  
         /// <para>
@@ -2476,20 +2601,73 @@ namespace Amazon.RestJsonProtocol
         /// Content-Type) to operations that semantically cannot produce an HTTP body.
         /// </para>
         /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the TestNoPayload service method.</param>
+        /// <param name="request">Container for the necessary parameters to execute the TestGetNoInputNoPayload service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
-        /// <returns>The response from the TestNoPayload service method, as returned by RestJsonProtocol.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/TestNoPayload">REST API Reference for TestNoPayload Operation</seealso>
-        public virtual Task<TestNoPayloadResponse> TestNoPayloadAsync(TestNoPayloadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        /// <returns>The response from the TestGetNoInputNoPayload service method, as returned by RestJsonProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/TestGetNoInputNoPayload">REST API Reference for TestGetNoInputNoPayload Operation</seealso>
+        public virtual Task<TestGetNoInputNoPayloadResponse> TestGetNoInputNoPayloadAsync(TestGetNoInputNoPayloadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
-            options.RequestMarshaller = TestNoPayloadRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = TestNoPayloadResponseUnmarshaller.Instance;
+            options.RequestMarshaller = TestGetNoInputNoPayloadRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TestGetNoInputNoPayloadResponseUnmarshaller.Instance;
             
-            return InvokeAsync<TestNoPayloadResponse>(request, options, cancellationToken);
+            return InvokeAsync<TestGetNoInputNoPayloadResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  TestGetNoPayload
+
+
+        /// <summary>
+        /// This example GET operation serializes a request without a modeled HTTP body.
+        /// 
+        ///  
+        /// <para>
+        /// These tests are to ensure we do not attach a body or related headers (Content-Length,
+        /// Content-Type) to operations that semantically cannot produce an HTTP body.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TestGetNoPayload service method.</param>
+        /// 
+        /// <returns>The response from the TestGetNoPayload service method, as returned by RestJsonProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/TestGetNoPayload">REST API Reference for TestGetNoPayload Operation</seealso>
+        public virtual TestGetNoPayloadResponse TestGetNoPayload(TestGetNoPayloadRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TestGetNoPayloadRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TestGetNoPayloadResponseUnmarshaller.Instance;
+
+            return Invoke<TestGetNoPayloadResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// This example GET operation serializes a request without a modeled HTTP body.
+        /// 
+        ///  
+        /// <para>
+        /// These tests are to ensure we do not attach a body or related headers (Content-Length,
+        /// Content-Type) to operations that semantically cannot produce an HTTP body.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TestGetNoPayload service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TestGetNoPayload service method, as returned by RestJsonProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/TestGetNoPayload">REST API Reference for TestGetNoPayload Operation</seealso>
+        public virtual Task<TestGetNoPayloadResponse> TestGetNoPayloadAsync(TestGetNoPayloadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TestGetNoPayloadRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TestGetNoPayloadResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<TestGetNoPayloadResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2598,6 +2776,112 @@ namespace Amazon.RestJsonProtocol
             options.ResponseUnmarshaller = TestPayloadStructureResponseUnmarshaller.Instance;
             
             return InvokeAsync<TestPayloadStructureResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  TestPostNoInputNoPayload
+
+
+        /// <summary>
+        /// This example POST operation has no input and serializes a request without a HTTP body.
+        /// 
+        ///  
+        /// <para>
+        /// These tests are to ensure we do not attach a body or related headers (Content-Type)
+        /// to a POST operation with no modeled input.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TestPostNoInputNoPayload service method.</param>
+        /// 
+        /// <returns>The response from the TestPostNoInputNoPayload service method, as returned by RestJsonProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/TestPostNoInputNoPayload">REST API Reference for TestPostNoInputNoPayload Operation</seealso>
+        public virtual TestPostNoInputNoPayloadResponse TestPostNoInputNoPayload(TestPostNoInputNoPayloadRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TestPostNoInputNoPayloadRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TestPostNoInputNoPayloadResponseUnmarshaller.Instance;
+
+            return Invoke<TestPostNoInputNoPayloadResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// This example POST operation has no input and serializes a request without a HTTP body.
+        /// 
+        ///  
+        /// <para>
+        /// These tests are to ensure we do not attach a body or related headers (Content-Type)
+        /// to a POST operation with no modeled input.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TestPostNoInputNoPayload service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TestPostNoInputNoPayload service method, as returned by RestJsonProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/TestPostNoInputNoPayload">REST API Reference for TestPostNoInputNoPayload Operation</seealso>
+        public virtual Task<TestPostNoInputNoPayloadResponse> TestPostNoInputNoPayloadAsync(TestPostNoInputNoPayloadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TestPostNoInputNoPayloadRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TestPostNoInputNoPayloadResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<TestPostNoInputNoPayloadResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  TestPostNoPayload
+
+
+        /// <summary>
+        /// This example POST operation serializes a request without a modeled HTTP body.
+        /// 
+        ///  
+        /// <para>
+        /// These tests are to ensure we do not attach a body or related headers (Content-Type)
+        /// to a POST operation with no modeled payload.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TestPostNoPayload service method.</param>
+        /// 
+        /// <returns>The response from the TestPostNoPayload service method, as returned by RestJsonProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/TestPostNoPayload">REST API Reference for TestPostNoPayload Operation</seealso>
+        public virtual TestPostNoPayloadResponse TestPostNoPayload(TestPostNoPayloadRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TestPostNoPayloadRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TestPostNoPayloadResponseUnmarshaller.Instance;
+
+            return Invoke<TestPostNoPayloadResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// This example POST operation serializes a request without a modeled HTTP body.
+        /// 
+        ///  
+        /// <para>
+        /// These tests are to ensure we do not attach a body or related headers (Content-Type)
+        /// to a POST operation with no modeled payload.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TestPostNoPayload service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TestPostNoPayload service method, as returned by RestJsonProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/TestPostNoPayload">REST API Reference for TestPostNoPayload Operation</seealso>
+        public virtual Task<TestPostNoPayloadResponse> TestPostNoPayloadAsync(TestPostNoPayloadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TestPostNoPayloadRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TestPostNoPayloadResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<TestPostNoPayloadResponse>(request, options, cancellationToken);
         }
 
         #endregion

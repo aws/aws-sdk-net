@@ -66,6 +66,7 @@ namespace AWSSDK.ProtocolTests.RestXml
             Assert.AreEqual("POST", marshalledRequest.HttpMethod);
             Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
             Assert.AreEqual("/EnumPayload", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
+            Assert.AreEqual("text/plain".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
         }
 
         [TestMethod]
@@ -77,6 +78,7 @@ namespace AWSSDK.ProtocolTests.RestXml
             // Arrange
             var webResponseData = new WebResponseData();
             webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
+            webResponseData.Headers["Content-Type"] = "text/plain";
             byte[] bytes = Encoding.ASCII.GetBytes("enumvalue");
             var stream = new MemoryStream(bytes);
             var context = new XmlUnmarshallerContext(stream,true,webResponseData);

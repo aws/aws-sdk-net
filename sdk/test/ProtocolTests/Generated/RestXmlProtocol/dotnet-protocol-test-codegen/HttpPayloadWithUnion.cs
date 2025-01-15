@@ -100,7 +100,6 @@ namespace AWSSDK.ProtocolTests.RestXml
             Assert.AreEqual("PUT", marshalledRequest.HttpMethod);
             Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
             Assert.AreEqual("/HttpPayloadWithUnion", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/xml".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
         }
 
         /// <summary>

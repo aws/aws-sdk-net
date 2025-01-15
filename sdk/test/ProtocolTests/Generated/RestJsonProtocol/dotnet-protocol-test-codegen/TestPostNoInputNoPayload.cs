@@ -37,19 +37,20 @@ using System.Text;
 namespace AWSSDK.ProtocolTests.RestJson
 {
     [TestClass]
-    public class TestNoPayload
+    public class TestPostNoInputNoPayload
     {
         /// <summary>
-        /// Serializes a GET request with no modeled body
+        /// Serializes a POST request for an operation with no input, and
+        /// therefore no modeled body
         /// </summary>
         [TestMethod]
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("RestJson")]
-        public void RestJsonHttpWithNoModeledBodyRequest()
+        public void RestJsonHttpPostWithNoInputRequest()
         {
             // Arrange
-            var request = new TestNoPayloadRequest
+            var request = new TestPostNoInputNoPayloadRequest
             {
             };
             var config = new AmazonRestJsonProtocolConfig
@@ -57,47 +58,14 @@ namespace AWSSDK.ProtocolTests.RestJson
               ServiceURL = "https://test.com/"
             };
 
-            var marshaller = new TestNoPayloadRequestMarshaller();
+            var marshaller = new TestPostNoInputNoPayloadRequestMarshaller();
             // Act
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
 
             // Assert
-            Assert.AreEqual("GET", marshalledRequest.HttpMethod);
+            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
             Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/no_payload", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.IsFalse(marshalledRequest.Headers.ContainsKey("Content-Length"));
-            Assert.IsFalse(marshalledRequest.Headers.ContainsKey("Content-Type"));
-        }
-
-        /// <summary>
-        /// Serializes a GET request with header member but no modeled body
-        /// </summary>
-        [TestMethod]
-        [TestCategory("ProtocolTest")]
-        [TestCategory("RequestTest")]
-        [TestCategory("RestJson")]
-        public void RestJsonHttpWithHeaderMemberNoModeledBodyRequest()
-        {
-            // Arrange
-            var request = new TestNoPayloadRequest
-            {
-                TestId = "t-12345",
-            };
-            var config = new AmazonRestJsonProtocolConfig
-            {
-              ServiceURL = "https://test.com/"
-            };
-
-            var marshaller = new TestNoPayloadRequestMarshaller();
-            // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
-
-            // Assert
-            Assert.AreEqual("GET", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/no_payload", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("t-12345".Replace(" ",""), marshalledRequest.Headers["X-Amz-Test-Id"].Replace(" ",""));
-            Assert.IsFalse(marshalledRequest.Headers.ContainsKey("Content-Length"));
+            Assert.AreEqual("/no_input_no_payload", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
             Assert.IsFalse(marshalledRequest.Headers.ContainsKey("Content-Type"));
         }
 
