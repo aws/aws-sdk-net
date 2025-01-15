@@ -62,8 +62,8 @@ namespace Amazon.DynamoDBv2.DataModel
                         }
 
                         var msg = string.Format(CultureInfo.CurrentCulture,
-                            "Assembly {0} could not be found or loaded. This assembly must be available at runtime to use Amazon.Runtime.AssumeRoleAWSCredentials.",
-                            ServiceClientHelpers.STS_ASSEMBLY_NAME);
+                            "Assembly {0} could not be found or loaded. This assembly must be available at runtime to use the DynamoDB feature S3 Link.",
+                            ServiceClientHelpers.S3_ASSEMBLY_NAME);
                         var exception = new InvalidOperationException(msg, e);
                         Logger.GetLogger(typeof(S3ClientCache)).Error(exception, exception.Message);
                         throw exception;
