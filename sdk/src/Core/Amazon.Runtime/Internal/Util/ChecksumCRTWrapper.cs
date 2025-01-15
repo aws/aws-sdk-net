@@ -37,6 +37,20 @@ namespace AWSSDK.Runtime.Internal.Util
         private static readonly object _lock = new object();
         private static volatile IChecksumProvider _instance;
 
+        /// <summary>
+        /// Returns whether the CRT checksum implementation is available for the .NET SDK to use.
+        /// </summary>
+        public static bool IsCrtAvailable()
+        {
+            try
+            {
+                return Instance != null;
+            }
+            catch (AWSCommonRuntimeException)
+            {
+                return false;
+            }
+        }
 
 #if NET8_0_OR_GREATER
         [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("ReflectionAnalysis", "IL2026",

@@ -59,7 +59,7 @@ namespace Amazon.Util
                     return CryptoUtil.CreateSHA256Instance();
 
                 case CoreChecksumAlgorithm.CRC32:
-                    return new CrtCrc32();
+                    return new Crc32Managed();
 
                 case CoreChecksumAlgorithm.CRC32C:
                     return new CrtCrc32c();
@@ -192,7 +192,8 @@ namespace Amazon.Util
             /// <returns>CRC32 hash as a base64-encoded string</returns>
             public string ComputeCRC32Hash(byte[] data)
             {
-                return ChecksumCRTWrapper.Crc32(data);
+                var hashed = new Crc32Managed().ComputeHash(data);
+                return Convert.ToBase64String(hashed);
             }
 
             /// <summary>
