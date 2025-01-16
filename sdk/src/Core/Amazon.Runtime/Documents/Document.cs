@@ -17,9 +17,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Linq;
 using ThirdParty.Json.LitJson;
+using ThirdParty.RuntimeBackports;
 
 namespace Amazon.Runtime.Documents
 {
@@ -410,9 +412,7 @@ namespace Amazon.Runtime.Documents
         /// for performance critical work.  Additionally, if <paramref name="o"/> is a known primitive (ie <see cref="int"/>),
         /// using a <see cref="Document"/> constructor directly will be more performant.
         /// </summary> 
-#if NET8_0_OR_GREATER
-        [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("FromObject is not currently supported for Native AOT compilation due unbounded reflection required.")]
-#endif
+        [RequiresUnreferencedCode("FromObject is not currently supported for Native AOT compilation due unbounded reflection required.")]
         public static Document FromObject(object o)
         {
             IJsonWrapper jsonData = JsonMapper.ToObject(JsonMapper.ToJson(o));
@@ -420,9 +420,7 @@ namespace Amazon.Runtime.Documents
             return FromObject(jsonData);
         }
 
-#if NET8_0_OR_GREATER
-        [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("FromObject is not currently supported for Native AOT compilation due unbounded reflection required.")]
-#endif  
+        [RequiresUnreferencedCode("FromObject is not currently supported for Native AOT compilation due unbounded reflection required.")]
         private static Document FromObject(IJsonWrapper jsonData)
         {
             switch (jsonData.GetJsonType())
@@ -450,9 +448,7 @@ namespace Amazon.Runtime.Documents
             throw new NotSupportedException($"Couldn't convert {jsonData.GetJsonType()}");
         }
 
-#if NET8_0_OR_GREATER
-        [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("FromObject is not currently supported for Native AOT compilation due unbounded reflection required.")]
-#endif  
+        [RequiresUnreferencedCode("FromObject is not currently supported for Native AOT compilation due unbounded reflection required.")]
         private static void Copy(IDictionary source, Dictionary<string, Document> target)
         {
             foreach (var key in source.Keys)

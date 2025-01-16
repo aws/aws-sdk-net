@@ -18,6 +18,8 @@ using System.Collections.Generic;
 using Amazon.DynamoDBv2.DocumentModel;
 using System.Globalization;
 using Amazon.Runtime.Telemetry.Tracing;
+using System.Diagnostics.CodeAnalysis;
+using ThirdParty.RuntimeBackports;
 
 #if AWS_ASYNC_API
 using System.Threading.Tasks;
@@ -38,7 +40,8 @@ namespace Amazon.DynamoDBv2.DataModel
     /// Represents a generic interface for writing/deleting a batch of items
     /// in a single DynamoDB table
     /// </summary>
-    public interface IBatchWrite<T> : IBatchWrite
+    public interface IBatchWrite<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T> : IBatchWrite
+
     {
         /// <summary>
         /// Creates a MultiTableBatchWrite object that is a combination
@@ -106,7 +109,7 @@ namespace Amazon.DynamoDBv2.DataModel
     /// Represents a strongly-typed object for writing/deleting a batch of items
     /// in a single DynamoDB table
     /// </summary>
-    public partial class BatchWrite<T> : BatchWrite, IBatchWrite<T>
+    public partial class BatchWrite<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T> : BatchWrite, IBatchWrite<T>
     {
         private readonly DynamoDBContext _context;
         private readonly DynamoDBFlatConfig _config;
@@ -117,7 +120,7 @@ namespace Amazon.DynamoDBv2.DataModel
         {
         }
 
-        internal BatchWrite(DynamoDBContext context, Type valuesType, DynamoDBFlatConfig config)
+        internal BatchWrite(DynamoDBContext context, [DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type valuesType, DynamoDBFlatConfig config)
         {
             _context = context;
             _config = config;

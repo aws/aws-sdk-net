@@ -14,7 +14,9 @@
  */
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using ThirdParty.RuntimeBackports;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
@@ -176,7 +178,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Converter must be the type of a class that implements IPropertyConverter.
         /// </summary>
         /// <param name="converter">Custom converter type.</param>
-        public DynamoDBPropertyAttribute(Type converter)
+        public DynamoDBPropertyAttribute([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors | DynamicallyAccessedMemberTypes.Interfaces)] Type converter)
         {
             Converter = converter;
         }
@@ -203,7 +205,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Name of attribute to be associated with property or field.
         /// </param>
         /// <param name="converter">Custom converter type.</param>
-        public DynamoDBPropertyAttribute(string attributeName, Type converter)
+        public DynamoDBPropertyAttribute(string attributeName, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors | DynamicallyAccessedMemberTypes.Interfaces)] Type converter)
             : base(attributeName)
         {
             Converter = converter;
@@ -230,6 +232,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Type of the custom converter.
         /// Cannot be set at the same time as StoreAsEpoch.
         /// </summary>
+        [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors | DynamicallyAccessedMemberTypes.Interfaces)]
         public Type Converter { get; set; }
 
         /// <summary>
@@ -275,7 +278,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Converter must be the type of a class that implements IPropertyConverter.
         /// </summary>
         /// <param name="converter">Custom converter type.</param>
-        public DynamoDBHashKeyAttribute(Type converter)
+        public DynamoDBHashKeyAttribute([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors | DynamicallyAccessedMemberTypes.Interfaces)] Type converter)
             : base(converter)
         {
         }
@@ -289,7 +292,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Name of attribute to be associated with property or field.
         /// </param>
         /// <param name="converter">Custom converter type.</param>
-        public DynamoDBHashKeyAttribute(string attributeName, Type converter)
+        public DynamoDBHashKeyAttribute(string attributeName, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors | DynamicallyAccessedMemberTypes.Interfaces)] Type converter)
             : base(attributeName, converter)
         {
         }
@@ -330,7 +333,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Converter must be the type of a class that implements IPropertyConverter.
         /// </summary>
         /// <param name="converter">Custom converter type.</param>
-        public DynamoDBRangeKeyAttribute(Type converter)
+        public DynamoDBRangeKeyAttribute([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors | DynamicallyAccessedMemberTypes.Interfaces)] Type converter)
             : base(converter)
         {
         }
@@ -344,7 +347,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Name of attribute to be associated with property or field.
         /// </param>
         /// <param name="converter">Custom converter type.</param>
-        public DynamoDBRangeKeyAttribute(string attributeName, Type converter)
+        public DynamoDBRangeKeyAttribute(string attributeName, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors | DynamicallyAccessedMemberTypes.Interfaces)] Type converter)
             : base(attributeName, converter)
         {
         }

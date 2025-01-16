@@ -13,10 +13,17 @@
  * permissions and limitations under the License.
  */
 
-namespace Amazon.DynamoDBv2.Custom.Internal
+using System.Diagnostics.CodeAnalysis;
+using ThirdParty.RuntimeBackports;
+
+namespace Amazon.DynamoDBv2
 {
     internal static class InternalConstants
     {
-        internal const string RequiresUnreferencedCodeMessage = "The Amazon DynamoDB high level libraries in the DataModel namespace have not been updated to support Native AOT.";
+        /// <summary>
+        /// This is DynamicallyAccessedMemberTypes value that must be used whenever identifing the System.Type that users will
+        /// use to the DataModel library for loading and saving data.
+        /// </summary>
+        internal const DynamicallyAccessedMemberTypes DataModelModeledType = DynamicallyAccessedMemberTypes.All;
     }
 }

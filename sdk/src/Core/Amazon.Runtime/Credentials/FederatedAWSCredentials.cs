@@ -21,7 +21,9 @@ using Amazon.Runtime.SharedInterfaces;
 using Amazon.Util;
 using Amazon.RuntimeDependencies;
 using Amazon.Util.Internal;
+using ThirdParty.RuntimeBackports;
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Net;
@@ -177,10 +179,8 @@ namespace Amazon.Runtime
             return newState;
         }
 
-#if NET8_0_OR_GREATER
-        [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("ReflectionAnalysis", "IL2026",
+        [UnconditionalSuppressMessage("ReflectionAnalysis", "IL2026",
             Justification = "Reflection code is only used as a fallback in case the SDK was not trimmed. Trimmed scenarios should register dependencies with Amazon.RuntimeDependencyRegistry.GlobalRuntimeDependencyRegistry")]
-#endif
         private CredentialsRefreshState Authenticate(ICredentials userCredential)
         {
             CredentialsRefreshState state;

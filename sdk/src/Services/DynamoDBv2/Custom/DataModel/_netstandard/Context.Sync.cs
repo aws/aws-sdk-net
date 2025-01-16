@@ -14,8 +14,10 @@
  */
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 
 using Amazon.DynamoDBv2.DocumentModel;
+using ThirdParty.RuntimeBackports;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
@@ -24,20 +26,20 @@ namespace Amazon.DynamoDBv2.DataModel
         #region Table methods
 
         /// <inheritdoc/>
-        public ITable GetTargetTable<T>()
+        public ITable GetTargetTable<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>()
         {
             return GetTargetTableInternal<T>(new DynamoDBFlatConfig(null, Config));
         }
 
         /// <inheritdoc/>
         [Obsolete("Use the GetTargetTable overload that takes GetTargetTableConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to GetTargetTable.")]
-        public ITable GetTargetTable<T>(DynamoDBOperationConfig operationConfig = null)
+        public ITable GetTargetTable<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(DynamoDBOperationConfig operationConfig = null)
         {
             return GetTargetTableInternal<T>(new DynamoDBFlatConfig(operationConfig, Config));
         }
 
         /// <inheritdoc/>
-        public ITable GetTargetTable<T>(GetTargetTableConfig getTargetTableConfig)
+        public ITable GetTargetTable<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(GetTargetTableConfig getTargetTableConfig)
         {
             return GetTargetTableInternal<T>(new DynamoDBFlatConfig(getTargetTableConfig?.ToDynamoDBOperationConfig(), Config));
         }

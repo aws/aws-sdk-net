@@ -25,6 +25,7 @@ using Amazon.Util.Internal;
 using System.Globalization;
 using System.Collections;
 using Amazon.DynamoDBv2.DocumentModel;
+using ThirdParty.RuntimeBackports;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
@@ -157,12 +158,8 @@ namespace Amazon.DynamoDBv2.DataModel
             throw new InvalidOperationException("Version property must be of primitive, numeric, integer, nullable type (e.g. int?, long?, byte?)");
         }
 
-#if NET8_0_OR_GREATER
         [return: DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)]
         internal static Type GetPrimitiveElementType(Type collectionType)
-#else
-        internal static Type GetPrimitiveElementType(Type collectionType)
-#endif
         {
             var elementType = Utils.GetElementType(collectionType);
 
@@ -175,16 +172,12 @@ namespace Amazon.DynamoDBv2.DataModel
             throw new InvalidOperationException("Unable to determine element type");
         }
 
-#if NET8_0_OR_GREATER
-        [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("ReflectionAnalysis", "IL2073",
-            Justification = "By the time the DynamoDB high level libraries got to this code path the collection type with the generic type would have already been found by the compiler preventing the element type from being trimmed.")]
-        [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("ReflectionAnalysis", "IL2063",
-            Justification = "By the time the DynamoDB high level libraries got to this code path the collection type with the generic type would have already been found by the compiler preventing the element type from being trimmed.")]
-        [return: DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors | DynamicallyAccessedMemberTypes.Interfaces)]
+        [UnconditionalSuppressMessage("ReflectionAnalysis", "IL2073",
+            Justification = "The user's type has been annotated with DynamicallyAccessedMemberTypes.All with the public API into the library. At this point the type will not be trimmed.")]
+        [UnconditionalSuppressMessage("ReflectionAnalysis", "IL2063",
+            Justification = "The user's type has been annotated with DynamicallyAccessedMemberTypes.All with the public API into the library. At this point the type will not be trimmed.")]
+        [return: DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)]
         internal static Type GetElementType(Type collectionType)
-#else
-        internal static Type GetElementType(Type collectionType)
-#endif
         {
             var elementType = collectionType.GetElementType();
 
@@ -199,22 +192,14 @@ namespace Amazon.DynamoDBv2.DataModel
             return elementType;
         }
 
-#if NET8_0_OR_GREATER
         internal static bool ItemsToCollection([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type targetType, IEnumerable<object> items, out object result)
-#else
-        internal static bool ItemsToCollection(Type targetType, IEnumerable<object> items, out object result)
-#endif
         {
             return targetType.IsArray ?
                 ItemsToArray(targetType, items, out result):  //targetType is Array
                 ItemsToIList(targetType, items, out result);  //targetType is IList or has Add method.
         }
 
-#if NET8_0_OR_GREATER
         private static bool ItemsToIList([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type targetType, IEnumerable<object> items, out object result)
-#else
-        private static bool ItemsToIList(Type targetType, IEnumerable<object> items, out object result)
-#endif
         {
             result = Utils.Instantiate(targetType);
 
@@ -238,11 +223,7 @@ namespace Amazon.DynamoDBv2.DataModel
             return false;
         }
 
-#if NET8_0_OR_GREATER
         private static bool ItemsToArray([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] Type targetType, IEnumerable<object> items, out object result)
-#else
-        private static bool ItemsToArray(Type targetType, IEnumerable<object> items, out object result)
-#endif
         {
             var itemlist = items.ToList();
             var array = (Array)InstantiateArray(targetType, itemlist.Count);
@@ -339,38 +320,22 @@ namespace Amazon.DynamoDBv2.DataModel
             new Type[] { typeof(DynamoDBContext) }
         };
 
-#if NET8_0_OR_GREATER
         internal static object InstantiateConverter([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] Type objectType, IDynamoDBContext context)
-#else
-        internal static object InstantiateConverter(Type objectType, IDynamoDBContext context)
-#endif
         {
             return InstantiateHelper(objectType, validConverterConstructorInputs, new object[] { context });
         }
 
-#if NET8_0_OR_GREATER
         internal static object InstantiateArray([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] Type objectType, int length)
-#else
-        internal static object InstantiateArray(Type objectType,int length)
-#endif
         {
             return InstantiateHelper(objectType, validArrayConstructorInputs, new object[] { length });
         }
 
-#if NET8_0_OR_GREATER
         internal static object Instantiate([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] Type objectType)
-#else
-        internal static object Instantiate(Type objectType)
-#endif
         {
             return InstantiateHelper(objectType, validConstructorInputs, null);
         }
 
-#if NET8_0_OR_GREATER
         private static object InstantiateHelper([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] Type objectType, Type[][] validConstructorInputs, object[] optionalInput = null)
-#else
-        private static object InstantiateHelper(Type objectType, Type[][] validConstructorInputs, object[] optionalInput = null)
-#endif
         {
             if (objectType == null)
                 throw new ArgumentNullException("objectType");
@@ -394,11 +359,7 @@ namespace Amazon.DynamoDBv2.DataModel
             throw new InvalidOperationException("Unable to find valid constructor for type " + objectType.FullName);
         }
 
-#if NET8_0_OR_GREATER
         private static IEnumerable<ConstructorInfo> GetConstructors([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] Type typeInfo, Type[][] validConstructorInputs)
-#else
-        private static IEnumerable<ConstructorInfo> GetConstructors(Type typeInfo, Type[][] validConstructorInputs)
-#endif
         {
             foreach (var inputTypes in validConstructorInputs)
             {
@@ -408,38 +369,22 @@ namespace Amazon.DynamoDBv2.DataModel
             }
         }
 
-#if NET8_0_OR_GREATER
         public static bool CanInstantiate([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] Type objectType)
-#else
-        public static bool CanInstantiate(Type objectType)
-#endif
         {
             return CanInstantiateHelper(objectType, validConstructorInputs);
         }
 
-#if NET8_0_OR_GREATER
         public static bool CanInstantiateArray([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] Type objectType)
-#else
-        public static bool CanInstantiateArray(Type objectType)
-#endif
         {
             return objectType.IsArray && CanInstantiateHelper(objectType, validArrayConstructorInputs);
         }
 
-#if NET8_0_OR_GREATER
         public static bool CanInstantiateConverter([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] Type objectType)
-#else
-        public static bool CanInstantiateConverter(Type objectType)
-#endif
         {
             return CanInstantiateHelper(objectType, validConverterConstructorInputs);
         }
 
-#if NET8_0_OR_GREATER
         private static bool CanInstantiateHelper([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] Type objectType, Type[][] validConstructorInputs)
-#else
-        private static bool CanInstantiateHelper(Type objectType, Type[][] validConstructorInputs)
-#endif
         {
             var objectTypeWrapper = objectType;
 
@@ -461,6 +406,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
             return true;
         }
+
         internal static Type GetType(MemberInfo member)
         {
             var pi = member as PropertyInfo;
@@ -470,6 +416,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
             return (pi != null ? pi.PropertyType : fi.FieldType);
         }
+
         internal static bool IsReadWrite(MemberInfo member)
         {
             PropertyInfo property = member as PropertyInfo;
@@ -489,11 +436,7 @@ namespace Amazon.DynamoDBv2.DataModel
             }
         }
 
-#if NET8_0_OR_GREATER
         internal static bool ImplementsInterface([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.Interfaces)] Type targetType, Type interfaceType)
-#else
-        internal static bool ImplementsInterface(Type targetType, Type interfaceType)
-#endif
         {
             if (!interfaceType.IsInterface)
                 throw new ArgumentOutOfRangeException("interfaceType", "Type is not an interface");
@@ -538,11 +481,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// members from the derived types will be used while ignoring same-name members
         /// in base types to avoid returning duplicate members.
         /// </summary>
-#if NET8_0_OR_GREATER
-        internal static List<MemberInfo> GetMembersFromType([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] Type type)
-#else
-        internal static List<MemberInfo> GetMembersFromType(Type type)
-#endif
+        internal static List<MemberInfo> GetMembersFromType([DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type type)
 
         {
             Dictionary<string, MemberInfo> members = new Dictionary<string, MemberInfo>();

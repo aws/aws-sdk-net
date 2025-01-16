@@ -21,6 +21,7 @@ using Amazon.DynamoDBv2.DataModel;
 using Amazon.DynamoDBv2.DocumentModel;
 using Amazon.Util.Internal;
 using System.Diagnostics.CodeAnalysis;
+using ThirdParty.RuntimeBackports;
 
 
 #if NETSTANDARD
@@ -251,11 +252,7 @@ namespace Amazon.DynamoDBv2
         /// <typeparam name="TOutput"></typeparam>
         /// <param name="entry"></param>
         /// <returns></returns>
-#if NET8_0_OR_GREATER
         public TOutput ConvertFromEntry<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] TOutput>(DynamoDBEntry entry)
-#else
-        public TOutput ConvertFromEntry<TOutput>(DynamoDBEntry entry)
-#endif
         {
             TOutput output;
             if (TryConvertFromEntry<TOutput>(entry, out output))
@@ -272,11 +269,7 @@ namespace Amazon.DynamoDBv2
         /// <param name="entry"></param>
         /// <returns></returns>
         /// <exception cref="ArgumentNullException"></exception>
-#if NET8_0_OR_GREATER
         public object ConvertFromEntry([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type outputType, DynamoDBEntry entry)
-#else
-        public object ConvertFromEntry(Type outputType, DynamoDBEntry entry)
-#endif
         {
             if (outputType == null) throw new ArgumentNullException("outputType");
             if (entry == null) throw new ArgumentNullException("entry");
@@ -294,11 +287,7 @@ namespace Amazon.DynamoDBv2
         /// <param name="entry"></param>
         /// <param name="output"></param>
         /// <returns>True if successfully converted, otherwise false.</returns>
-#if NET8_0_OR_GREATER
         public bool TryConvertFromEntry<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] TOutput>(DynamoDBEntry entry, out TOutput output)
-#else
-        public bool TryConvertFromEntry<TOutput>(DynamoDBEntry entry, out TOutput output)
-#endif
         {
             output = default(TOutput);
 
@@ -324,11 +313,7 @@ namespace Amazon.DynamoDBv2
         /// <param name="value"></param>
         /// <returns></returns>
         /// <exception cref="ArgumentNullException"></exception>
-#if NET8_0_OR_GREATER
         public bool TryConvertFromEntry([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type outputType, DynamoDBEntry entry, out object value)
-#else
-        public bool TryConvertFromEntry(Type outputType, DynamoDBEntry entry, out object value)
-#endif
         {
             if (outputType == null) throw new ArgumentNullException("outputType");
             if (entry == null) throw new ArgumentNullException("entry");
@@ -376,11 +361,7 @@ namespace Amazon.DynamoDBv2
             //    yield return ConvertToEntry(value);
         }
 
-#if NET8_0_OR_GREATER
         internal IEnumerable<object> ConvertFromEntries([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type elementType, IEnumerable<DynamoDBEntry> entries)
-#else
-        internal IEnumerable<object> ConvertFromEntries(Type elementType, IEnumerable<DynamoDBEntry> entries)
-#endif
         {
             if (entries == null) throw new ArgumentNullException("entries");
 
@@ -560,11 +541,7 @@ namespace Amazon.DynamoDBv2
             return false;
         }
 
-#if NET8_0_OR_GREATER
         public object FromEntry(DynamoDBEntry entry, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type targetType)
-#else
-        public object FromEntry(DynamoDBEntry entry, Type targetType)
-#endif
         {
             if (entry == null) throw new ArgumentNullException("entry");
             if (targetType == null) throw new ArgumentNullException("targetType");
@@ -577,11 +554,7 @@ namespace Amazon.DynamoDBv2
                 "Unable to convert [{0}] of type {1} to {2}", entry, entry.GetType().FullName, targetType.FullName));
         }
 
-#if NET8_0_OR_GREATER
         public bool TryFromEntry(DynamoDBEntry entry, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type targetType, out object value)
-#else
-        public bool TryFromEntry(DynamoDBEntry entry, Type targetType, out object value)
-#endif
         {
             var p = entry as Primitive;
 
@@ -658,31 +631,19 @@ namespace Amazon.DynamoDBv2
             return false;
         }
 
-#if NET8_0_OR_GREATER
         public virtual bool TryFrom(Primitive p, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type targetType, out object result)
-#else
-        public virtual bool TryFrom(Primitive p, Type targetType, out object result)
-#endif
         {
             result = null;
             return false;
         }
 
-#if NET8_0_OR_GREATER
         public virtual bool TryFrom(PrimitiveList pl, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type targetType, out object result)
-#else
-        public virtual bool TryFrom(PrimitiveList pl, Type targetType, out object result)
-#endif
         {
             result = null;
             return false;
         }
 
-#if NET8_0_OR_GREATER
         public virtual bool TryFrom(DynamoDBList l, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type targetType, out object result)
-#else
-        public virtual bool TryFrom(DynamoDBList l, Type targetType, out object result)
-#endif
         {
             result = null;
             return false;
@@ -751,11 +712,7 @@ namespace Amazon.DynamoDBv2
             return output;
         }
 
-#if NET8_0_OR_GREATER
         public override bool TryFrom(Primitive p, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type targetType, out object result)
-#else
-        public override bool TryFrom(Primitive p, Type targetType, out object result)
-#endif
         {
             T t;
             var output = TryFrom(p, targetType, out t);
@@ -763,11 +720,7 @@ namespace Amazon.DynamoDBv2
             return output;
         }
 
-#if NET8_0_OR_GREATER
         public override bool TryFrom(PrimitiveList pl, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type targetType, out object result)
-#else
-        public override bool TryFrom(PrimitiveList pl, Type targetType, out object result)
-#endif
         {
             T t;
             var output = TryFrom(pl, targetType, out t);
@@ -775,11 +728,7 @@ namespace Amazon.DynamoDBv2
             return output;
         }
 
-#if NET8_0_OR_GREATER
         public override bool TryFrom(DynamoDBList l, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type targetType, out object result)
-#else
-        public override bool TryFrom(DynamoDBList l, Type targetType, out object result)
-#endif
         {
             T t;
             var output = TryFrom(l, targetType, out t);
@@ -800,11 +749,7 @@ namespace Amazon.DynamoDBv2
             return false;
         }
 
-#if NET8_0_OR_GREATER
         protected virtual bool TryFrom(Primitive p, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type targetType, out T result)
-#else
-        protected virtual bool TryFrom(Primitive p, Type targetType, out T result)
-#endif
         {
             result = default(T);
             return false;

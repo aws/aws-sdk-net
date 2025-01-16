@@ -22,6 +22,8 @@ using Amazon.Util;
 using Amazon.Util.Internal;
 using Amazon.Util.Internal.PlatformServices;
 using Amazon.Runtime;
+using System.Diagnostics.CodeAnalysis;
+using ThirdParty.RuntimeBackports;
 
 namespace Amazon.Runtime.Internal
 {
@@ -29,11 +31,9 @@ namespace Amazon.Runtime.Internal
     /// This class composes Client Context header for Amazon Web Service client.
     /// It contains information like app title, version code, version name, client id, OS platform etc.
     /// </summary>
-#if NET8_0_OR_GREATER
     // This class wasn't updated to use source generators because the object to JSON method uses the non generic IDictionary. Usage of this class is probably very low since it is not used directly
     // by the SDK and it is in an internal namespace.
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("ClientContext has not been updated to support producing JSON using source generators. For requests that need client context JSON the JSON must be created manually.")]
-#endif
+    [RequiresUnreferencedCode("ClientContext has not been updated to support producing JSON using source generators. For requests that need client context JSON the JSON must be created manually.")]
     public partial class ClientContext
     {
         //client related keys

@@ -18,8 +18,10 @@ using Amazon.RuntimeDependencies;
 using Amazon.Util.Internal;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.IO;
+using ThirdParty.RuntimeBackports;
 
 namespace Amazon.Runtime.Internal.Auth
 {
@@ -46,12 +48,10 @@ namespace Amazon.Runtime.Internal.Auth
         /// Instantiates an SigV4a signer using CRT's SigV4a implementation
         /// </summary>
         /// <param name="signPayload">Whether to sign the request's payload</param>
-#if NET8_0_OR_GREATER
-        [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("ReflectionAnalysis", "IL2026", 
+        [UnconditionalSuppressMessage("ReflectionAnalysis", "IL2026", 
             Justification = "Reflection code is only used as a fallback in case the SDK was not trimmed. Trimmed scenarios should register dependencies with Amazon.RuntimeDependencyRegistry.GlobalRuntimeDependencyRegistry")]
-        [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("ReflectionAnalysis", "IL2075",
+        [UnconditionalSuppressMessage("ReflectionAnalysis", "IL2075",
             Justification = "Reflection code is only used as a fallback in case the SDK was not trimmed. Trimmed scenarios should register dependencies with Amazon.RuntimeDependencyRegistry.GlobalRuntimeDependencyRegistry")]
-#endif
         public AWS4aSignerCRTWrapper(bool signPayload)
         {
             if (_awsSigV4AProvider == null)

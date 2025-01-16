@@ -16,6 +16,7 @@
 using Amazon.DynamoDBv2.DataModel;
 using Amazon.DynamoDBv2.DocumentModel;
 using Amazon.Util.Internal;
+using ThirdParty.RuntimeBackports;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -196,11 +197,7 @@ namespace Amazon.DynamoDBv2
             return false;
         }
 
-#if NET8_0_OR_GREATER
         public override bool TryFrom(DynamoDBList l, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type targetType, out object result)
-#else
-        public override bool TryFrom(DynamoDBList l, Type targetType, out object result)
-#endif
         {
             var elementType = Utils.GetElementType(targetType);
             var entries = l.Entries;

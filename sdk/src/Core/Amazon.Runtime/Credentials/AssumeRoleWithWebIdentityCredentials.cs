@@ -18,7 +18,9 @@ using Amazon.Runtime.SharedInterfaces;
 using Amazon.RuntimeDependencies;
 using Amazon.Util;
 using Amazon.Util.Internal;
+using ThirdParty.RuntimeBackports;
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.IO;
 using System.Net;
@@ -222,10 +224,8 @@ namespace Amazon.Runtime
         /// Gets a client to be used for AssumeRoleWithWebIdentity requests.
         /// </summary>
         /// <returns>The STS client.</returns>
-#if NET8_0_OR_GREATER
-        [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("ReflectionAnalysis", "IL2026",
+        [UnconditionalSuppressMessage("ReflectionAnalysis", "IL2026",
             Justification = "Reflection code is only used as a fallback in case the SDK was not trimmed. Trimmed scenarios should register dependencies with Amazon.RuntimeDependencyRegistry.GlobalRuntimeDependencyRegistry")]
-#endif
         protected virtual ICoreAmazonSTS_WebIdentity CreateClient()
         {
             var region = FallbackRegionFactory.GetRegionEndpoint() ?? _defaultSTSClientRegion;

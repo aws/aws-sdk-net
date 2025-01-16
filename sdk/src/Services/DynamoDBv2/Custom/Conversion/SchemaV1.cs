@@ -17,6 +17,7 @@ using Amazon.DynamoDBv2.DataModel;
 using Amazon.DynamoDBv2.DocumentModel;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
+using ThirdParty.RuntimeBackports;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -44,11 +45,7 @@ namespace Amazon.DynamoDBv2
             return true;
         }
 
-#if NET8_0_OR_GREATER
         protected override bool TryFrom(Primitive p, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type targetType, out byte result)
-#else
-        protected override bool TryFrom(Primitive p, Type targetType, out byte result)
-#endif
         {
             return byte.TryParse(p.StringValue, NumberStyles.Integer, CultureInfo.InvariantCulture, out result);
         }
@@ -67,11 +64,7 @@ namespace Amazon.DynamoDBv2
             return true;
         }
 
-#if NET8_0_OR_GREATER
         protected override bool TryFrom(Primitive p, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type targetType, out sbyte result)
-#else
-        protected override bool TryFrom(Primitive p, Type targetType, out sbyte result)
-#endif
         {
             return SByte.TryParse(p.StringValue, NumberStyles.Integer, CultureInfo.InvariantCulture, out result);
         }
@@ -90,11 +83,7 @@ namespace Amazon.DynamoDBv2
             return true;
         }
 
-#if NET8_0_OR_GREATER
         protected override bool TryFrom(Primitive p, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type targetType, out ushort result)
-#else
-        protected override bool TryFrom(Primitive p, Type targetType, out ushort result)
-#endif
         {
             return UInt16.TryParse(p.StringValue, NumberStyles.Integer, CultureInfo.InvariantCulture, out result);
         }
@@ -113,11 +102,7 @@ namespace Amazon.DynamoDBv2
             return true;
         }
 
-#if NET8_0_OR_GREATER
         protected override bool TryFrom(Primitive p, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type targetType, out short result)
-#else
-        protected override bool TryFrom(Primitive p, Type targetType, out short result)
-#endif
         {
             return Int16.TryParse(p.StringValue, NumberStyles.Integer, CultureInfo.InvariantCulture, out result);
         }
@@ -136,11 +121,7 @@ namespace Amazon.DynamoDBv2
             return true;
         }
 
-#if NET8_0_OR_GREATER
         protected override bool TryFrom(Primitive p, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type targetType, out uint result)
-#else
-        protected override bool TryFrom(Primitive p, Type targetType, out uint result)
-#endif
         {
             return UInt32.TryParse(p.StringValue, NumberStyles.Integer, CultureInfo.InvariantCulture, out result);
         }
@@ -159,11 +140,7 @@ namespace Amazon.DynamoDBv2
             return true;
         }
 
-#if NET8_0_OR_GREATER
         protected override bool TryFrom(Primitive p, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type targetType, out int result)
-#else
-        protected override bool TryFrom(Primitive p, Type targetType, out int result)
-#endif
         {
             return Int32.TryParse(p.StringValue, NumberStyles.Integer, CultureInfo.InvariantCulture, out result);
         }
@@ -182,11 +159,7 @@ namespace Amazon.DynamoDBv2
             return true;
         }
 
-#if NET8_0_OR_GREATER
         protected override bool TryFrom(Primitive p, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type targetType, out ulong result)
-#else
-        protected override bool TryFrom(Primitive p, Type targetType, out ulong result)
-#endif
         {
             return UInt64.TryParse(p.StringValue, NumberStyles.Integer, CultureInfo.InvariantCulture, out result);
         }
@@ -205,11 +178,7 @@ namespace Amazon.DynamoDBv2
             return true;
         }
 
-#if NET8_0_OR_GREATER
         protected override bool TryFrom(Primitive p, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type targetType, out long result)
-#else
-        protected override bool TryFrom(Primitive p, Type targetType, out long result)
-#endif
         {
             return Int64.TryParse(p.StringValue, NumberStyles.Integer, CultureInfo.InvariantCulture, out result);
         }
@@ -227,11 +196,7 @@ namespace Amazon.DynamoDBv2
             p = new Primitive(value.ToString("r", CultureInfo.InvariantCulture), DynamoDBEntryType.Numeric);
             return true;
         }
-#if NET8_0_OR_GREATER
         protected override bool TryFrom(Primitive p, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type targetType, out float result)
-#else
-        protected override bool TryFrom(Primitive p, Type targetType, out float result)
-#endif
         {
             return Single.TryParse(p.StringValue, NumberStyles.Float, CultureInfo.InvariantCulture, out result);
         }
@@ -250,11 +215,7 @@ namespace Amazon.DynamoDBv2
             return true;
         }
 
-#if NET8_0_OR_GREATER
         protected override bool TryFrom(Primitive p, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type targetType, out double result)
-#else
-        protected override bool TryFrom(Primitive p, Type targetType, out double result)
-#endif
         {
             return Double.TryParse(p.StringValue, NumberStyles.Float, CultureInfo.InvariantCulture, out result);
         }
@@ -272,11 +233,7 @@ namespace Amazon.DynamoDBv2
             p = new Primitive(value.ToString("g", CultureInfo.InvariantCulture), DynamoDBEntryType.Numeric);
             return true;
         }
-#if NET8_0_OR_GREATER
         protected override bool TryFrom(Primitive p, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type targetType, out decimal result)
-#else
-        protected override bool TryFrom(Primitive p, Type targetType, out decimal result)
-#endif
         {
             return Decimal.TryParse(p.StringValue, NumberStyles.Float, CultureInfo.InvariantCulture, out result);
         }
@@ -295,11 +252,7 @@ namespace Amazon.DynamoDBv2
             return true;
         }
 
-#if NET8_0_OR_GREATER
         protected override bool TryFrom(Primitive p, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type targetType, out char result)
-#else
-        protected override bool TryFrom(Primitive p, Type targetType, out char result)
-#endif
         {
             return Char.TryParse(p.StringValue, out result);
         }
@@ -318,11 +271,7 @@ namespace Amazon.DynamoDBv2
             return true;
         }
 
-#if NET8_0_OR_GREATER
         protected override bool TryFrom(Primitive p, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type targetType, out string result)
-#else
-        protected override bool TryFrom(Primitive p, Type targetType, out string result)
-#endif
         {
             result = p.StringValue;
             return (result != null);
@@ -343,11 +292,7 @@ namespace Amazon.DynamoDBv2
             return true;
         }
 
-#if NET8_0_OR_GREATER
         protected override bool TryFrom(Primitive p, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type targetType, out DateTime result)
-#else
-        protected override bool TryFrom(Primitive p, Type targetType, out DateTime result)
-#endif
         {
             if (DateTime.TryParseExact(p.StringValue, AWSSDKUtils.ISO8601DateFormat, CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal, out result))
             {
@@ -370,11 +315,7 @@ namespace Amazon.DynamoDBv2
             return true;
         }
 
-#if NET8_0_OR_GREATER
         protected override bool TryFrom(Primitive p, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type targetType, out Guid result)
-#else
-        protected override bool TryFrom(Primitive p, Type targetType, out Guid result)
-#endif
         {
             result = new Guid(p.StringValue);
             return true;
@@ -394,11 +335,7 @@ namespace Amazon.DynamoDBv2
             return true;
         }
 
-#if NET8_0_OR_GREATER
         protected override bool TryFrom(Primitive p, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type targetType, out byte[] result)
-#else
-        protected override bool TryFrom(Primitive p, Type targetType, out byte[] result)
-#endif
         {
             result = p.Value as byte[];
             return (result != null);
@@ -418,11 +355,7 @@ namespace Amazon.DynamoDBv2
             return true;
         }
 
-#if NET8_0_OR_GREATER
         protected override bool TryFrom(Primitive p, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type targetType, out MemoryStream result)
-#else
-        protected override bool TryFrom(Primitive p, Type targetType, out MemoryStream result)
-#endif
         {
             var bytes = p.Value as byte[];
             if (bytes == null)
@@ -465,11 +398,7 @@ namespace Amazon.DynamoDBv2
             return succeeded;
         }
 
-#if NET8_0_OR_GREATER
         protected override bool TryFrom(Primitive p, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type targetType, out Enum result)
-#else
-        protected override bool TryFrom(Primitive p, Type targetType, out Enum result)
-#endif
         {
             result = null;
 
@@ -489,11 +418,7 @@ namespace Amazon.DynamoDBv2
             return succeeded;
         }
 
-#if NET8_0_OR_GREATER
         private Enum ConvertEnum(Primitive p, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type targetType)
-#else
-        private Enum ConvertEnum(Primitive p, Type targetType)
-#endif
         {
             object numerical;
             // convert Primitive to numeric type, using current conversion
@@ -544,11 +469,7 @@ namespace Amazon.DynamoDBv2
             result = b.Value;
             return true;
         }
-#if NET8_0_OR_GREATER
         protected override bool TryFrom(Primitive p, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type targetType, out bool result)
-#else
-        protected override bool TryFrom(Primitive p, Type targetType, out bool result)
-#endif
         {
             result = !p.StringValue.Equals("0", StringComparison.OrdinalIgnoreCase);
             return true;
@@ -558,11 +479,7 @@ namespace Amazon.DynamoDBv2
     internal abstract class CollectionConverter : Converter
     {
 
-#if NET8_0_OR_GREATER
         protected bool EntriesToCollection([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type targetType, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type elementType, IEnumerable<DynamoDBEntry> entries, out object result)
-#else
-        protected bool EntriesToCollection(Type targetType, Type elementType, IEnumerable<DynamoDBEntry> entries, out object result)
-#endif
         {
             var items = Conversion.ConvertFromEntries(elementType, entries);
             return Utils.ItemsToCollection(targetType, items, out result);
@@ -597,22 +514,14 @@ namespace Amazon.DynamoDBv2
             return false;
         }
 
-#if NET8_0_OR_GREATER
         public override bool TryFrom(PrimitiveList pl, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type targetType, out object result)
-#else
-        public override bool TryFrom(PrimitiveList pl, Type targetType, out object result)
-#endif
         {
             var elementType = Utils.GetPrimitiveElementType(targetType);
             var primitives = pl.Entries;
             return EntriesToCollection(targetType, elementType, pl.Entries.Cast<DynamoDBEntry>(), out result);
         }
 
-#if NET8_0_OR_GREATER
         public override bool TryFrom(DynamoDBList l, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type targetType, out object result)
-#else
-        public override bool TryFrom(DynamoDBList l, Type targetType, out object result)
-#endif
         {
             var elementType = Utils.GetPrimitiveElementType(targetType);
             var entries = l.Entries;

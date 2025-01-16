@@ -15,11 +15,14 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Threading;
 #if AWS_ASYNC_API
 using System.Threading.Tasks;
+
 #endif
 using Amazon.DynamoDBv2.DocumentModel;
+using ThirdParty.RuntimeBackports;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
@@ -216,21 +219,21 @@ namespace Amazon.DynamoDBv2.DataModel
         #region BatchGet
 
         /// <inheritdoc/>
-        public IBatchGet<T> CreateBatchGet<T>()
+        public IBatchGet<T> CreateBatchGet<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>()
         {
             return CreateBatchGet<T>((BatchGetConfig)null);
         }
 
         /// <inheritdoc/>
         [Obsolete("Use the CreateBatchGet overload that takes BatchGetConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to BatchGet.")]
-        public IBatchGet<T> CreateBatchGet<T>(DynamoDBOperationConfig operationConfig)
+        public IBatchGet<T> CreateBatchGet<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(DynamoDBOperationConfig operationConfig)
         {
             DynamoDBFlatConfig config = new DynamoDBFlatConfig(operationConfig, this.Config);
             return new BatchGet<T>(this, config);
         }
 
         /// <inheritdoc/>
-        public IBatchGet<T> CreateBatchGet<T>(BatchGetConfig batchGetConfig)
+        public IBatchGet<T> CreateBatchGet<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(BatchGetConfig batchGetConfig)
         {
             return new BatchGet<T>(this, new DynamoDBFlatConfig(batchGetConfig?.ToDynamoDBOperationConfig(), Config));
         }
@@ -246,41 +249,41 @@ namespace Amazon.DynamoDBv2.DataModel
         #region BatchWrite
 
         /// <inheritdoc/>
-        public IBatchWrite<T> CreateBatchWrite<T>()
+        public IBatchWrite<T> CreateBatchWrite<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>()
         {
             return CreateBatchWrite<T>((BatchWriteConfig)null);
         }
 
         /// <inheritdoc/>
         [Obsolete("Use the CreateBatchWrite overload that takes BatchWriteConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to BatchWrite.")]
-        public IBatchWrite<T> CreateBatchWrite<T>(DynamoDBOperationConfig operationConfig)
+        public IBatchWrite<T> CreateBatchWrite<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(DynamoDBOperationConfig operationConfig)
         {
             DynamoDBFlatConfig config = new DynamoDBFlatConfig(operationConfig, this.Config);
             return new BatchWrite<T>(this, config);
         }
 
         /// <inheritdoc/>
-        public IBatchWrite<object> CreateBatchWrite(Type valuesType)
+        public IBatchWrite<object> CreateBatchWrite([DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type valuesType)
         {
             return CreateBatchWrite(valuesType, (BatchWriteConfig)null);
         }
 
         /// <inheritdoc/>
         [Obsolete("Use the CreateBatchWrite overload that takes BatchWriteConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to BatchWrite.")]
-        public IBatchWrite<object> CreateBatchWrite(Type valuesType, DynamoDBOperationConfig operationConfig)
+        public IBatchWrite<object> CreateBatchWrite([DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type valuesType, DynamoDBOperationConfig operationConfig)
         {
             DynamoDBFlatConfig config = new DynamoDBFlatConfig(operationConfig, this.Config);
             return new BatchWrite<object>(this, valuesType, config);
         }
 
         /// <inheritdoc/>
-        public IBatchWrite<T> CreateBatchWrite<T>(BatchWriteConfig batchWriteConfig)
+        public IBatchWrite<T> CreateBatchWrite<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(BatchWriteConfig batchWriteConfig)
         {
             return new BatchWrite<T>(this, new DynamoDBFlatConfig(batchWriteConfig?.ToDynamoDBOperationConfig(), Config));
         }
 
         /// <inheritdoc/>
-        public IBatchWrite<object> CreateBatchWrite(Type valuesType, BatchWriteConfig batchWriteConfig)
+        public IBatchWrite<object> CreateBatchWrite([DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type valuesType, BatchWriteConfig batchWriteConfig)
         {
             return new BatchWrite<object>(this, valuesType, new DynamoDBFlatConfig(batchWriteConfig.ToDynamoDBOperationConfig(), Config));
         }
@@ -296,21 +299,21 @@ namespace Amazon.DynamoDBv2.DataModel
         #region TransactGet
 
         /// <inheritdoc/>
-        public ITransactGet<T> CreateTransactGet<T>()
+        public ITransactGet<T> CreateTransactGet<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>()
         {
             return CreateTransactGet<T>((TransactGetConfig)null);
         }
 
         /// <inheritdoc/>
         [Obsolete("Use the CreateTransactGet overload that takes TransactGetConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to BatchGet.")]
-        public ITransactGet<T> CreateTransactGet<T>(DynamoDBOperationConfig operationConfig)
+        public ITransactGet<T> CreateTransactGet<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(DynamoDBOperationConfig operationConfig)
         {
             DynamoDBFlatConfig config = new DynamoDBFlatConfig(operationConfig, this.Config);
             return new TransactGet<T>(this, config);
         }
 
         /// <inheritdoc/>
-        public ITransactGet<T> CreateTransactGet<T>(TransactGetConfig transactGetConfig)
+        public ITransactGet<T> CreateTransactGet<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(TransactGetConfig transactGetConfig)
         {
             DynamoDBFlatConfig config = new DynamoDBFlatConfig(transactGetConfig?.ToDynamoDBOperationConfig(), this.Config);
             return new TransactGet<T>(this, config);
@@ -327,7 +330,7 @@ namespace Amazon.DynamoDBv2.DataModel
         #region TransactWrite
 
         /// <inheritdoc/>
-        public ITransactWrite<T> CreateTransactWrite<T>()
+        public ITransactWrite<T> CreateTransactWrite<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>()
         {
             return CreateTransactWrite<T>((TransactWriteConfig)null);
         }
@@ -335,14 +338,14 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <inheritdoc/>
 
         [Obsolete("Use the CreateTransactWrite overload that takes TransactWriteConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to CreateTransactWrite.")]
-        public ITransactWrite<T> CreateTransactWrite<T>(DynamoDBOperationConfig operationConfig)
+        public ITransactWrite<T> CreateTransactWrite<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(DynamoDBOperationConfig operationConfig)
         {
             DynamoDBFlatConfig config = new DynamoDBFlatConfig(operationConfig, this.Config);
             return new TransactWrite<T>(this, config);
         }
 
         /// <inheritdoc/>
-        public ITransactWrite<T> CreateTransactWrite<T>(TransactWriteConfig transactWriteConfig)
+        public ITransactWrite<T> CreateTransactWrite<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(TransactWriteConfig transactWriteConfig)
         {
             DynamoDBFlatConfig config = new DynamoDBFlatConfig(transactWriteConfig?.ToDynamoDBOperationConfig(), this.Config);
             return new TransactWrite<T>(this, config);
@@ -358,7 +361,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
         #region Save/serialize
 
-        private void SaveHelper<T>(T value, DynamoDBFlatConfig flatConfig)
+        private void SaveHelper<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(T value, DynamoDBFlatConfig flatConfig)
         {
             if (value == null) return;
 
@@ -385,12 +388,12 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
 #if AWS_ASYNC_API 
-        private async Task SaveHelperAsync<T>(T value, DynamoDBFlatConfig flatConfig, CancellationToken cancellationToken)
+        private async Task SaveHelperAsync<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(T value, DynamoDBFlatConfig flatConfig, CancellationToken cancellationToken)
         {
             await SaveHelperAsync(typeof(T), value, flatConfig, cancellationToken).ConfigureAwait(false);
         }
 
-        private async Task SaveHelperAsync(Type valueType, object value, DynamoDBFlatConfig flatConfig, CancellationToken cancellationToken)
+        private async Task SaveHelperAsync([DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type valueType, object value, DynamoDBFlatConfig flatConfig, CancellationToken cancellationToken)
         {
             if (value == null) return;
 
@@ -419,14 +422,14 @@ namespace Amazon.DynamoDBv2.DataModel
 #endif
 
         /// <inheritdoc/>
-        public Document ToDocument<T>(T value)
+        public Document ToDocument<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(T value)
         {
             return ToDocument<T>(value, (ToDocumentConfig)null);
         }
 
         /// <inheritdoc/>
         [Obsolete("Use the ToDocument overload that takes ToDocumentConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to ToDocument.")]
-        public Document ToDocument<T>(T value, DynamoDBOperationConfig operationConfig)
+        public Document ToDocument<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(T value, DynamoDBOperationConfig operationConfig)
         {
             if (value == null) return null;
 
@@ -438,7 +441,7 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         /// <inheritdoc/>
-        public Document ToDocument<T>(T value, ToDocumentConfig toDocumentConfig)
+        public Document ToDocument<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(T value, ToDocumentConfig toDocumentConfig)
         {
             if (value == null) return null;
 
@@ -453,15 +456,15 @@ namespace Amazon.DynamoDBv2.DataModel
 
         #region Load/deserialize
 
-        private T LoadHelper<T>(object hashKey, object rangeKey, DynamoDBFlatConfig flatConfig)
+        private T LoadHelper<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(object hashKey, object rangeKey, DynamoDBFlatConfig flatConfig)
         {
             ItemStorageConfig storageConfig = StorageConfigCache.GetConfig<T>(flatConfig);
             Key key = MakeKey(hashKey, rangeKey, storageConfig, flatConfig);
             return LoadHelper<T>(key, flatConfig, storageConfig);
         }
 
-#if AWS_ASYNC_API 
-        private Task<T> LoadHelperAsync<T>(object hashKey, object rangeKey, DynamoDBFlatConfig flatConfig, CancellationToken cancellationToken)
+#if AWS_ASYNC_API
+        private Task<T> LoadHelperAsync<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(object hashKey, object rangeKey, DynamoDBFlatConfig flatConfig, CancellationToken cancellationToken)
         {
             ItemStorageConfig storageConfig = StorageConfigCache.GetConfig<T>(flatConfig);
             Key key = MakeKey(hashKey, rangeKey, storageConfig, flatConfig);
@@ -469,15 +472,16 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 #endif
 
-        private T LoadHelper<T>(T keyObject, DynamoDBFlatConfig flatConfig)
+        private T LoadHelper<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(T keyObject, DynamoDBFlatConfig flatConfig)
         {
             ItemStorageConfig storageConfig = StorageConfigCache.GetConfig<T>(flatConfig);
             Key key = MakeKey<T>(keyObject, storageConfig, flatConfig);
             return LoadHelper<T>(key, flatConfig, storageConfig);
         }
 
-#if AWS_ASYNC_API 
-        private Task<T> LoadHelperAsync<T>(T keyObject, DynamoDBFlatConfig flatConfig, CancellationToken cancellationToken)
+#if AWS_ASYNC_API
+
+        private Task<T> LoadHelperAsync<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(T keyObject, DynamoDBFlatConfig flatConfig, CancellationToken cancellationToken)
         {
             ItemStorageConfig storageConfig = StorageConfigCache.GetConfig<T>(flatConfig);
             Key key = MakeKey<T>(keyObject, storageConfig, flatConfig);
@@ -485,7 +489,7 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 #endif
 
-        private T LoadHelper<T>(Key key, DynamoDBFlatConfig flatConfig, ItemStorageConfig storageConfig)
+        private T LoadHelper<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(Key key, DynamoDBFlatConfig flatConfig, ItemStorageConfig storageConfig)
         {
             GetItemOperationConfig getConfig = new GetItemOperationConfig
             {
@@ -501,8 +505,9 @@ namespace Amazon.DynamoDBv2.DataModel
             return instance;
         }
 
-#if AWS_ASYNC_API 
-        private async Task<T> LoadHelperAsync<T>(Key key, DynamoDBFlatConfig flatConfig, ItemStorageConfig storageConfig, CancellationToken cancellationToken)
+#if AWS_ASYNC_API
+
+        private async Task<T> LoadHelperAsync<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(Key key, DynamoDBFlatConfig flatConfig, ItemStorageConfig storageConfig, CancellationToken cancellationToken)
         {
             GetItemOperationConfig getConfig = new GetItemOperationConfig
             {
@@ -520,27 +525,27 @@ namespace Amazon.DynamoDBv2.DataModel
 #endif
 
         /// <inheritdoc/>
-        public T FromDocument<T>(Document document)
+        public T FromDocument<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(Document document)
         {
             return FromDocument<T>(document, (FromDocumentConfig)null);
         }
 
         /// <inheritdoc/>
         [Obsolete("Use the FromDocument overload that takes FromDocumentConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to FromDocument.")]
-        public T FromDocument<T>(Document document, DynamoDBOperationConfig operationConfig)
+        public T FromDocument<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(Document document, DynamoDBOperationConfig operationConfig)
         {
             DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(operationConfig, Config);
             return FromDocumentHelper<T>(document, flatConfig);
         }
 
         /// <inheritdoc/>
-        public T FromDocument<T>(Document document, FromDocumentConfig fromDocumentConfig)
+        public T FromDocument<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(Document document, FromDocumentConfig fromDocumentConfig)
         {
             DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(fromDocumentConfig?.ToDynamoDBOperationConfig(), Config);
             return FromDocumentHelper<T>(document, flatConfig);
         }
 
-        internal T FromDocumentHelper<T>(Document document, DynamoDBFlatConfig flatConfig)
+        internal T FromDocumentHelper<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(Document document, DynamoDBFlatConfig flatConfig)
         {
             ItemStorageConfig storageConfig = StorageConfigCache.GetConfig<T>(flatConfig);
             ItemStorage storage = new ItemStorage(storageConfig);
@@ -550,14 +555,14 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         /// <inheritdoc/>
-        public IEnumerable<T> FromDocuments<T>(IEnumerable<Document> documents)
+        public IEnumerable<T> FromDocuments<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(IEnumerable<Document> documents)
         {
             return FromDocuments<T>(documents, (FromDocumentConfig)null);
         }
 
         /// <inheritdoc/>
         [Obsolete("Use the FromDocuments overload that takes FromDocumentConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to FromDocuments.")]
-        public IEnumerable<T> FromDocuments<T>(IEnumerable<Document> documents, DynamoDBOperationConfig operationConfig)
+        public IEnumerable<T> FromDocuments<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(IEnumerable<Document> documents, DynamoDBOperationConfig operationConfig)
         {
             foreach (var document in documents)
             {
@@ -567,7 +572,7 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         /// <inheritdoc/>
-        public IEnumerable<T> FromDocuments<T>(IEnumerable<Document> documents, FromDocumentConfig fromDocumentConfig)
+        public IEnumerable<T> FromDocuments<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(IEnumerable<Document> documents, FromDocumentConfig fromDocumentConfig)
         {
             foreach (var document in documents)
             {
@@ -576,7 +581,7 @@ namespace Amazon.DynamoDBv2.DataModel
             }
         }
 
-        internal IEnumerable<T> FromDocumentsHelper<T>(IEnumerable<Document> documents, DynamoDBFlatConfig flatConfig)
+        internal IEnumerable<T> FromDocumentsHelper<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(IEnumerable<Document> documents, DynamoDBFlatConfig flatConfig)
         {
             foreach (var document in documents)
             {
@@ -589,7 +594,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
         #region Delete
 
-        private void DeleteHelper<T>(object hashKey, object rangeKey, DynamoDBFlatConfig flatConfig)
+        private void DeleteHelper<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(object hashKey, object rangeKey, DynamoDBFlatConfig flatConfig)
         {
             ItemStorageConfig storageConfig = StorageConfigCache.GetConfig<T>(flatConfig);
             Key key = MakeKey(hashKey, rangeKey, storageConfig, flatConfig);
@@ -598,8 +603,8 @@ namespace Amazon.DynamoDBv2.DataModel
             table.DeleteHelper(key, null);
         }
 
-#if AWS_ASYNC_API 
-        private Task DeleteHelperAsync<T>(object hashKey, object rangeKey, DynamoDBFlatConfig flatConfig, CancellationToken cancellationToken)
+#if AWS_ASYNC_API
+        private Task DeleteHelperAsync<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(object hashKey, object rangeKey, DynamoDBFlatConfig flatConfig, CancellationToken cancellationToken)
         {
             ItemStorageConfig storageConfig = StorageConfigCache.GetConfig<T>(flatConfig);
             Key key = MakeKey(hashKey, rangeKey, storageConfig, flatConfig);
@@ -609,7 +614,7 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 #endif
 
-        private void DeleteHelper<T>(T value, DynamoDBFlatConfig flatConfig)
+        private void DeleteHelper<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(T value, DynamoDBFlatConfig flatConfig)
         {
             if (value == null) throw new ArgumentNullException("value");
 
@@ -635,7 +640,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
         private static readonly Task CompletedTask = Task.FromResult<object>(null);
 
-        private Task DeleteHelperAsync<T>(T value, DynamoDBFlatConfig flatConfig, CancellationToken cancellationToken)
+        private Task DeleteHelperAsync<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(T value, DynamoDBFlatConfig flatConfig, CancellationToken cancellationToken)
         {
             if (value == null) throw new ArgumentNullException("value");
 

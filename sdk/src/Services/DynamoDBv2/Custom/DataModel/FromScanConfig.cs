@@ -23,10 +23,6 @@ namespace Amazon.DynamoDBv2.DataModel
     /// Additional input for the FromScan operation in the object-persistence programming model. This supplements
     /// <see cref="ScanOperationConfig"/>, which is shared between the document and object-persistence models.
     /// </summary>
-#if NET8_0_OR_GREATER
-    // The DataModel namespace doesn't support trimming yet, so annotate public classes/methods as incompatible
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif
     public class FromScanConfig : BaseOperationConfig
     {
         /// <summary>

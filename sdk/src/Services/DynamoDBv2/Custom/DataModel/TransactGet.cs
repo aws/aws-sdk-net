@@ -15,12 +15,16 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
+
 #if AWS_ASYNC_API
 using System.Threading;
 using System.Threading.Tasks;
+
 #endif
 using Amazon.DynamoDBv2.DocumentModel;
 using Amazon.Runtime.Telemetry.Tracing;
+using ThirdParty.RuntimeBackports;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
@@ -43,7 +47,7 @@ namespace Amazon.DynamoDBv2.DataModel
     /// Represents a generic interface for retrieving multiple items
     /// from a single DynamoDB table in a transaction.
     /// </summary>
-    public interface ITransactGet<T> : ITransactGet
+    public interface ITransactGet<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T> : ITransactGet
     {
         /// <summary>
         /// List of generic results retrieved from DynamoDB.
@@ -110,7 +114,8 @@ namespace Amazon.DynamoDBv2.DataModel
     /// Represents a strongly-typed object for retrieving multiple items
     /// from a single DynamoDB table in a transaction.
     /// </summary>
-    public partial class TransactGet<T> : TransactGet, ITransactGet<T>
+    public partial class TransactGet<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T> : TransactGet, ITransactGet<T>
+
     {
         private readonly DynamoDBContext _context;
         private readonly DynamoDBFlatConfig _config;
