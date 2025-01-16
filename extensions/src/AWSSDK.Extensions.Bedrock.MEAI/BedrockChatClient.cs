@@ -98,9 +98,19 @@ internal sealed partial class BedrockChatClient : IChatClient
                     result.Contents.Add(new TextContent(text));
                 }
 
-                if (content.Image is { Source.Bytes: { } bytes, Format.Value: { } formatValue })
+                if (content.Image is { Source.Bytes: { } imageBytes, Format: { } imageFormat })
                 {
-                    result.Contents.Add(new ImageContent(bytes.ToArray(), $"image/{formatValue}"));
+                    result.Contents.Add(new ImageContent(imageBytes.ToArray(), GetMimeType(imageFormat)));
+                }
+
+                if (content.Video is { Source.Bytes: { } videoBytes, Format: { } videoFormat })
+                {
+                    result.Contents.Add(new DataContent(videoBytes.ToArray(), GetMimeType(videoFormat)));
+                }
+
+                if (content.Document is { Source.Bytes: { } documentBytes, Format: { } documentFormat })
+                {
+                    result.Contents.Add(new DataContent(documentBytes.ToArray(), GetMimeType(documentFormat)));
                 }
 
                 if (content.ToolUse is { } toolUse)
@@ -344,11 +354,22 @@ internal sealed partial class BedrockChatClient : IChatClient
                             }
                         });
                     }
+                    else if (GetVideoFormat(dc.MediaType) is VideoFormat videoFormat)
+                    {
+                        contents.Add(new()
+                        {
+                            Video = new()
+                            {
+                                Source = new() { Bytes = new(dc.Data!.Value.ToArray()) },
+                                Format = videoFormat,
+                            }
+                        });
+                    }
                     else if (GetDocumentFormat(dc.MediaType) is DocumentFormat docFormat)
                     {
                         contents.Add(new()
                         {
-                            Document = new DocumentBlock()
+                            Document = new()
                             {
                                 Source = new() { Bytes = new(dc.Data!.Value.ToArray()) },
                                 Format = docFormat,
@@ -414,6 +435,22 @@ internal sealed partial class BedrockChatClient : IChatClient
             _ => null,
         };
 
+    /// <summary>Gets the MIME type for a <see cref="DocumentFormat"/>.</summary>
+    private static string? GetMimeType(DocumentFormat? format) =>
+        format?.Value switch
+        {
+            "csv" => "text/csv",
+            "html" => "text/html",
+            "md" => "text/markdown",
+            "txt" => "text/plain",
+            "pdf" => "application/pdf",
+            "doc" => "application/msword",
+            "docx" => "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+            "xls" => "application/vnd.ms-excel",
+            "xlsx" => "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+            _ => null,
+        };
+
     /// <summary>Gets the <see cref="ImageFormat"/> for the specified MIME type.</summary>
     private static ImageFormat? GetImageFormat(string? mediaType) =>
         mediaType switch
@@ -422,6 +459,47 @@ internal sealed partial class BedrockChatClient : IChatClient
             "image/png" => ImageFormat.Png,
             "image/gif" => ImageFormat.Gif,
             "image/webp" => ImageFormat.Webp,
+            _ => null,
+        };
+
+    /// <summary>Gets the MIME type for a <see cref="ImageFormat"/>.</summary>
+    private static string? GetMimeType(ImageFormat? format) =>
+        format?.Value switch
+        {
+            "jpeg" => "image/jpeg",
+            "png" => "image/png",
+            "gif" => "image/gif",
+            "webp" => "image/webp",
+            _ => null,
+        };
+
+    /// <summary>Gets the <see cref="VideoFormat"/> for the specified MIME type.</summary>
+    private static VideoFormat? GetVideoFormat(string? mediaType) =>
+        mediaType switch
+        {
+            "video/x-flv" => VideoFormat.Flv,
+            "video/x-matroska" => VideoFormat.Mkv,
+            "video/quicktime" => VideoFormat.Mov,
+            "video/mp4" => VideoFormat.Mp4,
+            "video/mpeg" => VideoFormat.Mpeg,
+            "video/3gpp" => VideoFormat.Three_gp,
+            "video/webm" => VideoFormat.Webm,
+            "video/x-ms-wmv" => VideoFormat.Wmv,
+            _ => null,
+        };
+
+    /// <summary>Gets the MIME type for a <see cref="VideoFormat"/>.</summary>
+    private static string? GetMimeType(VideoFormat? format) =>
+        format?.Value switch
+        {
+            "flv" => "video/x-flv",
+            "mkv" => "video/x-matroska",
+            "mov" => "video/quicktime",
+            "mp4" => "video/mp4",
+            "mpeg" or "mpg" => "video/mpeg",
+            "three_gp" => "video/3gpp",
+            "webm" => "video/webm",
+            "wmv" => "video/x-ms-wmv",
             _ => null,
         };
 
