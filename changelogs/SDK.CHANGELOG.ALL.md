@@ -1,3 +1,13 @@
+### 3.7.964.0 (2025-01-16 19:23 UTC)
+* ECS (3.7.408.16)
+	* The release addresses Amazon ECS documentation tickets.
+* SageMaker (3.7.421.0)
+	* Added support for ml.trn1.32xlarge instance type in Reserved Capacity Offering
+* Core 3.7.401.1
+	* Updating endpoints.json file.
+	* Updating partitions.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.963.0 (2025-01-15 20:19 UTC)
 * APIGateway (3.7.401.24)
 	* Documentation updates for Amazon API Gateway

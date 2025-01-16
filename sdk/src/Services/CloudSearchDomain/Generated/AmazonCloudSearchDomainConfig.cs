@@ -32,7 +32,7 @@ namespace Amazon.CloudSearchDomain
     public partial class AmazonCloudSearchDomainConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("CloudSearch Domain", "3.7.400.80");
+            InternalSDKUtils.BuildUserAgentString("CloudSearch Domain", "3.7.400.81");
 
         private string _userAgent = UserAgentString;
         ///<summary>
