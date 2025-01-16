@@ -15353,6 +15353,10 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly ReservedCapacityInstanceType MlP5en48xlarge = new ReservedCapacityInstanceType("ml.p5en.48xlarge");
         /// <summary>
+        /// Constant MlTrn132xlarge for ReservedCapacityInstanceType
+        /// </summary>
+        public static readonly ReservedCapacityInstanceType MlTrn132xlarge = new ReservedCapacityInstanceType("ml.trn1.32xlarge");
+        /// <summary>
         /// Constant MlTrn248xlarge for ReservedCapacityInstanceType
         /// </summary>
         public static readonly ReservedCapacityInstanceType MlTrn248xlarge = new ReservedCapacityInstanceType("ml.trn2.48xlarge");
