@@ -265,12 +265,12 @@ namespace Amazon
 
         #endregion
 
-            #region SDK Cache
+        #region SDK Cache
 
-            /// <summary>
-            /// Key for the UseSdkCache property.
-            /// <seealso cref="Amazon.AWSConfigs.UseSdkCache"/>
-            /// </summary>
+        /// <summary>
+        /// Key for the UseSdkCache property.
+        /// <seealso cref="Amazon.AWSConfigs.UseSdkCache"/>
+        /// </summary>
         public const string UseSdkCacheKey = "AWSCache";
 
         /// <summary>
