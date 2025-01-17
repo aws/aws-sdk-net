@@ -31,7 +31,7 @@ namespace Amazon.Detective.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateDatasourcePackages operation.
-    /// Starts a data source packages for the behavior graph.
+    /// Starts a data source package for the Detective behavior graph.
     /// </summary>
     public partial class UpdateDatasourcePackagesRequest : AmazonDetectiveRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.Detective.Model
         /// <summary>
         /// Gets and sets the property DatasourcePackages. 
         /// <para>
-        /// The data source package start for the behavior graph.
+        /// The data source package to start for the behavior graph.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=25)]
