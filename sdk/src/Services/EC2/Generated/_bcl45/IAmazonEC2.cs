@@ -685,11 +685,11 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Assigns one or more IPv6 addresses to the specified network interface. You can specify
-        /// one or more specific IPv6 addresses, or you can specify the number of IPv6 addresses
-        /// to be automatically assigned from within the subnet's IPv6 CIDR block range. You can
-        /// assign as many IPv6 addresses to a network interface as you can assign private IPv4
-        /// addresses, and the limit varies per instance type.
+        /// Assigns the specified IPv6 addresses to the specified network interface. You can specify
+        /// specific IPv6 addresses, or you can specify the number of IPv6 addresses to be automatically
+        /// assigned from the subnet's IPv6 CIDR block range. You can assign as many IPv6 addresses
+        /// to a network interface as you can assign private IPv4 addresses, and the limit varies
+        /// by instance type.
         /// 
         ///  
         /// <para>
@@ -713,11 +713,11 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Assigns one or more IPv6 addresses to the specified network interface. You can specify
-        /// one or more specific IPv6 addresses, or you can specify the number of IPv6 addresses
-        /// to be automatically assigned from within the subnet's IPv6 CIDR block range. You can
-        /// assign as many IPv6 addresses to a network interface as you can assign private IPv4
-        /// addresses, and the limit varies per instance type.
+        /// Assigns the specified IPv6 addresses to the specified network interface. You can specify
+        /// specific IPv6 addresses, or you can specify the number of IPv6 addresses to be automatically
+        /// assigned from the subnet's IPv6 CIDR block range. You can assign as many IPv6 addresses
+        /// to a network interface as you can assign private IPv4 addresses, and the limit varies
+        /// by instance type.
         /// 
         ///  
         /// <para>
@@ -747,14 +747,14 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Assigns one or more secondary private IP addresses to the specified network interface.
+        /// Assigns the specified secondary private IP addresses to the specified network interface.
         /// 
         ///  
         /// <para>
-        /// You can specify one or more specific secondary IP addresses, or you can specify the
-        /// number of secondary IP addresses to be automatically assigned within the subnet's
-        /// CIDR block range. The number of secondary IP addresses that you can assign to an instance
-        /// varies by instance type. For more information about Elastic IP addresses, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+        /// You can specify specific secondary IP addresses, or you can specify the number of
+        /// secondary IP addresses to be automatically assigned from the subnet's CIDR block range.
+        /// The number of secondary IP addresses that you can assign to an instance varies by
+        /// instance type. For more information about Elastic IP addresses, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
         /// IP Addresses</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
@@ -789,14 +789,14 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Assigns one or more secondary private IP addresses to the specified network interface.
+        /// Assigns the specified secondary private IP addresses to the specified network interface.
         /// 
         ///  
         /// <para>
-        /// You can specify one or more specific secondary IP addresses, or you can specify the
-        /// number of secondary IP addresses to be automatically assigned within the subnet's
-        /// CIDR block range. The number of secondary IP addresses that you can assign to an instance
-        /// varies by instance type. For more information about Elastic IP addresses, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+        /// You can specify specific secondary IP addresses, or you can specify the number of
+        /// secondary IP addresses to be automatically assigned from the subnet's CIDR block range.
+        /// The number of secondary IP addresses that you can assign to an instance varies by
+        /// instance type. For more information about Elastic IP addresses, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
         /// IP Addresses</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
@@ -4756,8 +4756,8 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Creates a managed prefix list. You can specify one or more entries for the prefix
-        /// list. Each entry consists of a CIDR block and an optional description.
+        /// Creates a managed prefix list. You can specify entries for the prefix list. Each entry
+        /// consists of a CIDR block and an optional description.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateManagedPrefixList service method.</param>
         /// 
@@ -4768,8 +4768,8 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Creates a managed prefix list. You can specify one or more entries for the prefix
-        /// list. Each entry consists of a CIDR block and an optional description.
+        /// Creates a managed prefix list. You can specify entries for the prefix list. Each entry
+        /// consists of a CIDR block and an optional description.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateManagedPrefixList service method.</param>
         /// <param name="cancellationToken">
@@ -14943,7 +14943,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes one or more of your network interfaces.
+        /// Describes the specified network interfaces or all your network interfaces.
         /// 
         ///  
         /// <para>
@@ -14965,7 +14965,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes one or more of your network interfaces.
+        /// Describes the specified network interfaces or all your network interfaces.
         /// 
         ///  
         /// <para>
@@ -14988,7 +14988,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes one or more of your network interfaces.
+        /// Describes the specified network interfaces or all your network interfaces.
         /// 
         ///  
         /// <para>
@@ -15014,7 +15014,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes one or more of your network interfaces.
+        /// Describes the specified network interfaces or all your network interfaces.
         /// 
         ///  
         /// <para>
@@ -31258,7 +31258,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Unassigns one or more IPv6 addresses IPv4 Prefix Delegation prefixes from a network
+        /// Unassigns the specified IPv6 addresses or Prefix Delegation prefixes from a network
         /// interface.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UnassignIpv6Addresses service method.</param>
@@ -31270,7 +31270,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Unassigns one or more IPv6 addresses IPv4 Prefix Delegation prefixes from a network
+        /// Unassigns the specified IPv6 addresses or Prefix Delegation prefixes from a network
         /// interface.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UnassignIpv6Addresses service method.</param>
@@ -31288,7 +31288,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Unassigns one or more secondary private IP addresses, or IPv4 Prefix Delegation prefixes
+        /// Unassigns the specified secondary private IP addresses or IPv4 Prefix Delegation prefixes
         /// from a network interface.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UnassignPrivateIpAddresses service method.</param>
@@ -31300,7 +31300,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Unassigns one or more secondary private IP addresses, or IPv4 Prefix Delegation prefixes
+        /// Unassigns the specified secondary private IP addresses or IPv4 Prefix Delegation prefixes
         /// from a network interface.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UnassignPrivateIpAddresses service method.</param>

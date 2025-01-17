@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeNetworkInterfaces operation.
-    /// Describes one or more of your network interfaces.
+    /// Describes the specified network interfaces or all your network interfaces.
     /// 
     ///  
     /// <para>
