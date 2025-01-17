@@ -1,3 +1,18 @@
+### 3.7.965.0 (2025-01-17 19:23 UTC)
+* BedrockRuntime (3.7.412.0)
+	* Allow hyphens in tool name for Converse and ConverseStream APIs
+* Detective (3.7.400.82)
+	* Doc only update for Detective documentation.
+* EC2 (3.7.427.0)
+	* Release u7i-6tb.112xlarge, u7i-8tb.112xlarge, u7inh-32tb.480xlarge, p5e.48xlarge, p5en.48xlarge, f2.12xlarge, f2.48xlarge, trn2.48xlarge instance types.
+* Notifications (3.7.401.0)
+	* Added support for Managed Notifications, integration with AWS Organization and added aggregation summaries for Aggregate Notifications
+* SageMaker (3.7.421.1)
+	* Correction of docs for  "Added support for ml.trn1.32xlarge instance type in Reserved Capacity Offering"
+* Core 3.7.401.2
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.964.0 (2025-01-16 19:23 UTC)
 * ECS (3.7.408.16)
 	* The release addresses Amazon ECS documentation tickets.
