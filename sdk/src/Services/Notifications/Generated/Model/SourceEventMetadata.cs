@@ -90,7 +90,7 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property EventType. 
         /// <para>
-        /// The type of event. For example, an AWS CloudWatch state change.
+        /// The type of event. For example, an Amazon CloudWatch state change.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -128,7 +128,7 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property RelatedAccount. 
         /// <para>
-        /// The Primary AWS account of Source Event
+        /// The primary Amazon Web Services account of <c>SourceEvent</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -147,7 +147,7 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property RelatedResources. 
         /// <para>
-        /// A list of resources related to this NotificationEvent.
+        /// A list of resources related to this <c>NotificationEvent</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -166,7 +166,7 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property Source. 
         /// <para>
-        /// The AWS servvice the event originates from. For example <c>aws.cloudwatch</c>.
+        /// The Amazon Web Services service the event originates from. For example <c>aws.cloudwatch</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=36)]

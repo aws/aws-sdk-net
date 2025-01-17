@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Notifications.Model
 {
     /// <summary>
-    /// NotificationHub status information.
+    /// Provides additional information about the current <c>NotificationHub</c> status.
     /// </summary>
     public partial class NotificationHubStatusSummary
     {
@@ -40,7 +40,7 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property Reason. 
         /// <para>
-        /// An Explanation for the current status.
+        /// An explanation for the current status.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,7 +59,7 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Status information about the NotificationHub.
+        /// Status information about the <c>NotificationHub</c>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -71,7 +71,7 @@ namespace Amazon.Notifications.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Incoming NotificationEvents are replicated to this NotificationHub.
+        /// Incoming <c>NotificationEvents</c> are replicated to this <c>NotificationHub</c>.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -79,7 +79,8 @@ namespace Amazon.Notifications.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The NotificationHub is initializing. A NotificationHub with this status can't be deregistered.
+        /// The <c>NotificationConfiguration</c> is initializing. A <c>NotificationConfiguration</c>
+        /// with this status can't be deregistered.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -87,8 +88,9 @@ namespace Amazon.Notifications.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The NotificationHub is being deleted. You can't register additional NotificationHubs
-        /// in the same Region as a NotificationHub with this status.
+        /// The <c>NotificationConfiguration</c> is being deleted. You can't register additional
+        /// <c>NotificationHubs</c> in the same Region as a <c>NotificationConfiguration</c> with
+        /// this status.
         /// </para>
         ///  </li> </ul> </li> </ul> </li> </ul>
         /// </summary>

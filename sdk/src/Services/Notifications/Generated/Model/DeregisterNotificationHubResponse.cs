@@ -40,7 +40,7 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property NotificationHubRegion. 
         /// <para>
-        /// The NotificationHub Region.
+        /// The <c>NotificationConfiguration</c> Region.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=25)]
@@ -59,7 +59,7 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property StatusSummary. 
         /// <para>
-        /// NotificationHub status information.
+        ///  <c>NotificationConfiguration</c> status information.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

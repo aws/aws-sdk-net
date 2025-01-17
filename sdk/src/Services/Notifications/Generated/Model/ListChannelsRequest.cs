@@ -31,7 +31,7 @@ namespace Amazon.Notifications.Model
 {
     /// <summary>
     /// Container for the parameters to the ListChannels operation.
-    /// Returns a list of Channels for a NotificationConfiguration.
+    /// Returns a list of Channels for a <c>NotificationConfiguration</c>.
     /// </summary>
     public partial class ListChannelsRequest : AmazonNotificationsRequest
     {
@@ -62,7 +62,7 @@ namespace Amazon.Notifications.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// The start token for paginated calls. Retrieved from the response of a previous ListNotificationEvents
-        /// call. NextToken uses Base64 encoding.
+        /// call. <c>NextToken</c> uses Base64 encoding.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4096)]
@@ -81,7 +81,7 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property NotificationConfigurationArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the NotificationConfiguration.
+        /// The Amazon Resource Name (ARN) of the <c>NotificationConfiguration</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -31,7 +31,7 @@ namespace Amazon.Notifications.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateNotificationConfiguration operation.
-    /// Updates a NotificationConfiguration.
+    /// Updates a <c>NotificationConfiguration</c>.
     /// </summary>
     public partial class UpdateNotificationConfigurationRequest : AmazonNotificationsRequest
     {
@@ -43,12 +43,7 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property AggregationDuration. 
         /// <para>
-        /// The status of this NotificationConfiguration.
-        /// </para>
-        ///  
-        /// <para>
-        /// The status should always be <c>INACTIVE</c> when part of the CreateNotificationConfiguration
-        /// response.
+        /// The aggregation preference of the <c>NotificationConfiguration</c>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -56,43 +51,27 @@ namespace Amazon.Notifications.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>ACTIVE</c> 
+        ///  <c>LONG</c> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// All EventRules are <c>ACTIVE</c> and any call can be run.
+        /// Aggregate notifications for long periods of time (12 hours).
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <c>PARTIALLY_ACTIVE</c> 
+        ///  <c>SHORT</c> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Some EventRules are <c>ACTIVE</c> and some are <c>INACTIVE</c>. Any call can be run.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Any call can be run.
+        /// Aggregate notifications for short periods of time (5 minutes).
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <c>INACTIVE</c> 
+        ///  <c>NONE</c> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// All EventRules are <c>INACTIVE</c> and any call can be run.
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        ///  <c>DELETING</c> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// This NotificationConfiguration is being deleted.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Only <c>GET</c> and <c>LIST</c> calls can be run.
+        /// Don't aggregate notifications.
         /// </para>
         ///  </li> </ul> </li> </ul> </li> </ul>
         /// </summary>
@@ -111,7 +90,7 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) used to update the NotificationConfiguration.
+        /// The Amazon Resource Name (ARN) used to update the <c>NotificationConfiguration</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -130,7 +109,7 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of the NotificationConfiguration.
+        /// The description of the <c>NotificationConfiguration</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
@@ -149,7 +128,7 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the NotificationConfiguration.
+        /// The name of the <c>NotificationConfiguration</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

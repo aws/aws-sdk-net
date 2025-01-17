@@ -31,8 +31,8 @@ namespace Amazon.Notifications.Model
 {
     /// <summary>
     /// Container for the parameters to the DisassociateChannel operation.
-    /// Disassociates a Channel from a specified NotificationConfiguration. Supported Channels
-    /// include AWS Chatbot, the AWS Console Mobile Application, and emails (notifications-contacts).
+    /// Disassociates a Channel from a specified <c>NotificationConfiguration</c>. Supported
+    /// Channels include Chatbot, the Console Mobile Application, and emails (notifications-contacts).
     /// </summary>
     public partial class DisassociateChannelRequest : AmazonNotificationsRequest
     {
@@ -61,7 +61,7 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property NotificationConfigurationArn. 
         /// <para>
-        /// The ARN of the NotificationConfiguration to disassociate.
+        /// The ARN of the <c>NotificationConfiguration</c> to disassociate.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

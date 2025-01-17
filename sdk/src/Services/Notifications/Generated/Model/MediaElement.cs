@@ -99,7 +99,7 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property Url. 
         /// <para>
-        /// The url of the media.
+        /// The URL of the media.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2000)]

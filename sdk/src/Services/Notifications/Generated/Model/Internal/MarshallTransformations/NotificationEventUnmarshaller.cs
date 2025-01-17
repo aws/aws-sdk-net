@@ -78,6 +78,12 @@ namespace Amazon.Notifications.Model.Internal.MarshallTransformations
                     unmarshalledObject.AggregationEventType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("aggregationSummary", targetDepth))
+                {
+                    var unmarshaller = AggregationSummaryUnmarshaller.Instance;
+                    unmarshalledObject.AggregationSummary = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("endTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

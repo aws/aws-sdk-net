@@ -31,7 +31,7 @@ namespace Amazon.Notifications.Model
 {
     /// <summary>
     /// Container for the parameters to the ListEventRules operation.
-    /// Returns a list of EventRules according to specified filters, in reverse chronological
+    /// Returns a list of <c>EventRules</c> according to specified filters, in reverse chronological
     /// order (newest first).
     /// </summary>
     public partial class ListEventRulesRequest : AmazonNotificationsRequest
@@ -62,7 +62,7 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The start token for paginated calls. Retrieved from the response of a previous ListEventRules
+        /// The start token for paginated calls. Retrieved from the response of a previous <c>ListEventRules</c>
         /// call. Next token uses Base64 encoding.
         /// </para>
         /// </summary>
@@ -82,7 +82,7 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property NotificationConfigurationArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the NotificationConfiguration.
+        /// The Amazon Resource Name (ARN) of the <c>NotificationConfiguration</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

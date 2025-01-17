@@ -61,7 +61,7 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property Content. 
         /// <para>
-        /// The content of the NotificationEvent.
+        /// The content of the <c>NotificationEvent</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -80,7 +80,7 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// The creation time of the NotificationEvent.
+        /// The creation time of the <c>NotificationEvent</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -99,7 +99,7 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property NotificationConfigurationArn. 
         /// <para>
-        /// The ARN of the NotificationConfiguration.
+        /// The ARN of the <c>NotificationConfiguration</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

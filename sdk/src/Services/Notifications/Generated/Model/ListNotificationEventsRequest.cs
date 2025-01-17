@@ -31,8 +31,8 @@ namespace Amazon.Notifications.Model
 {
     /// <summary>
     /// Container for the parameters to the ListNotificationEvents operation.
-    /// Returns a list of NotificationEvents according to specified filters, in reverse chronological
-    /// order (newest first).
+    /// Returns a list of <c>NotificationEvents</c> according to specified filters, in reverse
+    /// chronological order (newest first).
     /// 
     ///  <important> 
     /// <para>
@@ -42,7 +42,7 @@ namespace Amazon.Notifications.Model
     /// User Notifications doesn't backfill notifications to new Regions selected as notification
     /// hubs. For this reason, we recommend that you make calls in your oldest registered
     /// notification hub. For more information, see <a href="https://docs.aws.amazon.com/notifications/latest/userguide/notification-hubs.html">Notification
-    /// hubs</a> in the <i>AWS User Notifications User Guide</i>.
+    /// hubs</a> in the <i>Amazon Web Services User Notifications User Guide</i>.
     /// </para>
     ///  </important>
     /// </summary>
@@ -60,7 +60,7 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property AggregateNotificationEventArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the aggregatedNotificationEventArn to match.
+        /// The Amazon Resource Name (ARN) of the <c>aggregatedNotificationEventArn</c> to match.
         /// </para>
         /// </summary>
         public string AggregateNotificationEventArn
@@ -114,8 +114,8 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property Locale. 
         /// <para>
-        /// The locale code of the language used for the retrieved NotificationEvent. The default
-        /// locale is English <c>(en_US)</c>.
+        /// The locale code of the language used for the retrieved <c>NotificationEvent</c>. The
+        /// default locale is English <c>(en_US)</c>.
         /// </para>
         /// </summary>
         public LocaleCode Locale
@@ -152,7 +152,7 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The start token for paginated calls. Retrieved from the response of a previous ListEventRules
+        /// The start token for paginated calls. Retrieved from the response of a previous <c>ListEventRules</c>
         /// call. Next token uses Base64 encoding.
         /// </para>
         /// </summary>
@@ -176,10 +176,10 @@ namespace Amazon.Notifications.Model
         /// </para>
         ///  
         /// <para>
-        /// Must match one of the valid EventBridge sources. Only AWS service sourced events are
-        /// supported. For example, <c>aws.ec2</c> and <c>aws.cloudwatch</c>. For more information,
-        /// see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-service-event.html#eb-service-event-delivery-level">Event
-        /// delivery from AWS services</a> in the <i>Amazon EventBridge User Guide</i>.
+        /// Must match one of the valid EventBridge sources. Only Amazon Web Services service
+        /// sourced events are supported. For example, <c>aws.ec2</c> and <c>aws.cloudwatch</c>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-service-event.html#eb-service-event-delivery-level">Event
+        /// delivery from Amazon Web Services services</a> in the <i>Amazon EventBridge User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=36)]

@@ -40,7 +40,7 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the the resource.
+        /// The Amazon Resource Name (ARN) of the <c>NotificationConfiguration</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,58 +59,8 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of this NotificationConfiguration.
+        /// The current status of this <c>NotificationConfiguration</c>.
         /// </para>
-        ///  
-        /// <para>
-        /// The status should always be <c>INACTIVE</c> when part of the CreateNotificationConfiguration
-        /// response.
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Values:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <c>ACTIVE</c> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// All EventRules are <c>ACTIVE</c> and any call can be run.
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        ///  <c>PARTIALLY_ACTIVE</c> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Some EventRules are <c>ACTIVE</c> and some are <c>INACTIVE</c>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Any call can be run.
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        ///  <c>INACTIVE</c> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// All EventRules are <c>INACTIVE</c> and any call can be run.
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        ///  <c>DELETING</c> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// This NotificationConfiguration is being deleted.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Only <c>GET</c> and <c>LIST</c> calls can be run.
-        /// </para>
-        ///  </li> </ul> </li> </ul> </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public NotificationConfigurationStatus Status

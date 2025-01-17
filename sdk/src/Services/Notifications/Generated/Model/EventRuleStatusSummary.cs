@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Notifications.Model
 {
     /// <summary>
-    /// Describes EventRule status information.
+    /// Provides additional information about the current <c>EventRule</c> status.
     /// </summary>
     public partial class EventRuleStatusSummary
     {
@@ -40,7 +40,7 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property Reason. 
         /// <para>
-        /// A human-readable reason for EventRuleStatus.
+        /// A human-readable reason for <c>EventRuleStatus</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,7 +59,7 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the EventRule.
+        /// The status of the <c>EventRule</c>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -71,7 +71,7 @@ namespace Amazon.Notifications.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The EventRule can process events.
+        /// The <c>EventRule</c> can process events.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -79,7 +79,7 @@ namespace Amazon.Notifications.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The EventRule may be unable to process events.
+        /// The <c>EventRule</c> may be unable to process events.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -87,7 +87,7 @@ namespace Amazon.Notifications.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The EventRule is being created.
+        /// The <c>EventRule</c> is being created.
         /// </para>
         ///  
         /// <para>
@@ -99,7 +99,7 @@ namespace Amazon.Notifications.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The EventRule is being updated.
+        /// The <c>EventRule</c> is being updated.
         /// </para>
         ///  
         /// <para>
@@ -111,7 +111,7 @@ namespace Amazon.Notifications.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The EventRule is being deleted.
+        /// The <c>EventRule</c> is being deleted.
         /// </para>
         ///  
         /// <para>

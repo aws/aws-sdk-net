@@ -31,7 +31,7 @@ namespace Amazon.Notifications.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateNotificationConfiguration operation.
-    /// Creates a new NotificationConfiguration.
+    /// Creates a new <c>NotificationConfiguration</c>.
     /// </summary>
     public partial class CreateNotificationConfigurationRequest : AmazonNotificationsRequest
     {
@@ -43,7 +43,7 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property AggregationDuration. 
         /// <para>
-        /// The aggregation preference of the NotificationConfiguration.
+        /// The aggregation preference of the <c>NotificationConfiguration</c>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -73,10 +73,6 @@ namespace Amazon.Notifications.Model
         /// <para>
         /// Don't aggregate notifications.
         /// </para>
-        ///  
-        /// <para>
-        /// No delay in delivery.
-        /// </para>
         ///  </li> </ul> </li> </ul> </li> </ul>
         /// </summary>
         public AggregationDuration AggregationDuration
@@ -94,7 +90,7 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of the NotificationConfiguration.
+        /// The description of the <c>NotificationConfiguration</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=256)]
@@ -113,7 +109,7 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the NotificationConfiguration. Supports RFC 3986's unreserved characters.
+        /// The name of the <c>NotificationConfiguration</c>. Supports RFC 3986's unreserved characters.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
