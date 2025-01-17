@@ -71,7 +71,7 @@ namespace AWSSDK_DotNet.UnitTests.TestTools
                 writer.WriteNumberValue(double.MaxValue);
             else if (shape.IsFloat)
                 writer.WriteNumberValue(float.MaxValue);
-            else if (shape.IsDateTime)
+            else if (shape.IsTimeStamp)
             {
                 writer.WriteStringValue(ValidatorUtils.GetTestDate(member, shape));
             }

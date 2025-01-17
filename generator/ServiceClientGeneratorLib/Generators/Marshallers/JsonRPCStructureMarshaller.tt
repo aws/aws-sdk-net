@@ -211,7 +211,7 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 <#+
 	protected void DetermineCustomMarshallerJsonWriteMethod(Member member, string memberProperty, int level)
 	{
-		if (String.Equals(member.CustomMarshallerTransformation,"Amazon.Runtime.Internal.Util.StringUtils.FromDateTimeToISO8601NoMs", StringComparison.OrdinalIgnoreCase))
+		if (String.Equals(member.CustomMarshallerTransformation,"Amazon.Util.AWSSDKUtils.ConvertToUnixEpochMilliseconds", StringComparison.OrdinalIgnoreCase))
 		{
 #>
 <#=new string(' ', level * 4)#>                context.Writer.WriteNumberValue(<#=member.CustomMarshallerTransformation#>(<#=memberProperty#>));

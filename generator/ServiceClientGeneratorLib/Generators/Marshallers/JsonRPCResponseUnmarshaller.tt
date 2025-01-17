@@ -98,6 +98,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 		else if (this.IsWrapped)
 		{
 #>
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
 			response.<#=this.WrappedResultMember#> = <#=this.Structure.Name#>Unmarshaller.Instance.Unmarshall(context, ref reader);
 <#
 		}
@@ -164,7 +165,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
             else
             {
 #>
-            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
+            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
 <#
             // Create a new reader because the stream has been read already in the original context
             }
