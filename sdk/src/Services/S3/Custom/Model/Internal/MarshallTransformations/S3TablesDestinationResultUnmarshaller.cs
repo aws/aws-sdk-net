@@ -18,7 +18,7 @@ using Amazon.Runtime.Internal.Transform;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 { 
-    public class S3TablesDestinationResultUnmarshaller : IUnmarshaller<S3TablesDestinationResult, XmlUnmarshallerContext>, IUnmarshaller<S3TablesDestinationResult, JsonUnmarshallerContext>
+    public class S3TablesDestinationResultUnmarshaller : IXmlUnmarshaller<S3TablesDestinationResult, XmlUnmarshallerContext>, IXmlUnmarshaller<S3TablesDestinationResult, JsonUnmarshallerContext>
     {
         public S3TablesDestinationResult Unmarshall(XmlUnmarshallerContext context)
         {

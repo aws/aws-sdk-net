@@ -47,6 +47,7 @@ namespace Amazon.Util.Internal
         public bool? CSMEnabled { get; set; }
         public string CSMClientId { get; set; }
         public int? CSMPort { get; set; }
+        public int? StreamingUtf8JsonReaderBufferSize { get; set; }
 
 #if NET8_0_OR_GREATER
         public bool DisableDangerousDisablePathAndQueryCanonicalization { get; set; }

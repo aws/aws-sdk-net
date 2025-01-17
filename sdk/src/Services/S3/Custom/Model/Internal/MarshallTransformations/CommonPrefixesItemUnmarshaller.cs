@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
      /// <summary>
      ///   CommonPrefixesItem Unmarshaller
      /// </summary>
-    public class CommonPrefixesItemUnmarshaller : IUnmarshaller<string, XmlUnmarshallerContext>, IUnmarshaller<string, JsonUnmarshallerContext> 
+    public class CommonPrefixesItemUnmarshaller : IXmlUnmarshaller<string, XmlUnmarshallerContext>, IXmlUnmarshaller<string, JsonUnmarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

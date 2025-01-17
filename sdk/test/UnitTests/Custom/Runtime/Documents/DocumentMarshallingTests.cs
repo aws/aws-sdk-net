@@ -20,7 +20,8 @@ using Amazon.Runtime.Documents;
 using Amazon.Runtime.Documents.Internal.Transform;
 using Amazon.Runtime.Internal.Transform;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ThirdParty.Json.LitJson;
+using System.Text.Json;
+using Amazon.Runtime.Internal.Util;
 
 namespace AWSSDK.UnitTests
 {
@@ -204,27 +205,27 @@ namespace AWSSDK.UnitTests
         
         private string Marshall(Document d)
         {
-            var buffer = new StringBuilder();
-            var jsonWriter = new JsonWriter(buffer);
-            jsonWriter.WriteObjectStart();
+            var stream = new MemoryStream();
+            var jsonWriter = new Utf8JsonWriter(stream);
+            jsonWriter.WriteStartObject();
             jsonWriter.WritePropertyName("document");
             DocumentMarshaller.Instance.Write(jsonWriter, d);
-            jsonWriter.WriteObjectEnd();
-            
-            return buffer.ToString();
+            jsonWriter.WriteEndObject();
+            jsonWriter.Flush();
+            return Encoding.UTF8.GetString(stream.ToArray());
         }
 
         private Document Unmarshall(string json)
         {
             var ms = new MemoryStream(Encoding.UTF8.GetBytes(json));
             var context = new JsonUnmarshallerContext(ms, false,null);
-            
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(ms);
             // simulate reading property name
-            context.Read();
-            context.ReadAtDepth(context.CurrentDepth);
+            context.Read(ref reader);
+            context.ReadAtDepth(context.CurrentDepth, ref reader);
             var temp = context.TestExpression("document", context.CurrentDepth);
             
-            return DocumentUnmarshaller.Instance.Unmarshall(context);
+            return DocumentUnmarshaller.Instance.Unmarshall(context, ref reader);
         }
     }
 }

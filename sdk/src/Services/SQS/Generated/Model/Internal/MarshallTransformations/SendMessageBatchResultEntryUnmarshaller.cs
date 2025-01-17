@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SQS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SendMessageBatchResultEntry Object
     /// </summary>  
-    public class SendMessageBatchResultEntryUnmarshaller : IUnmarshaller<SendMessageBatchResultEntry, XmlUnmarshallerContext>, IUnmarshaller<SendMessageBatchResultEntry, JsonUnmarshallerContext>
+    public class SendMessageBatchResultEntryUnmarshaller : IJsonUnmarshaller<SendMessageBatchResultEntry, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        SendMessageBatchResultEntry IUnmarshaller<SendMessageBatchResultEntry, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SendMessageBatchResultEntry Unmarshall(JsonUnmarshallerContext context)
+        public SendMessageBatchResultEntry Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             SendMessageBatchResultEntry unmarshalledObject = new SendMessageBatchResultEntry();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MD5OfMessageAttributes", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MD5OfMessageAttributes = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MD5OfMessageAttributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MD5OfMessageBody", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MD5OfMessageBody = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MD5OfMessageBody = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MD5OfMessageSystemAttributes", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MD5OfMessageSystemAttributes = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MD5OfMessageSystemAttributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MessageId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MessageId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MessageId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SequenceNumber", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SequenceNumber = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SequenceNumber = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

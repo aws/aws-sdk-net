@@ -19,7 +19,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TargetObjectKeyFormat Object
     /// </summary>  
-    public class TargetObjectKeyFormatUnmarshaller : IUnmarshaller<TargetObjectKeyFormat, XmlUnmarshallerContext>, IUnmarshaller<TargetObjectKeyFormat, JsonUnmarshallerContext>
+    public class TargetObjectKeyFormatUnmarshaller : IXmlUnmarshaller<TargetObjectKeyFormat, XmlUnmarshallerContext>, IXmlUnmarshaller<TargetObjectKeyFormat, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for SessionCredentials Object
     /// </summary>  
-    public class SessionCredentialsUnmarshaller : IUnmarshaller<SessionCredentials, XmlUnmarshallerContext>
+    public class SessionCredentialsUnmarshaller : IXmlUnmarshaller<SessionCredentials, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

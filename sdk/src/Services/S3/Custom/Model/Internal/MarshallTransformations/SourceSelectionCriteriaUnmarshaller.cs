@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// SourceSelectionCriteria unmarshaller
     /// </summary>
-    public class SourceSelectionCriteriaUnmarshaller : IUnmarshaller<SourceSelectionCriteria, XmlUnmarshallerContext>, IUnmarshaller<SourceSelectionCriteria, JsonUnmarshallerContext>
+    public class SourceSelectionCriteriaUnmarshaller : IXmlUnmarshaller<SourceSelectionCriteria, XmlUnmarshallerContext>, IXmlUnmarshaller<SourceSelectionCriteria, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

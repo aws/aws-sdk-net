@@ -14,6 +14,7 @@
  */
 
 using System;
+using System.Text.Json;
 using ThirdParty.Json.LitJson;
 
 namespace Amazon.Runtime.Documents.Internal.Transform
@@ -26,44 +27,44 @@ namespace Amazon.Runtime.Documents.Internal.Transform
         public static DocumentMarshaller Instance { get; } = new DocumentMarshaller();
         private DocumentMarshaller() { }
 
-        public void Write(JsonWriter writer, Document doc)
+        public void Write(Utf8JsonWriter writer, Document doc)
         {
             switch (doc.Type)
             {
                 case DocumentType.Null:
                     // explicitly write null
-                    writer.Write((string)null);
+                    writer.WriteNullValue();
                     return;
                 case DocumentType.Bool:
-                    writer.Write(doc.AsBool());
+                    writer.WriteBooleanValue(doc.AsBool());
                     return;
                 case DocumentType.Double:
-                    writer.Write(doc.AsDouble());
+                    writer.WriteNumberValue(doc.AsDouble());
                     return;
                 case DocumentType.Int:
-                    writer.Write(doc.AsInt());
+                    writer.WriteNumberValue(doc.AsInt());
                     return;
                 case DocumentType.String:
-                    writer.Write(doc.AsString());
+                    writer.WriteStringValue(doc.AsString());
                     return;
                 case DocumentType.List:
-                    writer.WriteArrayStart();
+                    writer.WriteStartArray();
                     foreach (var item in doc.AsList())
                         Write(writer, item);
-                    writer.WriteArrayEnd();
+                    writer.WriteEndArray();
                     return;
                 case DocumentType.Long:
-                    writer.Write(doc.AsLong());
+                    writer.WriteNumberValue(doc.AsLong());
                     return;
                 case DocumentType.Dictionary:
-                    writer.WriteObjectStart();
+                    writer.WriteStartObject();
                     foreach (var kvp in doc.AsDictionary())
                     {
                         writer.WritePropertyName(kvp.Key);
                         Write(writer, kvp.Value);
                     }
 
-                    writer.WriteObjectEnd();
+                    writer.WriteEndObject();
                     return;
                 default:
                     throw new ArgumentException($"Unknown Document Type: {doc.Type}");

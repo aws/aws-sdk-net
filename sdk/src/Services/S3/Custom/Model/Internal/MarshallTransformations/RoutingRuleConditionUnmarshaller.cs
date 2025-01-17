@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
      /// <summary>
      ///   Condition Unmarshaller
      /// </summary>
-    public class RoutingRuleConditionUnmarshaller : IUnmarshaller<RoutingRuleCondition, XmlUnmarshallerContext>, IUnmarshaller<RoutingRuleCondition, JsonUnmarshallerContext> 
+    public class RoutingRuleConditionUnmarshaller : IXmlUnmarshaller<RoutingRuleCondition, XmlUnmarshallerContext>, IXmlUnmarshaller<RoutingRuleCondition, JsonUnmarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

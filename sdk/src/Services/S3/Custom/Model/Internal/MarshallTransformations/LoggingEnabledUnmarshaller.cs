@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
      /// <summary>
      ///   LoggingEnabled Unmarshaller
      /// </summary>
-    public class LoggingEnabledUnmarshaller : IUnmarshaller<S3BucketLoggingConfig, XmlUnmarshallerContext>, IUnmarshaller<S3BucketLoggingConfig, JsonUnmarshallerContext> 
+    public class LoggingEnabledUnmarshaller : IXmlUnmarshaller<S3BucketLoggingConfig, XmlUnmarshallerContext>, IXmlUnmarshaller<S3BucketLoggingConfig, JsonUnmarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

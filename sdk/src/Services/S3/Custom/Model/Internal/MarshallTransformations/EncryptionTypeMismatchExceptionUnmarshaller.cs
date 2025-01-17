@@ -23,7 +23,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for EncryptionTypeMismatchException operation
     /// </summary>  
-    public class EncryptionTypeMismatchExceptionUnmarshaller : IErrorResponseUnmarshaller<EncryptionTypeMismatchException, XmlUnmarshallerContext>
+    public class EncryptionTypeMismatchExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<EncryptionTypeMismatchException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

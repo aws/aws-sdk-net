@@ -28,8 +28,9 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+using ThirdParty.RuntimeBackports;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SQS.Model.Internal.MarshallTransformations
 {
@@ -63,87 +64,92 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDelaySeconds())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDelaySeconds())
-                    {
-                        context.Writer.WritePropertyName("DelaySeconds");
-                        context.Writer.Write(publicRequest.DelaySeconds.Value);
-                    }
-
-                    if(publicRequest.IsSetMessageAttributes())
-                    {
-                        context.Writer.WritePropertyName("MessageAttributes");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestMessageAttributesKvp in publicRequest.MessageAttributes)
-                        {
-                            context.Writer.WritePropertyName(publicRequestMessageAttributesKvp.Key);
-                            var publicRequestMessageAttributesValue = publicRequestMessageAttributesKvp.Value;
-
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = MessageAttributeValueMarshaller.Instance;
-                            marshaller.Marshall(publicRequestMessageAttributesValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetMessageBody())
-                    {
-                        context.Writer.WritePropertyName("MessageBody");
-                        context.Writer.Write(publicRequest.MessageBody);
-                    }
-
-                    if(publicRequest.IsSetMessageDeduplicationId())
-                    {
-                        context.Writer.WritePropertyName("MessageDeduplicationId");
-                        context.Writer.Write(publicRequest.MessageDeduplicationId);
-                    }
-
-                    if(publicRequest.IsSetMessageGroupId())
-                    {
-                        context.Writer.WritePropertyName("MessageGroupId");
-                        context.Writer.Write(publicRequest.MessageGroupId);
-                    }
-
-                    if(publicRequest.IsSetMessageSystemAttributes())
-                    {
-                        context.Writer.WritePropertyName("MessageSystemAttributes");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestMessageSystemAttributesKvp in publicRequest.MessageSystemAttributes)
-                        {
-                            context.Writer.WritePropertyName(publicRequestMessageSystemAttributesKvp.Key);
-                            var publicRequestMessageSystemAttributesValue = publicRequestMessageSystemAttributesKvp.Value;
-
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = MessageSystemAttributeValueMarshaller.Instance;
-                            marshaller.Marshall(publicRequestMessageSystemAttributesValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetQueueUrl())
-                    {
-                        context.Writer.WritePropertyName("QueueUrl");
-                        context.Writer.Write(publicRequest.QueueUrl);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("DelaySeconds");
+                context.Writer.WriteNumberValue(publicRequest.DelaySeconds.Value);
             }
+
+            if(publicRequest.IsSetMessageAttributes())
+            {
+                context.Writer.WritePropertyName("MessageAttributes");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestMessageAttributesKvp in publicRequest.MessageAttributes)
+                {
+                    context.Writer.WritePropertyName(publicRequestMessageAttributesKvp.Key);
+                    var publicRequestMessageAttributesValue = publicRequestMessageAttributesKvp.Value;
+
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = MessageAttributeValueMarshaller.Instance;
+                    marshaller.Marshall(publicRequestMessageAttributesValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetMessageBody())
+            {
+                context.Writer.WritePropertyName("MessageBody");
+                context.Writer.WriteStringValue(publicRequest.MessageBody);
+            }
+
+            if(publicRequest.IsSetMessageDeduplicationId())
+            {
+                context.Writer.WritePropertyName("MessageDeduplicationId");
+                context.Writer.WriteStringValue(publicRequest.MessageDeduplicationId);
+            }
+
+            if(publicRequest.IsSetMessageGroupId())
+            {
+                context.Writer.WritePropertyName("MessageGroupId");
+                context.Writer.WriteStringValue(publicRequest.MessageGroupId);
+            }
+
+            if(publicRequest.IsSetMessageSystemAttributes())
+            {
+                context.Writer.WritePropertyName("MessageSystemAttributes");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestMessageSystemAttributesKvp in publicRequest.MessageSystemAttributes)
+                {
+                    context.Writer.WritePropertyName(publicRequestMessageSystemAttributesKvp.Key);
+                    var publicRequestMessageSystemAttributesValue = publicRequestMessageSystemAttributesKvp.Value;
+
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = MessageSystemAttributeValueMarshaller.Instance;
+                    marshaller.Marshall(publicRequestMessageSystemAttributesValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetQueueUrl())
+            {
+                context.Writer.WritePropertyName("QueueUrl");
+                context.Writer.WriteStringValue(publicRequest.QueueUrl);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

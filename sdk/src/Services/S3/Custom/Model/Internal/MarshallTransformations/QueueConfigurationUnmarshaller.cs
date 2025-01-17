@@ -24,7 +24,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// QueueConfiguration unmarshaller
     /// </summary>
-    public class QueueConfigurationUnmarshaller : IUnmarshaller<QueueConfiguration, XmlUnmarshallerContext>, IUnmarshaller<QueueConfiguration, JsonUnmarshallerContext> 
+    public class QueueConfigurationUnmarshaller : IXmlUnmarshaller<QueueConfiguration, XmlUnmarshallerContext>, IXmlUnmarshaller<QueueConfiguration, JsonUnmarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

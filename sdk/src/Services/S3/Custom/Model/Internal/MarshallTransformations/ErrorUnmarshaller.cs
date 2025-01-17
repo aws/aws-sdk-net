@@ -18,7 +18,7 @@ using Amazon.Runtime.Internal.Transform;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
-    public class ErrorUnmarshaller : IUnmarshaller<ErrorDetails, XmlUnmarshallerContext>, IUnmarshaller<ErrorDetails, JsonUnmarshallerContext>
+    public class ErrorUnmarshaller : IXmlUnmarshaller<ErrorDetails, XmlUnmarshallerContext>, IXmlUnmarshaller<ErrorDetails, JsonUnmarshallerContext>
     {
         public ErrorDetails Unmarshall(XmlUnmarshallerContext context)
         {

@@ -51,13 +51,13 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
             if(requestObject.IsSetA())
             {
                 context.Writer.WritePropertyName("value");
-                context.Writer.Write(requestObject.A);
+                context.Writer.WriteStringValue(requestObject.A);
             }
 
             if(requestObject.IsSetB())
             {
                 context.Writer.WritePropertyName("other");
-                context.Writer.Write(requestObject.B);
+                context.Writer.WriteStringValue(requestObject.B);
             }
 
         }

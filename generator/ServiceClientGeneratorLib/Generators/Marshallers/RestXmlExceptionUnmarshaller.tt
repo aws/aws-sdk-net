@@ -15,7 +15,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for <#=this.UnmarshallerBaseName #> operation
     /// </summary>  
-    public class <#=this.UnmarshallerBaseName #>Unmarshaller : IErrorResponseUnmarshaller<<#=this.UnmarshallerBaseName #>, XmlUnmarshallerContext>
+    public class <#=this.UnmarshallerBaseName #>Unmarshaller : IXmlErrorResponseUnmarshaller<<#=this.UnmarshallerBaseName #>, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

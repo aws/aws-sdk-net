@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Unmarshaller for IntelligentTieringConfiguration
     /// </summary>   
-    public class IntelligentTieringConfigurationUnmarshaller : IUnmarshaller<IntelligentTieringConfiguration, XmlUnmarshallerContext>, IUnmarshaller<IntelligentTieringConfiguration, JsonUnmarshallerContext>
+    public class IntelligentTieringConfigurationUnmarshaller : IXmlUnmarshaller<IntelligentTieringConfiguration, XmlUnmarshallerContext>, IXmlUnmarshaller<IntelligentTieringConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

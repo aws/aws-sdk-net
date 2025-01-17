@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
      /// <summary>
      /// PublicAccessBlockConfiguration Unmarshaller
      /// </summary>
-    public class PublicAccessBlockConfigurationUnmarshaller : IUnmarshaller<PublicAccessBlockConfiguration, XmlUnmarshallerContext>, IUnmarshaller<PublicAccessBlockConfiguration, JsonUnmarshallerContext> 
+    public class PublicAccessBlockConfigurationUnmarshaller : IXmlUnmarshaller<PublicAccessBlockConfiguration, XmlUnmarshallerContext>, IXmlUnmarshaller<PublicAccessBlockConfiguration, JsonUnmarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

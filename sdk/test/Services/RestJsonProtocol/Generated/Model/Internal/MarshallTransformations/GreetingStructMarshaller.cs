@@ -51,7 +51,7 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHi())
             {
                 context.Writer.WritePropertyName("hi");
-                context.Writer.Write(requestObject.Hi);
+                context.Writer.WriteStringValue(requestObject.Hi);
             }
 
         }

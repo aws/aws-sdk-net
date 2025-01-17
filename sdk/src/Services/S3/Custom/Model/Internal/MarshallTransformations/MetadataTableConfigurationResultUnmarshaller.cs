@@ -18,7 +18,7 @@ using Amazon.Runtime.Internal.Transform;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 { 
-    public class MetadataTableConfigurationResultUnmarshaller : IUnmarshaller<MetadataTableConfigurationResult, XmlUnmarshallerContext>, IUnmarshaller<MetadataTableConfigurationResult, JsonUnmarshallerContext>
+    public class MetadataTableConfigurationResultUnmarshaller : IXmlUnmarshaller<MetadataTableConfigurationResult, XmlUnmarshallerContext>, IXmlUnmarshaller<MetadataTableConfigurationResult, JsonUnmarshallerContext>
     {
         public MetadataTableConfigurationResult Unmarshall(XmlUnmarshallerContext context)
         {
