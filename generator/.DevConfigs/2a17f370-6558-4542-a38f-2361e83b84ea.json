@@ -1,0 +1,11 @@
+{
+  "services": [
+    {
+      "serviceName": "EC2",
+      "type": "patch",
+      "changeLogMessages": [
+        "fix: Fixed an issue where custom AmazonEC2Client.DryRun() method was not working for non-BCL targets. Also included this method in IAmazonEC2 interface."
+      ]
+    }
+  ]
+}
