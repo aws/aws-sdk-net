@@ -1,10 +1,7 @@
 ﻿using Amazon.DynamoDBv2.DocumentModel;
 using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using ThirdParty.Json.LitJson;
+using System.Text.Json;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
@@ -159,12 +156,12 @@ namespace Amazon.DynamoDBv2.DataModel
             if (clientCache == null) throw new ArgumentNullException("clientCache");
             if (json == null) throw new ArgumentNullException("json");
             this.s3ClientCache = clientCache;
-            linker = JsonMapper.ToObject<LinkInfo>(json);
+            linker = JsonSerializer.Deserialize<LinkInfo>(json);
         }
 
         internal static RegionEndpoint GetRegionFromJSON(string json)
         {
-            var linker = JsonMapper.ToObject<LinkInfo>(json);
+            var linker = JsonSerializer.Deserialize<LinkInfo>(json);
             if (linker.s3.region == null)
             {
                 return RegionEndpoint.GetBySystemName("us-east-1");
@@ -208,7 +205,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
         internal string ToJson()
         {
-            return JsonMapper.ToJson(linker);
+            return JsonSerializer.Serialize(linker);
         }
 
         #endregion

@@ -6,13 +6,10 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Text.Json;
 
 using Amazon.Runtime;
 using Amazon.Util;
-
-using ThirdParty.Json.LitJson;
-
-using Amazon.Runtime.Internal.Util;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 
@@ -55,17 +52,24 @@ namespace Amazon.SimpleNotificationService.Util
         {
             var message = new Message();
 
-            var jsonData = JsonMapper.ToObject(messageText);
+            using var document = JsonDocument.Parse(messageText);
+            var root = document.RootElement;
 
             Func<string, string> extractField = ((fieldName) =>
                 {
-                    if (jsonData[fieldName] != null && jsonData[fieldName].IsString)
-                        return (string)jsonData[fieldName];
+                    if (root.TryGetProperty(fieldName, out var field) && field.ValueKind == JsonValueKind.String)
+                    {
+                        return field.GetString();
+                    }
 
-                    // Check to see if the field can be found with a different case.
-                    var anyCaseKey = jsonData.PropertyNames.FirstOrDefault(x => string.Equals(x, fieldName, StringComparison.OrdinalIgnoreCase));
-                    if (!string.IsNullOrEmpty(anyCaseKey) && jsonData[anyCaseKey] != null && jsonData[anyCaseKey].IsString)
-                        return (string)jsonData[anyCaseKey];
+                    var anyCaseKey = root.EnumerateObject()
+                           .FirstOrDefault(x => string.Equals(x.Name, fieldName, StringComparison.OrdinalIgnoreCase))
+                           .Name;
+
+                    if (!string.IsNullOrEmpty(anyCaseKey) &&
+                        root.TryGetProperty(anyCaseKey, out var anyCaseField) &&
+                        anyCaseField.ValueKind == JsonValueKind.String)
+                        return anyCaseField.GetString();
 
                     return null;
                 });

@@ -25,8 +25,7 @@ using System.Linq;
 using System.Net;
 using System.Threading;
 
-using Amazon.Runtime;
-using ThirdParty.Json.LitJson;
+using System.Text.Json;
 using System.Globalization;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util.Internal;
@@ -237,7 +236,7 @@ namespace Amazon.EC2.Util
                 IAMInfo info;
                 try
                 {
-                    info = JsonMapper.ToObject<IAMInfo>(json);
+                    info = JsonSerializer.Deserialize<IAMInfo>(json);
                 }
                 catch 
                 { 
@@ -265,7 +264,7 @@ namespace Amazon.EC2.Util
                     var json = GetData("/iam/security-credentials/" + item);
                     try
                     {
-                        var cred = JsonMapper.ToObject<IAMSecurityCredential>(json);
+                        var cred = JsonSerializer.Deserialize<IAMSecurityCredential>(json);
                         creds[item] = cred;
                     }
                     catch 

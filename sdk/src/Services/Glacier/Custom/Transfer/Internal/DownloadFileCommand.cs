@@ -15,26 +15,11 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.IO;
-using System.Net;
-using System.Text;
-using System.Threading;
-
-using Amazon.Glacier.Model;
-using Amazon.Glacier.Transfer.Internal;
-
+using System.Text.Json;
 using Amazon.Runtime.Internal;
-
 using Amazon.SimpleNotificationService;
-using Amazon.SimpleNotificationService.Model;
-
 using Amazon.SQS;
 using Amazon.SQS.Model;
-using Amazon.SQS.Util;
-
-using Amazon.Util;
-
-using ThirdParty.Json.LitJson;
 
 namespace Amazon.Glacier.Transfer.Internal
 {
@@ -114,8 +99,8 @@ namespace Amazon.Glacier.Transfer.Internal
             else
                 json = System.Text.Encoding.UTF8.GetString(Convert.FromBase64String(message.Body));
 
-            Dictionary<string, string> outerLayer = JsonMapper.ToObject<Dictionary<string, string>>(json);
-            Dictionary<string, object> fields = JsonMapper.ToObject<Dictionary<string, object>>(outerLayer["Message"]);
+            Dictionary<string, string> outerLayer = JsonSerializer.Deserialize<Dictionary<string, string>>(json);
+            Dictionary<string, object> fields = JsonSerializer.Deserialize<Dictionary<string, object>>(outerLayer["Message"]);
 
             string jobId = fields["JobId"] as string;
 
