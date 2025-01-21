@@ -1,3 +1,24 @@
+### 3.7.966.0 (2025-01-21 20:07 UTC)
+* Batch (3.7.404.18)
+	* Documentation-only update: clarified the description of the shareDecaySeconds parameter of the FairsharePolicy data type, clarified the description of the priority parameter of the JobQueueDetail data type.
+* CloudWatchLogs (3.7.409.19)
+	* Documentation-only update to address doc errors
+* CognitoIdentityProvider (3.7.406.0)
+	* corrects the dual-stack endpoint configuration for cognitoidp
+* Connect (3.7.417.0)
+	* Added DeleteContactFlowVersion API and the CAMPAIGN flow type
+* EMRServerless (3.7.403.0)
+	* Increasing entryPoint in SparkSubmit to accept longer script paths. New limit is 4kb.
+* IoTSiteWise (3.7.403.0)
+	* AWS IoT SiteWise now supports ingestion and querying of Null (all data types) and NaN (double type) values of bad or uncertain data quality. New partial error handling prevents data loss during ingestion. Enabled by default for new customers; existing customers can opt-in.
+* QuickSight (3.7.413.0)
+	* Added `DigitGroupingStyle` in ThousandsSeparator to allow grouping by `LAKH`( Indian Grouping system ) currency. Support LAKH and `CRORE` currency types in Column Formatting.
+* SimpleNotificationService (3.7.400.83)
+	* This release adds support for the topic attribute FifoThroughputScope for SNS FIFO topics. For details, see the documentation history in the Amazon Simple Notification Service Developer Guide.
+* Core 3.7.401.3
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.965.0 (2025-01-17 19:23 UTC)
 * BedrockRuntime (3.7.412.0)
 	* Allow hyphens in tool name for Converse and ConverseStream APIs
