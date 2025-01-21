@@ -127,14 +127,29 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Priority. 
         /// <para>
-        /// The priority of the job queue. Job queues with a higher priority (or a higher integer
-        /// value for the <c>priority</c> parameter) are evaluated first when associated with
-        /// the same compute environment. Priority is determined in descending order. For example,
-        /// a job queue with a priority value of <c>10</c> is given scheduling preference over
-        /// a job queue with a priority value of <c>1</c>. All of the compute environments must
-        /// be either Amazon EC2 (<c>EC2</c> or <c>SPOT</c>) or Fargate (<c>FARGATE</c> or <c>FARGATE_SPOT</c>).
-        /// Amazon EC2 and Fargate compute environments can't be mixed.
+        /// The priority of the job queue. Job queue priority determines the order that job queues
+        /// are evaluated when multiple queues dispatch jobs within a shared compute environment.
+        /// A higher value for <c>priority</c> indicates a higher priority. Queues are evaluated
+        /// in cycles, in descending order by priority. For example, a job queue with a priority
+        /// value of <c>10</c> is evaluated before a queue with a priority value of <c>1</c>.
+        /// All of the compute environments must be either Amazon EC2 (<c>EC2</c> or <c>SPOT</c>)
+        /// or Fargate (<c>FARGATE</c> or <c>FARGATE_SPOT</c>). Amazon EC2 and Fargate compute
+        /// environments can't be mixed.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Job queue priority doesn't guarantee that a particular job executes before a job in
+        /// a lower priority queue. Jobs added to higher priority queues during the queue evaluation
+        /// cycle might not be evaluated until the next cycle. A job is dispatched from a queue
+        /// only if resources are available when the queue is evaluated. If there are insufficient
+        /// resources available at that time, the cycle proceeds to the next queue. This means
+        /// that jobs added to higher priority queues might have to wait for jobs in multiple
+        /// lower priority queues to complete before they are dispatched. You can use job dependencies
+        /// to control the order for jobs from queues with different priorities. For more information,
+        /// see <a href="https://docs.aws.amazon.com/batch/latest/userguide/job_dependencies.html">Job
+        /// Dependencies</a> in the <i>Batch User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
         public int Priority
