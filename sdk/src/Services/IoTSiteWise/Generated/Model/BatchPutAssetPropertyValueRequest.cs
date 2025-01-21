@@ -70,7 +70,28 @@ namespace Amazon.IoTSiteWise.Model
     /// </summary>
     public partial class BatchPutAssetPropertyValueRequest : AmazonIoTSiteWiseRequest
     {
+        private bool? _enablePartialEntryProcessing;
         private List<PutAssetPropertyValueEntry> _entries = AWSConfigs.InitializeCollections ? new List<PutAssetPropertyValueEntry>() : null;
+
+        /// <summary>
+        /// Gets and sets the property EnablePartialEntryProcessing. 
+        /// <para>
+        /// This setting enables partial ingestion at entry-level. If set to <c>true</c>, we ingest
+        /// all TQVs not resulting in an error. If set to <c>false</c>, an invalid TQV fails ingestion
+        /// of the entire entry that contains it.
+        /// </para>
+        /// </summary>
+        public bool EnablePartialEntryProcessing
+        {
+            get { return this._enablePartialEntryProcessing.GetValueOrDefault(); }
+            set { this._enablePartialEntryProcessing = value; }
+        }
+
+        // Check to see if EnablePartialEntryProcessing property is set
+        internal bool IsSetEnablePartialEntryProcessing()
+        {
+            return this._enablePartialEntryProcessing.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Entries. 

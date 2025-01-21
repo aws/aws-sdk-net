@@ -35,12 +35,32 @@ namespace Amazon.IoTSiteWise.Model
     /// </summary>
     public partial class PutStorageConfigurationRequest : AmazonIoTSiteWiseRequest
     {
+        private bool? _disallowIngestNullNaN;
         private DisassociatedDataStorageState _disassociatedDataStorage;
         private MultiLayerStorage _multiLayerStorage;
         private RetentionPeriod _retentionPeriod;
         private StorageType _storageType;
         private WarmTierState _warmTier;
         private WarmTierRetentionPeriod _warmTierRetentionPeriod;
+
+        /// <summary>
+        /// Gets and sets the property DisallowIngestNullNaN. 
+        /// <para>
+        /// Describes the configuration for ingesting NULL and NaN data. By default the feature
+        /// is allowed. The feature is disallowed if the value is <c>true</c>.
+        /// </para>
+        /// </summary>
+        public bool DisallowIngestNullNaN
+        {
+            get { return this._disallowIngestNullNaN.GetValueOrDefault(); }
+            set { this._disallowIngestNullNaN = value; }
+        }
+
+        // Check to see if DisallowIngestNullNaN property is set
+        internal bool IsSetDisallowIngestNullNaN()
+        {
+            return this._disallowIngestNullNaN.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property DisassociatedDataStorage. 

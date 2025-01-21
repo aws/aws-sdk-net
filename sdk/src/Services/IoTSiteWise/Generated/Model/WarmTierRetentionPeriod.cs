@@ -44,7 +44,6 @@ namespace Amazon.IoTSiteWise.Model
         /// The number of days the data is stored in the warm tier.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=30)]
         public int NumberOfDays
         {
             get { return this._numberOfDays.GetValueOrDefault(); }

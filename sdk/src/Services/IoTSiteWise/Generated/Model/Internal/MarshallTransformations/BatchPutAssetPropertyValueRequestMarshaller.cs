@@ -67,6 +67,12 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetEnablePartialEntryProcessing())
+                {
+                    context.Writer.WritePropertyName("enablePartialEntryProcessing");
+                    context.Writer.Write(publicRequest.EnablePartialEntryProcessing);
+                }
+
                 if(publicRequest.IsSetEntries())
                 {
                     context.Writer.WritePropertyName("entries");

@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Variant Object
+    /// Response Unmarshaller for PropertyValueNullValue Object
     /// </summary>  
-    public class VariantUnmarshaller : IUnmarshaller<Variant, XmlUnmarshallerContext>, IUnmarshaller<Variant, JsonUnmarshallerContext>
+    public class PropertyValueNullValueUnmarshaller : IUnmarshaller<PropertyValueNullValue, XmlUnmarshallerContext>, IUnmarshaller<PropertyValueNullValue, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Variant IUnmarshaller<Variant, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        PropertyValueNullValue IUnmarshaller<PropertyValueNullValue, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public Variant Unmarshall(JsonUnmarshallerContext context)
+        public PropertyValueNullValue Unmarshall(JsonUnmarshallerContext context)
         {
-            Variant unmarshalledObject = new Variant();
+            PropertyValueNullValue unmarshalledObject = new PropertyValueNullValue();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,34 +66,10 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("booleanValue", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.BooleanValue = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("doubleValue", targetDepth))
-                {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
-                    unmarshalledObject.DoubleValue = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("integerValue", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.IntegerValue = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("nullValue", targetDepth))
-                {
-                    var unmarshaller = PropertyValueNullValueUnmarshaller.Instance;
-                    unmarshalledObject.NullValue = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("stringValue", targetDepth))
+                if (context.TestExpression("valueType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StringValue = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ValueType = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -101,12 +77,12 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         }
 
 
-        private static VariantUnmarshaller _instance = new VariantUnmarshaller();        
+        private static PropertyValueNullValueUnmarshaller _instance = new PropertyValueNullValueUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static VariantUnmarshaller Instance
+        public static PropertyValueNullValueUnmarshaller Instance
         {
             get
             {
