@@ -32,6 +32,33 @@ namespace Amazon.CloudWatchLogs.Model
     /// <summary>
     /// Container for the parameters to the DescribeAccountPolicies operation.
     /// Returns a list of all CloudWatch Logs account policies in the account.
+    /// 
+    ///  
+    /// <para>
+    /// To use this operation, you must be signed on with the correct permissions depending
+    /// on the type of policy that you are retrieving information for.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// To see data protection policies, you must have the <c>logs:GetDataProtectionPolicy</c>
+    /// and <c>logs:DescribeAccountPolicies</c> permissions.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// To see subscription filter policies, you must have the <c>logs:DescrubeSubscriptionFilters</c>
+    /// and <c>logs:DescribeAccountPolicies</c> permissions.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// To see transformer policies, you must have the <c>logs:GetTransformer</c> and <c>logs:DescribeAccountPolicies</c>
+    /// permissions.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// To see field index policies, you must have the <c>logs:DescribeIndexPolicies</c> and
+    /// <c>logs:DescribeAccountPolicies</c> permissions.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class DescribeAccountPoliciesRequest : AmazonCloudWatchLogsRequest
     {
