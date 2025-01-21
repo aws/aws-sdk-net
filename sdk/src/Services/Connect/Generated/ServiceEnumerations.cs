@@ -935,6 +935,10 @@ namespace Amazon.Connect
         /// </summary>
         public static readonly ContactFlowType AGENT_WHISPER = new ContactFlowType("AGENT_WHISPER");
         /// <summary>
+        /// Constant CAMPAIGN for ContactFlowType
+        /// </summary>
+        public static readonly ContactFlowType CAMPAIGN = new ContactFlowType("CAMPAIGN");
+        /// <summary>
         /// Constant CONTACT_FLOW for ContactFlowType
         /// </summary>
         public static readonly ContactFlowType CONTACT_FLOW = new ContactFlowType("CONTACT_FLOW");

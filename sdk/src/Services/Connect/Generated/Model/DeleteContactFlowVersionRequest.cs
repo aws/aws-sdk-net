@@ -30,37 +30,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeContactFlow operation.
-    /// Describes the specified flow.
-    /// 
-    ///  
-    /// <para>
-    /// You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon
-    /// Connect Flow language</a>.
-    /// </para>
-    ///  
-    /// <para>
-    /// Use the <c>$SAVED</c> alias in the request to describe the <c>SAVED</c> content of
-    /// a Flow. For example, <c>arn:aws:.../contact-flow/{id}:$SAVED</c>. After a flow is
-    /// published, <c>$SAVED</c> needs to be supplied to view saved content that has not been
-    /// published.
-    /// </para>
-    ///  
-    /// <para>
-    /// Use <c>arn:aws:.../contact-flow/{id}:{version}</c> to retrieve the content of a specific
-    /// flow version.
-    /// </para>
-    ///  
-    /// <para>
-    /// In the response, <b>Status</b> indicates the flow status as either <c>SAVED</c> or
-    /// <c>PUBLISHED</c>. The <c>PUBLISHED</c> status will initiate validation on the content.
-    /// <c>SAVED</c> does not initiate validation of the content. <c>SAVED</c> | <c>PUBLISHED</c>
-    /// 
-    /// </para>
+    /// Container for the parameters to the DeleteContactFlowVersion operation.
+    /// Deletes the particular version specified in flow version identifier.
     /// </summary>
-    public partial class DescribeContactFlowRequest : AmazonConnectRequest
+    public partial class DeleteContactFlowVersionRequest : AmazonConnectRequest
     {
         private string _contactFlowId;
+        private long? _contactFlowVersion;
         private string _instanceId;
 
         /// <summary>
@@ -69,7 +45,7 @@ namespace Amazon.Connect.Model
         /// The identifier of the flow.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=500)]
+        [AWSProperty(Required=true)]
         public string ContactFlowId
         {
             get { return this._contactFlowId; }
@@ -83,9 +59,29 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ContactFlowVersion. 
+        /// <para>
+        /// The identifier of the flow version.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1)]
+        public long ContactFlowVersion
+        {
+            get { return this._contactFlowVersion.GetValueOrDefault(); }
+            set { this._contactFlowVersion = value; }
+        }
+
+        // Check to see if ContactFlowVersion property is set
+        internal bool IsSetContactFlowVersion()
+        {
+            return this._contactFlowVersion.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance.
+        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

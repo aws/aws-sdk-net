@@ -1370,7 +1370,7 @@ namespace Amazon.Connect
         #region  AssociateUserProficiencies
 
         /// <summary>
-        /// &gt;Associates a set of proficiencies with a user.
+        /// Associates a set of proficiencies with a user.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateUserProficiencies service method.</param>
         /// 
@@ -2317,11 +2317,9 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Publishes a new version of the flow provided. Versions are immutable and monotonically
-        /// increasing. If a version of the same flow content already exists, no new version is
-        /// created and instead the existing version number is returned. If the <c>FlowContentSha256</c>
-        /// provided is different from the <c>FlowContentSha256</c> of the <c>$LATEST</c> published
-        /// flow content, then an error is returned. This API only supports creating versions
-        /// for flows of type <c>Campaign</c>.
+        /// increasing. If the <c>FlowContentSha256</c> provided is different from the <c>FlowContentSha256</c>
+        /// of the <c>$LATEST</c> published flow content, then an error is returned. This API
+        /// only supports creating versions for flows of type <c>Campaign</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateContactFlowVersion service method.</param>
         /// 
@@ -4675,6 +4673,78 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  DeleteContactFlowVersion
+
+        /// <summary>
+        /// Deletes the particular version specified in flow version identifier.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteContactFlowVersion service method.</param>
+        /// 
+        /// <returns>The response from the DeleteContactFlowVersion service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteContactFlowVersion">REST API Reference for DeleteContactFlowVersion Operation</seealso>
+        public virtual DeleteContactFlowVersionResponse DeleteContactFlowVersion(DeleteContactFlowVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteContactFlowVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteContactFlowVersionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteContactFlowVersionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteContactFlowVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteContactFlowVersion operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteContactFlowVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteContactFlowVersion">REST API Reference for DeleteContactFlowVersion Operation</seealso>
+        public virtual IAsyncResult BeginDeleteContactFlowVersion(DeleteContactFlowVersionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteContactFlowVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteContactFlowVersionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteContactFlowVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteContactFlowVersion.</param>
+        /// 
+        /// <returns>Returns a  DeleteContactFlowVersionResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteContactFlowVersion">REST API Reference for DeleteContactFlowVersion Operation</seealso>
+        public virtual DeleteContactFlowVersionResponse EndDeleteContactFlowVersion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteContactFlowVersionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteEmailAddress
 
         /// <summary>
@@ -5330,8 +5400,7 @@ namespace Amazon.Connect
         #region  DeleteQueue
 
         /// <summary>
-        /// Deletes a queue. It isn't possible to delete a queue by using the Amazon Connect admin
-        /// website.
+        /// Deletes a queue.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteQueue service method.</param>
         /// 
@@ -6623,6 +6692,11 @@ namespace Amazon.Connect
         /// a Flow. For example, <c>arn:aws:.../contact-flow/{id}:$SAVED</c>. After a flow is
         /// published, <c>$SAVED</c> needs to be supplied to view saved content that has not been
         /// published.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use <c>arn:aws:.../contact-flow/{id}:{version}</c> to retrieve the content of a specific
+        /// flow version.
         /// </para>
         ///  
         /// <para>
