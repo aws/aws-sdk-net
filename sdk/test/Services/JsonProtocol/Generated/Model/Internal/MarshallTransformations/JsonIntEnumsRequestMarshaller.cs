@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.JsonProtocol.Model.Internal.MarshallTransformations
 {
@@ -63,73 +66,78 @@ namespace Amazon.JsonProtocol.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetIntEnum1())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetIntEnum1())
-                    {
-                        context.Writer.WritePropertyName("intEnum1");
-                        context.Writer.Write(publicRequest.IntEnum1.Value);
-                    }
-
-                    if(publicRequest.IsSetIntEnum2())
-                    {
-                        context.Writer.WritePropertyName("intEnum2");
-                        context.Writer.Write(publicRequest.IntEnum2.Value);
-                    }
-
-                    if(publicRequest.IsSetIntEnum3())
-                    {
-                        context.Writer.WritePropertyName("intEnum3");
-                        context.Writer.Write(publicRequest.IntEnum3.Value);
-                    }
-
-                    if(publicRequest.IsSetIntEnumList())
-                    {
-                        context.Writer.WritePropertyName("intEnumList");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestIntEnumListListValue in publicRequest.IntEnumList)
-                        {
-                                context.Writer.Write(publicRequestIntEnumListListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetIntEnumMap())
-                    {
-                        context.Writer.WritePropertyName("intEnumMap");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestIntEnumMapKvp in publicRequest.IntEnumMap)
-                        {
-                            context.Writer.WritePropertyName(publicRequestIntEnumMapKvp.Key);
-                            var publicRequestIntEnumMapValue = publicRequestIntEnumMapKvp.Value;
-
-                                context.Writer.Write(publicRequestIntEnumMapValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetIntEnumSet())
-                    {
-                        context.Writer.WritePropertyName("intEnumSet");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestIntEnumSetListValue in publicRequest.IntEnumSet)
-                        {
-                                context.Writer.Write(publicRequestIntEnumSetListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("intEnum1");
+                context.Writer.WriteNumberValue(publicRequest.IntEnum1.Value);
             }
+
+            if(publicRequest.IsSetIntEnum2())
+            {
+                context.Writer.WritePropertyName("intEnum2");
+                context.Writer.WriteNumberValue(publicRequest.IntEnum2.Value);
+            }
+
+            if(publicRequest.IsSetIntEnum3())
+            {
+                context.Writer.WritePropertyName("intEnum3");
+                context.Writer.WriteNumberValue(publicRequest.IntEnum3.Value);
+            }
+
+            if(publicRequest.IsSetIntEnumList())
+            {
+                context.Writer.WritePropertyName("intEnumList");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestIntEnumListListValue in publicRequest.IntEnumList)
+                {
+                        context.Writer.WriteNumberValue(publicRequestIntEnumListListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetIntEnumMap())
+            {
+                context.Writer.WritePropertyName("intEnumMap");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestIntEnumMapKvp in publicRequest.IntEnumMap)
+                {
+                    context.Writer.WritePropertyName(publicRequestIntEnumMapKvp.Key);
+                    var publicRequestIntEnumMapValue = publicRequestIntEnumMapKvp.Value;
+
+                        context.Writer.WriteNumberValue(publicRequestIntEnumMapValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetIntEnumSet())
+            {
+                context.Writer.WritePropertyName("intEnumSet");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestIntEnumSetListValue in publicRequest.IntEnumSet)
+                {
+                        context.Writer.WriteNumberValue(publicRequestIntEnumSetListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

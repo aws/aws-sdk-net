@@ -36,7 +36,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for XmlAttributesPayloadResponse Object
     /// </summary>  
-    public class XmlAttributesPayloadResponseUnmarshaller : IUnmarshaller<XmlAttributesPayloadResponse, XmlUnmarshallerContext>, IUnmarshaller<XmlAttributesPayloadResponse, JsonUnmarshallerContext>
+    public class XmlAttributesPayloadResponseUnmarshaller : IXmlUnmarshaller<XmlAttributesPayloadResponse, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
-        
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public XmlAttributesPayloadResponse Unmarshall(JsonUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
         private static XmlAttributesPayloadResponseUnmarshaller _instance = new XmlAttributesPayloadResponseUnmarshaller();        
 
         /// <summary>
