@@ -146,6 +146,24 @@ namespace Amazon.SimpleNotificationService.Model
         /// (Optional) To override the generated value, you can specify a value for the <c>MessageDeduplicationId</c>
         /// parameter for the <c>Publish</c> action.
         /// </para>
+        ///  </li> </ul> </li> </ul> <ul> <li> 
+        /// <para>
+        ///  <c>FifoThroughputScope</c> – Enables higher throughput for your FIFO topic by adjusting
+        /// the scope of deduplication. This attribute has two possible values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>Topic</c> – The scope of message deduplication is across the entire topic. This
+        /// is the default value and maintains existing behavior, with a maximum throughput of
+        /// 3000 messages per second or 20MB per second, whichever comes first.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>MessageGroup</c> – The scope of deduplication is within each individual message
+        /// group, which enables higher throughput per topic subject to regional quotas. For more
+        /// information on quotas or to request an increase, see <a href="https://docs.aws.amazon.com/general/latest/gr/sns.html">Amazon
+        /// SNS service quotas</a> in the Amazon Web Services General Reference.
+        /// </para>
         ///  </li> </ul> </li> </ul>
         /// </summary>
         public Dictionary<string, string> Attributes
