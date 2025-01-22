@@ -303,8 +303,7 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property Timeout. 
         /// <para>
         ///  The number of minutes before session times out. Default for Spark ETL jobs is 48
-        /// hours (2880 minutes), the maximum session lifetime for this job type. Consult the
-        /// documentation for other job types. 
+        /// hours (2880 minutes). Consult the documentation for other job types. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
