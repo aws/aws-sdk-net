@@ -36,6 +36,7 @@ using System.Threading.Tasks;
 using System;
 using System.Diagnostics;
 using System.IO;
+using AWSSDK_DotNet.UnitTests.TestTools;
 namespace AWSSDK.Benchmarks
 {
     public class MarshallAndUnmarshallBenchmarks

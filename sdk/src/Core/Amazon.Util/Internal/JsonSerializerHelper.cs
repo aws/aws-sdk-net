@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.Json;
 
 #if NET8_0_OR_GREATER
-using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Text.Json.Serialization.Metadata;
 #endif
@@ -25,19 +25,17 @@ namespace Amazon.Util.Internal
 #else
         public static T Deserialize<T>(string json, JsonSerializerContext typeInfo)
         {
-            return ThirdParty.Json.LitJson.JsonMapper.ToObject<T>(json);
+            return JsonSerializer.Deserialize<T>(json);
         }
 
         public static string Serialize<T>(object obj, JsonSerializerContext typeInfo)
         {
-            var json = new StringBuilder();
-            var writer = new ThirdParty.Json.LitJson.JsonWriter(json)
+            var jsonSerializerOptions = new System.Text.Json.JsonSerializerOptions
             {
-                PrettyPrint = (typeInfo?.Options?.WriteIndented).GetValueOrDefault()
+                WriteIndented = (typeInfo?.Options?.WriteIndented).GetValueOrDefault()
             };
 
-            ThirdParty.Json.LitJson.JsonMapper.ToJson(obj, writer);
-            return json.ToString();
+            return JsonSerializer.Serialize(obj, jsonSerializerOptions);
         }
 #endif
     }
@@ -104,7 +102,7 @@ namespace Amazon.Util.Internal
     {
         public JsonSerializerContext() { }
 
-        public JsonSerializerContext(JsonSerializerOptions defaultOptions) 
+        public JsonSerializerContext(JsonSerializerOptions defaultOptions)
         {
             Options = defaultOptions;
         }
@@ -118,7 +116,7 @@ namespace Amazon.Util.Internal
     {
         public bool PropertyNameCaseInsensitive { get; set; }
 
-        public bool WriteIndented {get;set;}
+        public bool WriteIndented { get; set; }
     }
 
 #pragma warning disable CA1019 // Since this is a dummy implementation of JsonSerializableAttribute for pre .NET 8 targets we don't need the accessor.

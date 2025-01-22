@@ -6,6 +6,7 @@ using Amazon.Runtime.Internal;
 using Amazon.Util;
 using AWSSDK_DotNet.CommonTest.Utils;
 using AWSSDK_DotNet.UnitTests.TestTools;
+using System.Text.Json;
 using Json.LitJson;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -33,26 +34,26 @@ namespace AWSSDK.UnitTests
             // JsonMapper.ToJson's DateTime writing exporter will output any date as a string formatted
             // as a local or unspecified time. This changes it so the data is mocked as IMDS would
             // actually return it which is "yyyy-MM-ddTHH:mm:ssZ" ending in a Z specified as UTC.
-            JsonMapper.RegisterExporter<DateTime>(
-                (DateTime date, JsonWriter writer) => {                     
-                    if(date == DateTime.MinValue && date.Kind != DateTimeKind.Utc)
-                    {
-                        //Do not use .ToUniversalTime on a min datetime as it will adjust the hours.
-                        DateTime.SpecifyKind(date, DateTimeKind.Utc);
-                    }
-                    else if(date.Kind != DateTimeKind.Utc)
-                    {
-                        date = date.ToUniversalTime();
-                    }
+            //JsonMapper.RegisterExporter<DateTime>(
+            //    (DateTime date, JsonWriter writer) => {                     
+            //        if(date == DateTime.MinValue && date.Kind != DateTimeKind.Utc)
+            //        {
+            //            //Do not use .ToUniversalTime on a min datetime as it will adjust the hours.
+            //            DateTime.SpecifyKind(date, DateTimeKind.Utc);
+            //        }
+            //        else if(date.Kind != DateTimeKind.Utc)
+            //        {
+            //            date = date.ToUniversalTime();
+            //        }
 
-                    writer.Write(date.ToString("yyyy-MM-ddTHH:mm:ssZ"));
-                }
-            );
+            //        writer.Write(date.ToString("yyyy-MM-ddTHH:mm:ssZ"));
+            //    }
+            //);
         }
 
         public override void Dispose()
         {
-            JsonMapper.UnregisterExporters();
+            //JsonMapper.UnregisterExporters();
             _metadataServiceEndpointSwitch.Dispose();
 
             ResetUseNullToken();
@@ -80,12 +81,14 @@ namespace AWSSDK.UnitTests
             string token,
             HttpStatusCode statusCode = HttpStatusCode.OK)
         {
-            AddMetadataGenericResponse(JsonMapper.ToJson(metadata), token, statusCode);
+            string contents = JsonSerializer.Serialize(metadata);
+            AddMetadataGenericResponse(contents, token, statusCode);
         }
 
         public void AddMetadataSecurityInfoResponse(IAMInstanceProfileMetadata metadata, string token, HttpStatusCode statusCode = HttpStatusCode.OK)
         {
-            AddMetadataGenericResponse(JsonMapper.ToJson(metadata), token, statusCode);
+            string contents = JsonSerializer.Serialize(metadata);
+            AddMetadataGenericResponse(contents, token, statusCode);
         }
 
         public void AddMetadataGenericResponse(string contents, string token, HttpStatusCode statusCode)

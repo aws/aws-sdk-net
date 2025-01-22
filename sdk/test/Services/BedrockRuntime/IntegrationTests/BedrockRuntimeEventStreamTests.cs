@@ -4,7 +4,7 @@ using Amazon.BedrockRuntime.Model;
 using System.Threading.Tasks;
 using System.IO;
 using System.Text;
-using ThirdParty.Json.LitJson;
+using System.Text.Json;
 using System.Threading;
 using System;
 using System.Diagnostics.Contracts;
@@ -20,7 +20,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
     /// 
     /// Because this test requires explicit access to the models it is ignored.
     /// </summary>
-    [Ignore]
     [TestClass]
     public class BedrockRuntimeEventStreamTests : TestBase<AmazonBedrockRuntimeClient>
     {
@@ -102,7 +101,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             Assert.IsTrue(exceptionReceived);
             Assert.IsFalse(chunkReceived);
         }
-    
 #endif
         static MemoryStream CreateStream(string query, bool createInvalidInput = false)
         {
@@ -115,22 +113,21 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 promptValueBuilder.Append(".");
             promptValueBuilder.AppendLine();
             promptValueBuilder.AppendLine("Assistant: ");
-
-
-            var stream = new MemoryStream(
-                                Encoding.UTF8.GetBytes(
-                                    JsonMapper.ToJson(new
-                                    {
-                                        prompt = promptValueBuilder.ToString(),
-                                        max_tokens_to_sample = 300
-                                    }
-                                    )
-                                )
-                             );
-
+            MemoryStream stream = new MemoryStream();
+            AnthropicClaudeV2Json jsonObject = new AnthropicClaudeV2Json
+            {
+                prompt = promptValueBuilder.ToString(),
+                max_tokens_to_sample = 300
+            };
+            JsonSerializer.Serialize(stream, jsonObject, typeof(AnthropicClaudeV2Json));
 
             stream.Position = 0;
             return stream;
+        }
+        private class AnthropicClaudeV2Json
+        {
+            public string prompt { get; set; }
+            public int max_tokens_to_sample { get; set; }
         }
     }
 }

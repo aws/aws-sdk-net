@@ -10,7 +10,7 @@ using System.Text.RegularExpressions;
 using Amazon.Runtime;
 using Amazon.Util;
 
-using ThirdParty.Json.LitJson;
+using System.Text.Json;
 
 using Amazon.Runtime.Internal.Util;
 using System.Security.Cryptography;
@@ -55,17 +55,16 @@ namespace Amazon.SimpleNotificationService.Util
         {
             var message = new Message();
 
-            var jsonData = JsonMapper.ToObject(messageText);
+            var jsonData = JsonDocument.Parse(messageText);
 
             Func<string, string> extractField = ((fieldName) =>
                 {
-                    if (jsonData[fieldName] != null && jsonData[fieldName].IsString)
-                        return (string)jsonData[fieldName];
-
+                    if (jsonData.RootElement.TryGetProperty(fieldName, out var value) && value.ValueKind == JsonValueKind.String)
+                        return value.GetString();
+                    var anyCaseKey = jsonData.RootElement.EnumerateObject().FirstOrDefault(x => string.Equals(x.Name, fieldName, StringComparison.OrdinalIgnoreCase)).Value.GetString();
                     // Check to see if the field can be found with a different case.
-                    var anyCaseKey = jsonData.PropertyNames.FirstOrDefault(x => string.Equals(x, fieldName, StringComparison.OrdinalIgnoreCase));
-                    if (!string.IsNullOrEmpty(anyCaseKey) && jsonData[anyCaseKey] != null && jsonData[anyCaseKey].IsString)
-                        return (string)jsonData[anyCaseKey];
+                    if (!string.IsNullOrEmpty(anyCaseKey) && (jsonData.RootElement.TryGetProperty(anyCaseKey, out var anyCaseValue) && anyCaseValue.ValueKind == JsonValueKind.String))
+                        return anyCaseValue.GetString();
 
                     return null;
                 });
