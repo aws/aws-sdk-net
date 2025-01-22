@@ -1,3 +1,16 @@
+### 3.7.967.0 (2025-01-22 19:29 UTC)
+* BedrockAgentRuntime (3.7.416.0)
+	* Adds multi-turn input support for an Agent node in an Amazon Bedrock Flow
+* Glue (3.7.413.15)
+	* Docs Update for timeout changes
+* MediaLive (3.7.409.0)
+	* AWS Elemental MediaLive adds a new feature, ID3 segment tagging, in CMAF Ingest output groups. It allows customers to insert ID3 tags into every output segment, controlled by a newly added channel schedule action Id3SegmentTagging.
+* WorkSpacesThinClient (3.7.401.4)
+	* Rename WorkSpaces Web to WorkSpaces Secure Browser
+* Core 3.7.401.4
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.966.0 (2025-01-21 20:07 UTC)
 * Batch (3.7.404.18)
 	* Documentation-only update: clarified the description of the shareDecaySeconds parameter of the FairsharePolicy data type, clarified the description of the priority parameter of the JobQueueDetail data type.
