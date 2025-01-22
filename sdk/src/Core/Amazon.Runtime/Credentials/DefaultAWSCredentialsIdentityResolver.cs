@@ -58,11 +58,21 @@ namespace Amazon.Runtime.Credentials
             };
         }
 
+        /// <summary>
+        /// Search the environment for configured AWS credentials. The search includes
+        /// environment variables, "default" AWS credentials profiles and EC2 instance metadata.
+        /// </summary>
+        /// <returns>AWSCredentials that can be used when creating AWS service clients.</returns>
         public static AWSCredentials GetCredentials()
         {
             return _defaultInstance.Value.ResolveIdentity();
         }
 
+        /// <summary>
+        /// Search the environment for configured AWS credentials. The search includes
+        /// environment variables, "default" AWS credentials profiles and EC2 instance metadata.
+        /// </summary>
+        /// <returns>AWSCredentials that can be used when creating AWS service clients.</returns>
         public static Task<AWSCredentials> GetCredentialsAsync()
         {
             return _defaultInstance.Value.ResolveIdentityAsync();
