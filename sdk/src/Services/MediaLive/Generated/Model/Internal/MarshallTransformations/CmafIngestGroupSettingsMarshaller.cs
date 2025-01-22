@@ -59,6 +59,18 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetId3Behavior())
+            {
+                context.Writer.WritePropertyName("id3Behavior");
+                context.Writer.Write(requestObject.Id3Behavior);
+            }
+
+            if(requestObject.IsSetId3NameModifier())
+            {
+                context.Writer.WritePropertyName("id3NameModifier");
+                context.Writer.Write(requestObject.Id3NameModifier);
+            }
+
             if(requestObject.IsSetKlvBehavior())
             {
                 context.Writer.WritePropertyName("klvBehavior");

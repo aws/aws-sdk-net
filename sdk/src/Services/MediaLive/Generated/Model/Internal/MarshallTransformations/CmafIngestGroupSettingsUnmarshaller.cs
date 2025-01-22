@@ -72,6 +72,18 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.Destination = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("id3Behavior", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Id3Behavior = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("id3NameModifier", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Id3NameModifier = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("klvBehavior", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
