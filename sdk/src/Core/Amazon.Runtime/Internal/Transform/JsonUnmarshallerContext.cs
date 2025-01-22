@@ -284,19 +284,6 @@ namespace Amazon.Runtime.Internal.Transform
                                     text = Encoding.UTF8.GetString(reader.Reader.ValueSpan);
 #endif
                     break;
-                case JsonTokenType.PropertyName:
-                case JsonTokenType.String:
-                    text = reader.Reader.GetString();
-                    break;
-                 // For numbers we grab the raw value b/ c we don't want to lose precision.
-                case JsonTokenType.Number:
-#if NETSTANDARD2_0 || NETFRAMEWORK
-                    // overload which accepts a ReadOnlySpan<byte> is only available in netstandard2.1 and netcore2.1+
-                    text = Encoding.UTF8.GetString(reader.Reader.ValueSpan.ToArray());
-#else
-                    text = Encoding.UTF8.GetString(reader.Reader.ValueSpan);
-#endif
-                    break;
                 default:
                     throw new AmazonClientException($"Unexpected token: {currentToken}");
             }
