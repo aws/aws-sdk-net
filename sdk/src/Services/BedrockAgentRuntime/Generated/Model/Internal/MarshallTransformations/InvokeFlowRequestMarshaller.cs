@@ -79,6 +79,12 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.EnableTrace);
                 }
 
+                if(publicRequest.IsSetExecutionId())
+                {
+                    context.Writer.WritePropertyName("executionId");
+                    context.Writer.Write(publicRequest.ExecutionId);
+                }
+
                 if(publicRequest.IsSetInputs())
                 {
                     context.Writer.WritePropertyName("inputs");

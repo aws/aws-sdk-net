@@ -46,6 +46,7 @@ namespace Amazon.BedrockAgentRuntime.Model
     public partial class InvokeFlowRequest : AmazonBedrockAgentRuntimeRequest
     {
         private bool? _enableTrace;
+        private string _executionId;
         private string _flowAliasIdentifier;
         private string _flowIdentifier;
         private List<FlowInput> _inputs = AWSConfigs.InitializeCollections ? new List<FlowInput>() : null;
@@ -69,6 +70,26 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetEnableTrace()
         {
             return this._enableTrace.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExecutionId. 
+        /// <para>
+        /// The unique identifier for the current flow execution. If you don't provide a value,
+        /// Amazon Bedrock creates the identifier for you. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=2, Max=100)]
+        public string ExecutionId
+        {
+            get { return this._executionId; }
+            set { this._executionId = value; }
+        }
+
+        // Check to see if ExecutionId property is set
+        internal bool IsSetExecutionId()
+        {
+            return this._executionId != null;
         }
 
         /// <summary>

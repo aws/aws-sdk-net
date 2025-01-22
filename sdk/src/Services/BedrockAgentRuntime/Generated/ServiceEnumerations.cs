@@ -589,6 +589,10 @@ namespace Amazon.BedrockAgentRuntime
     {
 
         /// <summary>
+        /// Constant INPUT_REQUIRED for FlowCompletionReason
+        /// </summary>
+        public static readonly FlowCompletionReason INPUT_REQUIRED = new FlowCompletionReason("INPUT_REQUIRED");
+        /// <summary>
         /// Constant SUCCESS for FlowCompletionReason
         /// </summary>
         public static readonly FlowCompletionReason SUCCESS = new FlowCompletionReason("SUCCESS");

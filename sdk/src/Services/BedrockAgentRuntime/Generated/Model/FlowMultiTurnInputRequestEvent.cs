@@ -25,28 +25,32 @@ using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
+using Amazon.Runtime.EventStreams;
+using Amazon.Runtime.EventStreams.Internal;
+using Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations;
+using Amazon.Runtime.EventStreams.Utils;
 
 #pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Contains information about an input into the prompt flow and where to send it.
+    /// Response object from the flow multi-turn node requesting additional information.
     /// </summary>
-    public partial class FlowInput
+    public partial class FlowMultiTurnInputRequestEvent
+        : IEventStreamEvent
     {
-        private FlowInputContent _content;
-        private string _nodeInputName;
+        private FlowMultiTurnInputContent _content;
         private string _nodeName;
-        private string _nodeOutputName;
+        private NodeType _nodeType;
 
         /// <summary>
         /// Gets and sets the property Content. 
         /// <para>
-        /// Contains information about an input into the prompt flow.
+        /// The content payload containing the input request details for the multi-turn interaction.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true)]
-        public FlowInputContent Content
+        [AWSProperty(Required=true)]
+        public FlowMultiTurnInputContent Content
         {
             get { return this._content; }
             set { this._content = value; }
@@ -59,27 +63,9 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NodeInputName. 
-        /// <para>
-        /// The name of the input from the flow input node.
-        /// </para>
-        /// </summary>
-        public string NodeInputName
-        {
-            get { return this._nodeInputName; }
-            set { this._nodeInputName = value; }
-        }
-
-        // Check to see if NodeInputName property is set
-        internal bool IsSetNodeInputName()
-        {
-            return this._nodeInputName != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property NodeName. 
         /// <para>
-        /// The name of the flow input node that begins the prompt flow.
+        /// The name of the node in the flow that is requesting the input.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -96,21 +82,22 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NodeOutputName. 
+        /// Gets and sets the property NodeType. 
         /// <para>
-        /// The name of the output from the flow input node that begins the prompt flow.
+        /// The type of the node in the flow that is requesting the input.
         /// </para>
         /// </summary>
-        public string NodeOutputName
+        [AWSProperty(Required=true)]
+        public NodeType NodeType
         {
-            get { return this._nodeOutputName; }
-            set { this._nodeOutputName = value; }
+            get { return this._nodeType; }
+            set { this._nodeType = value; }
         }
 
-        // Check to see if NodeOutputName property is set
-        internal bool IsSetNodeOutputName()
+        // Check to see if NodeType property is set
+        internal bool IsSetNodeType()
         {
-            return this._nodeOutputName != null;
+            return this._nodeType != null;
         }
 
     }

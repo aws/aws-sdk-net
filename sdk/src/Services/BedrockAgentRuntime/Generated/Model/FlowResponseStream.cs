@@ -48,6 +48,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         {
             {"Initial-Response", payload => new InitialResponseEvent(payload)},
             {"FlowCompletionEvent", payload => new FlowCompletionEventUnmarshaller().Unmarshall(EventStreamUtils.ConvertMessageToJsonContext(payload))},
+            {"FlowMultiTurnInputRequestEvent", payload => new FlowMultiTurnInputRequestEventUnmarshaller().Unmarshall(EventStreamUtils.ConvertMessageToJsonContext(payload))},
             {"FlowOutputEvent", payload => new FlowOutputEventUnmarshaller().Unmarshall(EventStreamUtils.ConvertMessageToJsonContext(payload))},
             {"FlowTraceEvent", payload => new FlowTraceEventUnmarshaller().Unmarshall(EventStreamUtils.ConvertMessageToJsonContext(payload))},
         };
@@ -98,6 +99,10 @@ namespace Amazon.BedrockAgentRuntime.Model
         ///</summary>
         public event EventHandler<EventStreamEventReceivedArgs<FlowCompletionEvent>> FlowCompletionEventReceived;
         ///<summary>
+        ///Raised when an FlowMultiTurnInputRequestEvent event is received
+        ///</summary>
+        public event EventHandler<EventStreamEventReceivedArgs<FlowMultiTurnInputRequestEvent>> FlowMultiTurnInputRequestEventReceived;
+        ///<summary>
         ///Raised when an FlowOutputEvent event is received
         ///</summary>
         public event EventHandler<EventStreamEventReceivedArgs<FlowOutputEvent>> FlowOutputEventReceived;
@@ -143,6 +148,7 @@ namespace Amazon.BedrockAgentRuntime.Model
                 var _ =
                     RaiseEvent(InitialResponseReceived, ev) ||
                     RaiseEvent(FlowCompletionEventReceived,ev) ||
+                    RaiseEvent(FlowMultiTurnInputRequestEventReceived,ev) ||
                     RaiseEvent(FlowOutputEventReceived,ev) ||
                     RaiseEvent(FlowTraceEventReceived,ev);
             };       
