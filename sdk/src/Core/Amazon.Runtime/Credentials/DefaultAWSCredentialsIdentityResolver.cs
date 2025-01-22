@@ -41,27 +41,31 @@ namespace Amazon.Runtime.Credentials
         private readonly CredentialProfileStoreChain _credentialProfileChain = new();
         private readonly EnvironmentState _lastKnownEnvironmentState = new();
 
+        private static readonly Lazy<DefaultAWSCredentialsIdentityResolver> _defaultInstance = new Lazy<DefaultAWSCredentialsIdentityResolver>();
+
         public DefaultAWSCredentialsIdentityResolver()
         {
-            try
+            _cachedCredentials = null;
+            _credentialsGenerators = new List<CredentialsGenerator>
             {
-                _cachedCredentialsLock.EnterWriteLock();
-                _cachedCredentials = null;
-                _credentialsGenerators = new List<CredentialsGenerator>
-                {
 #if BCL
-                    () => new AppConfigAWSCredentials(), // Test explicit keys/profile name first.
+                () => new AppConfigAWSCredentials(), // Test explicit keys/profile name first.
 #endif
-                    () => new EnvironmentVariablesAWSCredentials(), // Look for credentials set in environment vars.
-                    () => AssumeRoleWithWebIdentityCredentials.FromEnvironmentVariables(),
-                    () => GetAWSCredentials(_credentialProfileChain),
-                    () => ContainerEC2CredentialsWrapper(), // either get ECS / EKS credentials or instance profile credentials
-                };
-            }
-            finally
-            {
-                _cachedCredentialsLock.ExitWriteLock();
-            }
+                () => new EnvironmentVariablesAWSCredentials(), // Look for credentials set in environment vars.
+                () => AssumeRoleWithWebIdentityCredentials.FromEnvironmentVariables(),
+                () => GetAWSCredentials(_credentialProfileChain),
+                () => ContainerEC2CredentialsWrapper(), // either get ECS / EKS credentials or instance profile credentials
+            };
+        }
+
+        public static AWSCredentials GetCredentials()
+        {
+            return _defaultInstance.Value.ResolveIdentity();
+        }
+
+        public static Task<AWSCredentials> GetCredentialsAsync()
+        {
+            return _defaultInstance.Value.ResolveIdentityAsync();
         }
 
         BaseIdentity IIdentityResolver.ResolveIdentity()
