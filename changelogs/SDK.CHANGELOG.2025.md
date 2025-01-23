@@ -1,3 +1,8 @@
+### 3.7.968.0 (2025-01-23 19:16 UTC)
+* EC2 (3.7.428.0)
+	* Added "future" allocation type for future dated capacity reservation
+	* fix: Fixed an issue where custom AmazonEC2Client.DryRun() method was not working for non-BCL targets. Also included this method in IAmazonEC2 interface.
+
 ### 3.7.967.0 (2025-01-22 19:29 UTC)
 * BedrockAgentRuntime (3.7.416.0)
 	* Adds multi-turn input support for an Agent node in an Amazon Bedrock Flow
