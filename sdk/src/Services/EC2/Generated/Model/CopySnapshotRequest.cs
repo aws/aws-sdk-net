@@ -53,8 +53,8 @@ namespace Amazon.EC2.Model
     /// <para>
     /// Snapshots copied to an Outpost are encrypted by default using the default encryption
     /// key for the Region, or a different key that you specify in the request using <b>KmsKeyId</b>.
-    /// Outposts do not support unencrypted snapshots. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#ami">Amazon
-    /// EBS local snapshots on Outposts</a> in the <i>Amazon EBS User Guide</i>.
+    /// Outposts do not support unencrypted snapshots. For more information, <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#ami">
+    /// Amazon EBS local snapshots on Outposts</a> in the <i>Amazon EBS User Guide</i>.
     /// </para>
     ///  
     /// <para>

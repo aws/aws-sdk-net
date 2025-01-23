@@ -78,7 +78,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NoDevice. 
         /// <para>
-        /// Suppresses the specified device included in the block device mapping.
+        /// suppress the specified device included in the block device mapping.
         /// </para>
         /// </summary>
         public string NoDevice

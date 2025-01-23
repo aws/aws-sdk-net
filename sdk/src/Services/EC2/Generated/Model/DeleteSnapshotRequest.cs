@@ -44,7 +44,7 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// You cannot delete a snapshot of the root device of an EBS volume used by a registered
-    /// AMI. You must first deregister the AMI before you can delete the snapshot.
+    /// AMI. You must first de-register the AMI before you can delete the snapshot.
     /// </para>
     ///  
     /// <para>

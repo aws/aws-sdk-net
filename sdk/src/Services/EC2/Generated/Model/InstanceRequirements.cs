@@ -276,15 +276,11 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For instance types with FPGA accelerators, specify <c>fpga</c>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// For instance types with GPU accelerators, specify <c>gpu</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For instance types with Inference accelerators, specify <c>inference</c>.
+        /// For instance types with FPGA accelerators, specify <c>fpga</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>

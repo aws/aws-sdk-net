@@ -69,8 +69,7 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <c>trn1.2xlarge</c> | <c>trn1.32xlarge</c> | <c>trn1n.32xlarge</c> | <c>trn2.48xlarge</c>
-    /// | <c>trn2u.48xlarge</c> 
+    ///  <c>trn1.2xlarge</c> | <c>trn1.32xlarge</c> | <c>trn1n.32xlarge</c> 
     /// </para>
     ///  </li> </ul> </li> </ul> 
     /// <para>

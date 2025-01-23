@@ -423,11 +423,11 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Assigns the specified IPv6 addresses to the specified network interface. You can specify
-        /// specific IPv6 addresses, or you can specify the number of IPv6 addresses to be automatically
-        /// assigned from the subnet's IPv6 CIDR block range. You can assign as many IPv6 addresses
-        /// to a network interface as you can assign private IPv4 addresses, and the limit varies
-        /// by instance type.
+        /// Assigns one or more IPv6 addresses to the specified network interface. You can specify
+        /// one or more specific IPv6 addresses, or you can specify the number of IPv6 addresses
+        /// to be automatically assigned from within the subnet's IPv6 CIDR block range. You can
+        /// assign as many IPv6 addresses to a network interface as you can assign private IPv4
+        /// addresses, and the limit varies per instance type.
         /// 
         ///  
         /// <para>
@@ -458,14 +458,14 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Assigns the specified secondary private IP addresses to the specified network interface.
+        /// Assigns one or more secondary private IP addresses to the specified network interface.
         /// 
         ///  
         /// <para>
-        /// You can specify specific secondary IP addresses, or you can specify the number of
-        /// secondary IP addresses to be automatically assigned from the subnet's CIDR block range.
-        /// The number of secondary IP addresses that you can assign to an instance varies by
-        /// instance type. For more information about Elastic IP addresses, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+        /// You can specify one or more specific secondary IP addresses, or you can specify the
+        /// number of secondary IP addresses to be automatically assigned within the subnet's
+        /// CIDR block range. The number of secondary IP addresses that you can assign to an instance
+        /// varies by instance type. For more information about Elastic IP addresses, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
         /// IP Addresses</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
@@ -1405,12 +1405,7 @@ namespace Amazon.EC2
         /// elapsed. You can't cancel a future-dated Capacity Reservation during the commitment
         /// duration.
         /// </para>
-        ///  </li> </ul> <note> 
-        /// <para>
-        /// You can't modify or cancel a Capacity Block. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-blocks.html">Capacity
-        /// Blocks for ML</a>.
-        /// </para>
-        ///  </note> 
+        ///  </li> </ul> 
         /// <para>
         /// If a future-dated Capacity Reservation enters the <c>delayed</c> state, the commitment
         /// duration is waived, and you can cancel it as soon as it enters the <c>active</c> state.
@@ -1774,8 +1769,8 @@ namespace Amazon.EC2
         /// <para>
         /// Snapshots copied to an Outpost are encrypted by default using the default encryption
         /// key for the Region, or a different key that you specify in the request using <b>KmsKeyId</b>.
-        /// Outposts do not support unencrypted snapshots. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#ami">Amazon
-        /// EBS local snapshots on Outposts</a> in the <i>Amazon EBS User Guide</i>.
+        /// Outposts do not support unencrypted snapshots. For more information, <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#ami">
+        /// Amazon EBS local snapshots on Outposts</a> in the <i>Amazon EBS User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -2776,8 +2771,8 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Creates a managed prefix list. You can specify entries for the prefix list. Each entry
-        /// consists of a CIDR block and an optional description.
+        /// Creates a managed prefix list. You can specify one or more entries for the prefix
+        /// list. Each entry consists of a CIDR block and an optional description.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateManagedPrefixList service method.</param>
         /// <param name="cancellationToken">
@@ -3316,7 +3311,7 @@ namespace Amazon.EC2
         ///  </li> <li> 
         /// <para>
         /// If the source volume is in a Local Zone, you can create the snapshot in the same Local
-        /// Zone or in its parent Amazon Web Services Region.
+        /// Zone or in parent Amazon Web Services Region.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3350,7 +3345,7 @@ namespace Amazon.EC2
         /// Snapshots that are taken from encrypted volumes are automatically encrypted. Volumes
         /// that are created from encrypted snapshots are also automatically encrypted. Your encrypted
         /// volumes and any associated snapshots always remain protected. For more information,
-        /// see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon
+        /// <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon
         /// EBS encryption</a> in the <i>Amazon EBS User Guide</i>.
         /// </para>
         /// </summary>
@@ -3389,7 +3384,7 @@ namespace Amazon.EC2
         ///  </li> <li> 
         /// <para>
         /// If the source instance is in a Local Zone, you can create the snapshots in the same
-        /// Local Zone or in its parent Amazon Web Services Region.
+        /// Local Zone or in parent Amazon Web Services Region.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5294,7 +5289,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// You cannot delete a snapshot of the root device of an EBS volume used by a registered
-        /// AMI. You must first deregister the AMI before you can delete the snapshot.
+        /// AMI. You must first de-register the AMI before you can delete the snapshot.
         /// </para>
         ///  
         /// <para>
@@ -6624,22 +6619,6 @@ namespace Amazon.EC2
         /// Describes Capacity Block offerings available for purchase in the Amazon Web Services
         /// Region that you're currently using. With Capacity Blocks, you purchase a specific
         /// instance type for a period of time.
-        /// 
-        ///  
-        /// <para>
-        /// To search for an available Capacity Block offering, you specify a reservation duration
-        /// and instance count. You must select one of the following options.
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// For reservation durations<b> 1-day increments up 14 days and 7-day increments up to
-        /// 182 days total</b> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// For instance count<b> 1, 2, 4, 8, 16, 32, or 64 instances</b> 
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCapacityBlockOfferings service method.</param>
         /// <param name="cancellationToken">
@@ -8090,8 +8069,7 @@ namespace Amazon.EC2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>trn1.2xlarge</c> | <c>trn1.32xlarge</c> | <c>trn1n.32xlarge</c> | <c>trn2.48xlarge</c>
-        /// | <c>trn2u.48xlarge</c> 
+        ///  <c>trn1.2xlarge</c> | <c>trn1.32xlarge</c> | <c>trn1n.32xlarge</c> 
         /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>
@@ -8795,7 +8773,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the specified network interfaces or all your network interfaces.
+        /// Describes one or more of your network interfaces.
         /// 
         ///  
         /// <para>
@@ -8821,7 +8799,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the specified network interfaces or all your network interfaces.
+        /// Describes one or more of your network interfaces.
         /// 
         ///  
         /// <para>
@@ -18313,7 +18291,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Unassigns the specified IPv6 addresses or Prefix Delegation prefixes from a network
+        /// Unassigns one or more IPv6 addresses IPv4 Prefix Delegation prefixes from a network
         /// interface.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UnassignIpv6Addresses service method.</param>
@@ -18332,7 +18310,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Unassigns the specified secondary private IP addresses or IPv4 Prefix Delegation prefixes
+        /// Unassigns one or more secondary private IP addresses, or IPv4 Prefix Delegation prefixes
         /// from a network interface.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UnassignPrivateIpAddresses service method.</param>

@@ -673,6 +673,10 @@ namespace Amazon.EC2
     {
 
         /// <summary>
+        /// Constant Future for AllocationType
+        /// </summary>
+        public static readonly AllocationType Future = new AllocationType("future");
+        /// <summary>
         /// Constant Used for AllocationType
         /// </summary>
         public static readonly AllocationType Used = new AllocationType("used");

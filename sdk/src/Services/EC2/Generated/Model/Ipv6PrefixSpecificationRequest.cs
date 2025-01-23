@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes the IPv6 prefix option for a network interface.
+    /// Describes the IPv4 prefix option for a network interface.
     /// </summary>
     public partial class Ipv6PrefixSpecificationRequest
     {

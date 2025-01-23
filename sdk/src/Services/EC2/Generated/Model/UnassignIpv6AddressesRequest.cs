@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the UnassignIpv6Addresses operation.
-    /// Unassigns the specified IPv6 addresses or Prefix Delegation prefixes from a network
+    /// Unassigns one or more IPv6 addresses IPv4 Prefix Delegation prefixes from a network
     /// interface.
     /// </summary>
     public partial class UnassignIpv6AddressesRequest : AmazonEC2Request
