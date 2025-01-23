@@ -42,13 +42,13 @@ namespace Amazon.Util.Internal
 
             return JsonSerializer.Serialize(obj, jsonSerializerOptions);
         }
-        private static string SanitizeJson(string rawJson) 
+#endif
+        public static string SanitizeJson(string rawJson)
         {
             // Add a comma after numbers or strings if they're not followed by a closing brace/bracket or comma.
             rawJson = System.Text.RegularExpressions.Regex.Replace(rawJson, @"(""[^""]*""|\d+)(\s*""[^""]*""\s*:)", "$1,$2");
             return rawJson;
         }
-#endif
     }
 
     [JsonSerializable(typeof(IAMInstanceProfileMetadata))]

@@ -15,6 +15,7 @@ using System.Text.Json;
 using Amazon.Runtime.Internal.Util;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
+using Amazon.Util.Internal;
 
 namespace Amazon.SimpleNotificationService.Util
 {
@@ -54,17 +55,31 @@ namespace Amazon.SimpleNotificationService.Util
         public static Message ParseMessage(string messageText)
         {
             var message = new Message();
-
-            var jsonData = JsonDocument.Parse(messageText);
-
+            string santizedMessageText;
+            JsonDocument jsonData;
+            try
+            {
+                jsonData = JsonDocument.Parse(messageText);
+            }
+            // we don't want to sanitize the message if it is already valid JSON. so only santize
+            // if we catch ane exception
+            catch (JsonException)
+            {
+                santizedMessageText = JsonSerializerHelper.SanitizeJson(messageText);
+                jsonData = JsonDocument.Parse(santizedMessageText);
+            }
             Func<string, string> extractField = ((fieldName) =>
                 {
                     if (jsonData.RootElement.TryGetProperty(fieldName, out var value) && value.ValueKind == JsonValueKind.String)
+                    {
                         return value.GetString();
-                    var anyCaseKey = jsonData.RootElement.EnumerateObject().FirstOrDefault(x => string.Equals(x.Name, fieldName, StringComparison.OrdinalIgnoreCase)).Value.GetString();
+                    }
+                    var anyCaseKey = jsonData.RootElement.EnumerateObject().FirstOrDefault(x => string.Equals(x.Name, fieldName, StringComparison.OrdinalIgnoreCase));
                     // Check to see if the field can be found with a different case.
-                    if (!string.IsNullOrEmpty(anyCaseKey) && (jsonData.RootElement.TryGetProperty(anyCaseKey, out var anyCaseValue) && anyCaseValue.ValueKind == JsonValueKind.String))
-                        return anyCaseValue.GetString();
+                    if (!string.IsNullOrEmpty(anyCaseKey.Value.ToString()) && anyCaseKey.Value.ValueKind == JsonValueKind.String)
+                    {
+                        return anyCaseKey.Value.GetString();
+                    }
 
                     return null;
                 });
