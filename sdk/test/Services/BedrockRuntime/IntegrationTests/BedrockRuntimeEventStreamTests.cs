@@ -21,6 +21,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
     /// Because this test requires explicit access to the models it is ignored.
     /// </summary>
     [TestClass]
+    [Ignore]
     public class BedrockRuntimeEventStreamTests : TestBase<AmazonBedrockRuntimeClient>
     {
 #if BCL
