@@ -12,6 +12,10 @@ namespace Amazon.Util.Internal
 {
     public static class JsonSerializerHelper
     {
+        private static System.Text.Json.JsonSerializerOptions options = new System.Text.Json.JsonSerializerOptions
+        {
+            AllowTrailingCommas = true,
+        };
 #if NET8_0_OR_GREATER
         public static T Deserialize<T>(string json, JsonSerializerContext context)
         {
@@ -25,7 +29,8 @@ namespace Amazon.Util.Internal
 #else
         public static T Deserialize<T>(string json, JsonSerializerContext typeInfo)
         {
-            return JsonSerializer.Deserialize<T>(json);
+            string sanitizedJson = SanitizeJson(json);
+            return JsonSerializer.Deserialize<T>(sanitizedJson, options);
         }
 
         public static string Serialize<T>(object obj, JsonSerializerContext typeInfo)
@@ -36,6 +41,12 @@ namespace Amazon.Util.Internal
             };
 
             return JsonSerializer.Serialize(obj, jsonSerializerOptions);
+        }
+        private static string SanitizeJson(string rawJson) 
+        {
+            // Add a comma after numbers or strings if they're not followed by a closing brace/bracket or comma.
+            rawJson = System.Text.RegularExpressions.Regex.Replace(rawJson, @"(""[^""]*""|\d+)(\s*""[^""]*""\s*:)", "$1,$2");
+            return rawJson;
         }
 #endif
     }

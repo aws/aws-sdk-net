@@ -143,8 +143,8 @@ namespace AWSSDK.UnitTests
             }
             catch (ProcessAWSCredentialException proc)
             {
-                Assert.AreEqual("ThirdParty.Json.LitJson.JsonException", proc.InnerException.GetType().FullName);
-                Assert.IsTrue(proc.InnerException.ToString().Contains("ThirdParty.Json.LitJson.JsonException: The type Amazon.Runtime.Internal.ProcessCredentialVersion1 doesn't have the required property 'System.String AccessKeyId' set"));
+                Assert.AreEqual("System.ArgumentNullException", proc.InnerException.GetType().FullName);
+                Assert.IsTrue(proc.InnerException.ToString().Contains("System.ArgumentNullException: Value cannot be null.\r\nParameter name: awsAccessKeyId\r\n"));
             }
         }                
     }
