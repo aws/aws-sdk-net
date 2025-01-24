@@ -1,3 +1,17 @@
+### 3.7.969.0 (2025-01-24 19:24 UTC)
+* CloudTrail (3.7.403.0)
+	* This release introduces the SearchSampleQueries API that allows users to search for CloudTrail Lake sample queries.
+* EKS (3.7.409.0)
+	* Adds support for UpdateStrategies in EKS Managed Node Groups.
+* HealthLake (3.7.401.0)
+	* Added new authorization strategy value 'SMART_ON_FHIR' for CreateFHIRDatastore API to support Smart App 2.0
+* SimpleSystemsManagement (3.7.403.29)
+	* Systems Manager doc-only update for January, 2025.
+* SSOOIDC (3.7.400.85)
+	* Fixed typos in the descriptions.
+* Transfer (3.7.404.0)
+	* Added CustomDirectories as a new directory option for storing inbound AS2 messages, MDN files and Status files.
+
 ### 3.7.968.0 (2025-01-23 19:16 UTC)
 * EC2 (3.7.428.0)
 	* Added "future" allocation type for future dated capacity reservation
