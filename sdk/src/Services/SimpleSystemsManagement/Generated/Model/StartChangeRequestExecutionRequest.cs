@@ -283,7 +283,14 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         ///  <c>Key=Region,Value=us-east-2</c> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// The <c>Array Members</c> maximum value is reported as 1000. This number includes capacity
+        /// reserved for internal operations. When calling the <c>StartChangeRequestExecution</c>
+        /// action, you can specify a maximum of 5 tags. You can, however, use the <a>AddTagsToResource</a>
+        /// action to add up to a total of 50 tags to an existing change request configuration.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Max=1000)]
         public List<Tag> Tags

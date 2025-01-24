@@ -48,7 +48,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </para>
     ///  
     /// <para>
-    ///  <b>For all Systems Manager capabilities:</b> 
+    ///  <b>For all Systems Manager tools:</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>

@@ -92,7 +92,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property CloudWatchOutputConfig. 
         /// <para>
         /// Enables Amazon Web Services Systems Manager to send Run Command output to Amazon CloudWatch
-        /// Logs. Run Command is a capability of Amazon Web Services Systems Manager.
+        /// Logs. Run Command is a tool in Amazon Web Services Systems Manager.
         /// </para>
         /// </summary>
         public CloudWatchOutputConfig CloudWatchOutputConfig
