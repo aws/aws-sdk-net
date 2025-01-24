@@ -360,6 +360,12 @@ namespace Amazon.Transfer
         /// The partner is identified with the <c>PartnerProfileId</c>, and the AS2 process is
         /// identified with the <c>LocalProfileId</c>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Specify <i>either</i> <c>BaseDirectory</c> or <c>CustomDirectories</c>, but not both.
+        /// Specifying both causes the command to fail.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAgreement service method.</param>
         /// <param name="cancellationToken">
@@ -3623,6 +3629,19 @@ namespace Amazon.Transfer
         /// Updates some of the parameters for an existing agreement. Provide the <c>AgreementId</c>
         /// and the <c>ServerId</c> for the agreement that you want to update, along with the
         /// new values for the parameters to update.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Specify <i>either</i> <c>BaseDirectory</c> or <c>CustomDirectories</c>, but not both.
+        /// Specifying both causes the command to fail.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you update an agreement from using base directory to custom directories, the base
+        /// directory is no longer used. Similarly, if you change from custom directories to a
+        /// base directory, the custom directories are no longer used.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAgreement service method.</param>
         /// <param name="cancellationToken">

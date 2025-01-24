@@ -38,6 +38,7 @@ namespace Amazon.Transfer.Model
         private string _agreementId;
         private string _arn;
         private string _baseDirectory;
+        private CustomDirectoriesType _customDirectories;
         private string _description;
         private EnforceMessageSigningType _enforceMessageSigning;
         private string _localProfileId;
@@ -159,6 +160,47 @@ namespace Amazon.Transfer.Model
         internal bool IsSetBaseDirectory()
         {
             return this._baseDirectory != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomDirectories. 
+        /// <para>
+        /// A <c>CustomDirectoriesType</c> structure. This structure specifies custom directories
+        /// for storing various AS2 message files. You can specify directories for the following
+        /// types of files.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Failed files
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MDN files
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Payload files
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Status files
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Temporary files
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public CustomDirectoriesType CustomDirectories
+        {
+            get { return this._customDirectories; }
+            set { this._customDirectories = value; }
+        }
+
+        // Check to see if CustomDirectories property is set
+        internal bool IsSetCustomDirectories()
+        {
+            return this._customDirectories != null;
         }
 
         /// <summary>

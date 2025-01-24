@@ -1341,6 +1341,36 @@
     <pattern>\$\{(\w+.)+\w+\}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Transfer.Model.CustomDirectoriesType.FailedFilesDirectory</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>(|/.*)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.CustomDirectoriesType.MdnFilesDirectory</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>(|/.*)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.CustomDirectoriesType.PayloadFilesDirectory</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>(|/.*)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.CustomDirectoriesType.StatusFilesDirectory</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>(|/.*)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.CustomDirectoriesType.TemporaryFilesDirectory</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>(|/.*)</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Transfer.Model.CustomStepDetails.Name</property>
     <min>0</min>
     <max>30</max>

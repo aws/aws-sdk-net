@@ -87,6 +87,17 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.BaseDirectory);
                 }
 
+                if(publicRequest.IsSetCustomDirectories())
+                {
+                    context.Writer.WritePropertyName("CustomDirectories");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CustomDirectoriesTypeMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CustomDirectories, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDescription())
                 {
                     context.Writer.WritePropertyName("Description");
