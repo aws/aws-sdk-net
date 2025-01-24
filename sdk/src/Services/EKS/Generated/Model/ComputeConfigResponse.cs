@@ -63,7 +63,7 @@ namespace Amazon.EKS.Model
         /// Gets and sets the property NodePools. 
         /// <para>
         /// Indicates the current configuration of node pools in your EKS Auto Mode cluster. For
-        /// more information, see EKS Auto Mode Node Pools in the EKS User Guide.
+        /// more information, see EKS Auto Mode Node Pools in the <i>Amazon EKS User Guide</i>.
         /// </para>
         /// </summary>
         public List<string> NodePools

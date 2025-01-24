@@ -165,8 +165,8 @@ namespace Amazon.EKS.Model
         /// Gets and sets the property Logging. 
         /// <para>
         /// Enable or disable exporting the Kubernetes control plane logs for your cluster to
-        /// CloudWatch Logs. By default, cluster control plane logs aren't exported to CloudWatch
-        /// Logs. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon
+        /// CloudWatch Logs . By default, cluster control plane logs aren't exported to CloudWatch
+        /// Logs . For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon
         /// EKS cluster control plane logs</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
         /// </para>
         ///  <note> 
