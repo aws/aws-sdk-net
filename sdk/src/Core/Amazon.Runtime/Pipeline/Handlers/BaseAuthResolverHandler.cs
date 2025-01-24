@@ -17,6 +17,7 @@ using Amazon.Runtime.Credentials.Internal;
 using Amazon.Runtime.Endpoints;
 using Amazon.Runtime.Identity;
 using Amazon.Runtime.Internal.Auth;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -51,7 +52,7 @@ namespace Amazon.Runtime.Internal
             var authOptions = ResolveAuthOptions(executionContext);
             if (authOptions == null || authOptions.Count == 0)
             {
-                throw new AmazonClientException($"No valid authentication schemes defined for ${executionContext.RequestContext.RequestName}");
+                throw new AmazonClientException($"No valid authentication schemes defined for {executionContext.RequestContext.RequestName}");
             }
 
             var clientConfig = executionContext.RequestContext.ClientConfig;
@@ -65,40 +66,64 @@ namespace Amazon.Runtime.Internal
                     continue;
                 }
 
-                executionContext.RequestContext.Signer = GetSigner(scheme);
-
-                if ((scheme is AwsV4aAuthScheme || scheme is AwsV4AuthScheme) && clientConfig.DefaultAWSCredentials != null)
+                try
                 {
-                    // We can use DefaultAWSCredentials if it was set by the user for these schemes.
-                    executionContext.RequestContext.Identity = clientConfig.DefaultAWSCredentials;
-                    break;
-                }
+                    executionContext.RequestContext.Signer = GetSigner(scheme);
 
-                if (scheme is BearerAuthScheme && clientConfig.AWSTokenProvider != null)
-                {
-                    // If the legacy token provider is set, we'll use it to resolve the identity.
+                    if ((scheme is AwsV4aAuthScheme || scheme is AwsV4AuthScheme) && clientConfig.DefaultAWSCredentials != null)
+                    {
+                        // We can use DefaultAWSCredentials if it was set by the user for these schemes.
+                        executionContext.RequestContext.Identity = clientConfig.DefaultAWSCredentials;
+                        return;
+                    }
+
+                    if (scheme is BearerAuthScheme && clientConfig.AWSTokenProvider != null)
+                    {
+                        // If the legacy token provider is set, we'll use it to resolve the identity.
 #if NETFRAMEWORK
-                    var resolvedToken = clientConfig.AWSTokenProvider.TryResolveToken(out var token);
-                    if (!resolvedToken)
-                    {
-                        continue;
-                    }
+                        var resolvedToken = clientConfig.AWSTokenProvider.TryResolveToken(out var token);
+                        if (!resolvedToken)
+                        {
+                            continue;
+                        }
 #else
-                    var resolvedToken = clientConfig.AWSTokenProvider.TryResolveTokenAsync().GetAwaiter().GetResult();
-                    if (!resolvedToken.Success)
-                    {
-                        continue;
-                    }
+                        var resolvedToken = clientConfig.AWSTokenProvider.TryResolveTokenAsync().GetAwaiter().GetResult();
+                        if (!resolvedToken.Success)
+                        {
+                            continue;
+                        }
 
-                    var token = resolvedToken.Value;
+                        var token = resolvedToken.Value;
 #endif
 
-                    executionContext.RequestContext.Identity = token;
-                    break;
-                }
+                        executionContext.RequestContext.Identity = token;
+                        return;
+                    }
 
-                var identityResolver = scheme.GetIdentityResolver(clientConfig.IdentityResolverConfiguration);
-                executionContext.RequestContext.Identity = identityResolver.ResolveIdentity();
+                    var identityResolver = scheme.GetIdentityResolver(clientConfig.IdentityResolverConfiguration);
+                    executionContext.RequestContext.Identity = identityResolver.ResolveIdentity();
+
+                    if (executionContext.RequestContext.Identity != null)
+                    {
+                        return;
+                    }
+                }
+                catch (Exception)
+                {
+                    // If there are multiple authentication schemes and we cannot resolve the identity for some reason (e.g. the CRT is
+                    // required for SigV4A signing), we'll attempt the next option before returning.
+                    if (authOptions.Count > 1)
+                    {
+                        continue;
+                    }
+
+                    throw;
+                }
+            }
+
+            if (executionContext.RequestContext.Identity == null)
+            {
+                throw new AmazonClientException($"Could not determine which authentication scheme to use for {executionContext.RequestContext.RequestName}");
             }
         }
 
@@ -107,7 +132,7 @@ namespace Amazon.Runtime.Internal
             var authOptions = ResolveAuthOptions(executionContext);
             if (authOptions == null || authOptions.Count == 0)
             {
-                throw new AmazonClientException($"No valid authentication schemes defined for ${executionContext.RequestContext.RequestName}");
+                throw new AmazonClientException($"No valid authentication schemes defined for {executionContext.RequestContext.RequestName}");
             }
 
             var clientConfig = executionContext.RequestContext.ClientConfig;
@@ -122,35 +147,59 @@ namespace Amazon.Runtime.Internal
                     continue;
                 }
 
-                executionContext.RequestContext.Signer = GetSigner(scheme);
-
-                if ((scheme is AwsV4aAuthScheme || scheme is AwsV4AuthScheme) && clientConfig.DefaultAWSCredentials != null)
+                try
                 {
-                    // We can use DefaultAWSCredentials if it was set by the user for these schemes.
-                    executionContext.RequestContext.Identity = clientConfig.DefaultAWSCredentials;
-                    break;
-                }
+                    executionContext.RequestContext.Signer = GetSigner(scheme);
 
-                if (scheme is BearerAuthScheme && clientConfig.AWSTokenProvider != null)
-                {
-                    // If the legacy token provider is set, we'll use it to resolve the identity.
-                    var resolvedToken = await clientConfig.AWSTokenProvider
-                        .TryResolveTokenAsync(cancellationToken)
+                    if ((scheme is AwsV4aAuthScheme || scheme is AwsV4AuthScheme) && clientConfig.DefaultAWSCredentials != null)
+                    {
+                        // We can use DefaultAWSCredentials if it was set by the user for these schemes.
+                        executionContext.RequestContext.Identity = clientConfig.DefaultAWSCredentials;
+                        return;
+                    }
+
+                    if (scheme is BearerAuthScheme && clientConfig.AWSTokenProvider != null)
+                    {
+                        // If the legacy token provider is set, we'll use it to resolve the identity.
+                        var resolvedToken = await clientConfig.AWSTokenProvider
+                            .TryResolveTokenAsync(cancellationToken)
+                            .ConfigureAwait(false);
+
+                        if (!resolvedToken.Success)
+                        {
+                            continue;
+                        }
+
+                        executionContext.RequestContext.Identity = resolvedToken.Value;
+                        return;
+                    }
+
+                    var identityResolver = scheme.GetIdentityResolver(clientConfig.IdentityResolverConfiguration);
+                    executionContext.RequestContext.Identity = await identityResolver
+                        .ResolveIdentityAsync(cancellationToken)
                         .ConfigureAwait(false);
 
-                    if (!resolvedToken.Success)
+                    if (executionContext.RequestContext.Identity != null)
+                    {
+                        return;
+                    }
+                }
+                catch (Exception)
+                {
+                    // If there are multiple authentication schemes and we cannot resolve the identity for some reason (e.g. the CRT is
+                    // required for SigV4A signing), we'll attempt the next option before returning.
+                    if (authOptions.Count > 1)
                     {
                         continue;
                     }
 
-                    executionContext.RequestContext.Identity = resolvedToken.Value;
-                    break;
+                    throw;
                 }
+            }
 
-                var identityResolver = scheme.GetIdentityResolver(clientConfig.IdentityResolverConfiguration);
-                executionContext.RequestContext.Identity = await identityResolver
-                    .ResolveIdentityAsync(cancellationToken)
-                    .ConfigureAwait(false);
+            if (executionContext.RequestContext.Identity == null)
+            {
+                throw new AmazonClientException($"Could not determine which authentication scheme to use for {executionContext.RequestContext.RequestName}");
             }
         }
 
