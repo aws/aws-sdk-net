@@ -33,8 +33,8 @@ namespace Amazon.SSOOIDC.Model
     /// <summary>
     /// Container for the parameters to the CreateToken operation.
     /// Creates and returns access and refresh tokens for clients that are authenticated using
-    /// client secrets. The access token can be used to fetch short-term credentials for the
-    /// assigned AWS accounts or to access application APIs using <c>bearer</c> authentication.
+    /// client secrets. The access token can be used to fetch short-lived credentials for
+    /// the assigned AWS accounts or to access application APIs using <c>bearer</c> authentication.
     /// </summary>
     public partial class CreateTokenRequest : AmazonSSOOIDCRequest
     {
@@ -91,9 +91,8 @@ namespace Amazon.SSOOIDC.Model
         /// <summary>
         /// Gets and sets the property Code. 
         /// <para>
-        /// Used only when calling this API for the Authorization Code grant type. The short-term
-        /// code is used to identify this authorization request. This grant type is currently
-        /// unsupported for the <a>CreateToken</a> API.
+        /// Used only when calling this API for the Authorization Code grant type. The short-lived
+        /// code is used to identify this authorization request.
         /// </para>
         /// </summary>
         public string Code
@@ -132,7 +131,7 @@ namespace Amazon.SSOOIDC.Model
         /// <summary>
         /// Gets and sets the property DeviceCode. 
         /// <para>
-        /// Used only when calling this API for the Device Code grant type. This short-term code
+        /// Used only when calling this API for the Device Code grant type. This short-lived code
         /// is used to identify this authorization request. This comes from the result of the
         /// <a>StartDeviceAuthorization</a> API.
         /// </para>
@@ -152,8 +151,12 @@ namespace Amazon.SSOOIDC.Model
         /// <summary>
         /// Gets and sets the property GrantType. 
         /// <para>
-        /// Supports the following OAuth grant types: Device Code and Refresh Token. Specify either
-        /// of the following values, depending on the grant type that you want:
+        /// Supports the following OAuth grant types: Authorization Code, Device Code, and Refresh
+        /// Token. Specify one of the following values, depending on the grant type that you want:
+        /// </para>
+        ///  
+        /// <para>
+        /// * Authorization Code - <c>authorization_code</c> 
         /// </para>
         ///  
         /// <para>
@@ -162,11 +165,6 @@ namespace Amazon.SSOOIDC.Model
         ///  
         /// <para>
         /// * Refresh Token - <c>refresh_token</c> 
-        /// </para>
-        ///  
-        /// <para>
-        /// For information about how to obtain the device code, see the <a>StartDeviceAuthorization</a>
-        /// topic.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -206,7 +204,7 @@ namespace Amazon.SSOOIDC.Model
         /// Gets and sets the property RefreshToken. 
         /// <para>
         /// Used only when calling this API for the Refresh Token grant type. This token is used
-        /// to refresh short-term tokens, such as the access token, that might expire.
+        /// to refresh short-lived tokens, such as the access token, that might expire.
         /// </para>
         ///  
         /// <para>
