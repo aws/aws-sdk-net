@@ -281,7 +281,7 @@ namespace Amazon.Runtime.Internal.Transform
                     // overload which accepts a ReadOnlySpan<byte> is only available in netstandard2.1 and netcore2.1+
                     text = Encoding.UTF8.GetString(reader.Reader.ValueSpan.ToArray());
 #else
-                                    text = Encoding.UTF8.GetString(reader.Reader.ValueSpan);
+                    text = Encoding.UTF8.GetString(reader.Reader.ValueSpan);
 #endif
                     break;
                 default:

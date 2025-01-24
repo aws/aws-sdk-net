@@ -60,7 +60,6 @@ namespace AWSSDK.UnitTests.Runtime
                 accessToken = "cachedToken",
                 expiresAt = "3000-12-25T21:30:00Z",
             };
-            
             mockFileSystem.WriteAllText(
                 Path.Combine(testCacheFolder, expectedCacheFile),
                 JsonSerializer.Serialize(cachedSsoToken));

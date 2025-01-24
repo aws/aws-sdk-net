@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Text.Json;
 
 #if NET8_0_OR_GREATER
@@ -16,6 +17,9 @@ namespace Amazon.Util.Internal
         {
             AllowTrailingCommas = true,
         };
+
+        // compile regex once to avoid re-parsing every time
+        private static readonly System.Text.RegularExpressions.Regex regex = new System.Text.RegularExpressions.Regex(@"(""[^""]*""|\d+)(\s*""[^""]*""\s*:)", System.Text.RegularExpressions.RegexOptions.Compiled);
 #if NET8_0_OR_GREATER
         public static T Deserialize<T>(string json, JsonSerializerContext context)
         {
@@ -46,7 +50,7 @@ namespace Amazon.Util.Internal
         public static string SanitizeJson(string rawJson)
         {
             // Add a comma after numbers or strings if they're not followed by a closing brace/bracket or comma.
-            rawJson = System.Text.RegularExpressions.Regex.Replace(rawJson, @"(""[^""]*""|\d+)(\s*""[^""]*""\s*:)", "$1,$2");
+            rawJson = regex.Replace(rawJson, "$1,$2");
             return rawJson;
         }
     }

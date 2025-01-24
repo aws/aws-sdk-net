@@ -5,7 +5,6 @@ using System.Text.RegularExpressions;
 namespace AWSSDK.UnitTests
 {
     public static class SpecMarkdownTestDataHelper
-
     {
         public static string StandardDataClean(this string s)
         {
