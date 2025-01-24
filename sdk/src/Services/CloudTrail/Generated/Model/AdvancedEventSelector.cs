@@ -45,7 +45,7 @@ namespace Amazon.CloudTrail.Model
     ///  
     /// <para>
     /// For information about configurable advanced event selector fields, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedEventSelector.html">AdvancedEventSelector</a>
-    /// in the <i>CloudTrailUser Guide</i>.
+    /// in the <i>CloudTrail API Reference</i>.
     /// </para>
     /// </summary>
     public partial class AdvancedEventSelector

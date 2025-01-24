@@ -1852,8 +1852,8 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html">Logging
-        /// CloudTrail Insights events</a> in the <i>CloudTrail User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html">Working
+        /// with CloudTrail Insights</a> in the <i>CloudTrail User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetInsightSelectors service method.</param>
@@ -2817,10 +2817,10 @@ namespace Amazon.CloudTrail
         /// <para>
         /// If you want your trail to log Insights events, be sure the event selector or advanced
         /// event selector enables logging of the Insights event types you want configured for
-        /// your trail. For more information about logging Insights events, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html">Logging
-        /// Insights events</a> in the <i>CloudTrail User Guide</i>. By default, trails created
-        /// without specific event selectors are configured to log all read and write management
-        /// events, and no data events or network activity events.
+        /// your trail. For more information about logging Insights events, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html">Working
+        /// with CloudTrail Insights</a> in the <i>CloudTrail User Guide</i>. By default, trails
+        /// created without specific event selectors are configured to log all read and write
+        /// management events, and no data events or network activity events.
         /// </para>
         ///  
         /// <para>
@@ -3049,8 +3049,8 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html">Logging
-        /// CloudTrail Insights events</a> in the <i>CloudTrail User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html">Working
+        /// with CloudTrail Insights</a> in the <i>CloudTrail User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutInsightSelectors service method.</param>
@@ -3519,6 +3519,34 @@ namespace Amazon.CloudTrail
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/RestoreEventDataStore">REST API Reference for RestoreEventDataStore Operation</seealso>
         Task<RestoreEventDataStoreResponse> RestoreEventDataStoreAsync(RestoreEventDataStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  SearchSampleQueries
+
+
+
+        /// <summary>
+        /// Searches sample queries and returns a list of sample queries that are sorted by relevance.
+        /// To search for sample queries, provide a natural language <c>SearchPhrase</c> in English.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchSampleQueries service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SearchSampleQueries service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidParameterException">
+        /// The request includes a parameter that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
+        /// This exception is thrown when the requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
+        /// This exception is thrown when the requested operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/SearchSampleQueries">REST API Reference for SearchSampleQueries Operation</seealso>
+        Task<SearchSampleQueriesResponse> SearchSampleQueriesAsync(SearchSampleQueriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
