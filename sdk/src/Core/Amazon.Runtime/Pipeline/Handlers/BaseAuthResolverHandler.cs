@@ -57,12 +57,13 @@ namespace Amazon.Runtime.Internal
 
             var clientConfig = executionContext.RequestContext.ClientConfig;
 
-            foreach (var authOption in authOptions)
+            for (int i = 0; i < authOptions.Count; i++)
             {
-                var scheme = _supportedSchemes.FirstOrDefault(s => s.SchemeId == authOption.SchemeId);
+                var scheme = _supportedSchemes.FirstOrDefault(s => s.SchemeId == authOptions[i].SchemeId);
                 if (scheme == null)
                 {
-                    // Current auth scheme option is not enabled, continue iterating.
+                    // Current auth scheme option is not enabled / supported, continue iterating.
+                    Logger.DebugFormat($"{authOptions[i].SchemeId} scheme is not supported for {executionContext.RequestContext.RequestName}");
                     continue;
                 }
 
@@ -108,12 +109,14 @@ namespace Amazon.Runtime.Internal
                         return;
                     }
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
                     // If there are multiple authentication schemes and we cannot resolve the identity for some reason (e.g. the CRT is
-                    // required for SigV4A signing), we'll attempt the next option before returning.
-                    if (authOptions.Count > 1)
+                    // required for SigV4A signing), we'll attempt the next option (if there are any left) before returning.
+                    var areSchemesLeft = i < authOptions.Count - 1;
+                    if (areSchemesLeft)
                     {
+                        Logger.DebugFormat($"Could not resolve identity for {executionContext.RequestContext.RequestName} using {scheme.SchemeId} scheme: {ex.Message}");
                         continue;
                     }
 
@@ -138,12 +141,13 @@ namespace Amazon.Runtime.Internal
             var clientConfig = executionContext.RequestContext.ClientConfig;
             var cancellationToken = executionContext.RequestContext.CancellationToken;
 
-            foreach (var authOption in authOptions)
+            for (int i = 0; i < authOptions.Count; i++)
             {
-                var scheme = _supportedSchemes.FirstOrDefault(s => s.SchemeId == authOption.SchemeId);
+                var scheme = _supportedSchemes.FirstOrDefault(s => s.SchemeId == authOptions[i].SchemeId);
                 if (scheme == null)
                 {
-                    // Current auth scheme option is not enabled, continue iterating.
+                    // Current auth scheme option is not enabled / supported, continue iterating.
+                    Logger.DebugFormat($"{authOptions[i].SchemeId} scheme is not supported for {executionContext.RequestContext.RequestName}");
                     continue;
                 }
 
@@ -184,12 +188,14 @@ namespace Amazon.Runtime.Internal
                         return;
                     }
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
                     // If there are multiple authentication schemes and we cannot resolve the identity for some reason (e.g. the CRT is
-                    // required for SigV4A signing), we'll attempt the next option before returning.
-                    if (authOptions.Count > 1)
+                    // required for SigV4A signing), we'll attempt the next option (if there are any left) before returning.
+                    var areSchemesLeft = i < authOptions.Count - 1;
+                    if (areSchemesLeft)
                     {
+                        Logger.DebugFormat($"Could not resolve identity for {executionContext.RequestContext.RequestName} using {scheme.SchemeId} scheme: {ex.Message}");
                         continue;
                     }
 
