@@ -24,9 +24,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Threading;
-
-using Amazon.Runtime;
-using ThirdParty.Json.LitJson;
+using System.Text.Json;
 using System.Globalization;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util.Internal;
@@ -237,7 +235,7 @@ namespace Amazon.EC2.Util
                 IAMInfo info;
                 try
                 {
-                    info = JsonMapper.ToObject<IAMInfo>(json);
+                    info = JsonSerializerHelper.Deserialize<IAMInfo>(json, IAMInfoJsonSerializerContexts.Default);
                 }
                 catch 
                 { 
@@ -265,7 +263,7 @@ namespace Amazon.EC2.Util
                     var json = GetData("/iam/security-credentials/" + item);
                     try
                     {
-                        var cred = JsonMapper.ToObject<IAMSecurityCredential>(json);
+                        var cred = JsonSerializerHelper.Deserialize<IAMSecurityCredential>(json, IAMInfoJsonSerializerContexts.Default);
                         creds[item] = cred;
                     }
                     catch 
@@ -544,6 +542,16 @@ namespace Amazon.EC2.Util
     }
 
     /// <summary>
+    /// Provides type information for use with <see cref="JsonSerializer"/>.
+    /// </summary>
+    [Obsolete("This class is deprecated and will be removed in a future release."
+              + " Please update your code to use the Amazon.Util.EC2InstanceMetadata class, located in the AWSSDK.Core assembly.")]
+    [JsonSerializable(typeof(IAMInfo))]
+    public class IAMInfoJsonSerializerContexts : JsonSerializerContext
+    {
+    }
+
+    /// <summary>
     /// The temporary security credentials (AccessKeyId, SecretAccessKey, SessionToken, and Expiration) associated with the IAM role.
     /// </summary>
     [Obsolete("This class is deprecated and will be removed in a future release." 
@@ -589,6 +597,16 @@ namespace Amazon.EC2.Util
         /// The date and time when these credentials expire
         /// </summary>
         public DateTime Expiration { get; set; }
+    }
+
+    /// <summary>
+    /// Provides type information for use with <see cref="JsonSerializer"/>.
+    /// </summary>
+    [Obsolete("This class is deprecated and will be removed in a future release."
+              + " Please update your code to use the Amazon.Util.EC2InstanceMetadata class, located in the AWSSDK.Core assembly.")]
+    [JsonSerializable(typeof(IAMSecurityCredential))]
+    public class IAMSecurityCredentialJsonSerializerContexts : JsonSerializerContext
+    {
     }
 
     /// <summary>
