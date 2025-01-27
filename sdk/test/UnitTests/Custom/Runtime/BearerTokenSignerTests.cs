@@ -230,19 +230,16 @@ namespace AWSSDK.UnitTests.Runtime
         [TestCategory("Runtime")]
         public void SignerRequiresAToken()
         {
-            var mockConfig = new MockClientConfig
-            {
-                AWSTokenProvider = new AWSTokenProviderChain() // chain is empty
-            };
-
-            var pipeline = CreateMockPipeline();
-            var context = CreateTestContext(new BearerTokenSigner(), null, mockConfig);
-
+            var signer = new BearerTokenSigner();
+            var invalidTokenIdentity = new AWSToken();
+            
+            var mockRequest = new Mock<IRequest>();
+            mockRequest.Setup(x => x.Endpoint).Returns(new Uri("https://example.com"));
             Exception exception = null;
 
             try
             {
-                pipeline.InvokeSync(context);
+                signer.Sign(mockRequest.Object, clientConfig: null, metrics: null, identity: invalidTokenIdentity);
             }
             catch (Exception e)
             {
@@ -251,39 +248,8 @@ namespace AWSSDK.UnitTests.Runtime
 
             Assert.IsNotNull(exception);
             Assert.IsInstanceOfType(exception, typeof(AmazonClientException));
-            Assert.AreEqual(exception.Message, "No Token found. Operation requires a Bearer token.");
+            Assert.AreEqual("No Token found. Operation requires a Bearer token.", exception.Message);
         }
-
-#if AWS_ASYNC_API
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Runtime")]
-        public async Task SignerRequiresATokenAsync()
-        {
-            var mockConfig = new MockClientConfig
-            {
-                AWSTokenProvider = new AWSTokenProviderChain() // chain is empty
-            };
-
-            var pipeline = CreateMockPipeline();
-            var context = CreateTestContext(new BearerTokenSigner(), null, mockConfig);
-
-            Exception exception = null;
-
-            try
-            {
-                await pipeline.InvokeAsync<AmazonWebServiceResponse>(context);
-            }
-            catch (Exception e)
-            {
-                exception = e;
-            }
-
-            Assert.IsNotNull(exception);
-            Assert.IsInstanceOfType(exception, typeof(AmazonClientException));
-            Assert.AreEqual(exception.Message, "No Token found. Operation requires a Bearer token.");
-        }
-#endif
 
         private void AssertAuthorizationHeaderIs(IExecutionContext context, string expected)
         {
