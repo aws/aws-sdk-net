@@ -43,6 +43,7 @@ namespace Amazon.MediaConvert.Model
         private InputDeblockFilter _deblockFilter;
         private InputDenoiseFilter _denoiseFilter;
         private string _dolbyVisionMetadataXml;
+        private Dictionary<string, DynamicAudioSelector> _dynamicAudioSelectors = AWSConfigs.InitializeCollections ? new Dictionary<string, DynamicAudioSelector>() : null;
         private InputFilterEnable _filterEnable;
         private int? _filterStrength;
         private ImageInserter _imageInserter;
@@ -221,6 +222,27 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetDolbyVisionMetadataXml()
         {
             return this._dolbyVisionMetadataXml != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DynamicAudioSelectors. Use Dynamic audio selectors when
+        /// you do not know the track layout of your source when you submit your job, but want
+        /// to select multiple audio tracks. When you include an audio track in your output and
+        /// specify this Dynamic audio selector as the Audio source, MediaConvert creates an output
+        /// audio track for each dynamically selected track. Note that when you include a Dynamic
+        /// audio selector for two or more inputs, each input must have the same number of audio
+        /// tracks and audio channels.
+        /// </summary>
+        public Dictionary<string, DynamicAudioSelector> DynamicAudioSelectors
+        {
+            get { return this._dynamicAudioSelectors; }
+            set { this._dynamicAudioSelectors = value; }
+        }
+
+        // Check to see if DynamicAudioSelectors property is set
+        internal bool IsSetDynamicAudioSelectors()
+        {
+            return this._dynamicAudioSelectors != null && (this._dynamicAudioSelectors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

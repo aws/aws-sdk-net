@@ -40,6 +40,7 @@ namespace Amazon.MediaConvert.Model
         private int? _bitrate;
         private H265CodecLevel _codecLevel;
         private H265CodecProfile _codecProfile;
+        private H265Deblocking _deblocking;
         private H265DynamicSubGop _dynamicSubGop;
         private H265EndOfStreamMarkers _endOfStreamMarkers;
         private H265FlickerAdaptiveQuantization _flickerAdaptiveQuantization;
@@ -187,6 +188,26 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetCodecProfile()
         {
             return this._codecProfile != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Deblocking. Use Deblocking to improve the video quality
+        /// of your output by smoothing the edges of macroblock artifacts created during video
+        /// compression. To reduce blocking artifacts at block boundaries, and improve overall
+        /// video quality: Keep the default value, Enabled. To not apply any deblocking: Choose
+        /// Disabled. Visible block edge artifacts might appear in the output, especially at lower
+        /// bitrates.
+        /// </summary>
+        public H265Deblocking Deblocking
+        {
+            get { return this._deblocking; }
+            set { this._deblocking = value; }
+        }
+
+        // Check to see if Deblocking property is set
+        internal bool IsSetDeblocking()
+        {
+            return this._deblocking != null;
         }
 
         /// <summary>

@@ -89,6 +89,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.CodecProfile);
             }
 
+            if(requestObject.IsSetDeblocking())
+            {
+                context.Writer.WritePropertyName("deblocking");
+                context.Writer.Write(requestObject.Deblocking);
+            }
+
             if(requestObject.IsSetDynamicSubGop())
             {
                 context.Writer.WritePropertyName("dynamicSubGop");

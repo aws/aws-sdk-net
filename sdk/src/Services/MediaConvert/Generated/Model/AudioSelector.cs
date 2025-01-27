@@ -114,8 +114,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ExternalAudioFileInput. Specifies audio data from an external
-        /// file source.
+        /// Gets and sets the property ExternalAudioFileInput. Specify the S3, HTTP, or HTTPS
+        /// URL for your external audio file input.
         /// </summary>
         public string ExternalAudioFileInput
         {
@@ -152,8 +152,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LanguageCode. Selects a specific language code from within
-        /// an audio source.
+        /// Gets and sets the property LanguageCode. Specify the language to select from your
+        /// audio input. In the MediaConvert console choose from a list of languages. In your
+        /// JSON job settings choose from an ISO 639-2 three-letter code listed at https://www.loc.gov/standards/iso639-2/php/code_list.php
         /// </summary>
         public LanguageCode LanguageCode
         {
@@ -168,8 +169,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Offset. Specifies a time delta in milliseconds to offset
-        /// the audio from the input video.
+        /// Gets and sets the property Offset. Specify a time delta, in milliseconds, to offset
+        /// the audio from the input video.To specify no offset: Keep the default value, 0.To
+        /// specify an offset: Enter an integer from -2147483648 to 2147483647
         /// </summary>
         [AWSProperty(Min=-2147483648, Max=2147483647)]
         public int Offset

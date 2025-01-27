@@ -616,6 +616,15 @@
     <max>30000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConvert.Model.DynamicAudioSelector.ExternalAudioFileInput</property>
+    <pattern>^s3://([^\/]+\/+)+((([^\/]*)))|^https?://[^\/].*[^&amp;]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.DynamicAudioSelector.Offset</property>
+    <min>-2147483648</min>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConvert.Model.Eac3AtmosSettings.Bitrate</property>
     <min>384000</min>
     <max>1024000</max>
