@@ -1,3 +1,16 @@
+### 3.7.970.0 (2025-01-27 19:41 UTC)
+* BedrockAgent (3.7.416.0)
+	* Add support for the prompt caching feature for Bedrock Prompt Management
+* IoT (3.7.406.0)
+	* Raised the documentParameters size limit to 30 KB for AWS IoT Device Management - Jobs.
+* MediaConvert (3.7.407.0)
+	* This release adds support for dynamic audio configuration and the ability to disable the deblocking filter for h265 encodes.
+* S3Control (3.7.405.0)
+	* Minor fix to ARN validation for Lambda functions passed to S3 Batch Operations
+* Core 3.7.401.5
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.969.0 (2025-01-24 19:24 UTC)
 * CloudTrail (3.7.403.0)
 	* This release introduces the SearchSampleQueries API that allows users to search for CloudTrail Lake sample queries.
