@@ -440,10 +440,19 @@ namespace Amazon.S3Control.Model
         ///  </li> <li> 
         /// <para>
         ///  <b>Directory buckets</b> - For example, to copy objects to a directory bucket named
-        /// <c>destinationBucket</c> in the Availability Zone; identified by the AZ ID <c>usw2-az1</c>,
+        /// <c>destinationBucket</c> in the Availability Zone identified by the AZ ID <c>usw2-az1</c>,
         /// set the <c>TargetResource</c> property to <c>arn:aws:s3express:<i>region</i>:<i>account_id</i>:/bucket/<i>destination_bucket_base_name</i>--<i>usw2-az1</i>--x-s3</c>.
+        /// A directory bucket as a destination bucket can be in Availability Zone or Local Zone.
+        /// 
         /// </para>
-        ///  </li> </ul>
+        ///  <note> 
+        /// <para>
+        /// Copying objects across different Amazon Web Services Regions isn't supported when
+        /// the source or destination bucket is in Amazon Web Services Local Zones. The source
+        /// and destination buckets must have the same parent Amazon Web Services Region. Otherwise,
+        /// you get an HTTP <c>400 Bad Request</c> error with the error code <c>InvalidRequest</c>.
+        /// </para>
+        ///  </note> </li> </ul>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
         public string TargetResource
