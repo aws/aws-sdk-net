@@ -150,6 +150,10 @@ namespace Amazon.BedrockAgent.Model
         /// <para>
         /// DELETING – The agent alias is being deleted.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DISSOCIATED - The agent alias has no version associated with it.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]

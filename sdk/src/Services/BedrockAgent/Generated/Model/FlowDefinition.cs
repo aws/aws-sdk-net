@@ -62,7 +62,7 @@ namespace Amazon.BedrockAgent.Model
         /// An array of node definitions in the flow.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=20)]
+        [AWSProperty(Min=0, Max=40)]
         public List<FlowNode> Nodes
         {
             get { return this._nodes; }

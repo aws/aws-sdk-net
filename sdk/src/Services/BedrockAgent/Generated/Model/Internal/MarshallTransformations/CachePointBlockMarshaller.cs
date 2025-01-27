@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// SystemContentBlock Marshaller
+    /// CachePointBlock Marshaller
     /// </summary>
-    public class SystemContentBlockMarshaller : IRequestMarshaller<SystemContentBlock, JsonMarshallerContext> 
+    public class CachePointBlockMarshaller : IRequestMarshaller<CachePointBlock, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,25 +44,14 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(SystemContentBlock requestObject, JsonMarshallerContext context)
+        public void Marshall(CachePointBlock requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetCachePoint())
+            if(requestObject.IsSetType())
             {
-                context.Writer.WritePropertyName("cachePoint");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = CachePointBlockMarshaller.Instance;
-                marshaller.Marshall(requestObject.CachePoint, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetText())
-            {
-                context.Writer.WritePropertyName("text");
-                context.Writer.Write(requestObject.Text);
+                context.Writer.WritePropertyName("type");
+                context.Writer.Write(requestObject.Type);
             }
 
         }
@@ -70,7 +59,7 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static SystemContentBlockMarshaller Instance = new SystemContentBlockMarshaller();
+        public readonly static CachePointBlockMarshaller Instance = new CachePointBlockMarshaller();
 
     }
 }

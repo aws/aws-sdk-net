@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SystemContentBlock Object
+    /// Response Unmarshaller for UnknownNodeOutputFlowValidationDetails Object
     /// </summary>  
-    public class SystemContentBlockUnmarshaller : IUnmarshaller<SystemContentBlock, XmlUnmarshallerContext>, IUnmarshaller<SystemContentBlock, JsonUnmarshallerContext>
+    public class UnknownNodeOutputFlowValidationDetailsUnmarshaller : IUnmarshaller<UnknownNodeOutputFlowValidationDetails, XmlUnmarshallerContext>, IUnmarshaller<UnknownNodeOutputFlowValidationDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        SystemContentBlock IUnmarshaller<SystemContentBlock, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        UnknownNodeOutputFlowValidationDetails IUnmarshaller<UnknownNodeOutputFlowValidationDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public SystemContentBlock Unmarshall(JsonUnmarshallerContext context)
+        public UnknownNodeOutputFlowValidationDetails Unmarshall(JsonUnmarshallerContext context)
         {
-            SystemContentBlock unmarshalledObject = new SystemContentBlock();
+            UnknownNodeOutputFlowValidationDetails unmarshalledObject = new UnknownNodeOutputFlowValidationDetails();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,16 +66,16 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("cachePoint", targetDepth))
-                {
-                    var unmarshaller = CachePointBlockUnmarshaller.Instance;
-                    unmarshalledObject.CachePoint = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("text", targetDepth))
+                if (context.TestExpression("node", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Text = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Node = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("output", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Output = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -83,12 +83,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         }
 
 
-        private static SystemContentBlockUnmarshaller _instance = new SystemContentBlockUnmarshaller();        
+        private static UnknownNodeOutputFlowValidationDetailsUnmarshaller _instance = new UnknownNodeOutputFlowValidationDetailsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SystemContentBlockUnmarshaller Instance
+        public static UnknownNodeOutputFlowValidationDetailsUnmarshaller Instance
         {
             get
             {

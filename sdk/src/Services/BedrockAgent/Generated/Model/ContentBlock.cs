@@ -36,7 +36,26 @@ namespace Amazon.BedrockAgent.Model
     /// </summary>
     public partial class ContentBlock
     {
+        private CachePointBlock _cachePoint;
         private string _text;
+
+        /// <summary>
+        /// Gets and sets the property CachePoint. 
+        /// <para>
+        /// Creates a cache checkpoint within a message.
+        /// </para>
+        /// </summary>
+        public CachePointBlock CachePoint
+        {
+            get { return this._cachePoint; }
+            set { this._cachePoint = value; }
+        }
+
+        // Check to see if CachePoint property is set
+        internal bool IsSetCachePoint()
+        {
+            return this._cachePoint != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Text. 

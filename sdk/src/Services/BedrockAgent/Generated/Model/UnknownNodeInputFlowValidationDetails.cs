@@ -30,50 +30,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// Contains a system prompt to provide context to the model or to describe how it should
-    /// behave. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-create.html">Create
-    /// a prompt using Prompt management</a>.
+    /// Details about an unknown input for a node.
     /// </summary>
-    public partial class SystemContentBlock
+    public partial class UnknownNodeInputFlowValidationDetails
     {
-        private CachePointBlock _cachePoint;
-        private string _text;
+        private string _input;
+        private string _node;
 
         /// <summary>
-        /// Gets and sets the property CachePoint. 
+        /// Gets and sets the property Input. 
         /// <para>
-        /// Creates a cache checkpoint within a tool designation
+        /// The name of the node with the unknown input.
         /// </para>
         /// </summary>
-        public CachePointBlock CachePoint
+        [AWSProperty(Required=true)]
+        public string Input
         {
-            get { return this._cachePoint; }
-            set { this._cachePoint = value; }
+            get { return this._input; }
+            set { this._input = value; }
         }
 
-        // Check to see if CachePoint property is set
-        internal bool IsSetCachePoint()
+        // Check to see if Input property is set
+        internal bool IsSetInput()
         {
-            return this._cachePoint != null;
+            return this._input != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Text. 
+        /// Gets and sets the property Node. 
         /// <para>
-        /// The text in the system prompt.
+        /// The name of the unknown input.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
-        public string Text
+        [AWSProperty(Required=true)]
+        public string Node
         {
-            get { return this._text; }
-            set { this._text = value; }
+            get { return this._node; }
+            set { this._node = value; }
         }
 
-        // Check to see if Text property is set
-        internal bool IsSetText()
+        // Check to see if Node property is set
+        internal bool IsSetNode()
         {
-            return this._text != null;
+            return this._node != null;
         }
 
     }
