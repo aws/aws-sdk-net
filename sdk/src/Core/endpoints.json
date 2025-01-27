@@ -31600,6 +31600,13 @@
                   ]
                 },
                 {
+                  "hostname": "synthetics-fips.ca-central-1.api.aws",
+                  "tags": [
+                    "dualstack",
+                    "fips"
+                  ]
+                },
+                {
                   "hostname": "synthetics.ca-central-1.api.aws",
                   "tags": [
                     "dualstack"
@@ -31612,6 +31619,13 @@
                 {
                   "hostname": "synthetics-fips.ca-west-1.amazonaws.com",
                   "tags": [
+                    "fips"
+                  ]
+                },
+                {
+                  "hostname": "synthetics-fips.ca-west-1.api.aws",
+                  "tags": [
+                    "dualstack",
                     "fips"
                   ]
                 },
@@ -31804,6 +31818,13 @@
                   ]
                 },
                 {
+                  "hostname": "synthetics-fips.us-east-1.api.aws",
+                  "tags": [
+                    "dualstack",
+                    "fips"
+                  ]
+                },
+                {
                   "hostname": "synthetics.us-east-1.api.aws",
                   "tags": [
                     "dualstack"
@@ -31816,6 +31837,13 @@
                 {
                   "hostname": "synthetics-fips.us-east-2.amazonaws.com",
                   "tags": [
+                    "fips"
+                  ]
+                },
+                {
+                  "hostname": "synthetics-fips.us-east-2.api.aws",
+                  "tags": [
+                    "dualstack",
                     "fips"
                   ]
                 },
@@ -31836,6 +31864,13 @@
                   ]
                 },
                 {
+                  "hostname": "synthetics-fips.us-west-1.api.aws",
+                  "tags": [
+                    "dualstack",
+                    "fips"
+                  ]
+                },
+                {
                   "hostname": "synthetics.us-west-1.api.aws",
                   "tags": [
                     "dualstack"
@@ -31848,6 +31883,13 @@
                 {
                   "hostname": "synthetics-fips.us-west-2.amazonaws.com",
                   "tags": [
+                    "fips"
+                  ]
+                },
+                {
+                  "hostname": "synthetics-fips.us-west-2.api.aws",
+                  "tags": [
+                    "dualstack",
                     "fips"
                   ]
                 },
