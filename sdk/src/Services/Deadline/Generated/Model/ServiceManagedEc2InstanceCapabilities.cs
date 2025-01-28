@@ -48,9 +48,8 @@ namespace Amazon.Deadline.Model
         /// <summary>
         /// Gets and sets the property AcceleratorCapabilities. 
         /// <para>
-        /// The GPU accelerator capabilities required for the Amazon EC2 instances. If you include
-        /// the <c>acceleratorCapabilities</c> property in the <a href="https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_ServiceManagedEc2InstanceCapabilities">ServiceManagedEc2InstanceCapabilities</a>
-        /// object, all of the Amazon EC2 instances will have at least one accelerator. 
+        /// Describes the GPU accelerator capabilities required for worker host instances in this
+        /// fleet.
         /// </para>
         /// </summary>
         public AcceleratorCapabilities AcceleratorCapabilities

@@ -112,6 +112,12 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
                     response.MaxRetriesPerTask = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("maxWorkerCount", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    response.MaxWorkerCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

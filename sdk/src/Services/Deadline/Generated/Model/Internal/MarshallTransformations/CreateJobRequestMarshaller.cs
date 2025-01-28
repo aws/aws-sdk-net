@@ -96,6 +96,12 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.MaxRetriesPerTask);
                 }
 
+                if(publicRequest.IsSetMaxWorkerCount())
+                {
+                    context.Writer.WritePropertyName("maxWorkerCount");
+                    context.Writer.Write(publicRequest.MaxWorkerCount);
+                }
+
                 if(publicRequest.IsSetParameters())
                 {
                     context.Writer.WritePropertyName("parameters");

@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Deadline.Model
 {
     /// <summary>
-    /// The range for the GPU fleet acceleration.
+    /// Defines the maximum and minimum number of GPU accelerators required for a worker instance..
     /// </summary>
     public partial class AcceleratorCountRange
     {
@@ -40,7 +40,7 @@ namespace Amazon.Deadline.Model
         /// <summary>
         /// Gets and sets the property Max. 
         /// <para>
-        /// The maximum number of GPUs for the accelerator.
+        /// The maximum number of GPU accelerators in the worker host.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2147483647)]
@@ -59,8 +59,7 @@ namespace Amazon.Deadline.Model
         /// <summary>
         /// Gets and sets the property Min. 
         /// <para>
-        /// The minimum number of GPUs for the accelerator. If you set the value to 0, a worker
-        /// will still have 1 GPU.
+        /// The minimum number of GPU accelerators in the worker host.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2147483647)]

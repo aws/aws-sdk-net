@@ -125,6 +125,14 @@ namespace Amazon.Deadline.Model
         }
 
         /// <summary>
+        /// Paginator for ListLimits operation
+        ///</summary>
+        public IListLimitsPaginator ListLimits(ListLimitsRequest request) 
+        {
+            return new ListLimitsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListMeteredProducts operation
         ///</summary>
         public IListMeteredProductsPaginator ListMeteredProducts(ListMeteredProductsRequest request) 
@@ -154,6 +162,14 @@ namespace Amazon.Deadline.Model
         public IListQueueFleetAssociationsPaginator ListQueueFleetAssociations(ListQueueFleetAssociationsRequest request) 
         {
             return new ListQueueFleetAssociationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListQueueLimitAssociations operation
+        ///</summary>
+        public IListQueueLimitAssociationsPaginator ListQueueLimitAssociations(ListQueueLimitAssociationsRequest request) 
+        {
+            return new ListQueueLimitAssociationsPaginator(this.client, request);
         }
 
         /// <summary>
