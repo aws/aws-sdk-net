@@ -176,8 +176,14 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>launchSpecUnusable</c> - The price in a launch specification is not valid because
-        /// it is below the Spot price.
+        ///  <c>launchSpecUnusable</c> - The price specified in a launch specification is not
+        /// valid because it is below the Spot price for the requested Spot pools.
+        /// </para>
+        ///  
+        /// <para>
+        /// Note: Even if a fleet with the <c>maintain</c> request type is in the process of being
+        /// canceled, it may still publish a <c>launchSpecUnusable</c> event. This does not mean
+        /// that the canceled fleet is attempting to launch a new instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
