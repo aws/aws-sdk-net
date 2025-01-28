@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for NoSuchAccesspointException operation
     /// </summary>  
-    public class NoSuchAccesspointExceptionUnmarshaller : IErrorResponseUnmarshaller<NoSuchAccesspointException, XmlUnmarshallerContext>
+    public class NoSuchAccesspointExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<NoSuchAccesspointException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

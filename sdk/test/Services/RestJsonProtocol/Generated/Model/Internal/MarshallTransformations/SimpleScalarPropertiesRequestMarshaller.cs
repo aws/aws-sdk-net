@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
 {
@@ -61,87 +64,92 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/SimpleScalarProperties";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetByteValue())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetByteValue())
-                    {
-                        context.Writer.WritePropertyName("byteValue");
-                        context.Writer.Write(publicRequest.ByteValue.Value);
-                    }
-
-                    if(publicRequest.IsSetDoubleValue())
-                    {
-                        context.Writer.WritePropertyName("DoubleDribble");
-                        if(StringUtils.IsSpecialDoubleValue(publicRequest.DoubleValue.Value))
-                        {
-                            context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.DoubleValue.Value));
-                        }
-                        else
-                        {
-                            context.Writer.Write(publicRequest.DoubleValue.Value);
-                        }
-                    }
-
-                    if(publicRequest.IsSetFalseBooleanValue())
-                    {
-                        context.Writer.WritePropertyName("falseBooleanValue");
-                        context.Writer.Write(publicRequest.FalseBooleanValue.Value);
-                    }
-
-                    if(publicRequest.IsSetFloatValue())
-                    {
-                        context.Writer.WritePropertyName("floatValue");
-                        if(StringUtils.IsSpecialFloatValue(publicRequest.FloatValue.Value))
-                        {
-                            context.Writer.Write(StringUtils.FromSpecialFloatValue(publicRequest.FloatValue.Value));
-                        }
-                        else
-                        {
-                            context.Writer.Write(publicRequest.FloatValue.Value);
-                        }
-                    }
-
-                    if(publicRequest.IsSetIntegerValue())
-                    {
-                        context.Writer.WritePropertyName("integerValue");
-                        context.Writer.Write(publicRequest.IntegerValue.Value);
-                    }
-
-                    if(publicRequest.IsSetLongValue())
-                    {
-                        context.Writer.WritePropertyName("longValue");
-                        context.Writer.Write(publicRequest.LongValue.Value);
-                    }
-
-                    if(publicRequest.IsSetShortValue())
-                    {
-                        context.Writer.WritePropertyName("shortValue");
-                        context.Writer.Write(publicRequest.ShortValue.Value);
-                    }
-
-                    if(publicRequest.IsSetStringValue())
-                    {
-                        context.Writer.WritePropertyName("stringValue");
-                        context.Writer.Write(publicRequest.StringValue);
-                    }
-
-                    if(publicRequest.IsSetTrueBooleanValue())
-                    {
-                        context.Writer.WritePropertyName("trueBooleanValue");
-                        context.Writer.Write(publicRequest.TrueBooleanValue.Value);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("byteValue");
+                context.Writer.WriteNumberValue(publicRequest.ByteValue.Value);
             }
+
+            if(publicRequest.IsSetDoubleValue())
+            {
+                context.Writer.WritePropertyName("DoubleDribble");
+                if(StringUtils.IsSpecialDoubleValue(publicRequest.DoubleValue.Value))
+                {
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(publicRequest.DoubleValue.Value));
+                }
+                else
+                {
+                    context.Writer.WriteNumberValue(publicRequest.DoubleValue.Value);
+                }
+            }
+
+            if(publicRequest.IsSetFalseBooleanValue())
+            {
+                context.Writer.WritePropertyName("falseBooleanValue");
+                context.Writer.WriteBooleanValue(publicRequest.FalseBooleanValue.Value);
+            }
+
+            if(publicRequest.IsSetFloatValue())
+            {
+                context.Writer.WritePropertyName("floatValue");
+                if(StringUtils.IsSpecialFloatValue(publicRequest.FloatValue.Value))
+                {
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialFloatValue(publicRequest.FloatValue.Value));
+                }
+                else
+                {
+                    context.Writer.WriteNumberValue(publicRequest.FloatValue.Value);
+                }
+            }
+
+            if(publicRequest.IsSetIntegerValue())
+            {
+                context.Writer.WritePropertyName("integerValue");
+                context.Writer.WriteNumberValue(publicRequest.IntegerValue.Value);
+            }
+
+            if(publicRequest.IsSetLongValue())
+            {
+                context.Writer.WritePropertyName("longValue");
+                context.Writer.WriteNumberValue(publicRequest.LongValue.Value);
+            }
+
+            if(publicRequest.IsSetShortValue())
+            {
+                context.Writer.WritePropertyName("shortValue");
+                context.Writer.WriteNumberValue(publicRequest.ShortValue.Value);
+            }
+
+            if(publicRequest.IsSetStringValue())
+            {
+                context.Writer.WritePropertyName("stringValue");
+                context.Writer.WriteStringValue(publicRequest.StringValue);
+            }
+
+            if(publicRequest.IsSetTrueBooleanValue())
+            {
+                context.Writer.WritePropertyName("trueBooleanValue");
+                context.Writer.WriteBooleanValue(publicRequest.TrueBooleanValue.Value);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
         
             if (publicRequest.IsSetFoo()) 

@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
 {
@@ -61,61 +64,66 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/JsonTimestamps";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDateTime())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDateTime())
-                    {
-                        context.Writer.WritePropertyName("dateTime");
-                        context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.DateTime));
-                    }
-
-                    if(publicRequest.IsSetDateTimeOnTarget())
-                    {
-                        context.Writer.WritePropertyName("dateTimeOnTarget");
-                        context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.DateTimeOnTarget));
-                    }
-
-                    if(publicRequest.IsSetEpochSeconds())
-                    {
-                        context.Writer.WritePropertyName("epochSeconds");
-                        context.Writer.Write(publicRequest.EpochSeconds.Value);
-                    }
-
-                    if(publicRequest.IsSetEpochSecondsOnTarget())
-                    {
-                        context.Writer.WritePropertyName("epochSecondsOnTarget");
-                        context.Writer.Write(publicRequest.EpochSecondsOnTarget.Value);
-                    }
-
-                    if(publicRequest.IsSetHttpDate())
-                    {
-                        context.Writer.WritePropertyName("httpDate");
-                        context.Writer.Write(StringUtils.FromDateTimeToRFC822(publicRequest.HttpDate));
-                    }
-
-                    if(publicRequest.IsSetHttpDateOnTarget())
-                    {
-                        context.Writer.WritePropertyName("httpDateOnTarget");
-                        context.Writer.Write(StringUtils.FromDateTimeToRFC822(publicRequest.HttpDateOnTarget));
-                    }
-
-                    if(publicRequest.IsSetNormal())
-                    {
-                        context.Writer.WritePropertyName("normal");
-                        context.Writer.Write(publicRequest.Normal.Value);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("dateTime");
+                context.Writer.WriteStringValue(StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.DateTime));
             }
+
+            if(publicRequest.IsSetDateTimeOnTarget())
+            {
+                context.Writer.WritePropertyName("dateTimeOnTarget");
+                context.Writer.WriteStringValue(StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.DateTimeOnTarget));
+            }
+
+            if(publicRequest.IsSetEpochSeconds())
+            {
+                context.Writer.WritePropertyName("epochSeconds");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.EpochSeconds.Value)));
+            }
+
+            if(publicRequest.IsSetEpochSecondsOnTarget())
+            {
+                context.Writer.WritePropertyName("epochSecondsOnTarget");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.EpochSecondsOnTarget.Value)));
+            }
+
+            if(publicRequest.IsSetHttpDate())
+            {
+                context.Writer.WritePropertyName("httpDate");
+                context.Writer.WriteStringValue(StringUtils.FromDateTimeToRFC822(publicRequest.HttpDate));
+            }
+
+            if(publicRequest.IsSetHttpDateOnTarget())
+            {
+                context.Writer.WritePropertyName("httpDateOnTarget");
+                context.Writer.WriteStringValue(StringUtils.FromDateTimeToRFC822(publicRequest.HttpDateOnTarget));
+            }
+
+            if(publicRequest.IsSetNormal())
+            {
+                context.Writer.WritePropertyName("normal");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.Normal.Value)));
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

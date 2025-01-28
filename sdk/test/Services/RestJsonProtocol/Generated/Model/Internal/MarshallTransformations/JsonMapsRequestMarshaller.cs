@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
 {
@@ -61,99 +64,104 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/JsonMaps";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDenseBooleanMap())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("denseBooleanMap");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestDenseBooleanMapKvp in publicRequest.DenseBooleanMap)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDenseBooleanMap())
-                    {
-                        context.Writer.WritePropertyName("denseBooleanMap");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestDenseBooleanMapKvp in publicRequest.DenseBooleanMap)
-                        {
-                            context.Writer.WritePropertyName(publicRequestDenseBooleanMapKvp.Key);
-                            var publicRequestDenseBooleanMapValue = publicRequestDenseBooleanMapKvp.Value;
+                    context.Writer.WritePropertyName(publicRequestDenseBooleanMapKvp.Key);
+                    var publicRequestDenseBooleanMapValue = publicRequestDenseBooleanMapKvp.Value;
 
-                                context.Writer.Write(publicRequestDenseBooleanMapValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetDenseNumberMap())
-                    {
-                        context.Writer.WritePropertyName("denseNumberMap");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestDenseNumberMapKvp in publicRequest.DenseNumberMap)
-                        {
-                            context.Writer.WritePropertyName(publicRequestDenseNumberMapKvp.Key);
-                            var publicRequestDenseNumberMapValue = publicRequestDenseNumberMapKvp.Value;
-
-                                context.Writer.Write(publicRequestDenseNumberMapValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetDenseSetMap())
-                    {
-                        context.Writer.WritePropertyName("denseSetMap");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestDenseSetMapKvp in publicRequest.DenseSetMap)
-                        {
-                            context.Writer.WritePropertyName(publicRequestDenseSetMapKvp.Key);
-                            var publicRequestDenseSetMapValue = publicRequestDenseSetMapKvp.Value;
-
-                            context.Writer.WriteArrayStart();
-                            foreach(var publicRequestDenseSetMapValueListValue in publicRequestDenseSetMapValue)
-                            {
-                                    context.Writer.Write(publicRequestDenseSetMapValueListValue);
-                            }
-                            context.Writer.WriteArrayEnd();
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetDenseStringMap())
-                    {
-                        context.Writer.WritePropertyName("denseStringMap");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestDenseStringMapKvp in publicRequest.DenseStringMap)
-                        {
-                            context.Writer.WritePropertyName(publicRequestDenseStringMapKvp.Key);
-                            var publicRequestDenseStringMapValue = publicRequestDenseStringMapKvp.Value;
-
-                                context.Writer.Write(publicRequestDenseStringMapValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetDenseStructMap())
-                    {
-                        context.Writer.WritePropertyName("denseStructMap");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestDenseStructMapKvp in publicRequest.DenseStructMap)
-                        {
-                            context.Writer.WritePropertyName(publicRequestDenseStructMapKvp.Key);
-                            var publicRequestDenseStructMapValue = publicRequestDenseStructMapKvp.Value;
-
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = GreetingStructMarshaller.Instance;
-                            marshaller.Marshall(publicRequestDenseStructMapValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
+                        context.Writer.WriteBooleanValue(publicRequestDenseBooleanMapValue);
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetDenseNumberMap())
+            {
+                context.Writer.WritePropertyName("denseNumberMap");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestDenseNumberMapKvp in publicRequest.DenseNumberMap)
+                {
+                    context.Writer.WritePropertyName(publicRequestDenseNumberMapKvp.Key);
+                    var publicRequestDenseNumberMapValue = publicRequestDenseNumberMapKvp.Value;
+
+                        context.Writer.WriteNumberValue(publicRequestDenseNumberMapValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetDenseSetMap())
+            {
+                context.Writer.WritePropertyName("denseSetMap");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestDenseSetMapKvp in publicRequest.DenseSetMap)
+                {
+                    context.Writer.WritePropertyName(publicRequestDenseSetMapKvp.Key);
+                    var publicRequestDenseSetMapValue = publicRequestDenseSetMapKvp.Value;
+
+                    context.Writer.WriteStartArray();
+                    foreach(var publicRequestDenseSetMapValueListValue in publicRequestDenseSetMapValue)
+                    {
+                            context.Writer.WriteStringValue(publicRequestDenseSetMapValueListValue);
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetDenseStringMap())
+            {
+                context.Writer.WritePropertyName("denseStringMap");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestDenseStringMapKvp in publicRequest.DenseStringMap)
+                {
+                    context.Writer.WritePropertyName(publicRequestDenseStringMapKvp.Key);
+                    var publicRequestDenseStringMapValue = publicRequestDenseStringMapKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestDenseStringMapValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetDenseStructMap())
+            {
+                context.Writer.WritePropertyName("denseStructMap");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestDenseStructMapKvp in publicRequest.DenseStructMap)
+                {
+                    context.Writer.WritePropertyName(publicRequestDenseStructMapKvp.Key);
+                    var publicRequestDenseStructMapValue = publicRequestDenseStructMapKvp.Value;
+
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = GreetingStructMarshaller.Instance;
+                    marshaller.Marshall(publicRequestDenseStructMapValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

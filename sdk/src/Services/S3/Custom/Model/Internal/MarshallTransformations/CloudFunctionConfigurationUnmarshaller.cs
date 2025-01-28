@@ -24,7 +24,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// LambdaFunction unmarshaller
     /// </summary>
-    public class LambdaFunctionConfigurationUnmarshaller : IUnmarshaller<LambdaFunctionConfiguration, XmlUnmarshallerContext>, IUnmarshaller<LambdaFunctionConfiguration, JsonUnmarshallerContext> 
+    public class LambdaFunctionConfigurationUnmarshaller : IXmlUnmarshaller<LambdaFunctionConfiguration, XmlUnmarshallerContext>, IXmlUnmarshaller<LambdaFunctionConfiguration, JsonUnmarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

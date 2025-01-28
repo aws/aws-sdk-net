@@ -28,7 +28,9 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
+using System.Text.Json;
+using System.Buffers;
+using ThirdParty.RuntimeBackports;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
@@ -61,98 +63,103 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/SparseJsonMaps";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                writer.WriteStartObject();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetSparseBooleanMap())
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetSparseBooleanMap())
+                    context.Writer.WritePropertyName("sparseBooleanMap");
+                    context.Writer.WriteStartObject();
+                    foreach (var publicRequestSparseBooleanMapKvp in publicRequest.SparseBooleanMap)
                     {
-                        context.Writer.WritePropertyName("sparseBooleanMap");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestSparseBooleanMapKvp in publicRequest.SparseBooleanMap)
-                        {
-                            context.Writer.WritePropertyName(publicRequestSparseBooleanMapKvp.Key);
-                            var publicRequestSparseBooleanMapValue = publicRequestSparseBooleanMapKvp.Value;
+                        context.Writer.WritePropertyName(publicRequestSparseBooleanMapKvp.Key);
+                        var publicRequestSparseBooleanMapValue = publicRequestSparseBooleanMapKvp.Value;
 
-                                context.Writer.Write(publicRequestSparseBooleanMapValue);
-                        }
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteBooleanValue(publicRequestSparseBooleanMapValue.Value);
                     }
-
-                    if(publicRequest.IsSetSparseNumberMap())
-                    {
-                        context.Writer.WritePropertyName("sparseNumberMap");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestSparseNumberMapKvp in publicRequest.SparseNumberMap)
-                        {
-                            context.Writer.WritePropertyName(publicRequestSparseNumberMapKvp.Key);
-                            var publicRequestSparseNumberMapValue = publicRequestSparseNumberMapKvp.Value;
-
-                                context.Writer.Write(publicRequestSparseNumberMapValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetSparseSetMap())
-                    {
-                        context.Writer.WritePropertyName("sparseSetMap");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestSparseSetMapKvp in publicRequest.SparseSetMap)
-                        {
-                            context.Writer.WritePropertyName(publicRequestSparseSetMapKvp.Key);
-                            var publicRequestSparseSetMapValue = publicRequestSparseSetMapKvp.Value;
-
-                            context.Writer.WriteArrayStart();
-                            foreach(var publicRequestSparseSetMapValueListValue in publicRequestSparseSetMapValue)
-                            {
-                                    context.Writer.Write(publicRequestSparseSetMapValueListValue);
-                            }
-                            context.Writer.WriteArrayEnd();
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetSparseStringMap())
-                    {
-                        context.Writer.WritePropertyName("sparseStringMap");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestSparseStringMapKvp in publicRequest.SparseStringMap)
-                        {
-                            context.Writer.WritePropertyName(publicRequestSparseStringMapKvp.Key);
-                            var publicRequestSparseStringMapValue = publicRequestSparseStringMapKvp.Value;
-
-                                context.Writer.Write(publicRequestSparseStringMapValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetSparseStructMap())
-                    {
-                        context.Writer.WritePropertyName("sparseStructMap");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestSparseStructMapKvp in publicRequest.SparseStructMap)
-                        {
-                            context.Writer.WritePropertyName(publicRequestSparseStructMapKvp.Key);
-                            var publicRequestSparseStructMapValue = publicRequestSparseStructMapKvp.Value;
-
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = GreetingStructMarshaller.Instance;
-                            marshaller.Marshall(publicRequestSparseStructMapValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
 
+                if(publicRequest.IsSetSparseNumberMap())
+                {
+                    context.Writer.WritePropertyName("sparseNumberMap");
+                    context.Writer.WriteStartObject();
+                    foreach (var publicRequestSparseNumberMapKvp in publicRequest.SparseNumberMap)
+                    {
+                        context.Writer.WritePropertyName(publicRequestSparseNumberMapKvp.Key);
+                        var publicRequestSparseNumberMapValue = publicRequestSparseNumberMapKvp.Value;
+
+                            context.Writer.WriteNumberValue(publicRequestSparseNumberMapValue.Value);
+                    }
+                    context.Writer.WriteEndObject();
+                }
+
+                if(publicRequest.IsSetSparseSetMap())
+                {
+                    context.Writer.WritePropertyName("sparseSetMap");
+                    context.Writer.WriteStartObject();
+                    foreach (var publicRequestSparseSetMapKvp in publicRequest.SparseSetMap)
+                    {
+                        context.Writer.WritePropertyName(publicRequestSparseSetMapKvp.Key);
+                        var publicRequestSparseSetMapValue = publicRequestSparseSetMapKvp.Value;
+
+                        context.Writer.WriteStartArray();
+                        foreach(var publicRequestSparseSetMapValueListValue in publicRequestSparseSetMapValue)
+                        {
+                                context.Writer.WriteStringValue(publicRequestSparseSetMapValueListValue);
+                        }
+                        context.Writer.WriteEndArray();
+                    }
+                    context.Writer.WriteEndObject();
+                }
+
+                if(publicRequest.IsSetSparseStringMap())
+                {
+                    context.Writer.WritePropertyName("sparseStringMap");
+                    context.Writer.WriteStartObject();
+                    foreach (var publicRequestSparseStringMapKvp in publicRequest.SparseStringMap)
+                    {
+                        context.Writer.WritePropertyName(publicRequestSparseStringMapKvp.Key);
+                        var publicRequestSparseStringMapValue = publicRequestSparseStringMapKvp.Value;
+
+                            context.Writer.WriteStringValue(publicRequestSparseStringMapValue);
+                    }
+                    context.Writer.WriteEndObject();
+                }
+
+                if(publicRequest.IsSetSparseStructMap())
+                {
+                    context.Writer.WritePropertyName("sparseStructMap");
+                    context.Writer.WriteStartObject();
+                    foreach (var publicRequestSparseStructMapKvp in publicRequest.SparseStructMap)
+                    {
+                        context.Writer.WritePropertyName(publicRequestSparseStructMapKvp.Key);
+                        var publicRequestSparseStructMapValue = publicRequestSparseStructMapKvp.Value;
+
+                        context.Writer.WriteStartObject();
+
+                        var marshaller = GreetingStructMarshaller.Instance;
+                        marshaller.Marshall(publicRequestSparseStructMapValue, context);
+
+                        context.Writer.WriteEndObject();
+                    }
+                    context.Writer.WriteEndObject();
+                }
+
+                writer.WriteEndObject();
+                writer.Flush();
+#if !NETFRAMEWORK
+                request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
                 request.Content = memoryStream.ToArray();
+#endif
             }
 
 

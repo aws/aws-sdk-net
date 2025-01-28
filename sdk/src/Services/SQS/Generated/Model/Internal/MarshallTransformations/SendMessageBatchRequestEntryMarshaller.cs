@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SQS.Model.Internal.MarshallTransformations
 {
@@ -51,69 +49,69 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDelaySeconds())
             {
                 context.Writer.WritePropertyName("DelaySeconds");
-                context.Writer.Write(requestObject.DelaySeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.DelaySeconds.Value);
             }
 
             if(requestObject.IsSetId())
             {
                 context.Writer.WritePropertyName("Id");
-                context.Writer.Write(requestObject.Id);
+                context.Writer.WriteStringValue(requestObject.Id);
             }
 
             if(requestObject.IsSetMessageAttributes())
             {
                 context.Writer.WritePropertyName("MessageAttributes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectMessageAttributesKvp in requestObject.MessageAttributes)
                 {
                     context.Writer.WritePropertyName(requestObjectMessageAttributesKvp.Key);
                     var requestObjectMessageAttributesValue = requestObjectMessageAttributesKvp.Value;
 
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = MessageAttributeValueMarshaller.Instance;
                     marshaller.Marshall(requestObjectMessageAttributesValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMessageBody())
             {
                 context.Writer.WritePropertyName("MessageBody");
-                context.Writer.Write(requestObject.MessageBody);
+                context.Writer.WriteStringValue(requestObject.MessageBody);
             }
 
             if(requestObject.IsSetMessageDeduplicationId())
             {
                 context.Writer.WritePropertyName("MessageDeduplicationId");
-                context.Writer.Write(requestObject.MessageDeduplicationId);
+                context.Writer.WriteStringValue(requestObject.MessageDeduplicationId);
             }
 
             if(requestObject.IsSetMessageGroupId())
             {
                 context.Writer.WritePropertyName("MessageGroupId");
-                context.Writer.Write(requestObject.MessageGroupId);
+                context.Writer.WriteStringValue(requestObject.MessageGroupId);
             }
 
             if(requestObject.IsSetMessageSystemAttributes())
             {
                 context.Writer.WritePropertyName("MessageSystemAttributes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectMessageSystemAttributesKvp in requestObject.MessageSystemAttributes)
                 {
                     context.Writer.WritePropertyName(requestObjectMessageSystemAttributesKvp.Key);
                     var requestObjectMessageSystemAttributesValue = requestObjectMessageSystemAttributesKvp.Value;
 
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = MessageSystemAttributeValueMarshaller.Instance;
                     marshaller.Marshall(requestObjectMessageSystemAttributesValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

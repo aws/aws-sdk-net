@@ -14,115 +14,129 @@
  */
 
 using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Util;
 using System;
 using Amazon.Util;
 using System.Xml;
-using ThirdParty.Json.LitJson;
 using System.Text;
 using System.IO;
+using System.Text.Json;
 
 namespace Amazon.Runtime.Internal.Transform
 {
     /// <summary>
-    ///    First-pass unmarshaller for all errors
+    /// First-pass unmarshaller for all errors
     /// </summary>
-    public class JsonErrorResponseUnmarshaller : IUnmarshaller<ErrorResponse, JsonUnmarshallerContext>
+    public class JsonErrorResponseUnmarshaller : IJsonUnmarshaller<ErrorResponse, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Build an ErrorResponse from json 
         /// </summary>
         /// <param name="context">The json parsing context. 
+        /// <param name="reader">The Utf8JsonReader</param>
         /// Usually an <c>Amazon.Runtime.Internal.JsonUnmarshallerContext</c>.</param>
         /// <returns>An <c>ErrorResponse</c> object.</returns>
-        public ErrorResponse Unmarshall(JsonUnmarshallerContext context)
+        public ErrorResponse Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ErrorResponse response;
 
-            if (context.Peek() == 60) //starts with '<' so assuming XML.
+            // we cannot use context.Peek() because the stream used by streamreader has been read to completion by the 
+            // streamingutf8jsonreader. Since responseBody will be populated, we use that instead.
+            for (int i = 0; i < context.ResponseBody.Length; i++)
             {
-                ErrorResponseUnmarshaller xmlUnmarshaller = new ErrorResponseUnmarshaller();
-                using (var stream = new MemoryStream(context.GetResponseBodyBytes()))
+                if (context.ResponseBody[i] == 32) // skip whitespace
+                    continue;
+                else
                 {
-                    XmlUnmarshallerContext xmlContext = new XmlUnmarshallerContext(stream, false, null);
-                    response = xmlUnmarshaller.Unmarshall(xmlContext);
-                }
-            }
-            else
-            {
-                string type;
-                string message;
-                string code;
-                string requestId = null;
-                GetValuesFromJsonIfPossible(context, out type, out message, out code);
-
-                // If an error code was not found, check for the x-amzn-ErrorType header. 
-                // This header is returned by rest-json services.
-                if (string.IsNullOrEmpty(type) &&
-                    context.ResponseData.IsHeaderPresent(HeaderKeys.XAmzErrorType))
-                {
-                    var errorType = context.ResponseData.GetHeaderValue(HeaderKeys.XAmzErrorType);
-                    if (!string.IsNullOrEmpty(errorType))
+                    if (context.ResponseBody[i] == 60) //starts with '<' so assuming XML.
                     {
-                        // The error type can contain additional information, with ":" as a delimiter
-                        // We are only interested in the initial part which is the error type
-                        type = ParseType(errorType);
-                    }
-                }
-
-                // Check for the x-amzn-error-message header. This header is returned by rest-json services.
-                // If the header is present it is preferred over any value provided in the response body.
-                if (context.ResponseData.IsHeaderPresent(HeaderKeys.XAmznErrorMessage))
-                {
-                    var errorMessage = context.ResponseData.GetHeaderValue(HeaderKeys.XAmznErrorMessage);
-                    if (!string.IsNullOrEmpty(errorMessage))
-                        message = errorMessage;
-                }
-
-                // if both "__type" and HeaderKeys.XAmzErrorType were not specified, use "code" as type
-                // this impacts Glacier
-                if (string.IsNullOrEmpty(type) &&
-                    !string.IsNullOrEmpty(code))
-                {
-                    type = code;
-                }
-
-                // strip extra data from type, leaving only the exception type name
-                type = type == null ? null : ParseType(type.Substring(type.LastIndexOf("#", StringComparison.Ordinal) + 1));
-                // if no message was found create a generic message
-                if (string.IsNullOrEmpty(message))
-                {
-                    if (string.IsNullOrEmpty(type))
-                    {
-                        if (string.IsNullOrEmpty(context.ResponseBody))
-                            message = "The service returned an error. See inner exception for details.";
-                        else
-                            message = "The service returned an error with HTTP Body: " + context.ResponseBody;
+                        XmlErrorResponseUnmarshaller xmlUnmarshaller = new XmlErrorResponseUnmarshaller();
+                        using (var stream = new MemoryStream(context.GetResponseBodyBytes()))
+                        {
+                            XmlUnmarshallerContext xmlContext = new XmlUnmarshallerContext(stream, false, null);
+                            response = xmlUnmarshaller.Unmarshall(xmlContext);
+                            return response;
+                        }
                     }
                     else
-                    {
-                        if (string.IsNullOrEmpty(context.ResponseBody))
-                            message = "The service returned an error with Error Code " + type + ".";
-                        else
-                            message = "The service returned an error with Error Code " + type + " and HTTP Body: " + context.ResponseBody;
-                    }
+                        break;
                 }
-
-                // Check for the x-amzn-RequestId header. This header is returned by rest-json services.
-                // If the header is present it is preferred over any value provided in the response body.
-                if (context.ResponseData.IsHeaderPresent(HeaderKeys.RequestIdHeader))
-                {
-                    requestId = context.ResponseData.GetHeaderValue(HeaderKeys.RequestIdHeader);
-                }
-
-                response = new ErrorResponse
-                {
-                    Code = type,
-                    Message = message,
-                    // type is not applicable to JSON services, setting to Unknown
-                    Type = ErrorType.Unknown,
-                    RequestId = requestId
-                };
             }
+
+            string type;
+            string message;
+            string code;
+            string requestId = null;
+            GetValuesFromJsonIfPossible(context, ref reader, out type, out message, out code);
+
+            // If an error code was not found, check for the x-amzn-ErrorType header. 
+            // This header is returned by rest-json services.
+            if (string.IsNullOrEmpty(type) &&
+                context.ResponseData.IsHeaderPresent(HeaderKeys.XAmzErrorType))
+            {
+                var errorType = context.ResponseData.GetHeaderValue(HeaderKeys.XAmzErrorType);
+                if (!string.IsNullOrEmpty(errorType))
+                {
+                    // The error type can contain additional information, with ":" as a delimiter
+                    // We are only interested in the initial part which is the error type
+                    type = ParseType(errorType);
+                }
+            }
+
+            // Check for the x-amzn-error-message header. This header is returned by rest-json services.
+            // If the header is present it is preferred over any value provided in the response body.
+            if (context.ResponseData.IsHeaderPresent(HeaderKeys.XAmznErrorMessage))
+            {
+                var errorMessage = context.ResponseData.GetHeaderValue(HeaderKeys.XAmznErrorMessage);
+                if (!string.IsNullOrEmpty(errorMessage))
+                    message = errorMessage;
+            }
+
+            // if both "__type" and HeaderKeys.XAmzErrorType were not specified, use "code" as type
+            // this impacts Glacier
+            if (string.IsNullOrEmpty(type) &&
+                !string.IsNullOrEmpty(code))
+            {
+                type = code;
+            }
+
+            // strip extra data from type, leaving only the exception type name
+            type = type == null ? null : ParseType(type.Substring(type.LastIndexOf("#", StringComparison.Ordinal) + 1));
+            // if no message was found create a generic message
+            if (string.IsNullOrEmpty(message))
+            {
+                if (string.IsNullOrEmpty(type))
+                {
+                    if (string.IsNullOrEmpty(context.ResponseBody))
+                        message = "The service returned an error. See inner exception for details.";
+                    else
+                        message = "The service returned an error with HTTP Body: " + context.ResponseBody;
+                }
+                else
+                {
+                    if (string.IsNullOrEmpty(context.ResponseBody))
+                        message = "The service returned an error with Error Code " + type + ".";
+                    else
+                        message = "The service returned an error with Error Code " + type + " and HTTP Body: " + context.ResponseBody;
+                }
+            }
+
+            // Check for the x-amzn-RequestId header. This header is returned by rest-json services.
+            // If the header is present it is preferred over any value provided in the response body.
+            if (context.ResponseData.IsHeaderPresent(HeaderKeys.RequestIdHeader))
+            {
+                requestId = context.ResponseData.GetHeaderValue(HeaderKeys.RequestIdHeader);
+            }
+
+            response = new ErrorResponse
+            {
+                Code = type,
+                Message = message,
+                // type is not applicable to JSON services, setting to Unknown
+                Type = ErrorType.Unknown,
+                RequestId = requestId
+            };
+            
             
             return response;
         }
@@ -140,37 +154,37 @@ namespace Amazon.Runtime.Internal.Transform
 
         }
 
-        private static void GetValuesFromJsonIfPossible(JsonUnmarshallerContext context, out string type, out string message, out string code)
+        private static void GetValuesFromJsonIfPossible(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader,  out string type, out string message, out string code)
         {
             code = null;
             type = null;
             message = null;
 
-            while (TryReadContext(context))
+            while (TryReadContext(context, ref reader))
             {
                 if (context.TestExpression("__type"))
                 {
-                    type = StringUnmarshaller.GetInstance().Unmarshall(context);
+                    type = StringUnmarshaller.GetInstance().Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("message"))
                 {
-                    message = StringUnmarshaller.GetInstance().Unmarshall(context);
+                    message = StringUnmarshaller.GetInstance().Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("code"))
                 {
-                    code = StringUnmarshaller.GetInstance().Unmarshall(context);
+                    code = StringUnmarshaller.GetInstance().Unmarshall(context, ref reader);
                     continue;
                 }
             }
         }
 
-        private static bool TryReadContext(JsonUnmarshallerContext context)
+        private static bool TryReadContext(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             try
             {
-                return context.Read();
+                return context.Read(ref reader);
             }
             catch (JsonException)
             {

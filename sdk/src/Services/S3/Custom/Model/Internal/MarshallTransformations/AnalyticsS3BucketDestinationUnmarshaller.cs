@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     ///   AnalyticsS3BucketDestination Unmarshaller
     /// </summary>
-    public class AnalyticsS3BucketDestinationUnmarshaller : IUnmarshaller<AnalyticsS3BucketDestination, XmlUnmarshallerContext>, IUnmarshaller<AnalyticsS3BucketDestination, JsonUnmarshallerContext>
+    public class AnalyticsS3BucketDestinationUnmarshaller : IXmlUnmarshaller<AnalyticsS3BucketDestination, XmlUnmarshallerContext>, IXmlUnmarshaller<AnalyticsS3BucketDestination, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

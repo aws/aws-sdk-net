@@ -1,0 +1,9 @@
+{
+    "core": {
+      "changeLogMessages": [
+        "Updates serialization for JSON-based services to use System.Text.Json instead of LitJson for improved performance and smaller memory allocations."
+      ],
+      "type": "patch",
+      "updateMinimum": true
+    }
+  }

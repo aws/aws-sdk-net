@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
      /// <summary>
      /// PolicyStatus Unmarshaller
      /// </summary>
-    public class PolicyStatusUnmarshaller : IUnmarshaller<PolicyStatus, XmlUnmarshallerContext>, IUnmarshaller<PolicyStatus, JsonUnmarshallerContext> 
+    public class PolicyStatusUnmarshaller : IXmlUnmarshaller<PolicyStatus, XmlUnmarshallerContext>, IXmlUnmarshaller<PolicyStatus, JsonUnmarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
