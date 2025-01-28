@@ -70,6 +70,18 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                     response.Logs = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("outErrors", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.OutErrors = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("stash", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Stash = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;
