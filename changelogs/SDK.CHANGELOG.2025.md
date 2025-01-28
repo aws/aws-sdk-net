@@ -1,3 +1,19 @@
+### 3.7.971.0 (2025-01-28 19:20 UTC)
+* AppSync (3.7.405.0)
+	* Add stash and outErrors to EvaluateCode/EvaluateMappingTemplate response
+* DataSync (3.7.403.0)
+	* AWS DataSync now supports the Kerberos authentication protocol for SMB locations.
+* Deadline (3.7.404.0)
+	* feature: Deadline: Add support for limiting the concurrent usage of external resources, like floating licenses, using limits and the ability to constrain the maximum number of workers that work on a job
+* DynamoDBv2 (3.7.405.12)
+	* Fixed issue with TransactWrite in the DataModel where it wasn't correctly handling cases where only keys were being saved.
+* EC2 (3.7.429.0)
+	* This release changes the CreateFleet CLI and SDK's such that if you do not specify a client token, a randomly generated token is used for the request to ensure idempotency.
+* KinesisFirehose (3.7.402.0)
+	* For AppendOnly streams, Firehose will automatically scale to match your throughput.
+* TimestreamInfluxDB (3.7.405.0)
+	* Adds 'allocatedStorage' parameter to UpdateDbInstance API that allows increasing the database instance storage size and 'dbStorageType' parameter to UpdateDbInstance API that allows changing the storage type of the database instance
+
 ### 3.7.970.0 (2025-01-27 19:41 UTC)
 * BedrockAgent (3.7.416.0)
 	* Add support for the prompt caching feature for Bedrock Prompt Management
