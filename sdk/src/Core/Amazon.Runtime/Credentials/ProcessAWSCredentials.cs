@@ -16,8 +16,6 @@
 using Amazon.Util;
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using ThirdParty.Json.LitJson;
 using System.Diagnostics;
 #if AWS_ASYNC_API
 using System.Threading.Tasks;
@@ -29,6 +27,8 @@ using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
+using System.Text.Json;
+using System.Data;
 #if NETSTANDARD
 using System.Runtime.InteropServices;
 #endif
@@ -154,21 +154,21 @@ namespace Amazon.Runtime
             // The system will attempt to find the executable within folders specified by the PATH environment variable.
             if (processInfo.ExitCode == 0)
             {
-                JsonData data = null;
+                JsonDocument data = null;
                 try
                 {
-                    data = JsonMapper.ToObject(processInfo.StandardOutput);
+                    data = JsonDocument.Parse(processInfo.StandardOutput);
                 }
                 catch(JsonException je)
                 {
                     throw new ProcessAWSCredentialException("The response back from the process credential provider returned back a malformed JSON document.", je);
                 }
-                
-                if (!data.PropertyNames.Contains(_versionString)|| string.IsNullOrEmpty(data[_versionString].ToString()))
+                if ((data.RootElement.EnumerateObject().Select(x => x.NameEquals(_versionString)) == null) || string.IsNullOrEmpty(data.RootElement.GetProperty(_versionString).GetString()))
                 {
                     throw new ProcessAWSCredentialException("Missing required parameter - Version in JSON Payload");
                 }
-                var version = (int)data[_versionString];
+
+                var version = data.RootElement.GetProperty(_versionString).GetInt32();
                 switch (version)
                 {
                     case 1:

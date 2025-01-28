@@ -14,7 +14,9 @@
  */
 
 using System;
-using ThirdParty.Json.LitJson;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+//using ThirdParty.Json.LitJson;
 
 namespace Amazon.Runtime.Internal
 {
@@ -27,7 +29,6 @@ namespace Amazon.Runtime.Internal
         /// <summary>
         /// Version of the Json payload
         /// </summary>
-        [JsonProperty(Required = true)]
         public int Version { get; set; }
         /// <summary>
         /// AWS Access key
