@@ -35,8 +35,11 @@ namespace Amazon.DataSync.Model
     public partial class DescribeLocationSmbResponse : AmazonWebServiceResponse
     {
         private List<string> _agentArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private SmbAuthenticationType _authenticationType;
         private DateTime? _creationTime;
+        private List<string> _dnsIpAddresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _domain;
+        private string _kerberosPrincipal;
         private string _locationArn;
         private string _locationUri;
         private SmbMountOptions _mountOptions;
@@ -62,6 +65,24 @@ namespace Amazon.DataSync.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AuthenticationType. 
+        /// <para>
+        /// The authentication protocol that DataSync uses to connect to your SMB file server.
+        /// </para>
+        /// </summary>
+        public SmbAuthenticationType AuthenticationType
+        {
+            get { return this._authenticationType; }
+            set { this._authenticationType = value; }
+        }
+
+        // Check to see if AuthenticationType property is set
+        internal bool IsSetAuthenticationType()
+        {
+            return this._authenticationType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
         /// The time that the SMB location was created.
@@ -80,10 +101,30 @@ namespace Amazon.DataSync.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DnsIpAddresses. 
+        /// <para>
+        /// The IPv4 addresses for the DNS servers that your SMB file server belongs to. This
+        /// element applies only if <c>AuthenticationType</c> is set to <c>KERBEROS</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2)]
+        public List<string> DnsIpAddresses
+        {
+            get { return this._dnsIpAddresses; }
+            set { this._dnsIpAddresses = value; }
+        }
+
+        // Check to see if DnsIpAddresses property is set
+        internal bool IsSetDnsIpAddresses()
+        {
+            return this._dnsIpAddresses != null && (this._dnsIpAddresses.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        /// The name of the Microsoft Active Directory domain that the SMB file server belongs
-        /// to.
+        /// The name of the Windows domain that the SMB file server belongs to. This element applies
+        /// only if <c>AuthenticationType</c> is set to <c>NTLM</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=253)]
@@ -97,6 +138,26 @@ namespace Amazon.DataSync.Model
         internal bool IsSetDomain()
         {
             return this._domain != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KerberosPrincipal. 
+        /// <para>
+        /// The Kerberos service principal name (SPN) that has permission to access the files,
+        /// folders, and file metadata in your SMB file server.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string KerberosPrincipal
+        {
+            get { return this._kerberosPrincipal; }
+            set { this._kerberosPrincipal = value; }
+        }
+
+        // Check to see if KerberosPrincipal property is set
+        internal bool IsSetKerberosPrincipal()
+        {
+            return this._kerberosPrincipal != null;
         }
 
         /// <summary>
@@ -140,7 +201,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property MountOptions. 
         /// <para>
-        /// The protocol that DataSync use to access your SMB file.
+        /// The SMB protocol version that DataSync uses to access your SMB file server.
         /// </para>
         /// </summary>
         public SmbMountOptions MountOptions
@@ -159,7 +220,7 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property User. 
         /// <para>
         /// The user that can mount and access the files, folders, and file metadata in your SMB
-        /// file server.
+        /// file server. This element applies only if <c>AuthenticationType</c> is set to <c>NTLM</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=104)]

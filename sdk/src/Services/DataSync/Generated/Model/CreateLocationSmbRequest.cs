@@ -36,14 +36,20 @@ namespace Amazon.DataSync.Model
     /// 
     ///  
     /// <para>
-    /// Before you begin, make sure that you understand how DataSync <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb">accesses
-    /// SMB file servers</a>.
+    /// Before you begin, make sure that you understand how DataSync accesses SMB file servers.
+    /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">Providing
+    /// DataSync access to SMB file servers</a>.
     /// </para>
     /// </summary>
     public partial class CreateLocationSmbRequest : AmazonDataSyncRequest
     {
         private List<string> _agentArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private SmbAuthenticationType _authenticationType;
+        private List<string> _dnsIpAddresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _domain;
+        private MemoryStream _kerberosKeytab;
+        private MemoryStream _kerberosKrb5Conf;
+        private string _kerberosPrincipal;
         private SmbMountOptions _mountOptions;
         private string _password;
         private string _serverHostname;
@@ -72,15 +78,59 @@ namespace Amazon.DataSync.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Domain. 
+        /// Gets and sets the property AuthenticationType. 
         /// <para>
-        /// Specifies the name of the Active Directory domain that your SMB file server belongs
-        /// to. 
+        /// Specifies the authentication protocol that DataSync uses to connect to your SMB file
+        /// server. DataSync supports <c>NTLM</c> (default) and <c>KERBEROS</c> authentication.
+        /// </para>
+        /// </summary>
+        public SmbAuthenticationType AuthenticationType
+        {
+            get { return this._authenticationType; }
+            set { this._authenticationType = value; }
+        }
+
+        // Check to see if AuthenticationType property is set
+        internal bool IsSetAuthenticationType()
+        {
+            return this._authenticationType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DnsIpAddresses. 
+        /// <para>
+        /// Specifies the IPv4 addresses for the DNS servers that your SMB file server belongs
+        /// to. This parameter applies only if <c>AuthenticationType</c> is set to <c>KERBEROS</c>.
         /// </para>
         ///  
         /// <para>
-        /// If you have multiple Active Directory domains in your environment, configuring this
-        /// parameter makes sure that DataSync connects to the right file server.
+        /// If you have multiple domains in your environment, configuring this parameter makes
+        /// sure that DataSync connects to the right SMB file server.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2)]
+        public List<string> DnsIpAddresses
+        {
+            get { return this._dnsIpAddresses; }
+            set { this._dnsIpAddresses = value; }
+        }
+
+        // Check to see if DnsIpAddresses property is set
+        internal bool IsSetDnsIpAddresses()
+        {
+            return this._dnsIpAddresses != null && (this._dnsIpAddresses.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Domain. 
+        /// <para>
+        /// Specifies the Windows domain name that your SMB file server belongs to. This parameter
+        /// applies only if <c>AuthenticationType</c> is set to <c>NTLM</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you have multiple domains in your environment, configuring this parameter makes
+        /// sure that DataSync connects to the right file server.
         /// </para>
         /// </summary>
         [AWSProperty(Max=253)]
@@ -94,6 +144,101 @@ namespace Amazon.DataSync.Model
         internal bool IsSetDomain()
         {
             return this._domain != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KerberosKeytab. 
+        /// <para>
+        /// Specifies your Kerberos key table (keytab) file, which includes mappings between your
+        /// service principal name (SPN) and encryption keys.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify the keytab using a file path (for example, <c>file://path/to/file.keytab</c>).
+        /// The file must be base64 encoded. If you're using the CLI, the encoding is done for
+        /// you.
+        /// </para>
+        ///  
+        /// <para>
+        /// To avoid task execution errors, make sure that the SPN in the keytab file matches
+        /// exactly what you specify for <c>KerberosPrincipal</c> and in your <c>krb5.conf</c>
+        /// file. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=65536)]
+        public MemoryStream KerberosKeytab
+        {
+            get { return this._kerberosKeytab; }
+            set { this._kerberosKeytab = value; }
+        }
+
+        // Check to see if KerberosKeytab property is set
+        internal bool IsSetKerberosKeytab()
+        {
+            return this._kerberosKeytab != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KerberosKrb5Conf. 
+        /// <para>
+        /// Specifies a Kerberos configuration file (<c>krb5.conf</c>) that defines your Kerberos
+        /// realm configuration.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify the <c>krb5.conf</c> using a file path (for example, <c>file://path/to/krb5.conf</c>).
+        /// The file must be base64 encoded. If you're using the CLI, the encoding is done for
+        /// you.
+        /// </para>
+        ///  
+        /// <para>
+        /// To avoid task execution errors, make sure that the service principal name (SPN) in
+        /// the <c>krb5.conf</c> file matches exactly what you specify for <c>KerberosPrincipal</c>
+        /// and in your keytab file.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=131072)]
+        public MemoryStream KerberosKrb5Conf
+        {
+            get { return this._kerberosKrb5Conf; }
+            set { this._kerberosKrb5Conf = value; }
+        }
+
+        // Check to see if KerberosKrb5Conf property is set
+        internal bool IsSetKerberosKrb5Conf()
+        {
+            return this._kerberosKrb5Conf != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KerberosPrincipal. 
+        /// <para>
+        /// Specifies a service principal name (SPN), which is an identity in your Kerberos realm
+        /// that has permission to access the files, folders, and file metadata in your SMB file
+        /// server.
+        /// </para>
+        ///  
+        /// <para>
+        /// SPNs are case sensitive and must include a prepended <c>cifs/</c>. For example, an
+        /// SPN might look like <c>cifs/kerberosuser@EXAMPLE.COM</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Your task execution will fail if the SPN that you provide for this parameter doesn’t
+        /// match what’s exactly in your keytab or <c>krb5.conf</c> files. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string KerberosPrincipal
+        {
+            get { return this._kerberosPrincipal; }
+            set { this._kerberosPrincipal = value; }
+        }
+
+        // Check to see if KerberosPrincipal property is set
+        internal bool IsSetKerberosPrincipal()
+        {
+            return this._kerberosPrincipal != null;
         }
 
         /// <summary>
@@ -119,15 +264,11 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property Password. 
         /// <para>
         /// Specifies the password of the user who can mount your SMB file server and has permission
-        /// to access the files and folders involved in your transfer.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required
-        /// permissions</a> for SMB locations.
+        /// to access the files and folders involved in your transfer. This parameter applies
+        /// only if <c>AuthenticationType</c> is set to <c>NTLM</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Max=104)]
+        [AWSProperty(Sensitive=true, Max=104)]
         public string Password
         {
             get { return this._password; }
@@ -143,14 +284,22 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property ServerHostname. 
         /// <para>
-        /// Specifies the Domain Name Service (DNS) name or IP address of the SMB file server
-        /// that your DataSync agent will mount.
+        /// Specifies the domain name or IP address of the SMB file server that your DataSync
+        /// agent will mount.
         /// </para>
-        ///  <note> 
+        ///  
+        /// <para>
+        /// Remember the following when configuring this parameter:
+        /// </para>
+        ///  <ul> <li> 
         /// <para>
         /// You can't specify an IP version 6 (IPv6) address.
         /// </para>
-        ///  </note>
+        ///  </li> <li> 
+        /// <para>
+        /// If you're using Kerberos authentication, you must specify a domain name.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Max=255)]
         public string ServerHostname
@@ -176,8 +325,8 @@ namespace Amazon.DataSync.Model
         ///  
         /// <para>
         /// To copy all data in the subdirectory, DataSync must be able to mount the SMB share
-        /// and access all of its data. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required
-        /// permissions</a> for SMB locations.
+        /// and access all of its data. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">Providing
+        /// DataSync access to SMB file servers</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=4096)]
@@ -217,16 +366,17 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property User. 
         /// <para>
         /// Specifies the user that can mount and access the files, folders, and file metadata
-        /// in your SMB file server.
+        /// in your SMB file server. This parameter applies only if <c>AuthenticationType</c>
+        /// is set to <c>NTLM</c>.
         /// </para>
         ///  
         /// <para>
         /// For information about choosing a user with the right level of access for your transfer,
-        /// see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required
-        /// permissions</a> for SMB locations.
+        /// see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">Providing
+        /// DataSync access to SMB file servers</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=104)]
+        [AWSProperty(Max=104)]
         public string User
         {
             get { return this._user; }

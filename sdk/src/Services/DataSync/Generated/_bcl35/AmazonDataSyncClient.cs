@@ -1175,8 +1175,9 @@ namespace Amazon.DataSync
         /// 
         ///  
         /// <para>
-        /// Before you begin, make sure that you understand how DataSync <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb">accesses
-        /// SMB file servers</a>.
+        /// Before you begin, make sure that you understand how DataSync accesses SMB file servers.
+        /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">Providing
+        /// DataSync access to SMB file servers</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLocationSmb service method.</param>
