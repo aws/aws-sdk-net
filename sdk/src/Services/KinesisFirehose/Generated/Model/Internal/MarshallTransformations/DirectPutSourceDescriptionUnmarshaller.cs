@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SourceDescription Object
+    /// Response Unmarshaller for DirectPutSourceDescription Object
     /// </summary>  
-    public class SourceDescriptionUnmarshaller : IUnmarshaller<SourceDescription, XmlUnmarshallerContext>, IUnmarshaller<SourceDescription, JsonUnmarshallerContext>
+    public class DirectPutSourceDescriptionUnmarshaller : IUnmarshaller<DirectPutSourceDescription, XmlUnmarshallerContext>, IUnmarshaller<DirectPutSourceDescription, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        SourceDescription IUnmarshaller<SourceDescription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        DirectPutSourceDescription IUnmarshaller<DirectPutSourceDescription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public SourceDescription Unmarshall(JsonUnmarshallerContext context)
+        public DirectPutSourceDescription Unmarshall(JsonUnmarshallerContext context)
         {
-            SourceDescription unmarshalledObject = new SourceDescription();
+            DirectPutSourceDescription unmarshalledObject = new DirectPutSourceDescription();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,28 +66,10 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("DatabaseSourceDescription", targetDepth))
+                if (context.TestExpression("ThroughputHintInMBs", targetDepth))
                 {
-                    var unmarshaller = DatabaseSourceDescriptionUnmarshaller.Instance;
-                    unmarshalledObject.DatabaseSourceDescription = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DirectPutSourceDescription", targetDepth))
-                {
-                    var unmarshaller = DirectPutSourceDescriptionUnmarshaller.Instance;
-                    unmarshalledObject.DirectPutSourceDescription = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("KinesisStreamSourceDescription", targetDepth))
-                {
-                    var unmarshaller = KinesisStreamSourceDescriptionUnmarshaller.Instance;
-                    unmarshalledObject.KinesisStreamSourceDescription = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("MSKSourceDescription", targetDepth))
-                {
-                    var unmarshaller = MSKSourceDescriptionUnmarshaller.Instance;
-                    unmarshalledObject.MSKSourceDescription = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.ThroughputHintInMBs = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -95,12 +77,12 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         }
 
 
-        private static SourceDescriptionUnmarshaller _instance = new SourceDescriptionUnmarshaller();        
+        private static DirectPutSourceDescriptionUnmarshaller _instance = new DirectPutSourceDescriptionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SourceDescriptionUnmarshaller Instance
+        public static DirectPutSourceDescriptionUnmarshaller Instance
         {
             get
             {

@@ -125,6 +125,17 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DeliveryStreamType);
                 }
 
+                if(publicRequest.IsSetDirectPutSourceConfiguration())
+                {
+                    context.Writer.WritePropertyName("DirectPutSourceConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DirectPutSourceConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DirectPutSourceConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetElasticsearchDestinationConfiguration())
                 {
                     context.Writer.WritePropertyName("ElasticsearchDestinationConfiguration");

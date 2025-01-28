@@ -104,7 +104,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property ElasticsearchDestinationDescription. 
         /// <para>
-        /// The destination in Amazon ES.
+        /// The destination in Amazon OpenSearch Service.
         /// </para>
         /// </summary>
         public ElasticsearchDestinationDescription ElasticsearchDestinationDescription

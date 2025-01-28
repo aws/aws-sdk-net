@@ -48,6 +48,12 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAppendOnly())
+            {
+                context.Writer.WritePropertyName("AppendOnly");
+                context.Writer.Write(requestObject.AppendOnly);
+            }
+
             if(requestObject.IsSetBufferingHints())
             {
                 context.Writer.WritePropertyName("BufferingHints");

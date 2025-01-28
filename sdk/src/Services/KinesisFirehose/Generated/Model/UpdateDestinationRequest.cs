@@ -188,7 +188,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property ElasticsearchDestinationUpdate. 
         /// <para>
-        /// Describes an update for a destination in Amazon ES.
+        /// Describes an update for a destination in Amazon OpenSearch Service.
         /// </para>
         /// </summary>
         public ElasticsearchDestinationUpdate ElasticsearchDestinationUpdate

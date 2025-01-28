@@ -30,6 +30,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
+    /// The structure used to configure the list of column patterns in source database endpoint
+    /// for Firehose to read from. 
+    /// 
+    ///  
     /// <para>
     /// Amazon Data Firehose is in preview release and is subject to change.
     /// </para>
@@ -42,7 +46,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property Exclude. 
         /// <para>
-        ///  
+        ///  The list of column patterns in source database to be excluded for Firehose to read
+        /// from. 
         /// </para>
         ///  
         /// <para>
@@ -64,7 +69,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property Include. 
         /// <para>
-        ///  
+        ///  The list of column patterns in source database to be included for Firehose to read
+        /// from. 
         /// </para>
         ///  
         /// <para>

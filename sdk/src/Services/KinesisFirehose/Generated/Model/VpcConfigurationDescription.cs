@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
-    /// The details of the VPC of the Amazon ES destination.
+    /// The details of the VPC of the Amazon OpenSearch Service destination.
     /// </summary>
     public partial class VpcConfigurationDescription
     {
@@ -103,13 +103,14 @@ namespace Amazon.KinesisFirehose.Model
         /// Gets and sets the property SecurityGroupIds. 
         /// <para>
         /// The IDs of the security groups that Firehose uses when it creates ENIs in the VPC
-        /// of the Amazon ES destination. You can use the same security group that the Amazon
-        /// ES domain uses or different ones. If you specify different security groups, ensure
-        /// that they allow outbound HTTPS traffic to the Amazon ES domain's security group. Also
-        /// ensure that the Amazon ES domain's security group allows HTTPS traffic from the security
-        /// groups specified here. If you use the same security group for both your Firehose stream
-        /// and the Amazon ES domain, make sure the security group inbound rule allows HTTPS traffic.
-        /// For more information about security group rules, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html#SecurityGroupRules">Security
+        /// of the Amazon OpenSearch Service destination. You can use the same security group
+        /// that the Amazon ES domain uses or different ones. If you specify different security
+        /// groups, ensure that they allow outbound HTTPS traffic to the Amazon OpenSearch Service
+        /// domain's security group. Also ensure that the Amazon OpenSearch Service domain's security
+        /// group allows HTTPS traffic from the security groups specified here. If you use the
+        /// same security group for both your Firehose stream and the Amazon OpenSearch Service
+        /// domain, make sure the security group inbound rule allows HTTPS traffic. For more information
+        /// about security group rules, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html#SecurityGroupRules">Security
         /// group rules</a> in the Amazon VPC documentation.
         /// </para>
         /// </summary>
@@ -130,10 +131,11 @@ namespace Amazon.KinesisFirehose.Model
         /// Gets and sets the property SubnetIds. 
         /// <para>
         /// The IDs of the subnets that Firehose uses to create ENIs in the VPC of the Amazon
-        /// ES destination. Make sure that the routing tables and inbound and outbound rules allow
-        /// traffic to flow from the subnets whose IDs are specified here to the subnets that
-        /// have the destination Amazon ES endpoints. Firehose creates at least one ENI in each
-        /// of the subnets that are specified here. Do not delete or modify these ENIs.
+        /// OpenSearch Service destination. Make sure that the routing tables and inbound and
+        /// outbound rules allow traffic to flow from the subnets whose IDs are specified here
+        /// to the subnets that have the destination Amazon OpenSearch Service endpoints. Firehose
+        /// creates at least one ENI in each of the subnets that are specified here. Do not delete
+        /// or modify these ENIs.
         /// </para>
         ///  
         /// <para>
@@ -162,7 +164,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property VpcId. 
         /// <para>
-        /// The ID of the Amazon ES destination's VPC.
+        /// The ID of the Amazon OpenSearch Service destination's VPC.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]

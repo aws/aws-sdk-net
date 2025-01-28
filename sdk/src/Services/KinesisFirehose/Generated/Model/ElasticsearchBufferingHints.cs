@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
-    /// Describes the buffering to perform before delivering data to the Amazon ES destination.
+    /// Describes the buffering to perform before delivering data to the Amazon OpenSearch
+    /// Service destination.
     /// </summary>
     public partial class ElasticsearchBufferingHints
     {

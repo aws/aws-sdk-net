@@ -129,6 +129,7 @@ namespace Amazon.KinesisFirehose.Model
         private DeliveryStreamEncryptionConfigurationInput _deliveryStreamEncryptionConfigurationInput;
         private string _deliveryStreamName;
         private DeliveryStreamType _deliveryStreamType;
+        private DirectPutSourceConfiguration _directPutSourceConfiguration;
         private ElasticsearchDestinationConfiguration _elasticsearchDestinationConfiguration;
         private ExtendedS3DestinationConfiguration _extendedS3DestinationConfiguration;
         private HttpEndpointDestinationConfiguration _httpEndpointDestinationConfiguration;
@@ -181,7 +182,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property DatabaseSourceConfiguration. 
         /// <para>
-        ///  
+        ///  The top level object for configuring streams with database as a source. 
         /// </para>
         ///  
         /// <para>
@@ -270,9 +271,28 @@ namespace Amazon.KinesisFirehose.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DirectPutSourceConfiguration. 
+        /// <para>
+        /// The structure that configures parameters such as <c>ThroughputHintInMBs</c> for a
+        /// stream configured with Direct PUT as a source. 
+        /// </para>
+        /// </summary>
+        public DirectPutSourceConfiguration DirectPutSourceConfiguration
+        {
+            get { return this._directPutSourceConfiguration; }
+            set { this._directPutSourceConfiguration = value; }
+        }
+
+        // Check to see if DirectPutSourceConfiguration property is set
+        internal bool IsSetDirectPutSourceConfiguration()
+        {
+            return this._directPutSourceConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ElasticsearchDestinationConfiguration. 
         /// <para>
-        /// The destination in Amazon ES. You can specify only one destination.
+        /// The destination in Amazon OpenSearch Service. You can specify only one destination.
         /// </para>
         /// </summary>
         public ElasticsearchDestinationConfiguration ElasticsearchDestinationConfiguration
@@ -470,8 +490,8 @@ namespace Amazon.KinesisFirehose.Model
         /// If you specify tags in the <c>CreateDeliveryStream</c> action, Amazon Data Firehose
         /// performs an additional authorization on the <c>firehose:TagDeliveryStream</c> action
         /// to verify if users have permissions to create tags. If you do not provide this permission,
-        /// requests to create new Firehose Firehose streams with IAM resource tags will fail
-        /// with an <c>AccessDeniedException</c> such as following.
+        /// requests to create new Firehose streams with IAM resource tags will fail with an <c>AccessDeniedException</c>
+        /// such as following.
         /// </para>
         ///  
         /// <para>

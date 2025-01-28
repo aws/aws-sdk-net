@@ -461,6 +461,16 @@
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.DirectPutSourceConfiguration.ThroughputHintInMBs</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.DirectPutSourceDescription.ThroughputHintInMBs</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.ElasticsearchBufferingHints.IntervalInSeconds</property>
     <min>0</min>
     <max>900</max>

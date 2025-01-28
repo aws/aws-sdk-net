@@ -30,6 +30,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
+    /// The structure to configure the authentication methods for Firehose to connect to
+    /// source database endpoint. 
+    /// 
+    ///  
     /// <para>
     /// Amazon Data Firehose is in preview release and is subject to change.
     /// </para>

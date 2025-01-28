@@ -30,33 +30,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
-    /// Configures retry behavior in case Firehose is unable to deliver documents to Amazon
-    /// OpenSearch Service.
+    /// The structure that configures parameters such as <c>ThroughputHintInMBs</c> for a
+    /// stream configured with Direct PUT as a source.
     /// </summary>
-    public partial class ElasticsearchRetryOptions
+    public partial class DirectPutSourceConfiguration
     {
-        private int? _durationInSeconds;
+        private int? _throughputHintInMBs;
 
         /// <summary>
-        /// Gets and sets the property DurationInSeconds. 
+        /// Gets and sets the property ThroughputHintInMBs. 
         /// <para>
-        /// After an initial failure to deliver to Amazon OpenSearch Service, the total amount
-        /// of time during which Firehose retries delivery (including the first attempt). After
-        /// this time has elapsed, the failed documents are written to Amazon S3. Default value
-        /// is 300 seconds (5 minutes). A value of 0 (zero) results in no retries.
+        ///  The value that you configure for this parameter is for information purpose only and
+        /// does not affect Firehose delivery throughput limit. You can use the <a href="https://support.console.aws.amazon.com/support/home#/case/create%3FissueType=service-limit-increase%26limitType=kinesis-firehose-limits">Firehose
+        /// Limits form</a> to request a throughput limit increase. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=7200)]
-        public int DurationInSeconds
+        [AWSProperty(Required=true, Min=1, Max=100)]
+        public int ThroughputHintInMBs
         {
-            get { return this._durationInSeconds.GetValueOrDefault(); }
-            set { this._durationInSeconds = value; }
+            get { return this._throughputHintInMBs.GetValueOrDefault(); }
+            set { this._throughputHintInMBs = value; }
         }
 
-        // Check to see if DurationInSeconds property is set
-        internal bool IsSetDurationInSeconds()
+        // Check to see if ThroughputHintInMBs property is set
+        internal bool IsSetThroughputHintInMBs()
         {
-            return this._durationInSeconds.HasValue; 
+            return this._throughputHintInMBs.HasValue; 
         }
 
     }
