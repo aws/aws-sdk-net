@@ -1,3 +1,15 @@
+### 3.7.972.0 (2025-01-29 19:54 UTC)
+* BCMPricingCalculator (3.7.403.0)
+	* Added ConflictException error type in DeleteBillScenario, BatchDeleteBillScenarioCommitmentModification, BatchDeleteBillScenarioUsageModification, BatchUpdateBillScenarioUsageModification, and BatchUpdateBillScenarioCommitmentModification API operations.
+* ECR (3.7.407.0)
+	* Add support for Dualstack and Dualstack-with-FIPS Endpoints
+* ECRPublic (3.7.403.0)
+	* Add support for Dualstack Endpoints
+* MailManager (3.7.404.0)
+	* This release includes a new feature for Amazon SES Mail Manager which allows customers to specify known addresses and domains and make use of those in traffic policies and rules actions to distinguish between known and unknown entries.
+* S3 (3.7.413.0)
+	* Change the type of MpuObjectSize in CompleteMultipartUploadRequest from int to long.
+
 ### 3.7.971.0 (2025-01-28 19:20 UTC)
 * AppSync (3.7.405.0)
 	* Add stash and outErrors to EvaluateCode/EvaluateMappingTemplate response
