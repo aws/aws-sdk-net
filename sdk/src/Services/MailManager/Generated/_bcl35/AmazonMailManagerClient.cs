@@ -411,6 +411,143 @@ namespace Amazon.MailManager
 
         #endregion
         
+        #region  CreateAddressList
+
+        /// <summary>
+        /// Creates a new address list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAddressList service method.</param>
+        /// 
+        /// <returns>The response from the CreateAddressList service method, as returned by MailManager.</returns>
+        /// <exception cref="Amazon.MailManager.Model.AccessDeniedException">
+        /// Occurs when a user is denied access to a specific resource or action.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ServiceQuotaExceededException">
+        /// Occurs when an operation exceeds a predefined service quota or limit.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ThrottlingException">
+        /// Occurs when a service's request rate limit is exceeded, resulting in throttling of
+        /// further requests.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ValidationException">
+        /// The request validation has failed. For details, see the accompanying error message.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/CreateAddressList">REST API Reference for CreateAddressList Operation</seealso>
+        public virtual CreateAddressListResponse CreateAddressList(CreateAddressListRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAddressListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAddressListResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAddressListResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateAddressList operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateAddressList operation on AmazonMailManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAddressList
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/CreateAddressList">REST API Reference for CreateAddressList Operation</seealso>
+        public virtual IAsyncResult BeginCreateAddressList(CreateAddressListRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAddressListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAddressListResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateAddressList operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAddressList.</param>
+        /// 
+        /// <returns>Returns a  CreateAddressListResult from MailManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/CreateAddressList">REST API Reference for CreateAddressList Operation</seealso>
+        public virtual CreateAddressListResponse EndCreateAddressList(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateAddressListResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateAddressListImportJob
+
+        /// <summary>
+        /// Creates an import job for an address list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAddressListImportJob service method.</param>
+        /// 
+        /// <returns>The response from the CreateAddressListImportJob service method, as returned by MailManager.</returns>
+        /// <exception cref="Amazon.MailManager.Model.AccessDeniedException">
+        /// Occurs when a user is denied access to a specific resource or action.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ResourceNotFoundException">
+        /// Occurs when a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ThrottlingException">
+        /// Occurs when a service's request rate limit is exceeded, resulting in throttling of
+        /// further requests.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ValidationException">
+        /// The request validation has failed. For details, see the accompanying error message.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/CreateAddressListImportJob">REST API Reference for CreateAddressListImportJob Operation</seealso>
+        public virtual CreateAddressListImportJobResponse CreateAddressListImportJob(CreateAddressListImportJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAddressListImportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAddressListImportJobResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAddressListImportJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateAddressListImportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateAddressListImportJob operation on AmazonMailManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAddressListImportJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/CreateAddressListImportJob">REST API Reference for CreateAddressListImportJob Operation</seealso>
+        public virtual IAsyncResult BeginCreateAddressListImportJob(CreateAddressListImportJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAddressListImportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAddressListImportJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateAddressListImportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAddressListImportJob.</param>
+        /// 
+        /// <returns>Returns a  CreateAddressListImportJobResult from MailManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/CreateAddressListImportJob">REST API Reference for CreateAddressListImportJob Operation</seealso>
+        public virtual CreateAddressListImportJobResponse EndCreateAddressListImportJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateAddressListImportJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateArchive
 
         /// <summary>
@@ -854,6 +991,70 @@ namespace Amazon.MailManager
 
         #endregion
         
+        #region  DeleteAddressList
+
+        /// <summary>
+        /// Deletes an address list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAddressList service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAddressList service method, as returned by MailManager.</returns>
+        /// <exception cref="Amazon.MailManager.Model.AccessDeniedException">
+        /// Occurs when a user is denied access to a specific resource or action.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ThrottlingException">
+        /// Occurs when a service's request rate limit is exceeded, resulting in throttling of
+        /// further requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/DeleteAddressList">REST API Reference for DeleteAddressList Operation</seealso>
+        public virtual DeleteAddressListResponse DeleteAddressList(DeleteAddressListRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAddressListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAddressListResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAddressListResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAddressList operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAddressList operation on AmazonMailManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAddressList
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/DeleteAddressList">REST API Reference for DeleteAddressList Operation</seealso>
+        public virtual IAsyncResult BeginDeleteAddressList(DeleteAddressListRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAddressListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAddressListResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteAddressList operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAddressList.</param>
+        /// 
+        /// <returns>Returns a  DeleteAddressListResult from MailManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/DeleteAddressList">REST API Reference for DeleteAddressList Operation</seealso>
+        public virtual DeleteAddressListResponse EndDeleteAddressList(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteAddressListResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteArchive
 
         /// <summary>
@@ -1174,6 +1375,73 @@ namespace Amazon.MailManager
 
         #endregion
         
+        #region  DeregisterMemberFromAddressList
+
+        /// <summary>
+        /// Removes a member from an address list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterMemberFromAddressList service method.</param>
+        /// 
+        /// <returns>The response from the DeregisterMemberFromAddressList service method, as returned by MailManager.</returns>
+        /// <exception cref="Amazon.MailManager.Model.AccessDeniedException">
+        /// Occurs when a user is denied access to a specific resource or action.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ResourceNotFoundException">
+        /// Occurs when a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ThrottlingException">
+        /// Occurs when a service's request rate limit is exceeded, resulting in throttling of
+        /// further requests.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ValidationException">
+        /// The request validation has failed. For details, see the accompanying error message.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/DeregisterMemberFromAddressList">REST API Reference for DeregisterMemberFromAddressList Operation</seealso>
+        public virtual DeregisterMemberFromAddressListResponse DeregisterMemberFromAddressList(DeregisterMemberFromAddressListRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeregisterMemberFromAddressListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeregisterMemberFromAddressListResponseUnmarshaller.Instance;
+
+            return Invoke<DeregisterMemberFromAddressListResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeregisterMemberFromAddressList operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterMemberFromAddressList operation on AmazonMailManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeregisterMemberFromAddressList
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/DeregisterMemberFromAddressList">REST API Reference for DeregisterMemberFromAddressList Operation</seealso>
+        public virtual IAsyncResult BeginDeregisterMemberFromAddressList(DeregisterMemberFromAddressListRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeregisterMemberFromAddressListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeregisterMemberFromAddressListResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeregisterMemberFromAddressList operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeregisterMemberFromAddressList.</param>
+        /// 
+        /// <returns>Returns a  DeregisterMemberFromAddressListResult from MailManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/DeregisterMemberFromAddressList">REST API Reference for DeregisterMemberFromAddressList Operation</seealso>
+        public virtual DeregisterMemberFromAddressListResponse EndDeregisterMemberFromAddressList(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeregisterMemberFromAddressListResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetAddonInstance
 
         /// <summary>
@@ -1290,6 +1558,140 @@ namespace Amazon.MailManager
         public virtual GetAddonSubscriptionResponse EndGetAddonSubscription(IAsyncResult asyncResult)
         {
             return EndInvoke<GetAddonSubscriptionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetAddressList
+
+        /// <summary>
+        /// Fetch attributes of an address list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAddressList service method.</param>
+        /// 
+        /// <returns>The response from the GetAddressList service method, as returned by MailManager.</returns>
+        /// <exception cref="Amazon.MailManager.Model.AccessDeniedException">
+        /// Occurs when a user is denied access to a specific resource or action.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ResourceNotFoundException">
+        /// Occurs when a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ThrottlingException">
+        /// Occurs when a service's request rate limit is exceeded, resulting in throttling of
+        /// further requests.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ValidationException">
+        /// The request validation has failed. For details, see the accompanying error message.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/GetAddressList">REST API Reference for GetAddressList Operation</seealso>
+        public virtual GetAddressListResponse GetAddressList(GetAddressListRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAddressListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAddressListResponseUnmarshaller.Instance;
+
+            return Invoke<GetAddressListResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAddressList operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAddressList operation on AmazonMailManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAddressList
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/GetAddressList">REST API Reference for GetAddressList Operation</seealso>
+        public virtual IAsyncResult BeginGetAddressList(GetAddressListRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAddressListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAddressListResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAddressList operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAddressList.</param>
+        /// 
+        /// <returns>Returns a  GetAddressListResult from MailManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/GetAddressList">REST API Reference for GetAddressList Operation</seealso>
+        public virtual GetAddressListResponse EndGetAddressList(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetAddressListResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetAddressListImportJob
+
+        /// <summary>
+        /// Fetch attributes of an import job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAddressListImportJob service method.</param>
+        /// 
+        /// <returns>The response from the GetAddressListImportJob service method, as returned by MailManager.</returns>
+        /// <exception cref="Amazon.MailManager.Model.AccessDeniedException">
+        /// Occurs when a user is denied access to a specific resource or action.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ResourceNotFoundException">
+        /// Occurs when a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ThrottlingException">
+        /// Occurs when a service's request rate limit is exceeded, resulting in throttling of
+        /// further requests.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ValidationException">
+        /// The request validation has failed. For details, see the accompanying error message.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/GetAddressListImportJob">REST API Reference for GetAddressListImportJob Operation</seealso>
+        public virtual GetAddressListImportJobResponse GetAddressListImportJob(GetAddressListImportJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAddressListImportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAddressListImportJobResponseUnmarshaller.Instance;
+
+            return Invoke<GetAddressListImportJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAddressListImportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAddressListImportJob operation on AmazonMailManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAddressListImportJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/GetAddressListImportJob">REST API Reference for GetAddressListImportJob Operation</seealso>
+        public virtual IAsyncResult BeginGetAddressListImportJob(GetAddressListImportJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAddressListImportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAddressListImportJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAddressListImportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAddressListImportJob.</param>
+        /// 
+        /// <returns>Returns a  GetAddressListImportJobResult from MailManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/GetAddressListImportJob">REST API Reference for GetAddressListImportJob Operation</seealso>
+        public virtual GetAddressListImportJobResponse EndGetAddressListImportJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetAddressListImportJobResponse>(asyncResult);
         }
 
         #endregion
@@ -1746,6 +2148,73 @@ namespace Amazon.MailManager
 
         #endregion
         
+        #region  GetMemberOfAddressList
+
+        /// <summary>
+        /// Fetch attributes of a member in an address list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMemberOfAddressList service method.</param>
+        /// 
+        /// <returns>The response from the GetMemberOfAddressList service method, as returned by MailManager.</returns>
+        /// <exception cref="Amazon.MailManager.Model.AccessDeniedException">
+        /// Occurs when a user is denied access to a specific resource or action.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ResourceNotFoundException">
+        /// Occurs when a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ThrottlingException">
+        /// Occurs when a service's request rate limit is exceeded, resulting in throttling of
+        /// further requests.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ValidationException">
+        /// The request validation has failed. For details, see the accompanying error message.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/GetMemberOfAddressList">REST API Reference for GetMemberOfAddressList Operation</seealso>
+        public virtual GetMemberOfAddressListResponse GetMemberOfAddressList(GetMemberOfAddressListRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMemberOfAddressListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMemberOfAddressListResponseUnmarshaller.Instance;
+
+            return Invoke<GetMemberOfAddressListResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetMemberOfAddressList operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetMemberOfAddressList operation on AmazonMailManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetMemberOfAddressList
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/GetMemberOfAddressList">REST API Reference for GetMemberOfAddressList Operation</seealso>
+        public virtual IAsyncResult BeginGetMemberOfAddressList(GetMemberOfAddressListRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMemberOfAddressListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMemberOfAddressListResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetMemberOfAddressList operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetMemberOfAddressList.</param>
+        /// 
+        /// <returns>Returns a  GetMemberOfAddressListResult from MailManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/GetMemberOfAddressList">REST API Reference for GetMemberOfAddressList Operation</seealso>
+        public virtual GetMemberOfAddressListResponse EndGetMemberOfAddressList(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetMemberOfAddressListResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetRelay
 
         /// <summary>
@@ -2040,6 +2509,137 @@ namespace Amazon.MailManager
 
         #endregion
         
+        #region  ListAddressListImportJobs
+
+        /// <summary>
+        /// Lists jobs for an address list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAddressListImportJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListAddressListImportJobs service method, as returned by MailManager.</returns>
+        /// <exception cref="Amazon.MailManager.Model.AccessDeniedException">
+        /// Occurs when a user is denied access to a specific resource or action.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ResourceNotFoundException">
+        /// Occurs when a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ThrottlingException">
+        /// Occurs when a service's request rate limit is exceeded, resulting in throttling of
+        /// further requests.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ValidationException">
+        /// The request validation has failed. For details, see the accompanying error message.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/ListAddressListImportJobs">REST API Reference for ListAddressListImportJobs Operation</seealso>
+        public virtual ListAddressListImportJobsResponse ListAddressListImportJobs(ListAddressListImportJobsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAddressListImportJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAddressListImportJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAddressListImportJobsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAddressListImportJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAddressListImportJobs operation on AmazonMailManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAddressListImportJobs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/ListAddressListImportJobs">REST API Reference for ListAddressListImportJobs Operation</seealso>
+        public virtual IAsyncResult BeginListAddressListImportJobs(ListAddressListImportJobsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAddressListImportJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAddressListImportJobsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAddressListImportJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAddressListImportJobs.</param>
+        /// 
+        /// <returns>Returns a  ListAddressListImportJobsResult from MailManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/ListAddressListImportJobs">REST API Reference for ListAddressListImportJobs Operation</seealso>
+        public virtual ListAddressListImportJobsResponse EndListAddressListImportJobs(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListAddressListImportJobsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListAddressLists
+
+        /// <summary>
+        /// Lists address lists for this account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAddressLists service method.</param>
+        /// 
+        /// <returns>The response from the ListAddressLists service method, as returned by MailManager.</returns>
+        /// <exception cref="Amazon.MailManager.Model.AccessDeniedException">
+        /// Occurs when a user is denied access to a specific resource or action.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ThrottlingException">
+        /// Occurs when a service's request rate limit is exceeded, resulting in throttling of
+        /// further requests.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ValidationException">
+        /// The request validation has failed. For details, see the accompanying error message.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/ListAddressLists">REST API Reference for ListAddressLists Operation</seealso>
+        public virtual ListAddressListsResponse ListAddressLists(ListAddressListsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAddressListsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAddressListsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAddressListsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAddressLists operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAddressLists operation on AmazonMailManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAddressLists
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/ListAddressLists">REST API Reference for ListAddressLists Operation</seealso>
+        public virtual IAsyncResult BeginListAddressLists(ListAddressListsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAddressListsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAddressListsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAddressLists operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAddressLists.</param>
+        /// 
+        /// <returns>Returns a  ListAddressListsResult from MailManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/ListAddressLists">REST API Reference for ListAddressLists Operation</seealso>
+        public virtual ListAddressListsResponse EndListAddressLists(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListAddressListsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListArchiveExports
 
         /// <summary>
@@ -2295,6 +2895,73 @@ namespace Amazon.MailManager
 
         #endregion
         
+        #region  ListMembersOfAddressList
+
+        /// <summary>
+        /// Lists members of an address list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMembersOfAddressList service method.</param>
+        /// 
+        /// <returns>The response from the ListMembersOfAddressList service method, as returned by MailManager.</returns>
+        /// <exception cref="Amazon.MailManager.Model.AccessDeniedException">
+        /// Occurs when a user is denied access to a specific resource or action.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ResourceNotFoundException">
+        /// Occurs when a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ThrottlingException">
+        /// Occurs when a service's request rate limit is exceeded, resulting in throttling of
+        /// further requests.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ValidationException">
+        /// The request validation has failed. For details, see the accompanying error message.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/ListMembersOfAddressList">REST API Reference for ListMembersOfAddressList Operation</seealso>
+        public virtual ListMembersOfAddressListResponse ListMembersOfAddressList(ListMembersOfAddressListRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMembersOfAddressListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMembersOfAddressListResponseUnmarshaller.Instance;
+
+            return Invoke<ListMembersOfAddressListResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListMembersOfAddressList operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListMembersOfAddressList operation on AmazonMailManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListMembersOfAddressList
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/ListMembersOfAddressList">REST API Reference for ListMembersOfAddressList Operation</seealso>
+        public virtual IAsyncResult BeginListMembersOfAddressList(ListMembersOfAddressListRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMembersOfAddressListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMembersOfAddressListResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListMembersOfAddressList operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListMembersOfAddressList.</param>
+        /// 
+        /// <returns>Returns a  ListMembersOfAddressListResult from MailManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/ListMembersOfAddressList">REST API Reference for ListMembersOfAddressList Operation</seealso>
+        public virtual ListMembersOfAddressListResponse EndListMembersOfAddressList(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListMembersOfAddressListResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListRelays
 
         /// <summary>
@@ -2526,6 +3193,149 @@ namespace Amazon.MailManager
 
         #endregion
         
+        #region  RegisterMemberToAddressList
+
+        /// <summary>
+        /// Adds a member to an address list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterMemberToAddressList service method.</param>
+        /// 
+        /// <returns>The response from the RegisterMemberToAddressList service method, as returned by MailManager.</returns>
+        /// <exception cref="Amazon.MailManager.Model.AccessDeniedException">
+        /// Occurs when a user is denied access to a specific resource or action.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ResourceNotFoundException">
+        /// Occurs when a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ServiceQuotaExceededException">
+        /// Occurs when an operation exceeds a predefined service quota or limit.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ThrottlingException">
+        /// Occurs when a service's request rate limit is exceeded, resulting in throttling of
+        /// further requests.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ValidationException">
+        /// The request validation has failed. For details, see the accompanying error message.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/RegisterMemberToAddressList">REST API Reference for RegisterMemberToAddressList Operation</seealso>
+        public virtual RegisterMemberToAddressListResponse RegisterMemberToAddressList(RegisterMemberToAddressListRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterMemberToAddressListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterMemberToAddressListResponseUnmarshaller.Instance;
+
+            return Invoke<RegisterMemberToAddressListResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RegisterMemberToAddressList operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RegisterMemberToAddressList operation on AmazonMailManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRegisterMemberToAddressList
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/RegisterMemberToAddressList">REST API Reference for RegisterMemberToAddressList Operation</seealso>
+        public virtual IAsyncResult BeginRegisterMemberToAddressList(RegisterMemberToAddressListRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterMemberToAddressListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterMemberToAddressListResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RegisterMemberToAddressList operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRegisterMemberToAddressList.</param>
+        /// 
+        /// <returns>Returns a  RegisterMemberToAddressListResult from MailManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/RegisterMemberToAddressList">REST API Reference for RegisterMemberToAddressList Operation</seealso>
+        public virtual RegisterMemberToAddressListResponse EndRegisterMemberToAddressList(IAsyncResult asyncResult)
+        {
+            return EndInvoke<RegisterMemberToAddressListResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StartAddressListImportJob
+
+        /// <summary>
+        /// Starts an import job for an address list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartAddressListImportJob service method.</param>
+        /// 
+        /// <returns>The response from the StartAddressListImportJob service method, as returned by MailManager.</returns>
+        /// <exception cref="Amazon.MailManager.Model.AccessDeniedException">
+        /// Occurs when a user is denied access to a specific resource or action.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ResourceNotFoundException">
+        /// Occurs when a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ServiceQuotaExceededException">
+        /// Occurs when an operation exceeds a predefined service quota or limit.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ThrottlingException">
+        /// Occurs when a service's request rate limit is exceeded, resulting in throttling of
+        /// further requests.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ValidationException">
+        /// The request validation has failed. For details, see the accompanying error message.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/StartAddressListImportJob">REST API Reference for StartAddressListImportJob Operation</seealso>
+        public virtual StartAddressListImportJobResponse StartAddressListImportJob(StartAddressListImportJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartAddressListImportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartAddressListImportJobResponseUnmarshaller.Instance;
+
+            return Invoke<StartAddressListImportJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartAddressListImportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartAddressListImportJob operation on AmazonMailManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartAddressListImportJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/StartAddressListImportJob">REST API Reference for StartAddressListImportJob Operation</seealso>
+        public virtual IAsyncResult BeginStartAddressListImportJob(StartAddressListImportJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartAddressListImportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartAddressListImportJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartAddressListImportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartAddressListImportJob.</param>
+        /// 
+        /// <returns>Returns a  StartAddressListImportJobResult from MailManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/StartAddressListImportJob">REST API Reference for StartAddressListImportJob Operation</seealso>
+        public virtual StartAddressListImportJobResponse EndStartAddressListImportJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartAddressListImportJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  StartArchiveExport
 
         /// <summary>
@@ -2665,6 +3475,76 @@ namespace Amazon.MailManager
         public virtual StartArchiveSearchResponse EndStartArchiveSearch(IAsyncResult asyncResult)
         {
             return EndInvoke<StartArchiveSearchResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StopAddressListImportJob
+
+        /// <summary>
+        /// Stops an ongoing import job for an address list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopAddressListImportJob service method.</param>
+        /// 
+        /// <returns>The response from the StopAddressListImportJob service method, as returned by MailManager.</returns>
+        /// <exception cref="Amazon.MailManager.Model.AccessDeniedException">
+        /// Occurs when a user is denied access to a specific resource or action.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ResourceNotFoundException">
+        /// Occurs when a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ThrottlingException">
+        /// Occurs when a service's request rate limit is exceeded, resulting in throttling of
+        /// further requests.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ValidationException">
+        /// The request validation has failed. For details, see the accompanying error message.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/StopAddressListImportJob">REST API Reference for StopAddressListImportJob Operation</seealso>
+        public virtual StopAddressListImportJobResponse StopAddressListImportJob(StopAddressListImportJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopAddressListImportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopAddressListImportJobResponseUnmarshaller.Instance;
+
+            return Invoke<StopAddressListImportJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopAddressListImportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopAddressListImportJob operation on AmazonMailManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopAddressListImportJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/StopAddressListImportJob">REST API Reference for StopAddressListImportJob Operation</seealso>
+        public virtual IAsyncResult BeginStopAddressListImportJob(StopAddressListImportJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopAddressListImportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopAddressListImportJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopAddressListImportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopAddressListImportJob.</param>
+        /// 
+        /// <returns>Returns a  StopAddressListImportJobResult from MailManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/StopAddressListImportJob">REST API Reference for StopAddressListImportJob Operation</seealso>
+        public virtual StopAddressListImportJobResponse EndStopAddressListImportJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StopAddressListImportJobResponse>(asyncResult);
         }
 
         #endregion

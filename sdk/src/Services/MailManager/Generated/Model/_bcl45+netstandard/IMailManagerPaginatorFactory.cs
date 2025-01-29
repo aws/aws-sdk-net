@@ -37,6 +37,16 @@ namespace Amazon.MailManager.Model
         IListAddonSubscriptionsPaginator ListAddonSubscriptions(ListAddonSubscriptionsRequest request);
 
         /// <summary>
+        /// Paginator for ListAddressListImportJobs operation
+        ///</summary>
+        IListAddressListImportJobsPaginator ListAddressListImportJobs(ListAddressListImportJobsRequest request);
+
+        /// <summary>
+        /// Paginator for ListAddressLists operation
+        ///</summary>
+        IListAddressListsPaginator ListAddressLists(ListAddressListsRequest request);
+
+        /// <summary>
         /// Paginator for ListArchiveExports operation
         ///</summary>
         IListArchiveExportsPaginator ListArchiveExports(ListArchiveExportsRequest request);
@@ -55,6 +65,11 @@ namespace Amazon.MailManager.Model
         /// Paginator for ListIngressPoints operation
         ///</summary>
         IListIngressPointsPaginator ListIngressPoints(ListIngressPointsRequest request);
+
+        /// <summary>
+        /// Paginator for ListMembersOfAddressList operation
+        ///</summary>
+        IListMembersOfAddressListPaginator ListMembersOfAddressList(ListMembersOfAddressListRequest request);
 
         /// <summary>
         /// Paginator for ListRelays operation

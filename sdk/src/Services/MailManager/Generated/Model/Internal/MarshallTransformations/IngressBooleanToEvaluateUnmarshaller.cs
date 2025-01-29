@@ -72,6 +72,12 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
                     unmarshalledObject.Analysis = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("IsInAddressList", targetDepth))
+                {
+                    var unmarshaller = IngressIsInAddressListUnmarshaller.Instance;
+                    unmarshalledObject.IsInAddressList = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }
