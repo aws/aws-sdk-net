@@ -282,7 +282,16 @@ namespace Amazon.BCMPricingCalculator
 
         /// <summary>
         /// Create Compute Savings Plans, EC2 Instance Savings Plans, or EC2 Reserved Instances
-        /// commitments that you want to model in a Bill Scenario.
+        /// commitments that you want to model in a Bill Scenario. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The <c>BatchCreateBillScenarioCommitmentModification</c> operation doesn't have its
+        /// own IAM permission. To authorize this operation for Amazon Web Services principals,
+        /// include the permission <c>bcm-pricing-calculator:CreateBillScenarioCommitmentModification</c>
+        /// in your policies.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchCreateBillScenarioCommitmentModification service method.</param>
         /// 
@@ -324,7 +333,16 @@ namespace Amazon.BCMPricingCalculator
 
         /// <summary>
         /// Create Compute Savings Plans, EC2 Instance Savings Plans, or EC2 Reserved Instances
-        /// commitments that you want to model in a Bill Scenario.
+        /// commitments that you want to model in a Bill Scenario. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The <c>BatchCreateBillScenarioCommitmentModification</c> operation doesn't have its
+        /// own IAM permission. To authorize this operation for Amazon Web Services principals,
+        /// include the permission <c>bcm-pricing-calculator:CreateBillScenarioCommitmentModification</c>
+        /// in your policies.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchCreateBillScenarioCommitmentModification service method.</param>
         /// <param name="cancellationToken">
@@ -373,6 +391,16 @@ namespace Amazon.BCMPricingCalculator
 
         /// <summary>
         /// Create Amazon Web Services service usage that you want to model in a Bill Scenario.
+        /// 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The <c>BatchCreateBillScenarioUsageModification</c> operation doesn't have its own
+        /// IAM permission. To authorize this operation for Amazon Web Services principals, include
+        /// the permission <c>bcm-pricing-calculator:CreateBillScenarioUsageModification</c> in
+        /// your policies.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchCreateBillScenarioUsageModification service method.</param>
         /// 
@@ -417,6 +445,16 @@ namespace Amazon.BCMPricingCalculator
 
         /// <summary>
         /// Create Amazon Web Services service usage that you want to model in a Bill Scenario.
+        /// 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The <c>BatchCreateBillScenarioUsageModification</c> operation doesn't have its own
+        /// IAM permission. To authorize this operation for Amazon Web Services principals, include
+        /// the permission <c>bcm-pricing-calculator:CreateBillScenarioUsageModification</c> in
+        /// your policies.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchCreateBillScenarioUsageModification service method.</param>
         /// <param name="cancellationToken">
@@ -468,6 +506,15 @@ namespace Amazon.BCMPricingCalculator
 
         /// <summary>
         /// Create Amazon Web Services service usage that you want to model in a Workload Estimate.
+        /// 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The <c>BatchCreateWorkloadEstimateUsage</c> operation doesn't have its own IAM permission.
+        /// To authorize this operation for Amazon Web Services principals, include the permission
+        /// <c>bcm-pricing-calculator:CreateWorkloadEstimateUsage</c> in your policies.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchCreateWorkloadEstimateUsage service method.</param>
         /// 
@@ -512,6 +559,15 @@ namespace Amazon.BCMPricingCalculator
 
         /// <summary>
         /// Create Amazon Web Services service usage that you want to model in a Workload Estimate.
+        /// 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The <c>BatchCreateWorkloadEstimateUsage</c> operation doesn't have its own IAM permission.
+        /// To authorize this operation for Amazon Web Services principals, include the permission
+        /// <c>bcm-pricing-calculator:CreateWorkloadEstimateUsage</c> in your policies.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchCreateWorkloadEstimateUsage service method.</param>
         /// <param name="cancellationToken">
@@ -567,13 +623,26 @@ namespace Amazon.BCMPricingCalculator
         /// commitment. If you want model deletion of an existing commitment, see the negate <a
         /// href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AWSBCMPricingCalculator_BillScenarioCommitmentModificationAction.html">
         /// BillScenarioCommitmentModificationAction</a> of <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AWSBCMPricingCalculator_BatchCreateBillScenarioUsageModification.html">
-        /// BatchCreateBillScenarioCommitmentModification</a> operation.
+        /// BatchCreateBillScenarioCommitmentModification</a> operation. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The <c>BatchDeleteBillScenarioCommitmentModification</c> operation doesn't have its
+        /// own IAM permission. To authorize this operation for Amazon Web Services principals,
+        /// include the permission <c>bcm-pricing-calculator:DeleteBillScenarioCommitmentModification</c>
+        /// in your policies.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchDeleteBillScenarioCommitmentModification service method.</param>
         /// 
         /// <returns>The response from the BatchDeleteBillScenarioCommitmentModification service method, as returned by BCMPricingCalculator.</returns>
         /// <exception cref="Amazon.BCMPricingCalculator.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.BCMPricingCalculator.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
         /// </exception>
         /// <exception cref="Amazon.BCMPricingCalculator.Model.DataUnavailableException">
         /// The requested data is currently unavailable.
@@ -609,7 +678,16 @@ namespace Amazon.BCMPricingCalculator
         /// commitment. If you want model deletion of an existing commitment, see the negate <a
         /// href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AWSBCMPricingCalculator_BillScenarioCommitmentModificationAction.html">
         /// BillScenarioCommitmentModificationAction</a> of <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AWSBCMPricingCalculator_BatchCreateBillScenarioUsageModification.html">
-        /// BatchCreateBillScenarioCommitmentModification</a> operation.
+        /// BatchCreateBillScenarioCommitmentModification</a> operation. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The <c>BatchDeleteBillScenarioCommitmentModification</c> operation doesn't have its
+        /// own IAM permission. To authorize this operation for Amazon Web Services principals,
+        /// include the permission <c>bcm-pricing-calculator:DeleteBillScenarioCommitmentModification</c>
+        /// in your policies.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchDeleteBillScenarioCommitmentModification service method.</param>
         /// <param name="cancellationToken">
@@ -619,6 +697,10 @@ namespace Amazon.BCMPricingCalculator
         /// <returns>The response from the BatchDeleteBillScenarioCommitmentModification service method, as returned by BCMPricingCalculator.</returns>
         /// <exception cref="Amazon.BCMPricingCalculator.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.BCMPricingCalculator.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
         /// </exception>
         /// <exception cref="Amazon.BCMPricingCalculator.Model.DataUnavailableException">
         /// The requested data is currently unavailable.
@@ -656,13 +738,26 @@ namespace Amazon.BCMPricingCalculator
         /// Delete usage that you have created in a Bill Scenario. You can only delete usage
         /// that you had added and cannot model deletion (or removal) of a existing usage. If
         /// you want model removal of an existing usage, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AWSBCMPricingCalculator_BatchUpdateBillScenarioUsageModification.html">
-        /// BatchUpdateBillScenarioUsageModification</a>.
+        /// BatchUpdateBillScenarioUsageModification</a>. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The <c>BatchDeleteBillScenarioUsageModification</c> operation doesn't have its own
+        /// IAM permission. To authorize this operation for Amazon Web Services principals, include
+        /// the permission <c>bcm-pricing-calculator:DeleteBillScenarioUsageModification</c> in
+        /// your policies.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchDeleteBillScenarioUsageModification service method.</param>
         /// 
         /// <returns>The response from the BatchDeleteBillScenarioUsageModification service method, as returned by BCMPricingCalculator.</returns>
         /// <exception cref="Amazon.BCMPricingCalculator.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.BCMPricingCalculator.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
         /// </exception>
         /// <exception cref="Amazon.BCMPricingCalculator.Model.DataUnavailableException">
         /// The requested data is currently unavailable.
@@ -699,7 +794,16 @@ namespace Amazon.BCMPricingCalculator
         /// Delete usage that you have created in a Bill Scenario. You can only delete usage
         /// that you had added and cannot model deletion (or removal) of a existing usage. If
         /// you want model removal of an existing usage, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AWSBCMPricingCalculator_BatchUpdateBillScenarioUsageModification.html">
-        /// BatchUpdateBillScenarioUsageModification</a>.
+        /// BatchUpdateBillScenarioUsageModification</a>. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The <c>BatchDeleteBillScenarioUsageModification</c> operation doesn't have its own
+        /// IAM permission. To authorize this operation for Amazon Web Services principals, include
+        /// the permission <c>bcm-pricing-calculator:DeleteBillScenarioUsageModification</c> in
+        /// your policies.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchDeleteBillScenarioUsageModification service method.</param>
         /// <param name="cancellationToken">
@@ -709,6 +813,10 @@ namespace Amazon.BCMPricingCalculator
         /// <returns>The response from the BatchDeleteBillScenarioUsageModification service method, as returned by BCMPricingCalculator.</returns>
         /// <exception cref="Amazon.BCMPricingCalculator.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.BCMPricingCalculator.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
         /// </exception>
         /// <exception cref="Amazon.BCMPricingCalculator.Model.DataUnavailableException">
         /// The requested data is currently unavailable.
@@ -749,7 +857,15 @@ namespace Amazon.BCMPricingCalculator
         /// Delete usage that you have created in a Workload estimate. You can only delete usage
         /// that you had added and cannot model deletion (or removal) of a existing usage. If
         /// you want model removal of an existing usage, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AWSBCMPricingCalculator_BatchUpdateWorkloadEstimateUsage.html">
-        /// BatchUpdateWorkloadEstimateUsage</a>.
+        /// BatchUpdateWorkloadEstimateUsage</a>. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The <c>BatchDeleteWorkloadEstimateUsage</c> operation doesn't have its own IAM permission.
+        /// To authorize this operation for Amazon Web Services principals, include the permission
+        /// <c>bcm-pricing-calculator:DeleteWorkloadEstimateUsage</c> in your policies.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchDeleteWorkloadEstimateUsage service method.</param>
         /// 
@@ -792,7 +908,15 @@ namespace Amazon.BCMPricingCalculator
         /// Delete usage that you have created in a Workload estimate. You can only delete usage
         /// that you had added and cannot model deletion (or removal) of a existing usage. If
         /// you want model removal of an existing usage, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AWSBCMPricingCalculator_BatchUpdateWorkloadEstimateUsage.html">
-        /// BatchUpdateWorkloadEstimateUsage</a>.
+        /// BatchUpdateWorkloadEstimateUsage</a>. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The <c>BatchDeleteWorkloadEstimateUsage</c> operation doesn't have its own IAM permission.
+        /// To authorize this operation for Amazon Web Services principals, include the permission
+        /// <c>bcm-pricing-calculator:DeleteWorkloadEstimateUsage</c> in your policies.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchDeleteWorkloadEstimateUsage service method.</param>
         /// <param name="cancellationToken">
@@ -840,13 +964,26 @@ namespace Amazon.BCMPricingCalculator
 
         /// <summary>
         /// Update a newly added or existing commitment. You can update the commitment group
-        /// based on a commitment ID and a Bill scenario ID.
+        /// based on a commitment ID and a Bill scenario ID. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The <c>BatchUpdateBillScenarioCommitmentModification</c> operation doesn't have its
+        /// own IAM permission. To authorize this operation for Amazon Web Services principals,
+        /// include the permission <c>bcm-pricing-calculator:UpdateBillScenarioCommitmentModification</c>
+        /// in your policies.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchUpdateBillScenarioCommitmentModification service method.</param>
         /// 
         /// <returns>The response from the BatchUpdateBillScenarioCommitmentModification service method, as returned by BCMPricingCalculator.</returns>
         /// <exception cref="Amazon.BCMPricingCalculator.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.BCMPricingCalculator.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
         /// </exception>
         /// <exception cref="Amazon.BCMPricingCalculator.Model.DataUnavailableException">
         /// The requested data is currently unavailable.
@@ -878,7 +1015,16 @@ namespace Amazon.BCMPricingCalculator
 
         /// <summary>
         /// Update a newly added or existing commitment. You can update the commitment group
-        /// based on a commitment ID and a Bill scenario ID.
+        /// based on a commitment ID and a Bill scenario ID. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The <c>BatchUpdateBillScenarioCommitmentModification</c> operation doesn't have its
+        /// own IAM permission. To authorize this operation for Amazon Web Services principals,
+        /// include the permission <c>bcm-pricing-calculator:UpdateBillScenarioCommitmentModification</c>
+        /// in your policies.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchUpdateBillScenarioCommitmentModification service method.</param>
         /// <param name="cancellationToken">
@@ -888,6 +1034,10 @@ namespace Amazon.BCMPricingCalculator
         /// <returns>The response from the BatchUpdateBillScenarioCommitmentModification service method, as returned by BCMPricingCalculator.</returns>
         /// <exception cref="Amazon.BCMPricingCalculator.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.BCMPricingCalculator.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
         /// </exception>
         /// <exception cref="Amazon.BCMPricingCalculator.Model.DataUnavailableException">
         /// The requested data is currently unavailable.
@@ -923,13 +1073,26 @@ namespace Amazon.BCMPricingCalculator
 
         /// <summary>
         /// Update a newly added or existing usage lines. You can update the usage amounts, usage
-        /// hour, and usage group based on a usage ID and a Bill scenario ID.
+        /// hour, and usage group based on a usage ID and a Bill scenario ID. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The <c>BatchUpdateBillScenarioUsageModification</c> operation doesn't have its own
+        /// IAM permission. To authorize this operation for Amazon Web Services principals, include
+        /// the permission <c>bcm-pricing-calculator:UpdateBillScenarioUsageModification</c> in
+        /// your policies.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchUpdateBillScenarioUsageModification service method.</param>
         /// 
         /// <returns>The response from the BatchUpdateBillScenarioUsageModification service method, as returned by BCMPricingCalculator.</returns>
         /// <exception cref="Amazon.BCMPricingCalculator.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.BCMPricingCalculator.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
         /// </exception>
         /// <exception cref="Amazon.BCMPricingCalculator.Model.DataUnavailableException">
         /// The requested data is currently unavailable.
@@ -964,7 +1127,16 @@ namespace Amazon.BCMPricingCalculator
 
         /// <summary>
         /// Update a newly added or existing usage lines. You can update the usage amounts, usage
-        /// hour, and usage group based on a usage ID and a Bill scenario ID.
+        /// hour, and usage group based on a usage ID and a Bill scenario ID. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The <c>BatchUpdateBillScenarioUsageModification</c> operation doesn't have its own
+        /// IAM permission. To authorize this operation for Amazon Web Services principals, include
+        /// the permission <c>bcm-pricing-calculator:UpdateBillScenarioUsageModification</c> in
+        /// your policies.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchUpdateBillScenarioUsageModification service method.</param>
         /// <param name="cancellationToken">
@@ -974,6 +1146,10 @@ namespace Amazon.BCMPricingCalculator
         /// <returns>The response from the BatchUpdateBillScenarioUsageModification service method, as returned by BCMPricingCalculator.</returns>
         /// <exception cref="Amazon.BCMPricingCalculator.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.BCMPricingCalculator.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
         /// </exception>
         /// <exception cref="Amazon.BCMPricingCalculator.Model.DataUnavailableException">
         /// The requested data is currently unavailable.
@@ -1012,7 +1188,15 @@ namespace Amazon.BCMPricingCalculator
 
         /// <summary>
         /// Update a newly added or existing usage lines. You can update the usage amounts and
-        /// usage group based on a usage ID and a Workload estimate ID.
+        /// usage group based on a usage ID and a Workload estimate ID. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The <c>BatchUpdateWorkloadEstimateUsage</c> operation doesn't have its own IAM permission.
+        /// To authorize this operation for Amazon Web Services principals, include the permission
+        /// <c>bcm-pricing-calculator:UpdateWorkloadEstimateUsage</c> in your policies.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchUpdateWorkloadEstimateUsage service method.</param>
         /// 
@@ -1053,7 +1237,15 @@ namespace Amazon.BCMPricingCalculator
 
         /// <summary>
         /// Update a newly added or existing usage lines. You can update the usage amounts and
-        /// usage group based on a usage ID and a Workload estimate ID.
+        /// usage group based on a usage ID and a Workload estimate ID. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The <c>BatchUpdateWorkloadEstimateUsage</c> operation doesn't have its own IAM permission.
+        /// To authorize this operation for Amazon Web Services principals, include the permission
+        /// <c>bcm-pricing-calculator:UpdateWorkloadEstimateUsage</c> in your policies.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchUpdateWorkloadEstimateUsage service method.</param>
         /// <param name="cancellationToken">
@@ -1472,6 +1664,10 @@ namespace Amazon.BCMPricingCalculator
         /// <exception cref="Amazon.BCMPricingCalculator.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
         /// </exception>
+        /// <exception cref="Amazon.BCMPricingCalculator.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
         /// <exception cref="Amazon.BCMPricingCalculator.Model.DataUnavailableException">
         /// The requested data is currently unavailable.
         /// </exception>
@@ -1508,6 +1704,10 @@ namespace Amazon.BCMPricingCalculator
         /// <returns>The response from the DeleteBillScenario service method, as returned by BCMPricingCalculator.</returns>
         /// <exception cref="Amazon.BCMPricingCalculator.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.BCMPricingCalculator.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
         /// </exception>
         /// <exception cref="Amazon.BCMPricingCalculator.Model.DataUnavailableException">
         /// The requested data is currently unavailable.

@@ -32,6 +32,16 @@ namespace Amazon.BCMPricingCalculator.Model
     /// <summary>
     /// Container for the parameters to the BatchCreateBillScenarioUsageModification operation.
     /// Create Amazon Web Services service usage that you want to model in a Bill Scenario.
+    /// 
+    /// 
+    ///  <note> 
+    /// <para>
+    /// The <c>BatchCreateBillScenarioUsageModification</c> operation doesn't have its own
+    /// IAM permission. To authorize this operation for Amazon Web Services principals, include
+    /// the permission <c>bcm-pricing-calculator:CreateBillScenarioUsageModification</c> in
+    /// your policies.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class BatchCreateBillScenarioUsageModificationRequest : AmazonBCMPricingCalculatorRequest
     {

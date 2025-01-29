@@ -32,7 +32,16 @@ namespace Amazon.BCMPricingCalculator.Model
     /// <summary>
     /// Container for the parameters to the BatchUpdateBillScenarioCommitmentModification operation.
     /// Update a newly added or existing commitment. You can update the commitment group
-    /// based on a commitment ID and a Bill scenario ID.
+    /// based on a commitment ID and a Bill scenario ID. 
+    /// 
+    ///  <note> 
+    /// <para>
+    /// The <c>BatchUpdateBillScenarioCommitmentModification</c> operation doesn't have its
+    /// own IAM permission. To authorize this operation for Amazon Web Services principals,
+    /// include the permission <c>bcm-pricing-calculator:UpdateBillScenarioCommitmentModification</c>
+    /// in your policies.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class BatchUpdateBillScenarioCommitmentModificationRequest : AmazonBCMPricingCalculatorRequest
     {

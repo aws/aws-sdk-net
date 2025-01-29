@@ -74,6 +74,10 @@ namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
                 {
                     return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
+                {
+                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("DataUnavailableException"))
                 {
                     return DataUnavailableExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

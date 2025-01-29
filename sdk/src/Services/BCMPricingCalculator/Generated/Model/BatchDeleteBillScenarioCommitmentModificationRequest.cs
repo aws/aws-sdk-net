@@ -36,7 +36,16 @@ namespace Amazon.BCMPricingCalculator.Model
     /// commitment. If you want model deletion of an existing commitment, see the negate <a
     /// href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AWSBCMPricingCalculator_BillScenarioCommitmentModificationAction.html">
     /// BillScenarioCommitmentModificationAction</a> of <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AWSBCMPricingCalculator_BatchCreateBillScenarioUsageModification.html">
-    /// BatchCreateBillScenarioCommitmentModification</a> operation.
+    /// BatchCreateBillScenarioCommitmentModification</a> operation. 
+    /// 
+    ///  <note> 
+    /// <para>
+    /// The <c>BatchDeleteBillScenarioCommitmentModification</c> operation doesn't have its
+    /// own IAM permission. To authorize this operation for Amazon Web Services principals,
+    /// include the permission <c>bcm-pricing-calculator:DeleteBillScenarioCommitmentModification</c>
+    /// in your policies.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class BatchDeleteBillScenarioCommitmentModificationRequest : AmazonBCMPricingCalculatorRequest
     {
