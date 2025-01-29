@@ -21,6 +21,7 @@ using Amazon.Util;
 using Amazon.Runtime.Telemetry;
 using Amazon.Runtime.Credentials.Internal;
 using Amazon.Runtime.Identity;
+using Amazon.Runtime.Credentials;
 
 #if NETSTANDARD
 using System.Net.Http;
@@ -84,10 +85,12 @@ namespace Amazon.Runtime
         IIdentityResolverConfiguration IdentityResolverConfiguration { get; }
 
         /// <summary>
-        /// For Services using Bearer authentication, this controls how <see cref="BearerTokenSigner"/>
+        /// For services using Bearer authentication, this provider can be used to override how the <see cref="BearerTokenSigner"/>
         /// resolves a <see cref="AWSToken"/>.
         /// <para />
         /// See <see cref="DefaultAWSTokenProviderChain"/> for additional information.
+        /// <para />
+        /// If null, the SDK will use the <see cref="DefaultAWSTokenIdentityResolver"/> to resolve the bearer token.
         /// </summary>
         IAWSTokenProvider AWSTokenProvider { get; }
 

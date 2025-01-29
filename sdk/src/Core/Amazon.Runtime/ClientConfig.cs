@@ -95,7 +95,7 @@ namespace Amazon.Runtime
         private bool didProcessServiceURL = false;
         private AWSCredentials _defaultAWSCredentials = null;
         private IIdentityResolverConfiguration _identityResolverConfiguration = DefaultIdentityResolverConfiguration.Instance;
-        private IAWSTokenProvider _awsTokenProvider = new DefaultAWSTokenProviderChain();
+        private IAWSTokenProvider _awsTokenProvider;
         private TelemetryProvider telemetryProvider = AWSConfigs.TelemetryProvider;
         private AccountIdEndpointMode? accountIdEndpointMode = null;
 
@@ -202,7 +202,6 @@ namespace Amazon.Runtime
         }
 
         /// <inheritdoc />
-        [Obsolete("This property is deprecated in favor of the new Identity resolvers configured through IdentityResolverConfiguration.")]
         public IAWSTokenProvider AWSTokenProvider
         {
             get { return this._awsTokenProvider; }
