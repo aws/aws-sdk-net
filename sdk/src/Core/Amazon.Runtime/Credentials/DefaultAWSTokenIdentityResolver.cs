@@ -26,10 +26,8 @@ namespace Amazon.Runtime.Credentials
     {
         private readonly IAWSTokenProvider _tokenProvider;
 
-        public DefaultAWSTokenIdentityResolver() : this(null) { }
-
-        public DefaultAWSTokenIdentityResolver(string profileName)
-            => _tokenProvider = new AWSTokenProviderChain(new ProfileTokenProvider(profileName));
+        public DefaultAWSTokenIdentityResolver() 
+            => _tokenProvider = new AWSTokenProviderChain(new ProfileTokenProvider());
 
         BaseIdentity IIdentityResolver.ResolveIdentity()
         {
